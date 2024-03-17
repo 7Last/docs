@@ -1,0 +1,34 @@
+name: Deploy docs
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '21.7.0'
+
+      - name: Clone docs repository
+        uses: actions/checkout@v2
+        with:
+          repository: 7Last/7Last.github.io
+          path: ./7Last.github.io  # Clones the repository into a subdirectory
+
+      - name: Navigate to the cloned repository
+        run: cd ./7Last.github.io
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run deploy command
+        run: npm run deploy
