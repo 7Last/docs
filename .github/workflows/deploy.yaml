@@ -43,8 +43,8 @@ jobs:
       - name: Run deploy command
         run: npm run deploy
 
-      - name: ls docs
-        run: ls docs
+      - name: cat src/static/docs.json
+        run: cat src/static/docs.json
 
       # - name: Push updates on main
       #   run: |
