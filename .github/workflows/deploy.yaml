@@ -37,14 +37,14 @@ jobs:
          path: .
          ref: main
 
-      - name: pwd
-        run: pwd
-
-      - name: ls
-        run: ls
-
       - name: Install dependencies
         run: npm install
 
       - name: Run deploy command
         run: npm run deploy
+
+      - name: Push updates on main
+        run: |
+          git add .
+          git commit -m "[BOT] Update docs"
+          git push origin main
