@@ -43,8 +43,11 @@ jobs:
       - name: Run deploy command
         run: npm run deploy
 
-      - name: Push updates on main
-        run: |
-          git add .
-          git commit -m "[BOT] Update docs"
-          git push origin main
+      - name: ls docs
+        run: ls docs
+
+      # - name: Push updates on main
+      #   run: |
+      #     git add .
+      #     git commit -m "[BOT] Update docs"
+      #     git push origin main
