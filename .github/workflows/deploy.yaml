@@ -51,6 +51,13 @@ jobs:
           chmod +x ./update.sh
           ./update.sh
 
+      - name: Check for changes
+        run: |
+          git diff --exit-code || exit 0
+          git diff --cached --exit-code || exit 0
+          echo "No changes to the output on this push; exiting."
+          exit 1
+
       - name: Push updates on main
         run: |
           git add .
