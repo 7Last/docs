@@ -22,10 +22,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 7Last/7Last.github.io
-          path: .
+          path: ./pages
+
+      - name: ls
+        run: ls
+
+      - name: pwd
+        run: pwd
 
       - name: Navigate to the cloned repository
-        run: cd ./7Last.github.io
+        run: cd ./pages
 
       - name: ls
         run: ls
