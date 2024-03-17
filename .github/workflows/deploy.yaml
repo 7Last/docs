@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  build:
+  update-github-pages:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +25,7 @@ jobs:
           path: ./7Last.github.io  # Clones the repository into a subdirectory
 
       - name: Navigate to the cloned repository
-        run: cd ./7Last.github.io
+        run: cd ./7Last.github.io/7Last.github.io
 
       - name: ls
         run: ls
