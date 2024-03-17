@@ -28,10 +28,10 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "7last.swe@gmail.com"
           git config --global user.name "bot"
-          git clone git@github.com:7Last/7Last.github.io.git pages
+          git clone git@github.com:7Last/7Last.github.io.git
 
-      - name: Change directory
-        run: cd pages
+      - name: pwd
+        run: pwd
 
       - name: ls
         run: ls
