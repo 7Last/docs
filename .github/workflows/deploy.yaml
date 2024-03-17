@@ -46,12 +46,8 @@ jobs:
       - name: Run deploy command
         run: npm run deploy
 
-      - name: cat src/static/docs.json
-        run: cat src/static/docs.json
-
-
-      # - name: Push updates on main
-      #   run: |
-      #     git add .
-      #     git commit -m "[BOT] Update docs"
-      #     git push origin main
+      - name: Push updates on main
+        run: |
+          git add .
+          git commit -m "[BOT] Update docs"
+          git push origin main
