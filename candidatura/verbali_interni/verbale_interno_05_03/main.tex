@@ -1,0 +1,133 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c c c c }
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0 & 05/03/2024 & Leonardo Baldo& prima stesura \\
+			1.1 & 15/03/2024 & Valerio Occhinegro& rifinitura  \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+
+\paragraph{Dettagli}
+
+\begin{itemize}
+	\item Sede della riunione: on-line sulla piattaforma discord
+	\item Orario di inizio: 21:00
+	\item Orario di fine: 22:00
+\end{itemize}
+
+\paragraph{Componenti del gruppo}
+
+\begin{flushleft}
+\begin{table}[!h]
+\begin{tabular}{ |c|c|c| } 
+	\hline
+	Partecipanti & Presenza \\
+	\hline 
+	Leonardo Baldo 		 & 1:00 h \\ 
+	Antonio Benetazzo 	 & 1:00 h \\
+	Elena Ferro 		 & 1:00 h \\
+	Davide Malgarise 	 & 1:00 h \\
+	Valerio Occhinegro 	 & 1:00 h \\
+	Raul Seganfreddo 	 & 1:00 h \\
+	Matteo Tiozzo 		 & 1:00 h \\ 
+	\hline
+\end{tabular}
+\end{table}
+\end{flushleft}
+
+
+\newpage
+
+\section{Verbale}
+\begin{flushleft}
+
+Prima riunione ufficiale del gruppo 7Last effettuata in modalità remota utilizzando REDATTO. 
+(Capire se Discord può essere nominato o meno)
+
+Il primo incontro del gruppo ha  inizio con la presentazione di ciascun membro appartenente allo stesso. 
+In seguito a questa parte introduttiva si avvia un processo di brainstorming relativo, inizialmente, all’individuazione di un nome che 
+possa risultare accattivante. 
+	
+Al termine di questo processo il nome con più votazioni, e dunque quello scelto per rappresentare il nostro team, è “7Last”: un nominativo 
+che riassume al suo interno due delle caratteristiche base del gruppo, quali il numero di componenti (7), e l’ordine posizionale di creazione del team (19° gruppo su 19).
+	
+Lo step successivo è caratterizzato dalla ideazione e creazione di un logo, focalizzate sulla scelta di: colori, stile, forma e contenuto. 
+Viene dunque incaricato Matteo Tiozzo per la generazione, tramite AI, di un logo coerente con le preferenze espresse.
+	
+Il gruppo poi si esprime circa i capitolati proposti dalle aziende, partecipanti al progetto formativo universitario di 
+“Ingegneria del Software”. Da questa discussione emerge un interesse comune relativo al capitolato 6 “SyncCity”, proposto dall’azienda 
+SyncLab. Nonostante ciò, tutti i partecipanti del gruppo sono concordi nel non prendere decisioni affrettate, decidono dunque di richiedere 
+un incontro conoscitivo ed esplicativo con le tre aziende per approfondire ulteriormente le proposte offerte e descritte nei vari progetti.
+	
+Il membro Valerio Occhinegro si occupa e gestisce la creazione di una mail di rappresentanza per poter interagire in maniera più agevole, 
+funzionale e formale con le varie imprese. In un secondo momento, Antonio Benetazzo redige una mail indirizzata alle tre aziende sopra 
+citate per la richiesta dei colloqui.
+	
+L’incontro si è concluso con la scelta di LaTeX per la redazione  della documentazione , Git come strumento di versionamento  e viene 
+posticipata la scelta di un ITS poichè è presente una forte indecisione tra l’utilizzo di Jira e Github
+	
+(valutare se aggiungere Discord, telegram e Notion come altri supporti)
+
+\end{flushleft}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

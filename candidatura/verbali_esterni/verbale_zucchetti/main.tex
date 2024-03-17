@@ -1,0 +1,142 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c c c c }
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0 & 08/03/2024 & Leonardo Baldo& prima stesura \\
+			1.1 & 15/03/2024 & Valerio Occhinegro& rifinitura  \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+
+\paragraph{Dettagli}
+
+\begin{itemize}
+	\item Sede della riunione: on-line sulla piattaforma zoom
+	\item Orario di inizio: 16:00
+	\item Orario di fine: 16:30
+\end{itemize}
+
+\paragraph{Componenti del gruppo}
+
+\begin{flushleft}
+\begin{table}[!h]
+\begin{tabular}{ |c|c|c| } 
+	\hline
+	Partecipanti & Presenza \\
+	\hline 
+	Leonardo Baldo 		 & 0:30 h \\ 
+	Antonio Benetazzo 	 & 0:30 h \\
+	Elena Ferro 		 & 0:30 h \\
+	Valerio Occhinegro 	 & 0:30 h \\
+	Raul Seganfreddo 	 & 0:30 h \\
+	Matteo Tiozzo 		 & 0:30 h \\ 
+	\hline
+\end{tabular}
+\end{table}
+\end{flushleft}
+
+\paragraph{Componenti dell'azienda}
+
+\begin{itemize}
+	\item Gregorio Piccoli
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+\begin{flushleft}
+
+All’incontro on-line sulla piattaforma Zoom con l’azienda Zucchetti sono presenti, come riportato in tabella, 6 membri del gruppo 
+(un assente) e un rappresentante dell’azienda stessa.
+
+Il colloquio ha inizio alle ore 16:00 ed ha come finalità la conoscenza della natura del progetto proposto da Zucchetti.
+	
+7Last richiede alcune delucidazioni riguardanti le tecnologie da utilizzare per la riuscita positiva del progetto; 
+l’esponente dell’azienda afferma che, sulla base di esperienze pregresse con altri gruppi di lavoro universitari, 
+sono consigliabili le seguenti: Python, interfaccia in HTML, JS, CSS.
+	
+Emerge l’interesse da parte del gruppo di comprendere in maniera più specifica quale struttura di prompt sia necessario ottenere 
+ai fini del progetto. Gregorio Piccoli mostra, tramite l’utilizzo di diversi modelli di AI, i possibili tipi di prompt e la reazione 
+dell’intelligenza artificiale ad essi per poi terminare con la visione della tipologia di output richiesta. Quest’ultima consiste nel 
+descrivere la struttura, alcuni contenuti specifici del database e la richiesta da tradurre in linguaggio SQL.
+	
+Per far comprendere al meglio la necessità di un prodotto di questo tipo, l’esponente dell’azienda ha illustrato numerosi esempi 
+di quesiti ai quali l’AI non è stata in grado di rispondere in maniera adeguata. Si è dunque compreso che maggiore è la specificità 
+del prompt, migliore sarà la risposta ottenuta tramite AI.
+	
+In caso di necessità di incontri futuri, il gruppo chiede se verranno utilizzate le stesse modalità (incontro on-line tramite Zoom); 
+l’azienda risponde che vi è anche la possibilità di visita presso la sede di Padova in via G. Cittadella 7.
+	
+L’incontro giunge dunque al termine alle ore 16:30.
+
+\end{flushleft}
+
+\begin{table}[b]
+	\begin{tabular}{@{}p{.5in}p{4in}@{}}
+		Data:  & \hrulefill \\
+			   &     		\\
+			   &     		\\
+		Firma: & \hrulefill \\
+	\end{tabular}
+	\end{table}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,160 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c c c c }
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0 & 08/03/2024 & Leonardo Baldo& prima stesura \\
+			1.1 & 15/03/2024 & Valerio Occhinegro& rifinitura  \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+
+\paragraph{Dettagli}
+
+\begin{itemize}
+	\item Sede della riunione: on-line sulla piattaforma meet
+	\item Orario di inizio: 15:00
+	\item Orario di fine: 15:30
+\end{itemize}
+
+\paragraph{Componenti del gruppo}
+
+\begin{flushleft}
+\begin{table}[!h]
+\begin{tabular}{ |c|c|c| } 
+	\hline
+	Partecipanti & Presenza \\
+	\hline 
+	Leonardo Baldo 		 & 0:30 h \\ 
+	Antonio Benetazzo 	 & 0:30 h \\
+	Elena Ferro 		 & 0:30 h \\
+	Davide Malgarise 	 & 0:30 h \\
+	Valerio Occhinegro 	 & 0:30 h \\
+	Raul Seganfreddo 	 & 0:30 h \\
+	Matteo Tiozzo 		 & 0:30 h \\ 
+	\hline
+\end{tabular}
+\end{table}
+\end{flushleft}
+
+\paragraph{Componenti dell'azienda}
+
+\begin{itemize}
+	\item Fabio Pallaro
+	\item Daniele Zorzi
+	\item Andrea Dorigo
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+\begin{flushleft}
+
+All’incontro on-line sulla piattaforma meet con l’azienda SyncLab sono presenti, 
+come riportato in tabella, i 7 membri del gruppo e tre rappresentanti dell’azienda.
+
+Il colloquio ha inizio alle ore 15:00 ed ha come obiettivo la conoscenza approfondita del progetto proposto dall’azienda.
+
+Gli esponenti di SyncLab chiedono le motivazioni che hanno portato il team alla scelta del capitolato in questione.  
+Il gruppo afferma che la decisione è stata dettata dal desiderio di poter  imparare ad utilizzare alcune tecnologie, 
+necessarie alla creazione della piattaforma SyncCity e utili per un futuro lavorativo, che non sono state affrontate 
+nel corso di laurea, come ad esempio la gestione di ingenti quantità di dati e la creazione di database non relazionali.
+
+I rappresentanti dell’azienda consigliano di confrontarsi con i gruppi che in passato hanno già affrontato tale progetto per avere un 
+riscontro relativo alle possibili difficoltà e alle modalità di attuazione.
+
+7Last chiede, successivamente, se la quantità dei dati da gestire sarà paragonabile a quella effettivamente prodotta dai sensori e, dunque, 
+se sarà necessario lavorare con grandi quantità di dati o basterà una numero “dimostrativo”. Viene spiegato che l’obiettivo del programma 
+è proprio l’analisi di un vasto numero di data, ma per questo progetto si tratterà di una simulazione, sarà dunque suffieciente 
+analizzarne un numero simbolico.
+
+L’azienda, a questo punto, richiede la data del kick-off per potersi organizzare e dare avvio  nel migliore dei modi al lavoro; 
+il periodo indicativo di inizio è successivo al giorno 22/03/2024.
+
+La parte successiva dell’incontro è dedicata alla richiesta di alcune delucidazioni e curiosiosità da parte del gruppo, 
+riguardanti le applicazioni effettivamente realizzate da SyncLab.
+
+Viene quindi chiesto se l’azienda ha già dei riscontri effettivi di interesse da alcune città per l’utilizzo e l’integrazione di questa 
+tecnologia; SyncLab si è già occupata di gestire la funzione di smart-parking (monitoraggio e gestione parcheggi) tramite una tecnologia 
+affine e attualmente sta sviluppando un sistema che verte sulla sincronizzazione semaforica.
+
+Il gruppo vorrebbe capire a quali aspetti principali dare più risalto e come utilizzare in maniera simbiotica e contemporanea le 
+varie tecnologie; gli esponenti dell’azienda affermano che vi sarà un maggiore impegno da dedicare all’integrazione di esse tra loro, 
+alla creazione dell’architettura (networking, containerizzazione) e alla configurazione (devops) dei prodotti, 
+piuttosto che di *programmazione* vera e propria (fatta eccezione per lo script python). 
+
+Gli strumenti consigliati per raggiungere l’obiettivo ultimo del progetto sono ClickUp 
+(perchè di più semplice utilizzo rispetto a Jira), Discord e Trello.
+
+L’incontro giunge dunque al termine alle ore 15:30.
+
+\end{flushleft}
+
+\begin{table}[b]
+	\begin{tabular}{@{}p{.5in}p{4in}@{}}
+		Data:  & \hrulefill \\
+			   &     		\\
+			   &     		\\
+		Firma: & \hrulefill \\
+	\end{tabular}
+	\end{table}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

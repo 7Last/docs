@@ -1,0 +1,117 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c c c c }
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0 & 15/03/2024 & Leonardo Baldo& prima stesura \\
+			1.1 & 16/03/2024 & Valerio Occhinegro& rifinitura  \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+
+\paragraph{Dettagli}
+
+\begin{itemize}
+	\item Sede della riunione: on-line sulla piattaforma discord
+	\item Orario di inizio: 15:00
+	\item Orario di fine: 16:00
+\end{itemize}
+
+\paragraph{Componenti del gruppo}
+
+\begin{flushleft}
+\begin{table}[!h]
+\begin{tabular}{ |c|c|c| } 
+	\hline
+	Partecipanti & Presenza \\
+	\hline 
+	Leonardo Baldo 		 & 1:00 h \\ 
+	Antonio Benetazzo 	 & 1:00 h \\
+	Elena Ferro 		 & 1:00 h \\
+	Valerio Occhinegro 	 & 1:00 h \\
+	Raul Seganfreddo 	 & 1:00 h \\
+	Matteo Tiozzo 		 & 1:00 h \\ 
+	\hline
+\end{tabular}
+\end{table}
+\end{flushleft}
+
+
+\newpage
+
+\section{Verbale}
+\begin{flushleft}
+
+	La riunione ha inizio alle ore 15:00, sono presenti tutti i partecipante fatta eccezione per Davide.
+
+	Emerge la necessità di ripensare alla prima scelta relativa al progetto da intraprendere poichè il capitolato proposto 
+	da SyncLab è stato selezionato da un numero elevato di gruppi partecipanti al progetto di ingegneria. 
+	
+	Viene decisa la struttura della repository su GitHub e la tipologia di workflow da adoperare (Gitflow).
+	
+	Successivamente il gruppo decide l’organizzazione interna tramite la suddivisione di specifici compiti 
+	per l’accelerazione dei procedimenti iniziali di avviamento al progetto.
+
+\end{flushleft}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
