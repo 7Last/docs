@@ -36,6 +36,9 @@ jobs:
       - name: ls
         run: ls
 
+      - name: cd
+        run: cd 7Last.github.io
+
       - name: Install dependencies
         run: npm install
 
