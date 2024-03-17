@@ -40,6 +40,11 @@ jobs:
       - name: Fetch docs submodule
         run: git submodule update --init --recursive
 
+      - name: Run update script
+        run: |
+          chmod +x ./update.sh
+          ./update.sh
+
       - name: Install dependencies
         run: npm install
 
