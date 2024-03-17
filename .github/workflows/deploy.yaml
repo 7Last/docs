@@ -18,17 +18,18 @@ jobs:
         with:
           node-version: '21.7.0'
 
-      - name: Clone github pages repository
-        uses: actions/checkout@v2
-        with:
-          repository: 7Last/7Last.github.io
-          path: .
-
-      - name: ls
-        run: ls
-
-      - name: pwd
-        run: pwd
+      - name: Configure SSH and clone
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "7last.swe@gmail.com"
+          git config --global user.name "bot"
+          git remote set-url origin git@github.com:7Last/7Last.github.io.git
+          git fetch --unshallow origin
 
       - name: Install dependencies
         run: npm install
