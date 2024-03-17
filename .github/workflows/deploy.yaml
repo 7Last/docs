@@ -37,6 +37,11 @@ jobs:
          path: .
          ref: main
 
+      - name: Update script
+        run: |
+          chmod +x ./update.sh
+          ./update.sh
+
       - name: Install dependencies
         run: npm install
 
