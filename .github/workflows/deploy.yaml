@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  update-github-pages:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -43,11 +43,27 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run deploy command
-        run: npm run deploy
+      - name: Run build command
+        run: npm run build
+
+      - name: Publish artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
 
       - name: Push updates on main
         run: |
           git add .
           git commit -m "[BOT] Update docs"
           git push origin main
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
