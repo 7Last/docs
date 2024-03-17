@@ -37,10 +37,8 @@ jobs:
          path: .
          ref: main
 
-      - name: Update script
-        run: |
-          chmod +x ./update.sh
-          ./update.sh
+      - name: Fetch docs submodule
+        run: git submodule update --init --recursive
 
       - name: Install dependencies
         run: npm install
@@ -50,6 +48,7 @@ jobs:
 
       - name: cat src/static/docs.json
         run: cat src/static/docs.json
+
 
       # - name: Push updates on main
       #   run: |
