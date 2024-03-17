@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '21.7.0'
 
-      - name: Clone docs repository
+      - name: Clone github pages repository
         uses: actions/checkout@v2
         with:
           repository: 7Last/7Last.github.io
@@ -26,6 +26,9 @@ jobs:
 
       - name: Navigate to the cloned repository
         run: cd ./7Last.github.io
+
+      - name: ls
+        run: ls
 
       - name: Install dependencies
         run: npm install
