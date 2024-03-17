@@ -54,34 +54,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run build command
-        run: npm run build
-
-      - name: Publish artifact
-        uses: actions/upload-pages-artifact@v2.0.0
-        with:
-          name: github-pages
-          path: ./build
+      - name: Run deploy command
+        run: gh-pages -d build
 
       - name: Push updates on main
         run: |
           git add .
           git commit -m "[BOT] Update docs"
           git push origin main
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: github-pages
-          path: ./build
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
