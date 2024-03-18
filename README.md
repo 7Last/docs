@@ -1,7 +1,7 @@
 <img style="width: 140px" src="./logo/logo.png">
 <h1>7Last [Gruppo #19]</h1>
 
-<p>Repository per la documentazione relativa al progetto del corso *Ingegneria del Software* (anno accademico 2023/2024).</p>
+<p>Repository per la documentazione relativa al progetto del corso _Ingegneria del Software_ (anno accademico 2023/2024).</p>
 
 <h2>Componenti del gruppo:</h2>
 <ul>
