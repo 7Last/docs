@@ -27,8 +27,9 @@
 			\hline \\[-2ex]
 			Ver. & Data & Autore & Descrizione \\
 			\\[-2ex] \hline \\[-1.5ex]
-			1.0 & 08/03/2024 & Leonardo Baldo& prima stesura \\
-			1.1 & 15/03/2024 & Valerio Occhinegro& rifinitura  \\
+			1.2 & 18/03/2024 & Matteo Tiozzo & Prima revisione \\
+			1.1 & 15/03/2024 & Valerio Occhinegro& Sistemazione ortografica e di linguaggio  \\
+			1.0 & 08/03/2024 & Leonardo Baldo& Prima stesura del documento \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -39,24 +40,20 @@
 \tableofcontents
 
 \newpage
+\section{Partecipanti}
 
-\section{Registro presenze}
+\textbf{Sede della riunione}: piattaforma meet\\
+\textbf{Orario di inizio}: 15:00\\
+\textbf{Orario di fine}: 15:30\\
 
-\paragraph{Dettagli}
 
-\begin{itemize}
-	\item Sede della riunione: on-line sulla piattaforma meet
-	\item Orario di inizio: 15:00
-	\item Orario di fine: 15:30
-\end{itemize}
-
-\paragraph{Componenti del gruppo}
+\paragraph{Componenti di 7Last}
 
 \begin{flushleft}
 \begin{table}[!h]
 \begin{tabular}{ |c|c|c| } 
 	\hline
-	Partecipanti & Presenza \\
+	\textbf{Partecipanti} & \textbf{Presenza} \\
 	\hline 
 	Leonardo Baldo 		 & 0:30 h \\ 
 	Antonio Benetazzo 	 & 0:30 h \\
@@ -70,7 +67,7 @@
 \end{table}
 \end{flushleft}
 
-\paragraph{Componenti dell'azienda}
+\paragraph{Componenti di Sync Lab S.r.l.}
 
 \begin{itemize}
 	\item Fabio Pallaro
@@ -80,46 +77,33 @@
 
 \newpage
 
-\section{Verbale}
+\section{Verbale dell'incontro}
+\subsection*{2.1.1 - Linguaggi di programmazione e tecnologie utilizzate}
 \begin{flushleft}
+	\textbf{Domanda}: è possibile utilizzare linguaggi di programmazione differenti da Python per la simulazione dei dispositivi IOT?\\
+	È possibile utilizzare altri linguaggi di programmazione, l'utilizzo di Python è consigliato per la facilità del codice e per la popolarità stessa del linguaggio.
 
-All’incontro on-line sulla piattaforma meet con l’azienda SyncLab sono presenti, 
-come riportato in tabella, i 7 membri del gruppo e tre rappresentanti dell’azienda.
 
-Il colloquio ha inizio alle ore 15:00 ed ha come obiettivo la conoscenza approfondita del progetto proposto dall’azienda.
+\subsection*{2.1.2 - Formazione da parte dell'azienda stessa}
 
-Gli esponenti di SyncLab chiedono le motivazioni che hanno portato il team alla scelta del capitolato in questione.  
-Il gruppo afferma che la decisione è stata dettata dal desiderio di poter  imparare ad utilizzare alcune tecnologie, 
-necessarie alla creazione della piattaforma SyncCity e utili per un futuro lavorativo, che non sono state affrontate 
-nel corso di laurea, come ad esempio la gestione di ingenti quantità di dati e la creazione di database non relazionali.
+	\textbf{Domanda}: verrà effettuata una formazione per il gruppo?\\
+	L'azienda mette a disposizione una formazione in sede per l'utilizzo delle tecnologie e degli strumenti necessari per lo svolgimento del progetto.
 
-I rappresentanti dell’azienda consigliano di confrontarsi con i gruppi che in passato hanno già affrontato tale progetto per avere un 
-riscontro relativo alle possibili difficoltà e alle modalità di attuazione.
+\subsection*{2.1.3 - Quantità di dati}
+	\textbf{Domanda}: la quantità dei dati da gestire sarà paragonabile a quella effettivamente prodotta dai sensori?\\
+	La quantità dei dati da gestire sarà paragonabile a quella effettivamente prodotta dai sensori, ma per questo progetto si tratterà di una simulazione, sarà dunque sufficiente analizzarne un numero simbolico.
 
-7Last chiede, successivamente, se la quantità dei dati da gestire sarà paragonabile a quella effettivamente prodotta dai sensori e, dunque, 
-se sarà necessario lavorare con grandi quantità di dati o basterà una numero “dimostrativo”. Viene spiegato che l’obiettivo del programma 
-è proprio l’analisi di un vasto numero di data, ma per questo progetto si tratterà di una simulazione, sarà dunque suffieciente 
-analizzarne un numero simbolico.
+\subsection*{2.1.4 - Elementi di complessità}
+	\textbf{Domanda}: quali sono gli elementi di complessità maggiore del progetto?\\
+	Gli elementi che richiederanno maggiore impegno sono l'integrazione delle varie tecnologie tra loro, la creazione dell'architettura (networking, containerizzazione) e la configurazione (devops) dei prodotti. La parte di programmazione sarà limitata allo script python per la generazione dei dati.
 
-L’azienda, a questo punto, richiede la data del kick-off per potersi organizzare e dare avvio  nel migliore dei modi al lavoro; 
-il periodo indicativo di inizio è successivo al giorno 22/03/2024.
+\subsection*{2.1.5 - Strumenti consigliati}
+	\textbf{Domanda}: quali strumenti consigliate per la gestione del progetto?\\
+	Per la gestione del progetto l'azienda consiglia l'utilizzo di ClickUp, Discord e Trello.
 
-La parte successiva dell’incontro è dedicata alla richiesta di alcune delucidazioni e curiosiosità da parte del gruppo, 
-riguardanti le applicazioni effettivamente realizzate da SyncLab.
-
-Viene quindi chiesto se l’azienda ha già dei riscontri effettivi di interesse da alcune città per l’utilizzo e l’integrazione di questa 
-tecnologia; SyncLab si è già occupata di gestire la funzione di smart-parking (monitoraggio e gestione parcheggi) tramite una tecnologia 
-affine e attualmente sta sviluppando un sistema che verte sulla sincronizzazione semaforica.
-
-Il gruppo vorrebbe capire a quali aspetti principali dare più risalto e come utilizzare in maniera simbiotica e contemporanea le 
-varie tecnologie; gli esponenti dell’azienda affermano che vi sarà un maggiore impegno da dedicare all’integrazione di esse tra loro, 
-alla creazione dell’architettura (networking, containerizzazione) e alla configurazione (devops) dei prodotti, 
-piuttosto che di *programmazione* vera e propria (fatta eccezione per lo script python). 
-
-Gli strumenti consigliati per raggiungere l’obiettivo ultimo del progetto sono ClickUp 
-(perchè di più semplice utilizzo rispetto a Jira), Discord e Trello.
-
-L’incontro giunge dunque al termine alle ore 15:30.
+\subsection*{2.1.6 - Disponibilità e organizzazione Sync Lab S.r.l.}
+	\textbf{Domanda}: cosa fornirà l'azienda per il progetto? Come saranno organizzate le riunioni e gli incontri?\\
+	L'azienda fornirà una formazione per le tecnologie che andranno utilizzate e metterà a disposizione un tutor per la risoluzione di eventuali problemi. Sottolinea che sarà disponibile ad effettuare un incontro di routine una volta a settimana, da concordare con il gruppo, e sarà disponibile in caso di necessità. 
 
 \end{flushleft}
 
