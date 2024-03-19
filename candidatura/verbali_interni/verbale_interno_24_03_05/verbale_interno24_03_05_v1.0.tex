@@ -1,0 +1,85 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c c c c }
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0 & 19/03/2024 & Matteo Tiozzo & Prima revisione \\
+			0.2 & 15/03/2024 & Valerio Occhinegro& Correzione ortografica e di sintassi  \\
+			0.1 & 05/03/2024 & Leonardo Baldo& Prima stesura del documento\\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 21:00\\
+\textbf{Orario di fine}: 22:00\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |c|c|c| } 
+		\hline
+		\textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza} \\
+		\hline 
+		Leonardo Baldo 		& Redattore & Presente \\ 
+		Antonio Benetazzo 	& Responsabile & Presente \\
+		Elena Ferro 		& Verificatore & Presente \\
+		Valerio Occhinegro 	& Redattore & Presente \\
+		Raul Seganfreddo 	& Amministratore & Presente \\
+		Matteo Tiozzo 		& Verificatore & Presente \\ 
+		Davide Malgarise 	& Redattore & Presente \\
+		\hline
+	\end{tabular}
+	\end{table}
+	\end{flushleft}
+
+
+\newpage
+
+\section{Verbale}
+\begin{flushleft}
+Il primo incontro del gruppo inizia con una presentazione di ciascun membro dello stesso.
+Dopo questa parte introduttiva inizia il brainstorming che ha come scopo iniziale l’individuazione di un nome che possa risultare affascinante.
+Al termine di questo processo, il nome più votato è \textit{7Last}. Questo nome riassume due caratteristiche fondamentali della squadra: il numero dei membri (7) e l'ordine di posizione in cui è stata creata la squadra (Gruppo 19 su 19).
+Il passo successivo prevede l'ideazione e la creazione del logo, concentrandosi sulla selezione di colore, stile, forma e contenuto.
+Pertanto, Matteo Tiozzo è stato incaricato di generare un logo coerente con le preferenze espresse utilizzando tecnologie di supporto, come AI.
+Il gruppo discute poi le proposte avanzate dalle aziende che partecipano al progetto di formazione universitaria di \textit{Ingegneria del Software}. Dalla discussione emerge un interesse comune per il sesto capitolato, \textit{SyncCity} di Sync Lab S.r.l. Tuttavia, tutti i membri del gruppo concordano di non prendere decisioni affrettate e decidono di richiedere un incontro con le tre aziende per esaminare ulteriormente le proposte offerte descritte nei vari capitolati. Il membro Valerio Occhinegro si incarica di creare un'email di rappresentanza per permettere una comunicazione con le aziende più efficiente, funzionale e formale. Successivamente, Antonio Benetazzo redige un'email indirizzata alle tre aziende sopra citate per richiedere un colloquio.
+La riunione si è conclusa con la decisione di utilizzare LaTeX per la preparazione dei documenti, Git come strumento di versioning e il rinvio della scelta di un ITS a causa di una forte incertezza tra l'utilizzo di Jira e GitHub.
+
+\end{flushleft}
+
+\end{document}
