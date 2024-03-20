@@ -38,8 +38,8 @@ jobs:
         env:
           PAT: ${{ secrets.PAT }}
         run: |
-          git config --global user.email "elena.ferro@gmail.com"
-          git config --global user.name "elenaferr0"
+          git config --global user.email "7last.swe@gmail.com"
+          git config --global user.name "7Last-SWE"
           git add .
           git commit -m "Update main branch"
           git push origin main
