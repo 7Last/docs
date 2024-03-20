@@ -40,4 +40,4 @@ jobs:
           git config --global user.name "7Last-SWE"
           git add .
           git commit -m "Cleanup non pdf files"
-          git push origin main
+          git push -f origin main
