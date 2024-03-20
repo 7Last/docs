@@ -62,7 +62,10 @@ jobs:
         run: |
           rm -rf ./main/*
           cp -r ./develop/* ./main
+
+      - name: Commit and push
+        run: |
           cd ./main
           git add .
           git commit -m "Update main branch"
-          git push
+          git push origin main
