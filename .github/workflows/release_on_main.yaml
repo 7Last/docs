@@ -19,14 +19,7 @@ jobs:
       - name: Checkout repository on develop
         uses: actions/checkout@v4
         with:
-          ref: develop
-          path: develop
-
-      - name: Checkout repository on main
-        uses: actions/checkout@v4
-        with:
           ref: main
-          path: main
 
       - name: Configure SSH
         env:
@@ -39,12 +32,23 @@ jobs:
           git config --global user.email "7last.swe@gmail.com"
           git config --global user.name "7last-bot"
 
+
+      - name: tree .
+        run: tree .
+
+      - name: Merge develop into main
+        run: |
+          git merge -X theirs develop
+
+      - name: tree .
+        run: tree .
+
       - name: Remove 0_template folder
-        run: rm -rf ./develop/0_template
+        run: rm -rf ./0_template
 
       - name: Cleanup non pdf files
         run: |
-          pdfs=$(find ./develop/* -type f -name "*.pdf")
+          pdfs=$(find ./* -type f -name "*.pdf")
           for file in $pdfs; do
             dst="$(dirname $file)/../$(basename $file)"
             mv $file $dst
@@ -58,16 +62,11 @@ jobs:
       #     echo "No changes to the output on this push; exiting."
       #     exit 1
 
-      - name: Overwrite main branch
-        run: |
-          cp -r ./develop/* ./main
-
       - name: tree .
         run: tree .
 
       - name: Commit and push
         run: |
-          cd ./main
           git add .
           git commit -m "Update main branch"
           git push origin main
