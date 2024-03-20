@@ -1,0 +1,61 @@
+name: Release on main
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  update_main_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository on develop
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "7last.swe@gmail.com"
+          git config --global user.name "bot"
+
+      - name: Remove 0_template folder
+        run: rm -rf ./0_template
+
+      - name: Cleanup non pdf files
+        run: |
+          pdfs=$(find ./* -type f -name "*.pdf")
+          for file in $pdfs; do
+            dst="$(dirname $file)/../$(basename $file)"
+            mv $file $dst
+            rm -rf $(dirname $file)
+          done
+
+      - name: Check for changes
+        run: |
+          git diff --exit-code || exit 0
+          git diff --cached --exit-code || exit 0
+          echo "No changes to the output on this push; exiting."
+          exit 1
+      
+      - name: Push updates on main
+        run: |
+          git add .
+          git commit -m "[BOT] Update docs"
+          git checkout origin/main
+          git rebase develop
+          git push origin main
+      
