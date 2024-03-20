@@ -38,6 +38,7 @@ jobs:
 
       - name: Merge develop into main
         run: |
+          git fetch origin develop
           git merge -X theirs develop
 
       - name: tree .
