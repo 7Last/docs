@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Analisi dei rischi}{3}{section.1}%
+\contentsline {paragraph}{Indice di gravità}{3}{section*.3}%
+\contentsline {paragraph}{Probabilità}{3}{section*.4}%
+\contentsline {subsection}{\numberline {1.1}Difficoltà nell'apprendimento delle tecnologie}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Scarsa collaborazione da parte di uno o più membri}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Impegni personali o universitari}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Disaccordi all'interno del gruppo}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Deviazione rispetto ai tempi e costi previsti}{4}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Analisi dei ruoli}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Responsabile}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Amministratore}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Analista}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Progettista}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Programmatore}{6}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Verificatore}{6}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Impegni orari}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Costo orario}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Ripatrizione ore per membro}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Costo totale preventivato}{8}{section.4}%
+\contentsline {section}{\numberline {5}Scadenza di consegna}{8}{section.5}%
