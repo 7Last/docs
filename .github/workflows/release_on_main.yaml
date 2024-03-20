@@ -22,20 +22,6 @@ jobs:
           ref: main
           path: .
 
-      - name: Configure SSH
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "7last.swe@gmail.com"
-          git config --global user.name "7last-bot"
-
-      - name: tree .
-        run: tree .
-
       - name: Remove 0_template folder
         run: rm -rf ./0_template
 
@@ -49,7 +35,11 @@ jobs:
           done
 
       - name: Commit and push
+        env:
+          PAT: ${{ secrets.PAT }}
         run: |
+          git config --global user.email "7last.swe@gmail.com"
+          git config --global user.name "7last-bot"
           git add .
           git commit -m "Update main branch"
           git push origin main
