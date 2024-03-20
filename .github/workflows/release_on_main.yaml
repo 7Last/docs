@@ -20,6 +20,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: develop
+          path: develop
+
+      - name: Checkout repository on main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
 
       - name: Configure SSH
         env:
@@ -33,31 +40,29 @@ jobs:
           git config --global user.name "bot"
 
       - name: Remove 0_template folder
-        run: rm -rf ./0_template
+        run: rm -rf ./develop/0_template
 
       - name: Cleanup non pdf files
         run: |
-          pdfs=$(find ./* -type f -name "*.pdf")
+          pdfs=$(find ./develop/* -type f -name "*.pdf")
           for file in $pdfs; do
             dst="$(dirname $file)/../$(basename $file)"
             mv $file $dst
             rm -rf $(dirname $file)
           done
 
-      - name: Check for changes
+      # - name: Check for changes
+      #   run: |
+      #     git diff --exit-code || exit 0
+      #     git diff --cached --exit-code || exit 0
+      #     echo "No changes to the output on this push; exiting."
+      #     exit 1
+
+      - name: Overwrite main branch
         run: |
-          git diff --exit-code || exit 0
-          git diff --cached --exit-code || exit 0
-          echo "No changes to the output on this push; exiting."
-          exit 1
-      
-      - name: Push updates on main
-        run: |
+          rm -rf ./main/*
+          cp -r ./develop/* ./main
+          cd ./main
           git add .
-          git stash
-          git fetch origin
-          git checkout origin/main
-          git stash apply --index
           git commit -m "Update main branch"
-          git push origin main
-      
+          git push
