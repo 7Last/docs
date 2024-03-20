@@ -1,25 +1,18 @@
-<p align="center">
 <img style="width: 140px" src="./logo/logo.png">
-</p>
-<h1 align="center">Gruppo 7Last</h1>
+<h1>7Last [Gruppo #19]</h1>
 
-<p align="center">Repository per la documentazione relativa al progetto del corso <br><em>Ingegneria del Software - 2023/2024</em></p>
+<p>Repository per la documentazione relativa al progetto del corso 'Ingegneria del Software' (anno accademico 2023/2024).</p>
 
-<h2 align="center">Componenti del gruppo:</h2>
+<h2>Componenti del gruppo:</h2>
+<ul>
+    <li>Leonardo Baldo [2042372]</li>
+    <li>Antonio Benetazzo [2034528]</li>
+    <li>Elena Ferro [2042328]</li>
+    <li>Davide Malgarise [2009994]</li>
+    <li>Valerio Occhinegro [2011069]</li>
+    <li>Raul Seganfreddo [1226293]</li>
+    <li>Matteo Tiozzo [2042882]</li>
+</ul>
 
-<div align="center">
-
-|Membro|Matricola|
-|---|---|
-Leonardo Baldo | 2042372
-Antonio Benetazzo | 2034528
-Elena Ferro | 2042328
-Davide Malgarise | 2009994
-Valerio Occhinegro | 2011069
-Raul Seganfreddo | 1226293
-Matteo Tiozzo | 2042882
-
-</div>
-
-<h2 align="center">Contatti:</h2>
-<p align="center">Email: <a href="mailto:7last.swe@gmail.com"><em>7last.swe@gmail.com</em></a></p>
+<h2>Contatti:</h2>
+<p>Email: <a href="mailto:7last.swe@gmail.com">7last.swe@gmail.com</a></p>
