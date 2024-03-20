@@ -55,7 +55,7 @@ jobs:
         run: |
           git add .
           git stash
-          git checkout main
+          git checkout -t origin/main
           git stash apply
           git push origin main
       
