@@ -37,7 +37,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "7last.swe@gmail.com"
-          git config --global user.name "bot"
+          git config --global user.name "7last-bot"
 
       - name: Remove 0_template folder
         run: rm -rf ./develop/0_template
@@ -60,8 +60,11 @@ jobs:
 
       - name: Overwrite main branch
         run: |
-          rm -rf ./main/*
+          find ./main -type f -not -name '.*' -exec rm {} +
           cp -r ./develop/* ./main
+
+      - name: tree .
+        run: tree .
 
       - name: Commit and push
         run: |
