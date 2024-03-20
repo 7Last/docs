@@ -1,0 +1,140 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm} }
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0 & 18/03/2024 & Elena Ferro & Approvazione documento\\
+			0.3 & 18/03/2024 & Matteo Tiozzo & Prima revisione \\
+			0.2 & 15/03/2024 & Valerio Occhinegro& Sistemazione ortografica e di linguaggio \\
+			0.1 & 08/03/2024 & Leonardo Baldo& Prima stesura del documento \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Partecipanti}
+
+\textbf{Sede della riunione}: piattaforma Zoom\\
+\textbf{Orario di inizio}: 16:00\\
+\textbf{Orario di fine}: 16:30\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |c|c|c| } 
+		\hline
+		\textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza} \\
+		\hline 
+		Leonardo Baldo 		& Redattore & Presente \\ 
+		Antonio Benetazzo 	& Responsabile & Presente \\
+		Elena Ferro 		& Verificatore & Presente \\
+		Valerio Occhinegro 	& Redattore & Presente \\
+		Raul Seganfreddo 	& Amministratore & Presente \\
+		Matteo Tiozzo 		& Verificatore & Presente \\ 
+		Davide Malgarise 	& Redattore & Assente \\
+		\hline
+	\end{tabular}
+
+	\vspace{1cm}
+
+	\begin{tabular}{ |c|c| } 
+		\hline
+		\textbf{Nome} & \textbf{Ruolo} \\
+		\hline 
+		Gregorio Piccoli & Rappresentante dell'azienda \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\end{flushleft}
+\newpage
+
+\begin{flushleft}
+\section{Verbale dell'incontro}
+\subsection{Tecnologie utilizzate}
+	\textbf{Domanda}: che tecnologie consiglia l'azienda per lo sviluppo del progetto?\\
+	L'azienda suggerisce, in base alle esperienze con i gruppi precedenti, l'utilizzo di Python, interfaccia in HTML, JS, CSS.
+
+\subsection{Chiarimenti sulla struttura del prompt}
+	\textbf{Domanda}: qual è la struttura finale del prompt?\\
+	L'azienda mostra la tipologia di output richiesta, che consiste nel descrivere la struttura, alcuni contenuti specifici del database e la richiesta da tradurre in linguaggio SQL. Per far comprendere al meglio la necessità di un prodotto di questo tipo, l’esponente dell’azienda ha illustrato numerosi esempi 
+	di quesiti ai quali l’AI non è stata in grado di rispondere in maniera adeguata. Si è dunque compreso che maggiore è la specificità 
+	del prompt, migliore sarà la risposta ottenuta tramite AI.
+
+\subsection{Disponibilità di Zucchetti SpA}
+	\textbf{Domanda}: l'azienda sarà disponibile ad incontri in caso di necessità da parte del gruppo? Se si, in che modo?\\
+	In caso di necessità l'azienda si rende disponibile ad incontri futuri, sia in sede che online. 
+
+\subsection{Vantaggi offerti da questo progetto}
+	\textbf{Domanda}: quali sono i vantaggi che questo progetto comporta rispetto all'interazione diretta con LLM?\\
+	Memorizzando la struttura del database e includendo solo le tabelle di cui si necessita, è possibile ottenere un risultato più preciso e immediato, evitando allucinazioni e risposte non pertinenti.
+	
+
+\end{flushleft}
+\vspace*{3cm}
+
+\begin{table}[b]
+	\begin{tabular}{@{}p{.5in}p{4in}@{}}
+		Data:  & \hrulefill \\
+			   &     		\\
+			   &     		\\
+		Firma: & \hrulefill \\
+	\end{tabular}
+	\end{table}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

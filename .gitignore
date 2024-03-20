@@ -1,1 +1,9 @@
+**/*.aux
+**/*.log
+**/*.out
+**/*.synctex.gz
+**/*.toc
+**/*.fls
+**/*.fdb_latexmk
+**/*.DS_Store
 /.idea/*
