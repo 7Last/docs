@@ -55,7 +55,8 @@ jobs:
         run: |
           git add .
           git commit -m "[BOT] Update docs"
-          git checkout origin/main
+          git fetch
+          git checkout main
           git rebase develop
           git push origin main
       
