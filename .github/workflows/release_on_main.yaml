@@ -54,9 +54,8 @@ jobs:
       - name: Push updates on main
         run: |
           git add .
-          git commit -m "[BOT] Update docs"
-          git fetch
+          git stash
           git checkout main
-          git rebase develop
+          git stash apply
           git push origin main
       
