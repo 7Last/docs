@@ -57,7 +57,7 @@ jobs:
           git stash
           git fetch origin
           git checkout origin/main
-          git stash apply
+          git stash apply --index
           git commit -m "Update main branch"
           git push origin main
       
