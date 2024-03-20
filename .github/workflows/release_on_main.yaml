@@ -60,7 +60,6 @@ jobs:
 
       - name: Overwrite main branch
         run: |
-          find ./main -type f -not -name '.*' -exec rm {} +
           cp -r ./develop/* ./main
 
       - name: tree .
