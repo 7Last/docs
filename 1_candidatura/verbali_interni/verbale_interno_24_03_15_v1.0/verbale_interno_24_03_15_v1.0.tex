@@ -1,0 +1,151 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm}}
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0 & 20/03/2024 & Antonio Benetazzo & Approvazione documento \\
+			0.3 & 19/03/2024 & Matteo Tiozzo & Prima revisione \\
+			0.2 & 16/03/2024 & Valerio Occhinegro& Controllo errori grammaticali e di sintassi  \\
+			0.1 & 15/03/2024 & Leonardo Baldo& Prima stesura del documento \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 15:00\\
+\textbf{Orario di fine}: 16:00\\
+
+\begin{flushleft}
+\begin{table}[!h]
+\begin{tabular}{ |c|c|c| } 
+	\hline
+	\textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza} \\
+	\hline 
+	Leonardo Baldo 		& Redattore & Presente \\ 
+	Antonio Benetazzo 	& Responsabile & Presente \\
+	Elena Ferro 		& Verificatore & Presente \\
+	Valerio Occhinegro 	& Redattore & Presente \\
+	Raul Seganfreddo 	& Amministratore & Presente \\
+	Matteo Tiozzo 		& Verificatore & Presente \\ 
+	Davide Malgarise 	& Redattore & Assente \\
+	\hline
+\end{tabular}
+\end{table}
+Solo per questa riunione, il ruolo di Davide Malgarise è stato assunto da Antonio Benetazzo.
+\end{flushleft}
+
+\section{Ordine del giorno}
+\subsection{Discussione sul way of working}
+\begin{flushleft}
+	\begin{itemize}
+		\item Scelta finale del capitolato
+		\item Organizzazione del repository
+		\item Workflow
+		\item Organizzazione interna
+		\item Adozione template LaTex
+	\end{itemize}
+\end{flushleft}
+
+
+\newpage
+
+\section{Verbale}
+\subsection{Scelta finale del capitolato}
+\begin{flushleft}
+	Il gruppo sceglie definitivamente il capitolato proposto da Sync Lab S.r.l. e inizia la preparazione della candidatura per tale capitolato.
+\end{flushleft}
+\subsection{Organizzazione del repository}
+\begin{flushleft}
+	Antonio Benetazzo crea il repository \href{https://github.com/7Last/docs}{ \textbf{\textit{docs}}} su GitHub.
+	Il gruppo decide di suddividere quest'ultima in tre cartelle principali: 
+	\begin{itemize}
+		\item \textbf{Candidatura}: contenente tutta la documentazione relativa alla candidatura per il capitolato scelto e, al suo interno, le cartelle:
+		\begin{itemize}
+			\item \textbf{verbali\ interni}: contenente i verbali delle riunioni interne (tra i membri del gruppo)
+			\item \textbf{verbali\ esterni}: contenente i verbali delle riunioni esterne (con le aziende proponenti)
+			\end{itemize}
+		\item \textbf{RTB}: che verrà sviluppata durante lo svolgimento del progetto e conterrà la documentazione relativa a questa fase
+		\item \textbf{PB}: che verrà sviluppata durante lo svolgimento del progetto e conterrà la documentazione relativa a questa fase
+	\end{itemize}
+\end{flushleft}
+\subsection{Workflow}
+\begin{flushleft}
+	Viene scelto di utilizzare il modello di branching GitFlow per la gestione del workflow del progetto.
+\end{flushleft}
+\subsection{Organizzazione interna}
+\begin{flushleft}
+	Vengono decisi i metodi di comunicazione interna del gruppo:
+	\begin{itemize}
+		\item \textbf{Telegram}: per la comunicazione tramite messaggi
+		\item \textbf{Discord}: per la comunicazione tramite chiamate
+	\end{itemize}
+\end{flushleft}
+\subsection{Adozione template LaTex}
+\begin{flushleft}
+	Viene scelto di modificare il template LaTex per avere una migliore personalizzazione dei documenti. Il componente Matteo Tiozzo si assume l'incarico di progettare il nuovo template. 
+\end{flushleft}
+\subsection{Creazione pagina web per documentazione}
+\begin{flushleft}
+	Per facilitare la visione dei documenti del repository viene deciso di creare una pagina web. Il componente Elena Ferro si assume l'incarico di progettare e realizzare la pagina web. Tramite GitHub Actions verrà automatizzato l'aggiornamento dei contenuti della pagina.
+\end{flushleft}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

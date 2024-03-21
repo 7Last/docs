@@ -1,0 +1,147 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+
+
+%-----------tabella versioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm}}
+			\hline \\[-2ex]
+			Ver. & Data & Autore & Descrizione \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0 & 18/03/2024 & Elena Ferro & Approvazione documento \\
+			0.3 & 18/03/2024 & Matteo Tiozzo & Prima revisione \\
+			0.2 & 16/03/2024 & Valerio Occhinegro& Sistemazione ortografica e di linguaggio \\
+			0.1 & 15/03/2024 & Leonardo Baldo& Prima stesura del documento \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Partecipanti}
+
+
+\textbf{Sede della riunione}: piattaforma Teams\\
+\textbf{Orario di inizio}: 14:30\\
+\textbf{Orario di fine}: 15:00\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |c|c|c| } 
+		\hline
+		\textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza} \\
+		\hline 
+		Leonardo Baldo 		& Redattore & Presente \\ 
+		Antonio Benetazzo 	& Responsabile & Presente \\
+		Elena Ferro 		& Verificatore & Presente \\
+		Valerio Occhinegro 	& Redattore & Presente \\
+		Raul Seganfreddo 	& Amministratore & Presente \\
+		Matteo Tiozzo 		& Verificatore & Presente \\ 
+		Davide Malgarise 	& Redattore & Assente \\
+		\hline
+	\end{tabular}
+
+	\vspace{1cm}
+
+	\begin{tabular}{ |c|c| } 
+		\hline
+		\textbf{Nome} & \textbf{Ruolo} \\
+		\hline 
+		Federico Bernacca & Rappresentante Imola Informatica \\
+		Stefan Glamocak & Rappresentante Imola Informatica \\
+
+		\hline
+	\end{tabular}
+\end{table}
+Solo per questa riunione il ruolo di Davide Malgarise è stato assunto da Antonio Benetazzo.
+\end{flushleft}
+
+
+\newpage
+
+\begin{flushleft}
+\section{Verbale dell'incontro}
+
+\subsection{Specifiche del progetto}
+	\textbf{Domanda}: è possibile avere maggior dettaglio sulle funzionalità obbligatorie dell'applicazione?\\
+	L'applicazione dovrà permettere la prenotazione di un tavolo, l'ordinazione di un pasto (anche per soggetti non registrati) e la creazione di una admin page per i ristoranti, il tutto tramite web-app.\\
+\subsection{Tecnologie utilizzate}
+	\textbf{Domanda}: che tecnologie consiglia l'azienda per affrontare il progetto?\\
+	L'azienda lascia libera scelta sulle tecnologie per lo sviluppo del progetto, tuttavia consiglia l'utilizzo di AngularJS e ReactJS. \\
+\subsection{Struttura del backend}
+	\textbf{Domanda}: verrà fornita una struttura per il backend o dovrà essere sviluppata?\\
+	L'azienda richiede di occuparsi anche della progettazione e sviluppo del backend e della creazione di un mock per il processo di pagamento.\\
+
+\subsection{Disponibilità e organizzazione Imola Informatica}
+	\textbf{Domanda}: quale supporto fornirà l'azienda? Come saranno organizzate le riunioni e gli incontri?\\
+	L’azienda offre un incontro settimanale dedicato alla formazione e all’affiancamento pratico del progetto nel caso in cui vi 
+	siano dubbi o emergano problematiche; inoltre mette a disposizione un canale Telegram per gestire le comunicazioni, velocizzare le tempistiche e rendere più semplici gli scambi. Imola Informatica offre un supporto per 
+	l’organizzazione e l’dentificazione dei ruoli necessari per la riuscita del lavoro e la frammentazione dello stesso; 
+	sarà dunque utile fornire delle preferenze riguardanti il ruolo da investire, anche in base alle conoscenze personali 
+	relative alla padronanza e conoscenza dei linguaggi.
+	
+\end{flushleft}
+
+
+\vspace*{4cm}
+\begin{table}[b]
+\begin{tabular}{@{}p{.5in}p{4in}@{}}
+	Data:  & \hrulefill \\
+		   &     		\\
+		   &     		\\
+	Firma: & \hrulefill \\
+\end{tabular}
+\end{table}
+	
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
