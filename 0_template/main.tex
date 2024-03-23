@@ -1,8 +1,10 @@
-\documentclass[italian,9.5pt]{article} %tipo di documento
+\documentclass[italian,12pt]{article} %tipo di documento
 
 \input{variables}
 \input{packages}
 
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
 
 \renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
 \renewcommand\familydefault{\sfdefault}
@@ -16,19 +18,20 @@
 
 \include{header}
 
-\tableofcontents
-
 %-----------tabella revisioni-----------%
-
-\begin{table}[!b]
-	\caption {Revisioni} \label{tab:title}
+\begin{table}[!h]
+	\caption{Versioni}
 	\begin{center}
-		\begin{tabular}{ c c c c c c }
-			\hline
-			Ver. & Data       & Elaborato da & Verificato da & Approvato da & Descrizione \\
-			1.0  & 12/03/2024 & Valerio                                                   \\
-			1.1  & 13/03/2024 & Elena                                                     \\                                                                      \\
-			\hline
+		\begin{tabular}{ c c c p{9cm} }
+			\hline                                                                                 \\[-2ex]
+			Ver. & Data       & Autore             & Descrizione                                   \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.1  & 22/03/2024 & Antonio Benetazzo  & Riordinamento copertina e intestazione pagine \\
+			1.0  & 16/03/2024 & Raul Seganfredo    & Approvazione template                         \\
+			0.3  & 16/03/2024 & Matteo Tiozzo      & Modificato layout grafico                     \\
+			0.2  & 13/03/2024 & Elena Ferro        & Modificato font e logo                        \\
+			0.1  & 12/03/2024 & Valerio Occhinegro & Creazione template                            \\
+			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -36,46 +39,30 @@
 
 \newpage
 
+\tableofcontents
+
+\newpage
 
 \section{Sezione 1}
+Qui va il testo della sezione 1.
 
 \paragraph{Paragrafo 1}
+Qui va il testo del paragrafo 1.
 
 \paragraph{Paragrafo 2}
+Qui va il testo del paragrafo 2, con esempio di elenco puntato.
 \begin{itemize}
-	\item elemento uno
-	\item elemento due
-	\item elemento tre
+	\itemsep0em
+	\item \textbf{1}: Elemento 1
+	\item \textbf{2}: Elemento 2
+	\item \textbf{3}: Elemento 3
 \end{itemize}
 
 
 
 \section{Sezione 2}
+Qui va il testo della sezione 2.
 \subsection{Sottosezione 1}
+Qui va il testo della sottosezione 1.
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
