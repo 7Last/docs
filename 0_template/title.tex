@@ -7,9 +7,8 @@
 		\centering
 		{\bfseries\huge \Title\par}
 		\bigbreak
-		{\bfseries\large \Author\par}
-		\bigbreak
-		{\Version\par}
+	
+		{\bfseries\Version\par}
 		\vfill
 
 		\begin{tikzpicture}[remember picture,overlay]
@@ -17,12 +16,19 @@
 			\fill[blue!20!black] (current page.south west) -- ++(10cm,0) -- ++(-10cm,15cm) -- cycle;
 			\fill[orange] (current page.south east) -- ++(-18cm,0) -- ++(21.6cm,22cm) -- cycle;
 
-			\clip (0,-3cm) circle (2.5cm) node (current page.center) {\includegraphics[width=5cm]{logo}};
-		\end{tikzpicture}
+			\clip (0,-12.5cm) circle (2.5cm) node (current page.center) {\includegraphics[width=5cm]{logo}};
 
+		\end{tikzpicture}
+	
 	}
+	\begin{center}
+		\vspace{16.9cm}
+		{\textit \Author\par}
+		\bigbreak
+	\end{center}
 
 	\vfill
+	
 
 \end{titlepage}
 
