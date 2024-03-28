@@ -1,0 +1,143 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+%-----------tabella revisioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm} }
+			\hline                                                                                 \\[-2ex]
+			Ver. & Data       & Autore             & Descrizione                                   \\
+			\\[-2ex] \hline \\[-1.5ex]
+			0.1  & 28/03/2024 & Antonio Benetazzo & Prima stesura                                  \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: piattaforma Discord\\
+\textbf{Orario di inizio}: 21:00\\
+\textbf{Orario di fine}: 23:00\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |l|l|l| } 
+		\hline
+		\textbf{Componente} & \textbf{Ruolo} & \textbf{Presenza} \\
+		\hline 
+		Antonio Benetazzo 	& Redattore           & Presente \\
+		Davide Malgarise 	& Verificatore        & Assente  \\
+		Elena Ferro 		& Redattore           & Presente \\
+		Leonardo Baldo 		& Verificatore        & Presente \\ 
+		Matteo Tiozzo 		& Responsabile        & Presente \\ 
+		Raul Seganfreddo 	& Redattore           & Presente \\
+		Valerio Occhinegro 	& Amministratore      & Presente \\
+		\hline
+	\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\itemsep0em
+	\item \textbf{}Approvazione della candidatura
+	\item \textbf{}Prossimi step e documentazione da produrre
+	\item \textbf{}Aggiornamento Way of Working
+	\item \textbf{}Modifiche al template per la documentazione
+	\item \textbf{}Varie ed eventuali
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Approvazione della candidatura}
+Prendiamo atto dell'approvazione della candidatura da noi presentata per il progetto 
+\textit{SyncCity} da parte del professor Vardanega. \\
+Nella valutazione viene evidenziato come la pianificazione sia ancora molto "ingenua". 
+Discutiamo assieme su tali osservazioni e ci riserviamo di rivalutare tale 
+pianificazione in occasione della pubblicazione della prossima documentazione, 
+prevista per il prossimo periodo. Ci viene inoltre suggerito dal professore di 
+non tardare nell'impostazione del documento \textit{Piano di Progetto} di cui 
+discuteremo in uno dei punti successivi. \\
+Siamo comunque soddisfatti del risultato raggiunto e ci impegniamo a migliorare la 
+pianificazione per le prossime scadenze. \\
+Provvediamo anche a comunicare via e-mail a \textit{Sync Lab} l'approvazione della 
+candidatura e alle altre due aziende proponenti gli altri capitolati la nostra 
+rinuncia.
+
+\subsection{Prossimi step e documentazione da produrre}
+Discutiamo assieme dei prossimi step: le successive revisioni saranno l'RTB 
+(Requirements and Technology Baseline), il PB (Product Baseline) e l'eventuale 
+CA (Customer Acceptance). \\
+Verifichiamo assieme la documentazione necessaria per la prossima revisione, l'RTB 
+(e che ci accompagneranno per tutto il resto del progetto): 
+\textit{Analisi dei Requisiti}, \textit{Piano di Progetto}, 
+\textit{Piano di Qualifica}, \textit{Norme di Progetto}, \textit{Glossario}, 
+oltre alla \textit{Lettera di Presentazione}, al POC (Proof of Concept) e a tutti 
+i verbali interni ed esterni. Ci impegniamo nel prossimo periodo a studiare 
+questi documenti per comprenderne la struttura e il contenuto attesi e ad iniziare 
+a lavorarci il prima possibile. \\
+In particolare, in merito al \textit{Glossario} riteniamo sarebbe utile trovare 
+un modo per automatizzare la messa in evidenza di ciascun vocabolo in tutti i 
+documenti in cui appare, in modo che risulti evidente al lettore che si tratta di 
+un termine presente nel \textit{Glossario}, ma senza doverlo gestire manualmente, 
+cosa che porterebbe inevitabilmente a numerose sviste ed errori. \\
+Valutiamo sia opportuno fissare una call con l'azienda per confrontarci anche 
+con loro su come affrontare le prossime fasi del progetto.
+
+\subsection{Aggiornamento Way of Working}
+Risulta necessario e sempre più urgente anche procedere con l'aggiornamento del 
+\textit{Way of Working} per la pianificazione e la gestione del lavoro nelle fasi 
+successive. \\
+In particolare, nei prossimi giorni valuteremo insieme l'utilizzo di \textit{ClickUp} 
+come strumento di gestione del lavoro e delle scadenze, come suggeritoci 
+dall'azienda proponente. Valuteremo anche eventuali altri strumenti a supporto della 
+gestione del progetto. Provvederemo inoltre, come già detto, alla stesura del 
+documento \textit{Norme di Progetto}, dove potremo definire meglio le modalità di 
+lavoro e le regole da seguire.
+
+\subsection{Modifiche al template per la documentazione}
+Decidiamo di apportare alcune modifiche al template per la documentazione. \\
+Oltre ad alcuni accorgimenti grafici, valutiamo sia il caso di dividerlo 
+in tre differenti template: uno per la documentazione in genere, uno specifico per 
+i verbali interni (che riporteranno anche la data, il registro delle presenze, 
+l'ordine del giorno e una struttura definita per il verbale) e uno specifico per 
+i verbali esterni (che conterrà in aggiunta la struttura necessaria per la firma 
+da parte dell'azienda proponente).
+
+\subsection{Conclusioni}
+La riunione termina, ci diamo appuntamento alla prossima settimana, riteniamo sia 
+importante trovarci possibilmente almeno una volta a settimana per valutare assieme 
+l'andamento del progetto e per discutere eventuali problematiche o dubbi.
+
+\end{document}
