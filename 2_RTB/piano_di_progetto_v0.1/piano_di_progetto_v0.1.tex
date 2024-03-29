@@ -30,12 +30,11 @@
     \caption{Versioni}
     \begin{center}
         \begin{tabular}{ l l l l p{9cm} }
-            \hline                                                                                 \\[-2ex]
-            Ver. & Data       & Autore  & Verificatore            & Descrizione                                   \\
-            \\[-2ex] \hline \\[-1.5ex]
-                                  \\
-            0.1  & 28/03/2024 & Matteo Tiozzo  &    & Inizio scrittura documento                    \\
-            0.0  & 28/03/2024 & Matteo Tiozzo &	   & Stesura struttura del documento                           \\
+            \hline                                                                                                          \\[-2ex]
+            Ver. & Data       & Autore          & Verificatore              & Descrizione                                   \\
+            \\[-2ex] \hline \\[-1.5ex]                                                                                      \\
+            0.1  & 28/03/2024 & Matteo Tiozzo   &                           & Inizio scrittura documento                    \\
+            0.0  & 28/03/2024 & Matteo Tiozzo   &	                        & Stesura struttura del documento               \\
             \\[-1.5ex] \hline
         \end{tabular}
     \end{center}
@@ -97,6 +96,8 @@ I fattori fondamentali per identificare i rischi sono:
     \item Indice: è un valore numerico incrementale che identifica univocamente il rischio per ogni Tipologia. Rischio elevato equivale a 3, rischio medio equivale a 2, mentre rischio basso equivale a 1.
 \end{itemize}
 Per una rappresentazione schematica dei rischi, si è deciso di attuare la seguente convenzione: R[Tipologia][Indice].
+
+%---------SEZIONE DEI RISCHI ORGANIZZATIVI-----------%
 
 \begin{table}[!h]
     \subsection{Rischi organizzativi}
@@ -183,6 +184,10 @@ Per una rappresentazione schematica dei rischi, si è deciso di attuare la segue
     \addcontentsline{tabelle}{subsection}{Tabella 4: rischio organizzativo \textit{RO2 - Scarsa collaborazione da parte di uno o più membri}}
 \end{table}
 
+%--------------------------------------------------%
+
+%---------SEZIONE DEI RISCHI TECNOLOGICI-----------%
+
 \begin{table}[!h]
     \subsection{Rischi tecnologici}
     \centering
@@ -247,6 +252,9 @@ Per una rappresentazione schematica dei rischi, si è deciso di attuare la segue
     \addcontentsline{tabelle}{subsection}{Tabella 7: rischio tecnologico \textit{RT3 - Problemi di compatibilità tra le tecnologie utilizzate}}
 \end{table}
 
+%--------------------------------------------------%
+
+%---------SEZIONE DEI RISCHI COMUNICATIVI-----------%   
 
 \begin{table}[!h]
     \subsection{Rischi comunicativi}
@@ -291,6 +299,7 @@ Per una rappresentazione schematica dei rischi, si è deciso di attuare la segue
     \addcontentsline{tabelle}{subsection}{Tabella 9: rischio comunicativo \textit{RC2 - Problemi di comunicazione}}
 \end{table}
 
+%--------------------------------------------------%
 
 \newpage
 \newblock\newpage
@@ -298,6 +307,8 @@ Per una rappresentazione schematica dei rischi, si è deciso di attuare la segue
 \newblock\newpage
 \newblock\newpage
 \newblock
+
+%---------3_PIANIFICAZIONE-----------%
 \section{Pianificazione}
 \subsection{Modello adottato}
 
@@ -371,7 +382,7 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
         \end{table}
 
             
-
+%---------1_ISTOGRAMMA-----------%
         \begin{figure*}
             \centering
             \begin{tikzpicture}
@@ -396,10 +407,11 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
                 \legend{Amministratore, Responsabile, Verificatore, Analista, Progettista}
                 \end{axis}
             \end{tikzpicture}
-        \caption{Figura 1: impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
+        \caption{impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
         \addcontentsline{immagini}{subsection}{Figura 1: impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
         \end{figure*}
-        
+
+%---------1_GRAFICO A TORTA-----------%
         \begin{figure*}
         \centering
         \begin{tikzpicture}
@@ -411,7 +423,7 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
                 20/Progettista
             }
         \end{tikzpicture}
-        \caption{Figura 2: ripartizione in percentuale dei ruoli nel primo periodo}
+        \caption{ripartizione in percentuale dei ruoli nel primo periodo}
         \addcontentsline{immagini}{subsection}{Figura 2: ripartizione in percentuale dei ruoli nel primo periodo}
         \end{figure*}
 
