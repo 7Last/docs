@@ -1,0 +1,196 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+\input{subX3_section.tex}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+
+\makeindex
+\newlistof{tabelle}{tabelle}{Elenco delle tabelle}
+\newlistof{immagini}{immagini}{Elenco delle figure}
+
+\renewcommand{\cfttabelletitlefont}{\Large\bfseries}
+\renewcommand{\cftimmaginititlefont}{\Large\bfseries}
+
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+%-----------tabella revisioni-----------%
+\begin{table}[!h]
+	\caption{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c p{9cm} }
+			\hline                                                                                 \\[-2ex]
+			Ver. & Data       & Autore             & Descrizione                                   \\
+			\\[-2ex] \hline \\[-1.5ex]
+			0.1  & 28/03/2024 & Valerio Occhinegro & Prima redazione          					   \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+%---------------------------------------%
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduzione}
+
+\subsection{Obiettivo del documento}
+Il documento contiene tutti i metodi di verifica e validazione utilizzati
+per assicurare il corretto funzionamento dello strumento sviluppato e delle
+attività che lo accompagnano.
+Il documento sarà sottoposto a continui aggiornamenti, per fare in modo che 
+rispecchi le eventuali evoluzioni del progetto.
+In aggiunta verrano registrati gli esiti delle verifiche svolte, in maniera tale 
+da risolvere rapidamente gli errori risultanti.
+
+
+\subsection{Obiettivo del prodotto}
+Il prodotto deve sviluppare una piattaforma di smart city monitoring 
+che riesca a simulare dati provenienti da varie tipoologie di sensori e che sia in grado di 
+rappresentarli in una serie di dashboard.
+L'azienda SyncLab si è già occupata di gestire la funzione di smart-parking (monitoraggio e gestione parcheggi) 
+tramite una tecnologia affine e attualmente sta sviluppando un sistema di sincronizzazione semaforica.
+Sarà dunque di loro interesse verificare la fattibilità di realizzazione di una piattaforma 
+che unisca in un unico luogo il monitoraggio di una città.
+
+\subsection{Glossario}
+Il glossario è uno strumento utilizzato per risolvere eventuali dubbi riguardanti 
+alcuni termini specifici utilizzati nella redazione del documento.
+Esso conterrà la definizione dei termini evidenziati (inserire Metodo con cui viene fatto l'highlight dei termini)
+e altre disambiguazioni 
+\subsection{Riferimenti}
+
+\subsubsection{Riferimenti normativi}
+\begin{itemize}
+    \item Norme di progetto (aggiungere versione e/o link al documento)
+    \item Capitolato d'appalto C6: SyncCity – A smart city monitoring platform\\
+		  \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}
+    \item Regolamento del progetto:\\
+		  \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}
+\end{itemize}
+
+\subsubsection{Riferimenti informativi}
+\begin{itemize}
+    \item alcuni mettono le dispense del prof altri la documentazione iso del 1995 
+			sempre fornita dal prof
+    \item Two
+    \item Three
+\end{itemize}
+
+\section{Obiettivi metrici di qualità}
+
+\subsection{Qualità di processo}
+
+\subsubsection{Processi primari}
+
+\subsubsubsection{Fornitura}
+
+\subsubsubsection{Sviluppo}
+
+\subsubsection{Processi di supporto}
+
+\subsubsubsection{Documentazione}
+
+\subsubsubsection{Verifica}
+
+\subsubsubsection{Gestione della qualità}
+
+\subsubsection{Processi organizzativi}
+
+\subsubsubsection{Gestione dei processi}
+
+\subsection{Qualità di prodotto}
+
+\subsubsection{Funzionalità}
+
+\subsubsection{Affidabilità}
+
+\subsubsection{Usabilità}
+
+\subsubsection{Efficienza}
+
+\subsubsection{Manutenibilità}
+
+\section{Metodologie di testing}
+
+\subsection{Codice dei test}
+
+\subsection{Test di unità}
+
+\subsection{Test di integrazione}
+
+\subsection{Test di sistema}
+
+\section{Cruscotto di valutazione della qualità}
+
+\subsection{MPC06 - Estimated at Completion(EAC)}
+
+\subsection{MPC01 - Earned Value (EV) e MPC02 - Planned Value (PV)}
+
+\subsection{MPC03 - Actual Cost (AC) e MPC07 - Estimate to Complete (ETC)}
+
+\subsection{MPC04 - Cost Variance (CV) e MPC05 - Schedule Variance (SV)}
+
+\subsection{MPC08 - Requirements stability index (RSI)}
+
+\subsection{MPC11 - Indice Gulpease}
+
+\subsection{MPC12 - Correttezza Ortografica}
+
+\subsection{MPC15 - Quality Metrics Satisfied}
+
+\subsection{MPC16 - Non-Calculated Risk}
+
+\subsection{MPC17 - Efficienza Temporale}
+
+\section{Iniziative di automiglioramento per la qualità}
+
+\subsection{Introduzione}
+
+\subsection{Problemi leagati all’organizzazione generale}
+
+\subsection{Valutazione sui ruoli}
+
+\subsection*{Valutazione sugli strumenti}
+
+\subsection{Considerazioni finali sul miglioramento}
+
+\subsubsection{Analisi della pratiche seguite}
+
+\subsubsection{Valutazioni generali sui miglioramenti conseguiti}
+
+\subsubsection{Valutazioni specifiche sui miglioramenti nei processi}
+
+\subsubsubsection{Gestione delle comunicazioni e degli incontri}
+
+\subsubsubsection{Pianificazione}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
