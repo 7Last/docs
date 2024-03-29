@@ -11,12 +11,11 @@
 \renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
 \renewcommand\familydefault{\sfdefault}
 
-\makeindex
-\newlistof{tabelle}{tabelle}{Elenco delle tabelle}
-\newlistof{immagini}{immagini}{Elenco delle figure}
+\renewcommand{\listtablename}{Indice delle tabelle}%imposto il nome della lista tabelle
+\renewcommand\familydefault{\sfdefault}
 
-\renewcommand{\cfttabelletitlefont}{\Large\bfseries}
-\renewcommand{\cftimmaginititlefont}{\Large\bfseries}
+\renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
+\renewcommand\familydefault{\sfdefault}
 
 %-------------------INIZIO DOCUMENTO--------------
 \begin{document}
@@ -28,9 +27,12 @@
 \include{header}
 
 %-----------tabella revisioni-----------%
+\captionsetup[table]{list=no}
+
 \begin{table}[!h]
-	\caption{Versioni}
 	\begin{center}
+		Versioni\\
+		\vspace{0.5cm}
 		\begin{tabular}{ c c c p{9cm} }
 			\hline                                                                                 \\[-2ex]
 			Ver. & Data       & Autore             & Descrizione                                   \\
@@ -40,11 +42,18 @@
 		\end{tabular}
 	\end{center}
 \end{table}
+\captionsetup[table]{list=yes}
 %---------------------------------------%
 
 \newpage
 
 \tableofcontents
+
+\newpage
+
+\listoftables
+
+\listoffigures
 
 \newpage
 
@@ -89,17 +98,51 @@ e altre disambiguazioni
 \begin{itemize}
     \item alcuni mettono le dispense del prof altri la documentazione iso del 1995 
 			sempre fornita dal prof
-    \item Two
-    \item Three
+    \item Glossario
 \end{itemize}
 
-\section{Obiettivi metrici di qualità}
+\section{Fini metrici di qualità}
+Tutti i processi che compongono il progetto sono valutati tramite l'utilizzo 
+di metriche specifiche, che (sono ben definite dalle sezioni Metriche di qualitá del processo e Metriche di qualitá del prodotto del docu-
+mento Norme di Progetto v1.0.0. ).
+Il contenuto di questa sezione è necessario per valutare le metriche e 
+dunque suddividerle in accettabili o ottime.
 
 \subsection{Qualità di processo}
+La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto
+che rispecchi lo stato dell'arte. Per raggiungere tale obiettivo è necessario 
+sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività
+in maniera ottimale.
 
 \subsubsection{Processi primari}
 
 \subsubsubsection{Fornitura}
+
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPC01 & Earned Value (EV) & $\geq 0$ & 7560 \\
+	 \hline
+	 MPC02 & Planned Value (PV) & $\geq 0$ & 6344 \\ 
+	 \hline
+	 MPC03 & Actual Cost (AC) & $\geq 0$ & 6344 \\ 
+	 \hline
+	 MPC04 & Cost Variance (CV) & $\geq -7.5\%$ & 6344 \\ 
+	 \hline
+	 MPC05 & Schedule Variance (SV) & $\geq 0$ & 6344 \\ 
+	 \hline
+	 MPC06 & Estimated at Completion (EAC) & 788 & 6344 \\ 
+	 \hline
+	 MPC07 & Estimate to Complete (ETC)  & $\geq 0$ & 6344 \\ 
+	 \hline
+	\end{tabular}
+	\caption{Tabella dei valori per il processo di Fornitura.}
+	\label{table:1}
+	\end{table}
 
 \subsubsubsection{Sviluppo}
 
