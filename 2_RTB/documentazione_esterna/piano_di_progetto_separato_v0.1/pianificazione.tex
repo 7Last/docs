@@ -1,0 +1,414 @@
+
+\section{Pianificazione}
+\subsection{Modello adottato}
+
+METTERE MODELLO UNA VOLTA DECISO QUALE ADOTTARE
+\subsection{Periodi}
+
+Per ogni periodo si riportano di seguito le seguenti informazioni:
+\begin{itemize}
+    \item Data di inizio, data di fine prevista, data di fine attuale ed eventuali giorni di ritardo
+    \item Pianificazione delle attività da svolgere al suo interno (avanzamento atteso), con tanto di potenziali rischi
+    \item Tempo stimato per poter completare tutte le attività previste (preventivo)
+    \item Confronto fra il lavoro svolto (avanzamento conseguito) e quello preventivato, con annessa analisi dei costi;
+    \item Rischi effettivamente occorsi, valutandone il loro impatto e la loro mitigazione;
+    \item Retrospettiva di periodo per capire cosa e come migliorare in futuro e cosa invece mantenere.
+\end{itemize}
+I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di avanzamento del progetto:
+\begin{itemize}
+    \item \textbf{RTB}: \textcolor{red}{\uline{\textit{\textbf{R}equirements and \textbf{T}echnology \textbf{B}aseline}}}
+    \item \textbf{PB}:  \textbf{P}roduct \textcolor{red}{\uline{\textit{\textbf{B}aseline}}}
+    \item \textbf{CA}:  \textcolor{red}{\uline{\textit{\textbf{C}ustomer \textbf{A}cceptance}}}
+\end{itemize}
+
+\subsection{Requirements and Technology Baseline}
+    \subsubsection{Primo sprint:}
+        \begin{itemize}
+            \item Inizio: 26/03/2024
+            \item FIne: 09/04/2024
+            \item Fine attuale:
+            \item Giorni di ritardo:
+        \end{itemize}
+        \subsubsubsection{Pianificazione} 
+        Questo periodo nasce con l'aggiudicazione dell'appalto da parte del gruppo, il quale si trova a dover iniziare a pianificare le attività da svolgere, prima tra tutte la risoluzione dei problemi segnalati in fase di candidatura. Fatto questo, si prevede di stendere e definire la struttura di ogni documento necessario e di automatizzare il più possibile. In concomitanza a queste attività si prevede un incontro con l'azienda proponente per iniziare la formazione e l'organizzazione delle attività. Il tutto sarà accompagnato da uno studio individuale delle tecnologie che dovranno essere impiegate.\\ Le attività previste sono le seguenti:
+        \begin{itemize}
+            \item Definire struttura base del documento \textit{Piano di Progetto} e iniziare ad implementarlo
+            \item Definire struttura base del documento \textit{Piano di Qualifica}
+            \item Definire struttura base del documento \textit{Glossario}
+            \item Definire struttura base del documento \textit{Analisi dei requisiti}
+            \item Definire struttura base del documento \textit{Norme di progetto}
+            \item Studio individuale delle tecnologie
+        \end{itemize}
+        \subsubsubsubsection{Rischi attesi}
+        I rischi attesi per questo periodo sono:
+        \begin{itemize}
+            \item RT2 - Inesperienza del team
+            \item RO2 - Imprecisione nella pianificazione delle attività
+            \item RO2 - Elevati costi delle attività
+            \item RC1 - Rischio di conflitti interni 
+            \item RC1 - Problemi di comunicazione
+        \end{itemize}
+        Questo è dovuto al fatto che, essendo l'inizio del progetto, non sappiamo ancora come organizzarci per ottimizzare al meglio il tempo e le risorse. La probabilità che si verifichi uno dei rischi elencati è elevata.
+        \subsubsubsection{Preventivo}
+        Ruoli coinvolti: Amministratore, Responsabile, Verificatore, Analista, Progettista.
+
+        \begin{table}[!h]
+            \centering
+            \begin{tabular}{ l c c c c c } 
+                \hline
+                \textbf{} & \textbf{Amministratore} & \textbf{Responsabile} & \textbf{Verificatore} &\textbf{Analista} & \textbf{Progettista} \\
+                \hline 
+                Tiozzo      & 0 & 0 & 0 & 0 & 0 \\ 
+                Malgarise   & 0 & 0 & 0 & 0 & 0 \\ 
+                Ferro       & 0 & 0 & 0 & 0 & 0 \\ 
+                Benetazzo   & 0 & 0 & 0 & 0 & 0 \\ 
+                Occhinegro  & 0 & 0 & 0 & 0 & 0 \\ 
+                Baldo       & 0 & 0 & 0 & 0 & 0 \\ 
+                Seganfreddo & 0 & 0 & 0 & 0 & 0 \\
+                \hline
+            \end{tabular}
+            \caption{preventivo orario per ruolo di ciascun membro del team durante il primo periodo}
+            \addcontentsline{tabelle}{subsection}{Preventivo orario per ruolo di ciascun membro del team durante il primo periodo}
+        \end{table}
+
+            
+%---------1_ISTOGRAMMA-----------%
+        \begin{figure*}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    width=\textwidth,
+                    height=0.5\textwidth,
+                    ybar,
+                    enlargelimits=0,
+                    legend style={at={(0.5,1.15)},
+                      anchor=north,legend columns=-1},
+                    ylabel={Tempo dedicato},    
+                    symbolic x coords={Antonio, Davide, Elena, Leonardo, Matteo, Raul, Valerio},
+                    xtick=data,
+                    % nodes near coords,
+                    nodes near coords align={vertical},
+                    ]
+                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+                \legend{Amministratore, Responsabile, Verificatore, Analista, Progettista}
+                \end{axis}
+            \end{tikzpicture}
+        \caption{impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
+        \addcontentsline{immagini}{subsection}{Impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
+        \end{figure*}
+
+%---------1_GRAFICO A TORTA-----------%
+        \begin{figure*}
+        \centering
+        \begin{tikzpicture}
+            \pie[rotate=90, text=legend]{
+                20/Verificatore,
+                20/Analista,
+                20/Amministratore,
+                20/Responsabile,
+                20/Progettista
+            }
+        \end{tikzpicture}
+        \caption{ripartizione in percentuale dei ruoli nel primo periodo}
+        \addcontentsline{immagini}{subsection}{Ripartizione in percentuale dei ruoli nel primo periodo}
+        \end{figure*}
+
+        \newpage
+
+        \subsubsubsection{Consuntivo}
+        Le attività previste sono state tutte svolte con successo. Come si può vedere dal confronto tra preventivo e \textcolor{red}{\uline{\textit{consuntivo}}}:
+        \begin{itemize}
+            \item Amministratore: 0 ore preventivate, 0 ore effettive
+            \item Responsabile: 0 ore preventivate, 0 ore effettive
+        \end{itemize}
+        \subsubsubsubsection{Prospetto orario}
+
+        \begin{table}[!h]
+            \centering
+            \begin{tabular}{ l c c c c c } 
+                \hline
+                \textbf{} & \textbf{Amministratore} & \textbf{Responsabile} & \textbf{Verificatore} &\textbf{Analista} & \textbf{Progettista} \\
+                \hline 
+                Tiozzo      & 0 & 0 & 0 & 0 & 0 \\ 
+                Malgarise   & 0 & 0 & 0 & 0 & 0 \\ 
+                Ferro       & 0 & 0 & 0 & 0 & 0 \\ 
+                Benetazzo   & 0 & 0 & 0 & 0 & 0 \\ 
+                Occhinegro  & 0 & 0 & 0 & 0 & 0 \\ 
+                Baldo       & 0 & 0 & 0 & 0 & 0 \\ 
+                Seganfreddo & 0 & 0 & 0 & 0 & 0 \\
+                \hline
+            \end{tabular}
+            \caption{impegno effettivo per ruolo di ciascun membro del team durante il primo periodo}
+            \addcontentsline{tabelle}{subsection}{Impegno effettivo per ruolo di ciascun membro del team durante il primo periodo}
+        \end{table}
+        \newpage
+        \subsubsubsubsection{Prospetto economico}
+
+        \begin{table}[!h]
+            \centering
+            \begin{tabular}{ l c c c c c } 
+                \hline
+                \textbf{} & \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} &\textbf{Differenza} \\
+                \hline  
+                 & Responsabile        & 0 & 0 & 0 \\ 
+                 & Amministratore      & 0 & 0 & 0 \\ 
+                 & Verificatore        & 0 & 0 & 0 \\ 
+                 & Analista            & 0 & 0 & 0 \\ 
+                 & Progettista         & 0 & 0 & 0 \\ 
+                 & Programmatore       & 0 & 0 & 0 \\ 
+                 & Seganfreddo         & 0 & 0 & 0 \\
+                Totale preventivo & - & 0 & 0 &0 \\
+                Totale consuntivo & - & 0 & 0 & 0\\
+                \hline
+            \end{tabular}
+            \caption{Aggiornamenti economici del progetto al termine del primo periodo, riflettendo le variazioni tra preventivo e ore effettivamente lavorate}
+            \addcontentsline{tabelle}{subsection}{Aggiornamenti economici del progetto al termine del primo periodo, riflettendo le variazioni tra preventivo e ore effettivamente lavorate}
+        \end{table}
+        \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+        SCRITTURA DEI RISCHI CHE ABBIAMO TROVATO DURANTE QUESTO PRIMO PERIODO E COME LI ABBIAMO RISOLTI
+        \subsubsubsection{Retrospettiva}
+        SCRITTURA DI COSA ABBIAMO FATTO BENE E COSA ABBIAMO SBAGIATO, COSÌ DA MIGLIORARCI
+\newpage
+    \subsubsection{Secondo sprint:}
+    \begin{itemize}
+        \item Inizio: 10/04/2024
+        \item FIne: 24/04/2024
+        \item Fine attuale:
+        \item Giorni di ritardo:
+    \end{itemize}
+    \subsubsubsection{Pianificazione} 
+    SCRIVI QUALCOSA A RIGUARDO (PT. 4.1.1.1 DEGLI OVERTURE)
+    \subsubsubsubsection{Rischi attesi}
+    I rischi attesi per questo periodo sono:
+    \begin{itemize}
+        \item Inesperienza del team
+        \item Imprecisione nella pianificazione delle attività
+        \item Elevati costi delle attività
+        \item Rischio di conflitti interni 
+        \item problemi di comunicazione
+        \item problemi di coordinamento
+    \end{itemize}
+    Questo perchè, essendo all’inizio del progetto, siamo ancora incerti su molti aspetti di quest’ultimo, ci stiamo attualmente organizzando e dobbiamo apprendere ancora molto, dunque la probabilità di incorrere in qualche problema tra quelli riportati è abbastanza elevata.
+    \subsubsubsection{Preventivo}
+    Ruoli coinvolti: 
+    \subsubsubsection{Consuntivo}
+    Le attività previste sono state tutte svolte con successo
+    \subsubsubsubsection{Prospetto orario}
+    \subsubsubsubsection{Prospetto economico}
+    \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+    \subsubsubsection{Retrospettiva}
+
+
+    \subsubsection{Terzo sprint:}
+    \begin{itemize}
+        \item Inizio: 25/04/2024
+        \item FIne: 09/05/2024
+        \item Fine attuale:
+        \item Giorni di ritardo:
+    \end{itemize}
+    \subsubsubsection{Pianificazione} 
+    SCRIVI QUALCOSA A RIGUARDO (PT. 4.1.1.1 DEGLI OVERTURE)
+    \subsubsubsubsection{Rischi attesi}
+    I rischi attesi per questo periodo sono:
+    \begin{itemize}
+        \item Inesperienza del team
+        \item Imprecisione nella pianificazione delle attività
+        \item Elevati costi delle attività
+        \item Rischio di conflitti interni 
+        \item problemi di comunicazione
+        \item problemi di coordinamento
+    \end{itemize}
+    Questo perchè, essendo all’inizio del progetto, siamo ancora incerti su molti aspetti di quest’ultimo, ci stiamo attualmente organizzando e dobbiamo apprendere ancora molto, dunque la probabilità di incorrere in qualche problema tra quelli riportati è abbastanza elevata.
+    \subsubsubsection{Preventivo}
+    Ruoli coinvolti: 
+    \subsubsubsection{Consuntivo}
+    Le attività previste sono state tutte svolte con successo
+    \subsubsubsubsection{Prospetto orario}
+    \subsubsubsubsection{Prospetto economico}
+    \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+    \subsubsubsection{Retrospettiva}
+
+    \subsubsection{Quarto sprint:}
+    \begin{itemize}
+        \item Inizio: 10/05/2024
+        \item FIne: 24/05/2024
+        \item Fine attuale:
+        \item Giorni di ritardo:
+    \end{itemize}
+    \subsubsubsection{Pianificazione} 
+    SCRIVI QUALCOSA A RIGUARDO (PT. 4.1.1.1 DEGLI OVERTURE)
+    \subsubsubsubsection{Rischi attesi}
+    I rischi attesi per questo periodo sono:
+    \begin{itemize}
+        \item Inesperienza del team
+        \item Imprecisione nella pianificazione delle attività
+        \item Elevati costi delle attività
+        \item Rischio di conflitti interni 
+        \item problemi di comunicazione
+        \item problemi di coordinamento
+    \end{itemize}
+    Questo perchè, essendo all’inizio del progetto, siamo ancora incerti su molti aspetti di quest’ultimo, ci stiamo attualmente organizzando e dobbiamo apprendere ancora molto, dunque la probabilità di incorrere in qualche problema tra quelli riportati è abbastanza elevata.
+    \subsubsubsection{Preventivo}
+    Ruoli coinvolti: 
+    \subsubsubsection{Consuntivo}
+    Le attività previste sono state tutte svolte con successo
+    \subsubsubsubsection{Prospetto orario}
+    \subsubsubsubsection{Prospetto economico}
+    \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+    \subsubsubsection{Retrospettiva}
+
+    \subsubsection{Quinto sprint:}
+    \begin{itemize}
+        \item Inizio: 25/05/2024
+        \item FIne: 09/06/2024
+        \item Fine attuale:
+        \item Giorni di ritardo:
+    \end{itemize}
+    \subsubsubsection{Pianificazione} 
+    SCRIVI QUALCOSA A RIGUARDO (PT. 4.1.1.1 DEGLI OVERTURE)
+    \subsubsubsubsection{Rischi attesi}
+    I rischi attesi per questo periodo sono:
+    \begin{itemize}
+        \item Inesperienza del team
+        \item Imprecisione nella pianificazione delle attività
+        \item Elevati costi delle attività
+        \item Rischio di conflitti interni 
+        \item problemi di comunicazione
+        \item problemi di coordinamento
+    \end{itemize}
+    Questo perchè, essendo all’inizio del progetto, siamo ancora incerti su molti aspetti di quest’ultimo, ci stiamo attualmente organizzando e dobbiamo apprendere ancora molto, dunque la probabilità di incorrere in qualche problema tra quelli riportati è abbastanza elevata.
+    \subsubsubsection{Preventivo}
+    Ruoli coinvolti: 
+    \subsubsubsection{Consuntivo}
+    Le attività previste sono state tutte svolte con successo
+    \subsubsubsubsection{Prospetto orario}
+    \subsubsubsubsection{Prospetto economico}
+    \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+    \subsubsubsection{Retrospettiva}
+
+
+    \subsubsection{Sesto sprint:}
+    \begin{itemize}
+        \item Inizio: 10/06/2024
+        \item FIne: 24/06/2024
+        \item Fine attuale:
+        \item Giorni di ritardo:
+    \end{itemize}
+    \subsubsubsection{Pianificazione} 
+    SCRIVI QUALCOSA A RIGUARDO (PT. 4.1.1.1 DEGLI OVERTURE)
+    \subsubsubsubsection{Rischi attesi}
+    I rischi attesi per questo periodo sono:
+    \begin{itemize}
+        \item Inesperienza del team
+        \item Imprecisione nella pianificazione delle attività
+        \item Elevati costi delle attività
+        \item Rischio di conflitti interni 
+        \item problemi di comunicazione
+        \item problemi di coordinamento
+    \end{itemize}
+    Questo perchè, essendo all’inizio del progetto, siamo ancora incerti su molti aspetti di quest’ultimo, ci stiamo attualmente organizzando e dobbiamo apprendere ancora molto, dunque la probabilità di incorrere in qualche problema tra quelli riportati è abbastanza elevata.
+    \subsubsubsection{Preventivo}
+    Ruoli coinvolti: 
+    \subsubsubsection{Consuntivo}
+    Le attività previste sono state tutte svolte con successo
+    \subsubsubsubsection{Prospetto orario}
+    \subsubsubsubsection{Prospetto economico}
+    \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+    \subsubsubsection{Retrospettiva}
+
+    \subsubsection{Settimo sprint:}
+    \begin{itemize}
+        \item Inizio: 25/06/2024
+        \item FIne: 09/07/2024
+        \item Fine attuale:
+        \item Giorni di ritardo:
+    \end{itemize}
+    \subsubsubsection{Pianificazione} 
+    SCRIVI QUALCOSA A RIGUARDO (PT. 4.1.1.1 DEGLI OVERTURE)
+    \subsubsubsubsection{Rischi attesi}
+    I rischi attesi per questo periodo sono:
+    \begin{itemize}
+        \item Inesperienza del team
+        \item Imprecisione nella pianificazione delle attività
+        \item Elevati costi delle attività
+        \item Rischio di conflitti interni 
+        \item problemi di comunicazione
+        \item problemi di coordinamento
+    \end{itemize}
+    Questo perchè, essendo all’inizio del progetto, siamo ancora incerti su molti aspetti di quest’ultimo, ci stiamo attualmente organizzando e dobbiamo apprendere ancora molto, dunque la probabilità di incorrere in qualche problema tra quelli riportati è abbastanza elevata.
+    \subsubsubsection{Preventivo}
+    Ruoli coinvolti: 
+    \subsubsubsection{Consuntivo}
+    Le attività previste sono state tutte svolte con successo
+    \subsubsubsubsection{Prospetto orario}
+    \subsubsubsubsection{Prospetto economico}
+    \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+    \subsubsubsection{Retrospettiva}
+
+    \subsubsection{Sommario finale}
+    \subsubsubsection{Riepilogo prospetto orario}
+    \subsubsubsubsection{Ore consumate}
+    \subsubsubsubsection{Ore rimanenti}
+    \subsubsubsection{Riepilogo prospetto economico}
+    \subsubsubsection{Costi totali}
+
+    \subsection{Tra RTB e PB}
+    \subsubsection{Ottavo periodo}
+    \begin{itemize}
+        \item Inizio: 10/07/2024
+        \item FIne: 24/07/2024
+        \item Fine attuale:
+        \item Giorni di ritardo:
+    \end{itemize}
+    \subsubsubsection{Pianificazione} 
+    SCRIVI QUALCOSA A RIGUARDO (PT. 4.1.1.1 DEGLI OVERTURE)
+    \subsubsubsubsection{Rischi attesi}
+    I rischi attesi per questo periodo sono:
+    \begin{itemize}
+        \item Inesperienza del team
+        \item Imprecisione nella pianificazione delle attività
+        \item Elevati costi delle attività
+        \item Rischio di conflitti interni 
+        \item problemi di comunicazione
+        \item problemi di coordinamento
+    \end{itemize}
+    Questo perchè, essendo all’inizio del progetto, siamo ancora incerti su molti aspetti di quest’ultimo, ci stiamo attualmente organizzando e dobbiamo apprendere ancora molto, dunque la probabilità di incorrere in qualche problema tra quelli riportati è abbastanza elevata.
+    \subsubsubsection{Preventivo}
+    Ruoli coinvolti: 
+    \subsubsubsection{Consuntivo}
+    \subsubsubsubsection{Prospetto orario}
+    \subsubsubsubsection{Prospetto economico}
+    \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+    \subsubsubsection{Retrospettiva}
+
+% \subsection{Product Baseline}
+
+
+% \section{Preventivo}
+% \subsection{Requirements and Technology Baseline}
+%     \subsubsection{Primo sprint:}
+%     \subsubsection{Secondo sprint:}
+%     \subsubsection{Terzo sprint:}
+%     \subsubsection{Quarto sprint:}
+%     \subsubsection{Quinto sprint:}
+%     \subsubsection{Sesto sprint:}
+%     \subsubsection{Settimo sprint:}
+% \subsection{Preventivo a finire}
+%     \subsubsection{Resoconto finale RTB}
+%     \subsubsection{Risuddivisione oraria}
+
+% \section{Consuntivo}
+% \subsection{Requirements and Technology Baseline}
+%     \subsubsection{Primo sprint:}
+%     \subsubsection{Secondo sprint:}
+%     \subsubsection{Terzo sprint:}
+%     \subsubsection{Quarto sprint:}
+%     \subsubsection{Quinto sprint:}
+%     \subsubsection{Sesto sprint:}
+%     \subsubsection{Settimo sprint:}
+
+

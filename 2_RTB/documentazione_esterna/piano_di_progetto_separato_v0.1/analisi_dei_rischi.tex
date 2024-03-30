@@ -1,0 +1,218 @@
+\section{Analisi dei rischi}
+Durante l'avanzamento del progetto è di fondamentale importanza mitigare gli impatti delle difficoltà riscontrate attraverso una corretta \textit{analisi dei rischi}. È stata inclusa questa sezione in questo documento al fine di evitare che eventuali problematiche possano compromettere il corretto svolgimento del progetto. 
+Dopo aver elencato i rischi, vengono identificati una serie di passi da intraprendere nel caso in cui uno di essi si verifichi. Secondo lo standard ISO/IEC 31000:2009 \uline{CAMBIARE IL TIPO DI STANDARD}, il processo di gestione dei rischi si articola in 5 fasi:
+\begin{itemize}
+    \item \textbf{Identificazione dei rischi}: consiste nel riconoscere le possibili cause di \textcolor{red}{\uline{\textit{rischio}}}, le aree di impatto, gli eventi, le cause e le potenziali conseguenze. Questa fase sarà costituita da un'analisi delle attività che permetteranno di dare vita ad un elenco dei rischi basato sugli eventi che potrebbero influenzare il raggiungimento degli obiettivi. 
+    \item \textbf{Analisi dei rischi}: questa fase si compone di un processo di valutazione che contribuisce alla valutazione e alle decisioni sul trattamento dei rischi, identificando le strategie più adeguate.
+    \item \textbf{Valutazione dei rischi}: il goal di questa fase è quello di prendere decisioni basati sui risultati dell'analisi dei rischi in modo da poter attuare la migliore strategia di trattamento.
+    \item \textbf{Trattamento dei rischi}: dopo l'analisi e la valutazione dei rischi, è di fondamentale importanza decidere come trattare questi rischi, al fine di ridurre il loro effetto. 
+    \item \textbf{Monitoraggio e revisione dei rischi}: queste attività richiedono di essere integrate nella pianificazione del del processo di gestione del rischio e richiedono un controllo regolare.
+\end{itemize}
+I fattori fondamentali per identificare i rischi sono:
+\begin{itemize}
+    \item Tipologia: rappresenta la categoria di rischio, che può essere organizzativa, tecnologica o comunicativa.
+    \item Indice: è un valore numerico incrementale che identifica univocamente il rischio per ogni Tipologia. Rischio elevato equivale a 3, rischio medio equivale a 2, mentre rischio basso equivale a 1.
+\end{itemize}
+Per una rappresentazione schematica dei rischi, si è deciso di attuare la seguente convenzione: R[Tipologia][Indice].
+
+%---------SEZIONE DEI RISCHI ORGANIZZATIVI-----------%
+
+\begin{table}[!h]
+    \subsection{Rischi organizzativi}
+    \centering
+    \hbox{RO3 - Inesperienza del team nella pianificazione delle attività}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & La pianificazione delle attività in un primo periodo può risultare non ottima, questo è dovuto all'inesperienza del team, dalla mancata conoscenza dei requisiti, dalla sovrastima/sottostima delle risorse/tempo necessari.\\ 
+        \hline
+        \textbf{Probabilità} & Alta. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Monitorazione continua di GitHub e con il \textit{Piano di progetto} \\
+        \hline
+        \textbf{Piano di contingenza} & In caso di difficoltà o ritardi, il \textit{piano di progetto} viene revisionato per conformare le attività in base al progresso. Se un membro segnala impossibilità nel rispettare una scadenza, al responsabile il compito di assegnare più risorse o, in casi più gravi, spostare la scadenza. \\
+		\hline
+	\end{tabular}
+    \caption{rischio organizzativo \textit{RO3 - Pianificazione delle attivitià}}
+    \addcontentsline{tabelle}{subsection}{Rischio organizzativo \textit{RO3 - Pianificazione delle attivitià}}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RO2 - Impegni personali o universitari}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Gli impegni personali e/o universitari possono limitare la disponibilità di uno o più membri del gruppo. \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Condividendo i propri impegni e indicando la disponibilità, i membri possono concordare vari periodi della settimana per tenere le riunioni e comprendere lo stato di sviluppo del progetto da parte di ciascun membro. \\
+        \hline
+        \textbf{Piano di contingenza} & Al responsabile il compito di rivedere la suddivisione dei ruoli e compiti in base agli impegni di ciascun membro. In casi gravi deve spostare alcune scadenze e rivedere la pianificazione, se questa non tiene conto di tali incovenienti. \\
+		\hline
+	\end{tabular}
+    \caption{rischio organizzativo \textit{RO2 - Impegni personali o universitari}}
+    \addcontentsline{tabelle}{subsection}{Rischio organizzativo \textit{RO2 - Impegni personali o universitari}}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RO3 - Ritardi rispetto ai costi previsti}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & La sottostima/sovrastima dei costi delle attività a causa dell'inesperienza del team può causare ritardi, spreco di tempo e risorse.  \\ 
+        \hline
+        \textbf{Probabilità} & Alta. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Attraverso il cruscotto e confronto periodico con il Piano di Progetto, il Responsabile può monitorare lo stato di avanzamento del progetto \\
+        \hline
+        \textbf{Piano di contingenza} & In caso di cambiamenti non gravi, si cerca di implementare rapidamente quanto è rimasto aperto. Se significativo, si discute con il proponente per trovare un accordo su come affrontare i cambiamenti. \\
+		\hline
+	\end{tabular}
+    \caption{rischio organizzativo \textit{RO3 - Ritardi rispetto ai costi previsti}}
+    \addcontentsline{tabelle}{subsection}{Rischio organizzativo \textit{RO3 - Ritardi rispetto ai costi previsti}}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RO2 - Scarsa collaborazione da parte di uno o più membri}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & La possibilità che uno o più membri del gruppo non collaborino attivamente allo sviluppo del progetto. \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Attraverso un conteggio delle volte in cui il membro non è presente. Alla 5 volta scatta una segnalazione interna al team. \\
+        \hline
+        \textbf{Piano di contingenza} & All'amministratore il compito di comunicare al diretto interessato la sua situazione e di invitarlo a partecipare attivamente allo sviluppo. In caso di risultato negativo, al responsabile il compito di assegnare più risorse o, in casi più gravi, di posticipare la scandeza. \\
+		\hline
+	\end{tabular}
+    \caption{rischio organizzativo \textit{RO2 - Scarsa collaborazione da parte di uno o più membri}}
+    \addcontentsline{tabelle}{subsection}{Rischio organizzativo \textit{RO2 - Scarsa collaborazione da parte di uno o più membri}}
+\end{table}
+
+%--------------------------------------------------%
+
+%---------SEZIONE DEI RISCHI TECNOLOGICI-----------%
+
+\begin{table}[!h]
+    \subsection{Rischi tecnologici}
+    \centering
+    \hbox{RT3 - Inesperienza nell'uso delle tecnologie adottate}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Dato il livello di esperienza che il \textcolor{red}{\uline{\textit{capitolato}}} richiede, potrebbe verificarsi la necessità da parte di alcuni membri del gruppo di acquisire le competenze necessarie. Questo causerebbe ritardi sia nella fase di progettazione che nello sviluppo.  \\ 
+        \hline
+        \textbf{Probabilità} & Alta. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Dopo aver compreso le competenze di ciascun membro del team, il responsabile deve assegnare i compiti in modo da non rendere il compito troppo facile, ma nemmeno troppo difficile per ciascun membro.  \\
+        \hline
+        \textbf{Piano di contingenza} & Qualora i membri del gruppo dovessero riscontrare difficoltà nello svolgimento di un'attività, verranno affiancati da un componente con più esperienza in quell'ambito. \\
+		\hline
+	\end{tabular}
+    \caption{rischio tecnologico \textit{RT3 - Inesperienza nell'uso delle tecnologie adottate}}
+    \addcontentsline{tabelle}{subsection}{Rischio tecnologico \textit{RT3 - Inesperienza nell'uso delle tecnologie adottate}}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RT2 - Perdita di informazioni}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & La perdita di informazioni rappresenta un rischio di impatto importante per il progetto. Questo può accadere in caso di guasti hardware, errori umani o malfunzionamenti dei sistemi utilizzati. \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Attraverso la monitorazione continua dei sistemi utilizzati. \\
+        \hline
+        \textbf{Piano di contingenza} & In caso perdita di informazioni, è necessario poter reperire quelle di riserva, tramite un backup. \\
+		\hline
+	\end{tabular}
+    \caption{rischio tecnologico \textit{RT2 - Perdita di informazioni}}
+    \addcontentsline{tabelle}{subsection}{Rischio tecnologico \textit{RT2 - Perdita di informazioni}}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RT3 - Problemi di compatibilità tra le tecnologie utilizzate}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Per lo sviluppo del progetto sarà necessario utilizzare tecnologie diverse tra loro. Il malfunzionamento di queste non dipende dal gruppo e sistemare questi guasti potrebbe richiedere tempo e risorse, quindi influire sulla velocità e sui costi del progetto. \\ 
+        \hline
+        \textbf{Probabilità} & Alta. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Solo al momento dell'utilizzo di queste tecnologie il team potrà scoprire se si verificheranno malfunzionamenti o no.  \\
+        \hline
+        \textbf{Piano di contingenza} & In caso di malfunzionamenti, al responsaibile di progetto il compito di assegnare la quantità di risorse necessarie per la risoluzione di tali, nel minor tempo possibile. \\
+		\hline
+	\end{tabular}
+    \caption{rischio tecnologico \textit{RT3 - Problemi di compatibilità tra le tecnologie utilizzate}}
+    \addcontentsline{tabelle}{subsection}{Rischio tecnologico \textit{RT3 - Problemi di compatibilità tra le tecnologie utilizzate}}
+\end{table}
+
+%--------------------------------------------------%
+
+%---------SEZIONE DEI RISCHI COMUNICATIVI-----------%   
+
+\begin{table}[!h]
+    \subsection{Rischi comunicativi}
+    \centering
+    \hbox{RC1 - Disaccordi all'interno del gruppo }
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Disaccordi interni possono derivare da ideologie e opinioni diverse dei componenti.  \\ 
+        \hline
+        \textbf{Probabilità} & Bassa \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Attraverso l'opinione dei membri del gruppo e/o l'osservazione delle dinamiche. \\
+        \hline
+        \textbf{Piano di contingenza} & In caso di disaccordi, si voterà in modo democratico, l'opzione con maggiori voti verrà attuata. \\
+		\hline
+	\end{tabular}
+    \caption{rischio comunicativo \textit{RC1 - Disaccordi all'interno del gruppo}}
+    \addcontentsline{tabelle}{subsection}{Rischio comunicativo \textit{RC1 - Disaccordi all'interno del gruppo}}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RC2 - Problemi di comunicazione }
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Una comunicazione inefficace può causare ritardi, stress, malessere interno del gruppo.  \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Attraverso sondaggi, feedback e comportamenti da parte dei membri del gruppo durante le riunioni o comunicazioni via messaggio. \\
+        \hline
+        \textbf{Piano di contingenza} & Al responsabile il compito di promuovere comunicazione attiva, organizzare riunioni regolari, indagare sui motivi del malessere e cercare di risolverli. \\
+		\hline
+	\end{tabular}
+    \caption{rischio comunicativo \textit{RC2 - Problemi di comunicazione}}
+    \addcontentsline{tabelle}{subsection}{Rischio comunicativo \textit{RC2 - Problemi di comunicazione}}
+\end{table}
