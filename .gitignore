@@ -1,5 +1,7 @@
 **/*.aux
 **/*.log
+**/*.lot
+**/*.lof
 **/*.out
 **/*.synctex.gz
 **/*.toc

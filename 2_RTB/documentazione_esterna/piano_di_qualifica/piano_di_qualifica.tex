@@ -127,50 +127,223 @@ in maniera ottimale.
 	 \hline
 	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
 	 \hline
-	 MPC01 & Earned Value (EV) & $\geq 0$ & 7560 \\
+	 MPC01 & Earned Value (EV) & $\geq 0$ & $\leq$ EAC \\
 	 \hline
-	 MPC02 & Planned Value (PV) & $\geq 0$ & 6344 \\ 
+	 MPC02 & Planned Value (PV) & $\geq 0$ & $\leq$ Budget At Completion (BAC) \\ 
 	 \hline
-	 MPC03 & Actual Cost (AC) & $\geq 0$ & 6344 \\ 
+	 MPC03 & Actual Cost (AC) & $\geq 0$ & $\leq$ EAC \\ 
 	 \hline
-	 MPC04 & Cost Variance (CV) & $\geq -7.5\%$ & 6344 \\ 
+	 MPC04 & Cost Variance (CV) & $\geq -7.5\%$ & $\geq 0\%$ \\ 
 	 \hline
-	 MPC05 & Schedule Variance (SV) & $\geq 0$ & 6344 \\ 
+	 MPC05 & Schedule Variance (SV) & $\geq -7.5\%$ & $\geq 0\%$ \\ 
 	 \hline
-	 MPC06 & Estimated at Completion (EAC) & 788 & 6344 \\ 
+	 MPC06 & Estimated at Completion (EAC) & Errore del $\pm 3\%$ rispetto al BAC  & Equivalente al BAC \\ 
 	 \hline
-	 MPC07 & Estimate to Complete (ETC)  & $\geq 0$ & 6344 \\ 
+	 MPC07 & Estimate to Complete (ETC)  & $\geq 0$ & $\leq$ EAC \\ 
 	 \hline
 	\end{tabular}
-	\caption{ valori per il processo di Fornitura}
+	\caption{ Valori delle metriche inerenti al processo di Fornitura}
 	\label{table:1}
 	\end{table}
 
 \subsubsubsection{Sviluppo}
 
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPC08 & Requirements Stability Index (RSI) & $\geq 75\% $ & 100\% \\
+	 \hline
+	 MPC09 & Structural Fan-In (SFIN) &  & Da massimizzare \\ 
+	 \hline
+	 MPC10 & Structural Fan-Out (SFOUT) &  & Da minimizzare \\ 
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti al processo di Sviluppo}
+	\label{table:2}
+	\end{table}
+
 \subsubsection{Processi di supporto}
 
 \subsubsubsection{Documentazione}
 
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPC11 & Indice Gulpease & $\geq 60\% $ & 80\% \\
+	 \hline
+	 MPC12 & Correttezza Ortografica & 0 errori & 0 errori \\ 
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti al processo di Documentazione}
+	\label{table:3}
+	\end{table}
+
 \subsubsubsection{Verifica}
 
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPC13 & Code Coverage & $\geq 90\% $ & 100\% \\
+	 \hline
+	 MPC14 & Passed Test Cases Percentage & 100\% & 100\% \\ 
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti al processo di Verifica}
+	\label{table:4}
+	\end{table}
+
 \subsubsubsection{Gestione della qualità}
+
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPC15 & Quality Metrics Satisfied & $\geq 85\% $ & 100\% \\
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti al processo di Verifica}
+	\label{table:5}
+	\end{table}
 
 \subsubsection{Processi organizzativi}
 
 \subsubsubsection{Gestione dei processi}
 
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPC16 & Non Calculated Risk & $\leq 3 $ & 0 \\
+	 \hline
+	 MPC17 & Time Efficiency & $\leq 3 $ & $\leq 1 $ \\
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti al processo di Gestione dei processi}
+	\label{table:6}
+	\end{table}
+
+
 \subsection{Qualità di prodotto}
+
+Per qualità di prodotto si intende la capacità del software di rispettare 
+le caratteristiche richieste dal cliente e quelle dettate dallo standard.
+Più il risultato si avvicina a quello atteso, più al qualità del prodotto
+sarà elevata. 
 
 \subsubsection{Funzionalità}
 
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPD01 & Copertura dei requisiti obbligatori & 100\%  & 100\% \\
+	 \hline
+	 MPD02 & Copertura dei requisiti desiderabili & $\geq 50\% $  & 100\% \\ 
+	 \hline
+	 MPD03 & Copertura dei requisiti opzionali & $\geq 0\% $ & $\geq 50\% $ \\ 
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti alla Funzionalità del prodotto}
+	\label{table:7}
+	\end{table}
+
 \subsubsection{Affidabilità}
+
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPD04 & Code Coverage & $\geq 80\% $  & 100\% \\
+	 \hline
+	 MPD05 & Branch Coverage & $\geq 50\% $  & $\geq 80\% $ \\ 
+	 \hline
+	 MPD06 & Statement Coverage & $\geq 60\% $ & $\geq 80\% $ \\ 
+	 \hline
+	 MPD07 & Failure Density & 100\%  & 100\%  \\ 
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti all'Affidabilità del prodotto}
+	\label{table:8}
+	\end{table}
+
 
 \subsubsection{Usabilità}
 
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPD08 & Facilità di utilizzo & $\leq 3 $ errori di utilizzo & 0 errori di utilizzo \\
+	 \hline
+	 MPD09 & Tempo di apprendimento & $\leq 15 $ minuti  & $\leq 5 $ minuti\\ 
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti all'Usabilità del prodotto}
+	\label{table:9}
+	\end{table}
+
 \subsubsection{Efficienza}
 
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPD10 & Utilizzo risorse & $\geq 75\% $  & 100\% \\
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti all'Efficienza del prodotto}
+	\label{table:10}
+	\end{table}
+
 \subsubsection{Manutenibilità}
+
+\rowcolors{1}{white}{lightgray}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|} 
+	 \hline
+	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+	 \hline
+	 MPD11 & Complessità ciclomatica & 1-10 & 11-20 \\
+	 \hline
+	 MPD12 & Code Smell & 0 & 0 \\ 
+	 \hline
+	 MPD13 & Coefficient of Coupling (COC) & $\leq 30\% $ & $\leq 10\% $ \\ 
+	 \hline
+	\end{tabular}
+	\caption{ Valori delle metriche inerenti alla Manutenibilità del prodotto}
+	\label{table:11}
+	\end{table}
 
 \section{Metodologie di testing}
 
