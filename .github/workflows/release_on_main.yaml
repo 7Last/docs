@@ -39,6 +39,8 @@ jobs:
           pdfs=$(find ./* -type f -name "*.pdf")
           for file in $pdfs; do
             dst="$(dirname $file)/../$(basename $file)"
+            echo $file
+            echo $dst
             mv $file $dst
             rm -rf $(dirname $file)
           done
