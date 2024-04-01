@@ -1,13 +1,11 @@
 name: Release on main
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -16,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository on main
+      - name: Checkout repository on develop
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: develop
           path: .
 
       - name: Configure SSH
@@ -33,9 +31,6 @@ jobs:
           git config --global user.email "7last.swe@gmail.com"
           git config --global user.name "7last-bot"
 
-      - name: tree .
-        run: tree .
-
       - name: Remove 0_template folder
         run: rm -rf ./0_template
 
@@ -48,8 +43,17 @@ jobs:
             rm -rf $(dirname $file)
           done
 
-      - name: Commit and push
-        run: |
-          git add .
-          git commit -m "Update main branch"
-          git push origin main
+      - name: If no changes, exit with success
+        run: git diff --exit-code || exit 0
+
+      - name: git add
+        run: git add .
+
+      - name: git commit
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+          AUTHOR: ${{ github.event.head_commit.author.name }}
+        run: git commit -m "[bot] \"$MSG\" by $AUTHOR"
+
+      - name: git push
+        run: git push -f origin develop:main
