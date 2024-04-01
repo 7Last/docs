@@ -46,20 +46,15 @@ jobs:
       - name: Fetch docs submodule
         run: git submodule update --recursive --remote
 
-      - name: Tree
-        run: tree .
-
       - name: Python script to generate docs
         env:
           SCRIPTS: ./scripts
         run: |
-          python3 -m venv "$SCRIPTS/venv"
-          source "$SCRIPTS/venv/bin/activate"
           pip3 install -r "$SCRIPTS/requirements.txt"
           python3 "$SCRIPTS/generate_docs.py"
 
       - name: Tree
-        run: tree .
+        run: tree ./docs
 
       - name: Check for changes
         run: |
