@@ -44,7 +44,10 @@ jobs:
          ref: main
 
       - name: Fetch docs submodule
-        run: git submodule update --recursive --remote
+        run: git submodule update --remote --merge
+
+      - name: Tree
+        run: tree .
 
       - name: Install requirements
         run: pip3 install -r ./scripts/requirements.txt
@@ -52,8 +55,6 @@ jobs:
       - name: Generate docs
         run: python3 ./scripts/generate_docs.py
 
-      - name: Tree
-        run: tree .
 
       - name: Check for changes
         run: |
