@@ -46,15 +46,11 @@ jobs:
       - name: Fetch docs submodule
         run: git submodule update --init --force --remote
 
-      - name: Tree
-        run: tree .
-
       - name: Install requirements
         run: pip3 install -r ./scripts/requirements.txt
 
       - name: Generate docs
         run: python3 ./scripts/generate_docs.py
-
 
       - name: Check for changes
         run: |
@@ -64,12 +60,9 @@ jobs:
           exit 0
 
       - name: Push updates on main
-        env:
-          MSG: ${{ github.event.head_commit.message }}
-          AUTHOR: ${{ github.event.head_commit.author.name }}
         run: |
           git add .
-          git commit -m "[BOT] \"$MSG\" by $AUTHOR"
+          git commit -m "[BOT] Update docs"
           git push origin main
 
       - name: Install dependencies
