@@ -7,3 +7,9 @@
 **/*.fdb_latexmk
 **/*.DS_Store
 /.idea/*
+**/*.glg
+**/*.glo
+**/*.gls
+**/*.glsdefs
+**/*.ist
+**/*.tn
