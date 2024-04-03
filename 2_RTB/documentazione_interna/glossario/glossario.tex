@@ -7,30 +7,30 @@
 \captionsetup[table]{labelformat=empty}
 \geometry{headsep=1.5cm}
 
-\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand{\contentsname}{Indice}
 \renewcommand\familydefault{\sfdefault}
 
 
 \glstoctrue
 
 \glsaddkey
-{feminine}% key
-{}% default value
-{\glsentryfem}% no link cs
-{\Glsentryfem}% no link ucfirst cs
-{\glsf}% link cs
-{\Glsf}% link ucfirst cs
-{\GLSf}% link all caps cs
+{feminine}
+{}
+{\glsentryfem}
+{\Glsentryfem}
+{\glsf}
+{\Glsf}
+{\GLSf}
 
 
 \glsaddkey
 {feminine_plural}
-{}% default value
-{\glsentryfemplur}% no link cs
-{\Glsentryfemplur}% no link ucfirst cs
-{\glsfp}% link cs
-{\Glsfp}% link ucfirst cs
-{\GLSfp}% link all caps cs
+{}
+{\glsentryfemplur}
+{\Glsentryfemplur}
+{\glsfp}
+{\Glsfp}
+{\GLSfp}
 
 
 
@@ -39,14 +39,6 @@
 
 \makeglossaries
 
-% Example of a complete definition
-% \newglossaryentry{zed}{
-%     name=zed,
-%     description={aaa},
-%     plural=fondues,
-%     feminine={abc},
-%     feminine_plural={abc}
-% }
 
 \newglossaryentry{ClickUp}{
     name=ClickUp,
@@ -75,15 +67,15 @@
 }
 
 
-\newglossarystyle{myaltlistgroup}{%
-    \setglossarystyle{altlistgroup}%
-    \renewcommand*{\glsgroupheading}[1]{%
-        \pagebreak%
-        \item\makebox[\linewidth]{\Large\textbf{\glsgetgrouptitle{##1}}}%
-        \vspace*{-\baselineskip}%
-        \item\makebox[\linewidth]{\hspace*{3cm}\hrulefill\hspace*{3cm}}%
+\newglossarystyle{myaltlistgroup}{
+    \setglossarystyle{altlistgroup}
+    \renewcommand*{\glsgroupheading}[1]{
+        \pagebreak
+        \item\makebox[\linewidth]{\Large\textbf{\glsgetgrouptitle{##1}}}
+        \vspace*{-\baselineskip}
+        \item\makebox[\linewidth]{\hspace*{3cm}\hrulefill\hspace*{3cm}}
             \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}}
-    }%
+    }
 }
 
 \glsaddallunused
@@ -97,7 +89,6 @@
 
 \include{header}
 
-%-----------tabella revisioni-----------%
 \begin{table}[!h]
 	\caption{Versioni}
 	\begin{center}
@@ -111,7 +102,6 @@
 		\end{tabular}
 	\end{center}
 \end{table}
-%---------------------------------------%
 
 \newpage
 
