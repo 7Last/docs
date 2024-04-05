@@ -5,7 +5,7 @@
 \input{subX6_section}
 
 \linespread{1.2}
-\captionsetup[table]{labelformat=empty}
+\captionsetup[table]{name=Tabella}
 \geometry{headsep=1.5cm}
 
 \renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
@@ -56,15 +56,101 @@
 
 \input{introduzione.tex}
 
+\newpage
+
 \input{processi_primari.tex}
+
+\newpage
+
 
 \input{processi_di_supporto.tex}
 
+\newpage
+
+
 \input{processi_organizzativi.tex}
+
+\newpage
+
 
 \input{standard_qualità.tex}
 
+\newpage
+
+
 \input{metriche_qualità.tex}
+
+\newpage
+
+
+%----------------TABLE EXAMPLE----------------%
+% \begin{table}[h!]
+% 	\centering
+% 	\begin{tabular}{|l|l|l|l|} 
+% 	 \hline
+% 	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
+% 	 \hline
+% 	 MPC01 & Earned Value (EV) & $\geq 0$ & $\leq$ EAC \\
+% 	 \hline
+% 	 MPC02 & Planned Value (PV) & $\geq 0$ & $\leq$ Budget At Completion (BAC) \\ 
+% 	 \hline
+% 	 MPC03 & Actual Cost (AC) & $\geq 0$ & $\leq$ EAC \\ 
+% 	 \hline
+% 	 MPC04 & Cost Variance (CV) & $\geq -7.5\%$ & $\geq 0\%$ \\ 
+% 	 \hline
+% 	 MPC05 & Schedule Variance (SV) & $\geq -7.5\%$ & $\geq 0\%$ \\ 
+% 	 \hline
+% 	 MPC06 & Estimated at Completion (EAC) & Errore del $\pm 3\%$ rispetto al BAC  & Equivalente al BAC \\ 
+% 	 \hline
+% 	 MPC07 & Estimate to Complete (ETC)  & $\geq 0$ & $\leq$ EAC \\ 
+% 	 \hline
+% 	\end{tabular}
+%     \caption{Valori delle metriche inerenti al processo di Fornitura}
+% 	\label{table:1}
+% \end{table}
+%---------------------------------------------%
+
+
+%----------------FIGURE EXAMPLE---------------%
+
+% \begin{figure*}
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width=\textwidth,
+%             height=0.5\textwidth,
+%             ybar,
+%             enlargelimits=0,
+%             legend style={at={(0.5,1.15)},
+%               anchor=north,legend columns=-1},
+%             ylabel={Tempo dedicato},    
+%             symbolic x coords={Antonio, Davide, Elena, Leonardo, Matteo, Raul, Valerio},
+%             xtick=data,
+%             % nodes near coords,
+%             nodes near coords align={vertical},
+%             ]
+%         \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+%         \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+%         \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+%         \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+%         \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
+%         \legend{Amministratore, Responsabile, Verificatore, Analista, Progettista}
+%         \end{axis}
+%     \end{tikzpicture}
+% \caption{impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
+% \end{figure*}
+
+%---------------------------------------------%
+
+
+
+
+
+
+
+
+
+
 
 
 
