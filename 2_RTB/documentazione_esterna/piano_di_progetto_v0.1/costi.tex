@@ -12,7 +12,7 @@ La stima dei costi di realizzazione è la stima del budget totale necessario per
 	\centering
 		\begin{tabular}{ |c|c|c|c| }
 			\hline
-			\textbf{Ruolo}   & \textbf{Costo orario} & \textbf{Ore per ruolo} & \textbf{Ore per membro} \\
+			\textbf{Ruolo}   & \textbf{Costo orario (€/h)} & \textbf{Ore per ruolo (h)} & \textbf{Ore per membro (h)} \\
 			\hline
 			Responsabile   & 30           & 56            & 8              \\
 			Amministratore & 20           & 56            & 8              \\
@@ -28,16 +28,17 @@ La stima dei costi di realizzazione è la stima del budget totale necessario per
     \label{tab:2}
 \end{table}
 
+
 \begin{figure*}
     \centering
     \begin{tikzpicture}
         \pie[rotate=90, text=legend]{
-            10/Responsabile,
-            10/Amministratore,
-            10/Analista,
-            10/Progettista,
-            10/Programmatore,
-            10/Verificatore
+            13/Responsabile,
+            9/Amministratore,
+            15/Analista,
+            22/Progettista,
+            20/Programmatore,
+            21/Verificatore
         }
     \end{tikzpicture}
     \caption{Distribuzione dei costi per ruolo}
