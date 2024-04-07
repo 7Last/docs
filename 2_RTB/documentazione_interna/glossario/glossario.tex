@@ -40,9 +40,25 @@
 \makeglossaries
 
 
+%---------- Glossario ----------
+\newglossaryentry{CA}{
+    name={CA},
+    description={Customer Acceptance, è l'ultima fase del ciclo di vita del software, consiste nella presentazione del prodotto finito al cliente per valutazione e approvazione. Durante questa fase, il cliente esamina attentamente il software rispetto ai requisiti concordati e alle aspettative iniziali. Una volta accettato dal cliente, il software è pronto per l'utilizzo e la distribuzione.}
+}
+
 \newglossaryentry{ClickUp}{
     name=ClickUp,
     description={Software di gestione dei progetti che offre varie funzionalità, tra cui la gestione di task, una lavagna virtuale, fogli di calcolo e strumenti collaborativi per la creazione e modifica di documenti, il tutto accessibile da una piattaforma unificata.},
+}
+
+\newglossaryentry{Docker}{
+    name={Docker},
+    description={Popolare software libero progettato per eseguire processi informatici in ambienti isolabili, minimali e facilmente distribuibili chiamati container, con l'obiettivo di semplificare i processi di deployment di applicazioni software.}
+}
+
+\newglossaryentry{Docker Compose}{
+    name={Docker Compose},
+    description={Strumento che semplifica la specifica dei servizi, reti e volumi necessari per eseguire un'applicazione composta da più contenitori Docker, consentendo una gestione semplificata dell'ambiente di sviluppo e di distribuzione.}
 }
 
 \newglossaryentry{Glossario}{
@@ -50,11 +66,20 @@
     description={Elenco strutturato di termini tecnici o specializzati, ognuno corredato dalla propria definizione o spiegazione. Questo strumento aiuta a migliorare la comunicazione tra le varie parti coinvolte in un progetto, riducendo le ambiguità e garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto.}
 }
 
+\newglossaryentry{Kafka}{
+    name={Kafka},
+    description={Piattaforma di streaming distribuita, progettata per la gestione di flussi di dati in tempo reale. Offre una soluzione scalabile e affidabile per la pubblicazione, la sottoscrizione e l'elaborazione di eventi in tempo reale all'interno di un sistema distribuito.}
+}
+
 \newglossaryentry{Norme di Progetto}{
     name={Norme di Progetto},
     description={Regole e linee guida stabilite all'interno di un progetto per garantire coerenza e qualità nelle attività svolte. Definiscono standard e procedure, come documentazione, gestione delle versioni e criteri di codifica, per assicurare uniformità nell'approccio e nel risultato finale.}
 }
 
+\newglossaryentry{PB}{
+    name={PB},
+    description={Product Baseline, durante questa fase il focus si sposta dall'analisi dei requisiti e dalla progettazione concettuale all'implementazione e alla costruzione effettiva del prodotto software. Le attività principali comprendono la scrittura del codice, i test unitari e l'integrazione di componenti software. L'obiettivo è raggiungere una versione stabile e funzionante del prodotto che rappresenti la base per ulteriori sviluppi e miglioramenti.}
+}
 
 \newglossaryentry{Piano di Progetto}{
     name={Piano di Progetto},
@@ -65,6 +90,17 @@
     name={Piano di Qualifica},
     description={Documento che stabilisce gli standard di qualità, i processi e le attività di testing che saranno implementati durante lo sviluppo di un progetto. Contiene una descrizione dettagliata delle strategie di testing, delle metriche di valutazione e dei criteri di accettazione del prodotto finale. L'obiettivo principale del Piano di Qualifica è garantire che il prodotto soddisfi gli standard di qualità prefissati e che il processo di sviluppo segua procedure coerenti e efficaci.}
 }
+
+\newglossaryentry{PoC}{
+    name={PoC},
+    description={Proof of Concept, è una dimostrazione pratica per verificare la fattibilità o la validità di un'idea, di un concetto o di un progetto specifico. Nel contesto dello sviluppo software, un PoC consiste nella creazione di una versione semplificata di un'applicazione per testare un nuovo approccio tecnologico o per dimostrare la fattibilità di una funzionalità specifica.}
+}
+
+\newglossaryentry{RTB}{
+    name={RTB},
+    description={Requirements and Technology Baseline, ovvero la fase iniziale e fondamentale del processo di sviluppo di un software. In questa fase, l'obiettivo principale è stabilire e comprendere i requisiti del sistema e definire la base tecnologica sulla quale il progetto si svilupperà. Le tre principali attività di questa fase sono: l'analisi dei requisiti, la definizione della baseline tecnologica e la definizione della baseline di progetto.}
+}
+
 
 
 \newglossarystyle{myaltlistgroup}{
@@ -94,10 +130,11 @@
 	\begin{center}
 		\begin{tabular}{ c c c p{9cm} }
 			\hline                                                                                               \\[-2ex]
-			Ver. & Data       & Autore         & Descrizione                                                     \\
+			Ver. & Data       & Autore         & Descrizione \\
 			\\[-2ex] \hline \\[-1.5ex]
+            0.3  & 07/04/2024 & Leonardo Baldo & Aggiunta definizioni \\
 			0.2  & 02/04/2024 & Elena Ferro    & Modifica stile documento, automatizzazione creazione glossario. \\
-			0.1  & 28/03/2024 & Leonardo Baldo & Creazione documento                                             \\
+			0.1  & 28/03/2024 & Leonardo Baldo & Creazione documento \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -109,9 +146,3 @@
 
 \printglossary[style=myaltlistgroup,title=]
 \end{document}
-
-
-
-
-
-
