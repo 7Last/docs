@@ -1,0 +1,98 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ c c c c p{6.1cm} }
+			\hline                                                                                                      \\[-2ex]
+			Ver. & Data       & Redattore          & Verificatore       & Descrizione                                   \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 09/04/2024 & Antonio Benetazzo  & Valerio Occhinegro & Stesura verbale                               \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 17:00\\
+\textbf{Orario di fine}: 18:00\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |l|l|l| } 
+		\hline
+		\textbf{Partecipante} & \textbf{Ruolo}       & \textbf{Presenza} \\
+		\hline 
+		Antonio Benetazzo     & Redattore            & Presente          \\
+		Davide Malgarise      & Partecipante interno & Presente          \\
+		Elena Ferro           & Partecipante interno & Presente          \\
+		Leonardo Baldo        & Partecipante interno & Presente          \\
+		Matteo Tiozzo         & Amministratore       & Presente          \\
+		Raul Seganfreddo      & Partecipante interno & Presente          \\
+		Valerio Occhinegro    & Verificatore         & Presente          \\
+		Andrea Dorigo         & Partecipante esterno & Presente          \\
+		Daniele Zorzi         & Partecipante esterno & Presente          \\
+		Fabio Pallaro         & Partecipante esterno & Presente          \\
+		\hline
+	\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Argomento 1}
+bla bla bla
+\begin{itemize}
+	\item \textbf{Item 1}: bla bla bla
+	\item \textbf{Item 2}: bla bla bla
+\end{itemize}
+
+\subsection{Argomento 2}
+bla bla bla
+
+\subsection{Decisioni prese e conclusioni}
+bla bla bla
+
+
+\newpage
+\begin{table}[b]
+	\begin{tabular}{@{}p{.5in}p{4in}@{}}
+		Data:  & \hrulefill \\
+			   &     		\\
+			   &     		\\
+		Firma: & \hrulefill \\
+	\end{tabular}
+	\end{table}
+
+\end{document}
