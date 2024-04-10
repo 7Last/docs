@@ -4,6 +4,8 @@
 **/*.synctex.gz
 **/*.toc
 **/*.fls
+**/*.lof
+**/*.lot
 **/*.fdb_latexmk
 **/*.DS_Store
 /.idea/*
