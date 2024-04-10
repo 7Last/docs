@@ -1,0 +1,34 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{C}\relax \glsresetentrylist %
+\glossentry{CA}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}%
+\glossentry{ClickUp}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}\glsgroupskip
+\glsgroupheading{D}\relax \glsresetentrylist %
+\glossentry{Docker}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}%
+\glossentry{Docker Compose}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}\glsgroupskip
+\glsgroupheading{G}\relax \glsresetentrylist %
+\glossentry{Glossario}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}\glsgroupskip
+\glsgroupheading{K}\relax \glsresetentrylist %
+\glossentry{Kafka}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}\glsgroupskip
+\glsgroupheading{N}\relax \glsresetentrylist %
+\glossentry{Norme di Progetto}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}\glsgroupskip
+\glsgroupheading{P}\relax \glsresetentrylist %
+\glossentry{PB}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}%
+\glossentry{Piano di Progetto}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}%
+\glossentry{Piano di Qualifica}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}%
+\glossentry{PoC}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}\glsgroupskip
+\glsgroupheading{R}\relax \glsresetentrylist %
+\glossentry{RTB}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{1}}}%
+\end{theglossary}\glossarypostamble
