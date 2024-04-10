@@ -22,7 +22,7 @@
 	\caption{Versioni}
 	\footnotesize
 	\begin{center}
-		\begin{tabular}{ c c c c p{6.1cm} }
+		\begin{tabular}{ l l l l l }
 			\hline                                                                        \\[-2ex]
 			Ver. & Data       & Redattore          & Verificatore       & Descrizione     \\
 			\\[-2ex] \hline \\[-1.5ex]
@@ -53,11 +53,11 @@
 		\textbf{Partecipante} & \textbf{Ruolo}       & \textbf{Presenza} \\
 		\hline 
 		Antonio Benetazzo     & Redattore            & Presente          \\
-		Davide Malgarise      & Partecipante interno & Presente          \\
-		Elena Ferro           & Partecipante interno & Presente          \\
-		Leonardo Baldo        & Partecipante interno & Presente          \\
+		Davide Malgarise      &                      & Presente          \\
+		Elena Ferro           &                      & Presente          \\
+		Leonardo Baldo        &                      & Presente          \\
 		Matteo Tiozzo         & Amministratore       & Presente          \\
-		Raul Seganfreddo      & Partecipante interno & Presente          \\
+		Raul Seganfreddo      &                      & Presente          \\
 		Valerio Occhinegro    & Verificatore         & Presente          \\
 		\hline
 	\end{tabular}
@@ -95,45 +95,31 @@ di questo primo sprint (da riportare successivamente nei relativi verbali):
 
 \subsection{Aggiornamento del Way of Working}
 Decidiamo di aggiornare il Way of Working. \\
-Come già anticipato durante l'incontro con l'azienda, decidiamo di utilizzare \textit{Discord} 
-come strumento di comunicazione principale, in quanto permette di creare canali dedicati 
-per ogni argomento e di avere una chat vocale, oltre ad essere uno strumento già ampiamente utilizzato dalla proponente. \\
-Come consigliato sempre dall'azienda, decidiamo di cominciare ad usare \textit{ClickUp} 
-per la gestione delle attività e delle scadenze. All'interno di \textit{ClickUp} sarà anche possibile 
-gestire i documenti relativi alle annotazioni, precedentemente gestiti con \textit{Notion}, 
-oltre ad avere accesso alla funzionalità di tracciamento delle ore spese per ciascun task 
-(ci potrà essere d'aiuto nella rendicontazione delle ore), alla possibilità di integrazione 
-con \textit{GitHub} per poter collegare a ciascuna attività branch e pull request e ad un'ampia gamma di reportistica. \\
-Valutiamo sia opportuno implementare un modo automatico per poter gestire i file la pubblicazione nel branch main 
-dei file, in modo che vengano rimossi tutti i file sorgenti relativi alla documentazione e le cartelle di servizio, 
-in modo da mantenere il repository pulito e ordinato. \\
-Decidiamo di prendere come modello di riferimento lo standard \textit{ISO/IEC 12207:2017} per la gestione del ciclo di vita del software. 
-Per questo motivo verranno cambiate le date presenti nella documentazione, in modo che rispettino 
-lo standard ISO 8601. \\
+Come già anticipato durante l'incontro con l'azienda, decidiamo di utilizzare \textit{Discord} come strumento di comunicazione principale, in quanto permette di creare canali dedicati per ogni argomento e di avere una chat vocale, oltre ad essere uno strumento già ampiamente utilizzato dalla proponente. \\
+Come consigliato sempre dall'azienda, decidiamo di cominciare ad usare \textit{ClickUp} per la gestione delle attività e delle scadenze. All'interno di esso sarà anche possibile gestire i documenti relativi alle annotazioni, precedentemente gestiti con \textit{Notion}, oltre ad avere accesso alla funzionalità di tracciamento delle ore spese per ciascun task (ci potrà essere d'aiuto nella rendicontazione delle ore), alla possibilità di integrazione con \textit{GitHub} per poter collegare a ciascuna attività, branch e pull request e ad un'ampia gamma di reportistica. \\
+Valutiamo sia opportuno implementare un modo automatico per poter gestire i file e la loro pubblicazione nel branch main, in modo che tutti i sorgenti relativi alla documentazione e le cartelle di servizio vengano rimossi, così da rendere più semplice il mantenimento del repository. \\
+Decidiamo di prendere come modello di riferimento lo standard \textit{ISO/IEC 12207:2017} per la gestione del ciclo di vita del software. Per questo motivo verranno cambiate le date presenti nella documentazione, in modo che rispettino lo standard \textit{ISO 8601}. \\
 Verrà creato un repository aggiuntivo dove verranno pubblicati i file (sorgenti e documentazione) relativi al prodotto 
 richiesto dal capitolato che andremo a sviluppare, denominato \textit{SyncCity}. Valuteremo successivamente 
-la possibilità di attuare politiche di protezione dei branch in questo repository e in quello relativo alla documentazione. \\
-Ci accordiamo per trovarci in riunione interna ogni settimana, indicativamente ogni mercoledì alle h 15:00; 
-riteniamo sia importante confrontarci regolarmente per valutare assieme quanto fatto, quanto rimane da fare, 
-risolvere tutte le problematiche occorse in maniera tempestiva e risolvere eventuali dubbi o discutere di qualunque argomento 
-venga ritenuto opportuno.
+la possibilità di attuare politiche di protezione dei branch in questo e in quello relativo alla documentazione. \\
+Ci accordiamo per trovarci in riunione interna ogni settimana, indicativamente ogni mercoledì alle ore 15; riteniamo sia importante confrontarci regolarmente per valutare assieme quanto fatto, quanto rimane da fare, risolvere tutte le problematiche occorse in maniera tempestiva e eventuali dubbi o discutere di qualunque argomento venga ritenuto opportuno.
 
 \subsection{Riepilogo compiti da svolgere}
 Vengono riepilogati i compiti da svolgere in questo primo sprint:
 \begin{itemize}
-	\item Ingresso da parte di tutti i componenti nei canali di \textit{Discord} messi a disposizione da parte dell'azienda
-	\item Configurazione \textit{ClickUp} e creazione dei task relativi al primo sprint
-	\item Implementazione di un sistema automatico per la pubblicazione dei file nel branch main
-	\item Aggiornamento dei template relativi ai documenti e ai verbali interni ed esterni
-	\item Creazione repository \textit{SyncCity}
-	\item Creazione del template da usare per le presentazioni da mostrare durante le attività \textit{Diario di Bordo}
-	\item Studio delle tecnologie \textit{Docker Compose} e \textit{Apache Kafka} proposte dalla proponente e valutazione di eventuali alternative
-	\item Sviluppo di un semplice programma in python per la generazione dei dati
-	\item Prima stesura dei documenti \textit{Analisi dei Requisiti}, \textit{Piano di Progetto}, \textit{Piano di Qualifica}, \textit{Norme di Progetto}, \textit{Glossario}
+	\item ingresso da parte di tutti i componenti nei canali di \textit{Discord} messi a disposizione da parte dell'azienda;
+	\item configurazione di \textit{ClickUp} e creazione dei task relativi al primo sprint;
+	\item implementazione di un sistema automatico per la pubblicazione dei file nel branch main;
+	\item aggiornamento dei template relativi ai documenti e ai verbali interni ed esterni;
+	\item creazione repository \textit{SyncCity};
+	\item creazione del template da usare per le presentazioni da mostrare durante le attività \textit{Diario di Bordo};
+	\item studio delle tecnologie \textit{Docker Compose} e \textit{Apache Kafka} proposte dalla proponente e valutazione di eventuali alternative;
+	\item sviluppo di un semplice programma in \textit{Python} per la generazione dei dati;
+	\item prima stesura dei documenti \textit{Analisi dei Requisiti}, \textit{Piano di Progetto}, \textit{Piano di Qualifica}, \textit{Norme di Progetto}, \textit{Glossario}.
 \end{itemize}
 
 \subsection{Decisioni prese e conclusioni}
 Una volta definito quanto riportato nel presente verbale ci salutiamo e ci diamo appuntamento al prossimo incontro programmato 
-per il giorno 10/04/2024 alle ore 15:00.
+per il giorno 10 aprile alle ore 15.
 
 \end{document}
