@@ -1,0 +1,137 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l l }
+			\hline                                                                              \\[-2ex]
+			Ver. & Data       & Redattore          & Verificatore       & Descrizione           \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 10/04/2024 & Antonio Benetazzo    & Valerio Occhinegro & Approvazione template \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 15:00\\
+\textbf{Orario di fine}: 16:00\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |l|l|l| } 
+		\hline
+		\textbf{Partecipante} & \textbf{Ruolo}       & \textbf{Presenza} \\
+		\hline 
+		Antonio Benetazzo     & Redattore            & Presente          \\
+		Davide Malgarise      &                      & Presente          \\
+		Elena Ferro           &                      & Assente           \\
+		Leonardo Baldo        &                      & Presente          \\
+		Matteo Tiozzo         & Amministratore       & Presente          \\
+		Raul Seganfreddo      &                      & Presente          \\
+		Valerio Occhinegro    & Verificatore         & Presente          \\
+		\hline
+	\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\section{Ordine del giorno}
+\subsection{Cosa è stato fatto fino ad ora}
+\subsection{Cosa rimane da fare}
+\subsection{Problemi riscontrati}
+\subsection{Dubbi emersi}
+\subsection{Proposta di modifica al template dei verbali}
+\subsection{Revisione e approvazione verbali interno ed esterno 3 aprile}
+\subsection{Pubblicazione nel branch develop della documentazione}
+\subsection{Varie ed eventuali}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Cosa è stato fatto fino ad ora}
+Abbiamo fatto un riepilogo di quanto completato fino ad ora.
+\begin{itemize}
+	\item \textbf{Verbali} \\
+	Sono stati redatti i verbali delle riunioni interne e esterne del 3 aprile. Si procede con la revisione e l'approvazione.
+	\item \textbf{Script per Glossario} \\
+	Abbiamo completato lo sviluppo dello script in \textit{Python} per contrassegnare in automatico nei vari documenti le parole presenti nel \textit{Glossario}. Nei prossimi giorni si provvederà a testarlo in modo da verificarne il corretto funzionamento.
+	\item \textbf{Simulatore di dati} \\
+	Abbiamo implementato il simulatore che verrà utilizzato nel \textit{POC} per generare dati casuali ma verosimili. \\
+	Attualmente produce due tipi di dato:
+	\begin{itemize}
+		\item \textbf{temperatura} - valore generato tramite una sinusoide che simula l'escursione termica giornaliera in modo parametrico rispetto al mese del timestamp, per cui sarà in grado di generare dati in modo coerente rispetto alla stagione in corso;
+		\item \textbf{traffico} - l'idea è quella di misurare il numero di veicoli che passano davanti al sensore in un certo periodo di tempo e la loro velocità media (così si dovrebbe riuscire a stimare più o meno il traffico); questo viene simulato mediante l'utilizzo di una gaussiana multimodale (in altri termini, è una funzione abbastanza pianeggiante tranne in determinati punti dove si hanno dei picchi, che rappresentano gli orari di punta).
+	\end{itemize}
+	\item \textbf{Struttura del documento \textit{Analisi dei Requisiti}} \\
+	Abbiamo definito la struttura del documento \textit{Analisi dei Requisiti}, in modo da avere un'idea chiara di come sarà composto.
+	\item \textbf{Valutazione \textit{Apache Kafka} e alternative} \\
+	Abbiamo fatto una valutazione di \textit{Apache Kafka} e delle sue alternative, in modo da poter scegliere la tecnologia migliore per il nostro progetto. \textit{Apache Kafka} è una piattaforma di streaming di eventi ampiamente utilizzata per la gestione di flussi di dati in tempo reale. Le principali alternative che abbiamo trovato sono le seguenti: \textit{Google Cloud Pub/Sub}, \textit{MuleSoft Anypoint Platform}, \textit{IBM MQ}. \\
+	Al termine della valutazione, si è deciso di utilizzare \textit{Apache Kafka} per il nostro progetto in quanto è una tecnologia molto diffusa e supportata, che offre una vasta gamma di funzionalità e integrazioni, e che è in grado di gestire flussi di dati in tempo reale in modo scalabile e affidabile.
+	\item \textbf{\textit{Docker} e \textit{Docker Compose}} \\
+	Abbiamo fatto una valutazione di \textit{Docker} e \textit{Docker Compose} decidendo di utilizzarli per il nostro progetto. \textit{Docker} è una piattaforma open source che permette di creare, gestire e distribuire applicazioni in container. \textit{Docker Compose} è uno strumento che permette di definire e gestire applicazioni multi-container. Questi strumenti ci permetteranno di creare un ambiente di sviluppo isolato e riproducibile, in modo da garantire che il nostro software funzioni correttamente in qualsiasi ambiente.
+	\item \textbf{Avanzamento documentazione} \\
+	Stiamo proseguendo con la stesura dei documenti del progetto, in particolare il \textit{Piano di Progetto}, le \textit{Norme di Progetto}, il \textit{Glossario}, il \textit{Piano di Qualifica}, a breve ne verrà pubblicata una prima versione.
+\end{itemize}
+
+\subsection{Cosa rimane da fare}
+Per questo sprint ci sono ancora alcune attività da completare:
+\begin{itemize}
+	\item ultimare lo sviluppo del generatore di dati in \textit{Python} ed integrarlo con \textit{Apache Kafka}, da inserire all'interno di un container mediante \textit{Docker};
+	\item completare la prima stesura dei documenti del progetto;
+\end{itemize}
+
+\subsection{Problemi riscontrati}
+Abbiamo riscontrato alcune difficoltà nell'analisi e nello studio delle tecnologie da utilizzare, in particolare per quanto riguarda \textit{Apache Kafka} e \textit{Docker}. Tuttavia, siamo riusciti a superare questi ostacoli grazie alla collaborazione e al supporto del team e delle differenti esperienze di ciascun membro, oltre allo studio di queste mediante materiale reperito online. \\
+Altre difficoltà sono state riscontrate nello sviluppo dello script per il \textit{Glossario}, superate mediante la collaborazione di alcuni membri del gruppo e mediante l'utilizzo della pratica di \textit{pair programming}.
+
+\subsection{Dubbi emersi}
+Rimangono alcuni dubbi su come poter integrare \textit{Python} e \textit{Apache Kafka}, in particolare sulle librerie da utilizzare e sulla configurazione ottimale di \textit{Apache Kafka}.
+
+\subsection{Proposta di modifica al template dei verbali}
+Viene proposta una modifica al template dei verbali:
+\begin{itemize}
+	\item nella tabella delle versioni viene proposto di indicare in colonne separate il redattore e il verificatore, senza dover esplicitare ogni volta queste due operazioni in righe e versioni separate;
+	\item viene proposto anche di modificare la parte indicante i partecipanti alla riunione; per i partecipanti interni verranno indicati solamente i ruoli dell'amministratore, redattore e verificatore, mentre eventuali partecipanti esterni verrebbero indicati in seguito, fuori dalla tabella.
+\end{itemize}
+Viene discussa e approvata tale proposta, nei prossimi giorni verranno applicate le modifiche ai template e ai verbali già redatti (non verranno modificati i documenti relativi alla candidatura).
+
+\subsection{Revisione e approvazione verbali interno ed esterno 3 aprile}
+Vengono revisionati i verbali delle riunioni interne ed esterne del 3 aprile. Sono stati individuati e corretti piccoli errori di battitura. In seguito all'approvazione sono stati pubblicati nel repository. Il verbale esterno verrà inviato all'azienda per la firma.
+
+\subsection{Pubblicazione nel branch develop della documentazione}
+Viene discussa la modalità attualmente utilizzata per la redazione e pubblicazione nel repository della documentazione relativa al progetto. Attualmente sono stati creati dei branch generici per ciascun documento, ma si è deciso di provvedere alla loro pubblicazione nel branch develop al completamento della prima sezione utile; successivamente si procederà alla creazione di un branch per ogni sezione. In questo modo riusciamo a pubblicare i documenti nel repository in modo più frequente e rapido e le modifiche apportate sono più facilmente visibili e tracciabili.
+
+\subsection{Decisioni prese e conclusioni}
+Non sono emersi altri argomenti di discussione, ci salutiamo dandoci come impegno quello di cercare di concludere le attività rimanenti entro la prossima riunione interna, in modo da verificare assieme il tutto prima del SAL con l'azienda.
+
+\end{document}
