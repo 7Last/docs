@@ -36,10 +36,12 @@
 		\vspace{0.5cm}
 		\begin{tabular}{ l l l l l }
 			\hline                                                                          		\\[-2ex]
-			Ver. & Data       & Autore   & Verificatore          	& Descrizione					\\
+			Ver. 	& Data			& Autore			 & Verificatore		& Descrizione\\
 			\\[-2ex] \hline \\[-1.5ex]
-			0.1.1  & 29/03/2024 & Matteo Tiozzo 	   & 				& Modificato tabella versioni	\\
-			0.1  & 28/03/2024 & Valerio Occhinegro & Matteo Tiozzo 	& Prima redazione				\\
+
+			0.3 	 & 07/04/2024 	& Valerio Occhinegro & Matteo Tiozzo	& Stesura documento	\\
+			0.2	     & 29/03/2024 	& Matteo Tiozzo 	 & 					& Modificato tabella versioni	\\
+			0.1 	 & 28/03/2024 	& Valerio Occhinegro & Matteo Tiozzo 	& Prima redazione				\\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -62,53 +64,34 @@
 \section{Introduzione}
 
 \subsection{Obiettivo del documento}
-Il documento contiene tutti i metodi di verifica e validazione utilizzati
-per assicurare il corretto funzionamento dello strumento sviluppato e delle
-attività che lo accompagnano.
-Il documento sarà sottoposto a continui aggiornamenti, per fare in modo che 
-rispecchi le eventuali evoluzioni del progetto.
-In aggiunta verrano registrati gli esiti delle verifiche svolte, in maniera tale 
-da risolvere rapidamente gli errori risultanti.
-
-
-\subsection{Obiettivo del prodotto}
-Il prodotto deve sviluppare una piattaforma di smart city monitoring 
-che riesca a simulare dati provenienti da varie tipoologie di sensori e che sia in grado di 
-rappresentarli in una serie di dashboard.
-L'azienda SyncLab si è già occupata di gestire la funzione di smart-parking (monitoraggio e gestione parcheggi) 
-tramite una tecnologia affine e attualmente sta sviluppando un sistema di sincronizzazione semaforica.
-Sarà dunque di loro interesse verificare la fattibilità di realizzazione di una piattaforma 
-che unisca in un unico luogo il monitoraggio di una città.
+Il presente documento ha lo scopo di definire le strategie di verifica e validazione utilizzate per assicurare il corretto funzionamento dello strumento sviluppato e delle
+attività che lo accompagnano.  Sarà sottoposto a revisioni continue, così da prevedere situazioni precedentemente non occorse e da seguire l'evoluzione del progetto.
 
 \subsection{Glossario}
 Il glossario è uno strumento utilizzato per risolvere eventuali dubbi riguardanti 
 alcuni termini specifici utilizzati nella redazione del documento.
-Esso conterrà la definizione dei termini evidenziati (inserire Metodo con cui viene fatto l'highlight dei termini)
-e altre disambiguazioni 
+Esso conterrà la definizione dei termini evidenziati e sarà consultabile al seguente \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario}{link}. I termini presenti in tale documento saranno evidenziati da una 'G' a pedice.
+
 \subsection{Riferimenti}
 
 \subsubsection{Riferimenti normativi}
 \begin{itemize}
-    \item Norme di progetto (aggiungere versione e/o link al documento)
+    \item Norme di progetto (aggiungere versione e/o link al documento);
     \item Capitolato d'appalto C6: SyncCity – A smart city monitoring platform\\
-		  \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}
+		  \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf};
     \item Regolamento del progetto:\\
-		  \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}
+		  \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}.
 \end{itemize}
 
 \subsubsection{Riferimenti informativi}
 \begin{itemize}
-    \item alcuni mettono le dispense del prof altri la documentazione iso del 1995 
-			sempre fornita dal prof
-    \item Glossario
+    \item Alcuni mettono le dispense del prof altri la documentazione iso del 1995 
+			sempre fornita dal prof;
+    \item Glossario.
 \end{itemize}
 
 \section{Fini metrici di qualità}
-Tutti i processi che compongono il progetto sono valutati tramite l'utilizzo 
-di metriche specifiche, che (sono ben definite dalle sezioni Metriche di qualitá del processo e Metriche di qualitá del prodotto del docu-
-mento Norme di Progetto v1.0.0. ).
-Il contenuto di questa sezione è necessario per valutare le metriche e 
-dunque suddividerle in accettabili o ottime.
+Al fine di valutare nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche, meglio specificate nel documento Norme di Progetto v1.0. METTERE LINK NORME DI PROGETTO. Il contenuto di questa sezione è necessario per identificare i parametri che le metriche devono rispettare per essere considerate accettabili o ottime. 
 
 \subsection{Qualità di processo}
 La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto
@@ -120,48 +103,49 @@ in maniera ottimale.
 
 \subsubsubsection{Fornitura}
 
-\rowcolors{1}{white}{lightgray}
+	
 \begin{table}[h!]
-	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPC01 & Earned Value (EV) & $\geq 0$ & $\leq$ EAC \\
-	 \hline
-	 MPC02 & Planned Value (PV) & $\geq 0$ & $\leq$ Budget At Completion (BAC) \\ 
-	 \hline
-	 MPC03 & Actual Cost (AC) & $\geq 0$ & $\leq$ EAC \\ 
-	 \hline
-	 MPC04 & Cost Variance (CV) & $\geq -7.5\%$ & $\geq 0\%$ \\ 
-	 \hline
-	 MPC05 & Schedule Variance (SV) & $\geq -7.5\%$ & $\geq 0\%$ \\ 
-	 \hline
-	 MPC06 & Estimated at Completion (EAC) & Errore del $\pm 3\%$ rispetto al BAC  & Equivalente al BAC \\ 
-	 \hline
-	 MPC07 & Estimate to Complete (ETC)  & $\geq 0$ & $\leq$ EAC \\ 
-	 \hline
-	\end{tabular}
-	\caption{ Valori delle metriche inerenti al processo di Fornitura}
-	\label{table:1}
-	\end{table}
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|} 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPC01} 	& Earned Value (EV) 			& $\geq 0$ 						& $\leq$ EAC &  \\
+		\hline
+		\textbf{MPC02} 	& Planned Value (PV) 			& $\geq 0$ 						& $\leq$ Budget At Completion (BAC) &  \\ 
+		\hline
+		\textbf{MPC03} 	& Actual Cost (AC) 				& $\geq 0$ 						& $\leq$ EAC &	Misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente momento.\\ 
+		\hline
+		\textbf{MPC04} 	& Cost Variance (CV) 			& $\geq -7.5\%$ 				& $\geq 0\%$ & \\ 
+		\hline
+		\textbf{MPC05} 	& Schedule Variance (SV) 		& $\geq -7.5\%$ 				& $\geq 0\%$ &Indica in percentuale quanto si è in anticipo o in ritardo con le attività pianificate.\\ 
+		\hline
+		\textbf{MPC06} 	& Estimated at Completion (EAC) & Errore del $\pm 3\%$ rispetto al BAC  & Equivalente al BAC & Misura il costo realizzativo stimato per terminare il progetto.\\ 
+		\hline
+		\textbf{MPC07} 	& Estimate to Complete (ETC)  	& $\geq 0$						 & $\leq$ EAC & Stima dei costi realizzativi fino alla fine del progetto.\\ 
+		\hline
+    \end{tabularx}
+    \caption{ Valori delle metriche inerenti al processo di Fornitura}
+    \label{table:1}
+\end{table}
 
+\newpage
 \subsubsubsection{Sviluppo}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPC08 & Requirements Stability Index (RSI) & $\geq 75\% $ & 100\% \\
-	 \hline
-	 MPC09 & Structural Fan-In (SFIN) &  & Da massimizzare \\ 
-	 \hline
-	 MPC10 & Structural Fan-Out (SFOUT) &  & Da minimizzare \\ 
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPC08} 		& Requirements Stability Index (RSI) 	& $\geq 75\% $ 			& 100\% & \\
+		\hline
+		\textbf{MPC09} 		& Structural Fan-In (SFIN) 				&  						& Da massimizzare & \\ 
+		\hline
+		\textbf{MPC10} 		& Structural Fan-Out (SFOUT) 			&  						& Da minimizzare & \\ 
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti al processo di Sviluppo}
 	\label{table:2}
 	\end{table}
@@ -170,52 +154,51 @@ in maniera ottimale.
 
 \subsubsubsection{Documentazione}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPC11 & Indice Gulpease & $\geq 60\% $ & 80\% \\
-	 \hline
-	 MPC12 & Correttezza Ortografica & 0 errori & 0 errori \\ 
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPC11} & Indice Gulpease & $\geq 60\% $ & 80\% & Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi.\\
+		\hline
+		\textbf{MPC12} & Correttezza Ortografica & 0 errori & 0 errori &Misura la presenza di errori ortografici nei documenti.\\ 
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti al processo di Documentazione}
 	\label{table:3}
 	\end{table}
 
 \subsubsubsection{Verifica}
-
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPC13 & Code Coverage & $\geq 90\% $ & 100\% \\
-	 \hline
-	 MPC14 & Passed Test Cases Percentage & 100\% & 100\% \\ 
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPC13} & Code Coverage & $\geq 90\% $ & 100\% &\\
+		\hline
+		\textbf{MPC14} & Passed Test Cases Percentage & 100\% & 100\% &\\ 
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti al processo di Verifica}
 	\label{table:4}
 	\end{table}
 
 \subsubsubsection{Gestione della qualità}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPC15 & Quality Metrics Satisfied & $\geq 85\% $ & 100\% \\
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPC15} & Quality Metrics Satisfied & $\geq 85\% $ & 100\% &\\
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti al processo di Verifica}
 	\label{table:5}
 	\end{table}
@@ -224,18 +207,18 @@ in maniera ottimale.
 
 \subsubsubsection{Gestione dei processi}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPC16 & Non Calculated Risk & $\leq 3 $ & 0 \\
-	 \hline
-	 MPC17 & Time Efficiency & $\leq 3 $ & $\leq 1 $ \\
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPC16} & Non Calculated Risk & $\leq 3 $ & 0 &\\
+		\hline
+		\textbf{MPC17} & Time Efficiency & $\leq 3 $ & $\leq 1 $ &\\
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti al processo di Gestione dei processi}
 	\label{table:6}
 	\end{table}
@@ -250,42 +233,42 @@ sarà elevata.
 
 \subsubsection{Funzionalità}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPD01 & Copertura dei requisiti obbligatori & 100\%  & 100\% \\
-	 \hline
-	 MPD02 & Copertura dei requisiti desiderabili & $\geq 50\% $  & 100\% \\ 
-	 \hline
-	 MPD03 & Copertura dei requisiti opzionali & $\geq 0\% $ & $\geq 50\% $ \\ 
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPD01} & Copertura dei requisiti obbligatori & 100\%  & 100\% &\\
+		\hline
+		\textbf{MPD02} & Copertura dei requisiti desiderabili & $\geq 50\% $  & 100\% &\\ 
+		\hline
+		\textbf{MPD03} & Copertura dei requisiti opzionali & $\geq 0\% $ & $\geq 50\% $ &\\ 
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti alla Funzionalità del prodotto}
 	\label{table:7}
 	\end{table}
 
 \subsubsection{Affidabilità}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPD04 & Code Coverage & $\geq 80\% $  & 100\% \\
-	 \hline
-	 MPD05 & Branch Coverage & $\geq 50\% $  & $\geq 80\% $ \\ 
-	 \hline
-	 MPD06 & Statement Coverage & $\geq 60\% $ & $\geq 80\% $ \\ 
-	 \hline
-	 MPD07 & Failure Density & 100\%  & 100\%  \\ 
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPD04} & Code Coverage & $\geq 80\% $  & 100\% &\\
+		\hline
+		\textbf{MPD05} & Branch Coverage & $\geq 50\% $  & $\geq 80\% $ &\\ 
+		\hline
+		\textbf{MPD06} & Statement Coverage & $\geq 60\% $ & $\geq 80\% $ &\\ 
+		\hline
+		\textbf{MPD07} & Failure Density & 100\%  & 100\%  &\\ 
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti all'Affidabilità del prodotto}
 	\label{table:8}
 	\end{table}
@@ -293,54 +276,54 @@ sarà elevata.
 
 \subsubsection{Usabilità}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPD08 & Facilità di utilizzo & $\leq 3 $ errori di utilizzo & 0 errori di utilizzo \\
-	 \hline
-	 MPD09 & Tempo di apprendimento & $\leq 15 $ minuti  & $\leq 5 $ minuti\\ 
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPD08} & Facilità di utilizzo & $\leq 3 $ errori di utilizzo & 0 errori di utilizzo &\\
+		\hline
+		\textbf{MPD09} & Tempo di apprendimento & $\leq 15 $ minuti  & $\leq 5 $ minuti & \\ 
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti all'Usabilità del prodotto}
 	\label{table:9}
 	\end{table}
 
 \subsubsection{Efficienza}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPD10 & Utilizzo risorse & $\geq 75\% $  & 100\% \\
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPD10} & Utilizzo risorse & $\geq 75\% $  & 100\% & \\
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti all'Efficienza del prodotto}
 	\label{table:10}
 	\end{table}
 
 \subsubsection{Manutenibilità}
 
-\rowcolors{1}{white}{lightgray}
+% \rowcolors{1}{white}{lightgray}
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|c|} 
-	 \hline
-	 Metrica & Nome & Valore ammissibile & Valore ottimo \\  
-	 \hline
-	 MPD11 & Complessità ciclomatica & 1-10 & 11-20 \\
-	 \hline
-	 MPD12 & Code Smell & 0 & 0 \\ 
-	 \hline
-	 MPD13 & Coefficient of Coupling (COC) & $\leq 30\% $ & $\leq 10\% $ \\ 
-	 \hline
-	\end{tabular}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
+		\hline
+		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
+		\hline
+		\textbf{MPD11} & Complessità ciclomatica & 1-10 & 11-20 & \\
+		\hline
+		\textbf{MPD12} & Code Smell & 0 & 0 & \\ 
+		\hline
+		\textbf{MPD13} & Coefficient of Coupling (COC) & $\leq 30\% $ & $\leq 10\% $ & \\ 
+		\hline
+	\end{tabularx}
 	\caption{ Valori delle metriche inerenti alla Manutenibilità del prodotto}
 	\label{table:11}
 	\end{table}
@@ -400,17 +383,5 @@ sarà elevata.
 \subsubsubsection{Gestione delle comunicazioni e degli incontri}
 
 \subsubsubsection{Pianificazione}
-
-
-
-
-
-
-
-
-
-
-
-
 
 \end{document}
