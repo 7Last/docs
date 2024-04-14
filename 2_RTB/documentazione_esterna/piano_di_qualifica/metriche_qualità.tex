@@ -7,190 +7,207 @@ sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attivit�
 in maniera ottimale.
 \subsubsection{Processi primari}
 \subsubsubsection{Fornitura}
-\begin{table}[h!]
-    \centering
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|} 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{1M-EV} 	& Earned Value (EV) 			& $\geq 0$ 						& $\leq$ EAC &  Valore del lavoro effettivamente svolto fino al determinato periodo\\
-		\hline
-		\textbf{2M-PV} 	& Planned Value (PV) 			& $\geq 0$ 						& $\leq$ Budget At Completion (BAC) &  Stima la somma dei costi realizzativi delle attività imminenti periodo per periodo\\ 
-		\hline
-		\textbf{3M-AC} 	& Actual Cost (AC) 				& $\geq 0$ 						& $\leq$ EAC &	Misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente momento.\\ 
-		\hline
-		\textbf{4M-CV} 	& Cost Variance (CV) 			& $\geq -7.5\%$ 				& $\geq 0\%$ & Misura la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. \textbf{CONTROLLARE}\\ 
-		\hline
-		\textbf{5M-SV} 	& Schedule Variance (SV) 		& $\geq -7.5\%$ 				& $\geq 0\%$ &Indica in percentuale quanto si è in anticipo o in ritardo con le attività pianificate.\\ 
-		\hline
-		\textbf{6M-EAC} 	& Estimated at Completion (EAC) & Errore del $\pm 3\%$ rispetto al BAC  & Equivalente al BAC & Misura il costo realizzativo stimato per terminare il progetto.\\ 
-		\hline
-		\textbf{7M-ETC} 	& Estimate to Complete (ETC)  	& $\geq 0$						 & $\leq$ EAC & Stima dei costi realizzativi fino alla fine del progetto.\\ 
-		\hline
-    \end{tabularx}
-    \caption{ Valori delle metriche inerenti al processo di Fornitura}
+
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+    \textbf{1M-EV} & Earned Value (EV) & $\geq 0$ & $\leq$ EAC & Valore del lavoro effettivamente svolto fino al determinato periodo\\
+    \hline
+	\textbf{2M-PV} 	& Planned Value (PV) 			& $\geq 0$ 						& $\leq$ Budget At Completion (BAC) &  Stima la somma dei costi realizzativi delle attività imminenti periodo per periodo\\ 
+	\hline
+	\textbf{3M-AC} 	& Actual Cost (AC) 				& $\geq 0$ 						& $\leq$ EAC &	Misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente momento.\\ 
+	\hline
+	\textbf{4M-CV} 	& Cost Variance (CV) 			& $\geq -7.5\%$ 				& $\geq 0\%$ & Misura la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. \textbf{CONTROLLARE}\\ 
+	\hline
+	\textbf{5M-SV} 	& Schedule Variance (SV) 		& $\geq -7.5\%$ 				& $\geq 0\%$ &Indica in percentuale quanto si è in anticipo o in ritardo con le attività pianificate.\\ 
+	\hline
+	\textbf{6M-EAC} 	& Estimated at Completion (EAC) & Errore del $\pm 3\%$ rispetto al BAC  & Equivalente al BAC & Misura il costo realizzativo stimato per terminare il progetto.\\ 
+	\hline
+	\textbf{7M-ETC} 	& Estimate to Complete (ETC)  	& $\geq 0$						 & $\leq$ EAC & Stima dei costi realizzativi fino alla fine del progetto.\\ 
+	\hline
+    \caption{Valori delle metriche inerenti al processo di Fornitura}
     \label{table:1}
-\end{table}
+\end{longtable}
+
 \subsubsubsection{Sviluppo}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{8M-RSI} 		& Requirements Stability Index (RSI) 	& $\geq 75\% $ 			& 100\% & \\
-		\hline
-		\textbf{9M-SFIN} 		& Structural Fan-In (SFIN) 				&  						& Da massimizzare & \\ 
-		\hline
-		\textbf{10M-SFOUT} 		& Structural Fan-Out (SFOUT) 			&  						& Da minimizzare & \\ 
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\textbf{8M-RSI} 		& Requirements Stability Index (RSI) 	& $\geq 75\% $ 			& 100\% & \\
+	\hline
+	\textbf{9M-SFIN} 		& Structural Fan-In (SFIN) 				&  						& Da massimizzare & \\ 
+	\hline
+	\textbf{10M-SFOUT} 		& Structural Fan-Out (SFOUT) 			&  						& Da minimizzare & \\ 
+	\hline
 	\caption{ Valori delle metriche inerenti al processo di Sviluppo}
 	\label{table:2}
-\end{table}
+\end{longtable}
 \subsubsection{Processi di supporto}
 \subsubsubsection{Documentazione}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{11M-IG} & Indice Gulpease & $\geq 60\% $ & 80\% & Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi.\\
-		\hline
-		\textbf{12M-CO} & Correttezza Ortografica & 0 errori & 0 errori &Misura la presenza di errori ortografici nei documenti.\\ 
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\textbf{11M-IG} & Indice Gulpease & $\geq 60\% $ & 80\% & Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi.\\
+	\hline
+	\textbf{12M-CO} & Correttezza Ortografica & 0 errori & 0 errori &Misura la presenza di errori ortografici nei documenti.\\ 
+	\hline
 	\caption{ Valori delle metriche inerenti al processo di Documentazione}
 	\label{table:3}
-\end{table}
+\end{longtable}
 \subsubsubsection{Verifica}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{13M-CC} & Code Coverage & $\geq 90\% $ & 100\% &\\
-		\hline
-		\textbf{14M-PTCP} & Passed Test Cases Percentage & 100\% & 100\% & Percentuale di casi di test superati.\\ 
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\textbf{13M-CC} & Code Coverage & $\geq 90\% $ & 100\% &\\
+	\hline
+	\textbf{14M-PTCP} & Passed Test Cases Percentage & 100\% & 100\% & Percentuale di casi di test superati.\\ 
+	\hline
 	\caption{ Valori delle metriche inerenti al processo di Verifica}
 	\label{table:4}
-\end{table}
+\end{longtable}
 \subsubsubsection{Gestione della qualità}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{15M-QMS} & Quality Metrics Satisfied & $\geq 85\% $ & 100\% & Misura che valuta quante metriche, tra quelle definite, sono state implementate e soddisfatte.\\
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\textbf{15M-QMS} & Quality Metrics Satisfied & $\geq 85\% $ & 100\% & Misura che valuta quante metriche, tra quelle definite, sono state implementate e soddisfatte.\\
+	\hline
 	\caption{ Valori delle metriche inerenti al processo di Verifica}
 	\label{table:5}
-\end{table}
+\end{longtable}
 \subsubsection{Processi organizzativi}
 \subsubsubsection{Gestione dei processi}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{16M-NCR} & Non Calculated Risk & $\leq 3 $ & 0 &\\
-		\hline
-		\textbf{17M-TE} & Time Efficiency & $\leq 3 $ & $\leq 1 $ &\\
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\hline
+	\textbf{16M-NCR} & Non Calculated Risk & $\leq 3 $ & 0 &\\
+	\hline
+	\textbf{17M-TE} & Time Efficiency & $\leq 3 $ & $\leq 1 $ &\\
+	\hline
+
 	\caption{ Valori delle metriche inerenti al processo di Gestione dei processi}
 	\label{table:6}
-\end{table}
+\end{longtable}
 \subsection{Qualità di prodotto}
 Per qualità di prodotto si intende la capacità del software di rispettare 
 le caratteristiche richieste dal cliente e quelle dettate dallo standard.
 Più il risultato si avvicina a quello atteso, più la qualità del prodotto
 sarà elevata. 
 \subsubsection{Funzionalità}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{18M-CRO} & Copertura dei requisiti obbligatori & 100\%  & 100\% & Metrica che valuta quanto del lavoro svolto durante lo sviluppo corrisponda ai requisiti essenziali o obbligatori definiti in fase di analisi dei requisiti.\\
-		\hline
-		\textbf{19M-CRD} & Copertura dei requisiti desiderabili & $\geq 50\% $  & 100\% & Metrica usata per valutare quanti di quei requisiti, che se integrati arricchirebbero l'esperienza dell'utente o fornirebbero vantaggi aggiuntivi non strettamente necessari, sono stati implementati o soddisfatti nel prodotto.\\ 
-		\hline
-		\textbf{20M-CROP} & Copertura dei requisiti opzionali & $\geq 0\% $ & $\geq 50\% $ & Metrica per valutare quanti dei requisiti aggiuntivi, non essenziali o di bassa priorità, sono stati implementati o soddisfatti nel prodotto.\\ 
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\textbf{18M-CRO} & Copertura dei requisiti obbligatori & 100\%  & 100\% & Metrica che valuta quanto del lavoro svolto durante lo sviluppo corrisponda ai requisiti essenziali o obbligatori definiti in fase di analisi dei requisiti.\\
+	\hline
+	\textbf{19M-CRD} & Copertura dei requisiti desiderabili & $\geq 50\% $  & 100\% & Metrica usata per valutare quanti di quei requisiti, che se integrati arricchirebbero l'esperienza dell'utente o fornirebbero vantaggi aggiuntivi non strettamente necessari, sono stati implementati o soddisfatti nel prodotto.\\ 
+	\hline
+	\textbf{20M-CROP} & Copertura dei requisiti opzionali & $\geq 0\% $ & $\geq 50\% $ & Metrica per valutare quanti dei requisiti aggiuntivi, non essenziali o di bassa priorità, sono stati implementati o soddisfatti nel prodotto.\\ 
+	\hline
 	\caption{ Valori delle metriche inerenti alla Funzionalità del prodotto}
 	\label{table:7}
-\end{table}
+\end{longtable}
 \subsubsection{Affidabilità}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{21M-CC} & Code Coverage & $\geq 80\% $  & 100\% &\\
-		\hline
-		\textbf{22M-BC} & Branch Coverage & $\geq 50\% $  & $\geq 80\% $ & Metrica di copertura del codice che indica la percentuale dei rami decisione del codice coperti dai test.\\ 
-		\hline
-		\textbf{23M-SC} & Statement Coverage & $\geq 60\% $ & $\geq 80\% $ & Metrica di copertura del codice che indica la percentuale degli statement del codice coperti dai test.\\ 
-		\hline
-		\textbf{24M-FD} & Failure Density & 100\%  & 100\%  &\\ 
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\hline
+	\textbf{21M-CC} & Code Coverage & $\geq 80\% $  & 100\% &\\
+	\hline
+	\textbf{22M-BC} & Branch Coverage & $\geq 50\% $  & $\geq 80\% $ & Metrica di copertura del codice che indica la percentuale dei rami decisione del codice coperti dai test.\\ 
+	\hline
+	\textbf{23M-SC} & Statement Coverage & $\geq 60\% $ & $\geq 80\% $ & Metrica di copertura del codice che indica la percentuale degli statement del codice coperti dai test.\\ 
+	\hline
+	\textbf{24M-FD} & Failure Density & 100\%  & 100\%  &\\ 
+	\hline
 	\caption{ Valori delle metriche inerenti all'Affidabilità del prodotto}
 	\label{table:8}
-\end{table}
+\end{longtable}
 \subsubsection{Usabilità}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{25M-FU} & Facilità di utilizzo & $\leq 3 $ errori di utilizzo & 0 errori di utilizzo & Metrica che misura l'usabilità di un sistema software.\\
-		\hline
-		\textbf{26M-TA} & Tempo di apprendimento & $\leq 15 $ minuti  & $\leq 5 $ minuti & Misura il tempo massimo richiesto per apprendere l'utilizzo del prodotto. \\ 
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\textbf{25M-FU} & Facilità di utilizzo & $\leq 3 $ errori di utilizzo & 0 errori di utilizzo & Metrica che misura l'usabilità di un sistema software.\\
+	\hline
+	\textbf{26M-TA} & Tempo di apprendimento & $\leq 15 $ minuti  & $\leq 5 $ minuti & Misura il tempo massimo richiesto per apprendere l'utilizzo del prodotto. \\ 
+	\hline
+
 	\caption{ Valori delle metriche inerenti all'Usabilità del prodotto}
 	\label{table:9}
-\end{table}
+\end{longtable}
 \subsubsection{Efficienza}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{27M-UR} & Utilizzo risorse & $\geq 75\% $  & 100\% & \\
-		\hline
-	\end{tabularx}
+	\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\textbf{27M-UR} & Utilizzo risorse & $\geq 75\% $  & 100\% & \\
+	\hline
 	\caption{ Valori delle metriche inerenti all'Efficienza del prodotto}
 	\label{table:10}
-	\end{table}
+	\end{longtable}
 \subsubsection{Manutenibilità}
-\begin{table}[h!]
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|X|X|X|} 	 
-		\hline
-		\textbf{Metrica} 	& \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\  	 
-		\hline
-		\textbf{28M-CCM} & Complessità ciclomatica & 1-10 & 11-20 & Rappresenta la complessità di un metodo in base ai percorsi possibili. \textbf{CONTROLLARE}\\
-		\hline
-		\textbf{29M-CSM} & Code Smell & 0 & 0 & \\ 
-		\hline
-		\textbf{30M-COC} & Coefficient of Coupling (COC) & $\leq 30\% $ & $\leq 10\% $ & \\ 
-		\hline
-	\end{tabularx}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+	\hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Valore ammissibile} & \textbf{Valore ottimo}& \textbf{Descrizione}\\
+    \endhead
+	\textbf{28M-CCM} & Complessità ciclomatica & 1-10 & 11-20 & Rappresenta la complessità di un metodo in base ai percorsi possibili. \textbf{CONTROLLARE}\\
+	\hline
+	\textbf{29M-CSM} & Code Smell & 0 & 0 & \\ 
+	\hline
+	\textbf{30M-COC} & Coefficient of Coupling (COC) & $\leq 30\% $ & $\leq 10\% $ & \\ 
+	\hline
 	\caption{ Valori delle metriche inerenti alla Manutenibilità del prodotto}
 	\label{table:11}
-\end{table}
+\end{longtable}
