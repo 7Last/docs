@@ -67,8 +67,7 @@
     \item \textbf{Metrica 8M-RSI}:
     \begin{itemize}
         \item \textbf{Nome}: Requirements Stability Index;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: misura impiegata nella quantificazione dell'entità e dell'impatti dei cambiamenti ai requisiti di un progetto;
     \end{itemize}
 \end{itemize}
 
@@ -76,8 +75,7 @@
     \item \textbf{Metrica 9M-SFIN}:
     \begin{itemize}
         \item \textbf{Nome}: Structural Fan In;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: si riferisce ad una classe che è stata progettata in modo tale da essere utilizzata facilmente da molte altre classi;
     \end{itemize}
 \end{itemize}
 
@@ -85,36 +83,17 @@
     \item \textbf{Metrica 10M-SFOUT}:
     \begin{itemize}
         \item \textbf{Nome}: Structural Fan Out;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: numero di moduli subordinati immediati di un metodo;
     \end{itemize}
 \end{itemize}
 
-\begin{itemize}
-    \item \textbf{Metrica 11M-IG}:
-    \begin{itemize}
-        \item \textbf{Nome}: Indice Gulpease;
-        \item \textbf{Descrizione}: misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi;
-        \item \textbf{Formula}: $IG = 89 + \frac{300 \:\times \:Numero\:frasi \:- \:10 \:\times\: Numero\:lettere}{Numero\:parole}$;
-    \end{itemize}
-\end{itemize}
 
-\begin{itemize}
-    \item \textbf{Metrica 12M-CO}:
-    \begin{itemize}
-        \item \textbf{Nome}: Correttezza Ortografica;
-        \item \textbf{Descrizione}: misura la presenza di errori ortografici nei documenti;
-        \item \textbf{Caratteristiche}: affidabilità;
-    \end{itemize}
-\end{itemize}
 
-\subsection{Metriche per la qualità di prodotto}
 \begin{itemize}
     \item \textbf{Metrica 13M-CC}:
     \begin{itemize}
         \item \textbf{Nome}: Code Coverage;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: rappresenta il grado in cui il codice sorgente di un programma è testato;
     \end{itemize}
 \end{itemize}
 
@@ -128,6 +107,16 @@
 \end{itemize}
 
 \begin{itemize}
+    \item \textbf{Metrica 16M-NCR}:
+    \begin{itemize}
+        \item \textbf{Nome}: Non Calculated Risks;
+        \item \textbf{Descrizione}: indica il numero di rischi non calcolati nel documento di "Analisi dei Requisiti v1.0.0";
+    \end{itemize}
+\end{itemize}
+
+\subsection{Metriche per la qualità di prodotto}
+
+\begin{itemize}
     \item \textbf{Metrica 15M-QMS}:
     \begin{itemize}
         \item \textbf{Nome}: Quality Metrics Satisfied;
@@ -137,19 +126,11 @@
 \end{itemize}
 
 \begin{itemize}
-    \item \textbf{Metrica 16M-NCR}:
-    \begin{itemize}
-        \item \textbf{Nome}: Non Calculated Risks;
-        \item \textbf{Descrizione}: indica il numero di rischi non calcolati nel documento di "Analisi dei Requisiti v1.0.0";
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
     \item \textbf{Metrica 17M-TE}:
     \begin{itemize}
         \item \textbf{Nome}: Time Efficiency;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: indicante il livello di efficacia da parte del teamo nello sviluppo di codice di alta qualità;
+        \item \textbf{Formula}: $TE = \frac{Tempo\: impiegato\: per\: lo\: sviluppo}{Tempo\: previsto\: per\: lo\: sviluppo}\: \times \: 100$;
     \end{itemize}
 \end{itemize}
 
@@ -181,11 +162,28 @@
 \end{itemize}
 
 \begin{itemize}
+    \item \textbf{Metrica 11M-IG}:
+    \begin{itemize}
+        \item \textbf{Nome}: Indice Gulpease;
+        \item \textbf{Descrizione}: misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi;
+        \item \textbf{Formula}: $IG = 89 + \frac{300 \:\times \:Numero\:frasi \:- \:10 \:\times\: Numero\:lettere}{Numero\:parole}$;
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Metrica 12M-CO}:
+    \begin{itemize}
+        \item \textbf{Nome}: Correttezza Ortografica;
+        \item \textbf{Descrizione}: misura la presenza di errori ortografici nei documenti;
+        \item \textbf{Caratteristiche}: affidabilità;
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
     \item \textbf{Metrica 21M-CC}:
     \begin{itemize}
         \item \textbf{Nome}: Code Coverage;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: fornisce una misura quantitativa del grado o della percentuale di codice eseguito durante i test;
     \end{itemize}
 \end{itemize}
 
@@ -211,8 +209,7 @@
     \item \textbf{Metrica 24M-FD}:
     \begin{itemize}
         \item \textbf{Nome}: Failure Density;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: misura che indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo;
     \end{itemize}
 \end{itemize}
 
@@ -262,8 +259,7 @@
     \item \textbf{Metrica 29M-CSM}:
     \begin{itemize}
         \item \textbf{Nome}: Code Smell;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: livello di pulizia e manutenibilità del codice sviluppato;
     \end{itemize}
 \end{itemize}
 
@@ -271,7 +267,7 @@
     \item \textbf{Metrica 30M-COC}:
     \begin{itemize}
         \item \textbf{Nome}: Coefficient of Coupling;
-        \item \textbf{Descrizione}: ;
-        \item \textbf{Formula}: ;
+        \item \textbf{Descrizione}: rappresenta il grado di dipendenza tra diversi moduli o componenti di un sistema software;
+        \item \textbf{Formula}: $COC = \frac{Numero\: di\: dipendenze}{Numero\: di\: moduli}$;
     \end{itemize}
 \end{itemize}
