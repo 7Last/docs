@@ -274,7 +274,7 @@ accettazione da rispettare.
 Nell'ambito della documentazione, la verifica è un'attività cruciale per garantire la correttezza e l'accuratezza dei contenuti. Essa si suddivide in:
 \begin{itemize}
     \item \textbf{Revisione della correttezza tecnica}: assicura che tutte le informazioni siano corrette e coerenti con le norme stabilite;
-    \item \textbf{Conformità alle norme}: verifica che il documento segua le linee guida e gli \textcolor{red}{\uline{\textit{standard}}}
+    \item \textbf{Conformità alle norme}: verifica che il documento segua le linee guida e gli \textcolor{red}{\uline{\textit{standard}}} 
         stabiliti per la formattazione, la struttura e lo stile;
     \item \textbf{Revisione ortografica e grammaticale}: controlla che il testo sia privo di errori ortografici, grammaticali e di punteggiatura.
     \item \textbf{Chiarezza e comprensibilità}: valuta la leggibilità del documento, verificando che il contenuto sia chiaro, comprensibile e privo di ambiguità;
@@ -319,44 +319,263 @@ che esso sia ripetibile e decidibile, ossia che produca risultati coerenti e che
 i risultati siano influenzati da fattori esterni. Un altro aspetto importante è l'automazione del processo, realizzabile tramite l'uso di
 strumenti specifici (driver, stub, logger) che consentono di eseguire i test in modo automatico e di monitorare i risultati ottenuti.
 
-\subsubsection{Testing}
-
+\subsubsection{Testing} \label{testing}
+Lo scopo del testing è quello di individuare errori e difetti nella componente soggetta a \textcolor{red}{\uline{\textit{test}}},
+garantendo che il prodotto soddisfi i requisiti specificati e produca i risultati attesi. Per ogni \textcolor{red}{\uline{\textit{test}}}
+è necessario definire i seguenti aspetti:
+\begin{itemize}
+    \item \textbf{Ambiente}: il sistema hardware e \textcolor{red}{\uline{\textit{software}}} all'interno del quale viene eseguito il \textcolor{red}{\uline{\textit{test}}};
+    \item \textbf{Stato iniziale}: i parametri iniziali del sistema prima dell'esecuzione del \textcolor{red}{\uline{\textit{test}}};
+    \item \textbf{Input}: i dati di input necessari per l'esecuzione del \textcolor{red}{\uline{\textit{test}}};
+    \item \textbf{Output}: i risultati attesi in relazione ad un determinato input;
+    \item \textbf{Commenti}: eventuali note aggiuntive.
+\end{itemize}
 
 \subsubsubsection{Test di unità}
+I \textcolor{red}{\uline{\textit{test}}} di unità sono finalizzati alla verifica di componenti \textcolor{red}{\uline{\textit{software}}}
+atomiche, ossia singole unità di codice, come classi, metodi o funzioni. Essi sono implementati principalmente durante la progettazione e
+devono essere eseguiti per primi, in quanto verificano il corretto funzionamento prima dell'integrazione con altre unità. Questi
+\textcolor{red}{\uline{\textit{test}}} sono eseguiti in modo isolato e indipendente dal resto del \textcolor{red}{\uline{\textit{sistema}}},
+al seguente scopo è consentito l'utilizzo di mock e stub per simulare il comportamento di componenti non ancora sviluppate. In base al tipo
+di controllo che si vuole efettuare possiamo distinguere due connotazioni differenti:
+\begin{itemize}
+    \item \textbf{Test funzionali}: verificano che l'unità testata produca i risultati attesi in base ai dati di input;
+    \item \textbf{Test strutturali}: verificano la copertura di tutti i possibili cammini di esecuzione del codice.
+\end{itemize}
+
 \subsubsubsection{Test di integrazione}
+Questi \textcolor{red}{\uline{\textit{test}}} vengono pianificati durante la fase di progettazione architetturale, successivamente ai 
+\textcolor{red}{\uline{\textit{test}}} di unità. Essi verificano la corretta integrazione tra le diverse unità \textcolor{red}{\uline{\textit{software}}}
+precedentemente testate per garantire che lavorino sinergicamente secondo le specifiche del progetto. Inoltre, è possibile annullare le modifiche
+apportate in modo da ripristinare uno stato sicuro nel caso si verifichino errori durante l'esecuzione di questo processo. Distinguiamo
+due approcci di integrazione:
+\begin{itemize}
+    \item \textbf{Top-down}: l'\textcolor{red}{\uline{\textit{integrazione}}} avviene partendo dalle componenti di \textcolor{red}{\uline{\textit{sistema}}}
+        che hanno più dipendenze e maggiore rilevanza esterna, garantendo la disponibilità immediata delle funzionalità di alto livello.
+        Questo approccio prevedere l'utilizzo di molti oggetti simulati;
+    \item \textbf{Bottom-up}: l'\textcolor{red}{\uline{\textit{integrazione}}} avviene partendo dalle componenti di \textcolor{red}{\uline{\textit{sistema}}}
+        che hanno meno dipendenze e maggiore valore interno, ovvero quelle meno visibili all'utente. Questo comporta una fase di test più tardiva
+        delle funzionalità utente.
+\end{itemize}
+
 \subsubsubsection{Test di sistema}
+I \textcolor{red}{\uline{\textit{test}}} di sistema sono finalizzati alla verifica del corretto funzionamento dell'intero \textcolor{red}{\uline{\textit{sistema}}}.
+Ovvero si assicurano che tutte le componenti siano integrate correttamente e che tutti i requisiti \textcolor{red}{\uline{\textit{software}}}
+siano presenti e funzionanti. Al termine di questa fase l'applicazione esegue le funzioni previste in modo accurato e affidabile.
+I \textcolor{red}{\uline{\textit{test}}} di sistema sono pianificati successivamente ai test di integrazione.
+
 \subsubsubsection{Test di regressione}
+I \textcolor{red}{\uline{\textit{test}}} di regressione devono essere eseguiti ogni qualvolta vengono apportate delle modifiche al codice.
+Essi, infatti, hanno l'obiettivo di garantire che queste modifiche non abbiano introdotto nuovi difetti o compromettano le funzionalità
+precedentemente testate, evitando così il verificarsi di regressioni. Questi controlli prevedono la ripetizione mirata di 
+\textcolor{red}{\uline{\textit{test}}} di unità, d'integrazione e di sistema preservando la stabilità del \textcolor{red}{\uline{\textit{sistema}}}.
+
 \subsubsubsection{Test di accettazione}
+I \textcolor{red}{\uline{\textit{test}}} di accettazione rappresentano un processo fondamentale prima del rilascio del prodotto finale.
+Essi verificano che tutti le aspettative degli utenti e i requisiti richiesti dal committente siano pienamente soddisfatti. Per questo motivo
+devono essere svolti necessariamente in presenza del committente.
+
 \subsubsubsection{Sequenza delle fasi di test}
+La sequenza ordinata delle fasi di \textcolor{red}{\uline{\textit{test}}} è la seguente:
+\begin{enumerate}
+    \item Test di unità;
+    \item Test di integrazione;
+    \item Test di regressione;
+    \item Test di sistema;
+    \item Test di accettazione.
+\end{enumerate}
+
 \subsubsubsection{Codici dei test}
+% adottiamo uguale strategia byteops?
+
 \subsubsubsection{Stato dei test}
-\subsubsubsection{Continuous integration}
-\subsubsection{Strumenti}
+% idem
+
 \subsection{Validazione}
 \subsubsection{Introduzione}
+La validazione è un processo che si occupa di verificare che il prodotto \textcolor{red}{\uline{\textit{software}}} sia in linea con i requisiti
+e con le aspettative del cliente. Di conseguenza, è fondamentale l'interazione diretta con il \textcolor{red}{\uline{\textit{committente}}} e il
+\textcolor{red}{\uline{\textit{proponente}}}, al fine di ottenere un feedback immediato e garantire un chiaro allineamento tra ciò che è stato
+prodotto e le aspettative degli utenti finali. Dunque lo scopo finale è avere un prodotto pronto per il rilascio, determinando la 
+conclusione del ciclo di vita del \textcolor{red}{\uline{\textit{software}}}.
+
 \subsubsection{Procedura di validazione}
-\subsubsection{Strumenti}
+In questo processo copre un ruolo fondamentale il \textcolor{red}{\uline{\textit{test}}} di accettazione che mira a garantire la validazione
+del prodotto. Infatti i diversi \textcolor{red}{\uline{\textit{test}}} elencati nella sezione \href{#testing}{3.2.4} \textit{(Testing)} costituiscono un input
+per la validazione. Essi dovranno verificare:
+\begin{itemize}
+    \item Il soddisfacimento dei casi d'uso;
+    \item La conformità del prodotto ai requisiti obbligatori;
+    \item Il soddisfacimento di altri requisiti concordati con il \textcolor{red}{\uline{\textit{committente}}}.
+\end{itemize}
+
 \subsection{Gestione della configurazione}
 \subsubsection{Introduzione}
+La gestione della configurazione è un processo attuato durante tutto il ciclo di vita del \textcolor{red}{\uline{\textit{software}}}, infatti viene
+applicata a tutte le categorie di "artefatti" coinvolti. Essa si occupa di tracciare e controllare le modifiche della documentazione e del codice
+prodotto, detti Configuration Item (CI). Così facendo le modifiche apportate saranno accessibili in qualsiasi momento, garantendo la
+possibilità di verificare le motivazioni alla base dei cambiamenti effettuati e anche il ripristino di versioni precedenti.
+
 \subsubsection{Versionamento}
+La convenzione di versionamento adottata è nel formato X.Y dove:
+\begin{itemize}
+    \item \textbf{X}: rappresenta il completamento in vista di una delle fasi del progetto e dunque viene incrementato al raggiungimento di
+    \textcolor{red}{\uline{\textit{RTB}}}, \textcolor{red}{\uline{\textit{PB}}} ed eventuale CA.
+    \item \textbf{Y}: rappresenta una versione intermedia e viene incrementata ad ogni modifica significativa del documento.
+\end{itemize}
+
 \subsubsection{Repository}
+Il team utilizza due \textcolor{red}{\uline{\textit{repository}}}:
+\begin{itemize}
+    \item \href{https://github.com/7Last/docs.git}{Documentazione}: contenente la documentazione prodotta;
+    \item \href{https://github.com/7Last/7Last.github.io.git}{Codice}: contenente il codice del progetto.
+\end{itemize}
+
 \subsubsubsection{Struttura repository}
+Il \textcolor{red}{\uline{\textit{repository}}} dedicato alla documentazione è organizzato nel seguente modo:
+\begin{itemize}
+    \item \textbf{Candidatura}:
+    \begin{itemize}
+        \item \textbf{Verbali esterni}: contenente i verbali delle riunioni con le \textcolor{red}{\uline{\textit{proponenti}}};
+        \item \textbf{Verbali interni}: contenente i verbali delle riunioni svolte all'interno del team;
+        \item \textbf{Lettera di presentazione};
+        \item \textbf{Preventivo costi e assunzione impegni};
+        \item \textbf{Valutazione dei capitolati}.
+    \end{itemize}
+    \item \textbf{RTB}:
+    \begin{itemize}
+        \item \textbf{Verbali}: contenente tutti i verbali prodotti durante il periodo di \textcolor{red}{\uline{\textit{RTB}}}, distinti tra esternie e interni;
+        \item \textbf{Analisi dei Requisiti};
+        \item \textbf{Piano di Progetto};
+        \item \textbf{Piano di Qualifica};
+        \item \textbf{Glossario};
+        \item \textbf{Norme di Progetto}.
+    \end{itemize}
+    \item \textbf{PB}:
+\end{itemize}
+
 \subsubsection{Sincronizzazione e branching}
 
 \subsubsubsection{Documentazione}
+L'approccio adottato per la redazione della documentazione segue il \textcolor{red}{\uline{\textit{workflow}}} noto come \textit{feature branch}.
+Ossia ogni attività è identificata da una specifica \textcolor{red}{\uline{\textit{issue}}} di GitHub (ClickUp?) e, prima dello svolgimento di
+ciascuna di esse, il componente interessato crea una diramazione del \textcolor{red}{\uline{\textit{branch}}} "develop". Tale metodologia
+permette di lavorare in modo isolato e parallelo nei rispettivi "workspace", massimizzando il lavoro ed evitando sovrascritture indesiderate.
 \textbf{Convenzioni per la nomenclatura dei branch relativi alle attività di redazione o modifica di documenti} \label{convenzioni_nomenclatura}
+\begin{itemize}
+    \item Il nome del \textcolor{red}{\uline{\textit{branch}}} deve riportare il nome del documento che si vuole redarre o modificare;
+    \item Nel caso dei verbali, il nome deve presentare anche la data della riunione: \textit{verbale\_interno\_yy\_mm\_dd} (es. verbale\_interno\_24\_03\_05);
+    \item Nel caso di redazione o modifica di una singola sezione di un documento, il nome del \textcolor{red}{\uline{\textit{branch}}} deve avere il formato:
+    \textit{nomeDocumento\_nomeSezione} (es. norme\_di\_progetto\_introduzione);
+\end{itemize}
 
 \subsubsubsection{Sviluppo}
+Il team utilizza lo stile di flusso di lavoro \href{https://www.atlassian.com/it/git/tutorials/comparing-workflows/gitflow-workflow}{Gitflow}.
+\textbf{Flusso di lavoro Gitflow}
+\begin{enumerate}
+    \item \textbf{Branch develop}: è il punto di avvio per nuove attività, si crea a partire dal \textcolor{red}{\uline{\textit{branch}}} "main";
+    \item \textbf{Branch release}: gestisce la preparazione del \textcolor{red}{\uline{\textit{software}}} per un rilascio e ammette solo
+        modifiche minori e correzione di bug, si crea a partire dal \textcolor{red}{\uline{\textit{branch}}} "develop";
+    \item \textbf{Branch feature}: si occupa dello sviluppo di nuove funzionalità;
+    \item \textbf{Merge di feature in develop}: una volta completata un'attività, il \textcolor{red}{\uline{\textit{branch}}} feature viene
+        unito a develop;
+    \item \textbf{Merge di release in develop e main}: dopo il completamento del \textcolor{red}{\uline{\textit{branch}}} realese, esso viene
+        unito sia a develop che a main;
+    \item \textbf{Branch hotfix}: si occupa della correzione di bug critici riscontrati nella fase di produzione;
+    \item \textbf{Merge di hotfix in develop e main}: dopo il completamento del \textcolor{red}{\uline{\textit{branch}}} hotfix, esso viene
+        unito sia a develop che a main per garantire coerenza tra le versioni.
+\end{enumerate}
 
 \subsubsubsection{Pull Request}
+Quando un'\textcolor{red}{\uline{\textit{attività}}} è completata, il componente che l'ha svolta crea una Pull Request per integrare le modifiche
+nel ramo principale. Il Verificatore ha il compito di verificare la correttezza del lavoro svolto e approvare la Pull Request.
 \textbf{Procedura per la creazione di una Pull Request} \label{pull_request}
+\begin{enumerate}
+    \item Accedere alla pagina del \textcolor{red}{\uline{\textit{repository}}} e spostarsi sulla sezione "Pull Request";
+    \item Cliccare su "New Pull Request";
+    \item Selezionare il \textcolor{red}{\uline{\textit{branch}}} di partenza e quello di destinazione;
+    \item Cliccare su "Create Pull Request";
+    \item Assegnare un titolo alla Pull Request;
+    \item Aggiungere una descrizione delle modifiche apportate;
+    \item Assegnare un Verificatore;
+    \item Per convenzione, l'assegnatario è colui che richiede la Pull Request;
+    \item Selezionare le \textcolor{red}{\uline{\textit{label}}};
+    \item Selezionare il progetto;
+    \item Selezionare la \textcolor{red}{\uline{\textit{milestone}}};
+    \item Cliccare su "Create Pull Request";
+    \item Nel caso di conflitti seguire la procedura per la risoluzione proposta da \textcolor{red}{\uline{\textit{GitHub}}}.
+\end{enumerate}
 
 \subsubsection{Controllo di configurazione}
 \subsubsubsection{Change Request}
-\subsubsection{Configuration Status Accounting}
+Per lo svolgimento di questo processo in modo ordinato e strutturato seguiamo lo \textcolor{red}{\uline{\textit{standard}}} \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{ISO/IEC 12207:1995}
+che prevede le seguenti \textcolor{red}{\uline{\textit{attività}}}:
+\begin{enumerate}
+    \item \textbf{Identificazione e registrazione} Ciascuna change request è identificata, registrata e documentata. L'identificazione avviene
+    tramite la creazione di un'\textcolor{red}{\uline{\textit{issue}}} con allegata l'etichetta "Change request".
+    Inoltre vengono riportate informazioni come la natura della modifica richiesta, la priorità e l'impatto sul progetto.
+    \item \textbf{Valutazione e analisi} La change request viene valutata e analizzata per determinare la fattibilità e l'impatto sul 
+    \textcolor{red}{\uline{\textit{sistema}}}. Vengono analizzati costi e benefici conseguenti alla modifica.
+    \item \textbf{Approvazione o rifiuto} La change request viene approvata o respinta in base a criteri come budget, tempo e priorità.
+    \item \textbf{Pianificazione delle modifiche} Se la change request viene approvata, viene pianificata la sua implementazione e l'integrazione 
+    nel ciclo di sviluppo del \textcolor{red}{\uline{\textit{software}}}.
+    \item \textbf{Implementazione} Le modifiche vengono effettivamente implementate, è fondamentale tenere traccia di ciò che viene fatto così
+    da consentire una corretta documentazione e, se necessario, il \textcolor{red}{\uline{\textit{rollback}}} allo stato precedente.
+    \item \textbf{Verifica e validazione} Le modifiche vengono verificate e validate per garantire che non abbiano introdotto nuovi difetti
+    e che siano conformi agli obiettivi prefissati.
+    \item \textbf{Documentazione} Tutte le fasi del progetto descritto vengono documentate in modo accurato per garantire trasparenza e
+    tracciabilità.
+    \item \textbf{Comunicazione agli stakeholder} Il confronto con gli \textcolor{red}{\uline{\textit{stakeholder}}} deve essere mantenuto
+    durante tutto l'arco del processo, in modo da mantenere trasparenza e fiducia.
+\end{enumerate}
+
+\subsubsection{Contabilità dello Stato di Configurazione}
+La contabilità dello stato di configurazione (o Configuration Status Accounting) è un'\textcolor{red}{\uline{\textit{attività}}} 
+che si occupa di tenere traccia e montorare tutte le configurazioni di un \textcolor{red}{\uline{\textit{sistema}}} \textcolor{red}{\uline{\textit{software}}}
+durante tutto il ciclo di vita. Nello specifico esso mantiene la trasparenza e la tracciabilità delle modifiche relative ai Configuration Item (CI),
+mantenendo un registro accurato di tutte le \textcolor{red}{\uline{\textit{attività}}}.
+\textbf{Registrazione delle configurazioni}: registrazioni di informazioni dettagliate su ogni CI:
+\begin{itemize}
+    \item \textbf{Documentazione}: nella prima pagina di ciascuno di essi troviamo le informazioni riguardanti la configurazione;
+    \item \textbf{Sviluppo}: le informazioni relative alla configurazione sono inserite come prime
+    righe di ciascun file sotto forma di commento.
+\end{itemize}
+\textbf{Stato e cambiamenti}: tracciamento dello stato attuale di ogni CI e delle modifiche effettuate, ossia versione attuale, revisioni e baseline.
+\begin{itemize}
+    \item \textbf{Registro delle modifiche}: per tenere traccia dello stato di ciascun elemento di configurazione si utilizza il registro
+    delle modifiche integrato in ognuno di essi.
+    \item \textbf{Branching e DashBoard}: dal momento che ciascuna \textcolor{red}{\uline{\textit{issue}}} è associata ad un CI tramite
+    \textcolor{red}{\uline{\textit{label}}}, è possibile verificare facilmente se ci sono \textcolor{red}{\uline{\textit{attività}}} correlate
+    in corso nella colonna "In progress" della Dashboard di progetto.
+\end{itemize}
+\textbf{Supporto per la gestione delle change request}: registrazione e documentazione di tutte le modifiche effettuate ai CI in risposta alle
+richieste di modifica. Per la gestione di queste richieste si utilizza l'Issue Tracking System (ITS) di GitHub (ClickUp?) creando una
+\textcolor{red}{\uline{\textit{issue}}} con la label "Change request".
+
 \subsubsection{Release management and delivery}
+Secondo lo \textcolor{red}{\uline{\textit{standard}}} \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{ISO/IEC 12207:1995},
+questo processo si occupa di tutto ciò che riguarda il rilascio e la distribuzione del \textcolor{red}{\uline{\textit{software}}}. Più precisamente,
+la Release Management and Delivery gestisce la release, la distribuzione e la documentazione correlata al prodotto \textcolor{red}{\uline{\textit{software}}}
+pronto per l'uso operativo.
+
+Nel nostro caso, la pianificazione della release avviene in concomitanza con le baseline stabilite per il progetto didattico, ossia 
+\textcolor{red}{\uline{\textit{RTB}}} (Requirements and Technology Baseline), 
+\textcolor{red}{\uline{\textit{PB}}} (Product Baseline) ed eventualmente CA (Customer Acceptance).
+Affinchè questo processo termini con successo, risulta fondamentale che esso sia preceduto da un'attenta fase di verifica e validazione del prodotto.
+
 \subsubsubsection{Procedura per la creazione di una release}
-\subsubsection{Strumenti}
+\begin{enumerate}
+    \item Accedere alla pagina del \textcolor{red}{\uline{\textit{repository}}};
+    \item Spostarsi sulla sezione "Releases";
+    \item Cliccare su "Create a new release";
+    \item Cliccare su "Choose a tag" e selezionare il tag che identifica la versione da rilasciare. Nel caso non fosse presente, è possibile
+    crearlo cliccando su "Create a new tag";
+    \item Selezionare come \textcolor{red}{\uline{\textit{branch}}} di destinazione il \textcolor{red}{\uline{\textit{branch}}} main;
+    \item Scrivere una descrizione della release;
+    \item Cliccare su "Publish release".
+\end{enumerate}
+Conclusa la procedura, sarà possibile visionare la release nella sezione "Releases" del \textcolor{red}{\uline{\textit{repository}}}.
+
 \subsection{Joint review}
 \subsubsection{Introduzione}
 \subsubsection{Implementazione del processo}
@@ -371,6 +590,8 @@ strumenti specifici (driver, stub, logger) che consentono di eseguire i test in 
 \subsubsubsection{Stato del progetto}
 \subsubsection{Revisioni tecniche}
 \subsubsection{Strumenti}
+
+
 \subsection{Risoluzione dei problemi}
 \subsubsection{Introduzione}
 \subsubsection{Gestione dei rischi}
@@ -378,6 +599,8 @@ strumenti specifici (driver, stub, logger) che consentono di eseguire i test in 
 \subsubsubsection{Metriche}
 \subsubsection{Identificazione dei problemi}
 \subsubsection{Strumenti}
+
+
 \subsection{Gestione della qualità}
 \subsubsection{Introduzione}
 \subsubsection{Attività}
