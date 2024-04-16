@@ -219,6 +219,7 @@ Nell'analisi dei requisiti, le metriche sono strumenti essenziali per valutare, 
     \label{tab:2}
 \end{table}
 \textbf{TODO: da cambiare la tabella}
+
 \subsubsubsection{Strumenti}
 \textbf{StarUML} è un'applicazione software impiegata dal team per creare i diagrammi dei casi d'uso.
 
@@ -325,15 +326,65 @@ Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
 \textbf{TODO: inserire relazioni tra le classi}
 
 \subsubsubsection{Design pattern}
+I design pattern rappresentano solide soluzioni a problemi ricorrenti di progettazione in determinati contesti, offrendo un approccio riutilizzabile che assicura la qualità e una rapida implementazione. Si adottano quando una soluzione ha dimostrato efficacia in un contesto specifico. Le guide dettagliate sull'applicazione dei pattern delineano il loro utilizzo ottimale, accompagnate da rappresentazioni grafiche, spiegazioni testuali della logica e descrizioni della loro utilità nell'architettura complessiva. Questa documentazione è essenziale per favorire una comprensione approfondita dell'integrazione dei design pattern nell'architettura generale e per prevenire errori di progettazione.
+
 \subsubsubsection{Test}
+Nel processo di sviluppo, il testing è cruciale per garantire la qualità del prodotto finale. Durante questa fase, vengono stabiliti i requisiti di testing, definiti i casi di test e i criteri di accettazione, che servono da strumenti per valutare il software.\\ L'obiettivo principale è individuare e risolvere eventuali problemi o errori nel software prima del rilascio del prodotto finale, assicurando che soddisfi le specifiche e le aspettative del cliente. I progettisti hanno il pieno controllo su questa attività, incluso il definire i test da eseguire. Nella sezione 3.2.4 (\textbf{TODO: controllare se è il numero giusto}) sono fornite descrizioni dettagliate delle varie tipologie di test e della terminologia associata, offrendo ulteriore chiarezza su questa fase critica del processo di sviluppo del software.
+
 \subsubsubsection{Metriche}
+\textbf{TODO: inserire metriche}
+
 \subsubsubsection{Strumenti}
+\textbf{StarUML} è un'applicazione software impiegata dal team per creare i diagrammi dei casi d'uso.
+
 \subsubsection{Codifica}
 \subsubsubsection{Descrizione}
+Nel processo di sviluppo del software, la codifica è responsabilità del programmatore ed è il momento cruciale in cui le funzionalità richieste prendono vita. Durante questa fase, le idee e i concetti delineati dai progettisti vengono tradotti in codice, creando istruzioni e procedure eseguibili dai calcolatori.\\ È essenziale che i programmatori rispettino attentamente le linee guida e le norme stabilite per assicurare che il codice sia conforme alle specifiche e rifletta accuratamente le visioni iniziali dei progettisti.
+
 \subsubsubsection{Obiettivi}
+La fase di codifica mira a sviluppare un prodotto software che soddisfi le richieste del cliente e sia conforme agli accordi concordati. Il rispetto rigoroso delle norme assicura la creazione di codice di elevata qualità, semplificando la manutenzione, l'espansione e la verifica del software. Questo contribuisce costantemente al miglioramento complessivo della sua qualità.
+
 \subsubsubsection{Norme di codifica}
+Le seguenti norme sono state formalizzate in questa maniera:
+\begin{itemize}
+	\item \textbf{Nomi significativi}: i nomi delle variabili, delle costanti, delle classi e dei metodi devono essere significativi e rappresentativi della loro funzione, in modo da facilitare la comprensione del codice;
+	\item \textbf{Indentazione e formattazione consistente}: il codice deve essere correttamente indentato e formattato, con l'uso di spazi e tabulazioni coerenti, per garantire una corretta leggibilità e comprensione;
+	\item \textbf{Lunghezza dei metodi}: i metodi devono essere brevi e concisi, con un numero limitato di righe di codice, per garantire una maggiore chiarezza e facilità di manutenzione. I metodi dovrebbero essere lunghi quanto basta per svolgere una singola funzione. Questo favorisce:
+	\begin{itemize}
+		\item \textbf{Chiarezza}: i metodi brevi sono più facili da comprendere e da seguire;
+		\item \textbf{manutenibilità}: i metodi brevi sono più facili da modificare e da aggiornare;
+		\item \textbf{Comprensibilità}: i metodi brevi sono più facili da leggere e da interpretare;
+		\item \textbf{Testabilità}: i metodi brevi sono più facili da testare e da validare.
+		\item \textbf{Lunghezza del codice}: i file di codice sorgente devono essere brevi e concisi, con un numero limitato di righe di codice, per garantire una maggiore chiarezza e facilità di manutenzione.
+		\item \textbf{Commenti}: il codice deve essere corredato da commenti chiari e significativi, che spiegano il funzionamento e lo scopo delle varie parti del codice, per facilitare la comprensione e la manutenzione.
+		\item \textbf{Conformità ai principi SOLID}: il codice deve rispettare i principi SOLID, che promuovono la scrittura di codice pulito, modulare e manutenibile.
+	\end{itemize}
+\end{itemize}
+
 \subsubsubsection{Strumenti}
+\textbf{Visual Studio Code} è l'editor di codice utilizzato dal team per scrivere e modificare il codice sorgente.
+
 \subsubsubsection{Metriche}
+\textbf{TODO: inserire metriche}
+
 \subsubsection{Configurazione dell'ambiente di esecuzione}
 \subsubsubsection{Docker}
+La redazione dei file Docker è inclusa nel processo di sviluppo del software. Rispettare le regole e le migliori pratiche di codifica per i file Docker è essenziale per assicurare la creazione, la gestione e la distribuzione efficiente dei container.\\
+\begin{itemize}
+	\item \textbf{Chiarezza e Coerenza}: i file Docker devono essere chiari e coerenti, con una struttura ben definita e una formattazione uniforme, per garantire una corretta organizzazione e facilitare la comprensione;
+	\item \textbf{Versionamento}: i file Docker devono includere informazioni dettagliate sulla versione del software e dei componenti utilizzati, per garantire la compatibilità e la coerenza tra i diversi ambienti;
+	\item \textbf{Sicurezza}: i file Docker devono essere sicuri e protetti da eventuali vulnerabilità, per garantire la protezione dei dati e delle informazioni sensibili, utilizzando immagini ufficiali e aggiornate, evitando di eseguire comandi con privilegi elevati quando possibile;
+	\item \textbf{Efficienza}: i file Docker devono essere efficienti e ottimizzati, con un utilizzo corretto delle risorse e una gestione accurata dei container, per garantire prestazioni elevate e tempi di risposta rapidi;
+	\item \textbf{Gestione delle variabili d'ambiente}: i file Docker devono includere variabili d'ambiente ben definite e gestite correttamente, per garantire la configurabilità e la flessibilità del sistema;
+	\item \textbf{Logging e monitoraggio}: bisogna configurare i \textit{container} per registrare i log e monitorare le prestazioni, per garantire la visibilità e la tracciabilità delle attività del sistema;
+	\item \textbf{Layering}: ridurre il numero di layer e mantenere il più possibile le dipendenze in comune tra i vari layer, per garantire una maggiore efficienza e una migliore gestione delle risorse.
+	\item \textbf{Riduzione delle dimensioni delle immagini}: ridurre le dimensioni delle immagini Docker, eliminando i file e le dipendenze non necessarie, per garantire una maggiore efficienza e una migliore gestione delle risorse.
+	\item \textbf{Documentazione}: i file Docker devono essere corredati da una documentazione dettagliata e aggiornata, che spieghi il funzionamento e la configurazione del sistema, per facilitare la comprensione e la manutenzione.
+	\item \textbf{Testing}: i file Docker devono essere testati e validati accuratamente, per garantire che il sistema funzioni correttamente e soddisfi i requisiti e le aspettative del cliente.
+\end{itemize}
+
 \subsubsubsection{Strumenti}
+\begin{itemize}
+	\item \textbf{Docker}: Docker è una piattaforma open source che semplifica la creazione, la distribuzione e la gestione di container, fornendo un ambiente isolato e sicuro per eseguire applicazioni e servizi.
+	\item \textbf{Visual Studio Code}: Visual Studio Code è un editor di codice leggero e versatile, che offre funzionalità avanzate per lo sviluppo del software, tra cui il supporto per Docker e la creazione di file Docker.
+\end{itemize}
