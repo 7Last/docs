@@ -12,7 +12,6 @@ Il processo di fornitura comprende le seguenti attività:
 	\item \textbf{Revisione}
 	\item \textbf{Consegna}
 \end{itemize}
-TODO Mettere una descrizione di ogni attività?
 
 \subsubsection{Comunicazioni con l'azienda proponente}
 L'azienda proponente SyncLab mette a disposizione l'indirizzo di posta elettronica e il suo canale Discord per la comunicazione tramite messaggi e Google Meet per la comunzicazione attraverso incontri telematici.
@@ -167,16 +166,164 @@ I diagrammi dei casi d'uso sono strumenti grafici che consentono di rappresentar
 Questi diagrammi si concentrano sulla descrizione delle funzionalità del sistema dal punto di vista degli utenti, senza entrare nei dettagli implementativi. La loro principale finalità è quella di evidenziare le interazioni esterne al sistema, fornendo una visione focalizzata sulle funzionalità e sull'interazione dell'utente con il sistema stesso.
 Un diagramma dei casi d'uso fornisce una panoramica visuale delle principali interazioni tra gli attori e il sistema, agevolando la comprensione dei requisiti funzionali del sistema e la comunicazione tra le parti interessate del progetto.
 Di seguito sono elencati i principali componenti di un diagramma dei casi d'uso:
+\textbf{TODO: inserire componenti diagramma casi d'uso}
 
 \subsubsubsection{Requisiti}
+I requisiti di un software sono dettagliate specifiche documentate che delineano le funzionalità, le prestazioni, i vincoli e altri aspetti critici che il software deve soddisfare. Questi requisiti sono fondamentali per guidare lo sviluppo, il testing e la valutazione del prodotto, garantendo che risponda alle esigenze degli utenti e agli obiettivi del progetto. Essi comprendono sia i \textbf{requisiti funzionali}, che descrivono le funzionalità necessarie, sia i \textbf{requisiti non funzionali}, che definiscono criteri di prestazione, qualità, sicurezza e vincoli del sistema.\\
+Una definizione precisa dei requisiti è essenziale: devono essere chiari e rispondere completamente alle aspettative del cliente o del proponente.
+
+Ogni requisito è costituito da:
+\begin{enumerate}
+	\item \textbf{identificativo} nel formato \begin{center}\textbf{R[Abbreviazione Tipologia Requisito][Codice]}\end{center} con:\\
+	\begin{itemize}
+		\item \textbf{Abbreviazione Tipologia Requisito}: indica la tipologia del requisito, che può essere:
+		\begin{itemize}
+			\item \textbf{RF}: requisito funzionale;
+			\item \textbf{RQ}: requisito di qualità;
+			\item \textbf{RV}: requisito di vincolo.
+		\end{itemize}
+		\item \textbf{Codice}: numero progressivo che identifica univocamente il requisito.
+	\end{itemize}
+	\item \textbf{Importanza}: indica il grado di importanza del requisito, che può essere:
+	\begin{itemize}
+		\item \textbf{Obbligatorio}: requisito essenziale per il funzionamento del sistema;
+		\item \textbf{Desiderabile}: requisito che apporta valore aggiunto al sistema, ma non essenziale;
+		\item \textbf{Opzionale}: requisito che può essere implementato in un secondo momento.
+	\end{itemize}
+	\item \textbf{Descrizione}: descrizione chiara e dettagliata che fornisce una spiegazione del comportamento o della funzionalità richiesta.
+	\item \textbf{Fonte}: indica la fonte da cui è stato identificato il requisito, che può essere:\\
+	\begin{itemize}
+		\item \textbf{Capitolato}: requisito identificato direttamente dal capitolato d'appalto;
+		\item \textbf{Verbale Interno}: requisito identificato durante un incontro interno;
+		\item \textbf{Verbale Esterno}: requisito identificato durante un incontro con il proponente.
+	\end{itemize}
+	\item \textbf{Casi d'uso}: elenco dei casi d'uso che soddisfano il requisito.
+\end{enumerate}
+
+
 \subsubsubsection{Metriche}
+Nell'analisi dei requisiti, le metriche sono strumenti essenziali per valutare, misurare e gestire diversi aspetti dei requisiti di un sistema o di un progetto. Grazie a queste metriche, è possibile garantire che i requisiti siano esaustivi, precisi, coerenti e comprensibili.
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Metrica} & \textbf{Abbreviazione} & \textbf{Riferimento} \\
+    \hline
+    1M-EV & Earned Value & 1M-EV \\
+    2M-PV & Planned Value & 2M-PV\\
+    3M-AC & Actual Cost & 3M-AC \\
+    \hline
+    \end{tabular}
+    \caption{Metriche per l'analisi dei requisiti}
+    \label{tab:2}
+\end{table}
+\textbf{TODO: da cambiare la tabella}
 \subsubsubsection{Strumenti}
+\textbf{StarUML} è un'applicazione software impiegata dal team per creare i diagrammi dei casi d'uso.
+
+
 \subsubsection{Progettazione}
 \subsubsubsection{Descrizione}
+Il principale obiettivo dell'attività di progettazione è individuare la soluzione implementativa ottimale che soddisfi pienamente le esigenze di tutti gli stakeholder, considerando i requisiti e le risorse disponibili. La progettazione si pone la domanda fondamentale: "Qual è il modo migliore per realizzare ciò di cui c'è bisogno?". È essenziale definire l'architettura del prodotto prima di iniziare la fase di codifica, adottando un approccio basato sulla correttezza per costruzione anziché sulla correzione successiva. Tale approccio consente di gestire efficacemente la complessità del prodotto, garantendo una struttura robusta e coesa durante l'intero processo di sviluppo.
+
 \subsubsubsection{Obiettivi}
+L'obiettivo principale è garantire che i requisiti siano soddisfatti attraverso un sistema di qualità definito dall'architettura del prodotto. Ciò comporta:
+\begin{itemize}
+	\item Individuare componenti modulari che rispettino i requisiti, con specifiche chiare e coerenti, e svilupparle utilizzando risorse sostenibili e costi contenuti;
+	\item Organizzare le componenti in modo che siano facilmente comprensibili e manutenibili, garantendo una struttura coesa e ben organizzata;
+	\item Definire un'architettura che supporti l'evoluzione del prodotto, consentendo l'aggiunta di nuove funzionalità e la correzione di eventuali errori;
+\end{itemize}
+Inizialmente, il team di progettazione eseguirà un'analisi approfondita per selezionare con cura le tecnologie più adeguate, valutandone attentamente i vantaggi, i limiti e le eventuali problematiche. Una volta individuate le tecnologie appropriate, si procederà allo sviluppo di un'architettura di alto livello per comprendere e delineare la struttura generale del prodotto, che fungerà da base iniziale per la realizzazione del \textit{Proof of Concept} (PoC). Questa architettura fornirà una visione panoramica del sistema, identificando i principali componenti, i flussi di dati e le interazioni tra di essi, ponendo particolare attenzione alla flessibilità del sistema per eventuali modifiche future. \\Successivamente, si darà il via allo sviluppo del PoC, una parte cruciale della \textit{Technology Baseline}, per valutare le decisioni prese riguardo all'architettura e alle tecnologie adottate, e per verificare la loro congruenza con gli obiettivi e le specifiche del progetto. Dopo lo sviluppo e un'attenta analisi del PoC, si procederà con ulteriori iterazioni, apportando miglioramenti, aggiustamenti e integrazioni fino a raggiungere un design completo. Questo design sarà fondamentale per lo sviluppo del \textit{Minimum Viable Product} (MVP), che rappresenterà una versione essenziale e funzionale del prodotto e sarà parte integrante della \textit{Product Baseline}.
+
 \subsubsubsection{Documentazione}
+\textbf{Specifica tecnica}\\ Il documento fornisce una visione dettagliata del design definitivo del prodotto e offre istruzioni chiare agli sviluppatori per implementare correttamente la soluzione software, seguendo i requisiti e le specifiche indicate. Questo aiuta a semplificare il processo di sviluppo del software, riducendo la complessità e le ambiguità, e assicurando che il prodotto finale sia in linea con le aspettative del cliente e funzioni in modo ottimale. Tra gli elementi chiave inclusi in questo documento vi sono:
+\begin{itemize}
+	\item \textbf{Tecnologie utilizzate}: elenco delle tecnologie, dei framework e degli strumenti impiegati per lo sviluppo del prodotto;
+	\item \textbf{Architettura logica}: descrizione dettagliata della struttura logica del sistema, con particolare attenzione ai componenti principali, ai flussi di dati e alle interazioni tra di essi;
+	\item \textbf{Architettura di deployment}: rappresentazione grafica dell'architettura del sistema, con indicazioni sulle risorse hardware e software necessarie per il corretto funzionamento del prodotto;
+	\item \textbf{Design pattern}: descrizione dei design pattern utilizzati per risolvere problemi comuni e ricorrenti durante lo sviluppo del software;
+	\item \textbf{Vincoli e linee guida}: specifiche restrizioni e regole da seguire durante lo sviluppo del prodotto, per garantire coerenza e uniformità nel codice.
+	\item \textbf{Procedure di testing e validazione}: indicazioni sulle procedure e gli strumenti da utilizzare per verificare e validare il prodotto, garantendo che soddisfi i requisiti e le aspettative del cliente.
+	\item \textbf{Requisiti tecnici}: elenco dettagliato dei requisiti tecnici che il prodotto deve soddisfare, con indicazioni sulle funzionalità, le prestazioni e le caratteristiche richieste.
+\end{itemize}
+
 \subsubsubsection{Qualità dell'architettura}
+\begin{itemize}
+	\item \textbf{Sufficienza}: l'architettura deve soddisfare tutti i requisiti funzionali e non funzionali del sistema, garantendo che tutte le funzionalità richieste siano implementate correttamente e che il sistema funzioni in modo ottimale.
+	\item \textbf{Comprensibilità}: l'architettura deve essere chiara, ben strutturata e facilmente comprensibile, in modo che gli sviluppatori possano capire facilmente come il sistema è organizzato e come funziona;
+	\item \textbf{Modularità}: l'architettura deve essere modulare, con componenti ben definiti e indipendenti, in modo che possano essere facilmente riutilizzati e sostituiti senza influenzare il resto del sistema;
+	\item \textbf{Robustezza}: l'architettura deve essere robusta e resistente agli errori, in modo che il sistema possa gestire eventuali problemi o malfunzionamenti senza interrompere il funzionamento del sistema;
+	\item \textbf{Flessibilità}: l'architettura deve essere flessibile e adattabile, in modo che il sistema possa essere facilmente modificato e ampliato per soddisfare nuove esigenze e requisiti;
+	\item \textbf{Efficienza}: l'architettura deve essere efficiente e ottimizzata, in modo che il sistema possa funzionare in modo rapido ed efficiente, senza sprechi di risorse;
+	\item \textbf{Riusabilità}: l'architettura deve essere progettata per favorire la riutilizzabilità dei componenti, in modo che possano essere facilmente utilizzati in altri contesti e progetti;
+	\item \textbf{Affidabilità}: l'architettura deve essere affidabile e sicura, in modo che il sistema possa garantire la corretta esecuzione delle funzionalità e la protezione dei dati e delle informazioni;
+	\item \textbf{Disponibilità}: l'architettura deve garantire la disponibilità del sistema, in modo che possa essere sempre accessibile e operativo per gli utenti;
+	\item \textbf{Safety}: l'architettura deve garantire la sicurezza del sistema, in modo che possa proteggere i dati e le informazioni sensibili in seguito a malfunzionamenti;
+	\item \textbf{Security}: l'architettura deve garantire la sicurezza del sistema, in modo che possa proteggere i dati e le informazioni sensibili da accessi non autorizzati.
+	\item \textbf{semplicità}: l'architettura deve essere semplice e intuitiva, in modo che possa essere facilmente compresa e utilizzata dagli sviluppatori e dagli utenti.
+	\item \textbf{Coesione}: l'architettura deve essere coesa, con componenti ben definiti e correlati tra loro, in modo che possano lavorare insieme in modo efficace e armonioso;
+	\item \textbf{Incapsulazione}: l'architettura deve essere incapsulata, con componenti ben definiti e indipendenti, in modo che possano essere facilmente gestiti e mantenuti senza influenzare il resto del sistema;
+	\item \textbf{Basso accoppiamento}: l'architettura deve avere un basso accoppiamento tra i componenti, in modo che possano essere facilmente sostituiti e modificati senza influenzare il resto del sistema;
+\end{itemize}
+
 \subsubsubsection{Diagrammi UML}
+Vantaggi:
+\begin{itemize}
+	\item \textbf{Chiarezza nella comunicazione}: i diagrammi UML forniscono una rappresentazione visuale delle informazioni, facilitando la comprensione e la comunicazione tra gli stakeholder;
+	\item \textbf{Standardizzazione}: UML è uno standard riconosciuto a livello internazionale, che consente di creare diagrammi coerenti e uniformi, garantendo una maggiore coerenza e comprensibilità;
+	\item \textbf{Analisi e progettazione visiva}: i diagrammi UML consentono di analizzare e progettare il sistema in modo visuale, facilitando la comprensione e l'identificazione di problemi e soluzioni;
+	\item \textbf{Modellazione e simulazione}: UML consente di modellare e simulare il sistema in modo visuale, facilitando la valutazione delle prestazioni e delle funzionalità del sistema;
+	\item \textbf{Manutenzione facilitata}: i diagrammi UML semplificano la manutenzione del sistema, consentendo di identificare e risolvere facilmente problemi e bug;
+	\item \textbf{Riduzione degli errori di progettazione}: UML aiuta a ridurre gli errori di progettazione, consentendo di identificare e correggere i problemi in modo rapido ed efficace;
+	\item \textbf{Documentazione supportata}: i diagrammi UML forniscono una documentazione visuale del sistema, che facilita la comprensione e la consultazione delle informazioni.
+\end{itemize}
+A supporto della progettazione, il team utilizzerà i seguenti \textbf{diagrammi delle classi}.
+\\\\
+\textbf{Diagrammi delle classi}\\
+Ogni diagramma delle classi rappresenta le proprietà e le relazioni tra le varie componenti di un sistema, offrendo una visione chiara e dettagliata della struttura del sistema.\\
+Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
+\begin{enumerate}
+	\item \textbf{Nome della classe}: indica il nome della classe;
+	\item \textbf{Attributi}: elenco degli attributi della classe, con il relativo tipo di dato, seguendo il formato: \\ \begin{center}\textbf{Visibilità Nome: Tipo [Molteplicità] = Valore di default}\end{center}
+	\begin{itemize}
+		\item \textbf{Visibilità}: indica il livello di accesso agli attributi, che può essere:
+		\begin{itemize}
+			\item \textbf{+}: pubblico;
+			\item \textbf{-}: privato;
+			\item \textbf{\#}: protetto;
+			\item \textbf{\textasciitilde}: package.
+		\end{itemize}
+		\item \textbf{Nome}: nome dell'attributo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeAttributo: tipo}; \\ Se l'attributo è costante, il nome deve essere scritto in maiuscolo (es. \textit{PIGRECO: double});
+		\item \textbf{Molteplicità}: nel caso di una sequenza di elementi come liste o array, indica il numero di elementi presenti, se questa non fosse conosciuta si utilizza il simbolo \textit{*} (es \textit{tipoAttributo[*]});
+		\item \textbf{default}: valore di default dell'attributo.
+	\end{itemize}
+	\item \textbf{Metodi}: descrivono il comportamento della classe, seguendo il formato: \\ \begin{center}\textbf{Visibilità Nome(parametri): Tipo di ritorno}\end{center}
+	\begin{itemize}
+		\item \textbf{Visibilità}: indica il livello di accesso ai metodi, che può essere:
+		\begin{itemize}
+			\item \textbf{+}: pubblico;
+			\item \textbf{-}: privato;
+			\item \textbf{\#}: protetto;
+			\item \textbf{\textasciitilde}: package.
+		\end{itemize}
+		\item \textbf{Nome}: nome del metodo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeMetodo(parametri): tipoRitorno};
+		\item \textbf{Parametri}: elenco dei parametri del metodo, separati tramite virgola. Ogni parametro deve seguire la notazione \textit{nomeParametro: tipo};
+		\item \textbf{Tipo di ritorno}: indica il tipo di dato restituito dal metodo.
+	\end{itemize}
+\end{enumerate}
+
+\textbf{Convenzioni sui metodi}
+\begin{itemize}
+	\item \textbf{I metodi getter, setter} e i \textbf{costruttori} non vengono inclusi fra i metodi;
+	\item \textbf{I metodi statici} sono sottolineati;
+	\item \textbf{I metodi astratti} sono scritti in corsivo.
+	\item L'\textbf{assenza di attributi o metodi} in una classe determina l'assenza delle relative sezioni nel diagramma.
+\end{itemize}
+
+\textbf{Relazioni tra le classi}
+\textbf{TODO: inserire relazioni tra le classi}
+
 \subsubsubsection{Design pattern}
 \subsubsubsection{Test}
 \subsubsubsection{Metriche}
