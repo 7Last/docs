@@ -90,11 +90,13 @@ Per valutare la qualità di tale processo, sono state definite le seguenti metri
 	\hline
 	\textbf{11M-CV}  & Cost Variance (CV)            & $\geq -7.5\%$                                               & $\geq 0\%$                                & Valuta la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. \\
 	\hline
-	\textbf{12M-EAC} & Estimated at Completion (EAC) & Errore del $\pm 4\%$ rispetto al BAC (Budget At Completion) & Equivalente al BAC (Budget At Completion) & Calcola il costo realizzativo stimato per terminare il progetto.                                                               \\
+	\textbf{12M-SV}  & Schedule Variance (SV)        & $\geq -7.5\%$                                               & $\geq 0\%$                                & Indica in percentuale il livello di anticipo o ritardo rispetto le attività pianificate.                                       \\
 	\hline
-	\textbf{13M-ETC} & Estimate to Complete (ETC)    & $\geq 0$                                                    & $\leq$ EAC (Estimated At Completion)      & Previsione dei costi realizzativi fino alla fine del progetto.                                                                 \\
+	\textbf{13M-EAC} & Estimated at Completion (EAC) & Errore del $\pm 4\%$ rispetto al BAC (Budget At Completion) & Equivalente al BAC (Budget At Completion) & Calcola il costo realizzativo stimato per terminare il progetto.                                                               \\
 	\hline
-	\textbf{14M-CPI} & Cost Performance Index (CPI)  & $\pm 13\%$                                                  & 0                                         & Indica il rapporto tra il valore del lavoro effettivamente svolto e i costi sostenuti.                                         \\
+	\textbf{14M-ETC} & Estimate to Complete (ETC)    & $\geq 0$                                                    & $\leq$ EAC (Estimated At Completion)      & Previsione dei costi realizzativi fino alla fine del progetto.                                                                 \\
+	\hline
+	\textbf{15M-CPI} & Cost Performance Index (CPI)  & $\pm 13\%$                                                  & 0                                         & Indica il rapporto tra il valore del lavoro effettivamente svolto e i costi sostenuti.                                         \\
 	\hline
 	\caption{Valori delle metriche inerenti al processo di Fornitura}
 	\label{table:4}
@@ -109,17 +111,17 @@ Per valutare la qualità di tale processo, sono state definite le seguenti metri
 	\textbf{Metrica}  & \textbf{Nome}              & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                                \\
 	\hline
 	\endhead
-	\textbf{15M-CCM}  & Complessità ciclomatica    & $\leq 3$                    & $\leq 6$               & Indica il numero di cammini linearmente indipendenti attraverso il codice sorgente di un programma. \\
+	\textbf{16M-CCM}  & Complessità ciclomatica    & $\leq 3$                    & $\leq 6$               & Indica il numero di cammini linearmente indipendenti attraverso il codice sorgente di un programma. \\
 	\hline
 	% \textbf{16M-CSM}  & Code Smell                 & 0                           & 0                      & Indica il livello di pulizia e manutenibilità del codice.                                           \\
 	% \hline
-	\textbf{16M-PPM}  & Parametri per metodo       & $\leq 7$                    & $\leq 5$               & Indica il numero di parametri per metodo.                                                           \\
+	\textbf{17M-PPM}  & Parametri per metodo       & $\leq 7$                    & $\leq 5$               & Indica il numero di parametri per metodo.                                                           \\
 	\hline
-	\textbf{17M-CPC}  & Campi per classe           & $\leq 10$                   & $\leq 7$               & Indica il numero di parametri per classe.                                                           \\
+	\textbf{18M-CPC}  & Campi per classe           & $\leq 10$                   & $\leq 7$               & Indica il numero di parametri per classe.                                                           \\
 	\hline
-	\textbf{18M-LCPM} & Linee di codice per metodo & $\leq 30$                   & $\leq 20$              & Indica il numero di linee di codice per metodo.                                                     \\
+	\textbf{19M-LCPM} & Linee di codice per metodo & $\leq 30$                   & $\leq 20$              & Indica il numero di linee di codice per metodo.                                                     \\
 	\hline
-	\caption{ Valori delle metriche inerenti al processo di Sviluppo (Complessità e struttura del codice)}
+	\caption{ Valori delle metriche inerenti al processo di Sviluppo}
 	\label{table:5}
 \end{longtable}
 
@@ -128,11 +130,11 @@ Per valutare la qualità di tale processo, sono state definite le seguenti metri
 	\hline
 	\textbf{Metrica} & \textbf{Nome}                           & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                   \\
 	\hline
-	\textbf{19M-TR}  & Tempo di risposta (interfaccia utente)  & $\leq 1.5$s                 & $\leq 1$s              & Indica il tempo massimo di risposta del sistema.                                       \\
+	\textbf{20M-TR}  & Tempo di risposta (interfaccia utente)  & $\leq 1.5$s                 & $\leq 1$s              & Indica il tempo massimo di risposta del sistema.                                       \\
 	\hline
-	\textbf{20M-TE}  & Tempo di elaborazione di un dato grezzo & $\leq 1.5$s                 & $\leq 1$s              & Indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione. \\
+	\textbf{21M-TE}  & Tempo di elaborazione di un dato grezzo & $\leq 1.5$s                 & $\leq 1$s              & Indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione. \\
 	\hline
-	\caption{ Valori delle metriche inerenti al processo di Sviluppo (Efficienza)}
+	\caption{ Valori delle metriche inerenti al processo di Sviluppo}
 	\label{table:6}
 \end{longtable}
 
@@ -149,9 +151,9 @@ Per valutare la qualità di tale processo, sono state definite le seguenti metri
 	\textbf{Metrica} & \textbf{Nome}           & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                 \\
 	\hline
 	\endfirsthead
-	\textbf{21M-IG}  & Indice Gulpease         & $\geq 60\% $                & 90\%                   & Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi. \\
+	\textbf{22M-IG}  & Indice Gulpease         & $\geq 60\% $                & 90\%                   & Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi. \\
 	\hline
-	\textbf{22M-CO}  & Correttezza Ortografica & 0 errori                    & 0 errori               & Presenza di errori ortografici nei documenti.                                        \\
+	\textbf{23M-CO}  & Correttezza Ortografica & 0 errori                    & 0 errori               & Presenza di errori ortografici nei documenti.                                        \\
 	\hline
 	\caption{ Valori delle metriche inerenti al processo di Documentazione}
 	\label{table:7}
@@ -166,15 +168,15 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\textbf{Metrica}  & \textbf{Nome}                & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                                               \\
 	\hline
 	\endhead
-	\textbf{23M-CC}   & Code Coverage                & $\geq 80\% $                & 100\%                  & Fornisce una misura quantitativa del grado o della percentuale di codice eseguito durante i test.                  \\
+	\textbf{24M-CC}   & Code Coverage                & $\geq 80\% $                & 100\%                  & Fornisce una misura quantitativa del grado o della percentuale di codice eseguito durante i test.                  \\
 	\hline
-	\textbf{24M-BC}   & Branch Coverage              & $\geq 80\% $                & 100\%                  & Metrica di copertura del codice che indica la percentuale dei rami decisione del codice coperti dai test.          \\
+	\textbf{25M-BC}   & Branch Coverage              & $\geq 80\% $                & 100\%                  & Metrica di copertura del codice che indica la percentuale dei rami decisione del codice coperti dai test.          \\
 	\hline
-	\textbf{25M-SC}   & Statement Coverage           & $\geq 80\% $                & 100\%                  & Metrica di copertura del codice che indica la percentuale degli statement del codice coperti dai test.             \\
+	\textbf{26M-SC}   & Statement Coverage           & $\geq 80\% $                & 100\%                  & Metrica di copertura del codice che indica la percentuale degli statement del codice coperti dai test.             \\
 	\hline
-	\textbf{26M-FD}   & Failure Density              & 100\%                       & 100\%                  & Misura che indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo. \\
+	\textbf{27M-FD}   & Failure Density              & 100\%                       & 100\%                  & Misura che indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo. \\
 	\hline
-	\textbf{27M-PTCP} & Passed Test Cases Percentage & $\geq 80\%$                 & 100\%                  & Percentuale di casi di test superati.                                                                              \\
+	\textbf{28M-PTCP} & Passed Test Cases Percentage & $\geq 80\%$                 & 100\%                  & Percentuale di casi di test superati.                                                                              \\
 	\hline
 	\caption{ Valori delle metriche inerenti al processo di Verifica}
 	\label{table:7}
@@ -192,7 +194,7 @@ insorgere durante lo svolgimento del progetto. Per valutare la qualità di tale 
 	\hline
 	\textbf{Metrica} & \textbf{Nome}       & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                     \\
 	\endhead
-	\textbf{28M-NCR} & Non Calculated Risk & $\leq 3 $                   & 0                      & Indica un rischio che è stato trascurato o non considerato durante l’Analisi dei Rischi. \\
+	\textbf{29M-NCR} & Non Calculated Risk & $\leq 3 $                   & 0                      & Indica un rischio che è stato trascurato o non considerato durante l’Analisi dei Rischi. \\
 	\hline
 	\hline
 	\caption{ Valori delle metriche inerenti al processo di Gestione dei processi}
@@ -211,9 +213,9 @@ Per valutare la qualità di tale processo, sono state definite le seguenti metri
 	\hline
 	\textbf{Metrica} & \textbf{Nome}             & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                          \\
 	\endhead
-	\textbf{29M-QMS} & Quality Metrics Satisfied & $\geq 85\% $                & 100\%                  & Indica il numero di metriche implementate e soddisfatte, tra quelle definite. \\
+	\textbf{30M-QMS} & Quality Metrics Satisfied & $\geq 85\% $                & 100\%                  & Indica il numero di metriche implementate e soddisfatte, tra quelle definite. \\
 	\hline
-	\textbf{30M-TE}  & Time Efficiency           & $\leq 3 $                   & $\leq 1 $              & Livello di efficacia del team nello sviluppo di codice di alta qualità.       \\
+	\textbf{31M-TE}  & Time Efficiency           & $\leq 3 $                   & $\leq 1 $              & Livello di efficacia del team nello sviluppo di codice di alta qualità.       \\
 	\hline
 	\caption{ Valori delle metriche inerenti al processo di Gestione della Qualità}
 	\label{table:9}
@@ -233,24 +235,15 @@ per il loro svolgimento. Per valutare la qualità di tale processo, sono state d
 	\hline
 	\endfirsthead
 	\hline
-	\textbf{31M-RSI} & Requirements Stability Index (RSI) & $\geq 75\% $                & 100\%                  & Misura utilizzata per quantificare l’entità e l’impatto dei cambiamenti dei requisiti in un progetto. \\
+	\textbf{8M-RSI}  & Requirements Stability Index (RSI) & $\geq 75\% $                & 100\%                  & Misura utilizzata per quantificare l’entità e l’impatto dei cambiamenti dei requisiti in un progetto. \\
 	\hline
-	\textbf{32M-SV}  & Schedule Variance (SV)             & $\geq -7.5\%$               & $\geq 0\%$             & Indica in percentuale il livello di anticipo o ritardo rispetto le attività pianificate.              \\
+	\textbf{11M-SV}  & Schedule Variance (SV)             & $\geq -7.5\%$               & $\geq 0\%$             & Indica in percentuale il livello di anticipo o ritardo rispetto le attività pianificate.              \\
 	\hline
-	\textbf{33M-BV}  & Budget Variance (BV)               & $\geq -7.5\%$               & $\geq 0\%$             & Indica in percentuale il livello di anticipo o ritardo rispetto il budget pianificato.                \\
+	\textbf{11M-BV}  & Budget Variance (BV)               & $\geq -7.5\%$               & $\geq 0\%$             & Indica in percentuale il livello di anticipo o ritardo rispetto il budget pianificato.                \\
 	\hline
 	\caption{Valori delle metriche inerenti al processo di Fornitura}
 	\label{table:10}
 \end{longtable}
-
-
-
-
-
-
-
-
-
 
 
 
