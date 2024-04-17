@@ -1,242 +1,80 @@
 \section{Metriche di qualità}
 \subsection{Metriche per la qualità di processo}
-
-
-
-
-\begin{itemize}
-    \item \textbf{Metrica 6M-SFIN}:
-    \begin{itemize}
-        \item \textbf{Nome}: Structural Fan In;
-        \item \textbf{Descrizione}: si riferisce ad una classe che è stata progettata in modo tale da essere utilizzata facilmente da molte altre classi;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 7M-SFOUT}:
-    \begin{itemize}
-        \item \textbf{Nome}: Structural Fan Out;
-        \item \textbf{Descrizione}: numero di moduli subordinati immediati di un metodo;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 8M-EV}:
-    \begin{itemize}
-        \item \textbf{Nome}: Earned Value;
-        \item \textbf{Descrizione}: valore del lavoro effettivamente svolto fino al determinato periodo;
-        \item \textbf{Formula}: $EV = EAC \times \%lavoro\:svolto$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 9M-PV}:
-    \begin{itemize}
-        \item \textbf{Nome}: Planned Value;
-        \item \textbf{Descrizione}: stima la somma dei costi realizzativi delle attività imminenti, periodo per periodo;
-        \item \textbf{Formula}: $PV = BAC \times \%lavoro\:svolto$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 10M-AC}:
-    \begin{itemize}
-        \item \textbf{Nome}: Actual Cost;
-        \item \textbf{Descrizione}: misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente momento;
-        \item \textbf{Formula}: dato reperibile e costantemente aggiornato in "Piano di Progetto v1.0.0";
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 11M-CV}:
-    \begin{itemize}
-        \item \textbf{Nome}: Cost Variance;
-        \item \textbf{Descrizione}: misura la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione \textbf{CONTROLLARE};
-        \item \textbf{Formula}: $CV = EV - AC$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 12M-EAC}:
-    \begin{itemize}
-        \item \textbf{Nome}: Estimated at Completion;
-        \item \textbf{Descrizione}: misura il costo realizzativo stimato per terminare il progetto;
-        \item \textbf{Formula}: $EAC = BAC \div CPI$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 13M-ETC}:
-    \begin{itemize}
-        \item \textbf{Nome}: Estimate to Complete;
-        \item \textbf{Descrizione}: Stima dei costi realizzativi fino alla fine del progetto;
-        \item \textbf{Formula}: $ETC = EAC - AC$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 23M-CC}:
-    \begin{itemize}
-        \item \textbf{Nome}: Code Coverage;
-        \item \textbf{Descrizione}: rappresenta il grado in cui il codice sorgente di un programma è testato;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 27M-PTCP}:
-    \begin{itemize}
-        \item \textbf{Nome}: Passed Test Cases Percentage;
-        \item \textbf{Descrizione}: percentuale di casi di test superati;
-        \item \textbf{Formula}: $PTCP = \frac{Casi\: di\: test\: superati}{Casi\: di\: test\: totali}\: \times \: 100$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 28M-NCR}:
-    \begin{itemize}
-        \item \textbf{Nome}: Non Calculated Risks;
-        \item \textbf{Descrizione}: indica il numero di rischi non calcolati nel documento di "Analisi dei Requisiti v1.0.0";
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 30M-TE}:
-    \begin{itemize}
-        \item \textbf{Nome}: Time Efficiency;
-        \item \textbf{Descrizione}: indicante il livello di efficacia da parte del teamo nello sviluppo di codice di alta qualità;
-        \item \textbf{Formula}: $TE = \frac{Tempo\: impiegato\: per\: lo\: sviluppo}{Tempo\: previsto\: per\: lo\: sviluppo}\: \times \: 100$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 31M-RSI}:
-    \begin{itemize}
-        \item \textbf{Nome}: Requirements Stability Index;
-        \item \textbf{Descrizione}: misura impiegata nella quantificazione dell'entità e dell'impatti dei cambiamenti ai requisiti di un progetto;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 32M-SV}:
-    \begin{itemize}
-        \item \textbf{Nome}: Schedule Variance;
-        \item \textbf{Descrizione}: indica in percentuale quanto si è in anticipo o in ritardo rispetto alla pianificazione;
-        \item \textbf{Formula}: $SV = EV - PV$;
-    \end{itemize}
-\end{itemize}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.1\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.32\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Descrizione}  & \textbf{Formula} \\
+    \hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Descrizione}  & \textbf{Formula} \\
+    \endhead
+    \textbf{6M-SFIN}    & Structural Fan In         &  Si riferisce ad una classe che è stata progettata in modo tale da essere utilizzata facilmente da molte altre classi. & \\
+    \hline
+    \textbf{7M-SFOUT}      & Structural Fan Out    &  Numero di moduli subordinati immediati di un metodo. & \\
+    \hline
+    \textbf{8M-EV}      & Earned Value    &  Valore del lavoro effettivamente svolto fino al determinato periodo. & $EV = EAC \times \%lavoro\:svolto$ \\  
+    \hline
+    \textbf{9M-PV}      & Planned Value    &  Stima la somma dei costi realizzativi delle attività imminenti, periodo per periodo. & $PV = BAC \times \%lavoro\:svolto$ \\
+    \hline
+    \textbf{10M-AC}      & Actual Cost    &  Misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente momento. & Dato reperibile e costantemente aggiornato in "Piano di Progetto v1.0.0" \\
+    \hline
+    \textbf{11M-CV}      & Cost Variance    &  Misura la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. & $CV = EV - AC$ \\
+    \hline
+    \textbf{12M-EAC}      & Estimated at Completion    &  Misura il costo realizzativo stimato per terminare il progetto. & $EAC = BAC \div CPI$ \\
+    \hline
+    \textbf{13M-ETC}      & Estimate to Complete    &  Stima dei costi realizzativi fino alla fine del progetto. & $ETC = EAC - AC$ \\
+    \hline
+    \textbf{23M-CC}      & Code Coverage    &  Rappresenta il grado in cui il codice sorgente di un programma è testato. & \\
+    \hline
+    \textbf{27M-PTCP}      & Passed Test Cases Percentage    &  Percentuale di casi di test superati. & $PTCP = \frac{Casi\: di\: test\: superati}{Casi\: di\: test\: totali}\: \times \: 100$ \\
+    \hline
+    \textbf{28M-NCR}      & Non Calculated Risks    &  Indica il numero di rischi non calcolati nel documento di "Analisi dei Requisiti v1.0.0". & \\
+    \hline
+    \textbf{30M-TE}      & Time Efficiency    &  Indicante il livello di efficacia da parte del teamo nello sviluppo di codice di alta qualità. & $TE = \frac{Tempo\: impiegato\: per\: lo\: sviluppo}{Tempo\: previsto\: per\: lo\: sviluppo}\: \times \: 100$ \\
+    \hline
+    \textbf{31M-RSI}      & Requirements Stability Index    &  Misura impiegata nella quantificazione dell'entità e dell'impatti dei cambiamenti ai requisiti di un progetto. & \\
+    \hline
+    \textbf{32M-SV}      & Schedule Variance    &  Indica in percentuale quanto si è in anticipo o in ritardo rispetto alla pianificazione. & $SV = EV - PV$ \\
+    \hline
+    \caption{Metriche per la qualità di processo}
+    \label{table:3}
+\end{longtable}
 
 \subsection{Metriche per la qualità di prodotto}
-\begin{itemize}
-    \item \textbf{Metrica 0M-CRO}:
-    \begin{itemize}
-        \item \textbf{Nome}: Copertura dei Requisiti Obbligatori;
-        \item \textbf{Descrizione}: metrica che valuta quanto del lavoro svolto durante lo sviluppo corrisponda ai requisiti essenziali o obbligatori definiti in fase di analisi dei requisiti;
-        \item \textbf{Formula}: ;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 1M-CRD}:
-    \begin{itemize}
-        \item \textbf{Nome}: Copertura dei Requisiti Desiderabili;
-        \item \textbf{Descrizione}: valuta quanti di quei requisiti che, se integrati arricchirebbero l'esperienza utente o fornirebbero vantaggi aggiuntivi non strettamente necessari, sono stati implementati o sodisfatti nel prodotto;
-        \item \textbf{Formula}: ;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 2M-CROP}:
-    \begin{itemize}
-        \item \textbf{Nome}: Copertura dei Requisiti Opzionali;
-        \item \textbf{Descrizione}: valuta quanti dei requisiti aggiuntivi, non essenziali o di bassa priorità, sono stati implementati o soddisfatti nel prodotto;
-        \item \textbf{Formula}: ;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 3M-FU}:
-    \begin{itemize}
-        \item \textbf{Nome}: Facilità di Utilizzo;
-        \item \textbf{Descrizione}: metrica che misura l'usabilità di un sistema software;
-        \item \textbf{Caratteristiche}: usabilità;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 4M-TA}:
-    \begin{itemize}
-        \item \textbf{Nome}: Tempo di Apprendimento;
-        \item \textbf{Descrizione}: misura il tempo massimo richiesto per apprendere l'utilizzo del prodotto;
-        \item \textbf{Caratteristiche}: uasbilità;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 5M-COC}:
-    \begin{itemize}
-        \item \textbf{Nome}: Coefficient of Coupling;
-        \item \textbf{Descrizione}: rappresenta il grado di dipendenza tra diversi moduli o componenti di un sistema software;
-        \item \textbf{Formula}: $COC = \frac{Numero\: di\: dipendenze}{Numero\: di\: moduli}$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 21M-IG}:
-    \begin{itemize}
-        \item \textbf{Nome}: Indice Gulpease;
-        \item \textbf{Descrizione}: misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi;
-        \item \textbf{Formula}: $IG = 89 + \frac{300 \:\times \:Numero\:frasi \:- \:10 \:\times\: Numero\:lettere}{Numero\:parole}$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 22M-CO}:
-    \begin{itemize}
-        \item \textbf{Nome}: Correttezza Ortografica;
-        \item \textbf{Descrizione}: misura la presenza di errori ortografici nei documenti;
-        \item \textbf{Caratteristiche}: affidabilità;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 23M-CC}:
-    \begin{itemize}
-        \item \textbf{Nome}: Code Coverage;
-        \item \textbf{Descrizione}: fornisce una misura quantitativa del grado o della percentuale di codice eseguito durante i test;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 24M-BC}:
-    \begin{itemize}
-        \item \textbf{Nome}: Branch Coverage;
-        \item \textbf{Descrizione}: metrica di copertura del codice che indica la percentuale dei rami decisione del codice coperti dai testi;
-        \item \textbf{Formula}: $BC =\frac{Flussi\:funzionali\: testati}{Flussi\:condizionali\: riusciti\: e\: non}\: \times \: 100$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 25M-SC}:
-    \begin{itemize}
-        \item \textbf{Nome}: Statement Coverage;
-        \item \textbf{Descrizione}: metrica di copertura del codice che indica la percentuale degli statement del codice coperti dai test;
-        \item \textbf{Formula}: $SC = \frac{Statement\: testati}{Statement\: totali}\: \times \: 100$;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 26M-FD}:
-    \begin{itemize}
-        \item \textbf{Nome}: Failure Density;
-        \item \textbf{Descrizione}: misura che indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo;
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Metrica 29M-QMS}:
-    \begin{itemize}
-        \item \textbf{Nome}: Quality Metrics Satisfied;
-        \item \textbf{Descrizione}: misura che valuta quante metriche, tra quelle definite, sono state implementate e soddisfatte;
-        \item \textbf{Formula}: $QMS = \frac{Metriche\: soddisfatte}{Metriche\: totali}\: \times \: 100$;
-    \end{itemize}
-\end{itemize}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.1\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.32\textwidth}|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Descrizione}  & \textbf{Formula / Caratteristiche} \\
+    \hline
+    \endfirsthead
+    \hline
+    \textbf{Metrica} & \textbf{Nome} & \textbf{Descrizione}  & \textbf{Formula / Caratteristiche} \\
+    \endhead
+    \textbf{0M-CRO}      & Copertura dei Requisiti Obbligatori    &  Valuta quanto del lavoro svolto durante lo sviluppo corrisponda ai requisiti essenziali o obbligatori definiti in fase di analisi dei requisiti. & \\
+    \hline
+    \textbf{1M-CRD}      & Copertura dei Requisiti Desiderabili    &  Valuta quanti di quei requisiti che, se integrati arricchirebbero l'esperienza utente o fornirebbero vantaggi aggiuntivi non strettamente necessari, sono stati implementati o sodisfatti nel prodotto. & \\
+    \hline
+    \textbf{2M-CROP}      & Copertura dei Requisiti Opzionali    &  Valuta quanti dei requisiti aggiuntivi, non essenziali o di bassa priorità, sono stati implementati o soddisfatti nel prodotto. & \\
+    \hline
+    \textbf{3M-FU}      & Facilità di Utilizzo    &  Metrica che misura l'usabilità di un sistema software. & \\
+    \hline
+    \textbf{4M-TA}      & Tempo di Apprendimento    &  Misura il tempo massimo richiesto per apprendere l'utilizzo del prodotto. & Usabilità\\
+    \hline
+    \textbf{5M-COC}      & Coefficient of Coupling    &  Rappresenta il grado di dipendenza tra diversi moduli o componenti di un sistema software. & $COC = \frac{Numero\: di\: dipendenze}{Numero\: di\: moduli}$ \\
+    \hline
+    \textbf{21M-IG}      & Indice Gulpease    &  Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi. & $IG = 89 + \frac{300 \:\times \:Numero\:frasi \:- \:10 \:\times\: Numero\:lettere}{Numero\:parole}$ \\
+    \hline
+    \textbf{22M-CO}      & Correttezza Ortografica    &  Misura la presenza di errori ortografici nei documenti. & Affidabilità \\
+    \hline
+    \textbf{23M-CC}      & Code Coverage    &  Misura la percentuale di codice sorgente coperto dai test. & \\
+    \hline
+    \textbf{24M-BC}      & Branch Coverage    &  Misura la percentuale di rami decisionali coperti dai test. & $BC =\frac{Flussi\:funzionali\: testati}{Flussi\:condizionali\: riusciti\: e\: non}\: \times \: 100$ \\
+    \hline
+    \textbf{25M-SC}      & Statement Coverage    &  Misura la percentuale di statement del codice coperti dai test. & $SC = \frac{Statement\: testati}{Statement\: totali}\: \times \: 100$ \\
+    \hline
+    \textbf{26M-FD}      & Failure Density    &  Misura il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo. & \\
+    \hline
+    \textbf{29M-QMS}      & Quality Metrics Satisfied    &  Misura che valuta quante metriche, tra quelle definite, sono state implementate e soddisfatte. & $QMS = \frac{Metriche\: soddisfatte}{Metriche\: totali}\: \times \: 100$ \\
+    \hline
+    \caption{Metriche per la qualità di Prodotto}
+    \label{table:4}
+\end{longtable}
