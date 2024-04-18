@@ -56,7 +56,7 @@ def is_within_href(file_content, start):
     return False
 
 def style_command(file_content, start):
-    style_commands = ['\\textit{', '\\itshape{', '\\emph{', '\\textbf{', '\\bfseries{']
+    style_commands = ['\\textit{', '\\itshape{', '\\emph{', '\\textbf{', '\\bfseries{', '\\uline{', '\\underline{', '\\textsc{', '\\scshape{']
     for command in style_commands:
         if command in file_content[max(0, start-len(command)):start]:
             return command
