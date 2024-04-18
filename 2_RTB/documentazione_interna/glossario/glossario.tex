@@ -74,7 +74,7 @@
         \item\makebox[\linewidth]{\Large\textbf{\glsgetgrouptitle{##1}}}
         \vspace*{-\baselineskip}
         \item\makebox[\linewidth]{\hspace*{3cm}\hrulefill\hspace*{3cm}}
-            \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}}
+        \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}}
     }
 }
 
@@ -83,31 +83,31 @@
 
 \begin{document}
 
-\include{title}
+    \include{title}
 
-\newpage
+    \newpage
 
-\include{header}
+    \include{header}
 
-\begin{table}[!h]
-	\caption{Versioni}
-	\begin{center}
-		\begin{tabular}{ c c c p{9cm} }
-			\hline                                                                                               \\[-2ex]
-			Ver. & Data       & Autore         & Descrizione                                                     \\
-			\\[-2ex] \hline \\[-1.5ex]
-			0.2  & 02/04/2024 & Elena Ferro    & Modifica stile documento, automatizzazione creazione glossario. \\
-			0.1  & 28/03/2024 & Leonardo Baldo & Creazione documento                                             \\
-			\\[-1.5ex] \hline
-		\end{tabular}
-	\end{center}
-\end{table}
+    \begin{table}[!h]
+        \caption{Versioni}
+        \begin{center}
+            \begin{tabular}{ c c c p{9cm} }
+                \hline                                                                                               \\[-2ex]
+                Ver. & Data       & Autore         & Descrizione                                                     \\
+                \\[-2ex] \hline \\[-1.5ex]
+                0.2  & 02/04/2024 & Elena Ferro    & Modifica stile documento, automatizzazione creazione glossario. \\
+                0.1  & 28/03/2024 & Leonardo Baldo & Creazione documento                                             \\
+                \\[-1.5ex] \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
 
-\newpage
+    \newpage
 
-\tableofcontents
+    \tableofcontents
 
-\printglossary[style=myaltlistgroup,title=]
+    \printglossary[style=myaltlistgroup,title=]
 \end{document}
 
 
