@@ -1,4 +1,27 @@
-ci:
-  autofix_commit_msg: "[pre-commit.ci] auto added links to glossary words"
-  autoupdate_commit_msg: "[pre-commit.ci] auto added links to glossary words"
-  autoupdate_branch: 'develop'
+repos:
+  - repo: https://github.com/7Last/docs/
+    ci:
+      autofix_commit_msg: "[pre-commit.ci] auto added links to glossary words"
+      autoupdate_commit_msg: "[pre-commit.ci] auto added links to glossary words"
+      autoupdate_branch: 'develop'
+    hooks:
+      # add a custom hook
+      - id: add-links-to-glossary-words
+        name: add-links-to-glossary-words
+        entry: python3 ./scripts/.py
+        language: system
+        files: .pre-commit-config.yaml
+        types: [python]
+        always_run: true
+        pass_filenames: false
+        additional_dependencies: ['pre-commit-ci']
+        description: "Add links to glossary words"
+        args: ['--verbose']
+        exclude: '^$'
+        stages: ['commit']
+        verbose: true
+        debug: true
+        timeout: 300
+        language_version: python3
+        minimum_pre_commit_version: '2.13.0'
+        require_serial: false
