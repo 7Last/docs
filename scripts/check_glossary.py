@@ -76,10 +76,10 @@ def style_command(file_content, start):
 
 def replace_words(path, glossary):
     with open(path, 'r') as f:
-        file_content = f.read()
+        initial_content = file_content = f.read()
         if not glossary:
             print("Empty glossary. Exiting...")
-            return
+            exit(1)
 
     for word in glossary:
         file_content_lower = file_content.lower()
@@ -109,8 +109,9 @@ def replace_words(path, glossary):
                 replacement = '\\href{' + url + '}{' + file_content[match_start:match_end] + '\\textsubscript{G}}'
                 file_content = file_content[:match_start] + replacement + file_content[match_end:]
 
-    open(path, 'w').write(file_content)
-    print('Written:', path)
+    if initial_content != file_content:
+        open(path, 'w').write(file_content)
+        print(path)
 
 
 def main():
