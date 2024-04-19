@@ -1,0 +1,52 @@
+\contentsline {section}{\numberline {1}Introduzione}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Obiettivo del documento}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Glossario}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Riferimenti}{5}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Riferimenti normativi}{5}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Riferimenti informativi}{5}{subsubsection.1.3.2}%
+\contentsline {section}{\numberline {2}Metriche di qualità per obiettivo}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Processi di base e/o primari}{7}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Analisi dei requisiti}{7}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Progettazione}{9}{subsubsection.2.1.2}%
+\contentsline {subsubsubsection}{\numberline {2.1.2.1}Usabilità}{9}{subsubsubsection.2.1.2.1}%
+\contentsline {subsubsubsection}{\numberline {2.1.2.2}Manutenibilità}{10}{subsubsubsection.2.1.2.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Fornitura}{10}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Sviluppo}{12}{subsubsection.2.1.4}%
+\contentsline {subsubsubsection}{\numberline {2.1.4.1}Complessità e struttura del codice}{12}{subsubsubsection.2.1.4.1}%
+\contentsline {subsubsubsection}{\numberline {2.1.4.2}Efficienza}{13}{subsubsubsection.2.1.4.2}%
+\contentsline {subsection}{\numberline {2.2}Processi di supporto}{14}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Documentazione}{14}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Verifica}{15}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Gestione dei rischi}{16}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Gestione della Qualità}{17}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Processi organizzativi}{17}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Pianificazione}{17}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Metodologie di testing}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Codice dei test}{19}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Test di unità}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Test di integrazione}{19}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Test di sistema}{19}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Test di regressione}{19}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Test di accettazione}{19}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Cruscotto di valutazione della qualità}{20}{section.4}%
+\contentsline {subsection}{\numberline {4.1}8M-EV - Earned Value (EV) e 9M-PV - Planned Value (PV)}{20}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}10M-AC - Actual Cost (AC) e 13M-ETC - Estimate to Complete (ETC)}{20}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}11M-CV - Cost Variance (CV) e 32M-SV - Schedule Variance (SV)}{20}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}12M-EAC - Estimated at Completion(EAC)}{20}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}31M-RSI - Requirements stability index (RSI)}{20}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}21M-IG - Indice Gulpease}{20}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}22M-CO - Correttezza Ortografica}{20}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}29M-QMS - Quality Metrics Satisfied}{20}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}28M-NCR - Non-Calculated Risk}{20}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}30M-TE - Efficienza Temporale}{20}{subsection.4.10}%
+\contentsline {section}{\numberline {5}Iniziative di automiglioramento per la qualità}{21}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Introduzione}{21}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Problemi leagati all’organizzazione generale}{21}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Valutazione sui ruoli}{21}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Valutazione sugli strumenti}{21}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Considerazioni finali sul miglioramento}{21}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Analisi della pratiche seguite}{21}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Valutazioni generali sui miglioramenti conseguiti}{21}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Valutazioni specifiche sui miglioramenti nei processi}{21}{subsubsection.5.5.3}%
+\contentsline {subsubsubsection}{\numberline {5.5.3.1}Gestione delle comunicazioni e degli incontri}{21}{subsubsubsection.5.5.3.1}%
+\contentsline {subsubsubsection}{\numberline {5.5.3.2}Pianificazione}{21}{subsubsubsection.5.5.3.2}%

@@ -1,0 +1,190 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Introduzione}{8}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Scopo del documento}{8}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Scopo del progetto}{8}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Glossario}{9}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Riferimenti}{9}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Riferimenti normativi}{9}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Riferimenti informativi}{9}{subsubsection.1.4.2}%
+\contentsline {section}{\numberline {2}Processi primari}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Fornitura}{10}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Introduzione}{10}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Attività}{10}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Comunicazioni con l'azienda proponente}{10}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Documentazione fornita}{10}{subsubsection.2.1.4}%
+\contentsline {subsubsubsection}{\numberline {2.1.4.1}Valutazione dei capitolati}{11}{subsubsubsection.2.1.4.1}%
+\contentsline {subsubsubsection}{\numberline {2.1.4.2}Analisi dei requisiti}{11}{subsubsubsection.2.1.4.2}%
+\contentsline {subsubsubsection}{\numberline {2.1.4.3}Piano di progetto}{11}{subsubsubsection.2.1.4.3}%
+\contentsline {subsubsubsection}{\numberline {2.1.4.4}Piano di qualifica}{12}{subsubsubsection.2.1.4.4}%
+\contentsline {subsubsubsection}{\numberline {2.1.4.5}Glossario}{13}{subsubsubsection.2.1.4.5}%
+\contentsline {subsubsubsection}{\numberline {2.1.4.6}Lettera di presentazione}{13}{subsubsubsection.2.1.4.6}%
+\contentsline {subsubsection}{\numberline {2.1.5}Strumenti}{13}{subsubsection.2.1.5}%
+\contentsline {subsubsubsection}{\numberline {2.1.5.1}Discord}{13}{subsubsubsection.2.1.5.1}%
+\contentsline {subsubsubsection}{\numberline {2.1.5.2}Latex}{13}{subsubsubsection.2.1.5.2}%
+\contentsline {subsubsubsection}{\numberline {2.1.5.3}Git}{13}{subsubsubsection.2.1.5.3}%
+\contentsline {subsubsection}{\numberline {2.1.6}GitHub}{14}{subsubsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.2}Sviluppo}{14}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Introduzione}{14}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Analisi dei requisiti}{14}{subsubsection.2.2.2}%
+\contentsline {subsubsubsection}{\numberline {2.2.2.1}Descrizione}{14}{subsubsubsection.2.2.2.1}%
+\contentsline {subsubsubsection}{\numberline {2.2.2.2}Obiettivi}{14}{subsubsubsection.2.2.2.2}%
+\contentsline {subsubsubsection}{\numberline {2.2.2.3}Documentazione}{15}{subsubsubsection.2.2.2.3}%
+\contentsline {subsubsubsection}{\numberline {2.2.2.4}Casi d'uso}{15}{subsubsubsection.2.2.2.4}%
+\contentsline {subsubsubsection}{\numberline {2.2.2.5}Diagrammi dei casi d'uso}{17}{subsubsubsection.2.2.2.5}%
+\contentsline {subsubsubsection}{\numberline {2.2.2.6}Requisiti}{17}{subsubsubsection.2.2.2.6}%
+\contentsline {subsubsubsection}{\numberline {2.2.2.7}Metriche}{18}{subsubsubsection.2.2.2.7}%
+\contentsline {subsubsubsection}{\numberline {2.2.2.8}Strumenti}{19}{subsubsubsection.2.2.2.8}%
+\contentsline {subsubsection}{\numberline {2.2.3}Progettazione}{19}{subsubsection.2.2.3}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.1}Descrizione}{19}{subsubsubsection.2.2.3.1}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.2}Obiettivi}{19}{subsubsubsection.2.2.3.2}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.3}Documentazione}{20}{subsubsubsection.2.2.3.3}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.4}Qualità dell'architettura}{21}{subsubsubsection.2.2.3.4}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.5}Diagrammi UML}{22}{subsubsubsection.2.2.3.5}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.6}Design pattern}{24}{subsubsubsection.2.2.3.6}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.7}Test}{25}{subsubsubsection.2.2.3.7}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.8}Metriche}{25}{subsubsubsection.2.2.3.8}%
+\contentsline {subsubsubsection}{\numberline {2.2.3.9}Strumenti}{25}{subsubsubsection.2.2.3.9}%
+\contentsline {subsubsection}{\numberline {2.2.4}Codifica}{25}{subsubsection.2.2.4}%
+\contentsline {subsubsubsection}{\numberline {2.2.4.1}Descrizione}{25}{subsubsubsection.2.2.4.1}%
+\contentsline {subsubsubsection}{\numberline {2.2.4.2}Obiettivi}{26}{subsubsubsection.2.2.4.2}%
+\contentsline {subsubsubsection}{\numberline {2.2.4.3}Norme di codifica}{26}{subsubsubsection.2.2.4.3}%
+\contentsline {subsubsubsection}{\numberline {2.2.4.4}Strumenti}{27}{subsubsubsection.2.2.4.4}%
+\contentsline {subsubsubsection}{\numberline {2.2.4.5}Metriche}{27}{subsubsubsection.2.2.4.5}%
+\contentsline {subsubsection}{\numberline {2.2.5}Configurazione dell'ambiente di esecuzione}{27}{subsubsection.2.2.5}%
+\contentsline {subsubsubsection}{\numberline {2.2.5.1}Docker}{27}{subsubsubsection.2.2.5.1}%
+\contentsline {subsubsubsection}{\numberline {2.2.5.2}Strumenti}{28}{subsubsubsection.2.2.5.2}%
+\contentsline {section}{\numberline {3}Processi di supporto}{29}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Documentazione}{29}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Introduzione}{29}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Documentation as Code}{29}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Tipografia e sorgente documenti}{29}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Ciclo di vita}{30}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Procedure correlate alla redazione di documenti}{30}{subsubsection.3.1.5}%
+\contentsline {subsubsubsection}{\numberline {3.1.5.1}I redattori}{30}{subsubsubsection.3.1.5.1}%
+\contentsline {subsubsubsection}{\numberline {3.1.5.2}I verificatori}{32}{subsubsubsection.3.1.5.2}%
+\contentsline {subsubsubsection}{\numberline {3.1.5.3}Il responsabile}{32}{subsubsubsection.3.1.5.3}%
+\contentsline {subsubsubsection}{\numberline {3.1.5.4}L'amministratore}{32}{subsubsubsection.3.1.5.4}%
+\contentsline {subsubsection}{\numberline {3.1.6}Struttura del documento}{32}{subsubsection.3.1.6}%
+\contentsline {subsubsubsection}{\numberline {3.1.6.1}Prima pagina}{32}{subsubsubsection.3.1.6.1}%
+\contentsline {subsubsubsection}{\numberline {3.1.6.2}Registro delle modifiche}{33}{subsubsubsection.3.1.6.2}%
+\contentsline {subsubsubsection}{\numberline {3.1.6.3}Indice}{33}{subsubsubsection.3.1.6.3}%
+\contentsline {subsubsubsection}{\numberline {3.1.6.4}Intestazione}{33}{subsubsubsection.3.1.6.4}%
+\contentsline {subsubsubsection}{\numberline {3.1.6.5}Verbali: struttura generale}{33}{subsubsubsection.3.1.6.5}%
+\contentsline {subsubsection}{\numberline {3.1.7}Norme tipografiche}{34}{subsubsection.3.1.7}%
+\contentsline {subsubsection}{\numberline {3.1.8}Abbreviazioni}{35}{subsubsection.3.1.8}%
+\contentsline {subsubsection}{\numberline {3.1.9}Strumenti}{36}{subsubsection.3.1.9}%
+\contentsline {subsection}{\numberline {3.2}Verifica}{36}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Introduzione}{36}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Verifica dei documenti}{37}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Analisi}{37}{subsubsection.3.2.3}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.1}Analisi statica}{37}{subsubsubsection.3.2.3.1}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.2}Walkthrough}{37}{subsubsubsection.3.2.3.2}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.3}Inspection}{38}{subsubsubsection.3.2.3.3}%
+\contentsline {subsubsubsection}{\numberline {3.2.3.4}Analisi dinamica}{38}{subsubsubsection.3.2.3.4}%
+\contentsline {subsubsection}{\numberline {3.2.4}Testing}{39}{subsubsection.3.2.4}%
+\contentsline {subsubsubsection}{\numberline {3.2.4.1}Test di unità}{39}{subsubsubsection.3.2.4.1}%
+\contentsline {subsubsubsection}{\numberline {3.2.4.2}Test di integrazione}{39}{subsubsubsection.3.2.4.2}%
+\contentsline {subsubsubsection}{\numberline {3.2.4.3}Test di sistema}{40}{subsubsubsection.3.2.4.3}%
+\contentsline {subsubsubsection}{\numberline {3.2.4.4}Test di regressione}{40}{subsubsubsection.3.2.4.4}%
+\contentsline {subsubsubsection}{\numberline {3.2.4.5}Test di accettazione}{40}{subsubsubsection.3.2.4.5}%
+\contentsline {subsubsubsection}{\numberline {3.2.4.6}Sequenza delle fasi di test}{40}{subsubsubsection.3.2.4.6}%
+\contentsline {subsubsubsection}{\numberline {3.2.4.7}Codici dei test}{41}{subsubsubsection.3.2.4.7}%
+\contentsline {subsubsubsection}{\numberline {3.2.4.8}Stato dei test}{41}{subsubsubsection.3.2.4.8}%
+\contentsline {subsection}{\numberline {3.3}Validazione}{41}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Introduzione}{41}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Procedura di validazione}{41}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Gestione della configurazione}{42}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Introduzione}{42}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Versionamento}{42}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Repository}{42}{subsubsection.3.4.3}%
+\contentsline {subsubsubsection}{\numberline {3.4.3.1}Struttura repository}{42}{subsubsubsection.3.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.4.4}Sincronizzazione e branching}{43}{subsubsection.3.4.4}%
+\contentsline {subsubsubsection}{\numberline {3.4.4.1}Documentazione}{43}{subsubsubsection.3.4.4.1}%
+\contentsline {subsubsubsection}{\numberline {3.4.4.2}Sviluppo}{43}{subsubsubsection.3.4.4.2}%
+\contentsline {subsubsubsection}{\numberline {3.4.4.3}Pull Request}{44}{subsubsubsection.3.4.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.5}Controllo di configurazione}{45}{subsubsection.3.4.5}%
+\contentsline {subsubsubsection}{\numberline {3.4.5.1}Change Request}{45}{subsubsubsection.3.4.5.1}%
+\contentsline {subsubsection}{\numberline {3.4.6}Contabilità dello Stato di Configurazione}{46}{subsubsection.3.4.6}%
+\contentsline {subsubsection}{\numberline {3.4.7}Release management and delivery}{46}{subsubsection.3.4.7}%
+\contentsline {subsubsubsection}{\numberline {3.4.7.1}Procedura per la creazione di una release}{47}{subsubsubsection.3.4.7.1}%
+\contentsline {subsection}{\numberline {3.5}Joint review}{48}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Introduzione}{48}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Implementazione del processo}{48}{subsubsection.3.5.2}%
+\contentsline {subsubsubsection}{\numberline {3.5.2.1}Revisioni periodiche}{48}{subsubsubsection.3.5.2.1}%
+\contentsline {subsubsubsection}{\numberline {3.5.2.2}SAL}{48}{subsubsubsection.3.5.2.2}%
+\contentsline {subsubsubsection}{\numberline {3.5.2.3}Revisioni ad hoc}{48}{subsubsubsection.3.5.2.3}%
+\contentsline {subsubsubsection}{\numberline {3.5.2.4}Risorse per le revisioni}{48}{subsubsubsection.3.5.2.4}%
+\contentsline {subsubsubsection}{\numberline {3.5.2.5}Elementi da concordare}{48}{subsubsubsection.3.5.2.5}%
+\contentsline {subsubsubsection}{\numberline {3.5.2.6}Documenti e distribuzione dei risultati}{48}{subsubsubsection.3.5.2.6}%
+\contentsline {subsubsection}{\numberline {3.5.3}Project management reviews}{48}{subsubsection.3.5.3}%
+\contentsline {subsubsubsection}{\numberline {3.5.3.1}Introduzione}{48}{subsubsubsection.3.5.3.1}%
+\contentsline {subsubsubsection}{\numberline {3.5.3.2}Stato del progetto}{48}{subsubsubsection.3.5.3.2}%
+\contentsline {subsubsection}{\numberline {3.5.4}Revisioni tecniche}{48}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Strumenti}{48}{subsubsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.6}Risoluzione dei problemi}{48}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Introduzione}{48}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Gestione dei rischi}{48}{subsubsection.3.6.2}%
+\contentsline {subsubsubsection}{\numberline {3.6.2.1}Codifica dei rischi}{48}{subsubsubsection.3.6.2.1}%
+\contentsline {subsubsubsection}{\numberline {3.6.2.2}Metriche}{48}{subsubsubsection.3.6.2.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Identificazione dei problemi}{48}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.4}Strumenti}{48}{subsubsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.7}Gestione della qualità}{48}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Introduzione}{48}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}Attività}{48}{subsubsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.3}Piano di qualifica}{48}{subsubsection.3.7.3}%
+\contentsline {subsubsection}{\numberline {3.7.4}PDCA}{48}{subsubsection.3.7.4}%
+\contentsline {subsubsection}{\numberline {3.7.5}Strumenti}{48}{subsubsection.3.7.5}%
+\contentsline {subsubsection}{\numberline {3.7.6}Struttura e identificazioni metriche}{48}{subsubsection.3.7.6}%
+\contentsline {subsubsection}{\numberline {3.7.7}Criteri di accettazione}{48}{subsubsection.3.7.7}%
+\contentsline {subsubsection}{\numberline {3.7.8}Metriche}{48}{subsubsection.3.7.8}%
+\contentsline {section}{\numberline {4}Processi organizzativi}{49}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Gestione dei processi}{49}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Introduzione}{49}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Pianificazione}{50}{subsubsection.4.1.2}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.1}Descrizione}{50}{subsubsubsection.4.1.2.1}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.2}Obiettivi}{50}{subsubsubsection.4.1.2.2}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.3}Assegnazione dei ruoli}{50}{subsubsubsection.4.1.2.3}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.4}Responsabile}{51}{subsubsubsection.4.1.2.4}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.5}Amministratore}{51}{subsubsubsection.4.1.2.5}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.6}Analista}{52}{subsubsubsection.4.1.2.6}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.7}Progettista}{52}{subsubsubsection.4.1.2.7}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.8}Programmatore}{52}{subsubsubsection.4.1.2.8}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.9}Verificatore}{53}{subsubsubsection.4.1.2.9}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.10}Ticketing}{53}{subsubsubsection.4.1.2.10}%
+\contentsline {subsubsubsection}{\numberline {4.1.2.11}Strumenti}{55}{subsubsubsection.4.1.2.11}%
+\contentsline {subsubsection}{\numberline {4.1.3}Coordinamento}{55}{subsubsection.4.1.3}%
+\contentsline {subsubsubsection}{\numberline {4.1.3.1}Descrizione}{55}{subsubsubsection.4.1.3.1}%
+\contentsline {subsubsubsection}{\numberline {4.1.3.2}Obiettivi}{56}{subsubsubsection.4.1.3.2}%
+\contentsline {subsubsubsection}{\numberline {4.1.3.3}Comunicazioni sincrone}{56}{subsubsubsection.4.1.3.3}%
+\contentsline {subsubsubsection}{\numberline {4.1.3.4}Comunicazioni asincrone}{56}{subsubsubsection.4.1.3.4}%
+\contentsline {subsubsubsection}{\numberline {4.1.3.5}Riunioni interne}{57}{subsubsubsection.4.1.3.5}%
+\contentsline {subsubsubsection}{\numberline {4.1.3.6}Riunioni esterne}{58}{subsubsubsection.4.1.3.6}%
+\contentsline {subsubsubsection}{\numberline {4.1.3.7}Strumenti}{58}{subsubsubsection.4.1.3.7}%
+\contentsline {subsubsubsection}{\numberline {4.1.3.8}Metriche}{59}{subsubsubsection.4.1.3.8}%
+\contentsline {subsection}{\numberline {4.2}Miglioramento}{59}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Introduzione}{59}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Analisi}{59}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Miglioramento}{59}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Formazione}{60}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Introduzione}{60}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Metodo di formazione}{60}{subsubsection.4.3.2}%
+\contentsline {subsubsubsection}{\numberline {4.3.2.1}Individuale}{60}{subsubsubsection.4.3.2.1}%
+\contentsline {subsubsubsection}{\numberline {4.3.2.2}Gruppo}{60}{subsubsubsection.4.3.2.2}%
+\contentsline {section}{\numberline {5}Standard per la qualità}{61}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Caratteristiche del sistema ISO/IEC 25010:2023}{61}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Appropriatezza funzionale}{61}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Performance}{61}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Compatibilità}{62}{subsubsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.4}Usabilità}{62}{subsubsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.5}Affidabilità}{62}{subsubsection.5.1.5}%
+\contentsline {subsubsection}{\numberline {5.1.6}Sicurezza}{63}{subsubsection.5.1.6}%
+\contentsline {subsubsection}{\numberline {5.1.7}Manutenibilità}{63}{subsubsection.5.1.7}%
+\contentsline {subsubsection}{\numberline {5.1.8}Portabilità}{63}{subsubsection.5.1.8}%
+\contentsline {subsection}{\numberline {5.2}Suddivisione secondo standard ISO/IEC 12207:1995}{64}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Processi primari}{64}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Processi di supporto}{64}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Processi organizzativi}{65}{subsubsection.5.2.3}%
+\contentsline {section}{\numberline {6}Metriche di qualità}{66}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Metriche per la qualità di processo}{66}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Metriche per la qualità di prodotto}{69}{subsection.6.2}%
