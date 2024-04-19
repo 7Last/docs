@@ -1,0 +1,117 @@
+import re, os
+
+keyword = "&toltispazi&"
+glossary_tex = '../2_RTB/documentazione_interna/glossario/glossario.tex'
+root_folder = '../'
+glossary_url = 'https://7last.github.io/docs/rtb/documentazione-interna/glossario'
+
+def main():
+    search_tex_files(root_folder)
+
+def search_tex_files(root_folder):
+    glossary = parse_glossary(glossary_tex)
+    for root, _, files in os.walk(root_folder):
+        for file in files:
+            path = os.path.join(root, file)
+            if "glossario" in path or "template" in path or file == "variables.tex" or file == "title.tex" or file == "header.tex" or file == "packages.tex" or "1_candidatura" in path:
+                continue
+            if file.endswith('.tex'):
+                replace_word(path, glossary)
+
+def is_within_section(file_content, start, end):
+    section_commands = ['section', 'subsection', 'subsubsection', 'subsubsubsection', 'subsubsubsubsection']
+    for command in section_commands:
+        pattern = r'\\' + command + r'\{.*?\b'
+        if re.search(pattern, file_content[max(0, start-50):end]):
+            return True
+    return False
+
+def is_already_subscripted(file_content, start, end):
+    pattern = r'\\textsubscript\{G\}'
+    return re.search(pattern, file_content[start:end+60])
+ 
+
+
+# def is_already_subscripted(file_content, start, end):
+#     pattern = r'(.*?)(\\textsubscript\{G\}|{)'
+#     matches = [m for m in re.finditer(pattern, file_content, re.IGNORECASE)]
+#     for match in reversed(matches):
+#         match_start = match.start()
+#         match_end = match.end()
+
+def replace_word(path, glossary):
+    with open(path, 'r') as f:
+        file_content = f.read()
+    if not glossary:
+        print("Empty glossary. Exiting...")
+        return
+    
+    for word in glossary:
+        name = glossary[word]['name']
+        plural = glossary[word]['plural']
+        feminine = glossary[word]['feminine']
+        feminine_plural = glossary[word]['feminine_plural']
+        file_content_lower = file_content.lower()
+        parole = [name, plural, feminine, feminine_plural]
+        for parola in parole:
+            if parola == '':
+                continue
+            if parola.lower() in file_content_lower:
+                pattern = r'\b' + re.escape(parola) + r'\b'
+                matches = [m for m in re.finditer(pattern, file_content, re.IGNORECASE)]
+                for match in reversed(matches):
+                    match_start = match.start()
+                    match_end = match.end()
+                    if not is_within_section(file_content, match_start, match_end) and not is_already_subscripted(file_content, match_start, match_end):
+                        url = glossary_url + "#" + name.lower().replace(' ', '-')
+                        before_match = file_content[max(0, match_start-8):match_start]
+                        if " " in parola:
+                            # counter = parola.count(" ")
+                            # word = file_content[match_start:match_end]
+                            # word = word.replace(' ', keyword)
+                            # word = word[:len(word)-3] + keyword + word[len(word)-3:]
+                            # partial_file_content = file_content[:match_start] + word
+                            # file_content = partial_file_content + file_content[match_end:]
+                            # match_end = match_end + len(keyword) * counter - counter
+                            # replacement = r'\href{' + url + '}{' + file_content[match_start:match_end] + r'\textsubscript{G}}'
+                            
+                            counter = parola.count(" ")
+                            partial_file_content = file_content[:match_start] + file_content[match_start:match_end].replace(' ', keyword)
+                            file_content = partial_file_content + file_content[match_end:]
+                            match_end = match_end + len(keyword) * counter - counter
+                            replacement = r'\href{' + url + '}{' + file_content[match_start:match_end] + r'\textsubscript{G}}'
+                            file_content = file_content[:match_start] + replacement + file_content[match_end:]
+
+                        else: 
+                            if re.search(r'\\(textit|itshape|emph)\{', before_match):
+                                replacement = r'\href{' + url + '}{' + file_content[match_start-8:match_end] + r'}\textsubscript{G}'
+                                file_content = file_content[:match_start-8] + replacement + file_content[match_end:]
+
+                            elif re.search(r'\\(textbf|bfseries)\{', before_match):
+                                replacement = r'\href{' + url + '}{' + file_content[match_start - 8:match_end] + r'}\textsubscript{G}'
+                                file_content = file_content[:match_start -8] + replacement + file_content[match_end:]
+                            else:
+                                replacement = r'\href{' + url + '}{' + file_content[match_start:match_end] + r'\textsubscript{G}}'
+                                file_content = file_content[:match_start] + replacement + file_content[match_end:]
+
+
+    if keyword in file_content:
+        file_content = file_content.replace(keyword, ' ')
+    with open(path, 'w') as f:
+        f.write(file_content)
+
+
+def parse_glossary(glossary_tex):
+    with open(glossary_tex, 'r') as f:
+        file = f.read()
+    file = re.sub(r'[\n\t\r]', '', file)
+    rows = re.findall(r'\\newglossaryentry{(.*?)}{\s*name={(.*?)},\s*description={(.*?)},\s*plural={(.*?)},\s*feminine={(.*?)},\s*feminine_plural={(.*?)}', file)
+    glossary = {}
+    for word, name, _, plural, feminine, feminine_plural in rows:
+        glossary[word] = {'name': name, 'plural': plural, 'feminine': feminine, 'feminine_plural': feminine_plural}
+
+    return glossary
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,117 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+
+\glstoctrue
+
+\glsaddkey
+{feminine}
+{}
+{\glsentryfem}
+{\Glsentryfem}
+{\glsf}
+{\Glsf}
+{\GLSf}
+
+
+\glsaddkey
+{feminine_plural}
+{}
+{\glsentryfemplur}
+{\Glsentryfemplur}
+{\glsfp}
+{\Glsfp}
+{\GLSfp}
+
+
+
+\setglossarysection{subsubsection}
+\renewcommand{\glossarysection}[2][]{}
+
+\makeglossaries
+
+
+\newglossaryentry{ClickUp}{
+    name=ClickUp,
+    description={Software di gestione dei progetti che offre varie funzionalità, tra cui la gestione di task, una lavagna virtuale, fogli di calcolo e strumenti collaborativi per la creazione e modifica di documenti, il tutto accessibile da una piattaforma unificata.},
+}
+
+\newglossaryentry{Glossario}{
+    name=Glossario,
+    description={Elenco strutturato di termini tecnici o specializzati, ognuno corredato dalla propria definizione o spiegazione. Questo strumento aiuta a migliorare la comunicazione tra le varie parti coinvolte in un progetto, riducendo le ambiguità e garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto.}
+}
+
+\newglossaryentry{Norme di Progetto}{
+    name={Norme di Progetto},
+    description={Regole e linee guida stabilite all'interno di un progetto per garantire coerenza e qualità nelle attività svolte. Definiscono standard e procedure, come documentazione, gestione delle versioni e criteri di codifica, per assicurare uniformità nell'approccio e nel risultato finale.}
+}
+
+
+\newglossaryentry{Piano di Progetto}{
+    name={Piano di Progetto},
+    description={Documento formale che delinea in dettaglio la pianificazione, la esecuzione, il monitoraggio e il controllo di tutte le attività coinvolte nella realizzazione di un progetto. Questo documento fornisca una roadmap chiara e organizzata, comprensiva di obiettivi, risorse, scadenze e strategie di gestione dei rischi. Essenziale per la gestione efficace di un progetto, il piano di progetto serve come guida per il team di lavoro e gli stakeholder, fornendo una struttura che facilita il coordinamento delle attivitå e l'assegnazione delle risorse.}
+}
+
+\newglossaryentry{Piano di Qualifica}{
+    name={Piano di Qualifica},
+    description={Documento che stabilisce gli standard di qualità, i processi e le attività di testing che saranno implementati durante lo sviluppo di un progetto. Contiene una descrizione dettagliata delle strategie di testing, delle metriche di valutazione e dei criteri di accettazione del prodotto finale. L'obiettivo principale del Piano di Qualifica è garantire che il prodotto soddisfi gli standard di qualità prefissati e che il processo di sviluppo segua procedure coerenti e efficaci.}
+}
+
+
+\newglossarystyle{myaltlistgroup}{
+    \setglossarystyle{altlistgroup}
+    \renewcommand*{\glsgroupheading}[1]{
+        \pagebreak
+        \item\makebox[\linewidth]{\Large\textbf{\glsgetgrouptitle{##1}}}
+        \vspace*{-\baselineskip}
+        \item\makebox[\linewidth]{\hspace*{3cm}\hrulefill\hspace*{3cm}}
+        \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}}
+    }
+}
+
+\glsaddallunused
+
+
+\begin{document}
+
+    \include{title}
+
+    \newpage
+
+    \include{header}
+
+    \begin{table}[!h]
+        \caption{Versioni}
+        \begin{center}
+            \begin{tabular}{ c c c p{9cm} }
+                \hline                                                                                               \\[-2ex]
+                Ver. & Data       & Autore         & Descrizione                                                     \\
+                \\[-2ex] \hline \\[-1.5ex]
+                0.2  & 2024-04-02 & Elena Ferro    & Modifica stile documento, automatizzazione creazione glossario. \\
+                0.1  & 2024-03-28 & Leonardo Baldo & Creazione documento                                             \\
+                \\[-1.5ex] \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    \newpage
+
+    \tableofcontents
+
+    \printglossary[style=myaltlistgroup,title=]
+\end{document}
+
+
+
+
+
+
