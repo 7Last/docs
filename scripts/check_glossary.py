@@ -9,14 +9,7 @@ def parse_glossary():
     file = open(glossary_tex, 'r').read()
     file = re.sub(r'[\n\t\r]', '', file)
 
-    name = r'(?=.*name=(?:{?)([^,}]+)(?:}?))'
-    description = r'(?=.*description=(?:{?)([^,}]+)(?:}?))'
-    plural = '(?:.*plural=(?:{?)([^,}]+)(?:}?))?'
-    feminine = '(?:.*plural=(?:{?)([^,}]+)(?:}?))?'
-    feminine_plural = '(?:.*feminine_plural=(?:{?)([^,}]+)(?:}?))?'
-
-    pattern = r'\\newglossaryentry{([^{}]+)}' + fr'{name}{description}{plural}{feminine}{feminine_plural}'
-    matches = re.findall(pattern, file)
+    matches = re.findall(r'\\newglossaryentry{([^{}]+)}\s*{\s*name=(?:{?)([^,}]+)(?:}?),\s*description={([^{}]+)}(?:,\s*plural={([^,}]+)})?(?:,\s*feminine={({[^}]+})})?(?:,\s*feminine_plural=({[^}]+}))?', file)
 
     glossary = {}
     for word, name, _, plural, feminine, feminine_plural in matches:
@@ -117,6 +110,7 @@ def replace_words(path, glossary):
                 file_content = file_content[:match_start] + replacement + file_content[match_end:]
 
     open(path, 'w').write(file_content)
+    print('Written:', path)
 
 
 def main():
