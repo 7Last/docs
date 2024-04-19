@@ -34,6 +34,9 @@ jobs:
       - name: Remove 0_template folder
         run: rm -rf ./0_template
 
+      - name: tree
+        run: tree .
+
       - name: Cleanup non pdf files
         run: |
           pdfs=$(find ./* -type f -name "*.pdf")
