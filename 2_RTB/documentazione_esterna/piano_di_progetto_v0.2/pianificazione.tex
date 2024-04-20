@@ -1,3 +1,9 @@
+\definecolor{pj}{HTML}{66A3FE}
+\definecolor{amm}{HTML}{FFF28A}
+\definecolor{an}{HTML}{52D3FA}
+\definecolor{ver}{HTML}{6665FE}
+\definecolor{pg}{HTML}{FF6766}
+\definecolor{resp}{HTML}{FFB166}
 
 \section{Pianificazione}
 \subsection{Modello adottato}
@@ -39,26 +45,24 @@ Per ogni periodo si riportano di seguito le seguenti informazioni:
 I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di avanzamento del progetto:
 \begin{itemize}
     \item \textbf{RTB}: \textit{\textbf{R}equirements and \textbf{T}echnology \textbf{B}aseline};
-    \item \textbf{PB}:  \textit{\textbf{P}roduct\textbf{B}aseline};
+    \item \textbf{PB}:  \textit{\textbf{P}roduct \textbf{B}aseline};
     \item \textbf{CA}:  \textit{\textbf{C}ustomer \textbf{A}cceptance}.
 \end{itemize}
 
 \subsection{Requirements and Technology Baseline}
     \subsubsection{Primo sprint:}
         \begin{itemize}
-            \item Inizio: 2024-04-03
-            \item FIne: 2024-04-19
-            \item Fine attuale: 
-            \item Giorni di ritardo: 
+            \item Inizio: 2024-04-03;
+            \item Fine: 2024-04-19;
+            \item Fine attuale: 2024-04-16;
+            \item Giorni di ritardo: Nessuno.
         \end{itemize}
         \subsubsubsection{Pianificazione} 
         Durante questo periodo, il team si concentra sul dedicare risorse significative allo sviluppo, alla standardizzazione e all'automazione dei processi, ove possibile. Nel primo incontro con l'azienda proponente vengono definiti gli obiettivi chiave da raggiungere entro il prossimo SAL del 19 aprile 2024. \\In particolare, questi obiettivi comprendono:
         \begin{itemize}
-            \item simulazione di un sensore mediante codice Python;
-            \item integrazione con server Apache Kafka utilizzando ambiente Docker;
-            \item USER STORY E CASI D'USO CORRELATI AL CAPITOLATO
+            \item simulazione di un sensore mediante codice \textbf{Python};
+            \item integrazione con \textbf{Apache Kafka} utilizzando ambiente \textbf{Docker}.
         \end{itemize}
-
         Parallelamente a questa fase, l'amministratore ha stanziato risorse per automatizzare il processo di compilazione dei sorgenti LateX una volta caricati sul repository condiviso, e per distinguere automaticamente le parole presenti nel \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#glossario}{glossario\textsubscript{G}} da quelle che non lo sono.
 
         \subsubsubsubsection{Rischi attesi}
@@ -68,140 +72,165 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
             \item imprecisione nella pianificazione delle attività (Rischio RO3);
             \item elevati costi delle attività (Rischio RO3);
             \item rischio di conflitti interni (Rischio RC1);
-            \item problemi di comunicazione (Rischio RC2).
+            \item problemi di comunicazione (Rischio RC2);
+            \item inesperienza nell'uso delle tecnologie adottate (Rischio RT3).
         \end{itemize}
-        Ciò è causato dal fatto che, poiché siamo ancora all'inizio del progetto, non abbiamo ancora una chiara idea di come organizzarci per massimizzare l'uso del tempo e delle risorse.
+        Ciò è causato dal fatto che, poiché siamo ancora all'inizio del progetto, non abbiamo ancora una chiara idea di come organizzarci per ottimizzare l'uso del tempo e delle risorse.
         \newpage
         \subsubsubsection{Preventivo}
-        Ruoli coinvolti: Amministratore, Responsabile, Verificatore, Analista, Programmatore.
-
+        Ruoli coinvolti: Amministratore (Am), Responsabile (Re), Verificatore (Ve), Analista (An), Programmatore (Pg)
         \begin{table}[!h]
             \centering
-            \begin{tabular}{ |l| c| c| c| c| c| } 
+            \begin{tabular}{ |l| c | c | c | c | c | c | } 
                 \hline
-                \textbf{} & \textbf{Amministratore} & \textbf{Responsabile} & \textbf{Verificatore} &\textbf{Analista} & \textbf{Programmatore} \\
+                \textbf{} & \textbf{Am} & \textbf{Re} & \textbf{Ve} &\textbf{An} & \textbf{Pg} & \textbf{Totale per persona} \\
                 \hline 
-                Tiozzo      & 0 & 0 & 0 & 0 & 0 \\ 
-                Malgarise   & 0 & 0 & 0 & 0 & 0 \\ 
-                Ferro       & 0 & 0 & 0 & 0 & 0 \\ 
-                Benetazzo   & 0 & 0 & 0 & 0 & 0 \\ 
-                Occhinegro  & 0 & 0 & 0 & 0 & 0 \\ 
-                Baldo       & 0 & 0 & 0 & 0 & 0 \\ 
-                Seganfreddo & 0 & 0 & 0 & 0 & 0 \\
+                Baldo       & - & -   & - & - & 7     & 7       \\ 
+                Benetazzo   &  7.5    & - & - & - & - & 7.5     \\ 
+                Ferro       & - & -   & - & - & 10     & 10       \\ 
+                Malgarise   & - & -   & - & 7 & -     & 7       \\ 
+                Occhinegro  & - & -   & 9 & - & -     & 9       \\ 
+                Seganfreddo & - & -   & - & 7 & -     & 7       \\
+                Tiozzo      & - & 7.5 & - & - & -     & 7.5     \\ 
+                \hline
+                Totale per ruolo & 7.5 & 7.5 & 9 & 14 & 17 &    \\
                 \hline
             \end{tabular}
             \caption{Preventivo orario per ruolo di ciascun membro del team durante il primo sprint}
             \label{tab:1}
         \end{table}
 
-
 %---------1_ISTOGRAMMA-----------%
-        \begin{figure*}
-            \centering
-            \begin{tikzpicture}
-                \begin{axis}[
-                    width=\textwidth,
-                    height=0.5\textwidth,
-                    ybar,
-                    enlargelimits=0,
-                    legend style={at={(0.5,1.15)},
-                      anchor=north,legend columns=-1},
-                    ylabel={Tempo dedicato},    
-                    symbolic x coords={Antonio, Davide, Elena, Leonardo, Matteo, Raul, Valerio},
-                    xtick=data,
-                    % nodes near coords,
-                    nodes near coords align={vertical},
-                    ]
-                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
-                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
-                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
-                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
-                \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
-                \legend{Amministratore, Responsabile, Verificatore, Analista, Progettista}
-                \end{axis}
-            \end{tikzpicture}
-        \caption{Impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
-        \label{fig:1}
-        \end{figure*}
+\begin{figure*}
+\begin{tikzpicture}
+    \begin{axis}[
+        width  = 0.85*\textwidth,
+        height = 8cm,
+        major x tick style = transparent,
+        ybar=2*\pgflinewidth,
+        bar width=14pt,
+        ymajorgrids = true,
+        ylabel = {Run time speed},
+        symbolic x coords={Occhinegro, Malgarise, Seganfreddo, Tiozzo, Benetazzo, Ferro, Baldo},
+        xtick = data,
+        scaled y ticks = false,
+        enlarge x limits=0.2,
+        ymin=0,
+        legend cell align=left,
+        legend style={
+                at={(1,1.05)},
+                anchor=south east,
+                column sep=2ex
+        },
+        xticklabel style={rotate=45, anchor=east},
+    ]
+    
+    \addplot[ver, fill=ver, mark=none] coordinates {(Occhinegro, 9) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
+    \addplot[an, fill=an, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 5) (Seganfreddo, 5) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
+    \addplot[amm, fill=amm, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 6.5) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
+    \addplot[resp, fill=resp, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 6.5) (Ferro, 0) (Baldo, 0)};
+    \addplot[pg, fill=pg, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 10) (Baldo, 7)};
+
+    \legend{Ve, An, Am, Re, Pg}
+     
+    \end{axis}
+\end{tikzpicture}
+\caption{Impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
+\label{fig:1}
+\end{figure*}
 
         \newblock
 %---------1_GRAFICO A TORTA-----------%
         \begin{figure*}
         \centering
         \begin{tikzpicture}
+            \def\printonlypositive#1{\ifnum#1>0
+            #1
+            \fi}
             \pie[rotate=90, text=legend]{
-                20/Verificatore,
-                20/Analista,
-                20/Amministratore,
-                20/Responsabile,
-                20/Progettista
+                19.1/Verificatore,
+                21.3/Analista,
+                13.8/Amministratore,
+                13.8/Responsabile,
+                31.9/Programmatore,
+                0/Progettista
             }
         \end{tikzpicture}
         \caption{Ripartizione in percentuale dei ruoli nel primo periodo}
         \label{fig:2}
         \end{figure*}
-
-
         \newblock
         \newpage
 
         \subsubsubsection{Consuntivo}
-        Le attività previste sono state tutte svolte con successo. Come si può vedere dal confronto tra preventivo e consuntivo:
-        \begin{itemize}
-            \item Amministratore: 0 ore preventivate, 0 ore effettive;
-            \item Responsabile: 0 ore preventivate, 0 ore effettive;
-        \end{itemize}
+        Le attività previste sono state tutte svolte con successo. Abbiamo completato tutte le richieste della proponente con anticipo rispetto alla data di fine prevista.
         \subsubsubsubsection{Prospetto orario}
-
         \begin{table}[!h]
             \centering
-            \begin{tabular}{ |l| c |c |c |c |c| } 
+            \begin{tabular}{ |l| c | c | c | c | c | c | } 
                 \hline
-                \textbf{} & \textbf{Amministratore} & \textbf{Responsabile} & \textbf{Verificatore} &\textbf{Analista} & \textbf{Progettista} \\
+                \textbf{} & \textbf{Am} & \textbf{Re} & \textbf{Ve} &\textbf{An} & \textbf{Pg} & \textbf{Totale per persona} \\
                 \hline 
-                Tiozzo      & 0 & 0 & 0 & 0 & 0 \\ 
-                Malgarise   & 0 & 0 & 0 & 0 & 0 \\ 
-                Ferro       & 0 & 0 & 0 & 0 & 0 \\ 
-                Benetazzo   & 0 & 0 & 0 & 0 & 0 \\ 
-                Occhinegro  & 0 & 0 & 0 & 0 & 0 \\ 
-                Baldo       & 0 & 0 & 0 & 0 & 0 \\ 
-                Seganfreddo & 0 & 0 & 0 & 0 & 0 \\
+                Baldo       & - & -   & - & - & 6     & 6       \\ 
+                Benetazzo   &  6.5    & - & - & - & - & 6.5     \\ 
+                Ferro       & - & -   & - & - & 9     & 9       \\ 
+                Malgarise   & - & -   & - & 5 & -     & 5       \\ 
+                Occhinegro  & - & -   & 9 & - & -     & 9       \\ 
+                Seganfreddo & - & -   & - & 5 & -     & 5       \\
+                Tiozzo      & - & 6.5 & - & - & -     & 6.5     \\ 
+                \hline
+                Totale per ruolo & 6.5 & 6.5 & 9 & 10 & 15 &    \\
                 \hline
             \end{tabular}
-            \caption{Impegno effettivo per ruolo di ciascun membro del team durante il primo periodo}
+            \caption{Prospetto orario per ruolo di ciascun membro del team durante il primo sprint}
             \label{tab:2}
         \end{table}
         \newpage
         \subsubsubsubsection{Prospetto economico}
-
         \begin{table}[!h]
             \centering
             \begin{tabular}{|l| c| c| c| c| c| } 
                 \hline
-                \textbf{} & \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} &\textbf{Differenza} \\
+                \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} & \textbf{Ore rimanenti preventivo} & \textbf{Ore rimanenti consuntivo} \\
                 \hline  
-                 & Responsabile        & 0 & 0 & 0 \\ 
-                 & Amministratore      & 0 & 0 & 0 \\ 
-                 & Verificatore        & 0 & 0 & 0 \\ 
-                 & Analista            & 0 & 0 & 0 \\ 
-                 & Progettista         & 0 & 0 & 0 \\ 
-                 & Programmatore       & 0 & 0 & 0 \\ 
-                 & Seganfreddo         & 0 & 0 & 0 \\
-                Totale preventivo & - & 0 & 0 &0 \\
-                Totale consuntivo & - & 0 & 0 & 0\\
+                 Responsabile        & 6.5 & €195 & 48.5 & 49.5 \\ 
+                 Amministratore      & 6.5 & €130 & 48.5 & 49.5 \\ 
+                 Verificatore        & 9   & €135 & 166  & 166 \\ 
+                 Analista            & 10  & €250 & 63   & 67 \\ 
+                 Programmatore       & 15  & €225 & 151  & 153 \\ 
+                \hline
+                \textbf{Totale preventivo} & 55 & €1115,00 & 589 & - \\
+                \hline
+                \textbf{Totale consuntivo} & 47 & €935,00 & - & 597 \\
                 \hline
             \end{tabular}
             \caption{Aggiornamenti economici del progetto al termine del primo periodo, riflettendo le variazioni tra preventivo e ore effettivamente lavorate}
             \label{tab:3}
         \end{table}
         \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
-        SCRITTURA DEI RISCHI CHE ABBIAMO TROVATO DURANTE QUESTO PRIMO PERIODO E COME LI ABBIAMO RISOLTI
+        \begin{table}[!h]
+            \centering
+            \begin{tabular}{|p{4cm}| p{4cm}| p{4cm}| p{4cm}|} 
+                \hline
+                \textbf{Tipologia} & \textbf{Rischio preventivato} & \textbf{Rischio non preventivato} & \textbf{Mitigazione}  \\
+                \hline  
+                Inesperienza del team (Rischio \textbf{RT2}) & SI & NO & Confronto con gli altri gruppi per la gestione dell'organizzazione.\\
+                \hline
+                Impegni personali o universitari (Rischio \textbf{RO2})& NO & SI & Comunicato in anticipo gli impegni, lavoro affidato svolto o dopo l'impegno.\\
+                \hline
+                Inesperienza nell'uso delle tecnologie adottate (Rischio \textbf{RT3}) & SI & NO & Autoformazione e discussione interna e con la proponente.\\
+                \hline
+            \end{tabular}
+            \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo periodo}
+            \label{tab:4}
+        \end{table}
         \subsubsubsection{Retrospettiva}
-        SCRITTURA DI COSA ABBIAMO FATTO BENE E COSA ABBIAMO SBAGIATO, COSÌ DA MIGLIORARCI
-\newpage
+        La suddivisione iniziale dei ruoli per il presente sprint si è rivelata efficace e ben pensata. Ciascun componente ha lavorato senza essere sovraccaricato e il lavoro è stato distribuito in modo equo e senza disparità.\\
+        Durante l’ultimo sprint, un rischio inaspettato ha evidenziato la necessità di una pianificazione più accurata dei rischi nel prossimo sprint. Questo permetterà al team di evitare sorprese, risparmiare tempo e risorse, che il responsabile potrà destinare ad altre attività. Ciò porterà ad un aumento dell’efficacia e dell’efficienza, riducendo i costi e i tempi di sviluppo del progetto.\\
+        Un'ulteriore problematica riscontrata è stata la difficoltà nell'adozione di alcune tecnologie, che ha rallentato il lavoro. Per il prossimo sprint, si cercherà di risolvere questo problema con una maggiore formazione e con una maggiore collaborazione tra i membri del gruppo.\\
     \subsubsection{Secondo sprint:}
     \begin{itemize}
-        \item Inizio: 2024-04-10
+        \item Inizio: 2024-04-19
         \item Fine: 2024-04-24
         \item Fine attuale:
         \item Giorni di ritardo:
