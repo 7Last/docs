@@ -1,8 +1,6 @@
 \section{Processi di supporto}
 
-
 \subsection{Documentazione}
-
 \subsubsection{Introduzione}
 Il processo di documentazione è una componente fondamentale nella realizzazione e nel rilascio di un prodotto \textcolor{red}{\uline{\textit{software}}},
 poichè fornisce informazioni utili alle parti coinvolte e tiene traccia di tutte le attività relative al ciclo di vita del software,
@@ -20,25 +18,17 @@ Lo scopo della sezione è:
 \end{itemize}
 
 \subsubsection{Documentation as Code}
-\textbf{TODO adozione di questo approccio?}
-\begin{comment}  
-    L’approccio che si intende adottare è quello di "Documentation as Code" (Documentazione
-    come Codice) che consiste nel trattare la documentazione di un progetto software allo
-    stesso modo in cui si tratta il codice sorgente.
-    Questo approccio è incentrato sull’utilizzo di pratiche e strumenti tipici dello sviluppo
-    software per creare, gestire e distribuire la documentazione. Alcuni aspetti chiave della
-    "Documentation as Code" includono:
-        • Versionamento;
-        • Scrittura in formato testuale;
-        • Automazione;
-        • Collaborazione;
-        • Integrazione Continua;
-        • Distribuzione.
-    Questo approccio porta diversi vantaggi, tra cui una maggiore coerenza, una migliore
-    tracciabilità delle modifiche e facilità di manutenzione. Inoltre, il concetto di "Documentation
-    as Code" si allinea con la filosofia DevOps, dove la collaborazione e l’automazione sono valori
-    chiave.
-\end{comment}
+Per la stesura della documentazione viene adottato l'approccio "Documentation as Code, che consiste nel trattare la documentazione di progetto
+allo stesso modo del codice sorgente. Dunque vengono impiegati strumenti e metodologie tipiche dello sviluppo \textcolor{red}{\uline{\textit{software}}}:
+\begin{itemize}
+    \item \textbf{Versionamento}: la documentazione è versionata tramite il sistema di controllo di versione Git, in modo da tenere traccia 
+    delle modifiche e garantire la coerenza tra le varie versioni;
+    \item \textbf{Automazione}: l'automazione dei processi di build e di deploy permette di semplificare la gestione della documentazione e 
+    di ridurre il rischio di errori;
+    \item \textbf{Collaborazione}: l'uso di piattaforme di condivisione e collaborazione (GitHub) favorisce la cooperazione tra i membri 
+    del gruppo e semplifica la gestione dei documenti;
+    \item \textbf{Integrazione continua}: permette di verificare costantemente la correttezza e la coerenza della documentazione.
+\end{itemize} 
 
 \subsubsection{Tipografia e sorgente documenti}
 Per la redazione dei documenti abbiamo deciso di utilizzare il linguaggio di markup \LaTeX{}, in quanto semplifica la creazione e la manutenzione
@@ -48,7 +38,6 @@ ciascuno per una specifica sezione, in modo da permettere a più persone di lavo
 Il risultato finale sarà ottenuto tramite l'assemblaggio di tutti i file sorgenti in un file principale, attraverso l'uso del comando 
 \textit{input{Sezione.tex}} o, nel caso delle sottosezioni, \textit{input{Sottosezione.tex}}.
 Solo nel caso di documenti di piccole dimensioni, come i verbali, si potrà optare per la scrittura di un unico file. 
-
 
 \subsubsection{Ciclo di vita}
 Il ciclo di vita di un documento è composto dalle seguenti fasi:
@@ -386,10 +375,38 @@ La sequenza ordinata delle fasi di \textcolor{red}{\uline{\textit{test}}} è la 
 \end{enumerate}
 
 \subsubsubsection{Codici dei test}
-% adottiamo uguale strategia byteops?
+Ciascun \textcolor{red}{\uline{\textit{test}}} deve essere identificato da un codice univoco nel seguente formato:
+\begin{center}
+    \textbf{[tipo]\_[codice]}
+\end{center}
+Dove:
+\begin{itemize}
+    \item \textbf{Tipo}: indica la tipologia di appartenenza del \textcolor{red}{\uline{\textit{test}}}, può assumere i seguenti valori:
+        \begin{itemize}
+            \item \textbf{UT}: \textcolor{red}{\uline{\textit{test}}} di unità (Unit Test);
+            \item \textbf{IT}: \textcolor{red}{\uline{\textit{test}}} di integrazione (Integration Test);
+            \item \textbf{RT}: \textcolor{red}{\uline{\textit{test}}} di regressione (Regression Test);
+            \item \textbf{ST}: \textcolor{red}{\uline{\textit{test}}} di sistema (System Test);
+            \item \textbf{AT}: \textcolor{red}{\uline{\textit{test}}} di accettazione (Acceptance test).
+        \end{itemize}
+    \item \textbf{Codice}: rappresenta un numero associato al \textcolor{red}{\uline{\textit{test}}}, univoco all'interno della tipologia:
+        \begin{itemize}
+            \item nel caso in cui il \textcolor{red}{\uline{\textit{test}}} non abbia un padre, esso è un semplice numero progressivo;
+            \item nel caso in cui il \textcolor{red}{\uline{\textit{test}}} abbia un padre, il codice è nel formato:
+            \begin{center}
+                \textbf{[codicePadre].[codiceFiglio]}
+            \end{center}
+        \end{itemize}
+\end{itemize}
 
 \subsubsubsection{Stato dei test}
-% idem
+A ciascun \textcolor{red}{\uline{\textit{test}}} è associato uno stato che indica l'esito della sua esecuzione:
+\begin{itemize}
+    \item \textbf{S}: il \textcolor{red}{\uline{\textit{test}}} è stato superato;
+    \item \textbf{NS}: il \textcolor{red}{\uline{\textit{test}}} non è stato superato;
+    \item \textbf{NI}: il \textcolor{red}{\uline{\textit{test}}} non è stato implementato.
+\end{itemize}
+Questi risultati saranno riportati nel documento \textit{"Piano di Qualifica"}, in particolare nella sezione \textit{"Specifica dei test"}.
 
 \subsection{Validazione}
 \subsubsection{Introduzione}
@@ -578,35 +595,218 @@ Conclusa la procedura, sarà possibile visionare la release nella sezione "Relea
 
 \subsection{Joint review}
 \subsubsection{Introduzione}
+La Joint Review, o revisione congiunta, è un processo che si occupa di valutare lo stato e i risultati di un'\textcolor{red}{\uline{\textit{attività}}}
+all'interno del progetto, prendendo in cosiderazione sia gli aspetti tecnici che gestionali. Essa coinvolge due parti distinte che hanno entrambe
+la facoltà di attivare il processo: la parte recensita e la parte recensente. Nel nostro caso i recensori sono costituiti da
+\textcolor{red}{\uline{\textit{proponente}}}, \textcolor{red}{\uline{\textit{committente}}} e \textcolor{red}{\uline{\textit{stakeholder}}};
+mentre i recensiti da noi fornitori.
+
 \subsubsection{Implementazione del processo}
+L'implementazione del processo comprende i seguenti impegni:
 \subsubsubsection{Revisioni periodiche}
-\subsubsubsection{SAL}
+In corrispondenza delle \textcolor{red}{\uline{\textit{milestone}}} stabilite saranno effettuate delle revisioni periodiche, come riportato nel
+documento \textit{Piano di Progetto}.
+
+\subsubsubsection{Stato Avanzamento Lavori}
+Al termine di ogni sprint, quindi generalmente ogni due settimane, si svolge una revisione \textcolor{red}{\uline{\textit{SAL}}}
+(Stato Avanzamento Lavori) tra il team e il \textcolor{red}{\uline{\textit{proponente}}}. Questa revisione ha lo scopo di valutare il lavoro svolto
+nell'arco di tempo precedente, per verificare che gli obiettivi prefissati siano stati correttamente raggiunti secondo le scadenze prefissate.
+Inoltre, durante questo incontro, si pianificano anche le successive task da portare a termine.
+
 \subsubsubsection{Revisioni ad hoc}
+Nel caso in cui una delle parti in gioco lo ritenga necessario, è possibile attivare una revisione ad hoc per valutare attentamente lo stato
+di avanzamento del progetto, discutendo di eventuali problematiche e relative soluzioni adottabili.
+
 \subsubsubsection{Risorse per le revisioni}
+Le risorse necessarie per svolgere le revisioni sono di svariata natura e possono essere: personale, strumenti, hardware, software, strutture, ecc.
+In ogni caso, è importante che queste risorse siano discusse e concordate tra le parti.
+
 \subsubsubsection{Elementi da concordare}
+In ciascuna revisione è necessario concordare i seguenti elementi:
+\begin{itemize}
+    \item Agenda della riunione;
+    \item Prodotti \textcolor{red}{\uline{\textit{software}}} risultati dall'\textcolor{red}{\uline{\textit{attività}}} e relative problematiche;
+    \item Procedure;
+    \item Criteri di ingresso e uscita per la revisione.
+\end{itemize}
+
 \subsubsubsection{Documenti e distribuzione dei risultati}
+I risultati della revisione devono essere riportati e documentati accuratamente nei \textit{Verbali Esterni}. In seguito, la parte recensente
+comunicherà alla parte recensita la veridicità di quanto riportato, approvando o disapprovando i risultati citati.
+
 \subsubsection{Project management reviews}
 \subsubsubsection{Introduzione}
-\subsubsubsection{Stato del progetto}
-\subsubsection{Revisioni tecniche}
-\subsubsection{Strumenti}
+Secondo lo \textcolor{red}{\uline{\textit{standard}}} \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{ISO/IEC 12207:1995},
+il processo di Project Management Reviews si occupa di revisionare e valuatre un progetto \textcolor{red}{\uline{\textit{software}}}, sia esso
+in corso o completato. In particolare esso si preoccupa che il progetto venga svolto in modo efficiente e conforme agli obiettivi e ai requisiti 
+prefissati. Questa \textcolor{red}{\uline{\textit{attività}}} di revisione viene eseguita periodicamente durante tutto il ciclo di vita del progetto e
+coinvolge i \textcolor{red}{\uline{\textit{fornitori}}} e gli \textcolor{red}{\uline{\textit{stakeholder}}}.
 
+\subsubsubsection{Stato del progetto}
+La revisione valuta lo stato del progetto in relazione al budget, alle tempistiche e agli standard di qualità. I risultati discussi con gli
+\textcolor{red}{\uline{\textit{stakeholder}}} sono:
+\begin{itemize}
+    \item Le \textcolor{red}{\uline{\textit{attività}}} progrediscono secondo i piani;
+    \item Il progetto è gestito efficientemente attraverso l'allocazione adeguata delle risorse;
+    \item Se necessario, viene valutata la possibilità di una pianificazione alternativa;
+    \item Eventuali rischi sono identificati e gestiti in modo appropriato.
+\end{itemize}
+
+\subsubsection{Revisioni tecniche}
+Le revisioni tecniche valutano prodotti e servizi \textcolor{red}{\uline{\textit{software}}} e forniscono un feedback dei seguenti aspetti:
+\begin{itemize}
+    \item Completezza;
+    \item Conformità agli standard e alle specifiche;
+    \item Correttezza nell'implementazione delle modifiche richieste nelle change request;
+    \item Coerenza con le linee guida nello sviluppo e nella manutenzione del progetto.
+\end{itemize}
 
 \subsection{Risoluzione dei problemi}
 \subsubsection{Introduzione}
-\subsubsection{Gestione dei rischi}
-\subsubsubsection{Codifica dei rischi}
-\subsubsubsection{Metriche}
-\subsubsection{Identificazione dei problemi}
-\subsubsection{Strumenti}
+La risoluzione dei problemi è un processo che si occupa di identificare e risolvere le problematiche che possono emergere durante tutto il ciclo
+di vita del prodotto. Nello specifico, lo scopo è quello di fornire un approccio e un mezzo tempestivi ed affidabili per garantire che tutti
+i problemi individuati siano analizzati e risolti in modo efficace. All'interno delle problematiche riconosciute includiamo anche i casi di non
+conformità. Inoltre, la risoluzione dei problemi si propone anche di studiare le cause alla radice dei problemi, aiutando lo sviluppo di misure
+di prevenzione per evitare che si ripresentino in futuro. Dunque  questo processo ricopre un ruolo fondamentale nell'ambito del miglioramento
+continuo, dove la compresione degli errori passati permette la crescita e l'ottimizzazione dei processi. Per farlo è importante seguire
+approcci strutturati e metodologie efficaci, che prevedono raccolta dati, analisi profonda delle cause, valutazione dell'impatto e implementazione
+di azioni correttive e preventive. In aggiunta, è essenziale anche mantenere una documentazione accurata di tutto il processo, così da
+permettere trasparenza e tracciabilità.
 
+\subsubsection{Gestione dei rischi}
+Nella sezione \textit{Analisi dei rischi} del documento \textit{Piano di Progetto} sono stati identificati dal Responsabile tutti i rischi 
+che potrebbero insorgere durante lo svolgimento del progetto, con relative probabilità di occorrenza e misure di mitigazione. Inoltre,
+viene condotta un'analisi del loro impatto e una valutazione dell'esito delle misure adottate. Nel caso di esito negativo, sono richieste
+delle modifiche per correggere quella determinata mitigazione.
+
+\subsubsubsection{Codifica dei rischi}
+Ogni rischio è identificato da un codice univoco nel seguente formato:
+\begin{center}
+    \textbf{[tipo]\_[probabilità]\_[priorità]\_[indice]}: nomeRischio
+\end{center}
+Dove:
+\begin{itemize}
+    \item \textbf{Tipo}: indica la tipologia del rischio:
+        \begin{itemize}
+            \item \textbf{TR}: rischio relativo all'utilizzo delle tecnologie (Technology Risk);
+            \item \textbf{OR}: rischio relativo all'organizzazione del team (Organization Risk);
+            \item \textbf{PR}: rischio relativo agli impegni personali (Personal Risk).
+        \end{itemize}
+    \item \textbf{Probabilità}: indica la probabilità di occorrenza del rischio:
+        \begin{itemize}
+            \item \textbf{1}: bassa;
+            \item \textbf{2}: media;
+            \item \textbf{3}: alta.
+        \end{itemize}
+    \item \textbf{Priorità}: indica la pericolosità del rischio:
+        \begin{itemize}
+            \item \textbf{B}: bassa;
+            \item \textbf{M}: media;
+            \item \textbf{A}: alta.
+        \end{itemize}
+    \item \textbf{Indice}: rappresenta un numero associato al rischio, univoco all'interno della tipologia.
+\end{itemize}
+
+\subsubsubsection{Metriche}
+\begin{table}[h] 
+    \caption{Metriche relative alla gestione dei processi}
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} \\
+    \hline
+    16M-NCR & Non Calculated Risk (NCR) \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{Identificazione dei problemi}
+Nel momento in cui insorge un problema, è essenziale comunicarlo immediatamente al resto del team e aprire una segnalazione nel sistema di
+\textcolor{red}{\uline{\textit{issue tracking}}} con label "bug" e opportuna descrizione.
 
 \subsection{Gestione della qualità}
 \subsubsection{Introduzione}
+Il processo di gestione della qualità si occupa di mantenere la qualità nel flusso operativo del \textcolor{red}{\uline{\textit{fornitore}}}
+durante tutto il ciclo di vita del \textcolor{red}{\uline{\textit{software}}}. Adottiamo infatti un approccio 
+\textcolor{red}{\uline{\textit{olistico}}} che si estende dal concepimento all'implementazione e alla manutenzione del prodotto finale.
+Nello specifico, la gestione della qualità mira a garantire che le aspettative del \textcolor{red}{\uline{\textit{proponente}}} e 
+degli utenti finali siano pienamente soddisfatte, nonchè di rispettare gli standard di qualità prefissati. Come vedremo più nel dettaglio,
+questo include:
+\begin{itemize}
+    \item Definizione degli obiettivi di qualità;
+    \item Identificazione delle metriche e dei criteri di qualità;
+    \item Pianificazione ed esecuzione delle \textcolor{red}{\uline{\textit{attività}}} di controllo qualità, attraverso revisioni, ispezioni e test.
+\end{itemize}
+
 \subsubsection{Attività}
+Le \textcolor{red}{\uline{\textit{attività}}} di gestione della qualità sono le seguenti:
+\begin{enumerate}
+    \item \textbf{Definizione degli standard di qualità}: identificazione chiara degli \textcolor{red}{\uline{\textit{standard}}} di qualità
+    (inclusi eventualmente requisiti funzionali) che il prodotto \textcolor{red}{\uline{\textit{software}}} deve soddisfare;
+    \item \textbf{Pianificazione della qualità}: progettazione di un piano di qualità che definisce le \textcolor{red}{\uline{\textit{attività}}},
+    risorse e tempistiche;
+    \item \textbf{Assicurazione della qualità}: monitoraggio e valutazione dei \textcolor{red}{\uline{\textit{processi}}};
+    \item \textbf{Controllo della qualità}: esecuzione di \textcolor{red}{\uline{\textit{test}}} e verifiche;
+    \item \textbf{Gestione delle modifiche}: implementazione di un sistema di gestione modifiche per garantire che ciascuna di esse sia valutata
+    in base all'impatto che ha sulla qualità del prodotto;
+    \item \textbf{Miglioramento continuo e correzione}: raccolta di feedback, analisi dell'andamento, e adozione delle 
+    \textcolor{red}{\uline{\textit{best practice}}} per massimizzare la qualità dei \textcolor{red}{\uline{\textit{processi}}} e dei profotti;
+    \item \textbf{Coinvolgimento degli stakeholder}: comunicazione tramite feedback con gli \textcolor{red}{\uline{\textit{stakeholder}}} 
+    per garantire che \textcolor{red}{\uline{\textit{stakeholder}}}, clienti ed utenti finali siano coinvolti nel processo di gestione della qualità;
+    \item \textbf{Formazione del team}: formazione e supporto costante all'interno del gruppo per manetenere un alto livello di qualità.
+\end{enumerate}
+
 \subsubsection{Piano di qualifica}
+Il documento \textit{Piano di Qualifica} ricopre un ruolo essenziale nel contesto della gestione della qualità in quanto tratta ampiamente
+le \textcolor{red}{\uline{\textit{attività}}} di pianificazione e controllo della qualità. In particolare esso definisce le specifiche di qualità
+richieste, definendo i metodi di controllo necessari a garantire il rispetto di tali requisiti.
+
 \subsubsection{PDCA}
-\subsubsection{Strumenti}
+Il ciclo PDCA, o ciclo di Deming, è un modello di gestione iterativo che consente il miglioramento continuo dei processi. Esso consta delle seguenti fasi:
+\begin{itemize}
+    \item \textbf{Plan}: pianificazione delle attività per definire \textcolor{red}{\uline{\textit{processi}}} e relativa sequenza di esecuzione;
+    \item \textbf{Do}: esecuzione effettiva di quanto pianificato;
+    \item \textbf{Check}: analisi e verifica di tutte le informazioni raccolte durante la fase di esecuzione;
+    \item \textbf{Act}: implementazione di azioni correttive nel caso del mancato raggiungimento dei risultati attesi, oppure riconoscimento e 
+    consolidamento delle buone pratiche. Così facendo, il ciclo viene di volta in volta incrementato e perfezionato aggiunngendo valore al processo.
+\end{itemize}
+
 \subsubsection{Struttura e identificazioni metriche}
+Ogni metrica presenta la seguente struttura:
+\begin{itemize}
+    \item \textbf{Metrica}:
+    codice identificativo nel formato:
+    \begin{center}
+        \textbf{[numero]M-[acronimo]}
+    \end{center}
+    Dove:
+    \begin{itemize}
+        \item \textbf{Numero}: numero progressivo univoco per ogni metrica;
+        \item \textbf{M}: metrica;
+        \item \textbf{Acronimo}: abbreviazione della metrica.
+    \end{itemize}
+    \item \textbf{Nome}: nome della metrica;
+    \item \textbf{Descrizione}: breve descrizione della metrica adottata e delle sue funzionalità;
+    \item \textbf{Formula}: formula matematica per il calcolo della metrica;
+\end{itemize}
+
 \subsubsection{Criteri di accettazione}
+All'interno del documento \textit{Piano di Qualifica} sono definiti i criteri di accettazione in formato tabellare:
+\begin{itemize}
+    \item \textbf{Valore accettabile}: valore minimo affinchè la metrica sia considerabile soddisfacente e conforme agli obiettivi di qualità;
+    \item \textbf{Valore desiderabile}: valore ottimale e ideale che dovrebbe essere raggiunto dalla metrica.
+\end{itemize}
+
 \subsubsection{Metriche}
+\begin{table}[h]
+    \centering
+    \caption{Metriche relative alla gestione della qualità}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Metrica} & \textbf{Nome} \\
+    \hline
+    15M-QMS & Quality Metrics Satisfied (QMS) \\
+    24M-FD & Failure Density (FD) \\
+    \hline
+    \end{tabular}
+\end{table}
