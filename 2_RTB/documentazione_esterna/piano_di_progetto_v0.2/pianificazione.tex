@@ -118,11 +118,12 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
         ymin=0,
         legend cell align=left,
         legend style={
-                at={(1,1.05)},
-                anchor=south east,
-                column sep=2ex
-        },
-        xticklabel style={rotate=45, anchor=east},
+            at={(0.5,1.15)},
+            anchor=south,
+            column sep=1ex,
+            legend columns=-1
+    },
+    xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
     ]
     
     \addplot[ver, fill=ver, mark=none] coordinates {(Occhinegro, 9) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
