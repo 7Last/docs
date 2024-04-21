@@ -166,7 +166,26 @@ I diagrammi dei casi d'uso sono strumenti grafici che consentono di rappresentar
 Questi diagrammi si concentrano sulla descrizione delle funzionalità del sistema dal punto di vista degli utenti, senza entrare nei dettagli implementativi. La loro principale finalità è quella di evidenziare le interazioni esterne al sistema, fornendo una visione focalizzata sulle funzionalità e sull'interazione dell'utente con il sistema stesso.
 Un diagramma dei casi d'uso fornisce una panoramica visuale delle principali interazioni tra gli attori e il sistema, agevolando la comprensione dei requisiti funzionali del sistema e la comunicazione tra le parti interessate del progetto.
 Di seguito sono elencati i principali componenti di un diagramma dei casi d'uso:
-\textbf{TODO: inserire componenti diagramma casi d'uso}
+\begin{itemize}
+	\item \textbf{Attori}: Gli attori sono rappresentati come entità esterne al sistema con cui interagisce e possono includere utenti umani, altri software o componenti esterni. Sono simboleggiati come "stickman" al di fuori del rettangolo che delimita il sistema.
+	\item \textbf{Casi d'uso}: I casi d'uso sono rappresentati come ovali all'interno del rettangolo che delimita il sistema e descrivono le funzionalità offerte dal sistema dal punto di vista dell'utente. Ogni caso d'uso è associato a uno o più attori e descrive uno scenario specifico in cui l'utente interagisce con il sistema per raggiungere un obiettivo specifico.
+	\item \textbf{Sottocasi d'uso}: I sottocasi d'uso sono casi d'uso che rappresentano scenari specifici all'interno di un caso d'uso principale. Sono rappresentati come ovali all'interno del caso d'uso principale e descrivono azioni o funzionalità aggiuntive necessarie per completare il caso d'uso principale.
+	\item \textbf{Sistema}: Il sistema è rappresentato come un rettangolo che delimita i casi d'uso e gli attori. Questo simbolo rappresenta il sistema software che offre le funzionalità descritte dai casi d'uso.
+	\item \textbf{Relazioni tra Attori e Casi d'Uso}
+	\begin{itemize}
+		\item \textbf{Associazione}: Una linea tratteggiata tra un attore e un caso d'uso indica un'associazione tra l'attore e il caso d'uso, che indica che l'attore è coinvolto nel caso d'uso.
+	\end{itemize}
+	\item \textbf{Relazioni tra Attori}
+	\begin{itemize}
+		\item \textbf{Generalizzazione}: Una freccia con una linea continua tra due attori indica una relazione di generalizzazione, che indica che un attore è un tipo specializzato di un altro attore.
+	\end{itemize} 
+	\item \textbf{Relazioni tra Casi d'Uso}
+	\begin{itemize}
+		\item \textbf{Inclusione}: La relazione di inclusione indica che un caso d'uso (chiamato "includente") incorpora l'esecuzione di un altro caso d'uso (detto "incluso"). In pratica, quando un attore interagisce con il caso d'uso includente, il caso d'uso incluso viene attivato come parte integrante del primo. Questo meccanismo è utile per favorire il riutilizzo di funzionalità e evitare la duplicazione di logica in diversi casi d'uso. La relazione di inclusione è simboleggiata da una freccia tratteggiata che collega il caso d'uso incluso al caso d'uso includente.
+		\item \textbf{Estensione}: La relazione di estensione indica che un caso d'uso (chiamato "estendente") può estendere il comportamento di un altro caso d'uso (detto "esteso") in determinate circostanze. In pratica, il caso d'uso estendente può aggiungere funzionalità opzionali o alternative al caso d'uso esteso, senza modificarne il comportamento principale. La relazione di estensione è simboleggiata da una freccia tratteggiata che collega il caso d'uso esteso al caso d'uso estendente.
+		\item \textbf{Generalizzazione casi d'uso}: Una freccia con una linea continua tra due casi d'uso indica una relazione di generalizzazione, che indica che un caso d'uso è un tipo specializzato di un altro caso d'uso.
+	\end{itemize}
+\end{itemize}
 
 \subsubsubsection{Requisiti}
 I requisiti di un software sono dettagliate specifiche documentate che delineano le funzionalità, le prestazioni, i vincoli e altri aspetti critici che il software deve soddisfare. Questi requisiti sono fondamentali per guidare lo sviluppo, il testing e la valutazione del prodotto, garantendo che risponda alle esigenze degli utenti e agli obiettivi del progetto. Essi comprendono sia i \textbf{requisiti funzionali}, che descrivono le funzionalità necessarie, sia i \textbf{requisiti non funzionali}, che definiscono criteri di prestazione, qualità, sicurezza e vincoli del sistema.\\
@@ -322,8 +341,17 @@ Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
 	\item L'\textbf{assenza di attributi o metodi} in una classe determina l'assenza delle relative sezioni nel diagramma.
 \end{itemize}
 
-\textbf{Relazioni tra le classi}
-\textbf{TODO: inserire relazioni tra le classi}
+
+\textbf{Relazioni tra le classi}\\
+I diagrammi delle classi possono includere diverse relazioni tra le classi, che rappresentano le interazioni e le dipendenze tra le varie componenti del sistema. Le principali relazioni tra le classi sono:
+\begin{itemize}
+	\item \textbf{Associazione}: indica una relazione tra due classi, in cui un'istanza di una classe è collegata a un'istanza di un'altra classe. L'associazione è rappresentata da una linea che collega le due classi, con una freccia che indica la direzione dell'associazione e le molteplicità possono essere rappresentate con numeri messi agli estremi della freccia.
+	\item \textbf{Dipendenza}: indica una relazione in cui una classe dipende da un'altra classe, ad esempio se un metodo di una classe utilizza un'istanza di un'altra classe. La dipendenza è rappresentata da una linea tratteggiata che collega le due classi, con una freccia che indica la direzione della dipendenza.
+	\item \textbf{Aggregazione}: indica una relazione in cui una classe è composta da una o più istanze di un'altra classe. L'aggregazione è rappresentata da una linea con un rombo vuoto che collega le due classi, con una freccia che indica la direzione dell'aggregazione.
+	\item \textbf{Composizione}: indica una relazione in cui una classe è composta da una o più istanze di un'altra classe, ma le istanze sono strettamente legate e non possono esistere indipendentemente dalla classe principale. La composizione è rappresentata da una linea con un rombo pieno che collega le due classi, con una freccia che indica la direzione della composizione.
+	\item \textbf{Generalizzazione}: indica una relazione in cui una classe è un tipo specializzato di un'altra classe. La generalizzazione è rappresentata da una linea con una freccia vuota che collega le due classi.
+	\item \textbf{Realizzazione}: indica una relazione in cui una classe implementa un'interfaccia o eredita da una classe astratta. La realizzazione è rappresentata da una linea che collega la classe all'interfaccia o alla classe astratta.
+\end{itemize}
 
 \subsubsubsection{Design pattern}
 I design pattern rappresentano solide soluzioni a problemi ricorrenti di progettazione in determinati contesti, offrendo un approccio riutilizzabile che assicura la qualità e una rapida implementazione. Si adottano quando una soluzione ha dimostrato efficacia in un contesto specifico. Le guide dettagliate sull'applicazione dei pattern delineano il loro utilizzo ottimale, accompagnate da rappresentazioni grafiche, spiegazioni testuali della logica e descrizioni della loro utilità nell'architettura complessiva. Questa documentazione è essenziale per favorire una comprensione approfondita dell'integrazione dei design pattern nell'architettura generale e per prevenire errori di progettazione.
