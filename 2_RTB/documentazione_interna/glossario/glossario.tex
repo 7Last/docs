@@ -39,7 +39,6 @@
 
 \makeglossaries
 
-
 %---------- Glossario ----------
 
 %----- A -----
@@ -213,7 +212,7 @@
         \item\makebox[\linewidth]{\Large\textbf{\glsgetgrouptitle{##1}}}
         \vspace*{-\baselineskip}
         \item\makebox[\linewidth]{\hspace*{3cm}\hrulefill\hspace*{3cm}}
-            \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}}
+        \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}}
     }
 }
 
@@ -222,11 +221,11 @@
 
 \begin{document}
 
-\include{title}
+    \include{title}
 
-\newpage
+    \newpage
 
-\include{header}
+    \include{header}
 
 \begin{table}[!h]
 	\caption{Versioni}
@@ -244,9 +243,7 @@
 	\end{center}
 \end{table}
 
-\newpage
-
-\tableofcontents
-
-\printglossary[style=myaltlistgroup,title=]
+    \newpage
+    \tableofcontents
+    \printglossary[style=myaltlistgroup,title=]
 \end{document}

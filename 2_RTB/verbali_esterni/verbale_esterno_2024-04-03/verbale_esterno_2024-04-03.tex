@@ -1,0 +1,130 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l l }
+			\hline                                                                                                      \\[-2ex]
+			Ver. & Data       & Redattore          & Verificatore       & Descrizione                                   \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 09/04/2024 & Antonio Benetazzo  & Valerio Occhinegro & Stesura verbale                               \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Google Meet\\
+\textbf{Orario di inizio}: 17:00\\
+\textbf{Orario di fine}: 18:00\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+	\begin{tabular}{ |l|l|l| } 
+		\hline
+		\textbf{Partecipante} & \textbf{Ruolo}       & \textbf{Presenza} \\
+		\hline 
+		Antonio Benetazzo     & Redattore            & Presente          \\
+		Davide Malgarise      &                      & Presente          \\
+		Elena Ferro           &                      & Presente          \\
+		Leonardo Baldo        &                      & Presente          \\
+		Matteo Tiozzo         & Amministratore       & Presente          \\
+		Raul Seganfreddo      &                      & Presente          \\
+		Valerio Occhinegro    & Verificatore         & Presente          \\
+		\hline
+	\end{tabular}
+	\end{table}
+	\textbf{Partecipanti esterni}: Andrea Dorigo, Daniele Zorzi, Fabio Pallaro.
+\end{flushleft}
+
+\section{Ordine del giorno}
+\subsection{Approfondire conoscenza reciproca}
+\subsection{Modalità di comunicazione e organizzazione del lavoro}
+\subsection{Obiettivi primo sprint}
+\subsection{Consigli su suddivisione e turnazione ruoli}
+\subsection{Varie ed eventuali}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Approfondire conoscenza reciproca}
+L'incontro è iniziato con l'ulteriore comunicazione della conferma dell'assegnazione 
+della candidatura da parte del professor Vardanega (precedentemente comunicato via e-mail). 
+Successivamente ci siamo presentati e abbiamo discusso brevemente delle motivazioni 
+che ci hanno portato alla scelta di questo capitolato. Abbiamo inoltre ritagliato un breve spazio 
+per discutere dei nostri hobby e delle nostre passioni, al fine di creare un ambiente di lavoro 
+più informale e amichevole.
+
+\subsection{Modalità di comunicazione e organizzazione del lavoro}
+Ci viene indicata la figura di Andrea Dorigo come principale figura di riferimento per 
+supporto sulle tecnologie che verranno adottate. Abbiamo deciso di utilizzare principalmente 
+la piattaforma Discord per la comunicazione, già utilizzata anche da parte dell'azienda per 
+le comunicazioni interne. Con la proponente si è concordato di partire con sprint della durata 
+di 2 settimane, questo per poter avere un feedback rapido e poter correggere eventuali errori 
+tempestivamente, ma contemporaneamente avere anche tempo a sufficienza per poter prendere confidenza 
+con il ruolo assegnato a ciascun membro del gruppo; una durata inferiore, in particolare 
+in questa fase iniziale del progetto, potrebbe infatti portare a confusione e disorganizzazione.
+
+\subsection{Obiettivi primo sprint}
+Per il primo sprint ci siamo prefissati i seguenti obiettivi:
+\begin{itemize}
+	\item studio delle tecnologie \textit{Docker Compose} e \textit{Apache Kafka} (ci riserviamo di valutare eventuali alternative);
+	\item prima configurazione di questi strumenti;
+	\item creazione di un semplice programma in \textit{Python} per la generazione dei dati di test (per ora di un solo tipo di dato);
+	\item (OPZIONALE ma considerato fattibile) Inserimento di questi dati direttamente in \textit{Apache Kafka}, senza l'utilizzo di scambio di file;
+	\item deploy su \textit{Docker Compose};
+	\item prima documentazione.
+\end{itemize}
+
+\subsection{Consigli su suddivisione e turnazione ruoli}
+Chiediamo ai rappresentanti dell'azienda un consiglio su come suddividere i ruoli e come 
+organizzare la turnazione degli stessi, vista la loro pregressa esperienza nella gestione 
+di progetti simili e visto il lavoro svolto precedentemente coi nostri colleghi del primo lotto. 
+Ci viene consigliato di mantenere una turnazione dei ruoli ogni due settimane, in linea con 
+le tempistiche degli sprint, in modo da poter avere una visione più chiara e completa di 
+come si svolge il lavoro di ciascun membro del gruppo.
+
+\subsection{Decisioni prese e conclusioni}
+La riunione si conclude dandoci appuntamento con l'azienda per il primo SAL fissato 
+in data 19 aprile, entro il quale dovremo presentare il lavoro svolto durante il primo sprint 
+secondo gli obiettivi prefissati.
+
+\begin{table}[b]
+	\begin{tabular}{@{}p{.5in}p{4in}@{}}
+		Data:  & \hrulefill \\
+			   &     		\\
+			   &     		\\
+		Firma: & \hrulefill \\
+	\end{tabular}
+	\end{table}
+
+\end{document}
