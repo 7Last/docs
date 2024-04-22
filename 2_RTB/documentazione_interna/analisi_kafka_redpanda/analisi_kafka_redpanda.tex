@@ -1,0 +1,59 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ c c c c p{6.1cm} }
+			\hline                                                                              \\[-2ex]
+			Ver. & Data       & Redattore   & Verificatore & Descrizione                        \\
+			\\[-2ex] \hline \\[-1.5ex]
+			0.1  & 2024-04-22 & Elena Ferro & -            & Confronto Redpanda vs \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#apache-kafka}{Apache Kafka\textsubscript{G}} \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\include{introduzione}
+
+\include{limitazioni_kafka}
+
+\include{vantaggi_redpanda}
+
+\include{svantaggi_redpanda}
+
+\include{vantaggi_kafka}
+
+\include{benchmark}
+
+\include{tabella_comparativa}
+
+\include{altre_tecnologie}
+
+\end{document}
+
+

@@ -1,0 +1,31 @@
+\section{Vantaggi di Redpanda}
+\subsection{Performance}
+Redpanda è scritto in C++ e utilizza il \textit{framework} Seastar, offrendo un'architettura \textit{thread-per-core} ad alte prestazioni.
+Ciò permette di ottenere un'elevata \textit{throughput} e latenze costantemente basse, evitando cambi di contesto e blocchi.
+Inoltre, è progettato per sfruttare l'\textit{hardware} moderno, tra cui unità NVMe, processori \textit{multi-core} e interfacce di rete ad alta velocità.
+
+\subsection{Costi}
+Anche per carichi di lavoro ridotti, l'utilizzo di Kafka può essere fino a 3 volte più costoso rispetto a Redpanda. Per carichi di lavoro più complessi, questa differenza può aumentare fino a 5 volte o più.\\
+\href{https://redpanda.com/blog/is-redpanda-better-than-kafka-tco-comparison}{Fonte}
+
+
+
+\subsection{Semplicità di configurazione}
+
+\subsection{BYOC (\textit{Bring Your Own Cluster})}
+%There is a third option besides self-managing a data streaming cluster and leveraging a fully managed cloud service: Bring your own Cluster (BYOC). This alternative allows end users to deploy a solution partially managed by the vendor in your own infrastructure (like your data center or your cloud VPC).
+Redpanda offre una terza opzione oltre alla gestione autonoma di un \textit{cluster} di \textit{streaming}
+dati e all'utilizzo di un servizio \textif{cloud} completamente gestito: \textit{Bring Your Own Cluster} (BYOC).
+Questa alternativa consente agli utenti finali di implementare una soluzione parzialmente gestita dal fornitore nella propria infrastruttura (come il proprio \textit{data center}
+o il proprio \textit{VPC cloud}).\\
+
+
+% un singolo binario
+% indipendente da zookeeper per design
+\subsection{Compatibilità con API di Kafka}
+Redpanda è progettato per essere compatibile con le API di Kafka, consentendo di utilizzare i \textit{client} Kafka esistenti senza modifiche.
+
+\subsection{\textit{Self-healing}}
+% Redpanda is self-healing and continually redistributes data and leadership across nodes to maintain your cluster in an optimal state as your cluster evolves or when nodes fail.
+
+
