@@ -15,4 +15,8 @@ Redpanda, al contrario, ha una comunità più piccola e meno attiva, e quindi me
 Kafka è supportato da una vasta gamma di strumenti e librerie di terze parti che lo integrano con altri sistemi e servizi
 (con cui Redpanda dovrebbe essere compatibile, ma non è garantito).
 
+\subsection{Protocollo di replicazione}
+Il protocollo Raft utilizzato da Redpanda per la replicazione e la scrittura su disco è sincrono, il che significa che i dati devono essere scritti (fsynced) su disco in modo sincrono.
+I dati devono essere scritti (\textit{fsynced}) su disco in modo sincrono, altrimenti è possibile perdere dati durante l'elezione di un nuovo leader.
+
 

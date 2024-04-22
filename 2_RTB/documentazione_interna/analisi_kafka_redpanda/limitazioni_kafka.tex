@@ -1,2 +1,12 @@
 \section{Limitazioni di Apache Kafka}
+\subsection{Architettura}
+Può diventare sempre più complessa da gestire su larga scala, in quanto, a differenza di Redpanda, Apache Kafka \textbf{non} è un unico binario.
+\subsection{Facilità di utilizzo e rilascio}
+Il progetto originale di Kafka pone un limite alle prestazioni che si possono ottenere dall'hardware moderno. La sua dipendenza dalla cache delle pagine e dalla garbage collection può essere problematica, a causa dei componenti estranei che si trascina dietro, come la JVM e Apache ZooKeeper.
+Tutto ciò rende l'esecuzione di Kafka su scala più difficile del necessario.
+\subsection{Dispendioso e limitante}
+Il progetto originale di Kafka pone un limite alle prestazioni che si possono ottenere dall'hardware moderno. La sua dipendenza dalla cache delle pagine e dalla garbage collection può essere problematica e non parliamo poi dei problemi di distribuzione e gestione, a causa dei componenti estranei che si trascina dietro, come la JVM e Apache ZooKeeper.
+\subsection{Prestazioni}
+Non ci sono problemi con la dimensione individuale del messaggio. Tuttavia, i broker e i consumatori iniziano a comprimere questi messaggi man mano che la dimensione aumenta. A causa di ciò, quando vengono decompressi, la memoria del nodo viene utilizzata lentamente.
+
 

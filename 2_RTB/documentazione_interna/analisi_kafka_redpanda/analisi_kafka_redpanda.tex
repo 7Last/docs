@@ -4,42 +4,39 @@
 \input{packages}
 
 \linespread{1.2}
-\captionsetup[table]{labelformat=empty}
+\captionsetup[table]{name=Tabella}
 \geometry{headsep=1.5cm}
 
 \renewcommand{\contentsname}{Indice}
 \renewcommand\familydefault{\sfdefault}
-
-\let\oldthepage\thepage
-\renewcommand*\thepage{\sffamily\oldthepage}
+\renewcommand{\listtablename}{Indice delle tabelle}
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\listfigurename}{Indice delle immagini}
+\renewcommand\familydefault{\sfdefault}
 
 \begin{document}
-
 \include{title}
-
 \newpage
-
 \include{header}
 
 \begin{table}[!h]
-	\caption{Versioni}
+	\caption*{Versioni}
 	\begin{center}
 		\begin{tabular}{ c c c c p{6.1cm} }
-			\hline                                                                                                     \\[-2ex]
-			Ver. & Data       & Redattore     & Verificatore      & Descrizione                                        \\
+			\hline                                                                                                    \\[-2ex]
+			Ver. & Data       & Redattore     & Verificatore      & Descrizione                                       \\
 			\\[-2ex] \hline \\[-1.5ex]
-			0.2  & 2024-04-22 & Matteo Tiozzo & Antonio Benetazzo & Limitazioni di Kafka, comparazioni                 \\
-			\hline
-			0.1  & 2024-04-22 & Elena Ferro   & Antonio Benetazzo & Vantaggi di Redpanda, Vantaggi di Kafka, Benchmark \\
+			0.2  & 2024-04-22 & Matteo Tiozzo & Antonio Benetazzo & Limitazioni di Apache Kafka, Vantaggi di Redpanda \\
+			0.1  & 2024-04-22 & Elena Ferro   & Antonio Benetazzo & Confronto Redpanda vs Apache Kafka                \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
 \end{table}
 
 \newpage
-
 \tableofcontents
-
+\listoftables
+\listoffigures
 \newpage
 
 \include{introduzione}
@@ -48,7 +45,9 @@
 
 \include{vantaggi_redpanda}
 
-\include{svantaggi_redpanda_vantaggi_kafka}
+\include{svantaggi_redpanda}
+
+\include{vantaggi_kafka}
 
 \include{benchmark}
 
@@ -57,5 +56,10 @@
 \include{sitografia}
 
 \end{document}
+
+
+
+
+
 
 

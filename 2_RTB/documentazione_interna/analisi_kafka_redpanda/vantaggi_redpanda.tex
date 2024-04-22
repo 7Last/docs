@@ -22,24 +22,14 @@ Redpanda è progettato per essere compatibile con le API di Kafka, consentendo d
 \subsection{\textit{Self-healing}}
 Redpanda è self-healing e redistribuisce continuamente i dati e la \textit{leadership} tra i nodi per mantenere il \textit{cluster} in uno stato ottimale mentre il \textit{cluster} evolve o quando i nodi falliscono.
 
-\subsection{Architettura e Sicurezza}
-La versione più recente di Kafka ha introdotto KRaft come sostituto di Apache ZooKeeper. KRaft, come suggerisce il nome, sfrutta il protocollo Raft per gestire i metadati del \textit{cluster}.
-KRaft è stato marcato come pronto per la produzione in Apache Kafka 3.4.0. Tuttavia, alcune limitazioni rimangono, tra cui:
-
-\begin{itemize}
-	\item Nessuna possibilità di aggiornare i \textit{cluster} esistenti da ZooKeeper a KRaft
-	\item Nessun supporto per l'autenticazione SASL/SCRAM
-	\item Modifiche al \textit{tooling} da riga di comando che non funzionano con TLS
-\end{itemize}
-Con KRaft, solo i metadati e lo stato del \textit{cluster} sono memorizzati nel \textit{quorum} di KRaft, mentre i \textit{topic} e le partizioni utilizzano ancora il meccanismo ISR.\\
-Per contrasto invece, Redpanda utilizza Raft per la configurazione del \textit{cluster}, lo stato e il mantenimento del consenso attorno alle repliche delle partizioni. Questo utilizzo di Raft per la replicazione consente a Redpanda di offrire garanzie di sicurezza dei dati superiori e di evitare scenari documentati in cui Kafka può perdere lo stato e richiedere un'elezione del \textit{leader} non
-sicura.
-\\
-\href{https://redpanda.com/blog/kafka-kraft-vs-redpanda-performance-2023}{Fonte}
-
 
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{imgs/kafka_zookeeper.png}
+	\captionof{figure}{Architettura di Kafka con ZooKeeper}
 \end{center}
+
+
+
+
 
 
