@@ -10,6 +10,9 @@
 \renewcommand{\contentsname}{Indice}
 \renewcommand\familydefault{\sfdefault}
 
+\let\oldthepage\thepage
+\renewcommand*\thepage{\sffamily\oldthepage}
+
 \begin{document}
 
 \include{title}
@@ -20,13 +23,14 @@
 
 \begin{table}[!h]
 	\caption{Versioni}
-	\footnotesize
 	\begin{center}
 		\begin{tabular}{ c c c c p{6.1cm} }
-			\hline                                                                              \\[-2ex]
-			Ver. & Data       & Redattore   & Verificatore & Descrizione                        \\
+			\hline                                                                                                     \\[-2ex]
+			Ver. & Data       & Redattore     & Verificatore      & Descrizione                                        \\
 			\\[-2ex] \hline \\[-1.5ex]
-			0.1  & 2024-04-22 & Elena Ferro & -            & Confronto Redpanda vs \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#apache-kafka}{Apache Kafka\textsubscript{G}} \\
+			0.2  & 2024-04-22 & Matteo Tiozzo & Antonio Benetazzo & Limitazioni di Kafka, comparazioni                 \\
+			\hline
+			0.1  & 2024-04-22 & Elena Ferro   & Antonio Benetazzo & Vantaggi di Redpanda, Vantaggi di Kafka, Benchmark \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -44,15 +48,13 @@
 
 \include{vantaggi_redpanda}
 
-\include{svantaggi_redpanda}
-
-\include{vantaggi_kafka}
+\include{svantaggi_redpanda_vantaggi_kafka}
 
 \include{benchmark}
 
-\include{tabella_comparativa}
+\include{tabella_riassuntiva}
 
-\include{altre_tecnologie}
+\include{sitografia}
 
 \end{document}
 
