@@ -19,7 +19,13 @@ Redpanda al contrario ha una comunità più piccola e meno attiva, con un numero
 
 \subsection{Integrazione con altri servizi}
 Kafka è supportato da una vasta gamma di strumenti e librerie di terze parti che lo integrano con altri sistemi e servizi
+
 (con cui tuttavia \href{https://docs.redpanda.com/current/develop/kafka-clients/}{Redpanda è compatibile}).
+
+\subsection{Scalabilità}
+Redpanda dimostra bassa latenza e alto throughput su \textit{workload} semplici. Tuttavia esso è stato studiato per essere ottimizzato per il \textit{random IO}, e non per il \textit{sequential IO} come Kafka.\\
+Questo significa che in situazioni con un alto numero di produttori, un utilizzo del disco superiore al 30\%, l'abilitazione delle chiavi dei messaggi, l'abilitazione di TLS o l'esecuzione per più di 24 ore,
+le prestazioni di Redpanda possono degradarsi significativamente.\\
 
 \subsection{Protocollo di replicazione}
 Il protocollo Raft utilizzato da Redpanda per la replicazione e la scrittura su disco è sincrona. \\
@@ -32,6 +38,8 @@ Nonostante ciò, Redpanda è in grado di garantire prestazioni migliori rispetto
 	\includegraphics[width=0.75\textwidth]{imgs/fsync.png}
 	\captionof{figure}{\href{https://redpanda.com/blog/kafka-kraft-vs-redpanda-performance-2023}{Confronto di latenza tra Kafka e Redpanda con e senza \textit{fsync}.}}
 \end{center}
+
+
 
 
 
