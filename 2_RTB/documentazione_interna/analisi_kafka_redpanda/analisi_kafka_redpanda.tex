@@ -14,6 +14,10 @@
 \renewcommand{\listfigurename}{Indice delle immagini}
 \renewcommand\familydefault{\sfdefault}
 
+% set sfdefault for page numbers
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily\oldthepage}
+
 \begin{document}
 \include{title}
 \newpage
@@ -23,11 +27,12 @@
 	\caption*{Versioni}
 	\begin{center}
 		\begin{tabular}{ c c c c p{6.1cm} }
-			\hline                                                                                                    \\[-2ex]
-			Ver. & Data       & Redattore     & Verificatore      & Descrizione                                       \\
+			\hline                                                                                                 \\[-2ex]
+			Ver. & Data       & Redattore     & Verificatore      & Descrizione                                    \\
 			\\[-2ex] \hline \\[-1.5ex]
-			0.2  & 2024-04-22 & Matteo Tiozzo & Antonio Benetazzo & Limitazioni di Apache Kafka, Vantaggi di Redpanda \\
-			0.1  & 2024-04-22 & Elena Ferro   & Antonio Benetazzo & Confronto Redpanda vs Apache Kafka                \\
+			0.3  & 2024-04-23 & Elena Ferro   & Antonio Benetazzo & Correzioni e aggiunte                          \\
+			0.2  & 2024-04-22 & Matteo Tiozzo & Antonio Benetazzo & Benchmark, Tabella riassuntiva                 \\
+			0.1  & 2024-04-22 & Elena Ferro   & Antonio Benetazzo & Vantaggi di Redpanda, Vantaggi di Apache Kafka \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -41,11 +46,7 @@
 
 \include{introduzione}
 
-\include{limitazioni_kafka}
-
 \include{vantaggi_redpanda}
-
-\include{svantaggi_redpanda}
 
 \include{vantaggi_kafka}
 
@@ -53,9 +54,18 @@
 
 \include{tabella_riassuntiva}
 
-\include{sitografia}
-
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

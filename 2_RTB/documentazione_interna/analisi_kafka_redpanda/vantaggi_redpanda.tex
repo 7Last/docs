@@ -5,16 +5,17 @@ Ciò permette di ottenere un'elevata \textit{throughput} e latenze costantemente
 Inoltre, è progettato per sfruttare l'\textit{hardware} moderno, tra cui unità NVMe, processori \textit{multi-core} e interfacce di rete ad alta velocità.
 
 \subsection{Costi}
-Anche per carichi di lavoro ridotti, l'utilizzo di Kafka può essere \href{https://redpanda.com/blog/is-redpanda-better-than-kafka-tco-comparison}{fino a 3 volte più costoso} rispetto a Redpanda. Per carichi di lavoro più complessi, questa differenza può aumentare fino a 5 volte o più.\\
+Anche per carichi di lavoro ridotti, l'utilizzo di Kafka può essere \href{https://redpanda.com/blog/is-redpanda-better-than-kafka-tco-comparison}{fino a 3 volte più costoso} rispetto a Redpanda. Per carichi di lavoro più complessi, questa differenza può aumentare fino a 5 volte o più.
 
 \subsection{Semplicità di configurazione}
-Redpanda è un contenuto in un singolo binario. Lo \textit{schema registry}, il \textit{proxy} HTTP e il \textit{message broker} sono tutti integrati. Ciò significa che non ci sono dipendenze da JVM, ZooKeeper o KRaft.
+Il binario di Redpanda include, oltre al \textit{message broker}, anche
+un \textit{proxy} HTTP e uno \textit{schema registry}.
 
 \subsection{BYOC (\textit{Bring Your Own Cluster})}
 Redpanda offre una terza opzione oltre alla gestione autonoma di un \textit{cluster} di \textit{streaming}
 dati e all'utilizzo di un servizio \textit{cloud} completamente gestito: \textit{Bring Your Own Cluster} (BYOC).
 Questa alternativa consente agli utenti finali di implementare una soluzione parzialmente gestita dal fornitore nella propria infrastruttura (come il proprio \textit{data center}
-o il proprio \textit{VPC cloud}).\\
+o il proprio \textit{VPC cloud}).
 
 \subsection{Compatibilità con API di Kafka}
 Redpanda è progettato per essere compatibile con le API di Kafka, consentendo di utilizzare i \textit{client} Kafka esistenti senza modifiche.
@@ -25,8 +26,14 @@ Redpanda è self-healing e redistribuisce continuamente i dati e la \textit{lead
 
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{imgs/kafka_zookeeper.png}
-	\captionof{figure}{Architettura di Kafka con ZooKeeper}
+	\captionof{figure}{\href{https://redpanda.com/blog/kafka-kraft-vs-redpanda-performance-2023}{Architettura di Kafka con ZooKeeper}}
 \end{center}
+
+
+
+
+
+
 
 
 
