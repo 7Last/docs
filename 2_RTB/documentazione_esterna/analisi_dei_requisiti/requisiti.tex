@@ -1,109 +1,181 @@
 \section{Requisiti}
+\subsection{Definizione di un requisito}
+Per ciascun requisito vengono fornite le seguenti informazioni:
+\begin{itemize}
+	\item \textbf{Codice}: codice identificativo del requisito, meglio specificato nella sezione \ref{sec:codifica_requisiti};
+	\item \textbf{Descrizione}: breve descrizione del requisito;
+	\item \textbf{Fonte}: provenienza del requisito, meglio specificata nella sezione \ref{sec:fonti_requisiti};
+	\item \textbf{Importanza}: indica l'importanza del requisito, meglio specificata nella sezione \ref{sec:importanza_requisiti}.
+\end{itemize}
+
+\subsection{Tipologie di requisiti}
+I requisiti possono essere di quattro tipologie:
+\begin{itemize}
+	\item \textbf{Funzionali}: descrivono le funzionalità del sistema;
+	\item \textbf{Qualitativi}: descrivono le qualità che il sistema deve avere;
+	\item \textbf{Di vincolo}: descrivono i vincoli a cui il sistema deve sottostare;
+	\item \textbf{Prestazionali}: descrivono le prestazioni che il sistema deve avere.
+\end{itemize}
+
+\subsubsection{Codifica dei requisiti}
+\label{sec:codifica_requisiti}
+I requisiti sono codificati nel seguente modo:
+\begin{center}
+	\textbf{R[Tipologia]-[Codice]}
+\end{center}
+dove \textbf{[Codice]} è un numero progressivo che identifica univocamente il requisito.
+
+\subsubsection{Fonti dei requisiti}
+\label{sec:fonti_requisiti}
+I requisiti possono avere le seguenti fonti:
+\begin{itemize}
+	\item \textbf{Capitolato}: requisiti individuati a seguito dell'analisi del capitolato;
+	\item \textbf{Interno}: requisiti individuati durante le riunioni interne e da coloro che hanno il ruolo di analista;
+	\item \textbf{Esterno}: requisiti aggiuntivi individuati in seguito a incontri con la proponente;
+	\item \textbf{Piano di Qualifica}: requisiti necessari per adeguare il prodotto agli standard di qualità definiti nel documento \textit{Piano di Qualifica}.
+	\item \textbf{Norme di Progetto}: requisiti necessari per adeguare il prodotto alle norme stabilite nel documento \textit{Norme di Progetto}.
+\end{itemize}
+
+\subsubsection{Importanza dei requisiti}
+\label{sec:importanza_requisiti}
+I requisiti possono avere tre livelli di importanza:
+\begin{itemize}
+	\item \textbf{Obbligatorio}: requisito irrinunciabile per il committente;
+	\item \textbf{Desiderabile}: requisito non strettamente necessario, ma che porta valore aggiunto al prodotto;
+	\item \textbf{Opzionale}: requisito relativo a funzionalità aggiuntive.
+\end{itemize}
+
+
 \subsection{Requisiti funzionali}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-                            &                     &                      &                &                    \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Requisiti funzionali}
-    \label{tab:1}
-\end{table}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                               \\\hline
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                               \\\hline
+	\endhead
+	\hline
+	RF-1            & Obbligatorio        & Capitolato     & La parte \textit{IoT} dovrà essere simulata attraverso tool di generazione di informazioni random che tuttavia siano verosimili.                                                                                                                                                                                   \\\hline
+	RF-2            & Obbligatorio        & Capitolato     & Il sistema dovrà permettere la visualizzazione dei dati in tempo reale.                                                                                                                                                                                                                                            \\\hline
+	RF-3            & Obbligatorio        & Capitolato     & Il sistema dovrà permettere la visualizzazione dei dati storici.                                                                                                                                                                                                                                                   \\\hline
+	RF-4            & Obbligatorio        & Capitolato     & L'utente deve poter accedere all'applicativo senza bisogno di autenticazione.                                                                                                                                                                                                                                      \\\hline
+	RF-5            & Obbligatorio        & Capitolato     & L'utente dovrà poter visualizzare su una mappa la posizione geografica dei sensori.                                                                                                                                                                                                                                \\\hline
+	RF-6            & Obbligatorio        & Capitolato     & I tipi di dati che il sistema dovrà visualizzare sono: temperatura, umidità, polveri sottili dell’aria, traffico, lavori in corso, incidenti, parcheggi, lavori su rete idrica, livelli di acqua, posizione colonne di ricarica, guasti elettrici delle colonnine, ponti e strutture critiche, stato delle strade. \\\hline
+	RF-7            & Obbligatorio        & Capitolato     & I dati dovranno essere salvati su un database OLAP.                                                                                                                                                                                                                                                                \\\hline
+	RF-8            & Obbligatorio        & Capitolato     & I sensori di temperatura rilevano i dati in Celsius                                                                                                                                                                                                                                                                \\\hline
+	RF-9            & Obbligatorio        & Capitolato     & I sensori di polveri sottili rilevano le particelle di polveri nell’aria in $\mu g$/mc.                                                                                                                                                                                                                            \\\hline
+	RF-10           & Obbligatorio        & Capitolato     & I sensori di umidità rilevano la percentuale di umidità nell’aria.                                                                                                                                                                                                                                                 \\\hline
+	RF-11           & Obbligatorio        & Capitolato     & I sensori livello acqua rilevano il livello di acqua nella zona di installazione                                                                                                                                                                                                                                   \\\hline
+	RF-12           & Obbligatorio        & Capitolato     & I sensori che indicano interruzioni della fornitura di energia elettrica in una certa zona inviano un segnale binario, dove 0 indica la mancanza di corrente e 1 la presenza di corrente.                                                                                                                          \\\hline
+	RF-13           & Obbligatorio        & Capitolato     & I sensori di soglia rilevano lo stato di riempimento dei vari conferitori nelle isole ecologiche inviando un segnale binario, dove 0 indica che il conferitore è vuoto e 1 che è pieno.                                                                                                                            \\\hline
+	RF-14           & Obbligatorio        & Capitolato     & I dati provenienti dai sensori dovranno contenere i seguenti dati: id sensore, data, ora e valore.
+	RF-15           & Desiderabile        & Capitolato     & Sviluppo di altre componenti quali widget e grafici per la visualizzazione dei dati nelle dashboard.                                                                                                                                                                                                               \\\hline
+	% TODO: aggiunta di requisiti interni obbligatori sulla visualizzazione delle dashboard, quali tipi di dashboard, grafici... per ciascuna categoria di sensori
+	% TODO: aggiunta di requisiti esterni desiderabili su quali tipi di notifiche inviare all'utente
+	% TODO: aggiunta di requisiti interni obbligatori su quali dati manda ciascun tipo sensore implementato e con quale unità di misura
 
-\subsection{Requisiti qualitativi}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-                            &                     &                      &                &                    \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Requisiti qualitativi}
-    \label{tab:2}
-\end{table}
+	\caption{Requisiti funzionali}
+	\label{table:2}
+\end{longtable}
+% \subsection{Requisiti qualitativi}
+% \begin{table}[!h]
+%     \begin{center}
+%         \begin{tabular}{ |l |l |l |l| l| }
+%             \hline 
+%             \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
+%                             &                     &                      &                &                    \\
+%             
+%             \hline
+%         \end{tabular}
+%     \end{center}
+%     \caption{Requisiti qualitativi}
+%     \label{tab:2}
+% \end{table}
+%
+% \subsection{Requisiti di vincolo}
+% \begin{table}[!h]
+%     \begin{center}
+%         \begin{tabular}{ |l |l |l |l| l| }
+%             \hline 
+%             \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
+%                             &                     &                      &                &                    \\
+%             
+%             \hline
+%         \end{tabular}
+%     \end{center}
+%     \caption{Requisiti di vincolo}
+%     \label{tab:3}
+% \end{table}
+%
+% \subsection{Requisiti prestazionali}
+% \begin{table}[!h]
+%     \begin{center}
+%         \begin{tabular}{ |l |l |l |l| l| }
+%             \hline 
+%             \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
+%                             &                     &                      &                &                    \\
+%             
+%             \hline
+%         \end{tabular}
+%     \end{center}
+%     \caption{Requisiti prestazionali}
+%     \label{tab:4}
+% \end{table}
+%
+% \subsection{Tracciamento}
+% \subsubsection{Requisito - Fonte}
+% \begin{table}[!h]
+%     \begin{center}
+%         \begin{tabular}{ |l |l | }
+%             \hline 
+%             \textbf{Requisito} & \textbf{Fonte}\\\hline
+%                                &               \\
+%             
+%             \hline
+%         \end{tabular}
+%     \end{center}
+%     \caption{Tracciamento requisito - fonte}
+%     \label{tab:5}
+% \end{table}
+%
+% \subsubsection{Fonte - Requisito}
+% \begin{table}[!h]
+%     \begin{center}
+%         \begin{tabular}{ |l |l |}
+%             \hline 
+%             \textbf{Fonte} & \textbf{Requisito}\\\hline
+%                                &               \\
+%             
+%             \hline
+%         \end{tabular}
+%     \end{center}
+%     \caption{Tracciamento fonte - requisito}
+%     \label{tab:6}
+% \end{table}
+%
+% \subsection{Riepilogo}
+% \begin{table}[!h]
+%     \begin{center}
+%         \begin{tabular}{ |l |l |l |l| l| }
+%             \hline 
+%             \textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Opzionali} & \textbf{Desiderabili} & \textbf{Totale}\\\hline
+%             Funzionali         &                     &                      &                &                    \\
+%             Di qualità         &                     &                      &                &                    \\
+%             Di vincolo         &                     &                      &                &                    \\
+%             Prestazionali      &                     &                      &                &                    \\\hline
+%             \textbf{Totale}           &                     &                      &                &                    \\
+%             \hline
+%         \end{tabular}
+%     \end{center}
+%     \caption{Riepilogo}
+%     \label{tab:7}
+% \end{table}
 
-\subsection{Requisiti di vincolo}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-                            &                     &                      &                &                    \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Requisiti di vincolo}
-    \label{tab:3}
-\end{table}
 
-\subsection{Requisiti prestazionali}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-                            &                     &                      &                &                    \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Requisiti prestazionali}
-    \label{tab:4}
-\end{table}
 
-\subsection{Tracciamento}
-\subsubsection{Requisito - Fonte}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l | }
-            \hline 
-            \textbf{Requisito} & \textbf{Fonte}\\\hline
-                               &               \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Tracciamento requisito - fonte}
-    \label{tab:5}
-\end{table}
 
-\subsubsection{Fonte - Requisito}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |}
-            \hline 
-            \textbf{Fonte} & \textbf{Requisito}\\\hline
-                               &               \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Tracciamento fonte - requisito}
-    \label{tab:6}
-\end{table}
 
-\subsection{Riepilogo}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Opzionali} & \textbf{Desiderabili} & \textbf{Totale}\\\hline
-            Funzionali         &                     &                      &                &                    \\
-            Di qualità         &                     &                      &                &                    \\
-            Di vincolo         &                     &                      &                &                    \\
-            Prestazionali      &                     &                      &                &                    \\\hline
-            \textbf{Totale}           &                     &                      &                &                    \\
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Riepilogo}
-    \label{tab:7}
-\end{table}
+
+
+
