@@ -36,9 +36,23 @@ jobs:
 
       - name: Cleanup non pdf files
         run: |
+          variables="variables.tex"
           pdfs=$(find ./* -type f -name "*.pdf")
           for file in $pdfs; do
-            dst="$(dirname $file)/../$(basename $file)"
+            dir=$(dirname $file)
+            basename=$(basename $file)
+            new_filename=$(echo $basename | sed 's/\(_v[[:digit:]]\+.[[:digit:]]\+\)\{0,1\}.pdf//g')
+
+            version=""
+            if [ -f $dir/$variables ]; then
+              version=$(cat $dir/$variables | gawk 'match($0, /Version\{(.*)\}/, a) {print a[1]}')
+              if [ ! -z $version ]; then # if version is not empy
+                new_filename=$new_filename"_"$version
+              fi
+            fi
+
+            dst="$dir/../$new_filename.pdf"
+            echo "Moving $file to $dst"
             mv $file $dst
             rm -rf $(dirname $file)
           done
@@ -50,7 +64,9 @@ jobs:
         run: git add .
 
       - name: git commit
-        run: git commit -m "[bot] Update main branch"
+        env:
+          COMMIT_MESSAGE: "${{ github.event.head_commit.message }}"
+        run: git commit -m "[bot] $COMMIT_MESSAGE"
 
       - name: git push
         run: git push -f origin develop:main
