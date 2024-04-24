@@ -53,9 +53,9 @@
 		\textbf{Partecipante} & \textbf{Ruolo}       & \textbf{Presenza} \\
 		\hline 
 		Antonio Benetazzo     & Verificatore         & Presente          \\
-		Davide Malgarise      & Redattore            & Presente          \\
+		Davide Malgarise      & Amministratore       & Presente          \\
 		Elena Ferro           &                      & Presente          \\
-		Leonardo Baldo        & Amministratore       & Presente          \\
+		Leonardo Baldo        & Redattore	         & Presente          \\
 		Matteo Tiozzo         &                      & Assente           \\
 		Raul Seganfreddo      &                      & Presente          \\
 		Valerio Occhinegro    &                      & Presente          \\
@@ -64,47 +64,34 @@
 	\end{table}
 	\textbf{Partecipanti esterni}: Daniele Zorzi.
 \end{flushleft}
-
 \section{Ordine del giorno}
 \begin{itemize}
 	\item Lavoro svolto
-	\item Apache Kafka vs RedPanda
+	\item Apache Kafka vs Redpanda
 	\item Obiettivi secondo sprint
 	\item Consigli su suddivisione e turnazione ruoli
 	\item Decisioni prese e conclusioni
 \end{itemize}
-
 \newpage
-
 \section{Verbale}
-
 \subsection{Lavoro svolto}
-L'incontro è iniziato con una spiegazione dettagliata del codice sviluppato fino a quel momento, seguito da una visualizzazione dei risultati ottenuti, presentati con alcuni esempi.
-L'azienda considera il lavoro svolto finora ben fatto.
-
-\subsection{Apache Kafka vs RedPanda}
-Durante il primo sprint, abbiamo confrontato 2 strumenti da utilizzare nel progetto: \textit{Apache Kafka} (consigliato dall'azienda) e \textit{RedPanda} (alternativa da considerare).
-Abbiamo posto il dubbio sulla scelta, spiegando all'azienda i vantaggi dell'utilizzo di \textit{RedPanda}.
-Per consolidare meglio la scelta da prendere, la proponente ha chiesto di mandare una mail, con scritte le nostre opinioni sui 2 strumenti e i vantaggi e svantaggi di ciascuno.
-
+L'incontro inizia con una spiegazione del codice sviluppato fino al presente, seguito da una visualizzazione dei risultati ottenuti.
+L'azienda considera il lavoro svolto finora ben fatto. In particolare, è stata apprezzata l'integrazione con Kafka e lo sviluppo del simulatore per un sensore aggiuntivo, entrambi ritenuti opzionali per questo sprint.
+\subsection{Apache Kafka vs Redpanda}
+Durante l'integrazione del codice simulatore di sensori con Kafka, è emersa un'ulteriore alternativa, non ancora valutata, rispetto \textit{Apache Kafka}: \textbf{\textit{Redpanda}}. Dopo un'attenta comparazione e analisi dei due strumenti, il team ha deciso di proporre all'azienda l'utilizzo di quest'ultimo. La prononente richiede di produrre un documento che illustri i vantaggi e gli svantaggi di entrambi gli strumenti, per poter valutare le due opzioni. Le conclusioni verranno discusse durante il prossimo SAL. 
 \subsection{Obiettivi secondo sprint}
-Per il primo sprint ci siamo preﬁssati i seguenti obiettivi:
+Per il secondo sprint sono stati definiti i seguenti obiettivi:
 \begin{itemize}
-	\item continuazione programma Python per la generazione dei dati di test;
-	\item consolidamento database;
-	\item migliorare persistenza su CLickHouse;
-	\item visualizzazione su Grafana di almeno un sensore;
-	\item continuo documentazione.
+	\item continuazione programma \textit{Python} per la generazione dei dati di test;
+	\item aggiungere alcune tabelle di aggregazione dati su \textit{ClickHouse};
+	\item visualizzazione su \textit{Grafana} di almeno un sensore;
+	\item continuazione della documentazione;
+	\item stesura \textit{Analisi dei Requisiti}.
 \end{itemize}
-
-\subsection{Consigli su suddivisione e turnazione ruoli}
-Durante il primo sprint, abbiamo adottato un sistema di rotazione dei ruoli ogni due settimane per ottenere una visione più chiara e completa delle attività svolte da ciascun membro del team. L'azienda ha sottolineato l'importanza del cambio di ruoli per consentire a tutti di svolgerli e acquisire nuove competenze.
-È stato evidenziato che, nonostante le differenze di livello tra i membri, è fondamentale alternare i ruoli. In particolare, si è posta un'attenzione speciale sul ruolo del programmatore, considerato cruciale per il successo del progetto.
-
+\newpage
 \subsection{Decisioni prese e conclusioni}
-Infine discutiamo la durata degli sprint, decidendo insieme all'azienda, che per ora teniamo una durata di 2 settimane, ma in futuro potrà essere modificata.
-La riunione si conclude dandoci appuntamento con l'azienda per il primo SAL ﬁssato in data 06 maggio, entro il quale dovremo presentare il lavoro svolto durante il secondo sprint secondo gli obiettivi preﬁssati.
-
+Discutiamo della durata degli sprint, concordando con l'azienda di mantenere una durata di 2 settimane, riservandoci la possibilità di modificarla in futuro.
+La riunione si conclude dandoci appuntamento per il prossimo SAL, ﬁssato in data 2024-05-06.
 \begin{table}[b]
 	\begin{tabular}{@{}p{.5in}p{4in}@{}}
 		Data:  & \hrulefill \\
