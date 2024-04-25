@@ -33,7 +33,8 @@ I requisiti possono avere le seguenti fonti:
 	\item \textbf{Interno}: requisiti individuati durante le riunioni interne e da coloro che hanno il ruolo di analista;
 	\item \textbf{Esterno}: requisiti aggiuntivi individuati in seguito a incontri con la proponente;
 	\item \textbf{Piano di Qualifica}: requisiti necessari per adeguare il prodotto agli standard di qualità definiti nel documento \textit{Piano di Qualifica}.
-	\item \textbf{Norme di Progetto}: requisiti necessari per adeguare il prodotto alle norme stabilite nel documento \textit{Norme di Progetto}.
+	\item \textbf{Norme di Progetto}: requisiti necessari per adeguare il prodotto alle norme stabilite nel documento \textit{Norme di Progetto};
+	\item \textbf{Caso d'uso}: requisiti individuati da uno o più casi d'uso, di cui si riporta il codice.
 \end{itemize}
 
 \subsubsection{Importanza dei requisiti}
@@ -50,7 +51,6 @@ I requisiti possono avere tre livelli di importanza:
 \begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
 	\hline
 	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                               \\\hline
-	\hline
 	\endfirsthead
 	\hline
 	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                               \\\hline
@@ -69,112 +69,107 @@ I requisiti possono avere tre livelli di importanza:
 	RF-11           & Obbligatorio        & Capitolato     & I sensori livello acqua rilevano il livello di acqua nella zona di installazione                                                                                                                                                                                                                                   \\\hline
 	RF-12           & Obbligatorio        & Capitolato     & I sensori che indicano interruzioni della fornitura di energia elettrica in una certa zona inviano un segnale binario, dove 0 indica la mancanza di corrente e 1 la presenza di corrente.                                                                                                                          \\\hline
 	RF-13           & Obbligatorio        & Capitolato     & I sensori di soglia rilevano lo stato di riempimento dei vari conferitori nelle isole ecologiche inviando un segnale binario, dove 0 indica che il conferitore è vuoto e 1 che è pieno.                                                                                                                            \\\hline
-	RF-14           & Obbligatorio        & Capitolato     & I dati provenienti dai sensori dovranno contenere i seguenti dati: id sensore, data, ora e valore.
-	RF-15           & Desiderabile        & Capitolato     & Sviluppo di altre componenti quali widget e grafici per la visualizzazione dei dati nelle dashboard.                                                                                                                                                                                                               \\\hline
+	RF-14           & Obbligatorio        & Capitolato     & I dati provenienti dai sensori dovranno contenere i seguenti dati: id sensore, data, ora e valore.                                                                                                                                                                                                                 \\\hline
+	RF-15           & Desiderabile        & Capitolato     & Sviluppo di componenti quali widget e grafici per la visualizzazione dei dati nelle dashboard.                                                                                                                                                                                                                     \\\hline
 	% TODO: aggiunta di requisiti interni obbligatori sulla visualizzazione delle dashboard, quali tipi di dashboard, grafici... per ciascuna categoria di sensori
 	% TODO: aggiunta di requisiti esterni desiderabili su quali tipi di notifiche inviare all'utente
 	% TODO: aggiunta di requisiti interni obbligatori su quali dati manda ciascun tipo sensore implementato e con quale unità di misura
 
 	\caption{Requisiti funzionali}
+	\label{table:1}
+\end{longtable}
+
+\subsection{Requisiti qualitativi}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                                                                              \\\hline
+	\endfirsthead
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                                                                              \\\hline
+	\endhead
+	RQ-16           & Obbligatorio        & Capitolato     & Sviluppo di test che dimostrino il corretto funzionamento dei servizi e delle funzionalità previste. Viene richiesta una copertura dell'80\% corredata di report. \\\hline
+	RQ-17           & Obbligatorio        & Capitolato     & Il progetto deve essere corredato di documentazione riguardo scelte implementative e progettuali effettuate e relative motivazioni.                               \\\hline
+	RQ-18           & Obbligatorio        & Capitolato     & Il progetto deve essere corredato di documentazione riguardo problemi aperti e eventuali soluzioni proposte da esplorare.                                         \\\hline
+	RQ-19           & Obbligatorio        & Capitolato     & Tutte le componenti del sistema devono essere testate con \textit{test end-to-end}.                                                                               \\\hline
+	\caption{Requisiti qualitativi}
 	\label{table:2}
 \end{longtable}
-% \subsection{Requisiti qualitativi}
-% \begin{table}[!h]
-%     \begin{center}
-%         \begin{tabular}{ |l |l |l |l| l| }
-%             \hline 
-%             \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-%                             &                     &                      &                &                    \\
-%             
-%             \hline
-%         \end{tabular}
-%     \end{center}
-%     \caption{Requisiti qualitativi}
-%     \label{tab:2}
-% \end{table}
-%
-% \subsection{Requisiti di vincolo}
-% \begin{table}[!h]
-%     \begin{center}
-%         \begin{tabular}{ |l |l |l |l| l| }
-%             \hline 
-%             \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-%                             &                     &                      &                &                    \\
-%             
-%             \hline
-%         \end{tabular}
-%     \end{center}
-%     \caption{Requisiti di vincolo}
-%     \label{tab:3}
-% \end{table}
-%
-% \subsection{Requisiti prestazionali}
-% \begin{table}[!h]
-%     \begin{center}
-%         \begin{tabular}{ |l |l |l |l| l| }
-%             \hline 
-%             \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-%                             &                     &                      &                &                    \\
-%             
-%             \hline
-%         \end{tabular}
-%     \end{center}
-%     \caption{Requisiti prestazionali}
-%     \label{tab:4}
-% \end{table}
-%
-% \subsection{Tracciamento}
-% \subsubsection{Requisito - Fonte}
-% \begin{table}[!h]
-%     \begin{center}
-%         \begin{tabular}{ |l |l | }
-%             \hline 
-%             \textbf{Requisito} & \textbf{Fonte}\\\hline
-%                                &               \\
-%             
-%             \hline
-%         \end{tabular}
-%     \end{center}
-%     \caption{Tracciamento requisito - fonte}
-%     \label{tab:5}
-% \end{table}
-%
-% \subsubsection{Fonte - Requisito}
-% \begin{table}[!h]
-%     \begin{center}
-%         \begin{tabular}{ |l |l |}
-%             \hline 
-%             \textbf{Fonte} & \textbf{Requisito}\\\hline
-%                                &               \\
-%             
-%             \hline
-%         \end{tabular}
-%     \end{center}
-%     \caption{Tracciamento fonte - requisito}
-%     \label{tab:6}
-% \end{table}
-%
-% \subsection{Riepilogo}
-% \begin{table}[!h]
-%     \begin{center}
-%         \begin{tabular}{ |l |l |l |l| l| }
-%             \hline 
-%             \textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Opzionali} & \textbf{Desiderabili} & \textbf{Totale}\\\hline
-%             Funzionali         &                     &                      &                &                    \\
-%             Di qualità         &                     &                      &                &                    \\
-%             Di vincolo         &                     &                      &                &                    \\
-%             Prestazionali      &                     &                      &                &                    \\\hline
-%             \textbf{Totale}           &                     &                      &                &                    \\
-%             \hline
-%         \end{tabular}
-%     \end{center}
-%     \caption{Riepilogo}
-%     \label{tab:7}
-% \end{table}
+
+\subsection{Requisiti di vincolo}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                    \\\hline
+	\endfirsthead
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                    \\\hline
+	\endhead
+	RQ-20           & Obbligatorio        & Capitolato     & Deve essere implementato almeno un simulatore di dati.                                                  \\\hline
+	RQ-21           & Desiderabile        & Capitolato     & Devono essere implementati più simulatori di dati.                                                      \\\hline
+	RQ-22           & Obbligatorio        & Capitolato     & I simulatori devono produrre dei dati verosimili.                                                       \\\hline
+	RQ-23           & Obbligatorio        & Capitolato     & Il simulatore di dati deve pubblicare messaggi in una piattaforma di \textit{data streaming}.           \\\hline
+	RQ-23           & Obbligatorio        & Capitolato     & La piattaforma di \textit{data streaming} deve essere integrata con un un database OLAP.                \\\hline
+	RQ-24           & Obbligatorio        & Capitolato     & Per ciascuna tipologia di sensore dev'essere sviluppata almeno una dashboard.                           \\\hline
+	RQ-25           & Opzionale           & Capitolato     & Previsione di dati futuri basati sui dati storici.                                                      \\\hline
+	RQ-26           & Desiderabile        & Capitolato     & Deve esistere una dashboard per la visualizzazione della posizione geografica dei sensori su una mappa. \\\hline
+	RQ-27           & Opzionale           & Capitolato     & Un sistema di notifiche che allerti l'utente in caso di superamento di soglie prestabilite.             \\\hline
+	\caption{Requisiti di vincolo}
+	\label{table:3}
+\end{longtable}
 
 
+\subsection{Tracciamento}
+\subsubsection{Requisito - Fonte}
+% comando bash per generare contenuto tabella:
+% cat requisiti.tex | awk -F '&' '/R\w\-[[:digit:]]+.*&.*&.*&.*/ {print $1 "&" $3 "\\\\\\hline"}'
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|}
+	\hline
+	\textbf{Requisito} & \textbf{Fonte} \\\hline
+	\endfirsthead
+	\textbf{Requisito} & \textbf{Fonte} \\\hline
+	\endhead
+	RF-1               & Capitolato     \\\hline
+	RF-2               & Capitolato     \\\hline
+	RF-3               & Capitolato     \\\hline
+	RF-4               & Capitolato     \\\hline
+	RF-5               & Capitolato     \\\hline
+	RF-6               & Capitolato     \\\hline
+	RF-7               & Capitolato     \\\hline
+	RF-8               & Capitolato     \\\hline
+	RF-9               & Capitolato     \\\hline
+	RF-10              & Capitolato     \\\hline
+	RF-11              & Capitolato     \\\hline
+	RF-12              & Capitolato     \\\hline
+	RF-13              & Capitolato     \\\hline
+	RF-14              & Capitolato     \\\hline
+	RF-15              & Capitolato     \\\hline
+	RQ-16              & Capitolato     \\\hline
+	RQ-17              & Capitolato     \\\hline
+	RQ-18              & Capitolato     \\\hline
+	RQ-19              & Capitolato     \\\hline
+	RQ-20              & Capitolato     \\\hline
+	RQ-21              & Capitolato     \\\hline
+	RQ-22              & Capitolato     \\\hline
+	RQ-23              & Capitolato     \\\hline
+	RQ-23              & Capitolato     \\\hline
+	RQ-24              & Capitolato     \\\hline
+	RQ-25              & Capitolato     \\\hline
+	RQ-26              & Capitolato     \\\hline
+	RQ-27              & Capitolato     \\\hline
+	\caption{Tracciamento requisito - fonte}
+	\label{table:4}
+\end{longtable}
 
-
+\subsection{Riepilogo}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.2\textwidth}|}
+	\hline
+	\textbf{Tipologia} & \textbf{Obbligatorio} & \textbf{Desiderabile} & \textbf{Opzionale} & \textbf{Totale} \\\hline
+	\endfirsthead
+	\textbf{Tipologia} & \textbf{Obbligatorio} & \textbf{Desiderabile} & \textbf{Opzionale} & \textbf{Totale} \\\hline
+	\endhead
+	Funzionali         & 14                    & 1                     & 0                  & 15              \\\hline
+	Qualitativi        & 4                     & 0                     & 0                  & 4               \\\hline
+	Di vincolo         & 5                     & 2                     & 2                  & 9               \\\hline
+	\caption{Riepilogo}
+	\label{table:5}
+\end{longtable}
 
 
 

@@ -4,13 +4,19 @@
 \input{packages}
 
 \linespread{1.2}
-\captionsetup[table]{labelformat=empty}
+\captionsetup[table]{name=Tabella}
 \geometry{headsep=1.5cm}
 
 \renewcommand{\contentsname}{Indice}
 \renewcommand\familydefault{\sfdefault}
 
-    \let\oldthepage\thepage
+\renewcommand{\listtablename}{Indice delle tabelle}%imposto il nome della lista tabelle
+\renewcommand\familydefault{\sfdefault}
+
+\renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
 \renewcommand{\thepage}{\sffamily\oldthepage}
 
 \begin{document}
@@ -21,23 +27,29 @@
 
 \include{header}
 
+\captionsetup[table]{list=no}
 \begin{table}[!h]
-	\caption{Versioni}
 	\footnotesize
 	\begin{center}
+		Versioni\\
+		\vspace{0.5cm}
 		\begin{tabular}{ c c c c p{6.1cm} }
 			\hline                                                                         \\[-2ex]
 			Ver. & Data       & Redattore     & Verificatore & Descrizione                 \\
 			\\[-2ex] \hline \\[-1.5ex]
+			0.2  & 2024-04-24 & Elena Ferro   &              & Aggiunta sezione requisiti  \\
 			0.1  & 2024-03-08 & Matteo Tiozzo &              & Stesura struttura documento \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
 \end{table}
+\captionsetup[table]{list=yes}
 
 \newpage
 
 \tableofcontents
+\listoftables
+% \listoffigures
 
 \newpage
 \input{introduzione.tex}
@@ -52,4 +64,8 @@
 \input{requisiti.tex}
 
 \end{document}
+
+
+
+
 
