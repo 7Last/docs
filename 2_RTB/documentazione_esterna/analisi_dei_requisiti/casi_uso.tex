@@ -1,12 +1,12 @@
 \section{Casi d'uso}
 \subsection{Introduzione}
 In questa sezione del documento vengono analizzati nel dettaglio i casi d'uso individuati per il sistema.
-nel corso dell'analisi del capitolato e dei colloqui con la proponente.
+nel corso dell'analisi del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#capitolato}{capitolato\textsubscript{G}} e dei colloqui con la proponente.
 
 \subsection{Struttura dei casi d'uso}
 In tutto il documento ci si riferirà ai casi d'uso utilizzando la sigla \texttt{UC} seguita dal rispettivo codice nella forma
 \begin{center}
-	\textbf{UC[identificativo\_caso\_principale].[identificativo\_sotto\_caso]}
+	\textbf{UC-[identificativo\_caso\_principale].[identificativo\_sotto\_caso]}
 \end{center}
 
 il quale permette di utilizzarlo come riferimento in questo e altri documenti.\\
@@ -18,6 +18,7 @@ Per ciascun caso d'uso vengono definiti i seguenti elementi:
 	\item \textbf{Postcondizioni}: le condizioni che devono essere verificate al termine dell'esecuzione del caso
 	\item \textbf{Scenario principale}: la sequenza di passi che descrive il comportamento del sistema durante
 	      l'esecuzione del caso d'uso;
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#user-story}{\textbf{User story}\textsubscript{G}} (opzionale): una descrizione testuale del caso d'uso;
 	\item \textbf{Sotto-scenari} (opzionale): eventuali scenari alternativi che possono verificarsi durante l'esecuzione del
 	      caso d'uso.
 \end{itemize}
@@ -26,14 +27,113 @@ Per ciascun caso d'uso vengono definiti i seguenti elementi:
 \subsection{Attori}
 I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
-	\item Impiegati presso \textbf{autorità locali}: essi possono accedere al sistema per visualizzare i dati di
+	\item Impiegati presso \textbf{autorità locali}: essi possono accedere al sistema per visualizzare i dati
 	      monitoraggio della \textit{Smart City}.
 	\item \textbf{Sensori}: sorgente di dati con un determinato dominio di interesse che effettua misurazioni
 	      e trasmette i dati al sistema.
 \end{itemize}
 
 \subsection{Elenco dei casi d'uso}
+\subsubsection{UC-1: Visualizzazione dashboard}
+\subsubsubsection{UC-1.1: Visualizzazione dashboard per tipologia di sensore}
+\subsubsubsection{UC-1.2: Visualizzazione mappa sensori}
+\subsubsubsection{UC-1.3: Visualizzazione lista sensori}
 
+\subsubsection{UC-2: Visualizzazione dati atmosferici}
+\subsubsubsection{UC-2.1: Visualizzazione dati temperatura}
+% time series
+% tempo reale
+% media
+% massima
+% minima
+\subsubsubsection{UC-2.2: Visualizzazione dati umidità}
+% time series
+% tempo reale
+% media
+% massima
+% minima
+\subsubsubsection{UC-2.3: Visualizzazione dati pressione}
+% time series
+% tempo reale
+% media
+% massima
+% minima
+\subsubsubsection{UC-2.4: Visualizzazione dati vento}
+% time series velocità
+% time series direzione
+% tempo reale
+% massima velocità
+% direzione
+\subsubsubsection{UC-2.4: Visualizzazione dati precipitazioni}
+% time series
+% tempo reale
+% quantità totale caduta
+% quantità media
+\subsubsubsection{UC-2.4: Visualizzazione dati polveri sottili}
+% time series
+% tempo reale
+% giorno con maggiore concentrazione
+% giorno con minore concentrazione
+% media giornaliera
+
+\subsubsection{UC-3: Visualizzazione dati urbani}
+\subsubsubsection{UC-3.1: Visualizzazione dati traffico}
+% time series (ultimo giorno)
+
+\subsubsubsection{UC-3.2: Visualizzazione dati lavori in corso}
+% attività in corso
+
+\subsubsubsection{UC-3.3: Visualizzazione dati incidenti}
+% n incidenti nell'ultimo mese
+% n incidenti nell'ultimo anno
+
+\subsubsubsection{UC-3.4: Visualizzazione dati colonnine di ricarica}
+% dati guasti
+% mappa con colonnine per stato
+% n colonnine per stato
+
+\subsubsubsection{UC-3.5: Visualizzazione dati isole ecologiche}
+% mappa con isole per stato
+% n isole per stato (piene, vuote, mezzo piene)
+
+\subsubsubsection{UC-3.6: Visualizzazione dati parcheggi}
+% mappe parcheggi per stato
+% n parcheggi per stato 
+
+\subsubsubsection{UC-3.7: Visualizzazione dati livello di acqua}
+% time series
+
+\subsubsection{UC-4: Visualizzazione allerte}
+
+\subsubsection{UC-5: Visualizzazione con filtri}
+
+\subsubsection{UC-6: Visualizzazione errori}
+
+\subsubsection{UC-7: Trasmissione dati temperatura}
+
+\subsubsection{UC-8: Trasmissione dati umidità}
+
+\subsubsection{UC-9: Trasmissione dati pressione}
+
+\subsubsection{UC-10: Trasmissione dati vento}
+
+\subsubsection{UC-11: Trasmissione dati precipitazioni}
+
+\subsubsection{UC-12: Trasmissione dati polveri sottili}
+
+\subsubsection{UC-13: Trasmissione dati traffico}
+
+\subsubsection{UC-14: Trasmissione dati lavori in corso}
+
+\subsubsection{UC-15: Trasmissione dati incidenti}
+
+\subsubsection{UC-16: Trasmissione dati colonnine di ricarica}
+
+\subsubsection{UC-17: Trasmissione dati isole ecologiche}
+
+\subsubsection{UC-18: Trasmissione dati parcheggi}
+
+\subsubsection{UC-19: Trasmissione dati livello di acqua}
 
 
 
