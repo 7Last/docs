@@ -1,0 +1,4 @@
+title,actor,uc_code,uc_desc
+SyncCity,Autorità Locale,UC-1,Visualizzazione dashboard generale
+SyncCity,Autorità Locale,UC-2,Visualizzazione dashboard dati atmosferici
+SyncCity,Autorità Locale,UC-3,Visualizzazione dashboard dati urbani
