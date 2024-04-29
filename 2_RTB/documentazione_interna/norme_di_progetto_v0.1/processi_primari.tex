@@ -168,22 +168,49 @@ Un diagramma dei casi d'uso fornisce una panoramica visuale delle principali int
 Di seguito sono elencati i principali componenti di un diagramma dei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attori}: Gli attori sono rappresentati come entità esterne al sistema con cui interagisce e possono includere utenti umani, altri software o componenti esterni. Sono simboleggiati come "stickman" al di fuori del rettangolo che delimita il sistema.
+	\begin{center}
+		\includegraphics*[width=4cm]{../../../images/norme_di_progetto/attore.png}
+	\end{center} \newpage
 	\item \textbf{Casi d'uso}: I casi d'uso sono rappresentati come ovali all'interno del rettangolo che delimita il sistema e descrivono le funzionalità offerte dal sistema dal punto di vista dell'utente. Ogni caso d'uso è associato a uno o più attori e descrive uno scenario specifico in cui l'utente interagisce con il sistema per raggiungere un obiettivo specifico.
+	\begin{center}
+		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/casoDiUso.png}
+	\end{center}
 	\item \textbf{Sottocasi d'uso}: I sottocasi d'uso sono casi d'uso che rappresentano scenari specifici all'interno di un caso d'uso principale. Sono rappresentati come ovali all'interno del caso d'uso principale e descrivono azioni o funzionalità aggiuntive necessarie per completare il caso d'uso principale.
+	\begin{center}
+		\includegraphics*[width=17cm]{../../../images/norme_di_progetto/sottocasiDiUso.png}
+	\end{center} \newpage
 	\item \textbf{Sistema}: Il sistema è rappresentato come un rettangolo che delimita i casi d'uso e gli attori. Questo simbolo rappresenta il sistema software che offre le funzionalità descritte dai casi d'uso.
+	\begin{center}
+		\includegraphics*[width=8cm]{../../../images/norme_di_progetto/sistema.png}
+	\end{center}
 	\item \textbf{Relazioni tra Attori e Casi d'Uso}
 	\begin{itemize}
 		\item \textbf{Associazione}: Una linea tratteggiata tra un attore e un caso d'uso indica un'associazione tra l'attore e il caso d'uso, che indica che l'attore è coinvolto nel caso d'uso.
-	\end{itemize}
+		\begin{center}
+			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/associazione.png}
+		\end{center}
+	\end{itemize} \newpage
 	\item \textbf{Relazioni tra Attori}
 	\begin{itemize}
 		\item \textbf{Generalizzazione}: Una freccia con una linea continua tra due attori indica una relazione di generalizzazione, che indica che un attore è un tipo specializzato di un altro attore.
-	\end{itemize} 
+		\begin{center}
+			\includegraphics*[width=2cm]{../../../images/norme_di_progetto/generalizzazioneTraAttori.png}
+		\end{center}
+	\end{itemize} \newpage
 	\item \textbf{Relazioni tra Casi d'Uso}
 	\begin{itemize}
 		\item \textbf{Inclusione}: La relazione di inclusione indica che un caso d'uso (chiamato "includente") incorpora l'esecuzione di un altro caso d'uso (detto "incluso"). In pratica, quando un attore interagisce con il caso d'uso includente, il caso d'uso incluso viene attivato come parte integrante del primo. Questo meccanismo è utile per favorire il riutilizzo di funzionalità e evitare la duplicazione di logica in diversi casi d'uso. La relazione di inclusione è simboleggiata da una freccia tratteggiata che collega il caso d'uso incluso al caso d'uso includente.
+		\begin{center}
+			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/inclusione.png}
+		\end{center} \newpage
 		\item \textbf{Estensione}: La relazione di estensione indica che un caso d'uso (chiamato "estendente") può estendere il comportamento di un altro caso d'uso (detto "esteso") in determinate circostanze. In pratica, il caso d'uso estendente può aggiungere funzionalità opzionali o alternative al caso d'uso esteso, senza modificarne il comportamento principale. La relazione di estensione è simboleggiata da una freccia tratteggiata che collega il caso d'uso esteso al caso d'uso estendente.
+		\begin{center}
+			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/estensione.png}
+		\end{center} \newpage
 		\item \textbf{Generalizzazione casi d'uso}: Una freccia con una linea continua tra due casi d'uso indica una relazione di generalizzazione, che indica che un caso d'uso è un tipo specializzato di un altro caso d'uso.
+		\begin{center}
+			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/generalizzazioneCasiDiUso.png}
+		\end{center}
 	\end{itemize}
 \end{itemize}
 
@@ -234,7 +261,7 @@ Nell'analisi dei requisiti, le metriche sono strumenti essenziali per valutare, 
     2M-CROP & Copertura dei Requisiti Opzionali & \hyperlink{subsection.6.2}{2M-CROP} \\
     \hline
     \end{tabular}
-    \caption{Metriche per l'analisi dei requisiti}
+    \caption{Metriche per l'analisi dei requisiti (TEST)}
     \label{tab:2}
 \end{table}
 
@@ -339,17 +366,37 @@ Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
 	\item \textbf{I metodi astratti} sono scritti in corsivo.
 	\item L'\textbf{assenza di attributi o metodi} in una classe determina l'assenza delle relative sezioni nel diagramma.
 \end{itemize}
+\newpage
 \textbf{Relazioni tra le classi}\\
 I diagrammi delle classi possono includere diverse relazioni tra le classi, che rappresentano le interazioni e le dipendenze tra le varie componenti del sistema. Le principali relazioni tra le classi sono:
 \begin{itemize}
 	\item \textbf{Associazione}: indica una relazione tra due classi, in cui un'istanza di una classe è collegata a un'istanza di un'altra classe. L'associazione è rappresentata da una linea che collega le due classi, con una freccia che indica la direzione dell'associazione e le molteplicità possono essere rappresentate con numeri messi agli estremi della freccia.
+	\begin{center}
+		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/associazioneClassi.png}
+	\end{center}
 	\item \textbf{Dipendenza}: indica una relazione in cui una classe dipende da un'altra classe, ad esempio se un metodo di una classe utilizza un'istanza di un'altra classe. La dipendenza è rappresentata da una linea tratteggiata che collega le due classi, con una freccia che indica la direzione della dipendenza.
+	\begin{center}
+		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/dipendenzaClassi.png}
+	\end{center}
+	\newpage
 	\item \textbf{Aggregazione}: indica una relazione in cui una classe è composta da una o più istanze di un'altra classe. L'aggregazione è rappresentata da una linea con un rombo vuoto che collega le due classi, con una freccia che indica la direzione dell'aggregazione.
+	\begin{center}
+		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/aggregazioneClassi.png}
+	\end{center}
 	\item \textbf{Composizione}: indica una relazione in cui una classe è composta da una o più istanze di un'altra classe, ma le istanze sono strettamente legate e non possono esistere indipendentemente dalla classe principale. La composizione è rappresentata da una linea con un rombo pieno che collega le due classi, con una freccia che indica la direzione della composizione.
+	\begin{center}
+		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/composizioneClassi.png}
+	\end{center}
 	\item \textbf{Generalizzazione}: indica una relazione in cui una classe è un tipo specializzato di un'altra classe. La generalizzazione è rappresentata da una linea con una freccia vuota che collega le due classi.
+	\begin{center}
+		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/generalizzazioneClassi.png}
+	\end{center}
+	\newpage
 	\item \textbf{Realizzazione}: indica una relazione in cui una classe implementa un'interfaccia o eredita da una classe astratta. La realizzazione è rappresentata da una linea che collega la classe all'interfaccia o alla classe astratta.
+	\begin{center}
+		\includegraphics*[width=8cm]{../../../images/norme_di_progetto/realizzazioneClassi.png}
+	\end{center}
 \end{itemize}
-
 \subsubsubsection{Design pattern}
 I design pattern rappresentano solide soluzioni a problemi ricorrenti di progettazione in determinati contesti, offrendo un approccio riutilizzabile che assicura la qualità e una rapida implementazione. Si adottano quando una soluzione ha dimostrato efficacia in un contesto specifico. Le guide dettagliate sull'applicazione dei pattern delineano il loro utilizzo ottimale, accompagnate da rappresentazioni grafiche, spiegazioni testuali della logica e descrizioni della loro utilità nell'architettura complessiva. Questa documentazione è essenziale per favorire una comprensione approfondita dell'integrazione dei design pattern nell'architettura generale e per prevenire errori di progettazione.
 
