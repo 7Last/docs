@@ -15,4 +15,4 @@
 **/*.glsdefs
 **/*.ist
 **/*.tn
-/.venv/*
+**/.venv/*

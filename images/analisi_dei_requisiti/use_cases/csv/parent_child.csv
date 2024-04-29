@@ -1,1 +1,30 @@
 title,actor,uc_parent_code,uc_parent_desc,uc_child_code,uc_child_desc
+
+Visualizzazione grafico time series per temperatura,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.1,Visualizzazione grafico time series per temperatura
+Visualizzazione panel temperatura in tempo reale,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.2,Visualizzazione panel temperature in tempo reale
+Visualizzazione panel temperatura media,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.3,Visualizzazione panel temperatura media
+Visualizzazione panel temperatura massima,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.4,Visualizzazione panel temperatura massima
+Visualizzazione panel temperatura minima,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.5,Visualizzazione panel temperatura minima
+
+Visualizzazione grafico time series per umidità,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.6,Visualizzazione grafico time series per umidità
+Visualizzazione panel umidità in tempo reale,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.7,Visualizzazione panel temperature in tempo reale
+Visualizzazione panel umidità media,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.8,Visualizzazione panel umidità media
+Visualizzazione panel umidità massima,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.9,Visualizzazione panel umidità massima
+Visualizzazione panel umidità minima,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.10,Visualizzazione panel umidità minima
+
+Visualizzazione grafico time series per pressione,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.11,Visualizzazione grafico time series per pressione
+Visualizzazione panel pressione in tempo reale,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.12,Visualizzazione panel pressione in tempo reale
+Visualizzazione panel pressione media,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.13,Visualizzazione panel pressione media
+Visualizzazione panel pressione massima,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.14,Visualizzazione panel pressione massima
+Visualizzazione panel pressione minima,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.15,Visualizzazione panel pressione minima
+
+Visualizzazione grafico time series per precipitazioni,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.16,Visualizzazione grafico time series per precipitazioni
+Visualizzazione panel quantità di precipitazioni in tempo reale,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.17,Visualizzazione panel quantità di precipitazioni in tempo reale
+Visualizzazione panel quantità totale di precipitazioni,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.18,Visualizzazione panel quantità totale di precipitazioni
+Visualizzazione panel quantità media di precipitazioni,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.19,Visualizzazione panel quantità media di precipitazioni
+
+Visualizzazione grafico time series per polveri sottili nell'aria,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.20,Visualizzazione grafico time series per polveri sottili nell'aria
+Visualizzazione panel quantità di polveri sottili nell'aria in tempo reale,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.21,Visualizzazione panel quantità di polveri sottili nell'aria in tempo reale
+Visualizzazione panel giorno con maggiore concentrazione di polveri sottili nell'aria,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.22,Visualizzazione panel giorno con maggiore concentrazione di polveri sottili nell'aria
+Visualizzazione panel giorno con minore concentrazione di polveri sottili nell'aria,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.23,Visualizzazione panel giorno con minore concentrazione di polveri sottili nell'aria
+Visualizzazione panel media di polveri sottili nell'aria,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.24,Visualizzazione panel media di polveri sottili nell'aria

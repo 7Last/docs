@@ -38,9 +38,9 @@ def main():
             os.remove(os.path.join(out_folder, f))
 
     out_filenames = {
-        'parent_child': ('uc_child_code', (500, 500)),
-        'extends': ('uc_code', (500, 400)),
-        'simple': ('uc_code', (500, 250)),
+        'parent_child': ('uc_child_code', (500, 180)),
+        'extends': ('uc_code', (500, 370)),
+        'simple': ('uc_code', (500, 230)),
     }
 
 
