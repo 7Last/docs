@@ -28,7 +28,17 @@ def parse_glossary():
 
 
 def search_tex_files():
-    exclude = ['glossario', '0_template', '1_candidatura', 'variables.tex', 'title.tex', 'header.tex', 'packages.tex', 'verbali_esterni', 'verbali_interni']
+    exclude = [
+        'glossario',
+        '0_template',
+        '1_candidatura',
+        'variables.tex',
+        'title.tex',
+        'header.tex',
+        'packages.tex',
+        'verbali_esterni',
+        'verbali_interni',
+        'analisi_kafka_redpanda']
     glossary = parse_glossary()
     for root, _, files in os.walk(root_folder):
         for file in files:
