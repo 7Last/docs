@@ -28,3 +28,25 @@ Visualizzazione panel quantità di polveri sottili nell'aria in tempo reale,Auto
 Visualizzazione panel giorno con maggiore concentrazione di polveri sottili nell'aria,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.22,Visualizzazione panel giorno con maggiore concentrazione di polveri sottili nell'aria
 Visualizzazione panel giorno con minore concentrazione di polveri sottili nell'aria,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.23,Visualizzazione panel giorno con minore concentrazione di polveri sottili nell'aria
 Visualizzazione panel media di polveri sottili nell'aria,Autorità locale,UC-2,Visualizzazione dashboard dati atmosferici,UC-2.24,Visualizzazione panel media di polveri sottili nell'aria
+
+Visualizzazione grafico time series per traffico giornaliero,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.1,Visualizzazione grafico time series per traffico giornaliero
+Visualizzazoine mappa interattiva traffico in tempo reale,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.2,Visualizzazoine mappa interattiva traffico in tempo reale
+
+Visualizzazione mappa interattiva lavori in corso,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.3,Visualizzazione mappa interattiva lavori in corso
+
+Visualizzazione grafico time series per incidenti,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.4,Visualizzazione grafico time series per incidenti
+Visualizzazione mappa interattiva incidenti in tempo reale,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.5,Visualizzazione mappa interattiva incidenti in tempo reale
+Visualizzazione panel incidenti nell'ultimo mese,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.6,Visualizzazione panel incidenti nell'ultimo mese
+Visualizzazione panel incidenti nell'ultimo anno,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.7,Visualizzazione panel incidenti nell'ultimo anno
+
+Visualizzazione mappa interattiva colonnine di ricarica con stato di funzionamento,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.8,Visualizzazione mappa interattiva colonnine di ricarica con stato di funzionamento
+Visualizzazione panel con conteggio colonnine guaste e funzionanti,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.9,Visualizzazione panel con conteggio colonnine guaste e funzionanti
+
+Visualizzazione mappa interattiva isole ecologiche con stato di riempimento,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.10,Visualizzazione mappa interattiva isole ecologiche con stato di riempimento
+Visualizzazione panel con conteggio isole piene,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.11,Visualizzazione panel con conteggio isole piene
+
+
+Visualizzazione mappa interattiva parcheggi con rispettivo stato di occupazione,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.12,Visualizzazione mappa interattiva parcheggi con rispettivo stato di occupazione
+Visualizzazione panel con conteggio parcheggi occupati e liberi,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.13,Visualizzazione panel con conteggio parcheggi occupati e liberi
+                                                                                 
+Visualizzazione grafico time series per livello di acqua,Autorità locale,UC-3,Visualizzazione dashboard dati atmosferici,UC-3.14,Visualizzazione grafico time series per livello di acqua

@@ -2,3 +2,18 @@ title,actor,uc_code,uc_desc
 SyncCity,Autorità Locale,UC-1,Visualizzazione dashboard generale
 SyncCity,Autorità Locale,UC-2,Visualizzazione dashboard dati atmosferici
 SyncCity,Autorità Locale,UC-3,Visualizzazione dashboard dati urbani
+SyncCity,Autorità Locale,UC-4,Visualizzazione misurazioni anomale
+SyncCity,Autorità Locale,UC-5,Visualizzazione con filtri
+SyncCity,Autorità Locale,UC-6,Visualizzazione messaggio assenza di dati
+SyncCity,Sensore,UC-7,Trasmissione dati temperatura
+SyncCity,Sensore,UC-8,Trasmissione dati umidità
+SyncCity,Sensore,UC-9,Trasmissione dati pressione
+SyncCity,Sensore,UC-10,Trasmissione dati precipitazioni
+SyncCity,Sensore,UC-11,Trasmissione dati polveri sottili
+SyncCity,Sensore,UC-12,Trasmissione dati traffico
+SyncCity,Sensore,UC-13,Trasmissione dati lavori in corso
+SyncCity,Sensore,UC-14,Trasmissione dati incidenti
+SyncCity,Sensore,UC-15,Trasmissione dati colonnine di ricarica
+SyncCity,Sensore,UC-16,Trasmissione dati isole ecologiche
+SyncCity,Sensore,UC-17,Trasmissione dati parcheggi
+SyncCity,Sensore,UC-18,Trasmissione dati livello di acqua
