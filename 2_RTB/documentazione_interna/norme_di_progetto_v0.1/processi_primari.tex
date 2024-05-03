@@ -170,24 +170,30 @@ Di seguito sono elencati i principali componenti di un diagramma dei casi d'uso:
 	\item \textbf{Attori}: Gli attori sono rappresentati come entità esterne al sistema con cui interagisce e possono includere utenti umani, altri software o componenti esterni. Sono simboleggiati come "stickman" al di fuori del rettangolo che delimita il sistema.
 	\begin{center}
 		\includegraphics*[width=4cm]{../../../images/norme_di_progetto/attore.png}
+		\captionof{figure}{Diagramma dei casi d'uso - Attore}
 	\end{center} \newpage
 	\item \textbf{Casi d'uso}: I casi d'uso sono rappresentati come ovali all'interno del rettangolo che delimita il sistema e descrivono le funzionalità offerte dal sistema dal punto di vista dell'utente. Ogni caso d'uso è associato a uno o più attori e descrive uno scenario specifico in cui l'utente interagisce con il sistema per raggiungere un obiettivo specifico.
 	\begin{center}
 		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/casoDiUso.png}
+		\captionof{figure}{Diagramma dei casi d'uso - Caso d'uso}
 	\end{center}
+	\newpage
 	\item \textbf{Sottocasi d'uso}: I sottocasi d'uso sono casi d'uso che rappresentano scenari specifici all'interno di un caso d'uso principale. Sono rappresentati come ovali all'interno del caso d'uso principale e descrivono azioni o funzionalità aggiuntive necessarie per completare il caso d'uso principale.
 	\begin{center}
 		\includegraphics*[width=17cm]{../../../images/norme_di_progetto/sottocasiDiUso.png}
+		\captionof{figure}{Diagramma dei casi d'uso - Sottocaso d'uso}
 	\end{center} \newpage
 	\item \textbf{Sistema}: Il sistema è rappresentato come un rettangolo che delimita i casi d'uso e gli attori. Questo simbolo rappresenta il sistema software che offre le funzionalità descritte dai casi d'uso.
 	\begin{center}
 		\includegraphics*[width=8cm]{../../../images/norme_di_progetto/sistema.png}
+		\captionof{figure}{Diagramma dei casi d'uso - Sistema}
 	\end{center}
 	\item \textbf{Relazioni tra Attori e Casi d'Uso}
 	\begin{itemize}
 		\item \textbf{Associazione}: Una linea tratteggiata tra un attore e un caso d'uso indica un'associazione tra l'attore e il caso d'uso, che indica che l'attore è coinvolto nel caso d'uso.
 		\begin{center}
 			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/associazione.png}
+			\captionof{figure}{Diagramma dei casi d'uso - Associazione}
 		\end{center}
 	\end{itemize} \newpage
 	\item \textbf{Relazioni tra Attori}
@@ -195,25 +201,31 @@ Di seguito sono elencati i principali componenti di un diagramma dei casi d'uso:
 		\item \textbf{Generalizzazione}: Una freccia con una linea continua tra due attori indica una relazione di generalizzazione, che indica che un attore è un tipo specializzato di un altro attore.
 		\begin{center}
 			\includegraphics*[width=2cm]{../../../images/norme_di_progetto/generalizzazioneTraAttori.png}
+			\captionof{figure}{Diagramma dei casi d'uso - Generalizzazione tra attori}
 		\end{center}
-	\end{itemize} \newpage
+	\end{itemize} 
+	\newpage
 	\item \textbf{Relazioni tra Casi d'Uso}
 	\begin{itemize}
 		\item \textbf{Inclusione}: La relazione di inclusione indica che un caso d'uso (chiamato "includente") incorpora l'esecuzione di un altro caso d'uso (detto "incluso"). In pratica, quando un attore interagisce con il caso d'uso includente, il caso d'uso incluso viene attivato come parte integrante del primo. Questo meccanismo è utile per favorire il riutilizzo di funzionalità e evitare la duplicazione di logica in diversi casi d'uso. La relazione di inclusione è simboleggiata da una freccia tratteggiata che collega il caso d'uso incluso al caso d'uso includente.
 		\begin{center}
 			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/inclusione.png}
+			\captionof{figure}{Diagramma dei casi d'uso - Inclusione}
 		\end{center} \newpage
 		\item \textbf{Estensione}: La relazione di estensione indica che un caso d'uso (chiamato "estendente") può estendere il comportamento di un altro caso d'uso (detto "esteso") in determinate circostanze. In pratica, il caso d'uso estendente può aggiungere funzionalità opzionali o alternative al caso d'uso esteso, senza modificarne il comportamento principale. La relazione di estensione è simboleggiata da una freccia tratteggiata che collega il caso d'uso esteso al caso d'uso estendente.
 		\begin{center}
 			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/estensione.png}
+			\captionof{figure}{Diagramma dei casi d'uso - Estensione}
 		\end{center} \newpage
 		\item \textbf{Generalizzazione casi d'uso}: Una freccia con una linea continua tra due casi d'uso indica una relazione di generalizzazione, che indica che un caso d'uso è un tipo specializzato di un altro caso d'uso.
 		\begin{center}
 			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/generalizzazioneCasiDiUso.png}
+			\captionof{figure}{Diagramma dei casi d'uso - Generalizzazione tra casi d'uso}
 		\end{center}
 	\end{itemize}
 \end{itemize}
 
+\newpage
 \subsubsubsection{Requisiti}
 I requisiti di un software sono dettagliate specifiche documentate che delineano le funzionalità, le prestazioni, i vincoli e altri aspetti critici che il software deve soddisfare. Questi requisiti sono fondamentali per guidare lo sviluppo, il testing e la valutazione del prodotto, garantendo che risponda alle esigenze degli utenti e agli obiettivi del progetto. Essi comprendono sia i \textbf{requisiti funzionali}, che descrivono le funzionalità necessarie, sia i \textbf{requisiti non funzionali}, che definiscono criteri di prestazione, qualità, sicurezza e vincoli del sistema.\\
 Una definizione precisa dei requisiti è essenziale: devono essere chiari e rispondere completamente alle aspettative del cliente o del proponente.
@@ -250,7 +262,7 @@ Ogni requisito è costituito da:
 \subsubsubsection{Metriche}
 Nell'analisi dei requisiti, le metriche sono strumenti essenziali per valutare, misurare e gestire diversi aspetti dei requisiti di un sistema o di un progetto. Grazie a queste metriche, è possibile garantire che i requisiti siano esaustivi, precisi, coerenti e comprensibili.
 \\
-\begin{table}[!h]
+\begin{table}[!h] %? Il riferimento da mettere direttamente sulla colonna "Metrica"?
     \centering
     \begin{tabular}{|c|c|c|}
     \hline
@@ -366,35 +378,40 @@ Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
 	\item \textbf{I metodi astratti} sono scritti in corsivo.
 	\item L'\textbf{assenza di attributi o metodi} in una classe determina l'assenza delle relative sezioni nel diagramma.
 \end{itemize}
-\newpage
 \textbf{Relazioni tra le classi}\\
 I diagrammi delle classi possono includere diverse relazioni tra le classi, che rappresentano le interazioni e le dipendenze tra le varie componenti del sistema. Le principali relazioni tra le classi sono:
 \begin{itemize}
 	\item \textbf{Associazione}: indica una relazione tra due classi, in cui un'istanza di una classe è collegata a un'istanza di un'altra classe. L'associazione è rappresentata da una linea che collega le due classi, con una freccia che indica la direzione dell'associazione e le molteplicità possono essere rappresentate con numeri messi agli estremi della freccia.
 	\begin{center}
 		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/associazioneClassi.png}
+		\captionof{figure}{Diagramma delle classi - Associazione}
 	\end{center}
+	\newpage
 	\item \textbf{Dipendenza}: indica una relazione in cui una classe dipende da un'altra classe, ad esempio se un metodo di una classe utilizza un'istanza di un'altra classe. La dipendenza è rappresentata da una linea tratteggiata che collega le due classi, con una freccia che indica la direzione della dipendenza.
 	\begin{center}
 		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/dipendenzaClassi.png}
+		\captionof{figure}{Diagramma delle classi - Dipendenza}
 	\end{center}
-	\newpage
 	\item \textbf{Aggregazione}: indica una relazione in cui una classe è composta da una o più istanze di un'altra classe. L'aggregazione è rappresentata da una linea con un rombo vuoto che collega le due classi, con una freccia che indica la direzione dell'aggregazione.
 	\begin{center}
 		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/aggregazioneClassi.png}
+		\captionof{figure}{Diagramma delle classi - Aggregazione}
 	\end{center}
 	\item \textbf{Composizione}: indica una relazione in cui una classe è composta da una o più istanze di un'altra classe, ma le istanze sono strettamente legate e non possono esistere indipendentemente dalla classe principale. La composizione è rappresentata da una linea con un rombo pieno che collega le due classi, con una freccia che indica la direzione della composizione.
 	\begin{center}
 		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/composizioneClassi.png}
+		\captionof{figure}{Diagramma delle classi - Composizione}
 	\end{center}
 	\item \textbf{Generalizzazione}: indica una relazione in cui una classe è un tipo specializzato di un'altra classe. La generalizzazione è rappresentata da una linea con una freccia vuota che collega le due classi.
 	\begin{center}
 		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/generalizzazioneClassi.png}
+		\captionof{figure}{Diagramma delle classi - Generalizzazione}
 	\end{center}
 	\newpage
 	\item \textbf{Realizzazione}: indica una relazione in cui una classe implementa un'interfaccia o eredita da una classe astratta. La realizzazione è rappresentata da una linea che collega la classe all'interfaccia o alla classe astratta.
 	\begin{center}
 		\includegraphics*[width=8cm]{../../../images/norme_di_progetto/realizzazioneClassi.png}
+		\captionof{figure}{Diagramma delle classi - Realizzazione}
 	\end{center}
 \end{itemize}
 \subsubsubsection{Design pattern}
@@ -403,8 +420,9 @@ I design pattern rappresentano solide soluzioni a problemi ricorrenti di progett
 \subsubsubsection{Test}
 Nel processo di sviluppo, il testing è cruciale per garantire la qualità del prodotto finale. Durante questa fase, vengono stabiliti i requisiti di testing, definiti i casi di test e i criteri di accettazione, che servono da strumenti per valutare il software.\\ L'obiettivo principale è individuare e risolvere eventuali problemi o errori nel software prima del rilascio del prodotto finale, assicurando che soddisfi le specifiche e le aspettative del cliente. I progettisti hanno il pieno controllo su questa attività, incluso il definire i test da eseguire. Nella sezione 3.2.4 (\textbf{TODO: controllare se è il numero giusto}) sono fornite descrizioni dettagliate delle varie tipologie di test e della terminologia associata, offrendo ulteriore chiarezza su questa fase critica del processo di sviluppo del software.
 
-\subsubsubsection{Metriche}
-\textbf{TODO: inserire metriche}
+%\subsubsubsection{Metriche} %? Da saltare?
+%? Quelle mancanti che hanno messo i ByteOps sono da inserire?
+%\textbf{TODO: inserire metriche}
 
 \subsubsubsection{Strumenti}
 \textbf{StarUML} è un'applicazione software impiegata dal team per creare i diagrammi dei casi d'uso.
@@ -437,6 +455,8 @@ Le seguenti norme sono state formalizzate in questa maniera:
 \textbf{Visual Studio Code} è l'editor di codice utilizzato dal team per scrivere e modificare il codice sorgente.
 
 \subsubsubsection{Metriche}
+%? Aggiungere la "variazione dei requisiti"?
+%? Aggiungere la "Implementazione delle funzionalità"?
 \textbf{TODO: inserire metriche}
 
 \subsubsection{Configurazione dell'ambiente di esecuzione}
