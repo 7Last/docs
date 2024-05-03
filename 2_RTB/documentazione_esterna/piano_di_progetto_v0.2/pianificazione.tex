@@ -272,15 +272,15 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
             \hline
             \textbf{} & \textbf{Am} & \textbf{Re} & \textbf{Ve} &\textbf{An} & \textbf{Pg} & \textbf{Pj} & \textbf{Totale per persona} \\
             \hline 
-            Baldo       & 6 & - & - & - & - & - & 6   \\ 
-            Benetazzo   & - & - & 8 & - & - & - & 8   \\ 
-            Ferro       & - & - & - & 9 & - & - & 9   \\ 
-            Malgarise   & - & 7 & - & - & - & - & 7   \\ 
-            Occhinegro  & - & - & - & - & 9 & - & 9   \\ 
+            Baldo       & 5 & - & - & - & - & - & 5   \\ 
+            Benetazzo   & - & - & 7 & - & - & - & 7   \\ 
+            Ferro       & - & - & - & 10 & - & - & 10   \\ 
+            Malgarise   & - & 6 & - & - & - & - & 6   \\ 
+            Occhinegro  & - & - & - & - & 10 & - & 10   \\ 
             Seganfreddo & - & - & - & - & - & 7 & 7   \\
-            Tiozzo      & - & - & - & - & 9 & - & 9   \\ 
+            Tiozzo      & - & - & - & - & 10 & - & 10   \\ 
             \hline
-            Totale per ruolo & 6 & 7 & 8 & 9 & 18 & 7 & - \\
+            Totale per ruolo & 5 & 6 & 7 & 10 & 20 & 7 & - \\
             \hline
         \end{tabular}
         \caption{Preventivo orario per ruolo di ciascun membro del team durante il secondo sprint}
@@ -311,11 +311,11 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
         },
         xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
         ]  
-        \addplot[ver, fill=ver, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 8) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
-        \addplot[an, fill=an, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 9) (Baldo, 0)};
-        \addplot[amm, fill=amm, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 0) (Baldo, 6)};
-        \addplot[resp, fill=resp, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 7) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
-        \addplot[pg, fill=pg, mark=none] coordinates {(Occhinegro, 9) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 9) (Ferro, 0) (Baldo, 0)};
+        \addplot[ver, fill=ver, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 7) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
+        \addplot[an, fill=an, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 10) (Baldo, 0)};
+        \addplot[amm, fill=amm, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 0) (Baldo, 5)};
+        \addplot[resp, fill=resp, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 6) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
+        \addplot[pg, fill=pg, mark=none] coordinates {(Occhinegro, 10) (Malgarise, 0) (Seganfreddo, 0) (Benetazzo, 0) (Tiozzo, 10) (Ferro, 0) (Baldo, 0)};
         \addplot[pj, fill=pj, mark=none] coordinates {(Occhinegro, 0) (Malgarise, 0) (Seganfreddo, 7) (Benetazzo, 0) (Tiozzo, 0) (Ferro, 0) (Baldo, 0)};
     
         \legend{Ve, An, Am, Re, Pg, Pj}
@@ -333,11 +333,11 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
             #1
             \fi}
             \pie[rotate=90, text=legend]{
-                14.5/Verificatore,
-                16.4/Analista,
-                10.9/Amministratore,
-                12.7/Responsabile,
-                32.7/Programmatore,
+                12.7/Verificatore,
+                18.2/Analista,
+                9.1/Amministratore,
+                10.9/Responsabile,
+                36.4/Programmatore,
                 12.7/Progettista
             }
         \end{tikzpicture}
@@ -359,15 +359,15 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
             \hline
             \textbf{} & \textbf{Am} & \textbf{Re} & \textbf{Ve} &\textbf{An} & \textbf{Pg} & \textbf{Pj} & \textbf{Totale per persona} \\
             \hline 
-            Baldo       & 6 & - & - & - & - & - & 6   \\ 
-            Benetazzo   & - & - & 8 & - & - & - & 8   \\ 
-            Ferro       & - & - & - & 8 & - & - & 8   \\ 
-            Malgarise   & - & 7 & - & - & - & - & 7   \\ 
-            Occhinegro  & - & - & - & - & 9.5 & - & 9.5   \\ 
+            Baldo       & 5 & - & - & - & - & - & 5   \\ 
+            Benetazzo   & - & - & 6 & - & - & - & 6   \\ 
+            Ferro       & - & - & - & 10 & - & - & 10   \\ 
+            Malgarise   & - & 6 & - & - & - & - & 6   \\ 
+            Occhinegro  & - & - & - & - & 9 & - & 9   \\ 
             Seganfreddo & - & - & - & - & - & 7 & 7   \\
-            Tiozzo      & - & - & - & - & 9.5 & - & 9.5   \\ 
+            Tiozzo      & - & - & - & - & 9 & - & 9   \\ 
             \hline
-            Totale per ruolo & 6 & 7 & 8 & 8 & 19 & 7 & - \\
+            Totale per ruolo & 5 & 6 & 6 & 10 & 18 & 7 & - \\
             \hline
         \end{tabular}
         \caption{Prospetto orario per ruolo di ciascun membro del team durante il secondo sprint}
@@ -381,16 +381,16 @@ I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di
             \hline
             \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} & \textbf{Ore rimanenti preventivo} & \textbf{Ore rimanenti consuntivo} \\
             \hline  
-             Responsabile        & 7  & €210 & 41.5 & 42.5 \\ 
-             Amministratore      & 6  & €120 & 42.5 & 43.5 \\ 
-             Verificatore        & 8  & €120 & 158  & 158 \\ 
-             Analista            & 8  & €200 & 56   & 59 \\ 
-             Programmatore       & 19 & €285 & 133  & 134 \\
+             Responsabile        & 6  & €180 & 41.5 & 42.5 \\ 
+             Amministratore      & 5  & €100 & 42.5 & 43.5 \\ 
+             Verificatore        & 6  & €90  & 158  & 158 \\ 
+             Analista            & 10 & €250 & 56   & 59 \\ 
+             Programmatore       & 18 & €270 & 133  & 134 \\
              Progettista         & 7  & €175 & 105  & 105 \\
             \hline
-            \textbf{Totale preventivo} & 55 & €1120,00 & 534 & - \\
+            \textbf{Totale preventivo} & 55 & €1110,00 & 534 & - \\
             \hline
-            \textbf{Totale consuntivo} & 55 & €1110,00 & - & 542 \\
+            \textbf{Totale consuntivo} & 55 & €1065,00 & - & 545 \\
             \hline
         \end{tabular}
         \caption{Aggiornamenti economici del progetto al termine del secondo periodo, riflettendo le variazioni tra preventivo e ore effettivamente lavorate}
