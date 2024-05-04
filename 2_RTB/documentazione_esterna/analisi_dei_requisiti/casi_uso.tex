@@ -705,9 +705,18 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}};
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare una \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai sensori trasmettenti i \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}
+	      la quale mi consente di monitorare in tempo reale lo stato della città ed eventualmente prendere decisioni.
 \end{itemize}
 
 \begin{center}
@@ -719,9 +728,20 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico contenente le misurazioni storiche del traffico giornaliero;
 	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}} contenente le misurazioni storiche del traffico giornaliero
+	      per poter monitorarne l'andamento nel tempo e facilmente individuare eventuali anomalie.
 \end{itemize}
 
 \begin{center}
@@ -732,9 +752,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva contenente i dati relativi al traffico in tempo reale;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare una mappa interattiva contenente i dati relativi al traffico in tempo reale
+	      per poter monitorare l'andamento del traffico e prendere decisioni in base ad esso.
 \end{itemize}
 
 \begin{center}
@@ -746,9 +776,20 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva contenente i dati relativi ai lavori in corso;
 	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare una mappa interattiva contenente i dati relativi ai lavori in corso
+	      per poterne monitorare la posizione, lo stato e prendere decisioni in base ad essi.
 \end{itemize}
 
 \begin{center}
@@ -760,9 +801,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}} contenente le misurazioni storiche degli incidenti;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}} contenente le misurazioni storiche degli incidenti
+	      per poter monitorarne l'andamento nel tempo e facilmente individuare eventuali anomalie.
 \end{itemize}
 
 \begin{center}
@@ -773,9 +824,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva contenente i dati relativi agli incidenti in tempo reale;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare una mappa interattiva contenente i dati relativi agli incidenti in tempo reale
+	      per poter monitorare l'andamento degli incidenti e prendere decisioni in base ad essi.
 \end{itemize}
 
 \begin{center}
@@ -786,9 +847,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente il numero di incidenti avvenuti nell'ultimo mese;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare il numero di incidenti avvenuti nell'ultimo mese
+	      per poterne monitorare l'andamento e prendere decisioni in base ad essi.
 \end{itemize}
 
 \begin{center}
@@ -799,9 +870,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente il numero di incidenti avvenuti nell'ultimo anno;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare il numero di incidenti avvenuti nell'ultimo anno
+	      per poterne monitorare l'andamento e prendere decisioni in base ad essi.
 \end{itemize}
 
 \begin{center}
@@ -813,9 +894,20 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva contenente le colonnine di ricarica con lo stato di funzionamento
+	      di ognuna di esse;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare una mappa interattiva contenente le colonnine di ricarica con lo stato di funzionamento
+	      di ognuna di esse per poterne monitorare lo stato e prendere decisioni in base ad esso.
 \end{itemize}
 
 \begin{center}
@@ -826,9 +918,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente il conteggio delle colonnine di ricarica guaste e funzionanti;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare un \textit{panel} contenente il conteggio delle colonnine di ricarica guaste e funzionanti
+	      per poterne monitorare lo stato e prendere decisioni in base ad esso.
 \end{itemize}
 
 \begin{center}
@@ -840,9 +942,20 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva contenente le isole ecologiche con lo stato di riempimento
+	      di ognuna di esse;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare una mappa interattiva contenente le isole ecologiche con lo stato di riempimento
+	      di ognuna di esse per poterne monitorare lo stato e prendere decisioni in base ad esso.
 \end{itemize}
 
 \begin{center}
@@ -853,9 +966,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente il conteggio delle isole ecologiche piene;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare un \textit{panel} contenente il conteggio delle isole ecologiche piene
+	      per poterne monitorare lo stato e prendere decisioni in base ad esso.
 \end{itemize}
 
 \begin{center}
@@ -867,9 +990,20 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva contenente i parcheggi con lo stato di occupazione
+	      di ognuno di essi;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare una mappa interattiva contenente i parcheggi con lo stato di occupazione
+	      di ognuno di essi.
 \end{itemize}
 
 \begin{center}
@@ -880,9 +1014,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente il conteggio dei parcheggi occupati e liberi;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare un \textit{panel} contenente il conteggio dei parcheggi occupati e liberi
+	      per poterne monitorare lo stato.
 \end{itemize}
 
 \begin{center}
@@ -894,9 +1038,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-atmosferici}{dati atmosferici\textsubscript{G}};
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}} contenente le misurazioni storiche del livello di acqua;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}}.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}} contenente le misurazioni storiche del livello di acqua
+	      per poterne monitorarne l'andamento nel tempo e facilmente individuare eventuali anomalie.
 \end{itemize}
 
 \begin{center}
@@ -904,18 +1058,28 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\captionof{figure}{UC-3.14: Visualizzazione grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}} per livello di acqua}
 \end{center}
 
-\subsubsection{UC-4: Visualizzazione misurazioni anomale}
+\subsubsection{UC-4: Visualizzazione dashboard misurazioni anomale}
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} contenente le misurazioni anomale effettuate dai sensori;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa alle misurazioni anomale.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare le misurazioni anomale effettuate dai sensori
+	      per poterne monitorare l'andamento e prendere decisioni in base ad esse.
 \end{itemize}
 
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-4.png}
-	\captionof{figure}{UC-4: Visualizzazione misurazioni anomale}
+	\captionof{figure}{UC-4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} misurazioni anomale}
 \end{center}
 
 \subsubsection{UC-5: Visualizzazione con filtri}
@@ -924,7 +1088,9 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\item \textbf{Precondizioni}:
 	\item \textbf{Postcondizioni}:
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare i \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dati-urbani}{dati urbani\textsubscript{G}} con filtri
+	      per poter monitorare solo i dati che mi interessano e prendere decisioni in base ad essi.
+
 \end{itemize}
 
 \begin{center}
@@ -938,9 +1104,18 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
-	\item \textbf{Postcondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un messaggio che notifica l'assenza di dati;
 	\item \textbf{Scenario principale}:
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item Il sistema non trova dati relativi ai sensori;
+		      \item Il sistema mostra un messaggio che notifica l'assenza di dati.
+	      \end{enumerate}
 \end{itemize}
 
 \begin{center}
@@ -1167,10 +1342,3 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-17.png}
 	\captionof{figure}{UC-17: Trasmissione dati livello di acqua}
 \end{center}
-
-
-
-
-
-
-

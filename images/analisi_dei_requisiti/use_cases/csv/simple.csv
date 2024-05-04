@@ -2,7 +2,7 @@ title,actor,uc_code,uc_desc
 SyncCity,Autorità Locale,UC-1,Visualizzazione dashboard generale
 SyncCity,Autorità Locale,UC-2,Visualizzazione dashboard dati atmosferici
 SyncCity,Autorità Locale,UC-3,Visualizzazione dashboard dati urbani
-SyncCity,Autorità Locale,UC-4,Visualizzazione misurazioni anomale
+SyncCity,Autorità Locale,UC-4,Visualizzazione dashboard misurazioni anomale
 SyncCity,Autorità Locale,UC-5,Visualizzazione con filtri
 SyncCity,Autorità Locale,UC-6,Visualizzazione messaggio assenza di dati
 SyncCity,Sensore,UC-7,Trasmissione dati temperatura
