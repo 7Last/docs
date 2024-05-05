@@ -1022,6 +1022,32 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\captionof{figure}{UC-9.1: Visualizzazione \textit{panel} isole ecologiche piene in tempo reale}
 \end{center}
 
+\subsubsubsection{UC-9.2: Visualizzazione mappa interattiva isole ecologiche per stato di riempimento}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai sensori di isole ecologiche;
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva popolata con dei marker rappresentanti la posizione dei sensori delle isole ecologiche
+	      suddivise per stato di riempimento;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} relativa ai sensori delle isole ecologiche piene.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei marker rappresentanti la posizione dei sensori delle isole ecologiche
+	      suddivise per stato di riempimento e contenenti il loro identificativo.
+	      Essa mi consentirà di visualizzare la distribuzione delle isole ecologiche nel territorio e di individuare facilmente quelle piene per poter intervenire e svuotarle.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.2.png}
+	\captionof{figure}{UC-9.2: Visualizzazione mappa interattiva sensori isole ecologiche piene}
+\end{center}
+
 \subsubsection{UC-10: Visualizzazione dashboard livello di acqua}
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;

@@ -29,6 +29,7 @@ Visualizzazione panel calcolo ora di punta (numero veicoli e velocità media),Au
 Visualizzazione panel numero colonnine di ricarica per stato in tempo reale,Autorità locale,UC-7,Visualizzazione dashboard colonnine di ricarica,UC-7.2,Visualizzazione panel numero colonnine di ricarica per stato in tempo reale
 Visualizzazione panel con conteggio parcheggi per stato in tempo reale,Autorità locale,UC-8,Visualizzazione dashboard parcheggi,UC-8.2,Visualizzazione panel con conteggio parcheggi per stato in tempo reale
 Visualizzazione panel con conteggio isole ecologiche piene in tempo reale,Autorità locale,UC-9,Visualizzazione dashboard isole ecologiche,UC-9.1,Visualizzazione panel con conteggio isole ecologiche piene in tempo reale
+Visualizzazione mappa interattiva isole ecologiche per stato di riempimento,Autorità locale,UC-9,Visualizzazione dashboard isole ecologiche,UC-9.2,Visualizzazione mappa interattiva isole ecologiche per stato di riempimento
 Visualizzazione grafico time series livello di acqua,Autorità locale,UC-10,Visualizzazione dashboard livello di acqua,UC-10.1,Visualizzazione grafico time series livello di acqua
 Visualizzazione panel livello di acqua medio in un determinato periodo di tempo,Autorità locale,UC-10,Visualizzazione dashboard livello di acqua,UC-10.3,Visualizzazione panel livello di acqua medio in un determinato periodo di tempo
 Visualizzazione panel livello di acqua in tempo reale,Autorità locale,UC-10,Visualizzazione dashboard livello di acqua,UC-10.4,Visualizzazione panel livello di acqua in tempo reale
