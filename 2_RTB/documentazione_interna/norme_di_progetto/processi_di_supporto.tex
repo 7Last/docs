@@ -2,103 +2,103 @@
 
 \subsection{Documentazione}
 \subsubsection{Introduzione}
-Il processo di documentazione è una componente fondamentale nella realizzazione e nel rilascio di un prodotto {software\textsubscript{G}},
+Il processo di documentazione è una componente fondamentale nella realizzazione e nel rilascio di un prodotto software,
 poichè fornisce informazioni utili alle parti coinvolte e tiene traccia di tutte le attività relative al ciclo di vita del software,
-comprese scelte e {norme\textsubscript{G}} adottate dal gruppo durante lo svolgimento del progetto. In particolare, la documentazione è utile per:
+comprese scelte e norme adottate dal gruppo durante lo svolgimento del progetto. In particolare, la documentazione è utile per:
 \begin{itemize}
-    \item Permettere una comprensione profonda del prodotto e delle sue funzionalità;
-    \item Tracciare un confine tra disciplina e creatività;
-    \item Garantire uno standard di qualità all'interno dei {processi\textsubscript{G}} produttivi.
-\end{itemize} 
+	\item Permettere una comprensione profonda del prodotto e delle sue funzionalità;
+	\item Tracciare un confine tra disciplina e creatività;
+	\item Garantire uno standard di qualità all'interno dei processi produttivi.
+\end{itemize}
 Lo scopo della sezione è:
 \begin{itemize}
-    \item Fornire una raccolta esasutiva di regole che i membri del gruppo devono seguire per agevolare la stesura della documentazione;
-    \item Definire delle procedure ripetibili per uniformare la redazione, la verifica e l'approvazione dei documenti;
-    \item Creare template per ogni tipologia di documento così da garantire omogeneità e coerenza.
+	\item Fornire una raccolta esasutiva di regole che i membri del gruppo devono seguire per agevolare la stesura della documentazione;
+	\item Definire delle procedure ripetibili per uniformare la redazione, la verifica e l'approvazione dei documenti;
+	\item Creare template per ogni tipologia di documento così da garantire omogeneità e coerenza.
 \end{itemize}
 
 \subsubsection{Documentation as Code}
 Per la stesura della documentazione viene adottato l'approccio "Documentation as Code, che consiste nel trattare la documentazione di progetto
-allo stesso modo del codice sorgente. Dunque vengono impiegati strumenti e metodologie tipiche dello sviluppo {software\textsubscript{G}}:
+allo stesso modo del codice sorgente. Dunque vengono impiegati strumenti e metodologie tipiche dello sviluppo software:
 \begin{itemize}
-    \item \textbf{Versionamento}: la documentazione è versionata tramite il sistema di controllo di versione Git, in modo da tenere traccia 
-    delle modifiche e garantire la coerenza tra le varie versioni;
-    \item \textbf{Automazione}: l'automazione dei processi di build e di deploy permette di semplificare la gestione della documentazione e 
-    di ridurre il rischio di errori;
-    \item \textbf{Collaborazione}: l'uso di piattaforme di condivisione e collaborazione (GitHub) favorisce la cooperazione tra i membri 
-    del gruppo e semplifica la gestione dei documenti;
-    \item \textbf{Integrazione continua}: permette di verificare costantemente la correttezza e la coerenza della documentazione.
-\end{itemize} 
+	\item \textbf{Versionamento}: la documentazione è versionata tramite il sistema di controllo di versione Git, in modo da tenere traccia
+	      delle modifiche e garantire la coerenza tra le varie versioni;
+	\item \textbf{Automazione}: l'automazione dei processi di build e di deploy permette di semplificare la gestione della documentazione e
+	      di ridurre il rischio di errori;
+	\item \textbf{Collaborazione}: l'uso di piattaforme di condivisione e collaborazione (GitHub) favorisce la cooperazione tra i membri
+	      del gruppo e semplifica la gestione dei documenti;
+	\item \textbf{Integrazione continua}: permette di verificare costantemente la correttezza e la coerenza della documentazione.
+\end{itemize}
 
 \subsubsection{Tipografia e sorgente documenti}
 Per la redazione dei documenti abbiamo deciso di utilizzare il linguaggio di markup \LaTeX{}, in quanto semplifica la creazione e la manutenzione
 dei documenti, liberando i redattori dall'onere della visualizzazione grafica e garantendo coerenza nella documentazione del progetto.
 Inoltre, per favorire una migliore collaborazione tra i diversi autori, abbiamo scelto di scomporre ogni documento in più file,
 ciascuno per una specifica sezione, in modo da permettere a più persone di lavorare sulle singole sezioni o sottosezioni.
-Il risultato finale sarà ottenuto tramite l'assemblaggio di tutti i file sorgenti in un file principale, attraverso l'uso del comando 
+Il risultato finale sarà ottenuto tramite l'assemblaggio di tutti i file sorgenti in un file principale, attraverso l'uso del comando
 \textit{input{Sezione.tex}} o, nel caso delle sottosezioni, \textit{input{Sottosezione.tex}}.
-Solo nel caso di documenti di piccole dimensioni, come i verbali, si potrà optare per la scrittura di un unico file. 
+Solo nel caso di documenti di piccole dimensioni, come i verbali, si potrà optare per la scrittura di un unico file.
 
 \subsubsection{Ciclo di vita}
 Il ciclo di vita di un documento è composto dalle seguenti fasi:
 \begin{enumerate}
-    \item Pianificazione della stesura e suddivisione in sezioni: tramite confronto con il gruppo, le sezioni del documento vengono stabilite e assegnate ai Redattori.
-    Essi sono responsabili della stesura delle proprie sezioni in conformità con le Norme di Progetto.
-    \item Stesura del contenuto e creazione della bozza iniziale: i Redattori realizzano il documento redigendone il contenuto e creano una prima bozza
-    che viene utilizzata come punto di partenza per la discussione e la revisione.
-    \item Controllo dei contenuti: dopo la stesura effettiva del documento, i Redattori verificano che e il contenuto delle proprie sezioni
-    sia conforme alle norme definite e non contenga errori di compilazione.
-    \item Revisione: quando la redazione del documento è conclusa, questo viene revisionato dai Verificatori incaricati.
-    \item Approvazione e rilascio: nell'ultima fase il documento viene approvato da un Responsabile e rilasciato in versione finale.
+	\item Pianificazione della stesura e suddivisione in sezioni: tramite confronto con il gruppo, le sezioni del documento vengono stabilite e assegnate ai Redattori.
+	      Essi sono responsabili della stesura delle proprie sezioni in conformità con le Norme di Progetto.
+	\item Stesura del contenuto e creazione della bozza iniziale: i Redattori realizzano il documento redigendone il contenuto e creano una prima bozza
+	      che viene utilizzata come punto di partenza per la discussione e la revisione.
+	\item Controllo dei contenuti: dopo la stesura effettiva del documento, i Redattori verificano che e il contenuto delle proprie sezioni
+	      sia conforme alle norme definite e non contenga errori di compilazione.
+	\item Revisione: quando la redazione del documento è conclusa, questo viene revisionato dai Verificatori incaricati.
+	\item Approvazione e rilascio: nell'ultima fase il documento viene approvato da un Responsabile e rilasciato in versione finale.
 \end{enumerate}
 
 \subsubsection{Procedure correlate alla redazione di documenti}
 
 \subsubsubsection{I redattori}
 Il redattore è colui che si occupa di scrivere e curare il contenuto di un documento o di una sua sezione in modo chiaro, accurato e comprensibile.
-Nel farlo deve seguire lo stesso approccio impiegato nella codifica del {software\textsubscript{G}}, adottando il
-{workflow\textsubscript{G}} noto come \textit{feature branch}.
+Nel farlo deve seguire lo stesso approccio impiegato nella codifica del software, adottando il
+workflow noto come \textit{feature branch}.
 \textbf{Caso redazione nuovo documento/sezione o modifica dei precedenti già verificati}
-In queste situazioni il redattore dovrà creare un nuovo {branch\textsubscript{G}} Git in locale e posizionarsi su di esso con i seguenti comandi:
+In queste situazioni il redattore dovrà creare un nuovo branch Git in locale e posizionarsi su di esso con i seguenti comandi:
 \begin{itemize}
-    \item \textit{git checkout main}
-    \item \textit{git checkout -b nomeBranch}
+	\item \texttt{git checkout main}
+	\item \texttt{git checkout -b nomeBranch}
 \end{itemize}
 In particolare l'identificativo del branch deve essere 'parlante', ossia descrittivo e significativo così da consentire una compresione immediata
-del documento o della sezione che si sta redigendo. Dunque il redattore deve adottare le specifiche 
+del documento o della sezione che si sta redigendo. Dunque il redattore deve adottare le specifiche
 \href{#convenzioni_nomenclatura}{\underline{convenzioni per la nomenclatura dei branch}}.
 Una volta terminata la redazione del documento o della sezione assegnata, è necessario rendere disponibile il branch
-nella {repository\textsubscript{G}} remota seguento la seguente procedura:
+nella repository remota seguento la seguente procedura:
 \begin{enumerate}
-    \item Eseguire il {push\textsubscript{G}} delle modifiche nel {branch\textsubscript{G}}:
-    \begin{itemize}
-        \item \textit{git add .}
-        \item \textit{git commit -m "Descrizione delle modifiche apportate"}
-        \item \textit{git push origin nomeBranch}
-    \end{itemize}
-    \item Se riscontriamo problemi nel punto 1:
-    \textit{git pull origin nomeBranch}
-    \item Risolviamo i conflitti e ripetiamo il punto 1.
+	\item Eseguire il push delle modifiche nel branch:
+	      \begin{itemize}
+		      \item \texttt{git add .}
+		      \item \texttt{git commit -m "Descrizione delle modifiche apportate"}
+		      \item \texttt{git push origin nomeBranch}
+	      \end{itemize}
+	\item Se riscontriamo problemi nel punto 1:
+	      \textit{git pull origin nomeBranch}
+	\item Risolviamo i conflitti e ripetiamo il punto 1.
 \end{enumerate}
 \textbf{Caso modifica documento in fase di redazione}
 Per continuare la redazione di un documento o di una sezione già in fase di stesura, sono necessari i seguenti comandi
 \begin{itemize}
-    \item \textit{git pull}
-    \item \textit{git checkout nomeBranch}
+	\item \texttt{git pull}
+	\item \texttt{git checkout nomeBranch}
 \end{itemize}
 \textbf{Completamento redazione documento}
 Dopo aver completato la redazione del documento o della sezione, il redattore deve procedere nel seguente modo:
 \begin{enumerate}
-    \item Spostare l'{issue\textsubscript{G}} relativa all'{attività\textsubscript{G}} assegnata nella colonna "Review" della 
-    \href{https://github.com/orgs/7Last/projects/1/views/1}{\underline{DashBoard}} del progetto, così da comunicare il completamento dell'incarico ai Verificatori.
-    \item Aggiornare la tabella contenente il versionamento del documento, inserendo le informazioni richieste e incrementando la versione.
-    \item Creare una \href{#pull_request}{\underline{Pull Request}}: 
-    \begin{enumerate}
-        \item Accedere alla \href{https://github.com/7Last/docs}{\underline{Repository}} GitHub, spostarsi nella sezione "Pull Request" e cliccare su "New Pull Request";
-        \item Selezionare come {branch\textsubscript{G}} di destinazione "main" e come {branch\textsubscript{G}} sorgente il ramo creato appositamente per la redazione del documento/sezione;
-        \item Cliccare su "Create Pull Request";
-        \item Dare un titolo significativo e, se necessario, una descrizione alla Pull Request, selezionare i Verificatori e cliccare su "Create Pull Request".
-    \end{enumerate}
+	\item Spostare l'issue relativa all'attività assegnata nella colonna "Review" della
+	      \href{https://github.com/orgs/7Last/projects/1/views/1}{\underline{DashBoard}} del progetto, così da comunicare il completamento dell'incarico ai Verificatori.
+	\item Aggiornare la tabella contenente il versionamento del documento, inserendo le informazioni richieste e incrementando la versione.
+	\item Creare una Pull Request:
+	      \begin{enumerate}
+		      \item Accedere alla \href{https://github.com/7Last/docs}{\underline{Repository}} GitHub, spostarsi nella sezione "Pull Request" e cliccare su "New Pull Request";
+		      \item Selezionare come branch di destinazione "main" e come branch sorgente il ramo creato appositamente per la redazione del documento/sezione;
+		      \item Cliccare su "Create Pull Request";
+		      \item Dare un titolo significativo e, se necessario, una descrizione alla Pull Request, selezionare i Verificatori e cliccare su "Create Pull Request".
+	      \end{enumerate}
 \end{enumerate}
 
 \subsubsubsection{I verificatori}
@@ -107,35 +107,35 @@ Il ruolo e la procedura dei Verificatori sono descritti in dettaglio al paragraf
 \subsubsubsection{Il responsabile}
 Per quanto riguarda la redazione dei documenti, il Responsabile ha il dovere di:
 \begin{itemize}
-    \item Identificare i documenti da redigere;
-    \item Assegnare le task a Redattori e Verificatori;
-    \item Stabilire la scadenza per il completamento delle attività;
-    \item Approvare o richiedere eventuali modifiche ai documenti.
+	\item Identificare i documenti da redigere;
+	\item Assegnare le task a Redattori e Verificatori;
+	\item Stabilire la scadenza per il completamento delle attività;
+	\item Approvare o richiedere eventuali modifiche ai documenti.
 \end{itemize}
 
 \subsubsubsection{L'amministratore}
-L'amministratore è responsabile della gestione delle {attività\textsubscript{G}} richieste dal Responsabile all'interno dell'ITS.
+L'amministratore è responsabile della gestione delle attività richieste dal Responsabile all'interno dell'ITS.
 
 \subsubsection{Struttura del documento}
 Tutta la documentazione prodotta segue uno schema strutturale ben definito e uniforme.
 \subsubsubsection{Prima pagina}
 Nella prima pagina di ogni documento è presente un'intestazione contenente le seguenti informazioni:
 \begin{itemize}
-    \item Nome del documento;
-    \item Versione del documento;
-    \item Logo del gruppo;
-    \item Nome del gruppo.
+	\item Nome del documento;
+	\item Versione del documento;
+	\item Logo del gruppo;
+	\item Nome del gruppo.
 \end{itemize}
 
 \subsubsubsection{Registro delle modifiche}
 La seconda pagina è dedicata al registro delle modifiche in formato tabellare e permette di tenere traccia delle modifiche apportate al documento.
 La tabella riporta i seguenti dati:
 \begin{itemize}
-    \item Versione del documento;
-    \item Data di rilascio;
-    \item Nome dell'autore;
-    \item Nome del Verificatore;
-    \item Descrizione della modifica.
+	\item Versione del documento;
+	\item Data di rilascio;
+	\item Nome dell'autore;
+	\item Nome del Verificatore;
+	\item Descrizione della modifica.
 \end{itemize}
 
 \subsubsubsection{Indice}
@@ -149,108 +149,108 @@ I verbali costituiscono un report dettagliato dei meeting, con lo scopo di tener
 azioni da intraprendere. Essi si suddividono in esterni o interni, a seconda che il meeting sia con persone esterne al gruppo o con i soli membri del team.
 La struttura in ogni caso è la medesima e prevede le seguenti sezioni:
 \begin{itemize}
-    \item \textbf{Informazioni sulla riunione}:
-    \begin{itemize}
-        \item Sede del meeting;
-        \item Orario di inizio e fine;
-        \item Partecipanti del gruppo;
-        \item Partecipanti esterni.
-    \end{itemize}
-    \item \textbf{Corpo del documento}
-    \begin{itemize}
-        \item \textbf{Revisione del periodo precedente}:
-            Analisi dello stato delle {attività\textsubscript{G}} e dell'approccio lavorativo, si discute di eventuali problemi riscontrati
-            ma anche degli aspetti positivi in modo da incrementare e migliorare il way of working. 
-        \item \textbf{Ordine del giorno}:
-            Elenco di ciò che verrà discusso durante la riunione.
-        \item \textbf{Sintesi dell'incontro}:
-            Breve riassunto delle discussioni e dei temi affrontati surante l'incontro.
-        \item \textbf{Decisioni prese}:
-            Sezione che elenca in formato testuale le decisioni prese durante il meeting. Alcune di queste potrebbero risultare anche in "Attività individuate".        
-        \item \textbf{Attività individuate}:
-            Illustrazione dettagliata delle attività assegnate ai diversi membri del gruppo in forma tabellare, sono presenti le seguenti informazioni:
-            \begin{itemize}
-                \item Nome della task;
-                \item ID dell'{issue\textsubscript{G}} su GitHub;
-                \item Assegnatari.
-            \end{itemize}
-    \end{itemize}
-    \item \textbf{Ultima pagina}:
-    Solo nel caso di verbale esterno, è presente una sezione dedicata alla data e alla firma delle terze parti coinvolte.
+	\item \textbf{Informazioni sulla riunione}:
+	      \begin{itemize}
+		      \item Sede del meeting;
+		      \item Orario di inizio e fine;
+		      \item Partecipanti del gruppo;
+		      \item Partecipanti esterni.
+	      \end{itemize}
+	\item \textbf{Corpo del documento}
+	      \begin{itemize}
+		      \item \textbf{Revisione del periodo precedente}:
+		            Analisi dello stato delle attività e dell'approccio lavorativo, si discute di eventuali problemi riscontrati
+		            ma anche degli aspetti positivi in modo da incrementare e migliorare il way of working.
+		      \item \textbf{Ordine del giorno}:
+		            Elenco di ciò che verrà discusso durante la riunione.
+		      \item \textbf{Sintesi dell'incontro}:
+		            Breve riassunto delle discussioni e dei temi affrontati surante l'incontro.
+		      \item \textbf{Decisioni prese}:
+		            Sezione che elenca in formato testuale le decisioni prese durante il meeting. Alcune di queste potrebbero risultare anche in "Attività individuate".
+		      \item \textbf{Attività individuate}:
+		            Illustrazione dettagliata delle attività assegnate ai diversi membri del gruppo in forma tabellare, sono presenti le seguenti informazioni:
+		            \begin{itemize}
+			            \item Nome della task;
+			            \item ID dell'issue su GitHub;
+			            \item Assegnatari.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Ultima pagina}:
+	      Solo nel caso di verbale esterno, è presente una sezione dedicata alla data e alla firma delle terze parti coinvolte.
 \end{itemize}
-            
+
 \subsubsection{Norme tipografiche}
 \textbf{Nomi assegnati ai file} Il nome dei documenti deve essere omogogeneo alla tipologia di appartenenza, deve essere in minuscolo
 e contenere un riferimento alla versione del documento. In particolare la nominazione dei file deve seguire la convenzione:
 \begin{itemize}
-    \item \textbf{Verbali}: verbale\_esterno/interno\_AA\_MM\_DD\_vX.Y;
-    \item \textbf{Norme di Progetto}: norme\_di\_progetto\_vX.Y;
-    \item \textbf{Analisi dei Requisiti}: analisi\_dei\_requisiti\_vX.Y;
-    \item \textbf{Piano di Progetto}: piano\_di\_progetto\_vX.Y;
-    \item \textbf{Glossario}: glossario\_vX.Y.
+	\item \textbf{Verbali}: verbale\_esterno/interno\_AA\_MM\_DD\_vX.Y;
+	\item \textbf{Norme di Progetto}: norme\_di\_progetto\_vX.Y;
+	\item \textbf{Analisi dei Requisiti}: analisi\_dei\_requisiti\_vX.Y;
+	\item \textbf{Piano di Progetto}: piano\_di\_progetto\_vX.Y;
+	\item \textbf{Glossario}: glossario\_vX.Y.
 \end{itemize}
 \textbf{Stile del testo}
 \begin{itemize}
-    \item \textbf{Grassetto}:
-    \begin{itemize}
-        \item Titoli di sezione;
-        \item Termini importanti;
-        \item Parole seguite da descrzione o elenchi puntati.
-    \end{itemize}
-    \item \textbf{Corsivo}:
-    \begin{itemize}
-        \item Nome del gruppo e dell'azienda proponente;
-        \item Termini presenti nel glossario;
-        \item Riferimenti a documenti esterni.
-    \end{itemize}
-    \item \textbf{Maiuscolo}:
-    \begin{itemize}
-        \item Acronimi;
-        \item Iniziali dei nomi;
-        \item Iniziali dei ruoli svolti dai membri del gruppo.
-    \end{itemize}
+	\item \textbf{Grassetto}:
+	      \begin{itemize}
+		      \item Titoli di sezione;
+		      \item Termini importanti;
+		      \item Parole seguite da descrzione o elenchi puntati.
+	      \end{itemize}
+	\item \textbf{Corsivo}:
+	      \begin{itemize}
+		      \item Nome del gruppo e dell'azienda proponente;
+		      \item Termini presenti nel glossario;
+		      \item Riferimenti a documenti esterni.
+	      \end{itemize}
+	\item \textbf{Maiuscolo}:
+	      \begin{itemize}
+		      \item Acronimi;
+		      \item Iniziali dei nomi;
+		      \item Iniziali dei ruoli svolti dai membri del gruppo.
+	      \end{itemize}
 \end{itemize}
 \textbf{Regole sintattiche}:
 \begin{itemize}
-    \item Negli elenchi ogni voce deve terminare con ";", ad eccezione dell'ultima che prevede ".";
-    \item I numeri razionali si scrivono utilizzando la virgola come separatore tra parte intera e parte decimale;
-    \item Le date devono seguire lo standard internazionale ISO 8601, ossia YYYY-MM-DD.
+	\item Negli elenchi ogni voce deve terminare con ";", ad eccezione dell'ultima che prevede ".";
+	\item I numeri razionali si scrivono utilizzando la virgola come separatore tra parte intera e parte decimale;
+	\item Le date devono seguire lo standard internazionale ISO 8601, ossia YYYY-MM-DD.
 \end{itemize}
 
 \subsubsection{Abbreviazioni}
 Segue un elenco delle abbreviazioni più comuni utilizzate nei documenti:
 
 \begin{table}[!h]
-    \centering
-    \begin{tabular}{|c|c|}
-    \hline
-    \textbf{Abbreviazione} & \textbf{Scrittura Estesa} \\
-    \hline
-    RTB & Requirements and Technology Baseline \\
-    PB & Product Baseline \\
-    CA & Customer Acceptance \\
-    ITS & Issue Tracking System \\
-    CI & Configuration Item \\
-    SAL & Stato Avanzamento Lavori \\
-    \hline
-    \end{tabular}
-    \caption{Spiegazione delle abbreviazioni utilizzate nei documenti.}
-    \label{tab:1}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Abbreviazione} & \textbf{Scrittura Estesa}            \\
+		\hline
+		RTB                    & Requirements and Technology Baseline \\
+		PB                     & Product Baseline                     \\
+		CA                     & Customer Acceptance                  \\
+		ITS                    & Issue Tracking System                \\
+		CI                     & Configuration Item                   \\
+		SAL                    & Stato Avanzamento Lavori             \\
+		\hline
+	\end{tabular}
+	\caption{Spiegazione delle abbreviazioni utilizzate nei documenti.}
+	\label{tab:1}
 \end{table}
 
 
 \subsubsection{Strumenti}
 Gli strumenti utilizzati per la redazione dei documenti sono:
 \begin{itemize}
-    \item \textbf{\LaTeX{}}: utilizzato per la stesura dei documenti;
-    \item \textbf{GitHub}: utilizzato per la gestione del versionamento e per la condivisione dei documenti;
-    \item \textbf{Visual Studio Code}: utilizzato come editor di testo per la scrittura dei documenti attraverso l'estensione \LaTeX{} Workshop.
+	\item \textbf{\LaTeX{}}: utilizzato per la stesura dei documenti;
+	\item \textbf{GitHub}: utilizzato per la gestione del versionamento e per la condivisione dei documenti;
+	\item \textbf{Visual Studio Code}: utilizzato come editor di testo per la scrittura dei documenti attraverso l'estensione \LaTeX{} Workshop.
 \end{itemize}
 
 \subsection{Verifica}
 \subsubsection{Introduzione}
-Il processo di verifica è fondamentale durante tutto il ciclo di vita del {software\textsubscript{G}}, a partire dall'iniziale fase
-di progettazione fino alla sucessiva manutenzione. La verifica ha lo scopo di garantire che ciascuna {attività\textsubscript{G}}
+Il processo di verifica è fondamentale durante tutto il ciclo di vita del software, a partire dall'iniziale fase
+di progettazione fino alla sucessiva manutenzione. La verifica ha lo scopo di garantire che ciascuna attività
 sia corretta ed efficiente, identificando un processo di controllo per ogni prodotto realizzato. In particolare, ci si preoccupa che gli output
 del software (documentazione, codice sorgente, test...) siano conformi alle aspettative e ai requisiti specificati. Nel farlo è fondamentale
 applicare tecniche e analisi di test seguendo procedure definite e adottando criteri affidabili.
@@ -262,12 +262,12 @@ accettazione da rispettare.
 \subsubsection{Verifica dei documenti} \label{verifica_dei_documenti}
 Nell'ambito della documentazione, la verifica è un'attività cruciale per garantire la correttezza e l'accuratezza dei contenuti. Essa si suddivide in:
 \begin{itemize}
-    \item \textbf{Revisione della correttezza tecnica}: assicura che tutte le informazioni siano corrette e coerenti con le norme stabilite;
-    \item \textbf{Conformità alle norme}: verifica che il documento segua le linee guida e gli {standard\textsubscript{G}} 
-        stabiliti per la formattazione, la struttura e lo stile;
-    \item \textbf{Revisione ortografica e grammaticale}: controlla che il testo sia privo di errori ortografici, grammaticali e di punteggiatura.
-    \item \textbf{Chiarezza e comprensibilità}: valuta la leggibilità del documento, verificando che il contenuto sia chiaro, comprensibile e privo di ambiguità;
-    \item \textbf{Coerenza}: verifica che il documento sia omogeneo e coerente, sia internamente che con i documenti correlati.
+	\item \textbf{Revisione della correttezza tecnica}: assicura che tutte le informazioni siano corrette e coerenti con le norme stabilite;
+	\item \textbf{Conformità alle norme}: verifica che il documento segua le linee guida e gli standard
+	      stabiliti per la formattazione, la struttura e lo stile;
+	\item \textbf{Revisione ortografica e grammaticale}: controlla che il testo sia privo di errori ortografici, grammaticali e di punteggiatura.
+	\item \textbf{Chiarezza e comprensibilità}: valuta la leggibilità del documento, verificando che il contenuto sia chiaro, comprensibile e privo di ambiguità;
+	\item \textbf{Coerenza}: verifica che il documento sia omogeneo e coerente, sia internamente che con i documenti correlati.
 \end{itemize}
 % Specificare procedura GitHub? Pull request, branch, spostare la issue ecc.
 
@@ -276,7 +276,7 @@ L'analisi è un processo che si occupa di valutare la qualità degli ogetti stat
 (test ed esecuzione del software).
 
 \subsubsubsection{Analisi statica}
-L'analisi statica è un'{attività\textsubscript{G}} di controllo che prescinde dall'esecuzione del prodotto e si basa su una revisione manuale o automatica
+L'analisi statica è un'attività di controllo che prescinde dall'esecuzione del prodotto e si basa su una revisione manuale o automatica
 del codice e della documentazione. Essa è fondamentale per verificare la presenza di proprietà desiderate e la conformità ai vincoli e
 per garantire che non siano presenti errori o difetti. L'analisi statica prevede due metodi di lettura:
 
@@ -285,10 +285,10 @@ Questa tecnica prevede una lettura integrale e approfondita del prodotto, con l'
 non è specifica per un determinato tipo di errore, ma generale. Inoltre il walkthrough è un approccio collaborativo che coinvolge il Verificatore
 e l'autore del prodotto, in particolare esso si svolge in quattro fasi:
 \begin{enumerate}
-    \item \textbf{Pianificazione}: il Verificatore e l'autore si confrontano per individuare le proprietà e i vincoli che il prodotto deve soddisfare;
-    \item \textbf{Lettura}: il Verificatore esamina il prodotto, annotando errori e verificando la conformità ai vincoli;
-    \item \textbf{Discussione}: il Verificatore e l'autore discutono degli errori riscontrati e valutano le possibili soluzioni;
-    \item \textbf{Correzione}: l'autore apporta le modifiche concordate.
+	\item \textbf{Pianificazione}: il Verificatore e l'autore si confrontano per individuare le proprietà e i vincoli che il prodotto deve soddisfare;
+	\item \textbf{Lettura}: il Verificatore esamina il prodotto, annotando errori e verificando la conformità ai vincoli;
+	\item \textbf{Discussione}: il Verificatore e l'autore discutono degli errori riscontrati e valutano le possibili soluzioni;
+	\item \textbf{Correzione}: l'autore apporta le modifiche concordate.
 \end{enumerate}
 Nel caso di prodotti particolarmente complessi o di grandi dimensioni, il walkthrough può risultare dispendioso in termini di risorse,
 per questo motivo è più probabile adottarne l'impiego nelle fasi iniziali del progetto.
@@ -299,136 +299,136 @@ liste di controllo specifiche (\textit{checklist}). Di conseguenza questo approc
 o codice complessi e strutturati poichè consente di identificare tempestivamente e risolvere potenziali problematiche.
 
 \subsubsubsection{Analisi dinamica}
-L'analisi statica è un'{attività\textsubscript{G}} di controllo che richiede l'esecuzione effettiva del codice con lo scopo di
-individuare discordanze tra i risultati ottenuti e il comportamento atteso del software. Il {test\textsubscript{G}} costituisce
+L'analisi statica è un'attività di controllo che richiede l'esecuzione effettiva del codice con lo scopo di
+individuare discordanze tra i risultati ottenuti e il comportamento atteso del software. Il test costituisce
 la principale tecnica di analisi dinamica, rappresentato da esecuzioni del codice in un dominio di casi definito in precedenza dal Verificatore.
 Quest'ultimo è composto da tutti i possibili casi e dati di input che possono far emergere difetti o eventuali problemi di funzionamento e
-garantire la qualità del prodotto finale. Per assicurare l'{efficacia\textsubscript{G}} di un test è necessario
-che esso sia ripetibile e decidibile, ossia che produca risultati coerenti e che possa essere eseguito più volte senza che 
+garantire la qualità del prodotto finale. Per assicurare l'efficacia di un test è necessario
+che esso sia ripetibile e decidibile, ossia che produca risultati coerenti e che possa essere eseguito più volte senza che
 i risultati siano influenzati da fattori esterni. Un altro aspetto importante è l'automazione del processo, realizzabile tramite l'uso di
 strumenti specifici (driver, stub, logger) che consentono di eseguire i test in modo automatico e di monitorare i risultati ottenuti.
 
 \subsubsection{Testing} \label{testing}
-Lo scopo del testing è quello di individuare errori e difetti nella componente soggetta a {test\textsubscript{G}},
-garantendo che il prodotto soddisfi i requisiti specificati e produca i risultati attesi. Per ogni {test\textsubscript{G}}
+Lo scopo del testing è quello di individuare errori e difetti nella componente soggetta a test,
+garantendo che il prodotto soddisfi i requisiti specificati e produca i risultati attesi. Per ogni test
 è necessario definire i seguenti aspetti:
 \begin{itemize}
-    \item \textbf{Ambiente}: il sistema hardware e {software\textsubscript{G}} all'interno del quale viene eseguito il {test\textsubscript{G}};
-    \item \textbf{Stato iniziale}: i parametri iniziali del sistema prima dell'esecuzione del {test\textsubscript{G}};
-    \item \textbf{Input}: i dati di input necessari per l'esecuzione del {test\textsubscript{G}};
-    \item \textbf{Output}: i risultati attesi in relazione ad un determinato input;
-    \item \textbf{Commenti}: eventuali note aggiuntive.
+	\item \textbfAmbiente}: il sistema hardware e software all'interno del quale viene eseguito il {test;
+	\item \textbf{Stato iniziale}: i parametri iniziali del sistema prima dell'esecuzione del test;
+	\item \textbf{Input}: i dati di input necessari per l'esecuzione del test;
+	\item \textbf{Output}: i risultati attesi in relazione ad un determinato input;
+	\item \textbf{Commenti}: eventuali note aggiuntive.
 \end{itemize}
 
 \subsubsubsection{Test di unità}
-I {test\textsubscript{G}} di unità sono finalizzati alla verifica di componenti {software\textsubscript{G}}
+I test di unità sono finalizzati alla verifica di componenti software
 atomiche, ossia singole unità di codice, come classi, metodi o funzioni. Essi sono implementati principalmente durante la progettazione e
 devono essere eseguiti per primi, in quanto verificano il corretto funzionamento prima dell'integrazione con altre unità. Questi
-{test\textsubscript{G}} sono eseguiti in modo isolato e indipendente dal resto del {sistema\textsubscript{G}},
+test sono eseguiti in modo isolato e indipendente dal resto del sistema,
 al seguente scopo è consentito l'utilizzo di mock e stub per simulare il comportamento di componenti non ancora sviluppate. In base al tipo
 di controllo che si vuole efettuare possiamo distinguere due connotazioni differenti:
 \begin{itemize}
-    \item \textbf{Test funzionali}: verificano che l'unità testata produca i risultati attesi in base ai dati di input;
-    \item \textbf{Test strutturali}: verificano la copertura di tutti i possibili cammini di esecuzione del codice.
+	\item \textbf{Test funzionali}: verificano che l'unità testata produca i risultati attesi in base ai dati di input;
+	\item \textbf{Test strutturali}: verificano la copertura di tutti i possibili cammini di esecuzione del codice.
 \end{itemize}
 
 \subsubsubsection{Test di integrazione}
-Questi {test\textsubscript{G}} vengono pianificati durante la fase di progettazione architetturale, successivamente ai 
-{test\textsubscript{G}} di unità. Essi verificano la corretta integrazione tra le diverse unità {software\textsubscript{G}}
+Questi test vengono pianificati durante la fase di progettazione architetturale, successivamente ai
+test di unità. Essi verificano la corretta integrazione tra le diverse unità software
 precedentemente testate per garantire che lavorino sinergicamente secondo le specifiche del progetto. Inoltre, è possibile annullare le modifiche
 apportate in modo da ripristinare uno stato sicuro nel caso si verifichino errori durante l'esecuzione di questo processo. Distinguiamo
 due approcci di integrazione:
 \begin{itemize}
-    \item \textbf{Top-down}: l'{integrazione\textsubscript{G}} avviene partendo dalle componenti di {sistema\textsubscript{G}}
-        che hanno più dipendenze e maggiore rilevanza esterna, garantendo la disponibilità immediata delle funzionalità di alto livello.
-        Questo approccio prevedere l'utilizzo di molti oggetti simulati;
-    \item \textbf{Bottom-up}: l'{integrazione\textsubscript{G}} avviene partendo dalle componenti di {sistema\textsubscript{G}}
-        che hanno meno dipendenze e maggiore valore interno, ovvero quelle meno visibili all'utente. Questo comporta una fase di test più tardiva
-        delle funzionalità utente.
+	\item \textbfTop-down}: l'integrazione avviene partendo dalle componenti di {sistema
+	      che hanno più dipendenze e maggiore rilevanza esterna, garantendo la disponibilità immediata delle funzionalità di alto livello.
+	      Questo approccio prevedere l'utilizzo di molti oggetti simulati;
+	\item \textbfBottom-up}: l'integrazione avviene partendo dalle componenti di {sistema
+	      che hanno meno dipendenze e maggiore valore interno, ovvero quelle meno visibili all'utente. Questo comporta una fase di test più tardiva
+	      delle funzionalità utente.
 \end{itemize}
 
 \subsubsubsection{Test di sistema}
-I {test\textsubscript{G}} di sistema sono finalizzati alla verifica del corretto funzionamento dell'intero {sistema\textsubscript{G}}.
-Ovvero si assicurano che tutte le componenti siano integrate correttamente e che tutti i requisiti {software\textsubscript{G}}
+I test di sistema sono finalizzati alla verifica del corretto funzionamento dell'intero sistema.
+Ovvero si assicurano che tutte le componenti siano integrate correttamente e che tutti i requisiti software
 siano presenti e funzionanti. Al termine di questa fase l'applicazione esegue le funzioni previste in modo accurato e affidabile.
-I {test\textsubscript{G}} di sistema sono pianificati successivamente ai test di integrazione.
+I test di sistema sono pianificati successivamente ai test di integrazione.
 
 \subsubsubsection{Test di regressione}
-I {test\textsubscript{G}} di regressione devono essere eseguiti ogni qualvolta vengono apportate delle modifiche al codice.
+I test di regressione devono essere eseguiti ogni qualvolta vengono apportate delle modifiche al codice.
 Essi, infatti, hanno l'obiettivo di garantire che queste modifiche non abbiano introdotto nuovi difetti o compromettano le funzionalità
-precedentemente testate, evitando così il verificarsi di regressioni. Questi controlli prevedono la ripetizione mirata di 
-{test\textsubscript{G}} di unità, d'integrazione e di sistema preservando la stabilità del {sistema\textsubscript{G}}.
+precedentemente testate, evitando così il verificarsi di regressioni. Questi controlli prevedono la ripetizione mirata di
+test di unità, d'integrazione e di sistema preservando la stabilità del sistema.
 
 \subsubsubsection{Test di accettazione}
-I {test\textsubscript{G}} di accettazione rappresentano un processo fondamentale prima del rilascio del prodotto finale.
+I test di accettazione rappresentano un processo fondamentale prima del rilascio del prodotto finale.
 Essi verificano che tutti le aspettative degli utenti e i requisiti richiesti dal committente siano pienamente soddisfatti. Per questo motivo
 devono essere svolti necessariamente in presenza del committente.
 
 \subsubsubsection{Sequenza delle fasi di test}
-La sequenza ordinata delle fasi di {test\textsubscript{G}} è la seguente:
+La sequenza ordinata delle fasi di test è la seguente:
 \begin{enumerate}
-    \item Test di unità;
-    \item Test di integrazione;
-    \item Test di regressione;
-    \item Test di sistema;
-    \item Test di accettazione.
+	\item Test di unità;
+	\item Test di integrazione;
+	\item Test di regressione;
+	\item Test di sistema;
+	\item Test di accettazione.
 \end{enumerate}
 
 \subsubsubsection{Codici dei test}
-Ciascun {test\textsubscript{G}} deve essere identificato da un codice univoco nel seguente formato:
+Ciascun test deve essere identificato da un codice univoco nel seguente formato:
 \begin{center}
-    \textbf{[tipo]\_[codice]}
+	\textbf{[tipo]\_[codice]}
 \end{center}
 Dove:
 \begin{itemize}
-    \item \textbf{Tipo}: indica la tipologia di appartenenza del {test\textsubscript{G}}, può assumere i seguenti valori:
-        \begin{itemize}
-            \item \textbf{UT}: {test\textsubscript{G}} di unità (Unit Test);
-            \item \textbf{IT}: {test\textsubscript{G}} di integrazione (Integration Test);
-            \item \textbf{RT}: {test\textsubscript{G}} di regressione (Regression Test);
-            \item \textbf{ST}: {test\textsubscript{G}} di sistema (System Test);
-            \item \textbf{AT}: {test\textsubscript{G}} di accettazione (Acceptance test).
-        \end{itemize}
-    \item \textbf{Codice}: rappresenta un numero associato al {test\textsubscript{G}}, univoco all'interno della tipologia:
-        \begin{itemize}
-            \item nel caso in cui il {test\textsubscript{G}} non abbia un padre, esso è un semplice numero progressivo;
-            \item nel caso in cui il {test\textsubscript{G}} abbia un padre, il codice è nel formato:
-            \begin{center}
-                \textbf{[codicePadre].[codiceFiglio]}
-            \end{center}
-        \end{itemize}
+	\item \textbf{Tipo}: indica la tipologia di appartenenza del test, può assumere i seguenti valori:
+	      \begin{itemize}
+		      \item \textbf{UT}: test di unità (Unit Test);
+		      \item \textbf{IT}: test di integrazione (Integration Test);
+		      \item \textbf{RT}: test di regressione (Regression Test);
+		      \item \textbf{ST}: test di sistema (System Test);
+		      \item \textbf{AT}: test di accettazione (Acceptance test).
+	      \end{itemize}
+	\item \textbf{Codice}: rappresenta un numero associato al test, univoco all'interno della tipologia:
+	      \begin{itemize}
+		      \item nel caso in cui il test non abbia un padre, esso è un semplice numero progressivo;
+		      \item nel caso in cui il test abbia un padre, il codice è nel formato:
+		            \begin{center}
+			            \textbf{[codicePadre].[codiceFiglio]}
+		            \end{center}
+	      \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Stato dei test}
-A ciascun {test\textsubscript{G}} è associato uno stato che indica l'esito della sua esecuzione:
+A ciascun test è associato uno stato che indica l'esito della sua esecuzione:
 \begin{itemize}
-    \item \textbf{S}: il {test\textsubscript{G}} è stato superato;
-    \item \textbf{NS}: il {test\textsubscript{G}} non è stato superato;
-    \item \textbf{NI}: il {test\textsubscript{G}} non è stato implementato.
+	\item \textbf{S}: il test è stato superato;
+	\item \textbf{NS}: il test non è stato superato;
+	\item \textbf{NI}: il test non è stato implementato.
 \end{itemize}
 Questi risultati saranno riportati nel documento \textit{"Piano di Qualifica"}, in particolare nella sezione \textit{"Specifica dei test"}.
 
 \subsection{Validazione}
 \subsubsection{Introduzione}
-La validazione è un processo che si occupa di verificare che il prodotto {software\textsubscript{G}} sia in linea con i requisiti
-e con le aspettative del cliente. Di conseguenza, è fondamentale l'interazione diretta con il {committente\textsubscript{G}} e il
-{proponente\textsubscript{G}}, al fine di ottenere un feedback immediato e garantire un chiaro allineamento tra ciò che è stato
-prodotto e le aspettative degli utenti finali. Dunque lo scopo finale è avere un prodotto pronto per il rilascio, determinando la 
-conclusione del ciclo di vita del {software\textsubscript{G}}.
+La validazione è un processo che si occupa di verificare che il prodotto software sia in linea con i requisiti
+e con le aspettative del cliente. Di conseguenza, è fondamentale l'interazione diretta con il committente e il
+proponente, al fine di ottenere un feedback immediato e garantire un chiaro allineamento tra ciò che è stato
+prodotto e le aspettative degli utenti finali. Dunque lo scopo finale è avere un prodotto pronto per il rilascio, determinando la
+conclusione del ciclo di vita del software.
 
 \subsubsection{Procedura di validazione}
-In questo processo copre un ruolo fondamentale il {test\textsubscript{G}} di accettazione che mira a garantire la validazione
-del prodotto. Infatti i diversi {test\textsubscript{G}} elencati nella sezione \href{#testing}{\underline{3.2.4}} \textit{(Testing)} costituiscono un input
+In questo processo copre un ruolo fondamentale il test di accettazione che mira a garantire la validazione
+del prodotto. Infatti i diversi test elencati nella sezione \href{#testing}{\underline{3.2.4}} \textit{(Testing)} costituiscono un input
 per la validazione. Essi dovranno verificare:
 \begin{itemize}
-    \item Il soddisfacimento dei casi d'uso;
-    \item La conformità del prodotto ai requisiti obbligatori;
-    \item Il soddisfacimento di altri requisiti concordati con il {committente\textsubscript{G}}.
+	\item Il soddisfacimento dei casi d'uso;
+	\item La conformità del prodotto ai requisiti obbligatori;
+	\item Il soddisfacimento di altri requisiti concordati con il committente.
 \end{itemize}
 
 \subsection{Gestione della configurazione}
 \subsubsection{Introduzione}
-La gestione della configurazione è un processo attuato durante tutto il ciclo di vita del {software\textsubscript{G}}, infatti viene
+La gestione della configurazione è un processo attuato durante tutto il ciclo di vita del software, infatti viene
 applicata a tutte le categorie di "artefatti" coinvolti. Essa si occupa di tracciare e controllare le modifiche della documentazione e del codice
 prodotto, detti Configuration Item (CI). Così facendo le modifiche apportate saranno accessibili in qualsiasi momento, garantendo la
 possibilità di verificare le motivazioni alla base dei cambiamenti effettuati e anche il ripristino di versioni precedenti.
@@ -436,181 +436,181 @@ possibilità di verificare le motivazioni alla base dei cambiamenti effettuati e
 \subsubsection{Versionamento}
 La convenzione di versionamento adottata è nel formato X.Y dove:
 \begin{itemize}
-    \item \textbf{X}: rappresenta il completamento in vista di una delle fasi del progetto e dunque viene incrementato al raggiungimento di
-    {RTB\textsubscript{G}}, {PB\textsubscript{G}} ed eventuale CA.
-    \item \textbf{Y}: rappresenta una versione intermedia e viene incrementata ad ogni modifica significativa del documento.
+	\item \textbf{X}: rappresenta il completamento in vista di una delle fasi del progetto e dunque viene incrementato al raggiungimento di
+	      RTB, PB ed eventuale CA.
+	\item \textbf{Y}: rappresenta una versione intermedia e viene incrementata ad ogni modifica significativa del documento.
 \end{itemize}
 
 \subsubsection{Repository}
-Il team utilizza due {repository\textsubscript{G}}:
+Il team utilizza due repository:
 \begin{itemize}
-    \item \href{https://github.com/7Last/docs.git}{\underline{Documentazione}}: contenente la documentazione prodotta;
-    \item \href{https://github.com/7Last/7Last.github.io.git}{\underline{Codice}}: contenente il codice del progetto.
+	\item \href{https://github.com/7Last/docs.git}{\underline{Documentazione}}: contenente la documentazione prodotta;
+	\item \href{https://github.com/7Last/7Last.github.io.git}{\underline{Codice}}: contenente il codice del progetto.
 \end{itemize}
 
 \subsubsubsection{Struttura repository}
-Il {repository\textsubscript{G}} dedicato alla documentazione è organizzato nel seguente modo:
+Il repository dedicato alla documentazione è organizzato nel seguente modo:
 \begin{itemize}
-    \item \textbf{Candidatura}:
-    \begin{itemize}
-        \item \textbf{Verbali esterni}: contenente i verbali delle riunioni con le {proponenti\textsubscript{G}};
-        \item \textbf{Verbali interni}: contenente i verbali delle riunioni svolte all'interno del team;
-        \item \textbf{Lettera di presentazione};
-        \item \textbf{Preventivo costi e assunzione impegni};
-        \item \textbf{Valutazione dei capitolati}.
-    \end{itemize}
-    \item \textbf{RTB}:
-    \begin{itemize}
-        \item \textbf{Verbali}: contenente tutti i verbali prodotti durante il periodo di {RTB\textsubscript{G}}, distinti tra esternie e interni;
-        \item \textbf{Analisi dei Requisiti};
-        \item \textbf{Piano di Progetto};
-        \item \textbf{Piano di Qualifica};
-        \item \textbf{Glossario};
-        \item \textbf{Norme di Progetto}.
-    \end{itemize}
-    \item \textbf{PB}:
+	\item \textbf{Candidatura}:
+	      \begin{itemize}
+		      \item \textbf{Verbali esterni}: contenente i verbali delle riunioni con le proponenti;
+		      \item \textbf{Verbali interni}: contenente i verbali delle riunioni svolte all'interno del team;
+		      \item \textbf{Lettera di presentazione};
+		      \item \textbf{Preventivo costi e assunzione impegni};
+		      \item \textbf{Valutazione dei capitolati}.
+	      \end{itemize}
+	\item \textbf{RTB}:
+	      \begin{itemize}
+		      \item \textbf{Verbali}: contenente tutti i verbali prodotti durante il periodo di RTB, distinti tra esternie e interni;
+		      \item \textbf{Analisi dei Requisiti};
+		      \item \textbf{Piano di Progetto};
+		      \item \textbf{Piano di Qualifica};
+		      \item \textbf{Glossario};
+		      \item \textbf{Norme di Progetto}.
+	      \end{itemize}
+	\item \textbf{PB}:
 \end{itemize}
 
 \subsubsection{Sincronizzazione e branching}
 
 \subsubsubsection{Documentazione}
-L'approccio adottato per la redazione della documentazione segue il {workflow\textsubscript{G}} noto come \textit{feature branch}.
-Ossia ogni attività è identificata da una specifica {issue\textsubscript{G}} di GitHub (ClickUp?) e, prima dello svolgimento di
-ciascuna di esse, il componente interessato crea una diramazione del {branch\textsubscript{G}} "develop". Tale metodologia
+L'approccio adottato per la redazione della documentazione segue il workflow noto come \textit{feature branch}.
+Ossia ogni attività è identificata da una specifica issue di GitHub (ClickUp?) e, prima dello svolgimento di
+ciascuna di esse, il componente interessato crea una diramazione del branch "develop". Tale metodologia
 permette di lavorare in modo isolato e parallelo nei rispettivi "workspace", massimizzando il lavoro ed evitando sovrascritture indesiderate.
 \textbf{Convenzioni per la nomenclatura dei branch relativi alle attività di redazione o modifica di documenti} \label{convenzioni_nomenclatura}
 \begin{itemize}
-    \item Il nome del {branch\textsubscript{G}} deve riportare il nome del documento che si vuole redarre o modificare;
-    \item Nel caso dei verbali, il nome deve presentare anche la data della riunione: \textit{verbale\_interno\_yy\_mm\_dd} (es. verbale\_interno\_24\_03\_05);
-    \item Nel caso di redazione o modifica di una singola sezione di un documento, il nome del {branch\textsubscript{G}} deve avere il formato:
-    \textit{nomeDocumento\_nomeSezione} (es. norme\_di\_progetto\_introduzione);
+	\item Il nome del branch deve riportare il nome del documento che si vuole redarre o modificare;
+	\item Nel caso dei verbali, il nome deve presentare anche la data della riunione: \textit{verbale\_interno\_yy\_mm\_dd} (es. verbale\_interno\_24\_03\_05);
+	\item Nel caso di redazione o modifica di una singola sezione di un documento, il nome del branch deve avere il formato:
+	      \textit{nomeDocumento\_nomeSezione} (es. norme\_di\_progetto\_introduzione);
 \end{itemize}
 
 \subsubsubsection{Sviluppo}
 Il team utilizza lo stile di flusso di lavoro \href{https://www.atlassian.com/it/git/tutorials/comparing-workflows/gitflow-workflow}{\underline{{Gitflow}}}.
 \textbf{Flusso di lavoro Gitflow}
 \begin{enumerate}
-    \item \textbf{Branch develop}: è il punto di avvio per nuove attività, si crea a partire dal {branch\textsubscript{G}} "main";
-    \item \textbf{Branch release}: gestisce la preparazione del {software\textsubscript{G}} per un rilascio e ammette solo
-        modifiche minori e correzione di bug, si crea a partire dal {branch\textsubscript{G}} "develop";
-    \item \textbf{Branch feature}: si occupa dello sviluppo di nuove funzionalità;
-    \item \textbf{Merge di feature in develop}: una volta completata un'attività, il {branch\textsubscript{G}} feature viene
-        unito a develop;
-    \item \textbf{Merge di release in develop e main}: dopo il completamento del {branch\textsubscript{G}} realese, esso viene
-        unito sia a develop che a main;
-    \item \textbf{Branch hotfix}: si occupa della correzione di bug critici riscontrati nella fase di produzione;
-    \item \textbf{Merge di hotfix in develop e main}: dopo il completamento del {branch\textsubscript{G}} hotfix, esso viene
-        unito sia a develop che a main per garantire coerenza tra le versioni.
+	\item \textbf{Branch develop}: è il punto di avvio per nuove attività, si crea a partire dal branch "main";
+	\item \textbf{Branch release}: gestisce la preparazione del software per un rilascio e ammette solo
+	      modifiche minori e correzione di bug, si crea a partire dal branch "develop";
+	\item \textbf{Branch feature}: si occupa dello sviluppo di nuove funzionalità;
+	\item \textbf{Merge di feature in develop}: una volta completata un'attività, il branch feature viene
+	      unito a develop;
+	\item \textbf{Merge di release in develop e main}: dopo il completamento del branch realese, esso viene
+	      unito sia a develop che a main;
+	\item \textbf{Branch hotfix}: si occupa della correzione di bug critici riscontrati nella fase di produzione;
+	\item \textbf{Merge di hotfix in develop e main}: dopo il completamento del branch hotfix, esso viene
+	      unito sia a develop che a main per garantire coerenza tra le versioni.
 \end{enumerate}
 
 \subsubsubsection{Pull Request}
-Quando un'{attività\textsubscript{G}} è completata, il componente che l'ha svolta crea una Pull Request per integrare le modifiche
+Quando un'attività è completata, il componente che l'ha svolta crea una Pull Request per integrare le modifiche
 nel ramo principale. Il Verificatore ha il compito di verificare la correttezza del lavoro svolto e approvare la Pull Request.
 \textbf{Procedura per la creazione di una Pull Request} \label{pull_request}
 \begin{enumerate}
-    \item Accedere alla pagina del {repository\textsubscript{G}} e spostarsi sulla sezione "Pull Request";
-    \item Cliccare su "New Pull Request";
-    \item Selezionare il {branch\textsubscript{G}} di partenza e quello di destinazione;
-    \item Cliccare su "Create Pull Request";
-    \item Assegnare un titolo alla Pull Request;
-    \item Aggiungere una descrizione delle modifiche apportate;
-    \item Assegnare un Verificatore;
-    \item Per convenzione, l'assegnatario è colui che richiede la Pull Request;
-    \item Selezionare le {label\textsubscript{G}};
-    \item Selezionare il progetto;
-    \item Selezionare la {milestone\textsubscript{G}};
-    \item Cliccare su "Create Pull Request";
-    \item Nel caso di conflitti seguire la procedura per la risoluzione proposta da {GitHub\textsubscript{G}}.
+	\item Accedere alla pagina del repository e spostarsi sulla sezione "Pull Request";
+	\item Cliccare su "New Pull Request";
+	\item Selezionare il branch di partenza e quello di destinazione;
+	\item Cliccare su "Create Pull Request";
+	\item Assegnare un titolo alla Pull Request;
+	\item Aggiungere una descrizione delle modifiche apportate;
+	\item Assegnare un Verificatore;
+	\item Per convenzione, l'assegnatario è colui che richiede la Pull Request;
+	\item Selezionare le label;
+	\item Selezionare il progetto;
+	\item Selezionare la milestone;
+	\item Cliccare su "Create Pull Request";
+	\item Nel caso di conflitti seguire la procedura per la risoluzione proposta da GitHub.
 \end{enumerate}
 
 \subsubsection{Controllo di configurazione}
 \subsubsubsection{Change Request}
-Per lo svolgimento di questo processo in modo ordinato e strutturato seguiamo lo standard\textsubscript{G}
+Per lo svolgimento di questo processo in modo ordinato e strutturato seguiamo lo standard
 \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{\underline{ISO/IEC 12207:1995}}
-che prevede le seguenti {attività\textsubscript{G}}:
+che prevede le seguenti attività:
 \begin{enumerate}
-    \item \textbf{Identificazione e registrazione} Ciascuna change request è identificata, registrata e documentata. L'identificazione avviene
-    tramite la creazione di un'{issue\textsubscript{G}} con allegata l'etichetta "Change request".
-    Inoltre vengono riportate informazioni come la natura della modifica richiesta, la priorità e l'impatto sul progetto.
-    \item \textbf{Valutazione e analisi} La change request viene valutata e analizzata per determinare la fattibilità e l'impatto sul 
-    {sistema\textsubscript{G}}. Vengono analizzati costi e benefici conseguenti alla modifica.
-    \item \textbf{Approvazione o rifiuto} La change request viene approvata o respinta in base a criteri come budget, tempo e priorità.
-    \item \textbf{Pianificazione delle modifiche} Se la change request viene approvata, viene pianificata la sua implementazione e l'integrazione 
-    nel ciclo di sviluppo del {software\textsubscript{G}}.
-    \item \textbf{Implementazione} Le modifiche vengono effettivamente implementate, è fondamentale tenere traccia di ciò che viene fatto così
-    da consentire una corretta documentazione e, se necessario, il {rollback\textsubscript{G}} allo stato precedente.
-    \item \textbf{Verifica e validazione} Le modifiche vengono verificate e validate per garantire che non abbiano introdotto nuovi difetti
-    e che siano conformi agli obiettivi prefissati.
-    \item \textbf{Documentazione} Tutte le fasi del progetto descritto vengono documentate in modo accurato per garantire trasparenza e
-    tracciabilità.
-    \item \textbf{Comunicazione agli stakeholder} Il confronto con gli {stakeholder\textsubscript{G}} deve essere mantenuto
-    durante tutto l'arco del processo, in modo da mantenere trasparenza e fiducia.
+	\item \textbf{Identificazione e registrazione} Ciascuna change request è identificata, registrata e documentata. L'identificazione avviene
+	      tramite la creazione di un'issue con allegata l'etichetta "Change request".
+	      Inoltre vengono riportate informazioni come la natura della modifica richiesta, la priorità e l'impatto sul progetto.
+	\item \textbf{Valutazione e analisi} La change request viene valutata e analizzata per determinare la fattibilità e l'impatto sul
+	      sistema. Vengono analizzati costi e benefici conseguenti alla modifica.
+	\item \textbf{Approvazione o rifiuto} La change request viene approvata o respinta in base a criteri come budget, tempo e priorità.
+	\item \textbf{Pianificazione delle modifiche} Se la change request viene approvata, viene pianificata la sua implementazione e l'integrazione
+	      nel ciclo di sviluppo del software.
+	\item \textbf{Implementazione} Le modifiche vengono effettivamente implementate, è fondamentale tenere traccia di ciò che viene fatto così
+	      da consentire una corretta documentazione e, se necessario, il rollback allo stato precedente.
+	\item \textbf{Verifica e validazione} Le modifiche vengono verificate e validate per garantire che non abbiano introdotto nuovi difetti
+	      e che siano conformi agli obiettivi prefissati.
+	\item \textbf{Documentazione} Tutte le fasi del progetto descritto vengono documentate in modo accurato per garantire trasparenza e
+	      tracciabilità.
+	\item \textbf{Comunicazione agli stakeholder} Il confronto con gli stakeholder deve essere mantenuto
+	      durante tutto l'arco del processo, in modo da mantenere trasparenza e fiducia.
 \end{enumerate}
 
 \subsubsection{Contabilità dello Stato di Configurazione}
-La contabilità dello stato di configurazione (o Configuration Status Accounting) è un'{attività\textsubscript{G}} 
-che si occupa di tenere traccia e montorare tutte le configurazioni di un {sistema\textsubscript{G}} {software\textsubscript{G}}
+La contabilità dello stato di configurazione (o Configuration Status Accounting) è un'attività
+che si occupa di tenere traccia e montorare tutte le configurazioni di un sistema software
 durante tutto il ciclo di vita. Nello specifico esso mantiene la trasparenza e la tracciabilità delle modifiche relative ai Configuration Item (CI),
-mantenendo un registro accurato di tutte le {attività\textsubscript{G}}.
+mantenendo un registro accurato di tutte le attività.
 \textbf{Registrazione delle configurazioni}: registrazioni di informazioni dettagliate su ogni CI:
 \begin{itemize}
-    \item \textbf{Documentazione}: nella prima pagina di ciascuno di essi troviamo le informazioni riguardanti la configurazione;
-    \item \textbf{Sviluppo}: le informazioni relative alla configurazione sono inserite come prime
-    righe di ciascun file sotto forma di commento.
+	\item \textbf{Documentazione}: nella prima pagina di ciascuno di essi troviamo le informazioni riguardanti la configurazione;
+	\item \textbf{Sviluppo}: le informazioni relative alla configurazione sono inserite come prime
+	      righe di ciascun file sotto forma di commento.
 \end{itemize}
 \textbf{Stato e cambiamenti}: tracciamento dello stato attuale di ogni CI e delle modifiche effettuate, ossia versione attuale, revisioni e baseline.
 \begin{itemize}
-    \item \textbf{Registro delle modifiche}: per tenere traccia dello stato di ciascun elemento di configurazione si utilizza il registro
-    delle modifiche integrato in ognuno di essi.
-    \item \textbf{Branching e DashBoard}: dal momento che ciascuna {issue\textsubscript{G}} è associata ad un CI tramite
-    {label\textsubscript{G}}, è possibile verificare facilmente se ci sono {attività\textsubscript{G}} correlate
-    in corso nella colonna "In progress" della Dashboard di progetto.
+	\item \textbf{Registro delle modifiche}: per tenere traccia dello stato di ciascun elemento di configurazione si utilizza il registro
+	      delle modifiche integrato in ognuno di essi.
+	\item \textbf{Branching e DashBoard}: dal momento che ciascuna issue è associata ad un CI tramite
+	      label, è possibile verificare facilmente se ci sono attività correlate
+	      in corso nella colonna "In progress" della Dashboard di progetto.
 \end{itemize}
 \textbf{Supporto per la gestione delle change request}: registrazione e documentazione di tutte le modifiche effettuate ai CI in risposta alle
 richieste di modifica. Per la gestione di queste richieste si utilizza l'Issue Tracking System (ITS) di GitHub (ClickUp?) creando una
-{issue\textsubscript{G}} con la label "Change request".
+issue con la label "Change request".
 
 \subsubsection{Release management and delivery}
-Secondo lo {standard\textsubscript{G}} \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{\underline{ISO/IEC 12207:1995}},
-questo processo si occupa di tutto ciò che riguarda il rilascio e la distribuzione del {software\textsubscript{G}}. Più precisamente,
-la Release Management and Delivery gestisce la release, la distribuzione e la documentazione correlata al prodotto {software\textsubscript{G}}
+Secondo lo standard \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{\underline{ISO/IEC 12207:1995}},
+questo processo si occupa di tutto ciò che riguarda il rilascio e la distribuzione del software. Più precisamente,
+la Release Management and Delivery gestisce la release, la distribuzione e la documentazione correlata al prodotto software
 pronto per l'uso operativo.
 
-Nel nostro caso, la pianificazione della release avviene in concomitanza con le baseline stabilite per il progetto didattico, ossia 
-{RTB\textsubscript{G}} (Requirements and Technology Baseline), 
-{PB\textsubscript{G}} (Product Baseline) ed eventualmente CA (Customer Acceptance).
+Nel nostro caso, la pianificazione della release avviene in concomitanza con le baseline stabilite per il progetto didattico, ossia
+RTB (Requirements and Technology Baseline),
+PB (Product Baseline) ed eventualmente CA (Customer Acceptance).
 Affinchè questo processo termini con successo, risulta fondamentale che esso sia preceduto da un'attenta fase di verifica e validazione del prodotto.
 
 \subsubsubsection{Procedura per la creazione di una release}
 \begin{enumerate}
-    \item Accedere alla pagina del {repository\textsubscript{G}};
-    \item Spostarsi sulla sezione "Releases";
-    \item Cliccare su "Create a new release";
-    \item Cliccare su "Choose a tag" e selezionare il tag che identifica la versione da rilasciare. Nel caso non fosse presente, è possibile
-    crearlo cliccando su "Create a new tag";
-    \item Selezionare come {branch\textsubscript{G}} di destinazione il {branch\textsubscript{G}} main;
-    \item Scrivere una descrizione della release;
-    \item Cliccare su "Publish release".
+	\item Accedere alla pagina del repository;
+	\item Spostarsi sulla sezione "Releases";
+	\item Cliccare su "Create a new release";
+	\item Cliccare su "Choose a tag" e selezionare il tag che identifica la versione da rilasciare. Nel caso non fosse presente, è possibile
+	      crearlo cliccando su "Create a new tag";
+	\item Selezionare come branch di destinazione il branch main;
+	\item Scrivere una descrizione della release;
+	\item Cliccare su "Publish release".
 \end{enumerate}
-Conclusa la procedura, sarà possibile visionare la release nella sezione "Releases" del {repository\textsubscript{G}}.
+Conclusa la procedura, sarà possibile visionare la release nella sezione "Releases" del repository.
 
 \subsection{Joint review}
 \subsubsection{Introduzione}
-La Joint Review, o revisione congiunta, è un processo che si occupa di valutare lo stato e i risultati di un'{attività\textsubscript{G}}
+La Joint Review, o revisione congiunta, è un processo che si occupa di valutare lo stato e i risultati di un'attività
 all'interno del progetto, prendendo in cosiderazione sia gli aspetti tecnici che gestionali. Essa coinvolge due parti distinte che hanno entrambe
 la facoltà di attivare il processo: la parte recensita e la parte recensente. Nel nostro caso i recensori sono costituiti da
-{proponente\textsubscript{G}}, {committente\textsubscript{G}} e {stakeholder\textsubscript{G}};
+proponente, committente e stakeholder;
 mentre i recensiti da noi fornitori.
 
 \subsubsection{Implementazione del processo}
 L'implementazione del processo comprende i seguenti impegni:
 \subsubsubsection{Revisioni periodiche}
-In corrispondenza delle {milestone\textsubscript{G}} stabilite saranno effettuate delle revisioni periodiche, come riportato nel
+In corrispondenza delle milestone stabilite saranno effettuate delle revisioni periodiche, come riportato nel
 documento \textit{Piano di Progetto}.
 
 \subsubsubsection{Stato Avanzamento Lavori}
-Al termine di ogni sprint, quindi generalmente ogni due settimane, si svolge una revisione {SAL\textsubscript{G}}
-(Stato Avanzamento Lavori) tra il team e il {proponente\textsubscript{G}}. Questa revisione ha lo scopo di valutare il lavoro svolto
+Al termine di ogni sprint, quindi generalmente ogni due settimane, si svolge una revisione SAL
+(Stato Avanzamento Lavori) tra il team e il proponente. Questa revisione ha lo scopo di valutare il lavoro svolto
 nell'arco di tempo precedente, per verificare che gli obiettivi prefissati siano stati correttamente raggiunti secondo le scadenze prefissate.
 Inoltre, durante questo incontro, si pianificano anche le successive task da portare a termine.
 
@@ -625,10 +625,10 @@ In ogni caso, è importante che queste risorse siano discusse e concordate tra l
 \subsubsubsection{Elementi da concordare}
 In ciascuna revisione è necessario concordare i seguenti elementi:
 \begin{itemize}
-    \item Agenda della riunione;
-    \item Prodotti {software\textsubscript{G}} risultati dall'{attività\textsubscript{G}} e relative problematiche;
-    \item Procedure;
-    \item Criteri di ingresso e uscita per la revisione.
+	\item Agenda della riunione;
+	\item Prodotti software risultati dall'attività e relative problematiche;
+	\item Procedure;
+	\item Criteri di ingresso e uscita per la revisione.
 \end{itemize}
 
 \subsubsubsection{Documenti e distribuzione dei risultati}
@@ -637,29 +637,29 @@ comunicherà alla parte recensita la veridicità di quanto riportato, approvando
 
 \subsubsection{Project management reviews}
 \subsubsubsection{Introduzione}
-Secondo lo {standard\textsubscript{G}} \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{\underline{ISO/IEC 12207:1995}},
-il processo di Project Management Reviews si occupa di revisionare e valuatre un progetto {software\textsubscript{G}}, sia esso
-in corso o completato. In particolare esso si preoccupa che il progetto venga svolto in modo efficiente e conforme agli obiettivi e ai requisiti 
-prefissati. Questa {attività\textsubscript{G}} di revisione viene eseguita periodicamente durante tutto il ciclo di vita del progetto e
-coinvolge i {fornitori\textsubscript{G}} e gli {stakeholder\textsubscript{G}}.
+Secondo lo standard \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{\underline{ISO/IEC 12207:1995}},
+il processo di Project Management Reviews si occupa di revisionare e valuatre un progetto software, sia esso
+in corso o completato. In particolare esso si preoccupa che il progetto venga svolto in modo efficiente e conforme agli obiettivi e ai requisiti
+prefissati. Questa attività di revisione viene eseguita periodicamente durante tutto il ciclo di vita del progetto e
+coinvolge i fornitori e gli stakeholder.
 
 \subsubsubsection{Stato del progetto}
 La revisione valuta lo stato del progetto in relazione al budget, alle tempistiche e agli standard di qualità. I risultati discussi con gli
-{stakeholder\textsubscript{G}} sono:
+stakeholder sono:
 \begin{itemize}
-    \item Le {attività\textsubscript{G}} progrediscono secondo i piani;
-    \item Il progetto è gestito efficientemente attraverso l'allocazione adeguata delle risorse;
-    \item Se necessario, viene valutata la possibilità di una pianificazione alternativa;
-    \item Eventuali rischi sono identificati e gestiti in modo appropriato.
+	\item Le attività progrediscono secondo i piani;
+	\item Il progetto è gestito efficientemente attraverso l'allocazione adeguata delle risorse;
+	\item Se necessario, viene valutata la possibilità di una pianificazione alternativa;
+	\item Eventuali rischi sono identificati e gestiti in modo appropriato.
 \end{itemize}
 
 \subsubsection{Revisioni tecniche}
-Le revisioni tecniche valutano prodotti e servizi {software\textsubscript{G}} e forniscono un feedback dei seguenti aspetti:
+Le revisioni tecniche valutano prodotti e servizi software e forniscono un feedback dei seguenti aspetti:
 \begin{itemize}
-    \item Completezza;
-    \item Conformità agli standard e alle specifiche;
-    \item Correttezza nell'implementazione delle modifiche richieste nelle change request;
-    \item Coerenza con le linee guida nello sviluppo e nella manutenzione del progetto.
+	\item Completezza;
+	\item Conformità agli standard e alle specifiche;
+	\item Correttezza nell'implementazione delle modifiche richieste nelle change request;
+	\item Coerenza con le linee guida nello sviluppo e nella manutenzione del progetto.
 \end{itemize}
 
 \subsection{Risoluzione dei problemi}
@@ -675,7 +675,7 @@ di azioni correttive e preventive. In aggiunta, è essenziale anche mantenere un
 permettere trasparenza e tracciabilità.
 
 \subsubsection{Gestione dei rischi}
-Nella sezione \textit{Analisi dei rischi} del documento \textit{Piano di Progetto} sono stati identificati dal Responsabile tutti i rischi 
+Nella sezione \textit{Analisi dei rischi} del documento \textit{Piano di Progetto} sono stati identificati dal Responsabile tutti i rischi
 che potrebbero insorgere durante lo svolgimento del progetto, con relative probabilità di occorrenza e misure di mitigazione. Inoltre,
 viene condotta un'analisi del loro impatto e una valutazione dell'esito delle misure adottate. Nel caso di esito negativo, sono richieste
 delle modifiche per correggere quella determinata mitigazione.
@@ -683,131 +683,131 @@ delle modifiche per correggere quella determinata mitigazione.
 \subsubsubsection{Codifica dei rischi}
 Ogni rischio è identificato da un codice univoco nel seguente formato:
 \begin{center}
-    \textbf{[tipo]\_[probabilità]\_[priorità]\_[indice]}: nomeRischio
+	\textbf{[tipo]\_[probabilità]\_[priorità]\_[indice]}: nomeRischio
 \end{center}
 Dove:
 \begin{itemize}
-    \item \textbf{Tipo}: indica la tipologia del rischio:
-        \begin{itemize}
-            \item \textbf{TR}: rischio relativo all'utilizzo delle tecnologie (Technology Risk);
-            \item \textbf{OR}: rischio relativo all'organizzazione del team (Organization Risk);
-            \item \textbf{PR}: rischio relativo agli impegni personali (Personal Risk).
-        \end{itemize}
-    \item \textbf{Probabilità}: indica la probabilità di occorrenza del rischio:
-        \begin{itemize}
-            \item \textbf{1}: bassa;
-            \item \textbf{2}: media;
-            \item \textbf{3}: alta.
-        \end{itemize}
-    \item \textbf{Priorità}: indica la pericolosità del rischio:
-        \begin{itemize}
-            \item \textbf{B}: bassa;
-            \item \textbf{M}: media;
-            \item \textbf{A}: alta.
-        \end{itemize}
-    \item \textbf{Indice}: rappresenta un numero associato al rischio, univoco all'interno della tipologia.
+	\item \textbf{Tipo}: indica la tipologia del rischio:
+	      \begin{itemize}
+		      \item \textbf{TR}: rischio relativo all'utilizzo delle tecnologie (Technology Risk);
+		      \item \textbf{OR}: rischio relativo all'organizzazione del team (Organization Risk);
+		      \item \textbf{PR}: rischio relativo agli impegni personali (Personal Risk).
+	      \end{itemize}
+	\item \textbf{Probabilità}: indica la probabilità di occorrenza del rischio:
+	      \begin{itemize}
+		      \item \textbf{1}: bassa;
+		      \item \textbf{2}: media;
+		      \item \textbf{3}: alta.
+	      \end{itemize}
+	\item \textbf{Priorità}: indica la pericolosità del rischio:
+	      \begin{itemize}
+		      \item \textbf{B}: bassa;
+		      \item \textbf{M}: media;
+		      \item \textbf{A}: alta.
+	      \end{itemize}
+	\item \textbf{Indice}: rappresenta un numero associato al rischio, univoco all'interno della tipologia.
 \end{itemize}
 
 \subsubsubsection{Metriche}
-\begin{table}[h] 
-    \caption{Metriche relative alla gestione dei processi}
-    \centering
-    \begin{tabular}{|c|c|}
-    \hline
-    \textbf{Metrica} & \textbf{Nome} \\
-    \hline
-    16M-NCR & Non Calculated Risk (NCR) \\
-    \hline
-    \end{tabular}
+\begin{table}[h]
+	\caption{Metriche relative alla gestione dei processi}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Metrica} & \textbf{Nome}             \\
+		\hline
+		16M-NCR          & Non Calculated Risk (NCR) \\
+		\hline
+	\end{tabular}
 \end{table}
 
 \subsubsection{Identificazione dei problemi}
 Nel momento in cui insorge un problema, è essenziale comunicarlo immediatamente al resto del team e aprire una segnalazione nel sistema di
-{issue tracking\textsubscript{G}} con label "bug" e opportuna descrizione.
+issue tracking con label "bug" e opportuna descrizione.
 
 \subsection{Gestione della qualità}
 \subsubsection{Introduzione}
-Il processo di gestione della qualità si occupa di mantenere la qualità nel flusso operativo del {fornitore\textsubscript{G}}
-durante tutto il ciclo di vita del {software\textsubscript{G}}. Adottiamo infatti un approccio 
-{olistico\textsubscript{G}} che si estende dal concepimento all'implementazione e alla manutenzione del prodotto finale.
-Nello specifico, la gestione della qualità mira a garantire che le aspettative del {proponente\textsubscript{G}} e 
+Il processo di gestione della qualità si occupa di mantenere la qualità nel flusso operativo del fornitore
+durante tutto il ciclo di vita del software. Adottiamo infatti un approccio
+olistico che si estende dal concepimento all'implementazione e alla manutenzione del prodotto finale.
+Nello specifico, la gestione della qualità mira a garantire che le aspettative del proponente e
 degli utenti finali siano pienamente soddisfatte, nonchè di rispettare gli standard di qualità prefissati. Come vedremo più nel dettaglio,
 questo include:
 \begin{itemize}
-    \item Definizione degli obiettivi di qualità;
-    \item Identificazione delle metriche e dei criteri di qualità;
-    \item Pianificazione ed esecuzione delle {attività\textsubscript{G}} di controllo qualità, attraverso revisioni, ispezioni e test.
+	\item Definizione degli obiettivi di qualità;
+	\item Identificazione delle metriche e dei criteri di qualità;
+	\item Pianificazione ed esecuzione delle attività di controllo qualità, attraverso revisioni, ispezioni e test.
 \end{itemize}
 
 \subsubsection{Attività}
-Le {attività\textsubscript{G}} di gestione della qualità sono le seguenti:
+Le attività di gestione della qualità sono le seguenti:
 \begin{enumerate}
-    \item \textbf{Definizione degli standard di qualità}: identificazione chiara degli {standard\textsubscript{G}} di qualità
-    (inclusi eventualmente requisiti funzionali) che il prodotto {software\textsubscript{G}} deve soddisfare;
-    \item \textbf{Pianificazione della qualità}: progettazione di un piano di qualità che definisce le {attività\textsubscript{G}},
-    risorse e tempistiche;
-    \item \textbf{Assicurazione della qualità}: monitoraggio e valutazione dei {processi\textsubscript{G}};
-    \item \textbf{Controllo della qualità}: esecuzione di {test\textsubscript{G}} e verifiche;
-    \item \textbf{Gestione delle modifiche}: implementazione di un sistema di gestione modifiche per garantire che ciascuna di esse sia valutata
-    in base all'impatto che ha sulla qualità del prodotto;
-    \item \textbf{Miglioramento continuo e correzione}: raccolta di feedback, analisi dell'andamento, e adozione delle 
-    {best practice\textsubscript{G}} per massimizzare la qualità dei {processi\textsubscript{G}} e dei profotti;
-    \item \textbf{Coinvolgimento degli stakeholder}: comunicazione tramite feedback con gli {stakeholder\textsubscript{G}} 
-    per garantire che {stakeholder\textsubscript{G}}, clienti ed utenti finali siano coinvolti nel processo di gestione della qualità;
-    \item \textbf{Formazione del team}: formazione e supporto costante all'interno del gruppo per manetenere un alto livello di qualità.
+	\item \textbf{Definizione degli standard di qualità}: identificazione chiara degli standard di qualità
+	      (inclusi eventualmente requisiti funzionali) che il prodotto software deve soddisfare;
+	\item \textbf{Pianificazione della qualità}: progettazione di un piano di qualità che definisce le attività,
+	      risorse e tempistiche;
+	\item \textbf{Assicurazione della qualità}: monitoraggio e valutazione dei processi;
+	\item \textbf{Controllo della qualità}: esecuzione di test e verifiche;
+	\item \textbf{Gestione delle modifiche}: implementazione di un sistema di gestione modifiche per garantire che ciascuna di esse sia valutata
+	      in base all'impatto che ha sulla qualità del prodotto;
+	\item \textbf{Miglioramento continuo e correzione}: raccolta di feedback, analisi dell'andamento, e adozione delle
+	      best practice per massimizzare la qualità dei processi e dei profotti;
+	\item \textbf{Coinvolgimento degli stakeholder}: comunicazione tramite feedback con gli stakeholder
+	      per garantire che stakeholder, clienti ed utenti finali siano coinvolti nel processo di gestione della qualità;
+	\item \textbf{Formazione del team}: formazione e supporto costante all'interno del gruppo per manetenere un alto livello di qualità.
 \end{enumerate}
 
 \subsubsection{Piano di qualifica}
 Il documento \textit{Piano di Qualifica} ricopre un ruolo essenziale nel contesto della gestione della qualità in quanto tratta ampiamente
-le {attività\textsubscript{G}} di pianificazione e controllo della qualità. In particolare esso definisce le specifiche di qualità
+le attività di pianificazione e controllo della qualità. In particolare esso definisce le specifiche di qualità
 richieste, definendo i metodi di controllo necessari a garantire il rispetto di tali requisiti.
 
 \subsubsection{PDCA}
 Il ciclo PDCA, o ciclo di Deming, è un modello di gestione iterativo che consente il miglioramento continuo dei processi. Esso consta delle seguenti fasi:
 \begin{itemize}
-    \item \textbf{Plan}: pianificazione delle attività per definire {processi\textsubscript{G}} e relativa sequenza di esecuzione;
-    \item \textbf{Do}: esecuzione effettiva di quanto pianificato;
-    \item \textbf{Check}: analisi e verifica di tutte le informazioni raccolte durante la fase di esecuzione;
-    \item \textbf{Act}: implementazione di azioni correttive nel caso del mancato raggiungimento dei risultati attesi, oppure riconoscimento e 
-    consolidamento delle buone pratiche. Così facendo, il ciclo viene di volta in volta incrementato e perfezionato aggiunngendo valore al processo.
+	\item \textbf{Plan}: pianificazione delle attività per definire processi e relativa sequenza di esecuzione;
+	\item \textbf{Do}: esecuzione effettiva di quanto pianificato;
+	\item \textbf{Check}: analisi e verifica di tutte le informazioni raccolte durante la fase di esecuzione;
+	\item \textbf{Act}: implementazione di azioni correttive nel caso del mancato raggiungimento dei risultati attesi, oppure riconoscimento e
+	      consolidamento delle buone pratiche. Così facendo, il ciclo viene di volta in volta incrementato e perfezionato aggiunngendo valore al processo.
 \end{itemize}
 
 \subsubsection{Struttura e identificazioni metriche}
 Ogni metrica presenta la seguente struttura:
 \begin{itemize}
-    \item \textbf{Metrica}:
-    codice identificativo nel formato:
-    \begin{center}
-        \textbf{[numero]M-[acronimo]}
-    \end{center}
-    Dove:
-    \begin{itemize}
-        \item \textbf{Numero}: numero progressivo univoco per ogni metrica;
-        \item \textbf{M}: metrica;
-        \item \textbf{Acronimo}: abbreviazione della metrica.
-    \end{itemize}
-    \item \textbf{Nome}: nome della metrica;
-    \item \textbf{Descrizione}: breve descrizione della metrica adottata e delle sue funzionalità;
-    \item \textbf{Formula}: formula matematica per il calcolo della metrica;
+	\item \textbf{Metrica}:
+	      codice identificativo nel formato:
+	      \begin{center}
+		      \textbf{[numero]M-[acronimo]}
+	      \end{center}
+	      Dove:
+	      \begin{itemize}
+		      \item \textbf{Numero}: numero progressivo univoco per ogni metrica;
+		      \item \textbf{M}: metrica;
+		      \item \textbf{Acronimo}: abbreviazione della metrica.
+	      \end{itemize}
+	\item \textbf{Nome}: nome della metrica;
+	\item \textbf{Descrizione}: breve descrizione della metrica adottata e delle sue funzionalità;
+	\item \textbf{Formula}: formula matematica per il calcolo della metrica;
 \end{itemize}
 
 \subsubsection{Criteri di accettazione}
 All'interno del documento \textit{Piano di Qualifica} sono definiti i criteri di accettazione in formato tabellare:
 \begin{itemize}
-    \item \textbf{Valore accettabile}: valore minimo affinchè la metrica sia considerabile soddisfacente e conforme agli obiettivi di qualità;
-    \item \textbf{Valore desiderabile}: valore ottimale e ideale che dovrebbe essere raggiunto dalla metrica.
+	\item \textbf{Valore accettabile}: valore minimo affinchè la metrica sia considerabile soddisfacente e conforme agli obiettivi di qualità;
+	\item \textbf{Valore desiderabile}: valore ottimale e ideale che dovrebbe essere raggiunto dalla metrica.
 \end{itemize}
 
 \subsubsection{Metriche}
 \begin{table}[h]
-    \centering
-    \caption{Metriche relative alla gestione della qualità}
-    \begin{tabular}{|c|c|}
-    \hline
-    \textbf{Metrica} & \textbf{Nome} \\
-    \hline
-    15M-QMS & Quality Metrics Satisfied (QMS) \\
-    24M-FD & Failure Density (FD) \\
-    \hline
-    \end{tabular}
+	\centering
+	\caption{Metriche relative alla gestione della qualità}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Metrica} & \textbf{Nome}                   \\
+		\hline
+		15M-QMS          & Quality Metrics Satisfied (QMS) \\
+		24M-FD           & Failure Density (FD)            \\
+		\hline
+	\end{tabular}
 \end{table}

@@ -1,7 +1,7 @@
 \section{Processi primari}
 \subsection{Fornitura}
 \subsubsection{Introduzione}
-Il processo di fornitura ha lo scopo di stabilire un accordo contrattuale tra il fornitore e il cliente, in cui vengono definiti i servizi che il fornitore si impegna a fornire e le condizioni di fornitura. 
+Il processo di fornitura ha lo scopo di stabilire un accordo contrattuale tra il fornitore e il cliente, in cui vengono definiti i servizi che il fornitore si impegna a fornire e le condizioni di fornitura.
 Il processo di fornitura comprende le seguenti attività:
 \subsubsection{Attività}
 \begin{itemize}
@@ -112,28 +112,28 @@ Questa attività richiede di rispondere a domande fondamentali come "Qual è il 
 \begin{itemize}
 	\item \textbf{Introduzione}: presentazione e scopo del documento stesso;
 	\item \textbf{Descrizione}:  analisi approfondita del prodotto, includendo:
-	\begin{itemize}
-		\item Obbiettivi del prodotto;
-		\item Funzionalità del prodotto;
-		\item Caratteristiche utente;
-		\item Tecnologie impiegate.
-	\end{itemize}
+	      \begin{itemize}
+		      \item Obbiettivi del prodotto;
+		      \item Funzionalità del prodotto;
+		      \item Caratteristiche utente;
+		      \item Tecnologie impiegate.
+	      \end{itemize}
 	\item Casi d'uso: descrizione delle funzionalità offerte dal sistema dal punto di vista dell'utente, includendo:
-	\begin{itemize}
-		\item utenti esterni al sistema;
-		\item Elenco dei casi d'uso, comprensivo di:
-		\begin{itemize}
-			\item Descrizioni dei casi d'uso in formato testuale;
-			\item Diagrammid dei casi d'uso.
-		\end{itemize}
-		\item Eventuali diagrammi di attività per facilitare la comprensione dei processi relativi alle funzionalità.
-	\end{itemize}
+	      \begin{itemize}
+		      \item utenti esterni al sistema;
+		      \item Elenco dei casi d'uso, comprensivo di:
+		            \begin{itemize}
+			            \item Descrizioni dei casi d'uso in formato testuale;
+			            \item Diagrammid dei casi d'uso.
+		            \end{itemize}
+		      \item Eventuali diagrammi di attività per facilitare la comprensione dei processi relativi alle funzionalità.
+	      \end{itemize}
 	\item \textbf{Requisiti}:
-	\begin{itemize}
-		\item Requisiti funzionali;
-		\item Requisiti qualitativi;
-		\item Requisiti di vincolo.
-	\end{itemize}
+	      \begin{itemize}
+		      \item Requisiti funzionali;
+		      \item Requisiti qualitativi;
+		      \item Requisiti di vincolo.
+	      \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Casi d'uso}
@@ -142,23 +142,22 @@ Essenzialmente, i casi d'uso sono strumenti utilizzati nell'analisi dei requisit
 \\
 Ogni caso d'uso testuale deve includere:
 \begin{enumerate}
-	\item \textbf{Identificativo}: \begin{center}\textbf{UC [Numero caso d'uso].[Numero sotto caso d'uso] - [Titolo]}\end{center} ad esempio \textbf{TODO: inserire esempio} \\ con
-	\begin{itemize}
-		\item \textbf{Numero caso d'uso}: identificativo numerico del caso d'uso;
-		\item \textbf{Numero sotto caso d'uso}: identificativo numerico del sotto caso d'uso (presente solo se si tratta di un sotto caso d'uso);
-		\item \textbf{Titolo}: breve e chiaro titolo del caso d'uso.
-	\end{itemize}
+	\item \textbf{Identificativo}:
+	      \begin{center}
+		      \textbf{UC-[identificativo\_caso\_principale].[identificativo\_sotto\_caso]}
+	      \end{center}
+	      \begin{itemize}
+		      \item \textbf{Identificativo sotto caso}: identificativo numerico del sotto caso d'uso (presente solo se si tratta di un sotto caso d'uso);
+		      \item \textbf{Titolo}: breve e chiaro titolo del caso d'uso.
+	      \end{itemize}
 	\item \textbf{Attore principale}: entità esterna che interagisce attivamente con il sistema per soddisfare una propria necessità.
-	\item \textbf{Attore secondario}: eventualmente, un'entità esterna che non interagisce attivamente con il sistema, ma all'interno del caso d'uso consente al sistema di soddisfare la necessità dell'attore principale.
-	\item \textbf{Descrizione}: una breve descrizione della funzionalità, se necessaria.
 	\item \textbf{Scenario principale}: una sequenza di eventi che si verificano quando un attore interagisce con il sistema per raggiungere l'obiettivo del caso d'uso (postcondizioni).
-	\item \textbf{Estensioni}: eventuali scenari alternativi che si verificano in seguito a una o più specifiche condizioni, portando il flusso del caso d'uso a non raggiungere le postcondizioni.
 	\item \textbf{Precondizioni}: lo stato in cui deve trovarsi il sistema affinché la funzionalità sia disponibile per l'attore.
 	\item \textbf{Postcondizioni}: lo stato in cui si trova il sistema dopo l'esecuzione dello scenario principale.
-	\item \textbf{User story associata}: una breve descrizione di una funzionalità del software, scritta dal punto di vista dell'utente, che fornisce contesto, obiettivi e valore.
-	\begin{itemize}
-		\item L'user story viene scritta nella forma: "Come [utente] desidero poter [funzionalità] per [valore aggiunto]".
-	\end{itemize}
+	\item \textbf{User story}: una breve descrizione di una funzionalità del software, scritta dal punto di vista dell'utente, che fornisce contesto, obiettivi e valore.
+	      \begin{itemize}
+		      \item L'user story viene scritta nella forma: "Come [utente] desidero poter [funzionalità] per [valore aggiunto]".
+	      \end{itemize}
 \end{enumerate}
 
 \subsubsubsection{Diagrammi dei casi d'uso}
@@ -168,61 +167,61 @@ Un diagramma dei casi d'uso fornisce una panoramica visuale delle principali int
 Di seguito sono elencati i principali componenti di un diagramma dei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attori}: Gli attori sono rappresentati come entità esterne al sistema con cui interagisce e possono includere utenti umani, altri software o componenti esterni. Sono simboleggiati come "stickman" al di fuori del rettangolo che delimita il sistema.
-	\begin{center}
-		\includegraphics*[width=4cm]{../../../images/norme_di_progetto/attore.png}
-		\captionof{figure}{Diagramma dei casi d'uso - Attore}
-	\end{center} \newpage
+	      \begin{center}
+		      \includegraphics*[width=4cm]{../../../images/norme_di_progetto/attore.png}
+		      \captionof{figure}{Diagramma dei casi d'uso - Attore}
+	      \end{center} \newpage
 	\item \textbf{Casi d'uso}: I casi d'uso sono rappresentati come ovali all'interno del rettangolo che delimita il sistema e descrivono le funzionalità offerte dal sistema dal punto di vista dell'utente. Ogni caso d'uso è associato a uno o più attori e descrive uno scenario specifico in cui l'utente interagisce con il sistema per raggiungere un obiettivo specifico.
-	\begin{center}
-		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/casoDiUso.png}
-		\captionof{figure}{Diagramma dei casi d'uso - Caso d'uso}
-	\end{center}
-	\newpage
+	      \begin{center}
+		      \includegraphics*[width=10cm]{../../../images/norme_di_progetto/casoDiUso.png}
+		      \captionof{figure}{Diagramma dei casi d'uso - Caso d'uso}
+	      \end{center}
+	      \newpage
 	\item \textbf{Sottocasi d'uso}: I sottocasi d'uso sono casi d'uso che rappresentano scenari specifici all'interno di un caso d'uso principale. Sono rappresentati come ovali all'interno del caso d'uso principale e descrivono azioni o funzionalità aggiuntive necessarie per completare il caso d'uso principale.
-	\begin{center}
-		\includegraphics*[width=17cm]{../../../images/norme_di_progetto/sottocasiDiUso.png}
-		\captionof{figure}{Diagramma dei casi d'uso - Sottocaso d'uso}
-	\end{center} \newpage
+	      \begin{center}
+		      \includegraphics*[width=17cm]{../../../images/norme_di_progetto/sottocasiDiUso.png}
+		      \captionof{figure}{Diagramma dei casi d'uso - Sottocaso d'uso}
+	      \end{center} \newpage
 	\item \textbf{Sistema}: Il sistema è rappresentato come un rettangolo che delimita i casi d'uso e gli attori. Questo simbolo rappresenta il sistema software che offre le funzionalità descritte dai casi d'uso.
-	\begin{center}
-		\includegraphics*[width=8cm]{../../../images/norme_di_progetto/sistema.png}
-		\captionof{figure}{Diagramma dei casi d'uso - Sistema}
-	\end{center}
+	      \begin{center}
+		      \includegraphics*[width=8cm]{../../../images/norme_di_progetto/sistema.png}
+		      \captionof{figure}{Diagramma dei casi d'uso - Sistema}
+	      \end{center}
 	\item \textbf{Relazioni tra Attori e Casi d'Uso}
-	\begin{itemize}
-		\item \textbf{Associazione}: Una linea tratteggiata tra un attore e un caso d'uso indica un'associazione tra l'attore e il caso d'uso, che indica che l'attore è coinvolto nel caso d'uso.
-		\begin{center}
-			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/associazione.png}
-			\captionof{figure}{Diagramma dei casi d'uso - Associazione}
-		\end{center}
-	\end{itemize} \newpage
+	      \begin{itemize}
+		      \item \textbf{Associazione}: Una linea tratteggiata tra un attore e un caso d'uso indica un'associazione tra l'attore e il caso d'uso, che indica che l'attore è coinvolto nel caso d'uso.
+		            \begin{center}
+			            \includegraphics*[width=15cm]{../../../images/norme_di_progetto/associazione.png}
+			            \captionof{figure}{Diagramma dei casi d'uso - Associazione}
+		            \end{center}
+	      \end{itemize} \newpage
 	\item \textbf{Relazioni tra Attori}
-	\begin{itemize}
-		\item \textbf{Generalizzazione}: Una freccia con una linea continua tra due attori indica una relazione di generalizzazione, che indica che un attore è un tipo specializzato di un altro attore.
-		\begin{center}
-			\includegraphics*[width=2cm]{../../../images/norme_di_progetto/generalizzazioneTraAttori.png}
-			\captionof{figure}{Diagramma dei casi d'uso - Generalizzazione tra attori}
-		\end{center}
-	\end{itemize} 
-	\newpage
+	      \begin{itemize}
+		      \item \textbf{Generalizzazione}: Una freccia con una linea continua tra due attori indica una relazione di generalizzazione, che indica che un attore è un tipo specializzato di un altro attore.
+		            \begin{center}
+			            \includegraphics*[width=2cm]{../../../images/norme_di_progetto/generalizzazioneTraAttori.png}
+			            \captionof{figure}{Diagramma dei casi d'uso - Generalizzazione tra attori}
+		            \end{center}
+	      \end{itemize}
+	      \newpage
 	\item \textbf{Relazioni tra Casi d'Uso}
-	\begin{itemize}
-		\item \textbf{Inclusione}: La relazione di inclusione indica che un caso d'uso (chiamato "includente") incorpora l'esecuzione di un altro caso d'uso (detto "incluso"). In pratica, quando un attore interagisce con il caso d'uso includente, il caso d'uso incluso viene attivato come parte integrante del primo. Questo meccanismo è utile per favorire il riutilizzo di funzionalità e evitare la duplicazione di logica in diversi casi d'uso. La relazione di inclusione è simboleggiata da una freccia tratteggiata che collega il caso d'uso incluso al caso d'uso includente.
-		\begin{center}
-			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/inclusione.png}
-			\captionof{figure}{Diagramma dei casi d'uso - Inclusione}
-		\end{center} \newpage
-		\item \textbf{Estensione}: La relazione di estensione indica che un caso d'uso (chiamato "estendente") può estendere il comportamento di un altro caso d'uso (detto "esteso") in determinate circostanze. In pratica, il caso d'uso estendente può aggiungere funzionalità opzionali o alternative al caso d'uso esteso, senza modificarne il comportamento principale. La relazione di estensione è simboleggiata da una freccia tratteggiata che collega il caso d'uso esteso al caso d'uso estendente.
-		\begin{center}
-			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/estensione.png}
-			\captionof{figure}{Diagramma dei casi d'uso - Estensione}
-		\end{center} \newpage
-		\item \textbf{Generalizzazione casi d'uso}: Una freccia con una linea continua tra due casi d'uso indica una relazione di generalizzazione, che indica che un caso d'uso è un tipo specializzato di un altro caso d'uso.
-		\begin{center}
-			\includegraphics*[width=15cm]{../../../images/norme_di_progetto/generalizzazioneCasiDiUso.png}
-			\captionof{figure}{Diagramma dei casi d'uso - Generalizzazione tra casi d'uso}
-		\end{center}
-	\end{itemize}
+	      \begin{itemize}
+		      \item \textbf{Inclusione}: La relazione di inclusione indica che un caso d'uso (chiamato "includente") incorpora l'esecuzione di un altro caso d'uso (detto "incluso"). In pratica, quando un attore interagisce con il caso d'uso includente, il caso d'uso incluso viene attivato come parte integrante del primo. Questo meccanismo è utile per favorire il riutilizzo di funzionalità e evitare la duplicazione di logica in diversi casi d'uso. La relazione di inclusione è simboleggiata da una freccia tratteggiata che collega il caso d'uso incluso al caso d'uso includente.
+		            \begin{center}
+			            \includegraphics*[width=15cm]{../../../images/norme_di_progetto/inclusione.png}
+			            \captionof{figure}{Diagramma dei casi d'uso - Inclusione}
+		            \end{center} \newpage
+		      \item \textbf{Estensione}: La relazione di estensione indica che un caso d'uso (chiamato "estendente") può estendere il comportamento di un altro caso d'uso (detto "esteso") in determinate circostanze. In pratica, il caso d'uso estendente può aggiungere funzionalità opzionali o alternative al caso d'uso esteso, senza modificarne il comportamento principale. La relazione di estensione è simboleggiata da una freccia tratteggiata che collega il caso d'uso esteso al caso d'uso estendente.
+		            \begin{center}
+			            \includegraphics*[width=15cm]{../../../images/norme_di_progetto/estensione.png}
+			            \captionof{figure}{Diagramma dei casi d'uso - Estensione}
+		            \end{center} \newpage
+		      \item \textbf{Generalizzazione casi d'uso}: Una freccia con una linea continua tra due casi d'uso indica una relazione di generalizzazione, che indica che un caso d'uso è un tipo specializzato di un altro caso d'uso.
+		            \begin{center}
+			            \includegraphics*[width=15cm]{../../../images/norme_di_progetto/generalizzazioneCasiDiUso.png}
+			            \captionof{figure}{Diagramma dei casi d'uso - Generalizzazione tra casi d'uso}
+		            \end{center}
+	      \end{itemize}
 \end{itemize}
 
 \newpage
@@ -232,30 +231,34 @@ Una definizione precisa dei requisiti è essenziale: devono essere chiari e risp
 
 Ogni requisito è costituito da:
 \begin{enumerate}
-	\item \textbf{identificativo} nel formato \begin{center}\textbf{R[Abbreviazione Tipologia Requisito][Codice]}\end{center} con:\\
-	\begin{itemize}
-		\item \textbf{Abbreviazione Tipologia Requisito}: indica la tipologia del requisito, che può essere:
-		\begin{itemize}
-			\item \textbf{RF}: requisito funzionale;
-			\item \textbf{RQ}: requisito di qualità;
-			\item \textbf{RV}: requisito di vincolo.
-		\end{itemize}
-		\item \textbf{Codice}: numero progressivo che identifica univocamente il requisito.
-	\end{itemize}
+	\item \textbf{Codice}: I requisiti sono codificati nel seguente modo:
+	      \begin{center}
+		      \textbf{R[Tipologia]-[Codice]}
+	      \end{center}
+	      dove
+	      \begin{itemize}
+		      \item \textbf{[Codice]} è un numero progressivo che identifica univocamente il requisito;
+		      \item \textbf{Tipologia}: indica la tipologia del requisito, che può essere:
+		            \begin{itemize}
+			            \item \textbf{F}: requisito funzionale;
+			            \item \textbf{Q}: requisito di qualità;
+			            \item \textbf{V}: requisito di vincolo.
+		            \end{itemize}
+	      \end{itemize}
 	\item \textbf{Importanza}: indica il grado di importanza del requisito, che può essere:
-	\begin{itemize}
-		\item \textbf{Obbligatorio}: requisito essenziale per il funzionamento del sistema;
-		\item \textbf{Desiderabile}: requisito che apporta valore aggiunto al sistema, ma non essenziale;
-		\item \textbf{Opzionale}: requisito che può essere implementato in un secondo momento.
-	\end{itemize}
-	\item \textbf{Descrizione}: descrizione chiara e dettagliata che fornisce una spiegazione del comportamento o della funzionalità richiesta.
-	\item \textbf{Fonte}: indica la fonte da cui è stato identificato il requisito, che può essere:\\
-	\begin{itemize}
-		\item \textbf{Capitolato}: requisito identificato direttamente dal capitolato d'appalto;
-		\item \textbf{Verbale Interno}: requisito identificato durante un incontro interno;
-		\item \textbf{Verbale Esterno}: requisito identificato durante un incontro con il proponente.
-	\end{itemize}
-	\item \textbf{Casi d'uso}: elenco dei casi d'uso che soddisfano il requisito.
+	      \begin{itemize}
+		      \item \textbf{Obbligatorio}: requisito irrinunciabile per il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#committente}{committente\textsubscript{G}};
+		      \item \textbf{Desiderabile}: requisito non strettamente necessario, ma che porta valore aggiunto al prodotto;
+		      \item \textbf{Opzionale}: requisito relativo a funzionalità aggiuntive.
+	      \end{itemize}
+	\item \textbf{Fonte}: indica la fonte da cui è stato identificato il requisito, che può essere:
+	      \begin{itemize}
+		      \item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{\textbf{Capitolato}\textsubscript{G}}: requisiti individuati a seguito dell'analisi del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{capitolato\textsubscript{G}};
+		      \item \textbf{Interno}: requisiti individuati durante le riunioni interne e da coloro che hanno il ruolo di analista;
+		      \item \textbf{Esterno}: requisiti aggiuntivi individuati in seguito a incontri con la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}};
+		      \item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{\textbf{Piano di Qualifica}\textsubscript{G}}: requisiti necessari per adeguare il prodotto agli standard di qualità definiti nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{\textit{Piano di Qualifica}\textsubscript{G}}.
+		      \item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{\textbf{Norme di Progetto}\textsubscript{G}}: requisiti necessari per adeguare il prodotto alle norme stabilite nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{\textit{Norme di Progetto}\textsubscript{G}}
+	      \end{itemize}
 \end{enumerate}
 
 
@@ -263,18 +266,18 @@ Ogni requisito è costituito da:
 Nell'analisi dei requisiti, le metriche sono strumenti essenziali per valutare, misurare e gestire diversi aspetti dei requisiti di un sistema o di un progetto. Grazie a queste metriche, è possibile garantire che i requisiti siano esaustivi, precisi, coerenti e comprensibili.
 \\
 \begin{table}[!h] %? Il riferimento da mettere direttamente sulla colonna "Metrica"?
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \textbf{Metrica} & \textbf{Abbreviazione} \\
-    \hline
-    \hyperlink{subsection.6.2}{0M-CRO} & Copertura dei Requisiti Obbligatori \\
-    \hyperlink{subsection.6.2}{1M-CRD} & Copertura dei Requisiti Desiderabili \\
-    \hyperlink{subsection.6.2}{2M-CROP} & Copertura dei Requisiti Opzionali \\
-    \hline
-    \end{tabular}
-    \caption{Metriche per l'analisi dei requisiti (TEST)}
-    \label{tab:2}
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Metrica}                    & \textbf{Abbreviazione}               \\
+		\hline
+		\hyperlink{subsection.6.2}{0M-CRO}  & Copertura dei Requisiti Obbligatori  \\
+		\hyperlink{subsection.6.2}{1M-CRD}  & Copertura dei Requisiti Desiderabili \\
+		\hyperlink{subsection.6.2}{2M-CROP} & Copertura dei Requisiti Opzionali    \\
+		\hline
+	\end{tabular}
+	\caption{Metriche per l'analisi dei requisiti (TEST)}
+	\label{tab:2}
 \end{table}
 
 \subsubsubsection{Strumenti}
@@ -319,9 +322,9 @@ Inizialmente, il team di progettazione eseguirà un'analisi approfondita per sel
 	\item \textbf{Disponibilità}: l'architettura deve garantire la disponibilità del sistema, in modo che possa essere sempre accessibile e operativo per gli utenti;
 	\item \textbf{Safety}: l'architettura deve garantire la sicurezza del sistema, in modo che possa proteggere i dati e le informazioni sensibili in seguito a malfunzionamenti;
 	\item \textbf{Security}: l'architettura deve garantire la sicurezza del sistema, in modo che possa proteggere i dati e le informazioni sensibili da accessi non autorizzati.
-	\item \textbf{semplicità}: l'architettura deve essere semplice e intuitiva, in modo che possa essere facilmente compresa e utilizzata dagli sviluppatori e dagli utenti.
+	\item \textbf{Semplicità}: l'architettura deve essere semplice e intuitiva, in modo che possa essere facilmente compresa e utilizzata dagli sviluppatori e dagli utenti.
 	\item \textbf{Coesione}: l'architettura deve essere coesa, con componenti ben definiti e correlati tra loro, in modo che possano lavorare insieme in modo efficace e armonioso;
-	\item \textbf{Incapsulazione}: l'architettura deve essere incapsulata, con componenti ben definiti e indipendenti, in modo che possano essere facilmente gestiti e mantenuti senza influenzare il resto del sistema;
+	\item \textbf{Incapsulamento}: l'architettura deve essere incapsulata, con componenti ben definiti e indipendenti, in modo che possano essere facilmente gestiti e mantenuti senza influenzare il resto del sistema;
 	\item \textbf{Basso accoppiamento}: l'architettura deve avere un basso accoppiamento tra i componenti, in modo che possano essere facilmente sostituiti e modificati senza influenzare il resto del sistema;
 \end{itemize}
 
@@ -344,31 +347,31 @@ Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
 \begin{enumerate}
 	\item \textbf{Nome della classe}: indica il nome della classe;
 	\item \textbf{Attributi}: elenco degli attributi della classe, con il relativo tipo di dato, seguendo il formato: \\ \begin{center}\textbf{Visibilità Nome: Tipo [Molteplicità] = Valore di default}\end{center}
-	\begin{itemize}
-		\item \textbf{Visibilità}: indica il livello di accesso agli attributi, che può essere:
-		\begin{itemize}
-			\item \textbf{+}: pubblico;
-			\item \textbf{-}: privato;
-			\item \textbf{\#}: protetto;
-			\item \textbf{\textasciitilde}: package.
-		\end{itemize}
-		\item \textbf{Nome}: nome dell'attributo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeAttributo: tipo}; \\ Se l'attributo è costante, il nome deve essere scritto in maiuscolo (es. \textit{PIGRECO: double});
-		\item \textbf{Molteplicità}: nel caso di una sequenza di elementi come liste o array, indica il numero di elementi presenti, se questa non fosse conosciuta si utilizza il simbolo \textit{*} (es \textit{tipoAttributo[*]});
-		\item \textbf{default}: valore di default dell'attributo.
-	\end{itemize}
+	      \begin{itemize}
+		      \item \textbf{Visibilità}: indica il livello di accesso agli attributi, che può essere:
+		            \begin{itemize}
+			            \item \textbf{+}: pubblico;
+			            \item \textbf{-}: privato;
+			            \item \textbf{\#}: protetto;
+			            \item \textbf{\textasciitilde}: package.
+		            \end{itemize}
+		      \item \textbf{Nome}: nome dell'attributo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeAttributo: tipo}; \\ Se l'attributo è costante, il nome deve essere scritto in maiuscolo (es. \textit{PIGRECO: double});
+		      \item \textbf{Molteplicità}: nel caso di una sequenza di elementi come liste o array, indica il numero di elementi presenti, se questa non fosse conosciuta si utilizza il simbolo \textit{*} (es \textit{tipoAttributo[*]});
+		      \item \textbf{default}: valore di default dell'attributo.
+	      \end{itemize}
 	\item \textbf{Metodi}: descrivono il comportamento della classe, seguendo il formato: \\ \begin{center}\textbf{Visibilità Nome(parametri): Tipo di ritorno}\end{center}
-	\begin{itemize}
-		\item \textbf{Visibilità}: indica il livello di accesso ai metodi, che può essere:
-		\begin{itemize}
-			\item \textbf{+}: pubblico;
-			\item \textbf{-}: privato;
-			\item \textbf{\#}: protetto;
-			\item \textbf{\textasciitilde}: package.
-		\end{itemize}
-		\item \textbf{Nome}: nome del metodo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeMetodo(parametri): tipoRitorno};
-		\item \textbf{Parametri}: elenco dei parametri del metodo, separati tramite virgola. Ogni parametro deve seguire la notazione \textit{nomeParametro: tipo};
-		\item \textbf{Tipo di ritorno}: indica il tipo di dato restituito dal metodo.
-	\end{itemize}
+	      \begin{itemize}
+		      \item \textbf{Visibilità}: indica il livello di accesso ai metodi, che può essere:
+		            \begin{itemize}
+			            \item \textbf{+}: pubblico;
+			            \item \textbf{-}: privato;
+			            \item \textbf{\#}: protetto;
+			            \item \textbf{\textasciitilde}: package.
+		            \end{itemize}
+		      \item \textbf{Nome}: nome del metodo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeMetodo(parametri): tipoRitorno};
+		      \item \textbf{Parametri}: elenco dei parametri del metodo, separati tramite virgola. Ogni parametro deve seguire la notazione \textit{nomeParametro: tipo};
+		      \item \textbf{Tipo di ritorno}: indica il tipo di dato restituito dal metodo.
+	      \end{itemize}
 \end{enumerate}
 
 \textbf{Convenzioni sui metodi}
@@ -382,37 +385,37 @@ Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
 I diagrammi delle classi possono includere diverse relazioni tra le classi, che rappresentano le interazioni e le dipendenze tra le varie componenti del sistema. Le principali relazioni tra le classi sono:
 \begin{itemize}
 	\item \textbf{Associazione}: indica una relazione tra due classi, in cui un'istanza di una classe è collegata a un'istanza di un'altra classe. L'associazione è rappresentata da una linea che collega le due classi, con una freccia che indica la direzione dell'associazione e le molteplicità possono essere rappresentate con numeri messi agli estremi della freccia.
-	\begin{center}
-		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/associazioneClassi.png}
-		\captionof{figure}{Diagramma delle classi - Associazione}
-	\end{center}
-	\newpage
+	      \begin{center}
+		      \includegraphics*[width=12cm]{../../../images/norme_di_progetto/associazioneClassi.png}
+		      \captionof{figure}{Diagramma delle classi - Associazione}
+	      \end{center}
+	      \newpage
 	\item \textbf{Dipendenza}: indica una relazione in cui una classe dipende da un'altra classe, ad esempio se un metodo di una classe utilizza un'istanza di un'altra classe. La dipendenza è rappresentata da una linea tratteggiata che collega le due classi, con una freccia che indica la direzione della dipendenza.
-	\begin{center}
-		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/dipendenzaClassi.png}
-		\captionof{figure}{Diagramma delle classi - Dipendenza}
-	\end{center}
+	      \begin{center}
+		      \includegraphics*[width=12cm]{../../../images/norme_di_progetto/dipendenzaClassi.png}
+		      \captionof{figure}{Diagramma delle classi - Dipendenza}
+	      \end{center}
 	\item \textbf{Aggregazione}: indica una relazione in cui una classe è composta da una o più istanze di un'altra classe. L'aggregazione è rappresentata da una linea con un rombo vuoto che collega le due classi, con una freccia che indica la direzione dell'aggregazione.
-	\begin{center}
-		\includegraphics*[width=12cm]{../../../images/norme_di_progetto/aggregazioneClassi.png}
-		\captionof{figure}{Diagramma delle classi - Aggregazione}
-	\end{center}
+	      \begin{center}
+		      \includegraphics*[width=12cm]{../../../images/norme_di_progetto/aggregazioneClassi.png}
+		      \captionof{figure}{Diagramma delle classi - Aggregazione}
+	      \end{center}
 	\item \textbf{Composizione}: indica una relazione in cui una classe è composta da una o più istanze di un'altra classe, ma le istanze sono strettamente legate e non possono esistere indipendentemente dalla classe principale. La composizione è rappresentata da una linea con un rombo pieno che collega le due classi, con una freccia che indica la direzione della composizione.
-	\begin{center}
-		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/composizioneClassi.png}
-		\captionof{figure}{Diagramma delle classi - Composizione}
-	\end{center}
+	      \begin{center}
+		      \includegraphics*[width=10cm]{../../../images/norme_di_progetto/composizioneClassi.png}
+		      \captionof{figure}{Diagramma delle classi - Composizione}
+	      \end{center}
 	\item \textbf{Generalizzazione}: indica una relazione in cui una classe è un tipo specializzato di un'altra classe. La generalizzazione è rappresentata da una linea con una freccia vuota che collega le due classi.
-	\begin{center}
-		\includegraphics*[width=10cm]{../../../images/norme_di_progetto/generalizzazioneClassi.png}
-		\captionof{figure}{Diagramma delle classi - Generalizzazione}
-	\end{center}
-	\newpage
+	      \begin{center}
+		      \includegraphics*[width=10cm]{../../../images/norme_di_progetto/generalizzazioneClassi.png}
+		      \captionof{figure}{Diagramma delle classi - Generalizzazione}
+	      \end{center}
+	      \newpage
 	\item \textbf{Realizzazione}: indica una relazione in cui una classe implementa un'interfaccia o eredita da una classe astratta. La realizzazione è rappresentata da una linea che collega la classe all'interfaccia o alla classe astratta.
-	\begin{center}
-		\includegraphics*[width=8cm]{../../../images/norme_di_progetto/realizzazioneClassi.png}
-		\captionof{figure}{Diagramma delle classi - Realizzazione}
-	\end{center}
+	      \begin{center}
+		      \includegraphics*[width=8cm]{../../../images/norme_di_progetto/realizzazioneClassi.png}
+		      \captionof{figure}{Diagramma delle classi - Realizzazione}
+	      \end{center}
 \end{itemize}
 \subsubsubsection{Design pattern}
 I design pattern rappresentano solide soluzioni a problemi ricorrenti di progettazione in determinati contesti, offrendo un approccio riutilizzabile che assicura la qualità e una rapida implementazione. Si adottano quando una soluzione ha dimostrato efficacia in un contesto specifico. Le guide dettagliate sull'applicazione dei pattern delineano il loro utilizzo ottimale, accompagnate da rappresentazioni grafiche, spiegazioni testuali della logica e descrizioni della loro utilità nell'architettura complessiva. Questa documentazione è essenziale per favorire una comprensione approfondita dell'integrazione dei design pattern nell'architettura generale e per prevenire errori di progettazione.
@@ -440,15 +443,15 @@ Le seguenti norme sono state formalizzate in questa maniera:
 	\item \textbf{Nomi significativi}: i nomi delle variabili, delle costanti, delle classi e dei metodi devono essere significativi e rappresentativi della loro funzione, in modo da facilitare la comprensione del codice;
 	\item \textbf{Indentazione e formattazione consistente}: il codice deve essere correttamente indentato e formattato, con l'uso di spazi e tabulazioni coerenti, per garantire una corretta leggibilità e comprensione;
 	\item \textbf{Lunghezza dei metodi}: i metodi devono essere brevi e concisi, con un numero limitato di righe di codice, per garantire una maggiore chiarezza e facilità di manutenzione. I metodi dovrebbero essere lunghi quanto basta per svolgere una singola funzione. Questo favorisce:
-	\begin{itemize}
-		\item \textbf{Chiarezza}: i metodi brevi sono più facili da comprendere e da seguire;
-		\item \textbf{manutenibilità}: i metodi brevi sono più facili da modificare e da aggiornare;
-		\item \textbf{Comprensibilità}: i metodi brevi sono più facili da leggere e da interpretare;
-		\item \textbf{Testabilità}: i metodi brevi sono più facili da testare e da validare.
-		\item \textbf{Lunghezza del codice}: i file di codice sorgente devono essere brevi e concisi, con un numero limitato di righe di codice, per garantire una maggiore chiarezza e facilità di manutenzione.
-		\item \textbf{Commenti}: il codice deve essere corredato da commenti chiari e significativi, che spiegano il funzionamento e lo scopo delle varie parti del codice, per facilitare la comprensione e la manutenzione.
-		\item \textbf{Conformità ai principi SOLID}: il codice deve rispettare i principi SOLID, che promuovono la scrittura di codice pulito, modulare e manutenibile.
-	\end{itemize}
+	      \begin{itemize}
+		      \item \textbf{Chiarezza}: i metodi brevi sono più facili da comprendere e da seguire;
+		      \item \textbf{Manutenibilità}: i metodi brevi sono più facili da modificare e da aggiornare;
+		      \item \textbf{Comprensibilità}: i metodi brevi sono più facili da leggere e da interpretare;
+		      \item \textbf{Testabilità}: i metodi brevi sono più facili da testare e da validare.
+		      \item \textbf{Lunghezza del codice}: i file di codice sorgente devono essere brevi e concisi, con un numero limitato di righe di codice, per garantire una maggiore chiarezza e facilità di manutenzione.
+		      \item \textbf{Commenti}: il codice deve essere corredato da commenti chiari e significativi, che spiegano il funzionamento e lo scopo delle varie parti del codice, per facilitare la comprensione e la manutenzione.
+		      \item \textbf{Conformità ai principi SOLID}: il codice deve rispettare i principi SOLID, che promuovono la scrittura di codice pulito, modulare e manutenibile.
+	      \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Strumenti}
@@ -456,18 +459,18 @@ Le seguenti norme sono state formalizzate in questa maniera:
 
 \subsubsubsection{Metriche}
 \begin{table}[!h]
-    \centering
-    \begin{tabular}{|c|c|}
-    \hline
-    \textbf{Metrica} & \textbf{Abbreviazione} \\
-    \hline
-	\hyperlink{subsection.6.2}{23M-CC} & Code Coverage \\
-    \hyperlink{subsection.6.2}{24M-BC} & Branch Coverage \\
-    \hyperlink{subsection.6.2}{25M-SC} & Statement Coverage \\
-    \hline
-    \end{tabular}
-    \caption{Metriche per l'analisi dei requisiti (TEST)}
-    \label{tab:2}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Metrica}                   & \textbf{Abbreviazione} \\
+		\hline
+		\hyperlink{subsection.6.2}{23M-CC} & Code Coverage          \\
+		\hyperlink{subsection.6.2}{24M-BC} & Branch Coverage        \\
+		\hyperlink{subsection.6.2}{25M-SC} & Statement Coverage     \\
+		\hline
+	\end{tabular}
+	\caption{Metriche per l'analisi dei requisiti (TEST)}
+	\label{tab:2}
 \end{table}
 
 \subsubsection{Configurazione dell'ambiente di esecuzione}
