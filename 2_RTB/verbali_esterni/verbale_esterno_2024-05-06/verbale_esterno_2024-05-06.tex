@@ -1,0 +1,138 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                             \\[-2ex]
+			Ver. & Data       & Redattore   & Verificatore   & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-03-16 & Elena Ferro & Leonardo Baldo & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Google Meet\\
+\textbf{Orario di inizio}: 15:30\\
+\textbf{Orario di fine}: 16:30\\
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     &                & Presente          \\
+			Davide Malgarise      &                & Presente          \\
+			Elena Ferro           & Redattore      & Presente          \\
+			Leonardo Baldo        & Verificatore   & Presente          \\
+			Matteo Tiozzo         &                & Assente           \\
+			Raul Seganfreddo      & Amministratore & Presente          \\
+			Valerio Occhinegro    &                & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+	\textbf{Partecipanti esterni}: Andrea Dorigo, Daniele Zorzi, Fabio Pallaro.\\
+\end{flushleft}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Stato di avanzamento della documentazione
+	\item Stato di avanzamento dello sviluppo
+	\item Considerazioni su tecnologie alternative a ClickHouse
+	\item Obiettivi per il terzo sprint
+	\item Decisioni prese
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Stato di avanzamento della documentazione}
+L'incontro è iniziato con un riassunto da parte del responsabile, Davide Malgarise, di quanto svolto nel terzo sprint.
+Per quanto riguarda la documentazione, il gruppo si è occupato di portare a termine l'\textit{Analisi dei Requisiti}
+ed effettuare una prima stesura delle metriche che costituiscono il cruscotto di valutazione della qualità, all'interno del \textit{Piano di Qualifica}.
+La proponente si ritiene soddisfatta delle metriche proposte e dell'impostazione dei grafici relativi.
+I contenuti di tale documento verranno ulteriormente discussi quando il gruppo ne porterà a termine la stesura.
+
+\subsection{Stato di avanzamento dello sviluppo}
+Il gruppo ha poi proceduto a mostrare una dashboard realizzata con Grafana, la quale mostra i dati relativi a
+un sensore salvati su ClickHouse.\\
+La proponente ha suggerito di raffinare la visualizzazione delle dashboard, in particolare:
+\begin{itemize}
+	\label{item:consigli}
+	\item Assicurarsi che nei marker rappresentanti i sensori nelle mappe siano presenti più di una cifra decimale per la latitudine e la longitudine;
+	\item Fornire all'utente la possibilità di filtrare i dati visualizzati in base a determinati parametri (ad esempio il sensore a cui si riferiscono);
+	\item Rendere più intuitivo il grafico \textit{daily mean temperature}, aggiungendo una \textit{label} sull'asse x che rappresenti il giorno (al momento presente solo l'orario);
+	\item Rimuovere il grafico \textit{average temperature per minute} perché poco significativo. Convertirlo piuttosto in un grafico che mostri la temperatura in tempo reale di un sensore;
+\end{itemize}
+
+\subsection{Sviluppo di \textit{unit test} e \textit{integration test}}
+Il gruppo ha inoltre posto una domanda riguardante la necessità di sviluppare \textit{unit test} e \textit{integration test} per il codice prodotto.
+La proponente afferma che per il \textit{Proof of Concept} non è obbligatorio, in quanto l'architettura del sistema è ancora in fase di definizione
+e potrebbe subire variazioni; eventuali test potrebbero essere sviluppati su componenti che si ritengono stabili e si prevede di continuare a mantenere.
+
+\subsection{Considerazioni su tecnologie alternative a ClickHouse}
+Si è in seguito brevemente discusso sulle motivazioni per cui ClickHouse è stato proposto da SyncLab per il progetto. La proponente ha spiegato che
+rispetto a concorrenti come InfluxDB e TimescaleDB, ClickHouse consente di effettuare più efficientemente query analitiche complesse.
+I punti di forza di InfluxDB e TimescaleDB sono invece una maggiore efficenza e minore richiesta di risorse, tuttavia
+hanno una limitata capacità di effettuare query complesse.\\
+È stata consigliata al gruppo la lettura di un articolo di confronto tra ClickHouse e TimescaleDB disponibile a \underline{\href{https://www.timescale.com/blog/what-is-clickhouse-how-does-it-compare-to-postgresql-and-timescaledb-and-how-does-it-perform-for-time-series-data/}{questo link}}.
+
+\subsection{Obiettivi per il terzo sprint}
+Sono stati definiti gli obiettivi per il terzo sprint:
+\begin{itemize}
+	\item Rifinire le dashboard seguendo i consigli di cui discusso al punto \ref{item:consigli};
+	\item Aggiungere un'ulteriore tipologia di sensore;
+	\item Portare a termine la definizione delle metriche all'interno del \textit{Piano di Qualifica};
+	\item Completare definitivamente l'\textit{Analisi dei Requisiti};
+	\item Stendere la parte di \textit{Piano di Progetto} relativa al terzo sprint.
+\end{itemize}
+
+\subsection{Decisioni prese}
+\begin{itemize}
+	\item Il gruppo si impegnerà a comunicare alla proponente i documenti modificati e i loro contenuti con anticipo di qualche giorno rispetto ai \textit{meeting}
+	      di Stato Avanzamento Lavori, in modo da poterli più efficacemente discutere;
+	\item Il terzo sprint avrà una durata di una settimana.
+\end{itemize}
+
+\newpage
+\begin{table}[b]
+	\begin{tabular}{@{}p{.5in}p{4in}@{}}
+		Data:  & \hrulefill \\
+		       &            \\
+		       &            \\
+		Firma: & \hrulefill \\
+	\end{tabular}
+\end{table}
+
+\end{document}
