@@ -266,11 +266,11 @@ Nell'analisi dei requisiti, le metriche sono strumenti essenziali per valutare, 
     \centering
     \begin{tabular}{|c|c|c|}
     \hline
-    \textbf{Metrica} & \textbf{Abbreviazione} & \textbf{Riferimento} \\
+    \textbf{Metrica} & \textbf{Abbreviazione} \\
     \hline
-    0M-CRO & Copertura dei Requisiti Obbligatori & \hyperlink{subsection.6.2}{0M-CRO} \\
-    1M-CRD & Copertura dei Requisiti Desiderabili & \hyperlink{subsection.6.2}{1M-CRD} \\
-    2M-CROP & Copertura dei Requisiti Opzionali & \hyperlink{subsection.6.2}{2M-CROP} \\
+    \hyperlink{subsection.6.2}{0M-CRO} & Copertura dei Requisiti Obbligatori \\
+    \hyperlink{subsection.6.2}{1M-CRD} & Copertura dei Requisiti Desiderabili \\
+    \hyperlink{subsection.6.2}{2M-CROP} & Copertura dei Requisiti Opzionali \\
     \hline
     \end{tabular}
     \caption{Metriche per l'analisi dei requisiti (TEST)}
@@ -455,9 +455,20 @@ Le seguenti norme sono state formalizzate in questa maniera:
 \textbf{Visual Studio Code} è l'editor di codice utilizzato dal team per scrivere e modificare il codice sorgente.
 
 \subsubsubsection{Metriche}
-%? Aggiungere la "variazione dei requisiti"?
-%? Aggiungere la "Implementazione delle funzionalità"?
-\textbf{TODO: inserire metriche}
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Metrica} & \textbf{Abbreviazione} \\
+    \hline
+	\hyperlink{subsection.6.2}{23M-CC} & Code Coverage \\
+    \hyperlink{subsection.6.2}{24M-BC} & Branch Coverage \\
+    \hyperlink{subsection.6.2}{25M-SC} & Statement Coverage \\
+    \hline
+    \end{tabular}
+    \caption{Metriche per l'analisi dei requisiti (TEST)}
+    \label{tab:2}
+\end{table}
 
 \subsubsection{Configurazione dell'ambiente di esecuzione}
 \subsubsubsection{Docker}
