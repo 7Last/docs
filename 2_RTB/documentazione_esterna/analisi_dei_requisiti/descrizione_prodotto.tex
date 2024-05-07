@@ -13,7 +13,7 @@ Il prodotto è costituito da 4 componenti principali:
 	\item \textbf{Piattaforma di \textit{streaming}}: svolge la funzione di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#broker}{broker\textsubscript{G}} per disaccoppiare lo stream di informazioni provenienti dai simulatori dei sensori.
 	      Si occupa di ricevere i dati provenienti dal simulatore e di inviarli ai vari consumatori. In questo caso, il consumatore principale è il database
 	      di cui si discute al punto successivo.
-	      A tal fine, si è scelto di utilizzare XYZ come piattaforma di streaming; % TODO: aggiungere piattaforma di streaming scelta
+	      A tal fine, si è scelto di utilizzare \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#Redpanda}{Redpanda\textsubscript{G}} come piattaforma di streaming; 
 	\item \textbf{Database}: necessario per la persistenza dei dati raccolti. Per questo scopo è stato adottato \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}}, un database colonnare.
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{\textbf{Dashboard}\textsubscript{G}}: permette di visualizzare in tempo reale i dati raccolti. Questo componente rappresenta l'interfaccia utente del prodotto.
 	      Si è scelto di utilizzare \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}} come strumento per la creazione della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}}.
