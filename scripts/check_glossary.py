@@ -67,8 +67,8 @@ def is_already_subscripted(file_content, end):
     return False
 
 
-def is_within_href(file_content, start):
-    matches = [m for m in re.finditer(r'\\href{[^}]*', file_content[:start])]
+def is_within_href_or_url(file_content, start):
+    matches = [m for m in re.finditer(r'\\(?:href|url){[^}]*', file_content[:start])]
     for match in reversed(matches):
         match_end = match.end()
         if '}' not in file_content[match_end:start]:
