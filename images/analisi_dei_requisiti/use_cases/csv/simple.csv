@@ -1,14 +1,4 @@
 title,actor,uc_code,uc_desc
-SyncCity,Autorità locale,UC-1,Visualizzazione dashboard generale
-SyncCity,Autorità locale,UC-2,Visualizzazione dashboard temperatura
-SyncCity,Autorità locale,UC-3,Visualizzazione dashboard umidità
-SyncCity,Autorità locale,UC-4,Visualizzazione dashboard qualità dell'aria
-SyncCity,Autorità locale,UC-5,Visualizzazione dashboard precipitazioni
-SyncCity,Autorità locale,UC-6,Visualizzazione dashboard traffico
-SyncCity,Autorità locale,UC-7,Visualizzazione dashboard colonnine di ricarica
-SyncCity,Autorità locale,UC-8,Visualizzazione dashboard parcheggi
-SyncCity,Autorità locale,UC-9,Visualizzazione dashboard isole ecologiche
-SyncCity,Autorità locale,UC-10,Visualizzazione dashboard livello di acqua
 SyncCity,Autorità locale,UC-11,Visualizzazione messaggio assenza di dati
 SyncCity,Sensore,UC-12,Trasmissione dati temperatura
 SyncCity,Sensore,UC-13,Trasmissione dati umidità
@@ -19,3 +9,4 @@ SyncCity,Sensore,UC-17,Trasmissione dati colonnine di ricarica
 SyncCity,Sensore,UC-18,Trasmissione dati parcheggi
 SyncCity,Sensore,UC-19,Trasmissione dati isole ecologiche
 SyncCity,Sensore,UC-20,Trasmissione dati livello di acqua
+SyncCity,Sensore,UC-21,Applicazione filtro sensore
