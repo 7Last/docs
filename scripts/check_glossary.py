@@ -112,7 +112,7 @@ def replace_words(path, glossary):
                     else:
                         break
 
-                if is_within_href(file_content, match_start) \
+                if is_within_href_or_url(file_content, match_start) \
                         or is_within_section(file_content, match_start) \
                         or is_already_subscripted(file_content, match_end):
                     continue
