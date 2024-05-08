@@ -34,7 +34,7 @@ def create_uc(filename, template, mappings):
 def main():
     # remove all .png files in out folder
     for f in os.listdir(out_folder):
-        if re.match(r'.*\.png', f):
+        if re.match(r'^UC.*\.png$', f):
             os.remove(os.path.join(out_folder, f))
 
     out_filenames = {
