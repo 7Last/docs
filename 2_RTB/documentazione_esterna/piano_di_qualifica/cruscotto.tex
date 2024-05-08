@@ -12,7 +12,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -21,8 +21,8 @@
             legend pos = south east,
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
             \legend{Valore ottimo ed ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -45,7 +45,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -54,9 +54,9 @@
             legend pos = south east,
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 50)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 50) (Sprint 3, 50)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 85) (Sprint 3, 100)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -79,7 +79,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -88,9 +88,9 @@
             legend pos = south east,
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 60) (Sprint 2, 30) (Sprint 3, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -120,11 +120,13 @@
             axis lines*=left,
             legend cell align=left,
             legend pos = south east,
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
+            scaled y ticks = false,
+            yticklabel style={/pgf/number format/fixed}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)}; % TODO mettere valori corretti EAC
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)}; % TODO mettere valori corretti PV
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)}; % TODO mettere valori corretti EV
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 12670)}; % TODO mettere valori corretti EAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1115) (Sprint 2, 2215)}; % TODO mettere valori corretti PV
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 935) (Sprint 2, 2000)}; % TODO mettere valori corretti EV
             \legend{EAC, PV, EV}
         \end{axis}
     \end{tikzpicture}
@@ -139,6 +141,7 @@
 
 \newpage
 \subsubsection{11M-AC - Actual Cost (AC) e 14M-ETC - Estimate to Complete (ETC)}
+controllare
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -153,11 +156,13 @@
             axis lines*=left,
             legend cell align=left,
             legend pos = south east,
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
+            scaled y ticks = false,
+            yticklabel style={/pgf/number format/fixed}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)}; % TODO mettere valori corretti EAC
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)}; % TODO mettere valori corretti ETC
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)}; % TODO mettere valori corretti AC
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 12670)}; % TODO mettere valori corretti EAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 11670) (Sprint 2, 10670)}; % TODO mettere valori corretti ETC
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 935) (Sprint 2, 2000)}; % TODO mettere valori corretti AC
             \legend{EAC, ETC, AC}
         \end{axis}
     \end{tikzpicture}
@@ -172,6 +177,8 @@
 
 \newpage
 \subsubsection{12M-CV - Cost Variance (CV) e 33M-SV - Schedule Variance (SV)}
+Byteops mettono budget variance al posto di cost variance
+No capito che cazzo devo mettere
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -206,6 +213,7 @@
 
 \newpage
 \subsubsection{13M-EAC - Estimated at Completion(EAC)}
+Ma che cazzo è????
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -256,18 +264,23 @@
             ymin=0, ymax=100,
             axis lines*=left,
             legend cell align=left,
-            legend pos = south east,
+            legend style={
+                at={(0.5,1.15)},
+                anchor=south,
+                column sep=0.1ex,
+                legend columns=3
+            },           
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90)};
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 60) (Sprint 2, 60)};
-            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti NdP
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti PdP
-            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti PdQ
-            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti Glossario
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti AdR
-            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti MU
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti ST
+            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 55) (Sprint 2, 60)}; % TODO mettere valori corretti NdP
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 55)}; % TODO mettere valori corretti PdP
+            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 70)}; % TODO mettere valori corretti PdQ
+            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 85) (Sprint 2, 90)}; % TODO mettere valori corretti Glossario
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 75)}; % TODO mettere valori corretti AdR
+            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)}; % TODO mettere valori corretti MU
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)}; % TODO mettere valori corretti ST
             \legend{Valore ottimo, Valore ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
         \end{axis}
     \end{tikzpicture}
@@ -295,17 +308,22 @@
             ymin=0,
             axis lines*=left,
             legend cell align=left,
-            legend pos = north east,
+            legend style={
+                at={(0.5,1.15)},
+                anchor=south,
+                column sep=0.1ex,
+                legend columns=3
+            },           
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)};
-            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti NdP
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti PdP
-            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti PdQ
-            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti Glossario
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti AdR
-            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti MU
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 10)}; % TODO mettere valori corretti ST
+            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 10) (Sprint 2, 5)}; % TODO mettere valori corretti NdP
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 8) (Sprint 2, 4)}; % TODO mettere valori corretti PdP
+            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 3)}; % TODO mettere valori corretti PdQ
+            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)}; % TODO mettere valori corretti Glossario
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 7) (Sprint 2, 2)}; % TODO mettere valori corretti AdR
+            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)}; % TODO mettere valori corretti MU
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0)}; % TODO mettere valori corretti ST
             \legend{Valore ottimo ed ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
         \end{axis}
     \end{tikzpicture}
@@ -321,6 +339,7 @@
 \newpage
 \subsection{Qualità del processo di Verifica}
 \subsubsection{24M-CC - Code coverage}
+Da qui in poi byteops fanno da "periodo 6"
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -335,7 +354,12 @@
             ymin=0, ymax=100,
             axis lines*=left,
             legend cell align=left,
-            legend pos = south east,
+            legend style={
+                at={(0.5,1.15)},
+                anchor=south,
+                column sep=0.1ex,
+                legend columns=-1
+            },           
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100)};
