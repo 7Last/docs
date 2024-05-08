@@ -67,8 +67,8 @@ def is_already_subscripted(file_content, end):
     return False
 
 
-def is_within_href(file_content, start):
-    matches = [m for m in re.finditer(r'\\href{[^}]*', file_content[:start])]
+def is_within_href_or_url(file_content, start):
+    matches = [m for m in re.finditer(r'\\(?:href|url){[^}]*', file_content[:start])]
     for match in reversed(matches):
         match_end = match.end()
         if '}' not in file_content[match_end:start]:
@@ -112,7 +112,7 @@ def replace_words(path, glossary):
                     else:
                         break
 
-                if is_within_href(file_content, match_start) \
+                if is_within_href_or_url(file_content, match_start) \
                         or is_within_section(file_content, match_start) \
                         or is_already_subscripted(file_content, match_end):
                     continue
