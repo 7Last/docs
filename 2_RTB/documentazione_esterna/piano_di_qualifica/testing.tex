@@ -18,9 +18,11 @@ I test di unità sono test che verificano il corretto funzionamento delle singol
 	\hline
 	\textbf{Codice} & \textbf{Descrizione} & \textbf{Stato} \\
 	\endhead
-	\textbf{1T-U}   & Descrizione test     & NI             \\
+	\textbf{1T-U}   & Verificare che la classe \textit{temperature} venga creata correttamente. & NI\\
 	\hline
-	\textbf{2T-U}   & Descrizione test     & NI             \\
+	\textbf{2T-U}   & Verificare che il livello di salute si modifichi ad ogni nuova misurazione.      & NI             \\
+	\hline
+	\textbf{3T-U}   & Verificare che il metodo "GENERA\_MISURA" di una classe generi correttamente la misurazione.      & NI             \\
 	\hline
 	\caption{Test di Unità} % TODO aggiungere test effettivamente progettati
 	\label{table:12}
@@ -36,9 +38,9 @@ I test di integrazione sono test che verificano il corretto funzionamento delle 
 	\hline
 	\textbf{Codice} & \textbf{Descrizione} & \textbf{Stato} \\
 	\endhead
-	\textbf{3T-I}   & Descrizione test     & NI             \\
+	\textbf{1T-I}   & Descrizione test     & NI             \\
 	\hline
-	\textbf{4T-I}   & Descrizione test     & NI             \\
+	\textbf{2T-I}   & Descrizione test     & NI             \\
 	\hline
 	\caption{Test di Integrazione} % TODO aggiungere test effettivamente progettati
 	\label{table:13}
@@ -54,9 +56,79 @@ I test di sistema sono finalizzati alla verifica del soddisfacimento dei requisi
 	\hline
 	\textbf{Codice} & \textbf{Descrizione} & \textbf{Stato} \\
 	\endhead
-	\textbf{5T-S}   & Descrizione test     & NI             \\
+	\textbf{1T-S}   & Verificare che l'accesso al sistema non richieda alcuna procedura di login e che sia direttamente accessibile dall'utente.     & NI             \\
 	\hline
-	\textbf{6T-S}   & Descrizione test     & NI             \\
+	\textbf{2T-S}   & Verificare che il prodotto non abbia alcuna sezione o funzionalità di amministrazione o gestione riservata.     & NI\\
+	\hline
+	\textbf{3T-S}   & Verificare che i sensori integrati producano una misurazione coerente con il tipo di sensore simulato.     & NI\\
+	\hline
+	\textbf{4T-S}   & Verificare che ogni misurazione inviata dal simulatore contenga l’identificativo del sensore, la misurazione d'interesse e il timestamp. & NI\\
+	\hline
+	\textbf{5T-S}   & Verificare che il sistema sia in grado di ricevere e memorizzare correttamente le misurazioni inviate dai sensori. & NI\\
+	\hline
+	\textbf{6T-S}   & Verificare che il sistema sia in grado di simulare almeno un sensore per rilevare la temperatura. & NI\\
+	\hline
+	\textbf{7T-S}   & Verificare che ogni dato generato dai simulatori dei sensori sia strettamente correlato al dato successivo, garantendo una transizione realistica tra le misurazioni. & NI\\
+	\hline
+	\textbf{8T-S}   & Verificare che il prodotto di visualizzazione supporti la rappresentazione di dati provenienti da diversi tipi di sensori, permettendo una simulazione quanto più possibile reale. & NI\\
+	\hline
+	\textbf{9T-S}   & Verificare che l'utente possa vedere una dashboard completo delle condizioni attuali della città tramite l'uso di appositi widget rappresentanti le misurazioni dei sensori. & NI\\
+	\hline
+	\textbf{10T-S}   & Verificare la facilità di comprensione e l'intuitività dell'interfaccia grafica, garantendo un'esperienza utente piacevole e soddisfacente. & NI\\
+	\hline
+	\textbf{11T-S}   & Verificare che il sistema sia in grado di inviare notifiche all'utente in caso di superamento di soglie di temperatura predefinite. & NI\\
+	\hline
+	\textbf{12T-S}   & Verificare che l’utente possa vedere le misurazioni all’interno dei widget dedicati alla rappresentazione delle rilevazioni dei sensori in un formato testuale. & NI\\
+	\hline
+	\textbf{13T-S}   & Verificare che la dashboard si aggiorni quasi istantaneamente per riflettere i dati provenienti dai sensori entro un massimo di 15 secondi. & NI\\
+	\hline
+	\textbf{14T-S}   & Verificare che ogni widget che visualizza le misurazioni includa informazioni sull’identificativo dei sensori che hanno contribuito a quelle misurazioni. & NI\\
+	\hline
+	\textbf{15T-S}   & Verificare che la dashboard contenga almeno un widget dedicato alle misurazioni dei sensori di temperatura. & NI\\
+	\hline
+	\textbf{16T-S}   & Verificare che la dashboard contenga almeno un widget dedicato alle misurazioni dei sensori di traffico. & NI\\
+	\hline
+	\textbf{17T-S}   & Verificare che i sensori presenti sulla mappa siano distinguibili in modo chiaro ed inequivocabile, permettendo il riconoscimento della loro tipologia. & NI\\
+	\hline
+	\textbf{18T-S}   & Verificare che l’utente possa filtrare la visualizzazione delle misurazioni di una specifica tipologia di sensori. & NI\\
+	\hline
+	\textbf{19T-S}   & Verificare che il sistema verifichi la validità del sensore inserito dall’utente. & NI\\
+	\hline
+	\textbf{20T-S}   & Verificare che, in caso di inserimento di un sensore non valido, il sistema generi una notifica di errore. & NI\\
+	\hline
+	\textbf{21T-S}   & Verificare che la notifica di errore relativa all’inserimento di un sensore non valido richieda all’utente di inserire nuovamente il sensore. & NI\\
+	\hline
+	\textbf{22T-S}   & Verificare che la notifica di errore relativa all’inserimento di un sensore non valido sia chiara e informativa, indicando il motivo specifico dell’invalidità del sensore. & NI\\
+	\hline
+	\textbf{23T-S}   & Verificare che l’utente possa visualizzare la lista delle mis- urazioni rilevanti. & NI\\
+	\hline
+	\textbf{24T-S}   & Verificare che ogni misurazione nella lista dei più importanti fornisca correttamente l’identificativo del sensore. & NI\\
+	\hline
+	\textbf{25T-S}   & Verificare che ogni misurazione nella lista dei più importanti fornisca correttamente la tipologia del sensore. & NI\\
+	\hline
+	\textbf{26T-S}   & Verificare che ogni misurazione nella lista dei più importanti fornisca correttamente il valore della misurazione. & NI\\
+	\hline
+	\textbf{27T-S}   & Verificare che ogni misurazione nella lista dei più importanti fornisca correttamente il timestamp della misurazione. & NI\\
+	\hline
+	\textbf{28T-S} da controllare  & Verificare che l’utente possa visualizzare la lista delle misurazioni rilevanti in un formato tabellare. & NI\\
+	\hline
+	\textbf{29T-S}   & Verificare che l’utente possa rimuovere una misurazione specifica dalla lista delle misurazioni rilevanti. & NI\\
+	\hline
+	\textbf{30T-S}   & Verificare che l’utente possa rimuovere tutte le misurazioni dalla lista delle misurazioni rilevanti. & NI\\
+	\hline
+	\textbf{31T-S}   & Verificare che l’utente riceva notifiche quando i sensori superano pre-determinate soglie di sicurezza. & NI\\
+	\hline
+	\textbf{32T-S}   & Verificare che l’utente possa visualizzare le notifiche relative ai sensori che superano le soglie di sicurezza. & NI\\
+	\hline
+	\textbf{33T-S}   & Verificare che l’utente possa visualizzare correttamente le informazioni richieste per i sensori. & NI\\
+	\hline
+	\textbf{34T-S}   & Verificare che l’utente possa visualizzare correttamente la posizione in coordinate dei sensori. & NI\\
+	\hline
+	\textbf{35T-S}   & Verificare che l’utente possa visualizzare correttamente la data di installazione del sensore . & NI\\
+	\hline
+	\textbf{36T-S}   & Verificare che l’utente possa visualizzare correttamente la data di ultima manutenzione del sensore. & NI\\
+	\hline
+	\textbf{37T-S}   & Verificare che l’utente possa visualizzare correttamente l’unità di misura associata al sensore. & NI\\
 	\hline
 	\caption{Test di Sistema} % TODO aggiungere test effettivamente progettati
 	\label{table:14}
@@ -90,10 +162,33 @@ I test di accettazione sono test che vengono effettuati per verificare che il so
 	\hline
 	\textbf{Codice} & \textbf{Descrizione} & \textbf{Stato} \\
 	\endhead
-	\textbf{9T-A}   & Descrizione test     & NI             \\
+	\textbf{1T-A}   & Verificare che tutti i widget relativi alle diverse tipologie di sensori siano visibili sulla dashboard. & NI\\
 	\hline
-	\textbf{10T-A}   & Descrizione test     & NI             \\
+	\textbf{2T-A}   & Verificare che la mappa dei sensori si carichi correttamente e permetta interazioni fluide. & NI\\
 	\hline
+	\textbf{3T-A}   & Verificare che le informazioni di un sensore specifico siano visualizzate correttamente quando selezionate dalla dashboard. & NI\\
+	\hline
+	\textbf{4T-A}   & Verifica della gestione corretta degli errori nel caso in cui i dati dei sensori non siano disponibili o siano incompleti all’interno della visualizzazione testuale. & NI\\
+	\hline
+	\textbf{5T-A}   & Verifica della corretta visualizzazione delle misurazioni effettuate nel tempo dai sensori. & NI\\
+	\hline
+	\textbf{6T-A}   & Verificare l’accuratezza e la completezza delle opzioni di interazione offerte dall’interfaccia del widget per esaminare i dati di temperatura. & NI\\
+	\hline
+	\textbf{7T-A}   & Verificare ci sia l’opportunità di visualizzare correttamente il widget contenente le misurazioni dei sensori di temperatura. 	& NI\\
+	\hline
+	\textbf{8T-A}   & Verificare si possa filtrare correttamente la visualizzazione delle misurazioni in base ad una specifica selezione di sensori. & NI\\
+	\hline
+	\textbf{9T-A}   & Verificare che si possa rimuovere correttamente i filtri attivi per visualizzazione delle misurazioni dei sensori. & NI\\
+	\hline
+	\textbf{10T-A}   & Verificare che si riceva correttamente una notifica in caso di superamento delle soglie impostate per le misurazioni. & NI\\
+	\hline
+	\textbf{11T-A}   & Verificare che si possa visualizzare correttamente la lista delle misurazioni rilevanti. & NI\\
+	\hline
+	\textbf{12T-A}   & Verificare che si possa rimuovere correttamente una misurazione specifica dalla lista delle misurazioni rilevanti. & NI\\
+	\hline
+	\textbf{13T-A}   & Verificare che si possa rimuovere correttamente tutte le misurazioni dalla lista delle misurazioni rilevanti. & NI\\
+	\hline
+	\textbf{14T-A}   & Verificare che si possa inserire correttamente una misurazione nella lsita delle misurazioni rilevanti. & NI\\
 	\caption{Test di Accettazione} % TODO aggiungere test effettivamente progettati
 	\label{table:16}
 \end{longtable}

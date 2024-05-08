@@ -19,9 +19,9 @@ Questa fase consiste nell'esaminare le richieste del proponente e nel definire i
 	\endhead
 	\textbf{1M-CRO}  & Copertura dei requisiti obbligatori  & 100\% & 100\% & Descrive quanto del lavoro svolto durante lo sviluppo corrisponde ai requisiti essenziali o obbligatori definiti in fase di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{Analisi dei Requisiti\textsubscript{G}}.\\
 	\hline
-	\textbf{2M-CRD}  & Copertura dei requisiti desiderabili & $\geq 85\% $ & 100\% & Rileva la percentuale di requisiti (i quali, una volta integrati arricchiscono l'esperienza dell'utente o forniscono vantaggi aggiuntivi non strettamente necessari) che sono stati implementati o soddisfatti nel prodotto. \\
+	\textbf{2M-CRD}  & Copertura dei requisiti desiderabili & $\geq 35\% $ & 100\% & Rileva la percentuale di requisiti (i quali, una volta integrati arricchiscono l'esperienza dell'utente o forniscono vantaggi aggiuntivi non strettamente necessari) che sono stati implementati o soddisfatti nel prodotto. \\
 	\hline
-	\textbf{3M-CROP} & Copertura dei requisiti opzionali & $\geq 30\% $ & $\geq 100\% $ & Stima la percentuale di requisiti aggiuntivi (non essenziali o di bassa priorità) che sono stati implementati o soddisfatti nel prodotto.\\
+	\textbf{3M-CROP} & Copertura dei requisiti opzionali & $\geq 0\% $ & $\geq 100\% $ & Stima la percentuale di requisiti aggiuntivi (non essenziali o di bassa priorità) che sono stati implementati o soddisfatti nel prodotto.\\
 	\hline
 	\caption{Metriche di Analisi dei Requisiti}
 	\label{table:1}
@@ -74,11 +74,11 @@ Per valutare la qualità di tale processo, sono state definite le seguenti metri
 	\endhead
 	\textbf{9M-EV} & Earned Value (EV) & $\geq 0$ & $\leq$ EAC (Estimated At Completion) & Valore del lavoro effettivamente svolto fino al periodo in analisi. \\
 	\hline
-	\textbf{10M-PV} non abbiamo BAC & Planned Value (PV) & $\geq 0$ & $\leq$ BAC (Budget At Completion) & Consente di stimare i costi realizzativi delle attività imminenti periodo per periodo. \\
+	\textbf{10M-PV} & Planned Value (PV) & $\geq 0$ & $\leq$ BAC (Budget At Completion) & Consente di stimare i costi realizzativi delle attività imminenti periodo per periodo. \\
 	\hline
 	\textbf{11M-AC} & Actual Cost (AC) & $\geq 0$ & $\leq$ EAC (Estimated At Completion) & Misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente. \\
 	\hline
-	\textbf{12M-CV} da controllare & Cost Variance (CV) & $\geq -7.5\%$ & $\geq 0\%$ & Valuta la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. \\
+	\textbf{12M-CV} & Cost Variance (CV) & $\geq -7.5\%$ & $\geq 0\%$ & Valuta la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. \\
 	\hline
 	\textbf{13M-EAC} & Estimated at Completion (EAC) & Errore del $\pm 4\%$ rispetto al BAC (Budget At Completion) & Equivalente al BAC (Budget At Completion) & Calcola il costo realizzativo stimato per terminare il progetto.\\
 	\hline
@@ -162,7 +162,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\hline
 	\textbf{26M-SC} & Statement Coverage & $\geq 80\% $ & 100\% & Metrica di copertura del codice che indica la percentuale degli statement del codice coperti dai test.\\
 	\hline
-	\textbf{27M-FD} da controllare & Failure Density & 100\% & 100\% & Misura che indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo. \\
+	\textbf{27M-FD} & Failure Density & $\leq 15\%$ & 0\% & Misura che indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo. \\
 	\hline
 	\textbf{28M-PTCP} & Passed Test Cases Percentage & $\geq 90\%$ & 100\% & Percentuale di casi di test superati.\\
 	\hline
@@ -201,8 +201,6 @@ Per valutare la qualità di tale processo, sono state definite le seguenti metri
 	\endhead
 	\textbf{30M-QMS} & Metriche di qualità soddisfatte & $\geq 90\% $ & 100\% & Indica il numero di metriche implementate e soddisfatte, tra quelle definite. \\
 	\hline
-	\textbf{31M-TE} da controllare & Efficienza temporale & $\leq 3 $ & $\leq 1 $ & Livello di efficienza del team nello sviluppo di codice di alta qualità.\\
-	\hline
 	\caption{Metriche di Gestione della Qualità}
 	\label{table:10}
 \end{longtable}
@@ -220,11 +218,11 @@ per il loro svolgimento. Per valutare la qualità di tale processo, sono state d
 	\hline
 	\endfirsthead
 	\hline
-	\textbf{32M-RSI} da controllare & Requirements Stability Index (RSI) & $\geq 75\% $ & 100\% & Misura utilizzata per quantificare il grado di cambiamento dei requisiti in un progetto. \\
+	\textbf{31M-RSI} da controllare & Requirements Stability Index (RSI) & $\geq 75\% $ & 100\% & Misura utilizzata per valutare il grado di stabilità dei requisiti di un progetto.\\
 	\hline
-	\textbf{33M-SV} da controllare & Schedule Variance (SV) & $\geq -5\%$ & $\geq 0\%$ & Indica in percentuale il livello di anticipo (+) o ritardo (-) rispetto le attività pianificate.\\
+	\textbf{32M-SV} & Schedule Variance (SV) & $\geq -5\%$ & $\geq 0\%$ & Indica in percentuale il livello di anticipo (+) o ritardo (-) rispetto le attività pianificate.\\
 	\hline
-	\textbf{34M-BV} & Budget Variance (BV) & $\geq -5\%$ & $\geq 0\%$ & Indica in percentuale il livello di eccedenze (+) o risparmi (-) rispetto al budget pianificato.\\
+	\textbf{33M-BV} & Budget Variance (BV) & $\geq -5\%$ & $\geq 0\%$ & Indica in percentuale il livello di eccedenze (+) o risparmi (-) rispetto al budget pianificato.\\
 	\hline
 	\caption{Metriche di Pianificazione}
 	\label{table:11}
