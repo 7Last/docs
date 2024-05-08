@@ -49,20 +49,23 @@
 	\begin{table}[!h]
 		\begin{tabular}{ |l|l|l| }
 			\hline
-			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\textbf{Partecipante} & \textbf{Ruolo}  & \textbf{Presenza} \\
 			\hline
-			Antonio Benetazzo     &                & Presente          \\
-			Davide Malgarise      &                & Presente          \\
-			Elena Ferro           & Redattore      & Presente          \\
-			Leonardo Baldo        & Verificatore   & Presente          \\
-			Matteo Tiozzo         &                & Assente           \\
-			Raul Seganfreddo      & Amministratore & Presente          \\
-			Valerio Occhinegro    &                & Presente          \\
+			Antonio Benetazzo     &                 & Presente          \\
+			Davide Malgarise      &                 & Presente          \\
+			Elena Ferro           & Redattore       & Presente          \\
+			Leonardo Baldo        & Verificatore    & Presente          \\
+			Matteo Tiozzo         &                 & Assente           \\
+			Raul Seganfreddo      & Amministratore* & Presente          \\
+			Valerio Occhinegro    &                 & Presente          \\
 			\hline
 		\end{tabular}
 	\end{table}
 	\textbf{Partecipanti esterni}: Andrea Dorigo, Daniele Zorzi, Fabio Pallaro.\\
 \end{flushleft}
+* Raul Seganfreddo ha partecipato in qualità di amministratore, in sostituzione di
+Matteo Tiozzo, che non ha potuto partecipare all'incontro.
+
 
 \section{Ordine del giorno}
 \begin{itemize}
@@ -85,45 +88,44 @@ La proponente si ritiene soddisfatta delle metriche proposte e dell'impostazione
 I contenuti di tale documento verranno ulteriormente discussi quando il gruppo ne porterà a termine la stesura.
 
 \subsection{Stato di avanzamento dello sviluppo}
-Il gruppo ha poi proceduto a mostrare una dashboard realizzata con Grafana, la quale mostra i dati relativi a
-un sensore salvati su ClickHouse.\\
+Il gruppo ha poi provveduto a mostrare una dashboard realizzata con \textit{Grafana},
+la quale visualizza i dati relativi a un sensore salvati su \textit{ClickHouse}.\\
 La proponente ha suggerito di raffinare la visualizzazione delle dashboard, in particolare:
 \begin{itemize}
 	\label{item:consigli}
-	\item Assicurarsi che nei marker rappresentanti i sensori nelle mappe siano presenti più di una cifra decimale per la latitudine e la longitudine;
-	\item Fornire all'utente la possibilità di filtrare i dati visualizzati in base a determinati parametri (ad esempio il sensore a cui si riferiscono);
-	\item Rendere più intuitivo il grafico \textit{daily mean temperature}, aggiungendo una \textit{label} sull'asse x che rappresenti il giorno (al momento presente solo l'orario);
-	\item Rimuovere il grafico \textit{average temperature per minute} perché poco significativo. Convertirlo piuttosto in un grafico che mostri la temperatura in tempo reale di un sensore;
+	\item assicurarsi che nei \textit{marker} rappresentanti i sensori nelle mappe siano presenti più di una cifra decimale per la latitudine e la longitudine;
+	\item fornire all'utente la possibilità di filtrare i dati visualizzati in base a determinati parametri (ad esempio il sensore a cui si riferiscono);
+	\item rendere più intuitivo il grafico "daily mean temperature", aggiungendo una \textit{label} sull'asse x che rappresenti il giorno (al momento presente solo l'orario);
+	\item rimuovere il grafico "average temperature per minute" perché poco significativo. Convertirlo piuttosto in un grafico che mostri la temperatura in tempo reale di un sensore.
 \end{itemize}
 
+\newpage
 \subsection{Sviluppo di \textit{unit test} e \textit{integration test}}
 Il gruppo ha inoltre posto una domanda riguardante la necessità di sviluppare \textit{unit test} e \textit{integration test} per il codice prodotto.
 La proponente afferma che per il \textit{Proof of Concept} non è obbligatorio, in quanto l'architettura del sistema è ancora in fase di definizione
 e potrebbe subire variazioni; eventuali test potrebbero essere sviluppati su componenti che si ritengono stabili e si prevede di continuare a mantenere.
 
-\subsection{Considerazioni su tecnologie alternative a ClickHouse}
-Si è in seguito brevemente discusso sulle motivazioni per cui ClickHouse è stato proposto da SyncLab per il progetto. La proponente ha spiegato che
-rispetto a concorrenti come InfluxDB e TimescaleDB, ClickHouse consente di effettuare più efficientemente query analitiche complesse.
-I punti di forza di InfluxDB e TimescaleDB sono invece una maggiore efficenza e minore richiesta di risorse, tuttavia
-hanno una limitata capacità di effettuare query complesse.\\
-È stata consigliata al gruppo la lettura di un articolo di confronto tra ClickHouse e TimescaleDB disponibile a \underline{\href{https://www.timescale.com/blog/what-is-clickhouse-how-does-it-compare-to-postgresql-and-timescaledb-and-how-does-it-perform-for-time-series-data/}{questo link}}.
+\subsection{Considerazioni su tecnologie alternative a \textit{ClickHouse}}
+Successivamente si è brevemente discusso sulle motivazioni per cui \textit{ClickHouse} è stato proposto da \textit{SyncLab S.r.L.} per il progetto. La proponente ha spiegato che
+rispetto a concorrenti come \textit{InfluxDB} e \textit{TimescaleDB}, \textit{ClickHouse}
+consente di effettuare più efficientemente query analitiche complesse.
+I punti di forza di \textit{InfluxDB} e \textit{TimescaleDB} sono invece una maggiore efficenza e minore richiesta di risorse, tuttavia
+hanno una limitata capacità di effettuare query complesse.
 
 \subsection{Obiettivi per il terzo sprint}
 Sono stati definiti gli obiettivi per il terzo sprint:
 \begin{itemize}
-	\item Rifinire le dashboard seguendo i consigli di cui discusso al punto \ref{item:consigli};
-	\item Aggiungere un'ulteriore tipologia di sensore;
-	\item Portare a termine la definizione delle metriche all'interno del \textit{Piano di Qualifica};
-	\item Completare definitivamente l'\textit{Analisi dei Requisiti};
-	\item Stendere la parte di \textit{Piano di Progetto} relativa al terzo sprint.
+	\item rifinire le dashboard seguendo i consigli di cui discusso al punto \ref{item:consigli};
+	\item aggiungere un'ulteriore tipologia di sensore;
+	\item popolare il cruscotto di valutazione della qualità all'interno del \textit{Piano di Qualifica};
+	\item completare l'\textit{Analisi dei Requisiti};
+	\item redigere la parte di \textit{Piano di Progetto} relativa al terzo sprint.
 \end{itemize}
 
 \subsection{Decisioni prese}
-\begin{itemize}
-	\item Il gruppo si impegnerà a comunicare alla proponente i documenti modificati e i loro contenuti con anticipo di qualche giorno rispetto ai \textit{meeting}
-	      di Stato Avanzamento Lavori, in modo da poterli più efficacemente discutere;
-	\item Il terzo sprint avrà una durata di una settimana.
-\end{itemize}
+Il gruppo si impegnerà a comunicare alla proponente i documenti modificati e i loro contenuti con anticipo di qualche giorno rispetto ai \textit{meeting}
+di Stato Avanzamento Lavori, in modo da poterli più efficacemente discutere.\\
+Inoltre, da ora in poi gli sprint avranno una durata di una settimana.
 
 \newpage
 \begin{table}[b]
