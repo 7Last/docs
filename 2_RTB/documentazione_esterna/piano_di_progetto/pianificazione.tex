@@ -89,14 +89,14 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Programm
         \textbf{} & \textbf{Re} & \textbf{Am} &\textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
         \hline
         Baldo            &  -   &  -   &  -   &  -   &  7   &  -   &  7   \\
-        Benetazzo        &  -   &  7.5 &  -   &  -   &  -   &  -   &  7.5 \\
+        Benetazzo        &  -   &  7   &  -   &  -   &  -   &  -   &  7   \\
         Ferro            &  -   &  -   &  -   &  -   & 10   &  -   & 10   \\
         Malgarise        &  -   &  -   &  7   &  -   &  -   &  -   &  7   \\
         Occhinegro       &  -   &  -   &  -   &  -   &  -   &  9   &  9   \\
         Seganfreddo      &  -   &  -   &  7   &  -   &  -   &  -   &  7   \\
-        Tiozzo           &  7.5 &  -   &  -   &  -   &  -   &  -   &  7.5 \\
+        Tiozzo           &  7   &  -   &  -   &  -   &  -   &  -   &  7   \\
         \hline
-        Totale per ruolo &  7.5 &  7.5 & 14   &  -   & 17   &  9   &  -   \\
+        Totale per ruolo &  7   &  7   & 14   &  -   & 17   &  9   &  -   \\
         \hline
     \end{tabular}
     \caption{Preventivo orario per ruolo dei membri del team durante il primo sprint}
@@ -134,11 +134,11 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Programm
                 (Malgarise, 0)
                 (Occhinegro, 0)
                 (Seganfreddo, 0)
-                (Tiozzo, 7.5)
+                (Tiozzo, 7)
             };
             \addplot+[ybar, amm, fill=amm, mark=none] plot coordinates {
                 (Baldo, 0)
-                (Benetazzo, 7.5)
+                (Benetazzo, 7)
                 (Ferro, 0)
                 (Malgarise, 0)
                 (Occhinegro, 0)
@@ -196,14 +196,14 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Programm
         \def\printonlypositive#1{\ifdim#1pt>0pt
         #1
         \fi}
-        \pie[pos={8,0},radius=3.5,sum=auto,text=legend,
+        \pie[pos={8,0},radius=3.5,text=legend,
         before number=\printonlypositive,color={resp,amm,an,pj,pg,ver}] {
-            14/Responsabile,
-            14/Amministratore,
-            25/Analista,
-             0/Progettista,
-            31/Programmatore,
-            16/Verificatore
+            13.0/Responsabile,
+            13.0/Amministratore,
+            25.9/Analista,
+             0.0/Progettista,
+            31.5/Programmatore,
+            16.7/Verificatore
         }
         \end{tikzpicture}
     \caption{Ripartizione in percentuale dei ruoli nel primo sprint}
@@ -221,15 +221,15 @@ Le attività previste sono state tutte svolte con successo. Abbiamo completato t
         \hline
         \textbf{} & \textbf{Re} & \textbf{Am} & \textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
         \hline
-        Baldo            &  -   &  -   &  -   &  -   &  6   &  -   &  6   \\
-        Benetazzo        &  -   &  6.5 &  -   &  -   &  -   &  -   &  6.5 \\
+        Baldo            &  -   &  -   &  -   &  -   &  7   &  -   &  7   \\
+        Benetazzo        &  -   &  6   &  -   &  -   &  -   &  -   &  6   \\
         Ferro            &  -   &  -   &  -   &  -   &  9   &  -   &  9   \\
-        Malgarise        &  -   &  -   &  5   &  -   &  -   &  -   &  5   \\
+        Malgarise        &  -   &  -   &  6   &  -   &  -   &  -   &  6   \\
         Occhinegro       &  -   &  -   &  -   &  -   &  -   &  9   &  9   \\
-        Seganfreddo      &  -   &  -   &  5   &  -   &  -   &  -   &  5   \\
-        Tiozzo           &  6.5 &  -   &  -   &  -   &  -   &  -   &  6.5 \\
+        Seganfreddo      &  -   &  -   &  5,5 &  -   &  -   &  -   &  5,5 \\
+        Tiozzo           &  6,5 &  -   &  -   &  -   &  -   &  -   &  6,5 \\
         \hline
-        Totale per ruolo &  6.5 &  6.5 & 10   &  0   & 15   &  9   &  -   \\
+        Totale per ruolo &  6,5 &  6   & 11,5 &  0   & 16   &  9   &  -   \\
         \hline
     \end{tabular}
     \caption{Consuntivo orario per ruolo dei membri del team durante il primo sprint}
@@ -243,16 +243,16 @@ Le attività previste sono state tutte svolte con successo. Abbiamo completato t
         \hline
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} & \textbf{Ore rimanenti preventivo} & \textbf{Ore rimanenti consuntivo} \\
         \hline
-        Responsabile               &  6.5 &  195,00 € &  48.5 &  49.5 \\
-        Amministratore             &  6.5 &  130,00 € &  48.5 &  49.5 \\
-        Analista                   & 10   &  250,00 € &  64   &  68   \\
+        Responsabile               &  6,5 &  195,00 € &  49   &  49,5 \\
+        Amministratore             &  6   &  120,00 € &  49   &  50   \\
+        Analista                   & 11,5 &  287,50 € &  64   &  66,5 \\
         Progettista                &  0   &    0,00 € & 112   & 112   \\
-        Programmatore              & 15   &  225,00 € & 151   & 153   \\
+        Programmatore              & 16   &  240,00 € & 151   & 152   \\
         Verificatore               &  9   &  135,00 € & 165   & 165   \\
         \hline
-        \textbf{Totale preventivo} & 55   & 1115,00 € & 589   &   -   \\
+        \textbf{Totale preventivo} & 54   & 1090,00 € & 590   &   -   \\
         \hline
-        \textbf{Totale consuntivo} & 47   &  935,00 € &   -   & 597   \\
+        \textbf{Totale consuntivo} & 49   &  977,50 € &   -   & 595   \\
         \hline
     \end{tabular}
     \caption{Prospetto economico consuntivo durante il primo sprint}
@@ -274,7 +274,7 @@ Le attività previste sono state tutte svolte con successo. Abbiamo completato t
         Ritardi rispetto alle tempistiche previste (Rischio \textbf{RO3})& NO & Anticipati alcuni compiti previsti per il prossimo sprint.\\
         \hline
     \end{tabular}
-    \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo periodo}
+    \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo sprint}
     \label{tab:16}
 \end{table}
 
@@ -319,7 +319,7 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
         \hline
         \textbf{} & \textbf{Re} & \textbf{Am} &\textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
         \hline
-        Baldo            &  -   &  5   &  -   &  -   &  -   &  -   &  5   \\
+        Baldo            &  -   &  6   &  -   &  -   &  -   &  -   &  6   \\
         Benetazzo        &  -   &  -   &  -   &  -   &  -   &  7   &  7   \\
         Ferro            &  -   &  -   & 10   &  -   &  -   &  -   & 10   \\
         Malgarise        &  6   &  -   &  -   &  -   &  -   &  -   &  6   \\
@@ -327,7 +327,7 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
         Seganfreddo      &  -   &  -   &  -   &  7   &  -   &  -   &  7   \\
         Tiozzo           &  -   &  -   &  -   &  -   & 10   &  -   & 10   \\
         \hline
-        Totale per ruolo &  6   &  5   & 10   &  7   & 20   &  7   &  -   \\
+        Totale per ruolo &  6   &  7   & 10   &  7   & 20   &  7   &  -   \\
         \hline
     \end{tabular}
     \caption{Preventivo orario per ruolo dei membri del team durante il secondo sprint}
@@ -369,7 +369,7 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
                 (Tiozzo, 0)
             };
             \addplot+[ybar, amm, fill=amm, mark=none] plot coordinates {
-                (Baldo, 5)
+                (Baldo, 6)
                 (Benetazzo, 0)
                 (Ferro, 0)
                 (Malgarise, 0)
@@ -427,14 +427,14 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
         \def\printonlypositive#1{\ifdim#1pt>0pt
         #1
         \fi}
-        \pie[pos={8,0},radius=3.5,sum=auto,text=legend,
+        \pie[pos={8,0},radius=3.5,text=legend,
         before number=\printonlypositive,color={resp,amm,an,pj,pg,ver}] {
-            11/Responsabile,
-             9/Amministratore,
-            18/Analista,
-            13/Progettista,
-            36/Programmatore,
-            13/Verificatore
+            10.7/Responsabile,
+            10.7/Amministratore,
+            17.9/Analista,
+            12.5/Progettista,
+            35.7/Programmatore,
+            12.5/Verificatore
         }
         \end{tikzpicture}
     \caption{Ripartizione in percentuale dei ruoli nel secondo sprint}
@@ -452,15 +452,15 @@ Tutte le attività previste sono state svolte con successo. Come si può notare 
         \hline
         \textbf{} & \textbf{Re} & \textbf{Am} &\textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
         \hline
-        Baldo            &  -   &  5   &  -   &  -   &  -   &  -   &  5   \\
+        Baldo            &  -   &  6   &  -   &  -   &  -   &  -   &  6   \\
         Benetazzo        &  -   &  -   &  -   &  -   &  -   &  6   &  6   \\
         Ferro            &  -   &  -   & 10   &  -   &  -   &  -   & 10   \\
-        Malgarise        &  6   &  -   &  -   &  -   &  -   &  -   &  6   \\
+        Malgarise        &  5   &  -   &  -   &  -   &  -   &  -   &  5   \\
         Occhinegro       &  -   &  -   &  -   &  -   &  9   &  -   &  9   \\
         Seganfreddo      &  -   &  -   &  -   &  7   &  -   &  -   &  7   \\
         Tiozzo           &  -   &  -   &  -   &  -   &  9   &  -   &  9   \\
         \hline
-        Totale per ruolo &  6   &  5   & 10   &  7   & 18   &  6   &  -   \\
+        Totale per ruolo &  5   &  6   & 10   &  7   & 18   &  6   &  -   \\
         \hline
     \end{tabular}
     \caption{Consuntivo orario per ruolo dei membri del team durante il secondo sprint}
@@ -474,16 +474,16 @@ Tutte le attività previste sono state svolte con successo. Come si può notare 
         \hline
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} & \textbf{Ore rimanenti preventivo} & \textbf{Ore rimanenti consuntivo} \\
         \hline
-        Responsabile               &  6   &  180,00 € &  43.5 &  43.5 \\
-        Amministratore             &  5   &  100,00 € &  44.5 &  44.5 \\
-        Analista                   & 10   &  250,00 € &  58   &  58   \\
+        Responsabile               &  5   &  150,00 € &  43,5 &  44,5 \\
+        Amministratore             &  6   &  120,00 € &  44   &  44   \\
+        Analista                   & 10   &  250,00 € &  56,5 &  56,5 \\
         Progettista                &  7   &  175,00 € & 105   & 105   \\
-        Programmatore              & 18   &  270,00 € & 133   & 135   \\
+        Programmatore              & 18   &  270,00 € & 132   & 134   \\
         Verificatore               &  6   &   90,00 € & 158   & 159   \\
         \hline
-        \textbf{Totale preventivo} & 55   & 1110,00 € & 542   &   -   \\
+        \textbf{Totale preventivo} & 56   & 1130,00 € & 539   &   -   \\
         \hline
-        \textbf{Totale consuntivo} & 52   & 1065,00 € &   -   & 545   \\
+        \textbf{Totale consuntivo} & 52   & 1055,00 € &   -   & 543   \\
         \hline
     \end{tabular}
     \caption{Consuntivo economico consuntivo durante il secondo sprint}
@@ -504,7 +504,7 @@ Tutte le attività previste sono state svolte con successo. Come si può notare 
         Inesperienza nell'uso delle tecnologie adottate (Rischio \textbf{RT3}) & SI & Autoformazione e pair programming.\\
         \hline
     \end{tabular}
-    \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo periodo}
+    \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo sprint}
     \label{tab:20}
 \end{table}
 
@@ -658,14 +658,14 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
         \def\printonlypositive#1{\ifdim#1pt>0pt
         #1
         \fi}
-        \pie[pos={8,0},radius=3.5,sum=auto,text=legend,
+        \pie[pos={8,0},radius=3.5,text=legend,
         before number=\printonlypositive,color={resp,amm,an,pj,pg,ver}] {
-            12/Responsabile,
-            15/Amministratore,
-            18/Analista,
-            15/Progettista,
-            29/Programmatore,
-            12/Verificatore
+            11.8/Responsabile,
+            14.7/Amministratore,
+            17.6/Analista,
+            14.7/Progettista,
+            29.4/Programmatore,
+            11.8/Verificatore
         }
         \end{tikzpicture}
     \caption{Ripartizione in percentuale dei ruoli nel terzo sprint}
@@ -682,15 +682,15 @@ Anche per questo sprint, nonostante la durata ridotta, siamo riusciti a portare 
         \hline
         \textbf{} & \textbf{Re} & \textbf{Am} & \textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
         \hline
-        Baldo            &  -   &  -   &  -   &  -   &  -   &  3   &  3   \\
-        Benetazzo        &  4,5 &  -   &  -   &  -   &  -   &  -   &  4.5 \\
-        Ferro            &  -   &  -   &  -   &  4   &  -   &  -   &  4   \\
+        Baldo            &  -   &  -   &  -   &  -   &  -   &  4,5 &  4,5 \\
+        Benetazzo        &  4,5 &  -   &  -   &  -   &  -   &  -   &  4,5 \\
+        Ferro            &  -   &  -   &  -   &  5   &  -   &  -   &  4   \\
         Malgarise        &  -   &  -   &  -   &  -   &  6   &  -   &  6   \\
-        Occhinegro       &  -   &  -   &  5   &  -   &  -   &  -   &  5   \\
-        Seganfreddo      &  -   &  -   &  -   &  -   &  6   &  -   &  6   \\
-        Tiozzo           &  -   &  5.5 &  -   &  -   &  -   &  -   &  5.5 \\
+        Occhinegro       &  -   &  -   &  6,5 &  -   &  -   &  -   &  6,5 \\
+        Seganfreddo      &  -   &  -   &  -   &  -   &  7   &  -   &  7   \\
+        Tiozzo           &  -   &  5   &  -   &  -   &  -   &  -   &  5   \\
         \hline
-        Totale per ruolo &  4.5 &  5.5 &  5   &  4   & 12   &  3   &  -   \\
+        Totale per ruolo &  4,5 &  5   &  6,5 &  4   & 13   &  4,5 &  -   \\
         \hline
     \end{tabular}
     \caption{Consuntivo orario per ruolo dei membri del team durante il terzo sprint}
@@ -704,16 +704,16 @@ Anche per questo sprint, nonostante la durata ridotta, siamo riusciti a portare 
         \hline
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} & \textbf{Ore rimanenti preventivo} & \textbf{Ore rimanenti consuntivo} \\
         \hline
-        Responsabile               &  4.5 &  135,00 € &  39.5 &  39   \\
-        Amministratore             &  5.5 &  110,00 € &  39.5 &  39   \\
-        Analista                   &  5   &  125,00 € &  52   &  53   \\
+        Responsabile               &  4,5 &  135,00 € &  40,5 &  40   \\
+        Amministratore             &  5   &  100,00 € &  39   &  39   \\
+        Analista                   &  6,5 &  162,50 € &  50,5 &  50   \\
         Progettista                &  4   &  100,00 € & 100   & 101   \\
-        Programmatore              & 12   &  180,00 € & 125   & 123   \\
-        Verificatore               &  3   &   45,00 € & 155   & 156   \\
+        Programmatore              & 13   &  195,00 € & 124   & 121   \\
+        Verificatore               &  4,5 &   67,50 € & 155   & 154,5 \\
         \hline
-        \textbf{Totale preventivo} & 34   &  705,00 € & 511   &   -   \\
+        \textbf{Totale preventivo} & 34   &  705,00 € & 509   &   -   \\
         \hline
-        \textbf{Totale consuntivo} & 34   &  695,00 € &   -   & 511   \\
+        \textbf{Totale consuntivo} & 37,5 &  760,00 € &   -   & 505,5 \\
         \hline
     \end{tabular}
     \caption{Prospetto economico consuntivo durante il terzo sprint}
@@ -730,12 +730,12 @@ Anche per questo sprint, nonostante la durata ridotta, siamo riusciti a portare 
         Inesperienza nell'uso delle tecnologie adottate (Rischio \textbf{RT3}) & SI & Autoformazione e pair programming.\\
         \hline
     \end{tabular}
-    \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo periodo}
+    \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo sprint}
     \label{tab:24}
 \end{table}
 
 \subsubsubsection{Retrospettiva}
-Durante l'ultimo \textit{SAL} con l'azienda abbiamo deciso su loro consiglio di accorciare gli sprint, passando dalla durata di due settimane a quella di una settimana. Abbiamo anche deciso di spostare i prossimi al mercoledì, in quanto uno dei membri del gruppo era impossibilitato a partecipare il lunedì per impegni di lavoro. Questo ci ha permesso di avere due giorni in più in questo sprint e di attenuare l'impatto del cambiamento di durata. Questo, assieme ad un'attenta pianificazione delle attività, ci ha permesso di completare tutte le attività previste senza alcun ritardo e di prendere maggior confidenza con sprint di durata inferiore. \\
+Durante l'ultimo \textit{SAL} con l'azienda abbiamo deciso su loro consiglio di accorciare gli sprint, passando dalla durata di due settimane a quella di una settimana. Abbiamo anche deciso di spostare i prossimi al mercoledì, in quanto uno dei membri del gruppo era impossibilitato a partecipare il lunedì per impegni di lavoro. Questo ci ha permesso di avere due giorni in più in questo sprint e di attenuare l'impatto del cambiamento di durata. Per evitare ritardi, però, si è reso necessario riorganizzare le attività inizialmente pianificate in modo errato, portando ad un maggior consumo di ore produttive da parte dei programmatori in particolare, e quindi ad una spesa superiore a quanto preventivato. \\
 Permane la difficoltà nell'uso delle tecnologie adottate. In particolare abbiamo riscontrato in questo sprint diverse difficoltà nella configurazione di tali strumenti in diversi sistemi operativi. Come già sperimentato nel precedente sprint le attività di autoformazione e \textit{pair programming} si sono rivelate molto utili per superare tali difficoltà ed evitare ritardi nel completamento delle attività.
 
 %--------- MODELLO X SPRINT SUCCESSIVI (occhio ai TODO) -----------%
@@ -878,14 +878,14 @@ Permane la difficoltà nell'uso delle tecnologie adottate. In particolare abbiam
 %         \def\printonlypositive#1{\ifdim#1pt>0pt
 %         #1
 %         \fi}
-%         \pie[pos={8,0},radius=3.5,sum=auto,text=legend,
+%         \pie[pos={8,0},radius=3.5,text=legend,
 %         before number=\printonlypositive,color={resp,amm,an,pj,pg,ver}] { % TODO mettere valori corretti
-%              0/Responsabile,
-%              0/Amministratore,
-%              0/Analista,
-%              0/Progettista,
-%              0/Programmatore,
-%              0/Verificatore
+%              0.0/Responsabile,
+%              0.0/Amministratore,
+%              0.0/Analista,
+%              0.0/Progettista,
+%              0.0/Programmatore,
+%              0.0/Verificatore
 %         }
 %         \end{tikzpicture}
 %     \caption{Ripartizione in percentuale dei ruoli nel secondo sprint} % TODO mettere numero sprint corretto
@@ -955,7 +955,7 @@ Permane la difficoltà nell'uso delle tecnologie adottate. In particolare abbiam
 %         Inesperienza nell'uso delle tecnologie adottate (Rischio \textbf{RT3}) & SI & Autoformazione e pair programming.\\
 %         \hline
 %     \end{tabular}
-%     \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo periodo}
+%     \caption{Rischi effettivamente occorsi e loro mitigazione durante il primo sprint} % TODO mettere numero sprint corretto
 %     \label{tab:4} % TODO mettere numero di tabella corretto
 % \end{table}
 %
