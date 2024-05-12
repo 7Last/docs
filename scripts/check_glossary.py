@@ -9,15 +9,16 @@ def parse_glossary():
     file = open(glossary_tex, 'r').read()
     file = re.sub(r'[\n\t\r]', '', file)
 
-    matches = re.findall(r'\\newglossaryentry{([^{}]+)}\s*{\s*name=(?:{?)([^,}]+)(?:}?),\s*description={([^{}]+)}(?:,\s*plural={([^,}]+)})?(?:,\s*feminine={({[^}]+})})?(?:,\s*feminine_plural=({[^}]+}))?', file)
+    matches = re.findall(r'\\newglossaryentry{([^{}]+)}\s*{\s*name=(?:{?)([^,}]+)(?:}?),\s*description={([^{}]+)}(?:,\s*plural={([^,}]+)})?(?:,\s*acronym={([^,}]+)})?(?:,\s*feminine={({[^}]+})})?(?:,\s*feminine_plural=({[^}]+}))?', file)
 
     glossary = {}
-    for word, name, _, plural, feminine, feminine_plural in matches:
+    for word, name, _, acronym, plural, feminine, feminine_plural in matches:
         glossary[word] = {
             'name': name,
             'plural': plural,
+            'acronym': acronym,
             'feminine': feminine,
-            'feminine_plural': feminine_plural,
+            'feminine_plural': feminine_plural
         }
 
     ordered_glossary = {}
@@ -27,7 +28,17 @@ def parse_glossary():
 
 
 def search_tex_files():
-    exclude = ['glossario', '0_template', '1_candidatura', 'variables.tex', 'title.tex', 'header.tex', 'packages.tex']
+    exclude = [
+        'glossario',
+        '0_template',
+        '1_candidatura',
+        'variables.tex',
+        'title.tex',
+        'header.tex',
+        'packages.tex',
+        'verbali_esterni',
+        'verbali_interni',
+        'analisi_kafka_redpanda']
     glossary = parse_glossary()
     for root, _, files in os.walk(root_folder):
         for file in files:
@@ -56,8 +67,8 @@ def is_already_subscripted(file_content, end):
     return False
 
 
-def is_within_href(file_content, start):
-    matches = [m for m in re.finditer(r'\\href{[^}]*', file_content[:start])]
+def is_within_href_or_url(file_content, start):
+    matches = [m for m in re.finditer(r'\\(?:href|url){[^}]*', file_content[:start])]
     for match in reversed(matches):
         match_end = match.end()
         if '}' not in file_content[match_end:start]:
@@ -101,11 +112,11 @@ def replace_words(path, glossary):
                     else:
                         break
 
-                if is_within_href(file_content, match_start) \
+                if is_within_href_or_url(file_content, match_start) \
                         or is_within_section(file_content, match_start) \
                         or is_already_subscripted(file_content, match_end):
                     continue
-                url = glossary_url + "#" + word.lower().replace(' ', '-')
+                url = glossary_url + "\\#" + word.lower().replace(' ', '-')
                 replacement = '\\href{' + url + '}{' + file_content[match_start:match_end] + '\\textsubscript{G}}'
                 file_content = file_content[:match_start] + replacement + file_content[match_end:]
 
