@@ -1,6 +1,0 @@
-\contentsline {section}{\glsgetgrouptitle {B}}{3}{section*.2}%
-\contentsline {section}{\glsgetgrouptitle {C}}{4}{section*.2}%
-\contentsline {section}{\glsgetgrouptitle {G}}{5}{section*.2}%
-\contentsline {section}{\glsgetgrouptitle {L}}{6}{section*.2}%
-\contentsline {section}{\glsgetgrouptitle {N}}{7}{section*.2}%
-\contentsline {section}{\glsgetgrouptitle {P}}{8}{section*.2}%
