@@ -1,0 +1,11 @@
+title,actor,uc_code,uc_desc,uc_extends_code,uc_extends_desc
+SyncCity,Autorità locale,UC-1,Visualizzazione dashboard generale,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-2,Visualizzazione dashboard temperatura,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-3,Visualizzazione dashboard umidità,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-4,Visualizzazione dashboard qualità dell'aria,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-5,Visualizzazione dashboard precipitazioni,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-6,Visualizzazione dashboard traffico,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-7,Visualizzazione dashboard colonnine di ricarica,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-8,Visualizzazione dashboard parcheggi,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-9,Visualizzazione dashboard isole ecologiche,UC-21,Applicazione filtro sensore
+SyncCity,Autorità locale,UC-10,Visualizzazione dashboard livello di acqua,UC-21,Applicazione filtro sensore

@@ -11,13 +11,13 @@
 
 |Membro|Matricola|
 |---|---|
-Leonardo Baldo | 2042372
 Antonio Benetazzo | 2034528
-Elena Ferro | 2042328
 Davide Malgarise | 2009994
-Valerio Occhinegro | 2011069
-Raul Seganfreddo | 1226293
+Elena Ferro | 2042328
+Leonardo Baldo | 2042372
 Matteo Tiozzo | 2042882
+Raul Seganfreddo | 1226293
+Valerio Occhinegro | 2011069
 
 </div>
 

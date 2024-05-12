@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+
+\input{variables}
+\input{packages}
+\input{subX6_section}
+
+\linespread{1.2}
+\captionsetup[table]{name=Tabella}
+\captionsetup[figure]{name=Figura}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand{\listtablename}{Indice delle tabelle}
+\renewcommand{\listfigurename}{Indice delle immagini}
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily\oldthepage}
+
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\captionsetup[table]{list=no}
+\begin{table}[!h]
+	\footnotesize
+	\begin{center}
+		\caption*{Versioni}
+		\vspace{0.5cm}
+		\begin{tabular}{ l l l l p{6.1cm} }
+			\hline                                                                                                          \\[-2ex]
+			Ver. & Data       & Redattore     & Verificatore       & Descrizione                                            \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-05-08 & Elena Ferro   & Valerio Occhinegro & Approvazione documento                                 \\
+			0.5  & 2024-05-07 & Elena Ferro   &                    & Aggiunta caso d'uso filtri, rifinimento diagrammi UML. \\
+			0.4  & 2024-04-30 & Elena Ferro   &                    & Aggiunta casi d'uso per dati urbani                    \\
+			0.3  & 2024-04-29 & Elena Ferro   &                    & Aggiunta casi d'uso per dati atmosferici               \\
+			0.2  & 2024-04-24 & Elena Ferro   &                    & Aggiunta sezione requisiti                             \\
+			0.1  & 2024-03-08 & Matteo Tiozzo &                    & Stesura struttura documento                            \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\captionsetup[table]{list=yes}
+
+\newpage
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\newpage
+
+\input{introduzione}
+
+\input{descrizione_prodotto}
+
+%---------3_CALENDARIO SCADENZE-----------%
+\input{casi_uso}
+
+%---------4_PIANIFICAZIONE-----------%
+\input{requisiti}
+
+\end{document}
+

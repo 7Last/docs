@@ -1,0 +1,225 @@
+\section{Analisi dei rischi}
+È fondamentale mitigare l'impatto delle difficoltà incontrate durante lo svolgimento del progetto attraverso un'adeguata \textit{analisi dei rischi}. Questa sezione è stata inserita nel documento per evitare che potenziali problemi compromettano il successo del progetto.
+Dopo aver elencato i rischi, viene identificata una serie di passi da compiere nel caso in cui uno di essi si verifichi. Secondo lo standard \uline{METTERE NOSTRO STANDARD} il processo di gestione del rischio consiste in 5 fasi:
+\begin{itemize}
+    \item \textbf{identificazione del rischio}: consiste nel riconoscere le possibili cause del rischio, le aree di impatto, gli eventi, le cause e le potenziali conseguenze. Questa fase comporta un'analisi delle attività per creare un elenco di rischi basato sugli eventi che potrebbero influenzare il raggiungimento degli obiettivi;
+
+    \item \textbf{analisi del rischio}: questa fase prevede un processo di valutazione che contribuisce alla valutazione e al processo decisionale sul trattamento del rischio, identificando le strategie più adatte;
+    
+    \item \textbf{valutazione del rischio}: l'obiettivo di questa fase è prendere decisioni basate sui risultati dell'analisi del rischio per attuare la migliore strategia di trattamento;
+    
+    \item \textbf{trattamento del rischio}: dopo l'analisi e la valutazione dei rischi, è fondamentale decidere come trattarli per ridurne l'impatto;
+    
+    \item \textbf{monitoraggio e revisione del rischio}: queste attività devono essere integrate nella pianificazione del processo di gestione dei rischi e richiedono un monitoraggio regolare;
+    
+\end{itemize}
+I fattori chiave per l'identificazione dei rischi sono:
+\begin{itemize}
+    \item tipologia: rappresenta la categoria di rischio, la quale può essere organizzativa, tecnologica o comunicativa;
+    \item indice: è un valore numerico incrementale che identifica univocamente il rischio per ogni Tipologia. Un rischio elevato equivale a 3, un rischio medio equivale a 2, mentre un rischio basso equivale a 1;
+\end{itemize}
+Per una rappresentazione schematica dei rischi, si è deciso di attuare la seguente convenzione: R [ Tipologia ] [ Indice ].
+
+%---------SEZIONE DEI RISCHI ORGANIZZATIVI-----------%
+
+\begin{table}[!h]
+    \subsection{Rischi organizzativi}
+    \centering
+    \hbox{RO3 - Inesperienza del team nella pianificazione delle attività}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Durante il periodo iniziale, la pianificazione delle attività può non essere ottimale a causa della mancanza di esperienza del team, della scarsa conoscenza dei requisiti e della sovrastima/sottostima delle risorse/tempi necessari. \\ 
+        \hline
+        \textbf{Probabilità} & Alta. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Monitorazione continua di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#github}{GitHub\textsubscript{G}} e con il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{\textit{Piano di progetto}\textsubscript{G}} \\
+        \hline
+        \textbf{Piano di contingenza} & In caso di difficoltà o ritardi, il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{\textit{piano di progetto}\textsubscript{G}} viene rivisto per allineare le attività ai progressi. Se un membro segnala difficoltà nel rispettare una scadenza, al \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} il compito di assegnare più risorse o, in casi più gravi, spostare la scadenza.\\
+		\hline
+	\end{tabular}
+    \caption{Rischio organizzativo \textit{RO3 - Pianificazione delle attivitià}}
+    \label{table:1}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RO2 - Impegni personali o universitari}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Gli impegni personali e/o universitari possono limitare la disponibilità di uno o più membri del gruppo. \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Bassa. \\
+        \hline
+        \textbf{Rilevamento} & Condividendo i propri impegni e indicando la disponibilità, i membri possono concordare momenti della settimana per tenere le riunioni e comprendere lo stato di sviluppo del progetto da parte di ciascun membro. \\
+        \hline
+        \textbf{Piano di contingenza} & Il compito del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} è quello di rivedere la suddivisione dei ruoli e compiti in base agli impegni di ciascun membro. In casi gravi, le scadenze devono essere spostate e la pianificazione deve essere rivista se non tiene conto di questi inconvenienti.\\
+		\hline
+	\end{tabular}
+    \caption{Rischio organizzativo \textit{RO2 - Impegni personali o universitari}}
+    \label{table:2}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RO3 - Ritardi rispetto alle tempistiche previste}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & La sottostima/sovrastima dei costi orari delle attività, dovuta alla mancanza di esperienza del team, può causare ritardi, perdite di tempo e di risorse. \\ 
+        \hline
+        \textbf{Probabilità} & Bassa. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Attraverso il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#cruscotto}{cruscotto\textsubscript{G}} e il confronto periodico con il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{Piano di Progetto\textsubscript{G}} il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{Responsabile\textsubscript{G}} può monitorare lo stato di avanzamento del progetto \\
+        \hline
+        \textbf{Piano di contingenza} & In caso di modifiche non gravi cerchiamo di implementare rapidamente ciò che viene lasciato in sospeso. Se sono significative, discutiamo con il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}} per trovare un accordo su come gestire le modifiche e affrontare i cambiamenti.\\
+		\hline
+	\end{tabular}
+    \caption{Rischio organizzativo \textit{RO3 - Ritardi rispetto alle tempistiche previste}}
+    \label{table:3}
+\end{table}
+\begin{table}[!h]
+    \centering
+    \hbox{RO2 - Scarsa collaborazione da parte di uno o più membri}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & La possibilità che uno o più membri del gruppo non collaborino attivamente allo sviluppo del progetto. \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Contando le volte che un membro è assente, dopo la quinta volta viene attivato un rapporto interno al team.\\
+        \hline
+        \textbf{Piano di contingenza} & È compito dell'\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#amministratore}{amministratore\textsubscript{G}} comunicare la situazione alla persona interessata e invitarla a partecipare attivamente allo sviluppo. In caso di esito negativo, il compito del manager è quello di assegnare maggiori risorse o, nei casi più gravi, di posticipare la scadenza.\\
+		\hline
+	\end{tabular}
+    \caption{Rischio organizzativo \textit{RO2 - Scarsa collaborazione da parte di uno o più membri}}
+    \label{table:4}
+\end{table}
+
+%--------------------------------------------------%
+
+%---------SEZIONE DEI RISCHI TECNOLOGICI-----------%
+
+\begin{table}[!h]
+    \subsection{Rischi tecnologici}
+    \centering
+    \hbox{RT3 - Inesperienza nell'uso delle tecnologie adottate}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Dato il livello di esperienza che il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{capitolato\textsubscript{G}} richiede,  alcuni membri del gruppo potrebbero dover acquisire le competenze necessarie. Questo potrebbe causare ritardi sia nella fase di progettazione che in quella di sviluppo.  \\
+
+        \hline
+        \textbf{Probabilità} & Alta. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Dopo aver compreso le competenze di ciascun membro del team, il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} deve assegnare i compiti in modo che non siano troppo facili, ma nemmeno troppo difficili per ciascun membro. \\
+        \hline
+        \textbf{Piano di contingenza} & Se i membri del gruppo incontrano difficoltà nello svolgimento di un'attività, saranno assistiti da un membro con maggiore esperienza in quell'ambito. \\
+		\hline
+	\end{tabular}
+    \caption{Rischio tecnologico \textit{RT3 - Inesperienza nell'uso delle tecnologie adottate}}
+    \label{table:5}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RT2 - Perdita di informazioni}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & La perdita di informazioni rappresenta un rischio di impatto importante per il progetto. Può verificarsi in caso di guasti hardware, errori umani o malfunzionamenti dei sistemi utilizzati. \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Attraverso la monitorazione continua dei sistemi utilizzati. \\
+        \hline
+        \textbf{Piano di contingenza} & In caso perdita di informazioni, è necessario poter reperire quelle di riserva, tramite un backup. \\
+		\hline
+	\end{tabular}
+    \caption{Rischio tecnologico \textit{RT2 - Perdita di informazioni}}
+    \label{table:6}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RT3 - Problemi di compatibilità tra le tecnologie utilizzate}
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Per lo sviluppo del progetto è necessario utilizzare diverse tecnologie. I malfunzionamenti di queste tecnologie non dipendono dal gruppo e la loro risoluzione può richiedere tempo e risorse, incidendo così sulla velocità e sui costi del progetto. 
+        \\ 
+        \hline
+        \textbf{Probabilità} & Alta. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Solo al momento dell'utilizzo di queste tecnologie il team potrà scoprire se si verificheranno malfunzionamenti o no.  \\
+        \hline
+        \textbf{Piano di contingenza} & In caso di malfunzionamenti, è responsabilità del project manager allocare le risorse necessarie per la loro risoluzione nel più breve tempo possibile.\\
+		\hline
+	\end{tabular}
+    \caption{Rischio tecnologico \textit{RT3 - Problemi di compatibilità tra le tecnologie utilizzate}}
+    \label{table:7}
+
+\end{table}
+
+%--------------------------------------------------%
+
+%---------SEZIONE DEI RISCHI COMUNICATIVI-----------%   
+
+\begin{table}[!h]
+    \subsection{Rischi comunicativi}
+    \centering
+    \hbox{RC1 - Disaccordi all'interno del gruppo }
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Le differenze all'interno del gruppo possono derivare da ideologie e opinioni diverse tra i suoi membri. \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Possono essere identificate attraverso le loro opinioni espresse o osservando le dinamiche del gruppo. \\
+        \hline
+        \textbf{Piano di contingenza} & In caso di disaccordo, si procederà a una votazione democratica e si attuerà l'opzione con il maggior numero di voti. \\
+		\hline
+	\end{tabular}
+    \caption{Rischio comunicativo \textit{RC1 - Disaccordi all'interno del gruppo}}
+    \label{table:8}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \hbox{RC2 - Problemi di comunicazione }
+    \vspace{0.3cm}
+	\begin{tabular}{|l|p{10cm}|} 
+		\hline
+		\textbf{Descrizione} & Una comunicazione inefficace può causare ritardi, stress, e disaccordo interno al gruppo.  \\ 
+        \hline
+        \textbf{Probabilità} & Media. \\
+        \hline
+        \textbf{Pericolosità} & Alta. \\
+        \hline
+        \textbf{Rilevamento} & Questo può essere identificato attraverso sondaggi, feedback e comportamenti da parte dei membri del gruppo durante le riunioni o comunicazioni via messaggio. \\
+        \hline
+        \textbf{Piano di contingenza} & Il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} ha il compito di promuovere una comunicazione attiva, organizzare riunioni regolari, indagare sulle cause del disaccordo e ricercare soluzioni. \\
+		\hline
+	\end{tabular}
+    \caption{Rischio comunicativo \textit{RC2 - Problemi di comunicazione}}
+    \label{table:9}
+\end{table}

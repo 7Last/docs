@@ -1,0 +1,68 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                                                        \\[-2ex]
+			Ver. & Data       & Redattore          & Verificatore       & Descrizione                     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			2.0  & 2024-04-07 & Antonio Benetazzo  & Valerio Occhinegro & Modifica tabella delle versioni \\
+			1.1  & 2024-03-22 & Antonio Benetazzo  & Valerio Occhinegro & Copertina e intestazione pagine \\
+			1.0  & 2024-03-16 & Raul Seganfredo    & Valerio Occhinegro & Approvazione template           \\
+			0.3  & 2024-03-16 & Matteo Tiozzo      & Valerio Occhinegro & Modificato layout grafico       \\
+			0.2  & 2024-03-13 & Elena Ferro        & Valerio Occhinegro & Modificato font e logo          \\
+			0.1  & 2024-03-12 & Valerio Occhinegro & Valerio Occhinegro & Creazione template              \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Sezione 1}
+Qui va il testo della sezione 1.
+
+\paragraph{Paragrafo 1}
+Qui va il testo del paragrafo 1.
+
+\paragraph{Paragrafo 2}
+Qui va il testo del paragrafo 2, con esempio di elenco puntato.
+\begin{itemize}
+	\itemsep0em
+	\item \textbf{1}: Elemento 1
+	\item \textbf{2}: Elemento 2
+	\item \textbf{3}: Elemento 3
+\end{itemize}
+
+
+
+\section{Sezione 2}
+Qui va il testo della sezione 2.
+\subsection{Sottosezione 1}
+Qui va il testo della sottosezione 1.
+
+\end{document}
