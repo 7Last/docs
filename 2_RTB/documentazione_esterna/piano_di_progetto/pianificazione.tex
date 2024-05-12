@@ -193,11 +193,9 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Programm
 \begin{figure}[!h]
     \centering
     \begin{tikzpicture}
-        \def\printonlypositive#1{\ifdim#1pt>0pt
-        #1
-        \fi}
+        \def\printonlypositive#1{\ifdim#1pt>0pt#1\%\else\fi}
         \pie[pos={8,0},radius=3.5,text=legend,
-        before number=\printonlypositive,color={resp,amm,an,pj,pg,ver}] {
+        before number=\printonlypositive, after number=, color={resp,amm,an,pj,pg,ver}] {
             13.0/Responsabile,
             13.0/Amministratore,
             25.9/Analista,
@@ -424,11 +422,9 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
 \begin{figure}[!h]
     \centering
     \begin{tikzpicture}
-        \def\printonlypositive#1{\ifdim#1pt>0pt
-        #1
-        \fi}
+        \def\printonlypositive#1{\ifdim#1pt>0pt#1\%\else\fi}
         \pie[pos={8,0},radius=3.5,text=legend,
-        before number=\printonlypositive,color={resp,amm,an,pj,pg,ver}] {
+        before number=\printonlypositive, after number=, color={resp,amm,an,pj,pg,ver}] {
             10.7/Responsabile,
             10.7/Amministratore,
             17.9/Analista,
@@ -655,11 +651,9 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
 \begin{figure}[!h]
     \centering
     \begin{tikzpicture}
-        \def\printonlypositive#1{\ifdim#1pt>0pt
-        #1
-        \fi}
+        \def\printonlypositive#1{\ifdim#1pt>0pt#1\%\else\fi}
         \pie[pos={8,0},radius=3.5,text=legend,
-        before number=\printonlypositive,color={resp,amm,an,pj,pg,ver}] {
+        before number=\printonlypositive, after number=, color={resp,amm,an,pj,pg,ver}] {
             11.8/Responsabile,
             14.7/Amministratore,
             17.6/Analista,
