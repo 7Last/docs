@@ -27,10 +27,11 @@
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 25) (Sprint 2, 48) (Sprint 3, 52)};
             \legend{Valore ottimo ed ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
+    %44 requisiti obbligatori, 11 implementati nel primo sprint, 21 nel secondo e 24 nel terzo
     \caption{Percentuale di copertura dei requisiti obbligatori}
     \label{fig:1}
 \end{figure*}
@@ -66,12 +67,12 @@
             ]
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 35) (Sprint 2, 35) (Sprint 3, 35)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 40) (Sprint 3, 60)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 100) (Sprint 3, 100)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
     \caption{Percentuale di copertura dei requisiti desiderabili}
-    \label{fig:2}
+    \label{fig:2} 
 \end{figure*}
 %--------- FINE GRAFICO -----------%
 %\textbf{RTB} \\
@@ -105,11 +106,11 @@
             ]
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 60) (Sprint 2, 40) (Sprint 3, 50)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
-    \caption{Percentuale di copertura dei requisiti opzionali}
+    \caption{Percentuale di copertura dei requisiti opzionali} %non abbiamo implementato nessun requisito opzionale
     \label{fig:3}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
@@ -145,9 +146,9 @@
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 12670) (Sprint 3, 12670)}; % TODO mettere valori corretti EAC
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1115) (Sprint 2, 2215) (Sprint 3, 2700)}; % TODO mettere valori corretti PV
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 935) (Sprint 2, 2000) (Sprint 3, 3000)}; % TODO mettere valori corretti EV
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 11730) (Sprint 3, 12660)}; % TODO mettere valori corretti EAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1090) (Sprint 2, 2220) (Sprint 3, 2925)}; % TODO mettere valori corretti PV
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5)}; % TODO mettere valori corretti EV
             \legend{EAC, PV, EV}
         \end{axis}
     \end{tikzpicture}
@@ -162,7 +163,7 @@
 
 \newpage
 \subsubsection{11M-AC - Actual Cost (AC) e 14M-ETC - Estimate to Complete (ETC)}
-% da controllare
+% da controllare (sistemare ETC)
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -186,9 +187,9 @@
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 12670) (Sprint 3, 12670)}; 
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 11730) (Sprint 3, 12660)}; 
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 11695) (Sprint 2, 10670) (Sprint 3, 9670)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 935) (Sprint 2, 2000) (Sprint 3, 2970)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5)};
             \legend{EAC, ETC, AC}
         \end{axis}
     \end{tikzpicture}
@@ -226,8 +227,8 @@
             ]
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, -7.5) (Sprint 2, -7.5) (Sprint 3, -7.5)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, -6) (Sprint 2, -10) (Sprint 3, 0)}; % TODO mettere valori corretti SV terzo periodo
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, -8) (Sprint 2, -4) (Sprint 3, 0)}; % TODO mettere valori corretti CV terzo periodo
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 4) (Sprint 2, 1) (Sprint 3, -3)}; % TODO mettere valori corretti SV terzo periodo
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 7) (Sprint 3, -8)}; % TODO mettere valori corretti CV terzo periodo
             \legend{Valore ottimo, Valore ammissibile, SV, CV}
         \end{axis}
     \end{tikzpicture}
@@ -242,7 +243,6 @@
 
 \newpage
 \subsubsection{13M-EAC - Estimated at Completion (EAC)}
-Quanti soldi prevediamo di spendere per la fine del progetto
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -253,7 +253,8 @@ Quanti soldi prevediamo di spendere per la fine del progetto
             ymajorgrids = true,
             symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
             xtick = data,
-            ymin=0,
+            ytick = {10000, 11000, 12000, 13000, 14000, 15000},
+            ymin=10000, ymax=15000,
             axis lines*=left,
             legend cell align=left,
             legend style={
@@ -269,7 +270,7 @@ Quanti soldi prevediamo di spendere per la fine del progetto
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 12670) (Sprint 3, 12670)}; % TODO mettere valori corretti BAC
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 13177) (Sprint 2, 13177) (Sprint 3, 13177)}; % TODO mettere valori corretti BAC + 4%
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12162) (Sprint 2, 12162) (Sprint 3, 12162)}; % TODO mettere valori corretti BAC - 4%
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 12300) (Sprint 3, 11000)}; % TODO mettere valori corretti EAC
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 11730) (Sprint 2, 11605) (Sprint 3, 11000)}; % TODO mettere valori corretti EAC
             \legend{Valore ottimo (BAC), Valore ammissibile superiore, Valore ammissibile inferiore, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -340,7 +341,7 @@ Quanti soldi prevediamo di spendere per la fine del progetto
             ymajorgrids = true,
             symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
             xtick = data,
-            ymin=0,
+            ymin=0, ymax=10,
             axis lines*=left,
             legend cell align=left,
             legend style={
@@ -353,10 +354,10 @@ Quanti soldi prevediamo di spendere per la fine del progetto
             ]
             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
             \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 5) (Sprint 3, 5)}; % TODO mettere valori corretti NdP
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 8) (Sprint 2, 9) (Sprint 3, 4)}; % TODO mettere valori corretti PdP
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 8) (Sprint 2, 7) (Sprint 3, 4)}; % TODO mettere valori corretti PdP
             \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 3) (Sprint 3, 3)}; % TODO mettere valori corretti PdQ
             \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)}; % TODO mettere valori corretti Glossario
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 7) (Sprint 3, 4)}; % TODO mettere valori corretti AdR
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 6) (Sprint 3, 3)}; % TODO mettere valori corretti AdR
             \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)}; % TODO mettere valori corretti MU
             \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)}; % TODO mettere valori corretti ST
             \legend{Valore ottimo ed ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
