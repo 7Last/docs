@@ -1,109 +1,212 @@
 \section{Requisiti}
+\subsection{Definizione di un requisito}
+Per ciascun requisito vengono fornite le seguenti informazioni:
+\begin{itemize}
+	\item \textbf{Codice}: codice identificativo del requisito, meglio specificato nella sezione \ref{sec:codifica_requisiti};
+	\item \textbf{Descrizione}: breve descrizione del requisito;
+	\item \textbf{Fonte}: provenienza del requisito, meglio specificata nella sezione \ref{sec:fonti_requisiti};
+	\item \textbf{Importanza}: indica l'importanza del requisito, meglio specificata nella sezione \ref{sec:importanza_requisiti}.
+\end{itemize}
+
+\subsection{Tipologie di requisiti}
+I requisiti possono essere di quattro tipologie:
+\begin{itemize}
+	\item \textbf{Funzionali}: descrivono le funzionalità del sistema;
+	\item \textbf{Qualitativi}: descrivono le qualità che il sistema deve avere;
+	\item \textbf{Di vincolo}: descrivono i vincoli a cui il sistema deve sottostare;
+	\item \textbf{Prestazionali}: descrivono le prestazioni che il sistema deve avere.
+\end{itemize}
+
+\subsubsection{Codifica dei requisiti}
+\label{sec:codifica_requisiti}
+I requisiti sono codificati nel seguente modo:
+\begin{center}
+	\textbf{R[Tipologia]-[Codice]}
+\end{center}
+dove \textbf{[Codice]} è un numero progressivo che identifica univocamente il requisito
+e \textbf{[Tipologia]} è una lettera che identifica la tipologia del requisito:
+\begin{itemize}
+	\item \textbf{F}: requisito funzionale;
+	\item \textbf{Q}: requisito qualitativo;
+	\item \textbf{V}: requisito di vincolo;
+\end{itemize}
+
+\subsubsection{Fonti dei requisiti}
+\label{sec:fonti_requisiti}
+I requisiti possono avere le seguenti fonti:
+\begin{itemize}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{\textbf{Capitolato}\textsubscript{G}}: requisiti individuati a seguito dell'analisi del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{capitolato\textsubscript{G}};
+	\item \textbf{Interno}: requisiti individuati durante le riunioni interne e da coloro che hanno il ruolo di analista;
+	\item \textbf{Esterno}: requisiti aggiuntivi individuati in seguito a incontri con la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}};
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{\textbf{Piano di Qualifica}\textsubscript{G}}: requisiti necessari per adeguare il prodotto agli standard di qualità definiti nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{\textit{Piano di Qualifica}\textsubscript{G}}.
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{\textbf{Norme di Progetto}\textsubscript{G}}: requisiti necessari per adeguare il prodotto alle norme stabilite nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{\textit{Norme di Progetto}\textsubscript{G}};
+\end{itemize}
+
+\subsubsection{Importanza dei requisiti}
+\label{sec:importanza_requisiti}
+I requisiti possono avere tre livelli di importanza:
+\begin{itemize}
+	\item \textbf{Obbligatorio}: requisito irrinunciabile per il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#committente}{committente\textsubscript{G}};
+	\item \textbf{Desiderabile}: requisito non strettamente necessario, ma che porta valore aggiunto al prodotto;
+	\item \textbf{Opzionale}: requisito relativo a funzionalità aggiuntive.
+\end{itemize}
+
+
 \subsection{Requisiti funzionali}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-                            &                     &                      &                &                    \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Requisiti funzionali}
-    \label{tab:1}
-\end{table}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte}                                                                                                    & \textbf{Descrizione}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\\hline
+	\endfirsthead
+	\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte}                                                                                                    & \textbf{Descrizione}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 \\\hline
+	\endhead
+	\hline
+	RF-1            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & La parte \textit{IoT} dovrà essere simulata attraverso tool di generazione di informazioni random che tuttavia siano verosimili.                                                                                                                                                                                                                                                                                                                                                                     \\\hline
+	RF-2            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Il sistema dovrà permettere la visualizzazione dei dati in tempo reale.                                                                                                                                                                                                                                                                                                                                                                                                                              \\\hline
+	RF-3            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Il sistema dovrà permettere la visualizzazione dei dati storici.                                                                                                                                                                                                                                                                                                                                                                                                                                     \\\hline
+	RF-4            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & L'utente deve poter accedere all'applicativo senza bisogno di autenticazione.                                                                                                                                                                                                                                                                                                                                                                                                                        \\\hline
+	RF-5            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & L'utente dovrà poter visualizzare su una mappa la posizione geografica dei sensori.                                                                                                                                                                                                                                                                                                                                                                                                                  \\\hline
+	RF-6            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I tipi di dati che il sistema dovrà visualizzare sono: temperatura, umidità, qualità dell'aria, precipitazioni, traffico, stato delle colonnine di ricarica, stato di occupazione dei parcheggi, stato di riempimento delle isole ecologiche e livello di acqua.                                                                                                                                                                                                                                     \\\hline
+	RF-7            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I dati dovranno essere salvati su un database OLAP.                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\\hline
+	RF-8            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I sensori di temperatura rilevano i dati in Celsius                                                                                                                                                                                                                                                                                                                                                                                                                                                  \\\hline
+	RF-9            & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I sensori di umidità rilevano la percentuale di umidità nell’aria.                                                                                                                                                                                                                                                                                                                                                                                                                                   \\\hline
+	RF-10           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I sensori livello acqua rilevano il livello di acqua nella zona di installazione                                                                                                                                                                                                                                                                                                                                                                                                                     \\\hline
+	RF-11           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I dati provenienti dai sensori dovranno contenere i seguenti dati: id \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, data, ora e valore.                                                                                                                                                                                                                                                                                               \\\hline
+	RF-12           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Sviluppo di componenti quali \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#widget}{widget\textsubscript{G}} e grafici per la visualizzazione dei dati nelle \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}}.                                                                                                                                                                                              \\\hline
+	RF-13           & Obbligatorio        & Interno                                                                                                           & Il sistema deve permettere di visualizzare una \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} generale con tutti i dati dei sensori.                                                                                                                                                                                                                                                                                                \\\hline
+	RF-14           & Obbligatorio        & Interno                                                                                                           & Il sistema deve permettere di visualizzare una \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} specifica per ciascuna categoria di sensori.                                                                                                                                                                                                                                                                                          \\\hline
+	RF-15           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} generale dovranno essere presenti una tabella di tutti i sensori, una mappa interattiva, un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#widget}{widget\textsubscript{G}} con il conteggio totale dei sensori e una tabella contente i sensori che non stanno inviando dati da più di un giorno.                                                   \\\hline
+	RF-16           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} della temperatura dovranno essere visualizzati: un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}}, una mappa interattiva, la temperatura media, minima e massima di un certo periodo di tempo e la temperatura in tempo reale.                                                                    \\\hline
+	RF-17           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dell'umidità dovranno essere visualizzati: un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}}, una mappa interattiva, l'umidità media, minima e massima di un certo periodo di tempo e l'umidità in tempo reale.                                                                                   \\\hline
+	RF-18           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} della qualità dell'aria dovranno essere visualizzati: un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}}, una mappa interattiva, la qualità media dell'aria in un certo periodo e in tempo reale, i giorni con la qualità dell'aria migliore e peggiore in un certo periodo di tempo.              \\\hline
+	RF-19           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle precipitazioni dovranno essere visualizzati: un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}}, una mappa interattiva, la quantità media di precipitazioni in un certo periodo e in tempo reale, i giorni con la quantità di precipitazioni maggiore e minore in un certo periodo di tempo. \\\hline
+	RF-20           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} del traffico dovranno essere visualizzati: un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}}, il numero di veicoli e la velocità media in tempo reale e il calcolo dell'ora di punta sulla base del numero di veicoli e velocità media.                                                           \\\hline
+	RF-21           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle colonnine di ricarica dovranno essere visualizzati: una mappa interattiva contenente anche lo stato e il numero di colonnine di ricarica suddivise per stato in tempo reale.                                                                                                                                                                                             \\\hline
+	RF-22           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei parcheggi dovranno essere visualizzati: una mappa interattiva con il rispettivo stato di occupazione e il conteggio di parcheggi suddivisi per stato di occupazione in tempo reale.                                                                                                                                                                                        \\\hline
+	RF-23           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle isole ecologiche dovranno essere visualizzati: una mappa interattiva con il rispettivo stato di riempimento e il conteggio di isole ecologiche suddivise per stato di riempimento in tempo reale.                                                                                                                                                                        \\\hline
+	RF-24           & Obbligatorio        & Interno                                                                                                           & Nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} del livello di acqua dovranno essere visualizzati: un grafico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#time-series}{time series\textsubscript{G}}, una mappa interattiva, il livello medio di acqua in un certo periodo e in tempo reale.                                                                                                      \\\hline
+	RF-25           & Obbligatorio        & Interno                                                                                                           & Nel caso in cui non ci siano dati visualizzabili, il sistema deve notificare l'utente mostrando un opportuno messaggio.                                                                                                                                                                                                                                                                                                                                                                              \\\hline
+	RF-26           & Obbligatorio        & Interno                                                                                                           & I sensori di qualità dell'aria inviano i seguenti dati: \textit{PM10}, \textit{PM2.5}, \textit{NO2}, \textit{CO}, \textit{O3}, \textit{SO2} in $\mu g/m^3$ e la qualità dell'aria in base all'indice \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#european-air-quality-index}{\textit{EAQI}\textsubscript{G}}.                                                                                                                                                           \\\hline
+	RF-27           & Obbligatorio        & Interno                                                                                                           & I sensori di precipitazioni inviano la quantità di pioggia caduta in mm.                                                                                                                                                                                                                                                                                                                                                                                                                             \\\hline
+	RF-28           & Obbligatorio        & Interno                                                                                                           & I sensori di traffico inviano il numero di veicoli rilevati e la velocità in km/h.                                                                                                                                                                                                                                                                                                                                                                                                                   \\\hline
+	RF-29           & Obbligatorio        & Interno                                                                                                           & Le colonnine di ricarica inviano lo stato di occupazione e il tempo mancante alla fine della ricarica (se occupate) o il tempo passato dalla fine dell'ultima ricarica (se libere).                                                                                                                                                                                                                                                                                                                  \\\hline
+	RF-30           & Obbligatorio        & Interno                                                                                                           & I sensori di parcheggio inviano lo stato di occupazione del parcheggio (1 se occupato, 0 se libero) e il timestamp dell'ultimo cambiamento di stato.                                                                                                                                                                                                                                                                                                                                                 \\\hline
+	RF-31           & Obbligatorio        & Interno                                                                                                           & Le isole ecologiche inviano lo stato di riempimento (1 se pieno, 0 se vuoto) e il timestamp dell'ultimo cambiamento di stato.                                                                                                                                                                                                                                                                                                                                                                        \\\hline
+	RF-32           & Obbligatorio        & Interno                                                                                                           & I sensori di livello di acqua inviano il livello di acqua in cm.                                                                                                                                                                                                                                                                                                                                                                                                                                     \\\hline
+	RF-33           & Obbligatorio        & Esterno                                                                                                           & Il sistema deve permettere di filtrare i dati visualizzati in base a un intervallo di tempo.                                                                                                                                                                                                                                                                                                                                                                                                         \\\hline
+	RF-34           & Obbligatorio        & Esterno                                                                                                           & Il sistema deve permettere di filtrare i dati visualizzati in base al \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} che li ha generati.                                                                                                                                                                                                                                                                                                \\\hline
+	% TODO: aggiunta di requisiti esterni desiderabili su quali tipi di notifiche inviare all'utente
+	\caption{Requisiti funzionali}
+	\label{table:1}
+\end{longtable}
 
 \subsection{Requisiti qualitativi}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-                            &                     &                      &                &                    \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Requisiti qualitativi}
-    \label{tab:2}
-\end{table}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte}                                                                                                                                                                                                                                       & \textbf{Descrizione}                                                                                                                                                                            \\\hline
+	\endfirsthead
+	RQ-33           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}} & Sviluppo di test che dimostrino il corretto funzionamento dei servizi e delle funzionalità previste. Viene richiesta una copertura dell'80\% corredata di report.                               \\\hline
+	RQ-34           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}} & Il progetto deve essere corredato di documentazione riguardo scelte implementative e progettuali effettuate e relative motivazioni.                                                             \\\hline
+	RQ-35           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}} & Il progetto deve essere corredato di documentazione riguardo problemi aperti e eventuali soluzioni proposte da esplorare.                                                                       \\\hline
+	RQ-36           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}} & Tutte le componenti del sistema devono essere testate con \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#test-end-to-end}{\textit{test end-to-end}\textsubscript{G}}. \\\hline
+	\caption{Requisiti qualitativi}
+	\label{table:2}
+\end{longtable}
 
 \subsection{Requisiti di vincolo}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-                            &                     &                      &                &                    \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Requisiti di vincolo}
-    \label{tab:3}
-\end{table}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte}                                                                                                    & \textbf{Descrizione}                                                                                                                                                                                                                                                                    \\\hline
+	\endfirsthead
+	\hline
+	\endhead
+	RV-37           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Deve essere implementato almeno un simulatore di dati.                                                                                                                                                                                                                                  \\\hline
+	RV-38           & Desiderabile        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Devono essere implementati più simulatori di dati.                                                                                                                                                                                                                                      \\\hline
+	RV-39           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I simulatori devono produrre dei dati verosimili.                                                                                                                                                                                                                                       \\\hline
+	RV-40           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Il simulatore di dati deve pubblicare messaggi in una piattaforma di \textit{data streaming}.                                                                                                                                                                                           \\\hline
+	RV-41           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & La piattaforma di \textit{data streaming} deve essere integrata con un un database OLAP.                                                                                                                                                                                                \\\hline
+	RV-42           & Obbligatorio        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Per ciascuna tipologia di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} dev'essere sviluppata almeno una \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}}. \\\hline
+	RV-43           & Opzionale           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Previsione di dati futuri basati sui dati storici.                                                                                                                                                                                                                                      \\\hline
+	RV-44           & Desiderabile        & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Deve esistere una \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} per la visualizzazione della posizione geografica dei sensori su una mappa.                                                                           \\\hline
+	RV-45           & Opzionale           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & Un sistema di notifiche che allerti l'utente in caso di superamento di soglie prestabilite.                                                                                                                                                                                             \\\hline
+	\caption{Requisiti di vincolo}
+	\label{table:3}
+\end{longtable}
 
-\subsection{Requisiti prestazionali}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} & \textbf{Casi d'uso}\\\hline
-                            &                     &                      &                &                    \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Requisiti prestazionali}
-    \label{tab:4}
-\end{table}
 
 \subsection{Tracciamento}
 \subsubsection{Requisito - Fonte}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l | }
-            \hline 
-            \textbf{Requisito} & \textbf{Fonte}\\\hline
-                               &               \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Tracciamento requisito - fonte}
-    \label{tab:5}
-\end{table}
-
-\subsubsection{Fonte - Requisito}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |}
-            \hline 
-            \textbf{Fonte} & \textbf{Requisito}\\\hline
-                               &               \\
-            
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Tracciamento fonte - requisito}
-    \label{tab:6}
-\end{table}
+% comando bash per generare contenuto tabella:
+% cat requisiti.tex | awk -F '&' '/R\w\-[[:digit:]]+.*&.*&.*&.*/ {print $1 "&" $3 "\\\\\\hline"}'
+\begin{longtable}{|>{\centering\arraybackslash}m{0.30\textwidth}|>{\centering\arraybackslash}m{0.40\textwidth}|}
+	\hline
+	\textbf{Requisito} & \textbf{Fonte}                                                                                                                                                                                                                                       \\\hline
+	\endfirsthead
+	\hline
+	\textbf{Requisito} & \textbf{Fonte}                                                                                                                                                                                                                                       \\\hline
+	\endhead
+	RF-1            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-2            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-3            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-4            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-5            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-6            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-7            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-8            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-9            & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-10           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-11           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-12           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RF-13           & Interno                                                                                                           \\\hline
+	RF-14           & Interno                                                                                                           \\\hline
+	RF-15           & Interno                                                                                                           \\\hline
+	RF-16           & Interno                                                                                                           \\\hline
+	RF-17           & Interno                                                                                                           \\\hline
+	RF-18           & Interno                                                                                                           \\\hline
+	RF-19           & Interno                                                                                                           \\\hline
+	RF-20           & Interno                                                                                                           \\\hline
+	RF-21           & Interno                                                                                                           \\\hline
+	RF-22           & Interno                                                                                                           \\\hline
+	RF-23           & Interno                                                                                                           \\\hline
+	RF-24           & Interno                                                                                                           \\\hline
+	RF-25           & Interno                                                                                                           \\\hline
+	RF-26           & Interno                                                                                                           \\\hline
+	RF-27           & Interno                                                                                                           \\\hline
+	RF-28           & Interno                                                                                                           \\\hline
+	RF-29           & Interno                                                                                                           \\\hline
+	RF-30           & Interno                                                                                                           \\\hline
+	RF-31           & Interno                                                                                                           \\\hline
+	RF-32           & Interno                                                                                                           \\\hline
+	RF-33           & Esterno                                                                                                           \\\hline
+	RF-34           & Esterno                                                                                                           \\\hline
+	RQ-33           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}} \\\hline
+	RQ-34           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}} \\\hline
+	RQ-35           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}} \\\hline
+	RQ-36           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}} \\\hline
+	RV-37           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RV-38           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RV-39           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RV-40           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RV-41           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RV-42           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RV-43           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RV-44           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	RV-45           & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} \\\hline
+	\caption{Tracciamento requisito - fonte}
+	\label{table:4}
+\end{longtable}
 
 \subsection{Riepilogo}
-\begin{table}[!h]
-    \begin{center}
-        \begin{tabular}{ |l |l |l |l| l| }
-            \hline 
-            \textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Opzionali} & \textbf{Desiderabili} & \textbf{Totale}\\\hline
-            Funzionali         &                     &                      &                &                    \\
-            Di qualità         &                     &                      &                &                    \\
-            Di vincolo         &                     &                      &                &                    \\
-            Prestazionali      &                     &                      &                &                    \\\hline
-            \textbf{Totale}           &                     &                      &                &                    \\
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Riepilogo}
-    \label{tab:7}
-\end{table}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.2\textwidth}|}
+	\hline
+	\textbf{Tipologia} & \textbf{Obbligatorio} & \textbf{Desiderabile} & \textbf{Opzionale} & \textbf{Totale} \\\hline
+	\endfirsthead
+	\textbf{Tipologia} & \textbf{Obbligatorio} & \textbf{Desiderabile} & \textbf{Opzionale} & \textbf{Totale} \\\hline
+	\endhead
+	Funzionali         & 34                    & 0                     & 0                  & 34              \\\hline
+	Qualitativi        & 4                     & 0                     & 0                  & 4               \\\hline
+	Di vincolo         & 5                     & 2                     & 2                  & 9               \\\hline
+	\caption{Riepilogo}
+	\label{table:5}
+\end{longtable}
+
