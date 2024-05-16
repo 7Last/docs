@@ -1,0 +1,18 @@
+name: Pre merge checks
+
+on:
+  pull_request:
+    branches: [develop]
+    types: [opened, reopened, review_requested, edited, synchronize]
+
+  workflow_dispatch:
+
+jobs:
+  aspell_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: reitermarkus/aspell@main
+        with:
+          args: --lang=it_IT
