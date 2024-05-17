@@ -20,38 +20,5 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y aspell aspell-it aspell-en
 
-      - name: List latex files
-        run: |
-          files=$(find . -name '*.tex')
-          output_file="misspelled_words.txt"
-          > "$output_file"  # Clear the output file if it exists
-          glossary=$(
-              awk '/\\newglossaryentry\{[^}]*\}|acronym=\{[^}]*\}/ {
-                  match($0, /\\newglossaryentry\{([^}]*)\}|acronym=\{([^}]*)\}/, arr);
-                  if (arr[1] != "") print arr[1];
-                  else if (arr[2] != "") print arr[2];
-              }' 2_RTB/documentazione_interna/glossario/glossario.tex
-          )
-          # echo glossary to a tmp file
-          echo "$glossary" > personal.txt
-          # concat .wordlist to personal.txt
-          cat wordlist.txt >> personal.txt
-
-          for file in $files; do
-              aspell pipe list -t --lang=it_IT --personal=personal.txt < "$file" |
-                  grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
-                  grep '[a-zA-Z]\+' -o |
-                  aspell pipe list -t --lang=en_US |
-                  grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
-                  grep '[a-zA-Z]\+' -o 
-                  >> "$output_file"
-          done
-
-          if [ -s "$output_file" ]; then
-              echo "Misspelled words found:"
-              # sort unique output file and print it
-              sort -u "$output_file"
-              exit 1
-          else
-              echo "No misspelled words found."
-          fi
+      - name: Run aspell check
+        run: ./aspell_check.sh
