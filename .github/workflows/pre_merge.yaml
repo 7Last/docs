@@ -20,7 +20,5 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y aspell aspell-it
 
-      - name: Aspell check
-        uses: reitermarkus/aspell@main
-        with:
-          args: --lang=it_IT
+      - name: GitHub Spellcheck
+        uses: igsekor/pyspelling-any@v1.0.4
