@@ -15,6 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: reitermarkus/aspell@main
-        with:
-          args: --lang=it_IT
+      - name: GitHub Spellcheck
+        uses: igsekor/pyspelling-any@v1.0.4
+            
