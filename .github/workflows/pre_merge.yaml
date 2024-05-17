@@ -24,6 +24,6 @@ jobs:
         run: |
           files=$(find . -name '*.tex')
           for file in $files; do
-            echo "Checking $file"
-            aspell list -t --lang=it_IT $file
+            aspell list -t -d it < $file > misspelled.txt
           done
+          cat misspelled.txt | sort | uniq
