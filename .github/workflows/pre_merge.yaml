@@ -22,4 +22,8 @@ jobs:
 
       - name: List latex files
         run: |
-          find . -name '*.tex'
+          files=$(find . -name '*.tex')
+          for file in $files; do
+            echo "Checking $file"
+            aspell -c -t $file -d it
+          done
