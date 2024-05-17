@@ -12,7 +12,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -26,8 +26,8 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 25) (Sprint 2, 48) (Sprint 3, 52)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 25) (Sprint 2, 48) (Sprint 3, 52) (Sprint 4, 52)};
             \legend{Valore ottimo ed ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -51,7 +51,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -65,9 +65,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 35) (Sprint 2, 35) (Sprint 3, 35)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 100) (Sprint 3, 100)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 35) (Sprint 2, 35) (Sprint 3, 35) (Sprint 4, 35)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -90,7 +90,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -104,9 +104,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -131,7 +131,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -146,9 +146,9 @@
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 11730) (Sprint 3, 12660)}; % TODO mettere valori corretti EAC
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1090) (Sprint 2, 2220) (Sprint 3, 2925)}; % TODO mettere valori corretti PV
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5)}; % TODO mettere valori corretti EV
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 11730) (Sprint 3, 12660) (Sprint 4, 12680)}; % TODO mettere valori corretti EAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1090) (Sprint 2, 2220) (Sprint 3, 2925) (Sprint 4, 2925)}; % TODO mettere valori corretti PV
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5) (Sprint 4, 2792.5)}; % TODO mettere valori corretti EV
             \legend{EAC, PV, EV}
         \end{axis}
     \end{tikzpicture}
@@ -172,7 +172,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -187,9 +187,9 @@
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 11730) (Sprint 3, 12660)}; 
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 11695) (Sprint 2, 10670) (Sprint 3, 9670)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 11730) (Sprint 3, 12660) (Sprint 4, 12680)}; 
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 11695) (Sprint 2, 10670) (Sprint 3, 9670) (Sprint 4, 9670)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5) (Sprint 4, 2792.5)};
             \legend{EAC, ETC, AC}
         \end{axis}
     \end{tikzpicture}
@@ -212,7 +212,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=-10, ymax=10,
             axis lines*=left,
@@ -225,10 +225,10 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, -7.5) (Sprint 2, -7.5) (Sprint 3, -7.5)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 4) (Sprint 2, 1) (Sprint 3, -3)}; % TODO mettere valori corretti SV terzo periodo
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 7) (Sprint 3, -8)}; % TODO mettere valori corretti CV terzo periodo
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, -7.5) (Sprint 2, -7.5) (Sprint 3, -7.5) (Sprint 4, -7.5)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 4) (Sprint 2, 1) (Sprint 3, -3) (Sprint 4, -3)};
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 7) (Sprint 3, -8) (Sprint 4, 0)}; 
             \legend{Valore ottimo, Valore ammissibile, SV, CV}
         \end{axis}
     \end{tikzpicture}
@@ -251,7 +251,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {10000, 11000, 12000, 13000, 14000, 15000},
             ymin=10000, ymax=15000,
@@ -267,10 +267,10 @@
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 12670) (Sprint 3, 12670)}; % TODO mettere valori corretti BAC
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 13177) (Sprint 2, 13177) (Sprint 3, 13177)}; % TODO mettere valori corretti BAC + 4%
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12162) (Sprint 2, 12162) (Sprint 3, 12162)}; % TODO mettere valori corretti BAC - 4%
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 11730) (Sprint 2, 11605) (Sprint 3, 11000)}; % TODO mettere valori corretti EAC
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12670) (Sprint 2, 12670) (Sprint 3, 12680) (Sprint 4, 12680) }; % TODO mettere valori corretti BAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 13177) (Sprint 2, 13177) (Sprint 3, 13177) (Sprint 4, 13187)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12162) (Sprint 2, 12162) (Sprint 3, 12162) (Sprint 4, 12172)}; 
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 11730) (Sprint 2, 11605) (Sprint 3, 11000) (Sprint 4, 11000)};
             \legend{Valore ottimo (BAC), Valore ammissibile superiore, Valore ammissibile inferiore, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -294,7 +294,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -308,15 +308,15 @@
             },           
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90) (Sprint 3, 90)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 60) (Sprint 2, 60) (Sprint 3, 60)};
-            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 55) (Sprint 2, 60) (Sprint 3, 60)}; % TODO mettere valori corretti NdP
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 55) (Sprint 3, 55)}; % TODO mettere valori corretti PdP
-            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 70) (Sprint 3, 70)}; % TODO mettere valori corretti PdQ
-            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 85) (Sprint 2, 90) (Sprint 3, 90)}; % TODO mettere valori corretti Glossario
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 75) (Sprint 3, 75)}; % TODO mettere valori corretti AdR
-            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)}; % TODO mettere valori corretti MU
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)}; % TODO mettere valori corretti ST
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90) (Sprint 3, 90) (Sprint 4, 90)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 60) (Sprint 2, 60) (Sprint 3, 60) (Sprint 4, 60)};
+            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 55) (Sprint 2, 60) (Sprint 3, 60) (Sprint 4, 60)}; 
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 55) (Sprint 3, 55) (Sprint 4, 55)}; 
+            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 70) (Sprint 3, 70) (Sprint 4, 70)}; 
+            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 85) (Sprint 2, 90) (Sprint 3, 90) (Sprint 4, 90)}; 
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 75) (Sprint 3, 75) (Sprint 4, 75)}; 
+            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)}; 
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)}; 
             \legend{Valore ottimo, Valore ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
         \end{axis}
     \end{tikzpicture}
@@ -339,7 +339,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0, ymax=10,
             axis lines*=left,
@@ -352,14 +352,14 @@
             },           
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
-            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 5) (Sprint 3, 5)}; % TODO mettere valori corretti NdP
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 8) (Sprint 2, 7) (Sprint 3, 4)}; % TODO mettere valori corretti PdP
-            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 3) (Sprint 3, 3)}; % TODO mettere valori corretti PdQ
-            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)}; % TODO mettere valori corretti Glossario
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 6) (Sprint 3, 3)}; % TODO mettere valori corretti AdR
-            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)}; % TODO mettere valori corretti MU
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)}; % TODO mettere valori corretti ST
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 5) (Sprint 3, 5) (Sprint 4, 5)}; 
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 8) (Sprint 2, 7) (Sprint 3, 4) (Sprint 4, 4)}; 
+            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4, 3)}; 
+            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)}; 
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 6) (Sprint 3, 3) (Sprint 4, 3)}; 
+            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)}; 
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)}; 
             \legend{Valore ottimo ed ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
         \end{axis}
     \end{tikzpicture}
@@ -384,7 +384,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -398,9 +398,9 @@
             },           
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80) (Sprint 4, 80)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -423,7 +423,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -437,9 +437,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80) (Sprint 4, 80)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -462,7 +462,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -476,9 +476,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80) (Sprint 4, 80)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)  (Sprint 4, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -501,7 +501,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -515,8 +515,8 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
             \legend{Valore ottimo ed ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -539,7 +539,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -553,9 +553,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80) (Sprint 4, 80)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -579,7 +579,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0, ymax=5,
             axis lines*=left,
@@ -592,9 +592,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 3) (Sprint 2, 3) (Sprint 3, 3)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 1) (Sprint 2, 1) (Sprint 3, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 3) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4, 3)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 1) (Sprint 2, 1) (Sprint 3, 0) (Sprint 4, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -618,7 +618,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -632,9 +632,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90) (Sprint 3, 90)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 43) (Sprint 2, 70) (Sprint 3, 80)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90) (Sprint 3, 90) (Sprint 4, 90)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 43) (Sprint 2, 70) (Sprint 3, 80) (Sprint 4, 90)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -657,7 +657,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -670,9 +670,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1) (Sprint 2, 1) (Sprint 3, 1)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 3) (Sprint 2, 3) (Sprint 3, 3)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 2.5) (Sprint 2, 2) (Sprint 3, 4)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1) (Sprint 2, 1) (Sprint 3, 1) (Sprint 4, 1)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 3) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4, 3)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 2.5) (Sprint 2, 2) (Sprint 3, 4) (Sprint 4, 1)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -696,7 +696,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -710,9 +710,9 @@
             },      
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
             ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 75) (Sprint 3, 75)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 80) (Sprint 3, 90)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 75) (Sprint 3, 75) (Sprint 4, 75)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 80) (Sprint 3, 90) (Sprint 4, 90)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
