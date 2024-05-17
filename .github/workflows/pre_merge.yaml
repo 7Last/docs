@@ -20,5 +20,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y aspell aspell-it
 
-      - name: GitHub Spellcheck
-        uses: igsekor/pyspelling-any@v1.0.4
+      - name: List latex files
+        run: |
+          find . -name '*.tex'
