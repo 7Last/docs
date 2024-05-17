@@ -35,7 +35,7 @@ jobs:
           # echo glossary to a tmp file
           echo "$glossary" > personal.txt
           # concat .wordlist to personal.txt
-          cat .wordlist >> personal.txt
+          cat wordlist.txt >> personal.txt
 
           for file in $files; do
               aspell pipe list -t --lang=it_IT --personal=personal.txt < "$file" |
