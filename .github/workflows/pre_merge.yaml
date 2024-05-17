@@ -47,5 +47,10 @@ jobs:
                   sort -u >> "$output_file"
           done
 
-          # Sort and print unique words
-          sort "$output_file" | uniq
+          if [ -s "$output_file" ]; then
+              echo "Misspelled words found:"
+              cat "$output_file"
+              exit 1
+          else
+              echo "No misspelled words found."
+          fi
