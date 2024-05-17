@@ -1,0 +1,16 @@
+matrix:
+- name: Spellcheck
+  aspell:
+    lang: it
+    ignore-case: true
+  dictionary:
+    wordlists:
+    - wordlist.txt
+    encoding: utf-8
+  pipeline:
+    # ignore latex commands
+    - name: ignore-latex
+      command: sed -E 's/\\[a-zA-Z]+//g'
+  sources:
+    - '**/*.tex'
+  default_encoding: utf-8

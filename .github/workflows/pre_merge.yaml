@@ -15,6 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: GitHub Spellcheck
-        uses: igsekor/pyspelling-any@v1.0.4
+      - name: Install aspell and Italian dictionary
+        run: |
+          apt-get update
+          apt-get install -y aspell aspell-it
+
+      - name: Find and check LaTeX files
+        run: |
+          # Find all .tex files and check spelling
+          find . -type f -name "*.tex" -exec aspell --lang=it --mode=tex check {} \;
             
