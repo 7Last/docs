@@ -18,7 +18,7 @@ jobs:
       - name: Install aspell and Italian dictionary
         run: |
           sudo apt-get update
-          sudo apt-get install -y aspell aspell-it
+          sudo apt-get install -y aspell aspell-it aspell-en
 
       - name: List latex files
         run: |
