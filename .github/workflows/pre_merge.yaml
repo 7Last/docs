@@ -20,8 +20,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y aspell aspell-it
 
-      - name: Find and check LaTeX files
-        run: |
-          # Find all .tex files and check spelling
-          find . -type f -name "*.tex" -exec aspell --lang=it --mode=tex check {} \;
-            
+      - name: Aspell check
+        uses: reitermarkus/aspell@main
+        with:
+          args: --lang=it_IT
