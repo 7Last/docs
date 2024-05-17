@@ -23,12 +23,18 @@ jobs:
       - name: List latex files
         run: |
           files=$(find . -name '*.tex')
+          output_file="misspelled_words.txt"
+          > "$output_file"  # Clear the output file if it exists
+
           for file in $files; do
-             aspell pipe list -t --lang=it_IT <"$file" |
-                 grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh | \
-                 grep '[a-zA-Z]\+' -o | \
-                 aspell pipe list -t --lang=en_US |
-                 grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh | \
-                 grep '[a-zA-Z]\+' -o | \
-              while read word; do grep -on "\<$word\>" $file; done
+              aspell pipe list -t --lang=it_IT --personal=.wordlist.txt < "$file" |
+                  grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
+                  grep '[a-zA-Z]\+' -o |
+                  aspell pipe list -t --lang=en_US |
+                  grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
+                  grep '[a-zA-Z]\+' -o |
+                  sort -u >> "$output_file"
           done
+
+          # Sort and print unique words
+          sort "$output_file" | uniq
