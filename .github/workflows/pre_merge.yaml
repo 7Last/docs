@@ -43,13 +43,14 @@ jobs:
                   grep '[a-zA-Z]\+' -o |
                   aspell pipe list -t --lang=en_US |
                   grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
-                  grep '[a-zA-Z]\+' -o |
-                  sort -u >> "$output_file"
+                  grep '[a-zA-Z]\+' -o 
+                  >> "$output_file"
           done
 
           if [ -s "$output_file" ]; then
               echo "Misspelled words found:"
-              cat "$output_file"
+              # sort unique output file and print it
+              sort -u "$output_file"
               exit 1
           else
               echo "No misspelled words found."
