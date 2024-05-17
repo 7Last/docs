@@ -25,5 +25,5 @@ jobs:
           files=$(find . -name '*.tex')
           for file in $files; do
             echo "Checking $file"
-            aspell -c -t $file -d it
+            aspell list -t --lang=it_IT $file
           done
