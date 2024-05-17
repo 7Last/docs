@@ -49,7 +49,7 @@ jobs:
 
           if [ -s "$output_file" ]; then
               echo "Misspelled words found:"
-              cat "$output_file"
+              sort -u "$output_file"
               exit 1
           else
               echo "No misspelled words found."
