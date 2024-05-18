@@ -1,4 +1,11 @@
-files=$(find . -name '*.tex')
+# files=$(find . -name '*.tex')
+# exclude 0_template and 1_candidatura from files
+#
+files=$(find . -name '*.tex' | 
+    grep -v '0_template' |
+    grep -v '1_candidatura' |
+    grep -v 'verbali_esterni')
+
 output_file="misspelled_words.txt"
 > "$output_file"  # Clear the output file if it exists
 glossary=$(
@@ -21,7 +28,7 @@ for file in $files; do
         grep '[a-zA-Z]\+' -o |
         aspell pipe -t --lang=en_US  |
         grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
-        grep '[a-zA-Z]\+' -o | grep -v -f personal.txt)
+        grep '[a-zA-Z]\+' -o | grep -v -i -F -f  personal.txt)
 
     if [ -n "$misspelled" ]; then
         echo "Misspelled words in $file"
