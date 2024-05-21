@@ -742,31 +742,27 @@ Permane la difficoltà nell'uso delle tecnologie adottate. In particolare abbiam
 \end{itemize}
 
 \subsubsubsection{Pianificazione}
-% TODO scrivere qualcosa sulla pianificazione dello sprint
-In questo periodo il gruppo si impegna ad implementare delle migliorie richieste dall'azienda proponente.
+In questo periodo il gruppo si impegna ad implementare le migliorie suggerite.
 In particolare ci si concentrerà su:
 \begin{itemize}
     \item aggiunta di una o più \textit{query di aggregazione}, in particolare fare delle dashboard analitiche in cui si
         mostrano andamenti e report;
-    \item aggiunta di più sensori in luoghi diversi e a distanze diverse tra loro;
-    \item aggiunta di una parte di \textit{stream processing} per la visualizzazione di informazioni che non sono
-        visibili sul dato grezzo;
+    \item aggiunta di ulteriori sensori dislocati in luoghi e distanze differenti;
     \item miglioramenti generali alla dashboard.
 \end{itemize}
 
 \subsubsubsubsection{Rischi attesi}
 I rischi attesi per questo periodo sono:
 \begin{itemize}
-    \item Inesperienza nella pianificazione delle attività (Rischio RO1);
-    \item Impegni personali o universitari (Rischio RO2);
-    \item Inesperienza nell'uso delle tecnologie adottate (Rischio RT1);
-    \item Problemi di compatibilità tra le tecnologie adottate (Rischio RT3);
-    \item Rischio di conflitti interni (Rischio RC1).
+    \item impegni personali o universitari (Rischio RO2);
+    \item inesperienza nell'uso delle tecnologie adottate (Rischio RT1);
+    \item problemi di compatibilità tra le tecnologie adottate (Rischio RT3);
+    \item rischio di conflitti interni (Rischio RC1).
 \end{itemize}
 Il rischio dell'inesperienza nell'uso delle tecnologie adottate (\textbf{RT1}) è ancora presente ma in parte mitigato visto che uno dei
 due programmatori ha già lavorato con le tecnologie adottate.
-
-\subsubsubsection{Preventivo} % TODO mettere valori corretti
+\newpage
+\subsubsubsection{Preventivo}
 Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progettista (Pj), Programmatore (Pg), Verificatore (Ve).
 \begin{table}[!h]
     \centering
@@ -775,21 +771,20 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
         \textbf{} & \textbf{Re} & \textbf{Am} &\textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
         \hline
         Baldo            &  -   &  -   &  5   &  -   &  -   &  -   &  5   \\
-        Benetazzo        &  -   &  -   &  -   &  -   &  6   &  -   &  6   \\
-        Ferro            &  -   &  -   &  -   &  -   &  6   &  -   &  6   \\
+        Benetazzo        &  -   &  -   &  -   &  -   &  4   &  -   &  4   \\
+        Ferro            &  -   &  -   &  -   &  -   &  4   &  -   &  4   \\
         Malgarise        &  -   &  -   &  -   &  4   &  -   &  -   &  4   \\
-        Occhinegro       &  5   &  -   &  -   &  -   &  -   &  -   &  5   \\
+        Occhinegro       &  4   &  -   &  -   &  -   &  -   &  -   &  4   \\
         Seganfreddo      &  -   &  4   &  -   &  -   &  -   &  -   &  4   \\
-        Tiozzo           &  -   &  -   &  -   &  -   &  -   &  4   &  4   \\
+        Tiozzo           &  -   &  -   &  -   &  -   &  -   &  7   &  7   \\
         \hline
-        Totale per ruolo &  5   &  4   &  5   &  4   &  12   &  4   &  -   \\
+        Totale per ruolo &  4   &  4   &  5   &  4   &  8   &  7   &  -   \\
         \hline
     \end{tabular}
     \caption{Preventivo orario per ruolo dei membri del team durante il quarto sprint}
     \label{tab:25}
 \end{table}
 
-\newpage
 %---------1_ISTOGRAMMA-----------%
 \begin{figure}[!h]
     \centering
@@ -819,7 +814,7 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
                 (Benetazzo, 0)
                 (Ferro, 0)
                 (Malgarise, 0)
-                (Occhinegro, 5)
+                (Occhinegro, 4)
                 (Seganfreddo, 0)
                 (Tiozzo, 0)
             };
@@ -852,8 +847,8 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
             };
             \addplot+[ybar, pg, fill=pg, mark=none] plot coordinates {
                 (Baldo, 0)
-                (Benetazzo, 6)
-                (Ferro, 6)
+                (Benetazzo, 4)
+                (Ferro, 4)
                 (Malgarise, 0)
                 (Occhinegro, 0)
                 (Seganfreddo, 0)
@@ -866,7 +861,7 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
                 (Malgarise, 0)
                 (Occhinegro, 0)
                 (Seganfreddo, 0)
-                (Tiozzo, 4)
+                (Tiozzo, 7)
             };
             \legend{Re, Am, An, Pj, Pg, Ve}
         \end{axis}
@@ -884,12 +879,12 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
         \fi}
         \pie[pos={8,0},radius=3.5,text=legend,
         before number=\printonlypositive,color={resp,amm,an,pj,pg,ver}] {
-            14.7/Responsabile,
-            11.8/Amministratore,
-            14.7/Analista,
-            11.8/Progettista,
-            35.3/Programmatore,
-            11.8/Verificatore
+            12.5/Responsabile,
+            12.5/Amministratore,
+            15.6/Analista,
+            12.5/Progettista,
+            25.0/Programmatore,
+            21.9/Verificatore
         }
         \end{tikzpicture}
     \caption{Ripartizione in percentuale dei ruoli nel quarto sprint}
@@ -898,8 +893,7 @@ Ruoli coinvolti: Responsabile (Re), Amministratore (Am), Analista (An), Progetti
 
 \newpage
 \subsubsubsection{Consuntivo}
-In questo sprint siamo riusciti a portare a termine tutte le attività previste, nonostante qualche ritardo per impegni
-lavorativi e universitari.
+In questo sprint siamo riusciti a portare a termine tutte le attività previste.
 
 \subsubsubsubsection{Prospetto orario}
 \begin{table}[!h]
@@ -909,19 +903,20 @@ lavorativi e universitari.
         \textbf{} & \textbf{Re} & \textbf{Am} &\textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
         \hline
         Baldo            &  -   &  -   &  5   &  -   &  -   &  -   &  5   \\
-        Benetazzo        &  -   &  -   &  -   &  -   &  5   &  -   &  5   \\
-        Ferro            &  -   &  -   &  -   &  -   &  6   &  -   &  6   \\
+        Benetazzo        &  -   &  -   &  -   &  -   &  4   &  -   &  4   \\
+        Ferro            &  -   &  -   &  -   &  -   &  4   &  -   &  4   \\
         Malgarise        &  -   &  -   &  -   &  4   &  -   &  -   &  4   \\
-        Occhinegro       &  4,5   &  -   &  -   &  -   &  -   &  -   &  4,5   \\
-        Seganfreddo      &  -   &  3,5   &  -   &  -   &  -   &  -   &  3,5   \\
-        Tiozzo           &  -   &  -   &  -   &  -   &  -   &  4   &  4   \\
+        Occhinegro       &  3   &  -   &  -   &  -   &  -   &  -   &  3   \\
+        Seganfreddo      &  -   &  4   &  -   &  -   &  -   &  -   &  4   \\
+        Tiozzo           &  -   &  -   &  -   &  -   &  -   &  7   &  7   \\
         \hline
-        Totale per ruolo &  4,5   &  3,5   &  5   &  4   &  11   &  4   &  -   \\
+        Totale per ruolo &  3   &  4   &  5   &  4   &  8   &  7   &  -   \\
         \hline
     \end{tabular}
     \caption{Consuntivo orario per ruolo dei membri del team durante il quarto sprint}
     \label{tab:26}
 \end{table}
+\newpage
 \subsubsubsubsection{Prospetto economico}
 \begin{table}[!h]
     \centering
@@ -929,22 +924,22 @@ lavorativi e universitari.
         \hline
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} & \textbf{Ore rimanenti preventivo} & \textbf{Ore rimanenti consuntivo} \\
         \hline
-        Responsabile               &  4,5  &   135,00 € &   35,5   &   35,5   \\
-        Amministratore             &  3,5  &   70,00 € &   35   &   35,5   \\
-        Analista                   &  5  &   125,00 € &   45,5   &   45   \\
-        Progettista                &  4  &   100,00 € &   96   &   97   \\
-        Programmatore              &  11  &   165,00 € &   112   &   110   \\
-        Verificatore               &  4  &   60,00 € &   151   &   150,5   \\
+        Responsabile               &  3  &   90,00 € &   36   &   37   \\
+        Amministratore             &  4  &   80,00 € &   35   &   35   \\
+        Analista                   &  5  &   125,00 € &   45   &   45   \\
+        Progettista                &  4  &   100,00 € &   97   &   97   \\
+        Programmatore              &  8  &   120,00 € &   113   &   113   \\
+        Verificatore               &  7  &   105,00 € &   147,5   &   147,5   \\
         \hline
-        \textbf{Totale preventivo} &  34   &    695,00 € &   475   &   -   \\
+        \textbf{Totale preventivo} &  32   &    650,00 € &   473,5   &   -   \\
         \hline
-        \textbf{Totale consuntivo} &  32   &    655,00 € &   -   &   473,5   \\
+        \textbf{Totale consuntivo} &  31   &    620,00 € &   -   &   474,5   \\
         \hline
     \end{tabular}
     \caption{Consuntivo economico consuntivo durante il quarto sprint}
     \label{tab:27}
 \end{table}
-\newpage % Aggiunta perchè la tabella per qualche motivo andava ad inizio pagina
+
 \subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione} % TODO mettere rischi occorsi corretti
 \begin{table}[!h]
     \centering
@@ -960,10 +955,10 @@ lavorativi e universitari.
     \caption{Rischi effettivamente occorsi e loro mitigazione durante il quarto sprint}
     \label{tab:28}
 \end{table}
-
+\newpage
 \subsubsubsection{Retrospettiva}
 Questo sprint è il secondo ad aver avuto la durata di una settimana e, a differenza del precedente, il gruppo è riuscito
-a pianificare meglio le attività portando a termine i vari task in tempo.
+a pianificare meglio le attività portandole a termine in tempo.
 Questo è stato possibile grazie ad una maggiore esperienza acquisita nel pianificare le attività e ad una maggiore
 comunicazione tra i membri del gruppo.\\
 Ci sono stati alcuni ritardi per impegni personali e universitari, ma sono stati mitigati grazie ad una comunicazione
