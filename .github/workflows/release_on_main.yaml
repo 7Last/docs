@@ -61,10 +61,6 @@ jobs:
             rm -rf $(dirname $file)
           done
 
-      - name: If no changes, exit with success
-        run: |
-          [ -z "$(git diff)" ] && exit 0
-
       - name: git add
         run: git add .
 
