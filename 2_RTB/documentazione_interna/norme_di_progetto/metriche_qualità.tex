@@ -8,31 +8,31 @@
     \hline
     \textbf{Metrica} & \textbf{Nome} & \textbf{Descrizione}  & \textbf{Formula} \\
     \endhead
-    \textbf{6M-SFIN}    & Structural Fan In         &  Si riferisce ad una classe che è stata progettata in modo tale da essere utilizzata facilmente da molte altre classi. & \\
+    % \textbf{6M-SFIN}    & Structural Fan In         &  Si riferisce ad una classe che è stata progettata in modo tale da essere utilizzata facilmente da molte altre classi. & \\
+    % \hline
+    % \textbf{7M-SFOUT}      & Structural Fan Out    &  Numero di moduli subordinati immediati di un metodo. & \\
+    % \hline
+    \textbf{9M-EV}      & Earned Value    &  Valore del lavoro effettivamente svolto fino al determinato periodo. & $EV = EAC \times \%lavoro\:svolto$ \\  
     \hline
-    \textbf{7M-SFOUT}      & Structural Fan Out    &  Numero di moduli subordinati immediati di un metodo. & \\
+    \textbf{10M-PV}      & Planned Value    &  Stima la somma dei costi realizzativi delle attività imminenti, periodo per periodo. & $PV = BAC \times \%lavoro\:svolto$ \\
     \hline
-    \textbf{8M-EV}      & Earned Value    &  Valore del lavoro effettivamente svolto fino al determinato periodo. & $EV = EAC \times \%lavoro\:svolto$ \\  
+    \textbf{11M-AC}      & Actual Cost    &  Misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente momento. & Dato reperibile e costantemente aggiornato in "Piano di Progetto v1.0.0" \\
     \hline
-    \textbf{9M-PV}      & Planned Value    &  Stima la somma dei costi realizzativi delle attività imminenti, periodo per periodo. & $PV = BAC \times \%lavoro\:svolto$ \\
+    \textbf{12M-CV}      & Cost Variance    &  Misura la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. & $CV = EV - AC$ \\
     \hline
-    \textbf{10M-AC}      & Actual Cost    &  Misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente momento. & Dato reperibile e costantemente aggiornato in "Piano di Progetto v1.0.0" \\
+    \textbf{13M-EAC}      & Estimated at Completion    &  Misura il costo realizzativo stimato per terminare il progetto. & $EAC = BAC \div CPI$ \\
     \hline
-    \textbf{11M-CV}      & Cost Variance    &  Misura la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. & $CV = EV - AC$ \\
+    \textbf{14M-ETC}      & Estimate to Complete    &  Stima dei costi realizzativi fino alla fine del progetto. & $ETC = EAC - AC$ \\
     \hline
-    \textbf{12M-EAC}      & Estimated at Completion    &  Misura il costo realizzativo stimato per terminare il progetto. & $EAC = BAC \div CPI$ \\
+    \textbf{24M-CC}      & Code Coverage    &  Rappresenta il grado in cui il codice sorgente di un programma è testato. & \\
     \hline
-    \textbf{13M-ETC}      & Estimate to Complete    &  Stima dei costi realizzativi fino alla fine del progetto. & $ETC = EAC - AC$ \\
+    \textbf{28M-PTCP}      & Passed Test Cases Percentage    &  Percentuale di casi di test superati. & $PTCP = \frac{Casi\: di\: test\: superati}{Casi\: di\: test\: totali}\: \times \: 100$ \\
     \hline
-    \textbf{23M-CC}      & Code Coverage    &  Rappresenta il grado in cui il codice sorgente di un programma è testato. & \\
+    \textbf{29M-NCR}      & Rischi non calcolati    &  Indica il numero di rischi non calcolati nel documento di "Analisi dei Requisiti v1.0.0". & \\
     \hline
-    \textbf{27M-PTCP}      & Passed Test Cases Percentage    &  Percentuale di casi di test superati. & $PTCP = \frac{Casi\: di\: test\: superati}{Casi\: di\: test\: totali}\: \times \: 100$ \\
-    \hline
-    \textbf{28M-NCR}      & Non Calculated Risks    &  Indica il numero di rischi non calcolati nel documento di "Analisi dei Requisiti v1.0.0". & \\
-    \hline
-    \textbf{30M-TE}      & Time Efficiency    &  Indicante il livello di efficacia da parte del teamo nello sviluppo di codice di alta qualità. & $TE = \frac{Tempo\: impiegato\: per\: lo\: sviluppo}{Tempo\: previsto\: per\: lo\: sviluppo}\: \times \: 100$ \\
-    \hline
-    \textbf{31M-RSI}      & Requirements Stability Index    &  Misura impiegata nella quantificazione dell'entità e dell'impatti dei cambiamenti ai requisiti di un progetto. & \\
+    % \textbf{30M-TE}      & Time Efficiency    &  Indicante il livello di efficacia da parte del teamo nello sviluppo di codice di alta qualità. & $TE = \frac{Tempo\: impiegato\: per\: lo\: sviluppo}{Tempo\: previsto\: per\: lo\: sviluppo}\: \times \: 100$ \\
+    % \hline
+    \textbf{31M-RSI}      & Require-ments Stability Index    &  Misura impiegata nella quantificazione dell'entità e dell'impatti dei cambiamenti ai requisiti di un progetto. & \\
     \hline
     \textbf{32M-SV}      & Schedule Variance    &  Indica in percentuale quanto si è in anticipo o in ritardo rispetto alla pianificazione. & $SV = EV - PV$ \\
     \hline
@@ -49,30 +49,30 @@
     \hline
     \textbf{Metrica} & \textbf{Nome} & \textbf{Descrizione}  & \textbf{Formula / Caratteristiche} \\
     \endhead
-    \textbf{0M-CRO}      & Copertura dei Requisiti Obbligatori    &  Valuta quanto del lavoro svolto durante lo sviluppo corrisponda ai requisiti essenziali o obbligatori definiti in fase di analisi dei requisiti. & \\
+    \textbf{1M-CRO}      & Copertura dei Requisiti Obbligatori    &  Valuta quanto del lavoro svolto durante lo sviluppo corrisponda ai requisiti essenziali o obbligatori definiti in fase di analisi dei requisiti. & \\
     \hline
-    \textbf{1M-CRD}      & Copertura dei Requisiti Desiderabili    &  Valuta quanti di quei requisiti che, se integrati arricchirebbero l'esperienza utente o fornirebbero vantaggi aggiuntivi non strettamente necessari, sono stati implementati o sodisfatti nel prodotto. & \\
+    \textbf{2M-CRD}      & Copertura dei Requisiti Desiderabili    &  Valuta quanti di quei requisiti che, se integrati arricchirebbero l'esperienza utente o fornirebbero vantaggi aggiuntivi non strettamente necessari, sono stati implementati o sodisfatti nel prodotto. & \\
     \hline
-    \textbf{2M-CROP}      & Copertura dei Requisiti Opzionali    &  Valuta quanti dei requisiti aggiuntivi, non essenziali o di bassa priorità, sono stati implementati o soddisfatti nel prodotto. & \\
+    \textbf{3M-CROP}      & Copertura dei Requisiti Opzionali    &  Valuta quanti dei requisiti aggiuntivi, non essenziali o di bassa priorità, sono stati implementati o soddisfatti nel prodotto. & \\
     \hline
-    \textbf{3M-FU}      & Facilità di Utilizzo    &  Metrica che misura l'usabilità di un sistema software. & \\
+    \textbf{4M-FU}      & Facilità di Utilizzo    &  Metrica che misura l'usabilità di un sistema software. & \\
     \hline
-    \textbf{4M-TA}      & Tempo di Apprendimento    &  Misura il tempo massimo richiesto per apprendere l'utilizzo del prodotto. & Usabilità\\
+    \textbf{5M-TA}      & Tempo di Apprendimento    &  Misura il tempo massimo richiesto per apprendere l'utilizzo del prodotto. & Usabilità\\
     \hline
-    \textbf{5M-COC}      & Coefficient of Coupling    &  Rappresenta il grado di dipendenza tra diversi moduli o componenti di un sistema software. & $COC = \frac{Numero\: di\: dipendenze}{Numero\: di\: moduli}$ \\
+    % \textbf{5M-COC}      & Coefficient of Coupling    &  Rappresenta il grado di dipendenza tra diversi moduli o componenti di un sistema software. & $COC = \frac{Numero\: di\: dipendenze}{Numero\: di\: moduli}$ \\
+    % \hline
+    \textbf{22M-IG}      & Indice Gulpease    &  Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi. & $IG = 89 + \frac{300 \:\times \:Numero\:frasi \:- \:10 \:\times\: Numero\:lettere}{Numero\:parole}$ \\
     \hline
-    \textbf{21M-IG}      & Indice Gulpease    &  Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi. & $IG = 89 + \frac{300 \:\times \:Numero\:frasi \:- \:10 \:\times\: Numero\:lettere}{Numero\:parole}$ \\
+    \textbf{23M-CO}      & Correttezza Ortografica    &  Misura la presenza di errori ortografici nei documenti. & Affidabilità \\
     \hline
-    \textbf{22M-CO}      & Correttezza Ortografica    &  Misura la presenza di errori ortografici nei documenti. & Affidabilità \\
+    \textbf{24M-CC}      & Code Coverage    &  Misura la percentuale di codice sorgente coperto dai test. & \\
     \hline
-    \textbf{23M-CC}      & Code Coverage    &  Misura la percentuale di codice sorgente coperto dai test. & \\
+    \textbf{25M-BC}      & Branch Coverage    &  Misura la percentuale di rami decisionali coperti dai test. & $BC =\frac{Flussi\:funzionali\: testati}{Flussi\:condizionali\: riusciti\: e\: non}\: \times \: 100$ \\
     \hline
-    \textbf{24M-BC}      & Branch Coverage    &  Misura la percentuale di rami decisionali coperti dai test. & $BC =\frac{Flussi\:funzionali\: testati}{Flussi\:condizionali\: riusciti\: e\: non}\: \times \: 100$ \\
+    \textbf{26M-SC}      & Statement Coverage    &  Misura la percentuale di statement del codice coperti dai test. & $SC = \frac{Statement\: testati}{Statement\: totali}\: \times \: 100$ \\
     \hline
-    \textbf{25M-SC}      & Statement Coverage    &  Misura la percentuale di statement del codice coperti dai test. & $SC = \frac{Statement\: testati}{Statement\: totali}\: \times \: 100$ \\
-    \hline
-    \textbf{26M-FD}      & Failure Density    &  Misura il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo. & \\
-    \hline
+    % \textbf{27M-FD}      & Failure Density    &  Misura il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo. & \\
+    % \hline
     \textbf{29M-QMS}      & Quality Metrics Satisfied    &  Misura che valuta quante metriche, tra quelle definite, sono state implementate e soddisfatte. & $QMS = \frac{Metriche\: soddisfatte}{Metriche\: totali}\: \times \: 100$ \\
     \hline
     \caption{Metriche per la qualità di Prodotto}

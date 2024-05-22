@@ -1,5 +1,5 @@
 \section{Standard per la qualità}
-Nel corso dell’analisi e della valutazione della qualità dei processi e del software, adotteremo standard internazionali ben definiti per garantire una valutazione rigorosa e conforme agli standard globali. In particolare, la suddivisione dei processi in primari, di supporto e organizzativi sarà guidata dall’adozione dello standard ISO/IEC 12207:1995. Infine, l’adozione dello standard ISO/IEC 25010:2023 ci fornirà un quadro completo per la definizione e la suddivisione delle metriche di qualità del software. L’utilizzo congiunto di questi standard consentirà un approccio completo e strutturato alla valutazione della qualità dei processi e del software, assicurando un’elevata coerenza, affidabilità e conformità agli standard riconosciuti a livello internazionale. È stato deciso di applicare solo questi due standard in quando lo standard ISO/IEC 9126:2001 è stato ritirato e sostituito dallo standard ISO/IEC 25010:2023.
+Abbiamo scelto di adottare standard internazionali per l'analisi e la valutazione della qualità dei processi e del software. In particolare, la suddivisione dei processi in primari, di supporto e organizzativi sarà guidata dall'adozione dello standard ISO/IEC 12207:1995. Inoltre, l'adozione dello standard ISO/IEC 25010:2023 ci fornirà un quadro completo per la definizione e la classificazione delle metriche di qualità del software. Abbiamo deciso di applicare solo questi due standard, poiché lo standard ISO/IEC 9126:2001 è stato ritirato e sostituito dallo standard ISO/IEC 25010:2023.
 \subsection{Caratteristiche del sistema ISO/IEC 25010:2023}
 \subsubsection{Appropriatezza funzionale}
 \begin{itemize}
@@ -38,7 +38,7 @@ Nel corso dell’analisi e della valutazione della qualità dei processi e del s
 \begin{itemize}
     \item \textbf{Riservatezza}: il prodotto software deve proteggere i dati sensibili e le informazioni riservate;
     \item \textbf{Integrità}: il prodotto software deve garantire l'accuratezza e la completezza dei dati;
-    \item \textbf{Non} ripudio: il prodotto software deve garantire che le transazioni e le comunicazioni non possano essere negate o ripudiate;
+    \item \textbf{Non ripudio}: il prodotto software deve garantire che le transazioni e le comunicazioni non possano essere negate o ripudiate;
     \item \textbf{Autenticazione}: il prodotto software deve verificare l'identità degli utenti e garantire che solo gli utenti autorizzati possano accedere al sistema;
     \item \textbf{Autenticità}: il prodotto software deve garantire che l'origine dei dati e delle informazioni sia verificabile.
 \end{itemize}
@@ -56,34 +56,35 @@ Nel corso dell’analisi e della valutazione della qualità dei processi e del s
     \item \textbf{Installabilità}: il prodotto software deve essere facilmente installabile e configurabile;
     \item \textbf{Sostituibilità}: il prodotto software deve essere facilmente sostituibile con altre soluzioni o versioni più recenti.
 \end{itemize}
+\newpage
 \subsection{Suddivisione secondo standard ISO/IEC 12207:1995}
 \subsubsection{Processi primari}
 Essenziali per lo sviluppo del software e comprendono:
 \begin{itemize}
-    \item \textbf{Acquisizione}: gestione dei propri sotto-fornitori;
-    \item \textbf{Fornitura}: gestione delle relazioni con il cliente;
-    \item \textbf{Sviluppo}: comprende tutte le attività legate alla progettazione, implementazione e verifica del software;
-    \item \textbf{Operazione}: installazione ed fornitura dei prodotti e/o servizi;
-    \item \textbf{Manutenzione}: correzione, adattamento, progressione.
+    \item \textbf{acquisizione}: gestione dei propri sotto-fornitori;
+    \item \textbf{fornitura}: gestione delle relazioni con il cliente;
+    \item \textbf{sviluppo}: comprende tutte le attività legate alla progettazione, implementazione e verifica del software;
+    \item \textbf{operazione}: installazione ed fornitura dei prodotti e/o servizi;
+    \item \textbf{manutenzione}: correzione, adattamento, progressione.
 \end{itemize}
 \subsubsection{Processi di supporto}
 Questi processi forniscono il supporto necessario per i processi primari e comprendono:
 \begin{itemize}
-    \item \textbf{Documentazione}: comprende la generazione e la cura della documentazione correlata al software;
-    \item \textbf{Gestione della configurazione}: comprende le operazioni per la gestione delle configurazioni del software, come la gestione delle versioni e il controllo delle modifiche;
-    \item \textbf{Assicurazione della qualità}: questo processo si occupa delle operazioni per assicurare che il software rispetti gli standard di qualità prefissati;
-    \item \textbf{Verifica}: implica l’analisi e la valutazione dei prodotti software per assicurare che rispondano ai requisiti definiti;
-    \item \textbf{Validazione}: questo processo si focalizza sulla verifica che il software risponda alle necessità dell’utente e si integri adeguatamente nell’ambiente di lavoro;
-    \item \textbf{Revisioni congiunte con il cliente}: questo processo coinvolge il cliente nelle operazioni di analisi e valutazione del software;
-    \item \textbf{Verifiche ispettive interne}: coinvolge il team di sviluppo nelle attività di revisione e valutazione del software;
-    \item \textbf{Risoluzione dei problemi}: coinvolge l'identificazione e la risoluzione dei problemi nel software.
+    \item \textbf{documentazione}: comprende la generazione e la cura della documentazione correlata al software;
+    \item \textbf{gestione della configurazione}: comprende le operazioni per la gestione delle configurazioni del software, come la gestione delle versioni e il controllo delle modifiche;
+    \item \textbf{assicurazione della qualità}: questo processo si occupa delle operazioni per assicurare che il software rispetti gli standard di qualità prefissati;
+    \item \textbf{verifica}: implica l’analisi e la valutazione dei prodotti software per assicurare che rispondano ai requisiti definiti;
+    \item \textbf{validazione}: questo processo si focalizza sulla verifica che il software risponda alle necessità dell’utente e si integri adeguatamente nell’ambiente di lavoro;
+    \item \textbf{revisioni congiunte con il cliente}: questo processo coinvolge il cliente nelle operazioni di analisi e valutazione del software;
+    \item \textbf{verifiche ispettive interne}: coinvolge il team di sviluppo nelle attività di revisione e valutazione del software;
+    \item \textbf{risoluzione dei problemi}: coinvolge l'identificazione e la risoluzione dei problemi nel software.
 \end{itemize}
 \subsubsection{Processi organizzativi}
 Questi processi supportano l'organizzazione nel suo insieme e si compongono di:
 \begin{itemize}
-    \item \textbf{Gestione}: risoluzione dei problemi dei processi;
-    \item \textbf{Gestione delle infrastrutture}: disposizione degli strumenti di assistenza ai processi;
-    \item \textbf{Gestione dei processi}: manutenzione progressiva dei processi;
-    \item \textbf{Formazione}: supporto, motivazione e integrazione all’auto-apprendimento;
-    \item \textbf{Amministrazione}: questo processo riguarda l'amministrazione generale dei processi e delle risorse necessarie per il loro funzionamento.
+    \item \textbf{gestione}: risoluzione dei problemi dei processi;
+    \item \textbf{gestione delle infrastrutture}: disposizione degli strumenti di assistenza ai processi;
+    \item \textbf{gestione dei processi}: manutenzione progressiva dei processi;
+    \item \textbf{formazione}: supporto, motivazione e integrazione all’auto-apprendimento;
+    \item \textbf{amministrazione}: questo processo riguarda l'amministrazione generale dei processi e delle risorse necessarie per il loro funzionamento.
 \end{itemize}
