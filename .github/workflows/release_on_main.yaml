@@ -113,7 +113,10 @@ jobs:
 
       - name: If no changes, exit with success
         run: |
-          [ -z "$(git diff)" ] && exit 0
+          if [[ -z $(git status -s) ]]; then
+            echo "No changes to commit"
+            exit 0
+          fi
 
       - name: Push updates on main
         run: |
