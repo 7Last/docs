@@ -92,6 +92,7 @@ jobs:
           echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git remote set-url origin git@github.com:7Last/SyncCity.git
           git config --global user.email "7last.swe@gmail.com"
           git config --global user.name "bot@7last"
 
