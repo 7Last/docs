@@ -24,13 +24,14 @@ jobs:
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
-#
-#      - name: Configure git
-#        run: |
-#          git config --global user.email "7last.swe@gmail.com"
-#          git config --global user.name "bot@7last"
+
+      - name: Configure git
+        run: |
+          git config --global user.email "7last.swe@gmail.com"
+          git config --global user.name "github-actions"
 
       - name: Remove 0_template folder
+        # TODO: remove also images
         run: rm -rf ./0_template
 
       - name: Cleanup non pdf files
@@ -68,7 +69,9 @@ jobs:
         run: git commit -m "[bot] $COMMIT_MESSAGE"
 
       - name: git push
-        run: git push -f origin develop:main
+        run: |
+          git remote get-url origin
+          git push -f origin develop:main
 
   deploy_docs_frontend:
     runs-on: ubuntu-latest
