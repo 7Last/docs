@@ -30,10 +30,13 @@ jobs:
           git config --global user.email "7last.swe@gmail.com"
           git config --global user.name "github-actions"
 
-      - name: Remove 0_template and images folders
+      - name: Cleanup files
         run: |
           rm -rf ./0_template
           rm -rf ./images
+          rm aspell_check.sh
+          rm wordlist.txt
+          rm ./scripts
 
       - name: Cleanup non pdf files
         run: |
@@ -59,7 +62,7 @@ jobs:
           done
 
       - name: If no changes, exit with success
-        run: git diff --exit-code || exit 0
+        run: [ -z "$(git diff)" ] && exit 0
 
       - name: git add
         run: git add .
@@ -111,11 +114,9 @@ jobs:
       - name: Generate docs
         run: python3 ./scripts/generate_docs.py
 
-      - name: Check for changes
+      - name: If no changes, exit with success
         run: |
           [ -z "$(git diff)" ] && exit 0
-          echo "No changes to the output on this push; Exiting."
-          exit 0
 
       - name: Push updates on main
         run: |
