@@ -93,7 +93,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "7last.swe@gmail.com"
-          git config --global user.name "bot"
+          git config --global user.name "bot@7last"
 
       - name: Checkout repository
         uses: actions/checkout@v4
