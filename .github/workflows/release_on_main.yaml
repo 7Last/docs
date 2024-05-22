@@ -36,7 +36,7 @@ jobs:
           rm -rf ./images
           rm aspell_check.sh
           rm wordlist.txt
-          rm ./scripts
+          rm -rf ./scripts
 
       - name: Cleanup non pdf files
         run: |
