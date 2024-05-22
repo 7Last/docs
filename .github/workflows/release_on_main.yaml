@@ -70,7 +70,7 @@ jobs:
 
       - name: git push
         run: |
-          git remote get-url origin
+          git remote set-url origin git@github.com:7Last/docs.git
           git push -f origin develop:main
 
   deploy_docs_frontend:
