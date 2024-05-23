@@ -37,6 +37,7 @@ jobs:
           rm aspell_check.sh
           rm wordlist.txt
           rm -rf ./scripts
+          rm -rf ./altri_documenti
 
       - name: Cleanup non pdf files
         run: |
@@ -76,13 +77,16 @@ jobs:
 
   deploy_docs_frontend:
     runs-on: ubuntu-latest
-    env:
-      GITHUBIO_DEPLOY_KEY: ${{ secrets.GITHUBIO_DEPLOY_KEY }}
     needs: update_main_branch
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DOCS_DEPLOY_KEY }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
