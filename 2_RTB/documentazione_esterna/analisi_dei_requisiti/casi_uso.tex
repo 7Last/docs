@@ -135,11 +135,11 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\captionof{figure}{UC-1.4: Visualizzazione tabella sensori che non trasmettono da più di 1 giorno}
 \end{center}
 
-\subsubsubsection{UC-1.5: Visualizzazione tabella dati grezzi per tipo di sensore}
+\subsubsubsection{UC-1.5: Visualizzazione tabella dati grezzi temperatura}
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori suddivisi per tipo;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori di temperatura;
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item L'autorità locale accede alla piattaforma;
@@ -147,18 +147,19 @@ I seguenti attori sono coinvolti nei casi d'uso:
 		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori suddivisi per tipo, in modo da poter analizzare i dati in modo più dettagliato.
+	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori di temperatura,
+	      in modo da poter analizzare i dati in modo più dettagliato.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.5.png}
-	\captionof{figure}{UC-1.5: Visualizzazione tabella dati grezzi per tipo di sensore}
+	\captionof{figure}{UC-1.5: Visualizzazione tabella dati grezzi temperatura}
 \end{center}
 
-\subsubsubsection{UC-1.6: Visualizzazione grafico time series dati grezzi per tipo di sensore}
+\subsubsubsection{UC-1.6: Visualizzazione tabella dati grezzi umidità}
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi dai sensori suddivisi per tipo;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori di umidità;
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item L'autorità locale accede alla piattaforma;
@@ -166,11 +167,300 @@ I seguenti attori sono coinvolti nei casi d'uso:
 		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi dai sensori suddivisi per tipo, in modo da poter analizzare i dati in modo più dettagliato.
+	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori di umidità,
+	      in modo da poter analizzare i dati in modo più dettagliato.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.6.png}
-	\captionof{figure}{UC-1.6: Visualizzazione grafico time series dati grezzi per tipo di sensore}
+	\captionof{figure}{UC-1.6: Visualizzazione tabella dati grezzi umidità}
+\end{center}
+
+\subsubsubsection{UC-1.7: Visualizzazione tabella dati grezzi traffico}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori di traffico;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori di traffico,
+	      in modo da poter analizzare i dati in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.7.png}
+	\captionof{figure}{UC-1.7: Visualizzazione tabella dati grezzi traffico}
+\end{center}
+
+\subsubsubsection{UC-1.8: Visualizzazione tabella dati grezzi qualità dell'aria}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori di qualità dell'aria;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori di qualità dell'aria,
+	      in modo da poter analizzare i dati in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.8.png}
+	\captionof{figure}{UC-1.8: Visualizzazione tabella dati grezzi qualità dell'aria}
+\end{center}
+
+\subsubsubsection{UC-1.9: Visualizzazione tabella dati grezzi precipitazioni}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori di precipitazioni;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori di precipitazioni,
+	      in modo da poter analizzare i dati in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.9.png}
+	\captionof{figure}{UC-1.9: Visualizzazione tabella dati grezzi precipitazioni}
+\end{center}
+
+\subsubsubsection{UC-1.10: Visualizzazione tabella dati grezzi isole ecologiche}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori di isole ecologiche;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori di isole ecologiche,
+	      in modo da poter analizzare i dati in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.10.png}
+	\captionof{figure}{UC-1.10: Visualizzazione tabella dati grezzi isole ecologiche}
+\end{center}
+
+\subsubsubsection{UC-1.11: Visualizzazione tabella dati grezzi livello di acqua}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori di livello di acqua;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori di livello di acqua,
+	      in modo da poter analizzare i dati in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.11.png}
+	\captionof{figure}{UC-1.11: Visualizzazione tabella dati grezzi livello di acqua}
+\end{center}
+
+\subsubsubsection{UC-1.12: Visualizzazione tabella dati grezzi colonnine di ricarica}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una tabella contenente i dati grezzi trasmessi dai sensori di colonnine di ricarica;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare una tabella contenente i dati grezzi trasmessi dai sensori di colonnine di ricarica,
+	      in modo da poter analizzare i dati in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.12.png}
+	\captionof{figure}{UC-1.12: Visualizzazione tabella dati grezzi colonnine di ricarica}
+\end{center}
+
+\subsubsubsection{UC-1.13: Visualizzazione grafico time series dati grezzi complessivi temperatura}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di temperatura presenti nella città;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di temperatura presenti nella città, in modo da poterli confrontare tra loro e analizzare in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.13.png}
+	\captionof{figure}{UC-1.6: Visualizzazione grafico time series dati grezzi complessivi temperatura}
+\end{center}
+
+\subsubsubsection{UC-1.14: Visualizzazione grafico time series dati grezzi complessivi umidità}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di umidità presenti nella città;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di umidità presenti nella città, in modo da poterli confrontare tra loro e analizzare in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.14.png}
+	\captionof{figure}{UC-1.14: Visualizzazione grafico time series dati grezzi complessivi umidità}
+\end{center}
+
+\subsubsubsection{UC-1.15: Visualizzazione grafico time series dati grezzi complessivi traffico}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di traffico presenti nella città;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di traffico presenti nella città, in modo da poterli confrontare tra loro e analizzare in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.15.png}
+	\captionof{figure}{UC-1.15: Visualizzazione grafico time series dati grezzi complessivi traffico}
+\end{center}
+
+\subsubsubsection{UC-1.16: Visualizzazione grafico time series dati grezzi complessivi qualità dell'aria}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di qualità dell'aria presenti nella città;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di qualità dell'aria presenti nella città, in modo da poterli confrontare tra loro e analizzare in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.16.png}
+	\captionof{figure}{UC-1.16: Visualizzazione grafico time series dati grezzi complessivi qualità dell'aria}
+\end{center}
+
+\subsubsubsection{UC-1.17: Visualizzazione grafico time series dati grezzi complessivi precipitazioni}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di precipitazioni presenti nella città;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di precipitazioni presenti nella città, in modo da poterli confrontare tra loro e analizzare in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.17.png}
+	\captionof{figure}{UC-1.17: Visualizzazione grafico time series dati grezzi complessivi precipitazioni}
+\end{center}
+
+\subsubsubsection{UC-1.18: Visualizzazione grafico time series dati grezzi complessivi isole ecologiche}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di isole ecologiche presenti nella città;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di isole ecologiche presenti nella città, in modo da poterli confrontare tra loro e analizzare in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.18.png}
+	\captionof{figure}{UC-1.18: Visualizzazione grafico time series dati grezzi complessivi isole ecologiche}
+\end{center}
+
+\subsubsubsection{UC-1.19: Visualizzazione grafico time series dati grezzi complessivi livello di acqua}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di livello di acqua presenti nella città;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di livello di acqua presenti nella città, in modo da poterli confrontare tra loro e analizzare in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.19.png}
+	\captionof{figure}{UC-1.19: Visualizzazione grafico time series dati grezzi complessivi livello di acqua}
+\end{center}
+
+\subsubsubsection{UC-1.20: Visualizzazione grafico time series dati grezzi complessivi colonnine di ricarica}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di colonnine di ricarica presenti nella città;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard dei dati grezzi.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente i dati grezzi trasmessi da tutti i sensori
+	      di colonnine di ricarica presenti nella città, in modo da poterli confrontare tra loro e analizzare in modo più dettagliato.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-1.20.png}
+	\captionof{figure}{UC-1.20: Visualizzazione grafico time series dati grezzi complessivi colonnine di ricarica}
 \end{center}
 
 \subsubsection{UC-2: Visualizzazione dashboard temperatura}
@@ -752,14 +1042,14 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item Il sistema ha caricato la dashboard relativa ai sensori di quantità di precipitazioni;
+		      \item Il sistema ha caricato la dashboard relativa ai sensori di precipitazioni;
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente di quantità di precipitazioni media nel periodo di tempo selezionato;
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item L'autorità locale accede alla piattaforma;
 		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di quantità di precipitazioni.
+		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: Come autorità locale desidero poter visualizzare di quantità di precipitazioni media nel periodo di tempo selezionato
 	      in modo da poterne monitorare l'andamento.
@@ -775,14 +1065,14 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item Il sistema ha caricato la dashboard relativa ai sensori di quantità di precipitazioni;
+		      \item Il sistema ha caricato la dashboard relativa ai sensori di precipitazioni;
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente di quantità di precipitazioni in tempo reale;
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item L'autorità locale accede alla piattaforma;
 		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di quantità di precipitazioni.
+		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      Come autorità locale desidero poter visualizzare di quantità di precipitazioni in tempo reale in modo da poterne monitorare l'andamento
@@ -794,7 +1084,52 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{center}
 
 \subsubsubsection{UC-5.5: Visualizzazione \textit{panel} giorno con precipitazioni maggiori nel periodo di tempo selezionato}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la dashboard relativa ai sensori di precipitazioni;
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente il giorno con la quantità di precipitazioni maggiori nel periodo di tempo selezionato;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare il giorno con la quantità di precipitazioni maggiori nel periodo di tempo selezionato
+	      e poterla facilmente confrontare con i dati storici.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-5.5.png}
+	\captionof{figure}{UC-5.5: Visualizzazione \textit{panel} giorno con precipitazioni maggiori nel periodo di tempo selezionato}
+\end{center}
+
 \subsubsubsection{UC-5.6: Visualizzazione \textit{panel} giorno con precipitazioni minori nel periodo di tempo selezionato}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la dashboard relativa ai sensori di precipitazioni;
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente il giorno con la quantità di precipitazioni minori nel periodo di tempo selezionato;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare il giorno con la quantità di precipitazioni minori nel periodo di tempo selezionato
+	      e poterla facilmente confrontare con i dati storici.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-5.6.png}
+	\captionof{figure}{UC-5.6: Visualizzazione \textit{panel} giorno con precipitazioni minori nel periodo di tempo selezionato}
+\end{center}
 
 \subsubsection{UC-6: Visualizzazione dashboard traffico}
 \begin{itemize}
@@ -1573,7 +1908,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\captionof{figure}{UC-20: Trasmissione dati livello di acqua}
 \end{center}
 
-\subsubsection{UC-21: Applicazione filtro sensore}
+\subsubsection{UC-21: Applicazione filtri}
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
@@ -1582,17 +1917,164 @@ I seguenti attori sono coinvolti nei casi d'uso:
 		      \item Il sistema ha caricato i dati interrogando il database;
 		      \item L'autorità locale visualizza una dashboard.
 	      \end{enumerate}
-	\item \textbf{Postcondizioni}: L'autorità locale applica un filtro ai dati visualizzati in modo da poter visualizzare solo i dati relativi ad un sensore specifico;
+	\item \textbf{Postcondizioni}: L'autorità locale applica un filtro ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse;
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item L'autorità locale visualizza una dashboard;
 		      \item L'autorità locale seleziona il sensore di cui vuole visualizzare i dati;
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      Come autorità locale desidero poter visualizzare solo i dati relativi ad un sensore specifico in modo da poter facilmente
-	      monitorare i dati di un sensore specifico e circoscrivere l'analisi ai dati di interesse.
+	      Come autorità locale desidero poter applicare dei filtri ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse.
+	      I filtri che desidero applicare sono il nome del sensore, il tipo del sensore e la data di rilevamento delle misurazioni.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-21.png}
 	\captionof{figure}{UC-21: Applicazione filtro sensore}
+\end{center}
+
+\subsubsection{UC-21: Applicazione filtri}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato i dati interrogando il database;
+		      \item L'autorità locale visualizza una dashboard.
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale applica un filtro ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale visualizza una dashboard;
+		      \item L'autorità locale seleziona uno dei filtri disponibili.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter applicare dei filtri ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-21.png}
+	\captionof{figure}{UC-21: Applicazione filtro}
+\end{center}
+
+\subsubsection{UC-21.1: Applicazione filtro per tipo di sensore}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato i dati interrogando il database;
+		      \item L'autorità locale visualizza una dashboard.
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale applica un filtro per il tipo di sensore ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale visualizza una dashboard;
+		      \item L'autorità locale seleziona il tipo di sensore di cui vuole visualizzare i dati;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter applicare un filtro per il tipo di sensore ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-21.1.png}
+	\captionof{figure}{UC-21.1: Applicazione filtro per tipo di sensore}
+\end{center}
+
+\subsubsection{UC-21.2: Applicazione filtro per nome del sensore}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato i dati interrogando il database;
+		      \item L'autorità locale visualizza una dashboard.
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale applica un filtro per il nome del sensore ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale visualizza una dashboard;
+		      \item L'autorità locale seleziona il nome del sensore di cui vuole visualizzare i dati;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter applicare un filtro per il nome del sensore ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-21.2.png}
+	\captionof{figure}{UC-21.2: Applicazione filtro per nome del sensore}
+\end{center}
+
+\subsubsection{UC-21.3: Applicazione filtro temporale}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato i dati interrogando il database;
+		      \item L'autorità locale visualizza una dashboard.
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale applica un filtro temporale ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale visualizza una dashboard;
+		      \item L'autorità locale seleziona il periodo di tempo di cui vuole visualizzare i dati;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter applicare un filtro temporale ai dati visualizzati in modo da poter circoscrivere l'analisi ai dati di interesse.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-21.3.png}
+	\captionof{figure}{UC-21.3: Applicazione filtro temporale}
+\end{center}
+
+\subsubsection{UC-22: Ricezione notifiche superamento soglie}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: Nessuna
+	\item \textbf{Postcondizioni}: L'autorità locale riceve una notifica relativa al superamento delle soglie;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item Si verificano delle condizioni che portano al superamento di soglie prestabilite per uno dei sensori;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter ricevere delle notifiche relative al superamento delle soglie in modo da poter intervenire tempestivamente in caso di criticità.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-22.png}
+	\captionof{figure}{UC-22: Visualizzazione notifiche superamento soglie}
+\end{center}
+
+\subsubsection{UC-22.1: Ricezione notifiche superamento soglia di temperatura}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: Nessuna
+	\item \textbf{Postcondizioni}: L'autorità locale riceve una notifica relativa al superamento della soglia di temperatura;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item La temperatura rilevata supera i 40°C per più di 30 minuti;
+		      \item Il sistema invia una notifica all'autorità locale.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter ricevere delle notifiche relative al superamento delle soglie di temperatura
+	      in modo da poter avvisare la popolazione e prendere eventuali misure precauzionali.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-22.1.png}
+	\captionof{figure}{UC-22.1: Ricezione notifiche superamento soglie di temperatura}
+\end{center}
+
+\subsubsection{UC-22.2: Ricezione notifiche superamento soglia di riempimento dell'isola ecologica}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}: Nessuna
+	\item \textbf{Postcondizioni}: L'autorità locale riceve una notifica relativa al superamento della soglia di riempimento dell'isola ecologica;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'isola ecologica rimane piena al 100\% per più di 24 ore;
+		      \item Il sistema invia una notifica all'autorità locale.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter ricevere delle notifiche relative al superamento delle soglie di riempimento dell'isola ecologica
+	      in modo da poter intervenire per svuotarla.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-22.2.png}
+	\captionof{figure}{UC-22.2: Ricezione notifiche superamento soglia di riempimento dell'isola ecologica}
 \end{center}

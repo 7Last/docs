@@ -2,33 +2,54 @@ title,actor,uc_parent_code,uc_parent_desc,uc_child_code,uc_child_desc
 Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.1,Visualizzazione panel con tabella sensori
 Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.3,Visualizzazione panel numero sensori per tipo
 Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.4,Visualizzazione tabella sensori non trasmettenti
-Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.5,Visualizzazione tabella dati grezzi per tipo di sensore
-Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.6,Visualizzazione grafico time series dati grezzi per tipo di sensore
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.5,Visualizzazione tabella dati grezzi temperatura
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.6,Visualizzazione tabella dati grezzi umidità
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.7,Visualizzazione tabella dati grezzi traffico
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.8,Visualizzazione tabella dati grezzi qualità dell'aria
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.9,Visualizzazione tabella dati grezzi precipitazioni
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.10,Visualizzazione tabella dati grezzi isole ecologiche
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.11,Visualizzazione tabella dati grezzi livello di acqua
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.12,Visualizzazione tabella dati grezzi colonnine di ricarica
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.13,Visualizzazione grafico time series dati grezzi complessivi temperatura
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.14,Visualizzazione grafico time series dati grezzi complessivi umidità
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.15,Visualizzazione grafico time series dati grezzi complessivi traffico
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.16,Visualizzazione grafico time series dati grezzi complessivi qualità dell'aria
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.17,Visualizzazione grafico time series dati grezzi complessivi precipitazioni
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.18,Visualizzazione grafico time series dati grezzi complessivi isole ecologiche
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.19,Visualizzazione grafico time series dati grezzi complessivi livello di acqua
+Visualizzazione dashboard dati grezzi,Autorità locale,UC-1,Visualizzazione dashboard dati grezzi,UC-1.20,Visualizzazione grafico time series dati grezzi complessivi colonnine di ricarica
+
 Visualizzazione dashboard temperatura,Autorità locale,UC-2,Visualizzazione dashboard temperatura,UC-2.1,Visualizzazione grafico time series temperatura
 Visualizzazione dashboard temperatura,Autorità locale,UC-2,Visualizzazione dashboard temperatura,UC-2.3,Visualizzazione panel temperatura media nel periodo di tempo selezionato
 Visualizzazione dashboard temperatura,Autorità locale,UC-2,Visualizzazione dashboard temperatura,UC-2.4,Visualizzazione panel temperatura in tempo reale
 Visualizzazione dashboard temperatura,Autorità locale,UC-2,Visualizzazione dashboard temperatura,UC-2.5,Visualizzazione panel temperatura massima nel periodo di tempo selezionato
 Visualizzazione dashboard temperatura,Autorità locale,UC-2,Visualizzazione dashboard temperatura,UC-2.6,Visualizzazione panel temperatura minima nel periodo di tempo selezionato
+
 Visualizzazione dashboard umidità,Autorità locale,UC-3,Visualizzazione dashboard umidità,UC-3.1,Visualizzazione grafico time series umidità
 Visualizzazione dashboard umidità,Autorità locale,UC-3,Visualizzazione dashboard umidità,UC-3.3,Visualizzazione panel umidità media nel periodo di tempo selezionato
 Visualizzazione dashboard umidità,Autorità locale,UC-3,Visualizzazione dashboard umidità,UC-3.4,Visualizzazione panel umidità in tempo reale
 Visualizzazione dashboard umidità,Autorità locale,UC-3,Visualizzazione dashboard umidità,UC-3.5,Visualizzazione panel umidità massima nel periodo di tempo selezionato
 Visualizzazione dashboard umidità,Autorità locale,UC-3,Visualizzazione dashboard umidità,UC-3.6,Visualizzazione panel umidità minima nel periodo di tempo selezionato
+
 Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-4,Visualizzazione dashboard qualità dell'aria,UC-4.1,Visualizzazione grafico time series qualità dell'aria
 Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-4,Visualizzazione dashboard qualità dell'aria,UC-4.3,Visualizzazione panel qualità dell'aria media nel periodo di tempo selezionato
 Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-4,Visualizzazione dashboard qualità dell'aria,UC-4.4,Visualizzazione panel qualità dell'aria in tempo reale
 Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-4,Visualizzazione dashboard qualità dell'aria,UC-4.5,Visualizzazione panel giorno con qualità dell'aria peggiore nel periodo di tempo selezionato
 Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-4,Visualizzazione dashboard qualità dell'aria,UC-4.6,Visualizzazione panel giorno con qualità dell'aria migliore nel periodo di tempo selezionato
+
 Visualizzazione dashboard precipitazioni,Autorità locale,UC-5,Visualizzazione dashboard precipitazioni,UC-5.1,Visualizzazione grafico time series quantità precipitazioni nel periodo di tempo selezionato
 Visualizzazione dashboard precipitazioni,Autorità locale,UC-5,Visualizzazione dashboard precipitazioni,UC-5.3,Visualizzazione panel quantità di precipitazioni media nel periodo di tempo selezionato
 Visualizzazione dashboard precipitazioni,Autorità locale,UC-5,Visualizzazione dashboard precipitazioni,UC-5.4,Visualizzazione panel quantità di precipitazioni in tempo reale
 Visualizzazione dashboard precipitazioni,Autorità locale,UC-5,Visualizzazione dashboard precipitazioni,UC-5.5,Visualizzazione panel giorno con precipitazioni maggiori nel periodo di tempo selezionato
 Visualizzazione dashboard precipitazioni,Autorità locale,UC-5,Visualizzazione dashboard precipitazioni,UC-5.6,Visualizzazione panel giorno con precipitazioni minori nel periodo di tempo selezionato
+
 Visualizzazione dashboard traffico,Autorità locale,UC-6,Visualizzazione dashboard traffico,UC-6.1,Visualizzazione grafico time series traffico
 Visualizzazione dashboard traffico,Autorità locale,UC-6,Visualizzazione dashboard traffico,UC-6.3,Visualizzazione panel numero veicoli in tempo reale
 Visualizzazione dashboard traffico,Autorità locale,UC-6,Visualizzazione dashboard traffico,UC-6.4,Visualizzazione panel velocità media in tempo reale
 Visualizzazione dashboard traffico,Autorità locale,UC-6,Visualizzazione dashboard traffico,UC-6.5,Visualizzazione panel calcolo ora di punta (numero veicoli e velocità media)
+
 Visualizzazione dashboard colonnine di ricarica,Autorità locale,UC-7,Visualizzazione dashboard colonnine di ricarica,UC-7.2,Visualizzazione panel numero colonnine di ricarica per stato in tempo reale
+
 Visualizzazione dashboard parcheggi,Autorità locale,UC-8,Visualizzazione dashboard parcheggi,UC-8.2,Visualizzazione panel con conteggio parcheggi per stato in tempo reale
 Visualizzazione dashboard isole ecologiche,Autorità locale,UC-9,Visualizzazione dashboard isole ecologiche,UC-9.1,Visualizzazione panel con riempimento isole ecologiche in tempo reale
 Visualizzazione dashboard livello di acqua,Autorità locale,UC-10,Visualizzazione dashboard livello di acqua,UC-10.1,Visualizzazione grafico time series livello di acqua
@@ -49,3 +70,9 @@ Visualizzazione dashboard dati grezzi,Autorità locale,UC-9,Visualizzazione dash
 Visualizzazione dashboard dati grezzi,Autorità locale,UC-9,Visualizzazione dashboard isole ecologiche,UC-9.5,Visualizzazione panel percentuale media di riempimento al momento dello svuotamento
 Visualizzazione dashboard dati grezzi,Autorità locale,UC-9,Visualizzazione dashboard isole ecologiche,UC-9.6,Visualizzazione panel percentuale tempo trascorso per livello di riempimento
 
+Applicazione filtro,Autorità locale,UC-21,Applicazione filtro,UC-21.1,Applicazione filtro per tipo di sensore
+Applicazione filtro,Autorità locale,UC-21,Applicazione filtro,UC-21.2,Applicazione filtro per nome sensore
+Applicazione filtro,Autorità locale,UC-21,Applicazione filtro,UC-21.3,Applicazione filtro temporale
+
+Ricezione notifiche superamento soglie,Autorità locale,UC-22,Ricezione notifiche superamento soglie,UC-22.1,Ricezione notifiche superamento soglie di temperatura
+Ricezione notifiche superamento soglie,Autorità locale,UC-22,Ricezione notifiche superamento soglie,UC-22.2,Ricezione notifiche superamento soglia di riempimento dell'isole ecologiche
