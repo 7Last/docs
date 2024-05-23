@@ -1103,7 +1103,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\captionof{figure}{UC-9: Visualizzazione dashboard isole ecologiche}
 \end{center}
 
-\subsubsubsection{UC-9.1: Visualizzazione \textit{panel} con conteggio isole ecologiche piene in tempo reale}
+\subsubsubsection{UC-9.1: Visualizzazione \textit{panel} con riempimento isole ecologiche in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
@@ -1111,7 +1111,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
 		      \item Il sistema ha caricato la dashboard relativa alle isole ecologiche;
 	      \end{enumerate}
-	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente un conteggio delle isole ecologiche piene in tempo reale;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente il riempimento in percentuale delle isole ecologiche in tempo reale;
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item L'autorità locale accede alla piattaforma;
@@ -1119,15 +1119,15 @@ I seguenti attori sono coinvolti nei casi d'uso:
 		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa alle isole ecologiche.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      Come autorità locale desidero poter visualizzare un conteggio delle isole ecologiche piene in tempo reale in modo da poter intervenire
-	      per svuotarle.
+	      Come autorità locale desidero poter visualizzare il riempimento in percentuale delle isole ecologiche in tempo reale in modo da poterne monitorare l'andamento
+	      ed eventualmente intervenire per svuotarle.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.1.png}
-	\captionof{figure}{UC-9.1: Visualizzazione \textit{panel} isole ecologiche piene in tempo reale}
+	\captionof{figure}{UC-9.1: Visualizzazione \textit{panel} riempimento isole ecologiche in tempo reale}
 \end{center}
 
-\subsubsubsection{UC-9.2: Visualizzazione mappa interattiva isole ecologiche per stato di riempimento}
+\subsubsubsection{UC-9.2: Visualizzazione mappa interattiva isole ecologiche}
 \begin{itemize}
 	\item \textbf{Attore principale}: Autorità locale;
 	\item \textbf{Precondizioni}:
@@ -1135,8 +1135,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
 		      \item Il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche;
 	      \end{enumerate}
-	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva popolata con dei marker rappresentanti la posizione dei sensori delle isole ecologiche
-	      suddivise per stato di riempimento;
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza una mappa interattiva popolata con dei marker rappresentanti la posizione dei sensori delle isole ecologiche;
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item L'autorità locale accede alla piattaforma;
@@ -1145,12 +1144,115 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      Come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei marker rappresentanti la posizione dei sensori delle isole ecologiche
-	      suddivise per stato di riempimento e contenenti il loro identificativo.
-	      Essa mi consentirà di visualizzare la distribuzione delle isole ecologiche nel territorio e di individuare facilmente quelle piene per poter intervenire e svuotarle.
+	      contenenti il loro identificativo. Essa mi consentirà di visualizzare la distribuzione delle isole ecologiche nel territorio.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.2.png}
-	\captionof{figure}{UC-9.2: Visualizzazione mappa interattiva sensori isole ecologiche piene}
+	\captionof{figure}{UC-9.2: Visualizzazione mappa interattiva sensori isole ecologiche}
+\end{center}
+
+\subsubsubsection{UC-9.3: Visualizzazione grafico time series isole ecologiche}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un grafico time series contenente le misurazioni storiche di riempimento e svuotamento
+	      di isole ecologiche;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di isole ecologiche;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche
+	      di isole ecologiche per poter monitorare gli svuotamenti e i riempimenti nel tempo.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.3.png}
+	\captionof{figure}{UC-9.3: Visualizzazione grafico time series isole ecologiche}
+\end{center}
+
+\subsubsubsection{UC-9.4: Visualizzazione panel ore di saturazione isole ecologiche}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un panel contenente il conteggio delle ore di saturazione delle isole ecologiche,
+	      ovvero il numero di ore in cui le isole ecologiche sono rimaste piene al 100\% prima di essere svuotate;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di isole ecologiche;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare il conteggio delle ore di saturazione delle isole ecologiche in modo da poter monitorare
+	      quanto efficienti sono gli svuotamenti e poter intervenire per migliorare il servizio.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.4.png}
+	\captionof{figure}{UC-9.4: Visualizzazione panel ore di saturazione isole ecologiche}
+\end{center}
+
+\subsubsubsection{UC-9.5: Visualizzazione \textit{panel} con percentuale media di riempimento al momento dello svuotamento}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente la percentuale media di riempimento delle isole ecologiche al momento dello svuotamento,
+	      che rappresenta l'efficienza del servizio di svuotamento;
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di isole ecologiche;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare la percentuale media di riempimento delle isole ecologiche al momento dello svuotamento in modo da poter monitorare
+	      l'efficienza del servizio di svuotamento e poter intervenire per migliorare il servizio.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.5.png}
+	\captionof{figure}{UC-9.5: Visualizzazione panel percentuale media di riempimento al momento dello svuotamento}
+\end{center}
+
+\subsubsubsection{UC-9.6: Visualizzazione \textit{panel} con percentuale tempo trascorso per livello di riempimento}
+\begin{itemize}
+	\item \textbf{Attore principale}: Autorità locale;
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item L'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item Il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: L'autorità locale visualizza un \textit{panel} contenente la percentuale di tempo trascorso in ciascuno dei seguenti livelli:
+	      \begin{itemize}
+		      \item Basso (0-50\%)
+		      \item Medio (50-80\%)
+		      \item Alto (80-100\%)
+	      \end{itemize}
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item L'autorità locale accede alla piattaforma;
+		      \item Il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item L'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di isole ecologiche;
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      Come autorità locale desidero poter visualizzare la percentuale di tempo trascorso in ciascuno dei livelli di riempimento delle isole ecologiche,
+	      in modo da poter monitorare l'andamento del riempimento e poter intervenire per migliorare il servizio.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.6.png}
+	\captionof{figure}{UC-9.6: Visualizzazione \textit{panel} percentuale tempo trascorso per livello di riempimento}
 \end{center}
 
 \subsubsection{UC-10: Visualizzazione dashboard livello di acqua}
