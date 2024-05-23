@@ -88,6 +88,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DOCS_DEPLOY_KEY }}
 
+      - name: List SSH keys
+        run: ssh-add -l
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
