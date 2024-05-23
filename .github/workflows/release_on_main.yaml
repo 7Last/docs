@@ -86,10 +86,7 @@ jobs:
       - name: Start SSH agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.DOCS_DEPLOY_KEY }}
-
-      - name: List SSH keys
-        run: ssh-add -l
+          ssh-private-key: ${{ secrets.GITHUBIO_DEPLOY_KEY }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
