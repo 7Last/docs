@@ -1,115 +1,97 @@
 \section{Processi di supporto}
 \subsection{Documentazione}
 \subsubsection{Introduzione}
-Il processo di documentazione è una componente fondamentale nella realizzazione e nel rilascio di un prodotto software,
+Il processo di documentazione è una fondamentale nella realizzazione e nel rilascio di un prodotto software,
 poichè fornisce informazioni utili alle parti coinvolte e tiene traccia di tutte le attività relative al ciclo di vita del software,
 comprese scelte e norme adottate dal gruppo durante lo svolgimento del progetto. In particolare, la documentazione è utile per:
 \begin{itemize}
 	\item permettere una comprensione profonda del prodotto e delle sue funzionalità;
-	\item tracciare un confine tra disciplina e creatività;
 	\item garantire uno standard di qualità all'interno dei processi produttivi.
 \end{itemize}
 Lo scopo della sezione è:
 \begin{itemize}
-	\item fornire una raccolta esasutiva di regole che i membri del gruppo devono seguire per agevolare la stesura della documentazione;
-	\item definire delle procedure ripetibili per uniformare la redazione, la verifica e l'approvazione dei documenti;
-	\item creare template per ogni tipologia di documento così da garantire omogeneità e coerenza.
+	\item definire un insieme di regole e convenzioni per garantire la coerenza e la qualità della documentazione prodotta;
+	\item creare template per ogni tipologia di documento così da garantire omogeneità.
 \end{itemize}
 
-\subsubsection{Documentation as Code}
-Per la stesura della documentazione viene adottato l'approccio \textit{Documentation as Code}, che consiste nel trattare la documentazione di progetto allo stesso modo del codice sorgente. Dunque vengono impiegati strumenti e metodologie tipiche dello sviluppo software:
+\subsubsection{Versionamento}
+La documentazione viene versionata allo stesso modo del codice sorgente, utilizzando la piattaforma Github.
+Ciò permette di tenere traccia delle modifiche apportate ai documenti e di realizzare procedure automatiche per l'individuazione degli errori grammaticali,
+inserimento della "G" a pedice per i termini presenti nel glossario e la pubblicazione nel sito del progetto.\\
+Abbiamo stabilito di utilizzare il branch \texttt{main} per la pubblicazione dei documenti approvati dal verificatore e il branch \texttt{develop} per contenere
+i file in formato LaTex da cui derivano i documenti finali.
+
+\subsubsubsection{Branch policy}
+Sono state definite le seguenti regole per la gestione dei branch:
 \begin{itemize}
-	\item \textbf{versionamento}: la documentazione è versionata tramite il sistema di controllo di versione Git, in modo da tenere traccia
-	      delle modifiche e garantire la coerenza tra le varie versioni;
-	\item \textbf{automazione}: l'automazione dei processi di build e di deploy permette di semplificare la gestione della documentazione e
-	      di ridurre il rischio di errori;
-	\item \textbf{collaborazione}: l'uso di piattaforme di condivisione e collaborazione (GitHub) favorisce la cooperazione tra i membri
-	      del gruppo e semplifica la gestione dei documenti;
-	\item \textbf{integrazione continua}: permette di verificare costantemente la correttezza e la coerenza della documentazione.
+	\item \texttt{main}: viene aggiornato solamente dalla \textit{Github Action} che si occupa di pubblicare i documenti approvati presenti nel branch \texttt{develop};
+	\item \texttt{develop}: per la pubblicazione in questo branch è necessario ricevere un'approvazione da parte del verificatore tramite \textit{pull request}.
 \end{itemize}
 
 \subsubsection{Tipografia e sorgente documenti}
-Per la redazione dei documenti abbiamo deciso di utilizzare il linguaggio di markup LaTeX, in quanto semplifica la creazione e la manutenzione dei documenti, liberando i redattori dall'onere della visualizzazione grafica e garantendo coerenza nella documentazione del progetto. Inoltre, per favorire una migliore collaborazione tra i diversi autori, abbiamo scelto di scomporre ogni documento in più file,
-ciascuno per una specifica sezione, in modo da permettere a più persone di lavorare sulle singole sezioni o sottosezioni.
-Il risultato finale sarà ottenuto tramite l'assemblaggio di tutti i file sorgenti in un file principale, attraverso l'uso del comando
-\textit{input{Sezione.tex}} o, nel caso delle sottosezioni, \textit{input{Sottosezione.tex}}. Solo nel caso di documenti di piccole dimensioni, come i verbali, si potrà effettuare la scrittura in un unico file.
+Per la redazione dei documenti abbiamo deciso di utilizzare il linguaggio di markup LaTeX, grazie alla sua flessibilità e possibilità di creare documenti di alta qualità tipografica.
+Inoltre, abbiamo stabilito di suddividere ciascun documento in file differenti, in modo da consentire ai membri del team di lavorare contemporaneamente su sezioni diverse,
+riducendo il numero di conflitti e semplificando la gestione del versionamento.
 
 \subsubsection{Ciclo di vita}
-Il ciclo di vita di un documento è composto dalle seguenti fasi:
+Ciascun documento segue un ciclo di vita ben definito, che prevede le seguenti fasi:
 \begin{enumerate}
-	\item \textbf{pianificazione} della stesura e \textbf{suddivisione} in sezioni: tramite confronto con il gruppo, le sezioni del documento vengono stabilite e assegnate ai Redattori. Essi sono responsabili della stesura delle proprie sezioni in conformità con le Norme di Progetto;
-	\item \textbf{stesura} del contenuto e \textbf{creazione} della bozza iniziale: i Redattori realizzano il documento redigendone il contenuto e creano una prima bozza che viene utilizzata come punto di partenza per la discussione e la revisione;
-	\item \textbf{controllo} dei contenuti: dopo la stesura effettiva del documento, i Redattori verificano che e il contenuto delle proprie sezioni sia conforme alle norme definite e non contenga errori di compilazione;
-	\item \textbf{revisione}: quando la redazione del documento è conclusa, questo viene revisionato dai Verificatori incaricati;
-	\item \textbf{approvazione e rilascio}: nell'ultima fase il documento viene approvato da un Responsabile e rilasciato in versione finale.
+	\item \textbf{Creazione branch} a partire da \texttt{develop}, utilizzando \href{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}{\underline{Gitflow}};
+	\item \textbf{Scelta del template} da utilizzare per il documento, scegliendo tra \textit{documento}, \textit{verbale interno} o \textit{verbale esterno};
+	\item \textbf{Redazione} del documento, seguendo le norme tipografiche e le convenzioni stabilite;
+	\item \textbf{Commit} delle modifiche effettuate;
+	\item \textbf{Apertura \textit{pull request}} per la revisione del documento, che dovrà essere approvata dal verificatore e dal responsabile per lo sprint in corso;
+	\item \textbf{Chiusura \textit{pull request}} e \textbf{merge} del branch;
+	\item \textbf{Completamento task} su \textit{ClickUp}.
 \end{enumerate}
+
+\subsubsection{Convenzioni nomenclatura e struttura di archiviazione}
+Tutti i documenti prodotti devono seguire la seguente convenzione di nomenclatura ben definita, in modo da garantire una corretta organizzazione e archiviazione dei file
+\begin{center}
+	\texttt{nome\_fase/tipo\_documento/nome\_documento/nome\_documento.tex}
+\end{center}
+Dove:
+\begin{itemize}
+	\item \textbf{nome\_fase}: rappresenta la fase di progetto in cui il documento è stato prodotto, può assumere i seguenti valori:
+	      \begin{itemize}
+		      \item \textbf{1\_candidatura};
+		      \item \textbf{2\_RTB};
+		      \item \textbf{3\_PB};
+		      \item \textbf{4\_CA}.
+	      \end{itemize}
+	\item \textbf{tipo\_documento}: rappresenta la tipologia di documento, può assumere i seguenti valori:
+	      \begin{itemize}
+		      \item \textbf{documentazione\_interna};
+		      \item \textbf{documentazione\_esterna};
+		      \item \textbf{verbali\_interni};
+		      \item \textbf{verbali\_esterni}.
+	      \end{itemize}
+	\item \textbf{nome\_documento}: rappresenta il nome del documento, scritto in snake case.
+\end{itemize}
 
 \subsubsection{Procedure correlate alla redazione di documenti}
 \subsubsubsection{I redattori}
-Il redattore è responsabile della stesura e della cura del testo di un documento o di una sua parte in modo chiaro, preciso e accessibile. Per farlo, deve seguire lo stesso metodo utilizzato nello sviluppo del software, utilizzando il modello noto come \textit{Feature branch}.
-\begin{flushleft}
-\textbf{Caso redazione nuovo documento/sezione o modifica dei precedenti già verificati}
-\end{flushleft}
-In queste situazioni il redattore dovrà creare un nuovo branch Git in locale e posizionarsi su di esso con i seguenti comandi:
-\begin{itemize}
-	\item \texttt{git checkout main}
-	\item \texttt{git checkout -b nome\_nuovo\_Branch}
-\end{itemize}
-In particolare l'identificativo del branch deve essere descrittivo e significativo così da consentire una compresione immediata del documento o della sezione che si sta redigendo. Dunque il redattore deve adottare le specifiche convenzioni per la nomenclatura dei branch, visibili a questo \hyperref[nomenclatura]{\underline{link}}. Una volta ultimata la redazione del documento o della sezione assegnata, è necessario rendere disponibile il branch nella repository remota seguento la seguente procedura:
-\begin{enumerate}
-	\item Eseguire il push delle modifiche nel branch:
-		\begin{itemize}
-			\item \texttt{git add .}
-			\item \texttt{git commit -m "Descrizione delle modifiche apportate"}
-			\item \texttt{git push origin nome\_nuovo\_Branch}
-		\end{itemize}
-	\item Se si riscontrano problemi nel precedente punto:
-		\begin{itemize}
-		\item \texttt{git pull origin nome\_nuovo\_Branch}
-		\end{itemize}
-	\item Risolvere i conflitti e ripetere il punto 1.
-\end{enumerate}
-\newpage
-\begin{flushleft}
-\textbf{Caso modifica documento in fase di redazione}
-\end{flushleft}
-Per continuare la redazione di un documento già in fase di stesura, sono necessari i seguenti comandi:
-\begin{itemize}
-	\item \texttt{git pull}
-	\item \texttt{git checkout nome\_Branch}
-\end{itemize}
-\begin{flushleft}
-\textbf{Completamento redazione documento}
-\end{flushleft}
-Dopo aver completato la redazione del documento o della sezione, il redattore deve procedere nel seguente modo:
-\begin{enumerate}
-	\item spostare l'issue relativa all'attività assegnata nella colonna "Review" della \href{https://github.com/orgs/7Last/projects/1/views/1}{\underline{DashBoard}} del progetto, così da comunicare il completamento dell'incarico ai Verificatori;
-	\item aggiornare la tabella contenente il versionamento del documento, inserendo le informazioni richieste e incrementando la versione;
-	\item Creare una Pull Request:
-	      \begin{enumerate}
-		      \item accedere alla \href{https://github.com/7Last/docs}{\underline{Repository}} GitHub, spostarsi nella sezione "Pull Request" e cliccare su "New Pull Request";
-		      \item selezionare come branch di destinazione "main" e come branch sorgente il ramo creato appositamente per la redazione del documento/sezione;
-		      \item cliccare su "Create Pull Request";
-		      \item dare un titolo significativo e, se necessario, una descrizione alla Pull Request, selezionare i Verificatori e cliccare su "Create Pull Request".
-	      \end{enumerate}
-\end{enumerate}
-\newpage
+Il redattore si occupa della stesura del documento, seguendo le norme tipografiche e le convenzioni stabilite, in modo da garantire la
+chiarezza e la coerenza del testo. Dovrà rispettare le convenzioni sopracitate.
+
 \subsubsubsection{Il resposabile}
 Il responsabile coordina e gestisce le attività del gruppo. In particolare:
 \begin{itemize}
-	\item pianifica la documentazione;
-	\item comunica con gli stakeholder;
-	\item gestisce le risorse e gli strumenti.
+	\item definire quali documenti devono essere prodotti e quali compiti devono essere svolti;
+	\item gestisce le risorse e gli strumenti necessari per ultimare tali attività;
+	\item approva la versione finale dei documenti;
+	\item comunica con gli stakeholder.
 \end{itemize}
 
 \subsubsubsection{L'amministratore}
-L’amministratore è colui che si occupa della gestione delle risorse e delle infrastrutture, inclusa la configurazione degli strumenti di supporto alla produzione  del software. Inoltre, si occupa della gestione del corretto utilizzo delle procedure andando a garantire un’elevata efficienza e produttività del gruppo di lavoro.
+L’amministratore è colui che si occupa della configurazione degli strumenti di supporto alla produzione del software; nel nostro caso,
+inserisce le attività nell'ITS ClickUp e le assengna ai membri del gruppo.
 
 \subsubsubsection{I verificatori}
-Il ruolo e i doveri dei Verificatori sono esplicati in dettaglio al paragrafo \hyperref[verifica_dei_documenti]{3.2.2}.
+Il compito del verificatore è di controllare la correttezza e la qualità dei documenti prodotti, assicurandosi che siano conformi agli standard e alle norme stabilite.
 
 \subsubsection{Struttura del documento}
-Tutta la documentazione prodotta segue uno schema strutturale ben definito e uniforme.
+Tutti i documenti produtti devono seguire una struttura ben definita, che prevede le componenti in seguito elencate.
 \subsubsubsection{Prima pagina}
 Nella prima pagina di ogni documento è presente un'intestazione contenente le seguenti informazioni:
 \begin{itemize}
@@ -120,95 +102,92 @@ Nella prima pagina di ogni documento è presente un'intestazione contenente le s
 \end{itemize}
 
 \subsubsubsection{Registro delle modifiche}
-La seconda pagina è dedicata al registro delle modifiche, rappresentato mediante una tabella. Il suo scopo è quello di fornire un tracciamento delle modifiche e aggiornamenti apportati al documento.La tabella riporta i seguenti dati:
+La seconda pagina è dedicata al registro delle modifiche, rappresentato mediante una tabella. Il suo scopo è quello di tenere traccia di tutti i cambiamenti effettuati al documento,
+in modo da garantire la rintracciabilità e la trasparenza delle modifiche. Ogni riga della tabella corrisponde a un cambiamento, e contiene le seguenti informazioni:
 \begin{itemize}
-	\item \textbf{versione} del documento;
-	\item \textbf{data} di rilascio;
-	\item nome del \textbf{Redattore};
-	\item nome del \textbf{Verificatore};
+	\item \textbf{versione} del documento, nel formato vX.Y, dove X rappresenta il numero di versione principale e Y il numero di versione secondaria;
+	\item \textbf{data} di ultima modifica;
+	\item nome del \textbf{redattore};
+	\item nome del \textbf{verificatore};
 	\item \textbf{descrizione} della modifica.
 \end{itemize}
 
 \subsubsubsection{Indice}
-Ogni documento contiene un indice delle sezioni e delle sottosezioni presenti al suo interno, in modo da facilitare la consultazione e la navigazione. Tutte le figure e tabelle presenti in questo documento sono visibili negli appositi indici e sono direttamente accessibili tramite link ipertestuali.
+Ogni documento contiene un indice delle sezioni e delle sottosezioni presenti al suo interno, in modo da facilitare la consultazione e la navigazione.
+Tutte le figure e tabelle presenti nei documenti sono visibili negli appositi indici e sono direttamente accessibili tramite link ipertestuali.
 
 \subsubsubsection{Intestazione}
 Ogni pagina del documento, ad eccezione della prima, include un'intestazione che presenta, da sinistra a destra, il logo del gruppo, il titolo del documento e la versione.
 
-\subsubsubsection{Verbali: struttura generale}
-I verbali rappresentano un resoconto dettagliato degli incontri, tracciando gli argomenti discussi, le decisioni prese e le azioni da intraprendere. Sono suddivisi in verbali interni ed esterni, a seconda che il meeting coinvolga solo i membri del team o persone esterne al gruppo.
-La struttura è la medesima e prevede le seguenti sezioni:
+\subsubsubsection{Struttura dei verbali}
+I verbali rappresentano un resoconto dettagliato degli incontri, tracciando gli argomenti discussi, le decisioni prese e le azioni da intraprendere.
+Sono suddivisi in verbali interni ed esterni, a seconda che il meeting coinvolga solo i membri del team o persone esterne al gruppo.
+La struttura è la medesima per entrambe le tipologie, ad eccezione dell'ultima pagina.
 \begin{itemize}
 	\item \textbf{prima pagina}:
-		\begin{itemize}
-			\item tipologia verbale (interno / esterno);
-			\item titolo del documento;
-			\item data e versione del documento;
-			\item logo del gruppo
-			\item nome del gruppo.
-		\end{itemize}
+	      \begin{itemize}
+		      \item tipologia verbale (interno / esterno);
+		      \item titolo del documento;
+		      \item sottotitolo del documento, "Riunione interna settimanale" per i verbali interni e "Colloquio con \textit{Sync Lab}" per i verbali esterni;
+		      \item data e versione del documento;
+		      \item logo del gruppo
+		      \item nome del gruppo.
+	      \end{itemize}
 	\item \textbf{Registro delle modifiche};
-	\item \textbf{informazioni sulla riunione}:
-		\begin{itemize}
-			\item sede della riunione (interna / esterna);
-			\item orario di inizio e fine;
-			\item partecipanti del gruppo (interni);
-			\item partecipanti esterni.
-		\end{itemize}
+	\item \textbf{Dettagli sulla riunione}:
+	      \begin{itemize}
+		      \item sede della riunione (piattaforma utilizzata);
+		      \item orario di inizio e fine;
+		      \item partecipanti del gruppo (interni) con specificazione del ruolo;
+		      \item partecipanti esterni.
+	      \end{itemize}
 	\item \textbf{Corpo del documento}
-		All'interno del corpo del documento sono presenti le seguenti sezioni:
-		\begin{itemize}
-			\item \textbf{ordine del giorno}:
-					elenco di ciò che verrà discusso durante la riunione;
-			\item \textbf{sintesi dell'incontro}:
-					breve riassunto delle discussioni e dei temi affrontati durante l'incontro;
-			\item \textbf{decisioni prese}:
-					sezione che elenca in formato testuale le decisioni prese durante il meeting. Alcune di queste potrebbero risultare anche in "Attività individuate";
-			\item \textbf{attività individuate}:
-					illustrazione dettagliata delle attività assegnate ai diversi membri del gruppo in forma tabellare, sono presenti le seguenti informazioni:
-					\begin{itemize}
-						\item nome delle attività;
-						\item assegnatari.
-					\end{itemize}
-		\end{itemize}
-	\item \textbf{Ultima pagina}: presente solo in caso di verbale esterno, l'ultima pagina ha lo scopo di contenere data e firma di un componente esterno, presente durante l'incontro.
+	      All'interno del corpo del documento sono presenti le seguenti sezioni:
+	      \begin{itemize}
+		      \item \textbf{ordine del giorno}: elenco di ciò che verrà discusso durante la riunione;
+		      \item \textbf{verbale}: resoconto dettagliato dell'incontro, con una sottosezione per ciascun punto dell'ordine del giorno,
+		            gli obiettivi prefissati e le decisioni prese;
+	      \end{itemize}
+	\item \textbf{Ultima pagina}: solo in caso di verbale esterno, l'ultima pagina contiene data e firma di un componente esterno, presente durante l'incontro.
 \end{itemize}
-Il template dei verbali è disponibile nella repository del gruppo, più precisamente in questo \href{https://github.com/7Last/docs/tree/develop/0_template}{\underline{link}}. (Ultima consultazione 2024-05-20).
+Il template dei verbali è disponibile nella repository del gruppo, più precisamente al seguente \href{https://github.com/7Last/docs/tree/develop/0_template}{\underline{link}}. (Ultima consultazione 2024-05-20).
 \newpage
 \subsubsection{Norme tipografiche}
-\textbf{Nomi dei file}\\ I nomi dei documenti devono essere coerenti con la loro tipologia, scritti in minuscolo e includere un riferimento alla versione del documento. In particolare, la denominazione dei file deve seguire la seguente convenzione:
+\textbf{Nomi dei file}\\ I nomi dei documenti devono essere coerenti con il loro contenuto,
+scritti in snake case. Nel branch \texttt{develop} tutti i documenti non contengono la versione nel nome, al fine di evitare conflitti durante la modifica.
+Nel momento in cui il documento viene approvato, esso viene spostato nel branch \texttt{main} e la versione viene aggiunta automaticamente al nome del file.\\
+In particolare, la denominazione dei file nel branch \texttt{main} deve seguire la seguente convenzione:
 \begin{itemize}
-	\item \textbf{Verbali}: verbale\_esterno/interno\_AA\_MM\_DD\_vX.Y;
-	\item \textbf{Norme di Progetto}: norme\_di\_progetto\_vX.Y;
-	\item \textbf{Analisi dei Requisiti}: analisi\_dei\_requisiti\_vX.Y;
-	\item \textbf{Piano di Progetto}: piano\_di\_progetto\_vX.Y;
-	\item \textbf{Glossario}: glossario\_vX.Y.
+	\item \textbf{Verbali}: verbale\_esterno/interno\_YYYY\_MM\_DD\_vA.B;
+	\item \textbf{Norme di Progetto}: norme\_di\_progetto\_vA.B;
+	\item \textbf{Analisi dei Requisiti}: analisi\_dei\_requisiti\_vA.B;
+	\item \textbf{Piano di Progetto}: piano\_di\_progetto\_vA.B;
+	\item \textbf{Lettera di Presentazione}: lettera\_di\_presentazione;
+	\item \textbf{Glossario}: glossario\_vA.B.
 \end{itemize}
 \textbf{Stile del testo}
 \begin{itemize}
 	\item \textbf{Grassetto}:
 	      \begin{itemize}
 		      \item titoli di sezione;
-		      \item termini importanti;
-		      \item parole seguite da descrzione o elenchi puntati.
+		      \item termini importanti;https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+		      \item parole seguite da descrizione o elenchi puntati.
 	      \end{itemize}
 	\item \textbf{Corsivo}:
 	      \begin{itemize}
 		      \item nome del gruppo e dell'azienda proponente;
-		      \item termini presenti nel glossario;
 		      \item riferimenti a documenti esterni.
 	      \end{itemize}
 	\item \textbf{Maiuscolo}:
 	      \begin{itemize}
 		      \item acronimi;
 		      \item iniziali dei nomi;
-		      \item iniziali dei ruoli svolti dai membri del gruppo.
 	      \end{itemize}
 \end{itemize}
 \newpage
 \textbf{Regole sintattiche}:
 \begin{itemize}
-	\item negli elenchi ogni voce deve terminare con ";" mentre l'ultima prevede ".";
+	\item negli elenchi ogni voce deve terminare con ";" mentre l'ultima ".";
 	\item i numeri razionali vengono scritti mediante l'uso della virgola come separatore tra parte intera e parte decimale;
 	\item le date devono seguire lo standard internazionale ISO 8601, rappresentando la data con YYYY-MM-DD (anno, mese, giorno).
 	\item le sezioni di un documento devono essere numerate in modo gerarchico, seguendo la struttura X.Y, dove:
@@ -226,16 +205,15 @@ Segue un elenco delle abbreviazioni più comuni utilizzate nei documenti:
 		\hline
 		\textbf{Abbreviazione} & \textbf{Scrittura Estesa}            \\
 		\hline
-		ITS                    & Issue Tracking System                \\
-		SAL                    & Stato Avanzamento Lavori             \\
-		CI                     & Configuration Item                   \\
-		RTB                    & Requirements and Technology Baseline \\
-		PB                     & Product Baseline                     \\
 		CA                     & Customer Acceptance                  \\
+		CI                     & Configuration Item                   \\
+		ITS                    & Issue Tracking System                \\
+		PB                     & Product Baseline                     \\
+		RTB                    & Requirements and Technology Baseline \\
+		SAL                    & Stato Avanzamento Lavori             \\
 		\hline
 	\end{tabular}
 	\caption{Spiegazione delle abbreviazioni utilizzate nei documenti.}
-	\label{tab:1}
 \end{table}
 
 \subsubsection{Strumenti}
@@ -248,7 +226,7 @@ Gli strumenti utilizzati per la redazione dei documenti sono:
 
 \subsection{Verifica}
 \subsubsection{Introduzione}
-Il processo di verifica è fondamentale durante tutto il ciclo di vita del software. Questo processo ha lo scopo di garantire che ogni attività sia corretta ed efficiente, identificando un processo di controllo per ogni prodotto realizzato. In particolare, ci si assicura che gli output del software (documentazione, codice sorgente, test, ecc.) siano conformi alle aspettative e ai requisiti specificati. Per fare ciò, è essenziale applicare tecniche e analisi di test seguendo procedure definite e adottando criteri affidabili. Le attività di verifica sono svolte dai Verificatori, i quali analizzano i prodotti e valutano la loro aderenza agli standard stabiliti. Il fulcro di questo processo è il \textit{Piano di Qualifica}, un documento dettagliato che traccia il percorso della verifica. All'interno di esso vengono fornite linee guida per una valutazione accurata della qualità, delineando chiaramente gli obiettivi da raggiungere e i criteri di accettazione da rispettare.
+La verifica nel ciclo di vita del software garantisce l'efficienza e la correttezza delle attività, assicurando che i prodotti soddisfino i requisiti. I Verificatori applicano tecniche di test seguendo procedure definite. Il Piano di Qualifica traccia il percorso di verifica, stabilendo obiettivi e criteri di accettazione.
 
 \subsubsection{Verifica dei documenti} \label{verifica_dei_documenti}
 Nell'ambito della documentazione, la verifica è un'attività cruciale per garantire la correttezza e l'accuratezza dei contenuti. Questo processo coinvolge una serie di controlli sistematici e revisioni finalizzate a garantire che la documentazione sia accurata, completa e conforme agli standard e ai requisiti specificati.
@@ -341,14 +319,14 @@ Dove:
 \begin{itemize}
 	\item \textbf{[numero\_test]}: rappresenta un numero, in ordine crescente, associato al test, univoco all'interno della tipologia;
 	\item \textbf{[tipologia]}: indica la tipologia di appartenenza del test, può assumere i seguenti valori:
-		\begin{itemize}
-			\item \textbf{U}: test di unità;
-			\item \textbf{I}: test di integrazione;
-			\item \textbf{S}: test di sistema;
-			\item \textbf{R}: test di regressione;
-			\item \textbf{A}: test di accettazione.
-		\end{itemize}
-	
+	      \begin{itemize}
+		      \item \textbf{U}: test di unità;
+		      \item \textbf{I}: test di integrazione;
+		      \item \textbf{S}: test di sistema;
+		      \item \textbf{R}: test di regressione;
+		      \item \textbf{A}: test di accettazione.
+	      \end{itemize}
+
 \end{itemize}
 
 \subsubsubsection{Stato dei test}
@@ -406,17 +384,17 @@ Il repository inerente la documentazione è così organizzato:
 	\item \textbf{RTB}:
 	      \begin{itemize}
 		      \item \textbf{documentazione esterna}: contentente i seguenti documenti:
-			  \begin{itemize}
-				\item \textbf{Analisi dei Requisiti};
-				\item \textbf{Piano di Progetto};
-				\item \textbf{Piano di Qualifica};
-			  \end{itemize}
-			 	\item \textbf{documentazione interna}: contentente i seguenti documenti:
-			  \begin{itemize}
-				\item \textbf{Glossario};	
-				\item \textbf{Norme di Progetto}.
-			  \end{itemize}
-			  \item \textbf{verbali esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{SyncLab S.r.l.};
+		            \begin{itemize}
+			            \item \textbf{Analisi dei Requisiti};
+			            \item \textbf{Piano di Progetto};
+			            \item \textbf{Piano di Qualifica};
+		            \end{itemize}
+		      \item \textbf{documentazione interna}: contentente i seguenti documenti:
+		            \begin{itemize}
+			            \item \textbf{Glossario};
+			            \item \textbf{Norme di Progetto}.
+		            \end{itemize}
+		      \item \textbf{verbali esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{SyncLab S.r.l.};
 		      \item \textbf{verbali interni}: contenente i verbali delle riunioni interne svolte.
 	      \end{itemize}
 	\item \textbf{PB} %todo, da implementare
@@ -427,20 +405,20 @@ Il repository inerente la documentazione è così organizzato:
 \subsubsubsection{Documentazione}	\label{nomenclatura}
 L'approccio adottato per la redazione della documentazione segue il workflow noto come \textit{Feature Branch}. Questo workflow è un processo strutturato e collaborativo che consente ai membri del team di lavorare in modo efficace alla creazione, revisione e integrazione di documenti all'interno di un progetto. Questo approccio garantisce una gestione ordinata e controllata della redazione dei documenti, consentendo una migliore organizzazione e una maggiore qualità del lavoro finale.
 \begin{flushleft}
-\textbf{Nomenclatura dei branch per le attività di redazione e/o modifica di documenti}: \label{convenzioni_nomenclatura}
+	\textbf{Nomenclatura dei branch per le attività di redazione e/o modifica di documenti}: \label{convenzioni_nomenclatura}
 \end{flushleft}
 \begin{itemize}
 	\item il nome del nuovo branch deve riportare il titolo del documento da redarre o modificare;
-	\item il nome dei verbali deve presentare anche la data della riunione: 
-		\begin{itemize}
-			\item \textit{verbale\_interno\_yy\_mm\_dd} (es. verbale\_interno\_24\_03\_05);
-		\end{itemize}
+	\item il nome dei verbali deve presentare anche la data della riunione:
+	      \begin{itemize}
+		      \item \textit{verbale\_interno\_yy\_mm\_dd} (es. verbale\_interno\_24\_03\_05);
+	      \end{itemize}
 \end{itemize}
 
 \subsubsubsection{Sviluppo}
 \textit{7Last} utilizza \href{https://www.atlassian.com/it/git/tutorials/comparing-workflows/gitflow-workflow}{\underline{{Gitflow}}} come flusso di lavoro.
 \begin{flushleft}
-Flusso di lavoro Gitflow:
+	Flusso di lavoro Gitflow:
 \end{flushleft}
 \begin{enumerate}
 	\item \textbf{Branch develop}: è il punto di partenza per la creazione di nuovi branch, si crea a partire dal branch "main";
@@ -480,7 +458,7 @@ Una Change Request (richiesta di modifica) è una proposta formale per modificar
 	\item \textbf{implementazione}: realizzare le modifiche approvate nel sistema di configurazione, seguendo il piano stabilito. Questa fase comprende la codifica, la modifica dei documenti, la preparazione dei pacchetti di rilascio e l'aggiornamento del sistema di gestione delle configurazioni con le nuove versioni degli elementi. L'implementazione deve essere eseguita in modo controllato per garantire la qualità e l'integrità del software;
 	\item \textbf{verifica e validazione}: verificare e validare le modifiche implementate per assicurarsi che soddisfino i requisiti specificati e che non abbiano introdotto nuovi difetti. Questa attività include la revisione del codice, l'esecuzione di test, la valutazione delle prestazioni e l'ispezione della documentazione. La verifica e la validazione garantiscono che le modifiche siano corrette e che il sistema funzioni come previsto;
 	\item \textbf{documentazione}: documentare tutte le attività di controllo di configurazione, incluse le richieste di modifica, le decisioni di approvazione o rifiuto, i piani di modifica, le attività di implementazione e i risultati delle verifiche. La documentazione deve essere completa e accurata per mantenere la tracciabilità e per supportare eventuali audit futuri. Tutti i documenti devono essere aggiornati e conservati in un sistema di gestione delle configurazioni;
-	\item \textbf{comunicazione agli stakeholder}: informare tutti gli stakeholder rilevanti riguardo alle modifiche effettuate, allo stato delle configurazioni e alle decisioni prese. La comunicazione deve essere chiara e tempestiva, utilizzando canali appropriati come riunioni, report, email o sistemi di gestione dei progetti. 
+	\item \textbf{comunicazione agli stakeholder}: informare tutti gli stakeholder rilevanti riguardo alle modifiche effettuate, allo stato delle configurazioni e alle decisioni prese. La comunicazione deve essere chiara e tempestiva, utilizzando canali appropriati come riunioni, report, email o sistemi di gestione dei progetti.
 \end{enumerate}
 
 % \subsubsection{Contabilità dello Stato di Configurazione}
@@ -609,9 +587,9 @@ Dove:
 	\centering
 	\begin{tabular}{|c|c|}
 		\hline
-		\textbf{Metrica} & \textbf{Nome}             \\
+		\textbf{Metrica} & \textbf{Nome}        \\
 		\hline
-		29M-NCR         & Rischi non calcolati \\
+		29M-NCR          & Rischi non calcolati \\
 		\hline
 	\end{tabular}
 	\caption{Metriche relative alla gestione dei processi}
