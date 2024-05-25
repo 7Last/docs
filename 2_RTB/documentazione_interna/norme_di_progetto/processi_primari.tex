@@ -372,101 +372,112 @@ Fornisce una guida dettagliata ed esaustiva per la progettazione e lo sviluppo d
 
 \subsubsubsection{Diagrammi UML}
 \begin{itemize}
-	\item \textbf{Chiarezza visiva}: forniscono una rappresentazione visuale chiara e intuitiva delle relazioni e delle interazioni tra gli elementi del sistema software, facilitando la comprensione del sistema da parte degli stakeholder;
-	\item \textbf{standardizzazione}: UML è uno standard riconosciuto a livello internazionale per la modellazione dei sistemi software, il che significa che i diagrammi UML sono facilmente comprensibili da parte di professionisti del settore in tutto il mondo;
-	\item \textbf{comunicazione efficace}: forniscono un linguaggio comune per la comunicazione tra gli sviluppatori, gli stakeholder tecnici e non tecnici e altri membri del team, consentendo una comunicazione più efficace e una condivisione delle informazioni più chiara;
-	\item \textbf{analisi e progettazione}: possono essere utilizzati durante le fasi di analisi e progettazione del ciclo di sviluppo del software per visualizzare e analizzare i requisiti, le relazioni tra i componenti e le interazioni del sistema;
-	\item \textbf{modellazione e requisiti}: UML consente di modellare i requisiti del sistema in modo chiaro e strutturato, identificando casi d'uso, scenari e vincoli che guidano lo sviluppo del software;
-	\item \textbf{facilità di manutenzione}: è più facile comprendere l'architettura del sistema e individuare eventuali problemi o aree di miglioramento, facilitando così la manutenzione e l'evoluzione del software nel tempo;
-	\item \textbf{supporto agli standard di progettazione}: I diagrammi UML possono essere utilizzati per applicare e comunicare i principi di progettazione software ben consolidati, come l'incapsulamento, l'ereditarietà e il polimorfismo;
-	\item \textbf{documentazione}: possono essere utilizzati per generare documentazione tecnica dettagliata sul sistema software, fornendo una guida completa per gli sviluppatori, gli utenti finali e gli altri stakeholder.
+	\item \textbf{Chiarezza visiva}: forniscono una rappresentazione visuale chiara e intuitiva delle relazioni e delle interazioni tra gli elementi del sistema software, facilitando la comprensione del sistema da parte degli stakeholder.
+	\item \textbf{Standardizzazione}: UML è uno standard riconosciuto a livello internazionale per la modellazione dei sistemi software, il che significa che i diagrammi UML sono facilmente comprensibili da parte di professionisti del settore in tutto il mondo.
+	\item \textbf{Comunicazione efficace}: forniscono un linguaggio comune per la comunicazione tra gli sviluppatori, gli stakeholder tecnici e non tecnici e altri membri del team, consentendo una comunicazione più efficace e una condivisione delle informazioni più chiara.
+	\item \textbf{Analisi e progettazione}: possono essere utilizzati durante le fasi di analisi e progettazione del ciclo di sviluppo del software per visualizzare e analizzare i requisiti, le relazioni tra i componenti e le interazioni del sistema.
+	\item \textbf{Modellazione e requisiti}: UML consente di modellare i requisiti del sistema in modo chiaro e strutturato, identificando casi d'uso, scenari e vincoli che guidano lo sviluppo del software.
+	\item \textbf{Facilità di manutenzione}: è più facile comprendere l'architettura del sistema e individuare eventuali problemi o aree di miglioramento, facilitando così la manutenzione e l'evoluzione del software nel tempo.
+	\item \textbf{Supporto agli standard di progettazione}: i diagrammi UML possono essere utilizzati per applicare e comunicare i principi di progettazione software ben consolidati, come l'incapsulamento, l'ereditarietà e il polimorfismo.
+	\item \textbf{Documentazione}: possono essere utilizzati per generare documentazione tecnica dettagliata sul sistema software, fornendo una guida completa per gli sviluppatori, gli utenti finali e gli altri stakeholder.
 \end{itemize}
-\newpage
-\begin{flushleft}
-A supporto della progettazione, il team utilizzerà i seguenti \textbf{diagrammi delle classi}.
-\end{flushleft}
-Ogni diagramma delle classi rappresenta le proprietà e le relazioni tra le varie componenti di un sistema, offrendo una visione chiara e dettagliata della struttura del sistema.\\
-Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
-\begin{enumerate}
-	\item \textbf{Nome della classe}: indica il nome della classe;
-	\item \textbf{Attributi}: elenco degli attributi della classe, con il relativo tipo di dato, seguendo il formato: 
-	\begin{center}
-		\textbf{Visibilità Nome: Tipo [Molteplicità] = Valore di default}\end{center}
-	      \begin{itemize}
-		      \item \textbf{Visibilità}: indica il livello di accesso agli attributi, che può essere:
-		            \begin{itemize}
-			            \item \textbf{+}: pubblico;
-			            \item \textbf{-}: privato;
-			            \item \textbf{\#}: protetto;
-			            \item \textbf{\textasciitilde}: package.
-		            \end{itemize}
-		      \item \textbf{Nome}: nome dell'attributo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeAttributo: tipo}; \\ Se l'attributo è costante, il nome deve essere scritto in maiuscolo (es. \textit{PIGRECO: double});
-		      \item \textbf{Molteplicità}: nel caso di una sequenza di elementi come liste o array, indica il numero di elementi presenti, se questa non fosse conosciuta si utilizza il simbolo \textit{*} (es \textit{tipoAttributo[*]});
-		      \item \textbf{default}: valore di default dell'attributo.
-	      \end{itemize}
-	\item \textbf{Metodi}: descrivono il comportamento della classe, seguendo il formato: \\ \begin{center}\textbf{Visibilità Nome(parametri): Tipo di ritorno}\end{center}
-	      \begin{itemize}
-		      \item \textbf{Visibilità}: indica il livello di accesso ai metodi, che può essere:
-		            \begin{itemize}
-			            \item \textbf{+}: pubblico;
-			            \item \textbf{-}: privato;
-			            \item \textbf{\#}: protetto;
-			            \item \textbf{\textasciitilde}: package.
-		            \end{itemize}
-		      \item \textbf{Nome}: nome del metodo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeMetodo(parametri): tipoRitorno};
-		      \item \textbf{Parametri}: elenco dei parametri del metodo, separati tramite virgola. Ogni parametro deve seguire la notazione \textit{nomeParametro: tipo};
-		      \item \textbf{Tipo di ritorno}: indica il tipo di dato restituito dal metodo.
-	      \end{itemize}
-\end{enumerate}
 
-\textbf{Convenzioni sui metodi}
-\begin{itemize}
-	\item \textbf{I metodi getter, setter} e i \textbf{costruttori} non vengono inclusi fra i metodi;
-	\item \textbf{I metodi statici} sono sottolineati;
-	\item \textbf{I metodi astratti} sono scritti in corsivo.
-	\item \textbf{L'assenza di attributi o metodi} in una classe determina l'assenza delle relative sezioni nel diagramma.
-\end{itemize}
-\textbf{Relazioni tra le classi}\\
-Essenziali per rappresentare le interazioni e le dipendenze tra le varie componenti del sistema software, queste relazioni forniscono un quadro completo della struttura e del comportamento del sistema, consentendo agli sviluppatori di comprendere meglio come le classi si relazionano tra loro e di progettare un sistema coerente e ben strutturato. Di seguito sono descritte le principali relazioni tra le classi:
-\begin{itemize}
-	\item \textbf{Associazione}:  rappresenta una relazione tra due classi, indicando che un'istanza di una classe è correlata a un'istanza di un'altra classe. È raffigurata da una linea solida tra le classi coinvolte. La linea può includere etichette per indicare il nome dell'associazione, nonché molteplicità e ruoli per specificare la cardinalità e il ruolo delle classi nell'associazione.
-		\begin{center}
-			\includegraphics*[width=12cm]{../../../images/norme_di_progetto/associazioneClassi.png}
-			\captionof{figure}{Diagramma delle classi - Associazione}
-		\end{center}
-	\newpage
-	\item \textbf{Aggregazione}:  indica una relazione "tutto-parte" tra due classi, dove una classe è composta da una o più istanze di un'altra classe, ma le istanze possono esistere indipendentemente dalla classe principale. Composta da una linea con una freccia vuota che punta dalla parte composta (parte) al tutto (oggetto principale). La linea può includere un rombo vuoto sulla parte composta per indicare l'aggregazione.
-		\begin{center}
-			\includegraphics*[width=12cm]{../../../images/norme_di_progetto/aggregazioneClassi.png}
-			\captionof{figure}{Diagramma delle classi - Aggregazione}
-		\end{center}
-	\item \textbf{Composizione}: simile all'aggregazione, ma indica una relazione più forte in cui l'esistenza delle parti dipende direttamente dall'oggetto principale. Una composizione è rappresentata da una linea con una freccia piena che punta dalla parte composta (parte) al tutto (oggetto principale). La linea può includere un rombo pieno sulla parte composta per indicare la composizione.
-		\begin{center}
-			\includegraphics*[width=10cm]{../../../images/norme_di_progetto/composizioneClassi.png}
-			\captionof{figure}{Diagramma delle classi - Composizione}
-		\end{center}
-	\newpage
-	\item \textbf{Ereditarietà o generalizzazione}: indica una relazione di specializzazione tra una classe superiore (superclasse) e una o più classi inferiori (sottoclassi). Le sottoclassi ereditano gli attributi e i metodi della superclasse e possono estenderli o modificarli. Viene effigiata da una linea con una freccia che punta dalla sottoclasse alla superclasse. La linea può includere una freccia vuota con la scritta "extends" per indicare la generalizzazione.
-		\begin{center}
-			\includegraphics*[width=10cm]{../../../images/norme_di_progetto/generalizzazioneClassi.png}
-			\captionof{figure}{Diagramma delle classi - Generalizzazione}
-		\end{center}
-	\item \textbf{Dipendenza}: indica che una classe dipende dall'altra in un certo modo. Questo può significare che una classe utilizza o richiede i servizi di un'altra classe, ma non c'è un legame diretto tra le loro istanze. Una dipendenza è rappresentata da una linea tratteggiata che parte dalla classe dipendente e punta alla classe di cui dipende. La linea può includere una freccia vuota per indicare la direzione della dipendenza.
-		\begin{center}
-			\includegraphics*[width=12cm]{../../../images/norme_di_progetto/dipendenzaClassi.png}
-			\captionof{figure}{Diagramma delle classi - Dipendenza}
-		\end{center}
-	\item \textbf{Realizzazione}:  indica che una classe implementa un'interfaccia o un contratto definito da un'altra classe. In altre parole, una classe realizza i metodi definiti da un'interfaccia o una classe astratta. Una realizzazione è raffigurata da una linea tratteggiata con una freccia vuota che punta dalla classe che implementa all'interfaccia o classe astratta che viene implementata.
-	      \begin{center}
-		      \includegraphics*[width=8cm]{../../../images/norme_di_progetto/realizzazioneClassi.png}
-		      \captionof{figure}{Diagramma delle classi - Realizzazione}
-	      \end{center}
-\end{itemize}
+% \subsubsubsubsection{Diagrammi delle Classi}
+% Un tipo di diagramma UML ampiamente utilizzato nel processo di progettazione del software è il diagramma delle classi, che rappresenta la struttura statica del sistema, mostrando le classi, gli attributi, i metodi e le relazioni tra di esse. Le classi sono rappresentate da rettangoli suddivisi in tre sezioni:
+% \begin{enumerate}
+% 	\item \textbf{Nome della classe}: indica il nome della classe;
+% 	\item \textbf{Attributi}: elenco degli attributi della classe, con il relativo tipo di dato, seguendo il formato: 
+% 	\begin{center}
+% 		\textbf{Visibilità Nome: Tipo [Molteplicità] = Valore di default}\end{center}
+% 	      \begin{itemize}
+% 		      \item \textbf{Visibilità}: indica il livello di accesso agli attributi, che può essere:
+% 		            \begin{itemize}
+% 			            \item \textbf{+}: pubblico;
+% 			            \item \textbf{-}: privato;
+% 			            \item \textbf{\#}: protetto;
+% 			            \item \textbf{\textasciitilde}: package.
+% 		            \end{itemize}
+% 		      \item \textbf{Nome}: nome dell'attributo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeAttributo: tipo}; \\ Se l'attributo è costante, il nome deve essere scritto in maiuscolo (es. \textit{PIGRECO: double});
+% 		      \item \textbf{Molteplicità}: nel caso di una sequenza di elementi come liste o array, indica il numero di elementi presenti, se questa non fosse conosciuta si utilizza il simbolo \textit{*} (es \textit{tipoAttributo[*]});
+% 		      \item \textbf{default}: valore di default dell'attributo.
+% 	      \end{itemize}
+% 	\item \textbf{Metodi}: descrivono il comportamento della classe, seguendo il formato: \\ \begin{center}\textbf{Visibilità Nome(parametri): Tipo di ritorno}\end{center}
+% 	      \begin{itemize}
+% 		      \item \textbf{Visibilità}: indica il livello di accesso ai metodi, che può essere:
+% 		            \begin{itemize}
+% 			            \item \textbf{+}: pubblico;
+% 			            \item \textbf{-}: privato;
+% 			            \item \textbf{\#}: protetto;
+% 			            \item \textbf{\textasciitilde}: package.
+% 		            \end{itemize}
+% 		      \item \textbf{Nome}: nome del metodo. Deve essere rappresentativo, chiaro e deve seguire la notazione \textit{nomeMetodo(parametri): tipoRitorno};
+% 		      \item \textbf{Parametri}: elenco dei parametri del metodo, separati tramite virgola. Ogni parametro deve seguire la notazione \textit{nomeParametro: tipo};
+% 		      \item \textbf{Tipo di ritorno}: indica il tipo di dato restituito dal metodo.
+% 	      \end{itemize}
+% \end{enumerate}
+
+% \textbf{Convenzioni sui metodi}
+% \begin{itemize}
+% 	\item \textbf{I metodi getter, setter} e i \textbf{costruttori} non vengono inclusi fra i metodi;
+% 	\item \textbf{I metodi statici} sono sottolineati;
+% 	\item \textbf{I metodi astratti} sono scritti in corsivo.
+% 	\item \textbf{L'assenza di attributi o metodi} in una classe determina l'assenza delle relative sezioni nel diagramma.
+% \end{itemize}
+% \textbf{Relazioni tra le classi}\\
+% Essenziali per rappresentare le interazioni e le dipendenze tra le varie componenti del sistema software, queste relazioni forniscono un quadro completo della struttura e del comportamento del sistema, consentendo agli sviluppatori di comprendere meglio come le classi si relazionano tra loro e di progettare un sistema coerente e ben strutturato. Di seguito sono descritte le principali relazioni tra le classi:
+% \begin{itemize}
+% 	\item \textbf{Associazione}:  rappresenta una relazione tra due classi, indicando che un'istanza di una classe è correlata a un'istanza di un'altra classe. È raffigurata da una linea solida tra le classi coinvolte. La linea può includere etichette per indicare il nome dell'associazione, nonché molteplicità e ruoli per specificare la cardinalità e il ruolo delle classi nell'associazione.
+% 		\begin{center}
+% 			\includegraphics*[width=12cm]{../../../images/norme_di_progetto/associazioneClassi.png}
+% 			\captionof{figure}{Diagramma delle classi - Associazione}
+% 		\end{center}
+% 	\newpage
+% 	\item \textbf{Aggregazione}:  indica una relazione "tutto-parte" tra due classi, dove una classe è composta da una o più istanze di un'altra classe, ma le istanze possono esistere indipendentemente dalla classe principale. Composta da una linea con una freccia vuota che punta dalla parte composta (parte) al tutto (oggetto principale). La linea può includere un rombo vuoto sulla parte composta per indicare l'aggregazione.
+% 		\begin{center}
+% 			\includegraphics*[width=12cm]{../../../images/norme_di_progetto/aggregazioneClassi.png}
+% 			\captionof{figure}{Diagramma delle classi - Aggregazione}
+% 		\end{center}
+% 	\item \textbf{Composizione}: simile all'aggregazione, ma indica una relazione più forte in cui l'esistenza delle parti dipende direttamente dall'oggetto principale. Una composizione è rappresentata da una linea con una freccia piena che punta dalla parte composta (parte) al tutto (oggetto principale). La linea può includere un rombo pieno sulla parte composta per indicare la composizione.
+% 		\begin{center}
+% 			\includegraphics*[width=10cm]{../../../images/norme_di_progetto/composizioneClassi.png}
+% 			\captionof{figure}{Diagramma delle classi - Composizione}
+% 		\end{center}
+% 	\newpage
+% 	\item \textbf{Ereditarietà o generalizzazione}: indica una relazione di specializzazione tra una classe superiore (superclasse) e una o più classi inferiori (sottoclassi). Le sottoclassi ereditano gli attributi e i metodi della superclasse e possono estenderli o modificarli. Viene effigiata da una linea con una freccia che punta dalla sottoclasse alla superclasse. La linea può includere una freccia vuota con la scritta "extends" per indicare la generalizzazione.
+% 		\begin{center}
+% 			\includegraphics*[width=10cm]{../../../images/norme_di_progetto/generalizzazioneClassi.png}
+% 			\captionof{figure}{Diagramma delle classi - Generalizzazione}
+% 		\end{center}
+% 	\item \textbf{Dipendenza}: indica che una classe dipende dall'altra in un certo modo. Questo può significare che una classe utilizza o richiede i servizi di un'altra classe, ma non c'è un legame diretto tra le loro istanze. Una dipendenza è rappresentata da una linea tratteggiata che parte dalla classe dipendente e punta alla classe di cui dipende. La linea può includere una freccia vuota per indicare la direzione della dipendenza.
+% 		\begin{center}
+% 			\includegraphics*[width=12cm]{../../../images/norme_di_progetto/dipendenzaClassi.png}
+% 			\captionof{figure}{Diagramma delle classi - Dipendenza}
+% 		\end{center}
+% 	\item \textbf{Realizzazione}:  indica che una classe implementa un'interfaccia o un contratto definito da un'altra classe. In altre parole, una classe realizza i metodi definiti da un'interfaccia o una classe astratta. Una realizzazione è raffigurata da una linea tratteggiata con una freccia vuota che punta dalla classe che implementa all'interfaccia o classe astratta che viene implementata.
+% 	      \begin{center}
+% 		      \includegraphics*[width=8cm]{../../../images/norme_di_progetto/realizzazioneClassi.png}
+% 		      \captionof{figure}{Diagramma delle classi - Realizzazione}
+% 	      \end{center}
+% \end{itemize}
 
 \subsubsubsection{Design pattern}
 I design pattern  sono soluzioni progettuali generiche e riutilizzabili per problemi comuni che si presentano durante lo sviluppo del software. Sono modelli architetturali, concetti o paradigmi consolidati, spesso espressi attraverso codice o diagrammi, che forniscono una guida per risolvere specifiche problematiche di progettazione software in modo efficiente ed efficace. la documentazione sui design pattern serve come punto di riferimento centrale per tutti gli sviluppatori coinvolti nel progetto, consentendo loro di comprendere rapidamente e facilmente come sono stati implementati determinati pattern nel codice. Questo è particolarmente utile durante le fasi di progettazione, sviluppo e manutenzione del software, in quanto fornisce una chiara visione della struttura architetturale del sistema e dei pattern utilizzati.
+
 \subsubsubsection{Test}
 La parte dei test all'interno del processo di sviluppo software è un'attività critica volta a garantire che il prodotto finale soddisfi i requisiti funzionali, prestazionali e di qualità previsti. Questa fase coinvolge diverse attività, che includono la pianificazione dei test, la progettazione dei casi di test, l'esecuzione dei test e l'analisi dei risultati. In questa sezione \hyperref[testing]{\textit{3.2.4}} vengono fornite descrizioni dettagliate delle varie tipologie di test e della terminologia associata.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|c|l|}
+		\hline
+		\textbf{Codice} & \textbf{Nome esteso}      \\
+		\hline
+		27M-FU 	 & Facilità di Utilizzo            		\\
+		28M-TA 	 & Tempo di Apprendimento            	\\
+		\hline
+	\end{tabular}
+	\caption{Metriche inerenti alla progettazione}
+\end{table}
 
 
 \subsubsection{Codifica}
