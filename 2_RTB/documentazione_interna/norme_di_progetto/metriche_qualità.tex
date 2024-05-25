@@ -1,17 +1,15 @@
 \section{Metriche di qualità}
-La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte. Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale. Al fine di valutare nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche, meglio specificate nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#norme-di-progetto}{\textit{Norme di Progetto\textsubscript{G}}}. Il contenuto di questa sezione è necessario per identificare i parametri che le metriche devono rispettare per essere considerate accettabili o ottime. Esse sono state suddivise utilizzando lo \textbf{standard ISO/IEC 12207:1995}, il quale separa i processi di ciclo di vita del software, in tre categorie: % TODO aggiungere versione documento
+La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte. Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale. Al fine di valutare nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche, meglio specificate di seguito. Il contenuto di questa sezione è necessario per identificare i parametri che le metriche devono rispettare per essere considerate accettabili o ottime. Esse sono state suddivise utilizzando lo \textbf{standard ISO/IEC 12207:1995}, il quale separa i processi di ciclo di vita del software, in tre categorie: % TODO aggiungere versione documento
 \begin{itemize}
 	\item processi di base e/o primari;
 	\item processi di supporto;
 	\item processi organizzativi.
 \end{itemize}
 
-
-
 \subsection{Processi di base e/o primari}
 
 \subsubsection{Fornitura}
-Nella fase di fornitura si definiscono le procedure e le risorse (economiche e temporali) necessarie per la consegna del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
+Nella fase di fornitura si definiscono le procedure e le risorse necessarie per la consegna del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
 \subsubsubsection*{1M-PV Planned Value}
 \begin{itemize}
@@ -109,7 +107,6 @@ Nella fase di fornitura si definiscono le procedure e le risorse (economiche e t
 
 \subsubsection{Sviluppo}
 Nella fase di sviluppo si realizza il prodotto software, seguendo le specifiche definite in fase di progettazione.
-Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
 \subsubsubsection{Analisi dei requisiti}
 Questa fase consiste nell'esaminare le richieste della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}} e nel definire i requisiti che il prodotto dovrà soddisfare. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
@@ -150,12 +147,20 @@ Questa fase consiste nell'esaminare le richieste della \href{https://7last.githu
 	\item \textbf{Valore ottimo}: \begin{equation*}PRO \geq 100\%\end{equation*}
 \end{itemize}
 
-
+\subsubsubsection{Progettazione}
+Questa fase consiste nel definire l'architettura del prodotto software, in modo da soddisfare i requisiti definiti in fase di analisi. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
+\subsubsubsection*{14M-PG Profondità delle Gerarchie}
+\begin{itemize}
+	\item \textbf{Definizione}: la profondità delle gerarchie rappresenta il numero massimo di livelli di annidamento delle classi.
+	\item \textbf{Come si calcola}: si conta il numero massimo di livelli di annidamento delle classi.
+	\item \textbf{Valore ammissibile}: \begin{equation*}PG \leq 7\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}PG \leq 5\end{equation*}
+\end{itemize}
 
 \subsubsubsection{Codifica}
 Queste metriche aiutano a valutare la qualità del codice, la complessità e la manutenibilità.
 
-\subsubsubsection*{14M-PPM Parametri Per Metodo}
+\subsubsubsection*{15M-PPM Parametri Per Metodo}
 \begin{itemize}
 	\item \textbf{Definizione}: numero medio di parametri passati ai metodi. Un numero elevato di parametri può indicare che un metodo è troppo complesso o che potrebbe essere suddiviso in metodi più piccoli.
 	\item \textbf{Come si calcola}: \begin{equation*}PPM = \frac{P}{M}\end{equation*} dove:
@@ -167,7 +172,7 @@ Queste metriche aiutano a valutare la qualità del codice, la complessità e la 
 	\item \textbf{Valore ottimo}: \begin{equation*}PPM \leq 5\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{15M-CPC Campi Per Classe}
+\subsubsubsection*{16M-CPC Campi Per Classe}
 \begin{itemize}
 	\item \textbf{Definizione}: numero medio di campi (variabili di istanza) per classe. Un numero elevato di campi dati può indicare che una classe sta facendo troppo e che potrebbe essere suddivisa in classi più piccole.
 	\item \textbf{Come si calcola}: \begin{equation*}CPC = \frac{CD}{CL}\end{equation*} dove:
@@ -179,7 +184,7 @@ Queste metriche aiutano a valutare la qualità del codice, la complessità e la 
 	\item \textbf{Valore ottimo}: \begin{equation*}CPC \leq 5\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{16M-LCPM Linee di Codice Per Metodo}
+\subsubsubsection*{17M-LCPM Linee di Codice Per Metodo}
 \begin{itemize}
 	\item \textbf{Definizione}: numero medio di linee di codice per metodo. Metodi troppo lunghi possono essere difficili da leggere, capire e mantenere.
 	\item \textbf{Come si calcola}: \begin{equation*}LCPM = \frac{LC}{M}\end{equation*} dove:
@@ -191,7 +196,7 @@ Queste metriche aiutano a valutare la qualità del codice, la complessità e la 
 	\item \textbf{Valore ottimo}: \begin{equation*}LCPM \leq 20\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{17M-CCM Complessità CicloMatica}
+\subsubsubsection*{18M-CCM Complessità CicloMatica}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Complessità CicloMatica} rappresenta la complessità di un programma sulla base del numero di percorsi lineari indipendenti attraverso il codice sorgente. Un valore elevato indica un codice più complesso e potenzialmente più difficile da mantenere.
 	\item \textbf{Come si calcola}: \begin{equation*}CCM = E - N + 2P\end{equation*} dove:
@@ -212,7 +217,7 @@ I processi di supporto si affiancano ai processi primari per garantire il corret
 \subsubsection{Documentazione}
 La documentazione è un aspetto fondamentale per la comprensione del prodotto e per la sua manutenibilità. A livello pratico consiste nella redazione di manuali e documenti tecnici che descrivano il funzionamento del prodotto e le scelte progettuali adottate. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{18M-IG Indice Gulpease}
+\subsubsubsection*{19M-IG Indice Gulpease}
 \begin{itemize}
 	\item \textbf{Definizione}: l'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Misura la lunghezza delle parole e delle frasi rispetto al numero di lettere.
 	\item \textbf{Come si calcola}: \begin{equation*}IG = 89 + \frac{300 \times F - 10 \times L}{P}\end{equation*} dove:
@@ -225,7 +230,7 @@ La documentazione è un aspetto fondamentale per la comprensione del prodotto e 
 	\item \textbf{Valore ottimo}: \begin{equation*}IG \geq 90\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{19M-CO Correttezza Ortografica}
+\subsubsubsection*{20M-CO Correttezza Ortografica}
 \begin{itemize}
 	\item \textbf{Definizione}: la correttezza ortografica indica la presenza di errori ortografici nei documenti.
 	\item \textbf{Come si calcola}: si contano gli errori ortografici presenti nei documenti.
@@ -237,7 +242,7 @@ La documentazione è un aspetto fondamentale per la comprensione del prodotto e 
 La verifica è un processo che si occupa di controllare che il prodotto soddisfi i requisiti stabiliti
 e sia pienamente funzionante. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{20M-CC Code Coverage}
+\subsubsubsection*{21M-CC Code Coverage}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Code Coverage} indica quale percentuale del codice sorgente è stata eseguita durante i test. Serve per capire quanto del codice è stato verificato dai test automatizzati.
 	\item \textbf{Come si calcola}: \begin{equation*}CC = \frac{LE}{LT}\end{equation*} dove:
@@ -249,7 +254,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\item \textbf{Valore ottimo}: \begin{equation*}CC = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{21M-BC Branch Coverage}
+\subsubsubsection*{22M-BC Branch Coverage}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Branch Coverage} indica quale percentuale dei rami decisionali (percorsi derivanti da istruzioni condizionali come \textit{if}, \textit{for}, \textit{while}) del codice è stata eseguita durante i test.
 	\item \textbf{Come si calcola}: \begin{equation*}BC = \frac{BE}{BT}\end{equation*} dove:
@@ -261,7 +266,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\item \textbf{Valore ottimo}: \begin{equation*}BC = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{22M-SC Statement Coverage}
+\subsubsubsection*{23M-SC Statement Coverage}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Statement Coverage} indica quale percentuale di istruzioni del codice è stata eseguita durante i test.
 	\item \textbf{Come si calcola}: \begin{equation*}SC = \frac{IE}{IT}\end{equation*} dove:
@@ -273,7 +278,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\item \textbf{Valore ottimo}: \begin{equation*}SC = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{23M-FD Failure Density}
+\subsubsubsection*{24M-FD Failure Density}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Failure Density} indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo rispetto alla dimensione del software stesso.
 	\item \textbf{Come si calcola}: \begin{equation*}FD = \frac{DF}{LT}\end{equation*} dove:
@@ -285,7 +290,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\item \textbf{Valore ottimo}: \begin{equation*}FD = 0\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{24M-PTCP Passed Test Case Percentage}
+\subsubsubsection*{25M-PTCP Passed Test Case Percentage}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Passed Test Case Percentage} indica la percentuale di test che sono stati eseguiti con successo su una base di test.
 	\item \textbf{Come si calcola}: \begin{equation*}PTCP = \frac{TS}{TT}\end{equation*} dove:
@@ -302,7 +307,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 \subsubsection{Risoluzione dei problemi}
 La risoluzione dei problemi è un processo che mira a identificare, analizzare e risolvere le varie problematiche che possono emergere durante lo sviluppo. La gestione dei rischi, in particolare, si occupa di identificare, analizzare e gestire i rischi che possono insorgere durante lo svolgimento del progetto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{25M-RMR Risk Mitigation Rate}
+\subsubsubsection*{26M-RMR Risk Mitigation Rate}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Risk Mitigation Rate} indica la percentuale di rischi identificati che sono stati mitigati con successo.
 	\item \textbf{Come si calcola}: \begin{equation*}RMR = \frac{RM}{RT}\end{equation*} dove:
@@ -314,7 +319,7 @@ La risoluzione dei problemi è un processo che mira a identificare, analizzare e
 	\item \textbf{Valore ottimo}: \begin{equation*}RMR = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{26M-NCR Rischi Non Calcolati}
+\subsubsubsection*{27M-NCR Rischi Non Calcolati}
 \begin{itemize}
 	\item \textbf{Definizione}: indica il numero di rischi occorsi che non sono stati preventivati durante l'analisi dei rischi.
 	\item \textbf{Come si calcola}: si contano i rischi occorsi e non preventivati.
@@ -324,54 +329,6 @@ La risoluzione dei problemi è un processo che mira a identificare, analizzare e
 
 
 
-\subsubsection{Gestione della Qualità}
-La gestione della qualità è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
-
-\subsubsubsection*{27M-FU Facilità di Utilizzo}
-\begin{itemize}
-	\item \textbf{Definizione}: rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l'utilizzo del prodotto da parte di un utente generico.
-	\item \textbf{Come si calcola}: si contano gli errori riscontrati durante l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 3\ errori\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}= 0\ errori\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{28M-TA Tempo di Apprendimento}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo richiesto da parte di un utente generico per apprendere l'utilizzo del prodotto.
-	\item \textbf{Come si calcola}: si misura il tempo necessario per apprendere l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 12\ minuti\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}\leq 7\ minuti\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{29M-TR Tempo di Risposta}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo di risposta del sistema sotto carico rilevato.
-	\item \textbf{Come si calcola}: si misura il tempo massimo necessario per ottenere una risposta dal sistema.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 8\ s\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}\leq 4\ s\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{30M-TE Tempo di Elaborazione}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato.
-	\item \textbf{Come si calcola}: si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all'utente.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 10\ s\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}\leq 5\ s\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{31M-QMS Metriche di Qualità Soddisfatte}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il numero di metriche implementate e soddisfatte, tra quelle definite.
-	\item \textbf{Come si calcola}: \begin{equation*}QMS = \frac{MS}{MT}\end{equation*} dove:
-		\begin{itemize}
-			\item $MS$: metriche soddisfatte;
-			\item $MT$: metriche totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}QMS \geq 90\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}QMS = 100\%\end{equation*}
-\end{itemize}
-
-
 
 \subsection{Processi organizzativi}
 I processi organizzativi sono processi che si occupano di definire le linee guida e le procedure da seguire per garantire un'efficace gestione e coordinazione del progetto.
@@ -379,7 +336,7 @@ I processi organizzativi sono processi che si occupano di definire le linee guid
 \subsubsection{Pianificazione}
 La pianificazione è un processo che si occupa di definire le attività da svolgere e le risorse temporali e umane necessarie per il loro svolgimento. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{32M-RSI Requirements Stability Index}
+\subsubsubsection*{28M-RSI Requirements Stability Index}
 \begin{itemize}
 	\item \textbf{Definizione}: il \textit{Requirements Stability Index} (RSI) indica la percentuale di requisiti che sono rimasti invariati rispetto al totale dei requisiti inizialmente definiti. Si tratta di una metrica utilizzata per misurare quanto i requisiti di un progetto rimangono stabili durante il ciclo di vita del progetto stesso, è particolarmente utile per comprendere l'impatto delle modifiche ai requisiti sul progetto.
 	\item \textbf{Come si calcola}: \begin{equation*}RSI = \frac{RI - (RA + RR + RC)}{RI}\end{equation*} dove:
@@ -392,6 +349,55 @@ La pianificazione è un processo che si occupa di definire le attività da svolg
 	\item \textbf{Valore ammissibile}: \begin{equation*}RSI \geq 75\%\end{equation*}
 	\item \textbf{Valore ottimo}: \begin{equation*}RSI = 100\%\end{equation*}
 \end{itemize}
+
+
+\subsubsection{Gestione della Qualità}
+La gestione della qualità è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
+
+\subsubsubsection*{29M-FU Facilità di Utilizzo}
+\begin{itemize}
+	\item \textbf{Definizione}: rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l'utilizzo del prodotto da parte di un utente generico.
+	\item \textbf{Come si calcola}: si contano gli errori riscontrati durante l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 3\ errori\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}= 0\ errori\end{equation*}
+\end{itemize}
+
+\subsubsubsection*{30M-TA Tempo di Apprendimento}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo richiesto da parte di un utente generico per apprendere l'utilizzo del prodotto.
+	\item \textbf{Come si calcola}: si misura il tempo necessario per apprendere l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 12\ minuti\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}\leq 7\ minuti\end{equation*}
+\end{itemize}
+
+\subsubsubsection*{31M-TR Tempo di Risposta}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo di risposta del sistema sotto carico rilevato.
+	\item \textbf{Come si calcola}: si misura il tempo massimo necessario per ottenere una risposta dal sistema.
+	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 8\ s\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}\leq 4\ s\end{equation*}
+\end{itemize}
+
+\subsubsubsection*{32M-TE Tempo di Elaborazione}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato.
+	\item \textbf{Come si calcola}: si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all'utente.
+	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 10\ s\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}\leq 5\ s\end{equation*}
+\end{itemize}
+
+\subsubsubsection*{33M-QMS Metriche di Qualità Soddisfatte}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il numero di metriche implementate e soddisfatte, tra quelle definite.
+	\item \textbf{Come si calcola}: \begin{equation*}QMS = \frac{MS}{MT}\end{equation*} dove:
+		\begin{itemize}
+			\item $MS$: metriche soddisfatte;
+			\item $MT$: metriche totali.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}QMS \geq 90\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}QMS = 100\%\end{equation*}
+\end{itemize}
+
 % \subsection{Metriche per la qualità di processo}
 % \begin{longtable}{|>{\centering\arraybackslash}p{0.1\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.32\textwidth}|}
 %     \hline
