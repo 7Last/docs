@@ -1,13 +1,15 @@
 title,actor,uc_code,uc_desc
-SyncCity,Autorità locale,UC-11,Visualizzazione messaggio assenza di dati
-SyncCity,Sensore,UC-12,Trasmissione dati temperatura
-SyncCity,Sensore,UC-13,Trasmissione dati umidità
-SyncCity,Sensore,UC-14,Trasmissione dati qualità dell'aria
-SyncCity,Sensore,UC-15,Trasmissione dati precipitazioni
-SyncCity,Sensore,UC-16,Trasmissione dati traffico
-SyncCity,Sensore,UC-17,Trasmissione dati colonnine di ricarica
-SyncCity,Sensore,UC-18,Trasmissione dati parcheggi
-SyncCity,Sensore,UC-19,Trasmissione dati isole ecologiche
-SyncCity,Sensore,UC-20,Trasmissione dati livello di acqua
-SyncCity,Sensore,UC-21,Applicazione filtro
-SyncCity,Sensore,UC-22,Ricezione notifiche superamento soglie
+SyncCity,Autorità locale,UC-1,Visualizzazione dashboard
+SyncCity,Autorità locale,UC-12,Visualizzazione messaggio assenza di dati
+SyncCity,Autorità locale,UC-13,Trasmissione dati
+UC-13: Trasmissione dati,Sensore,UC-13.1,Trasmissione dati temperatura
+UC-13: Trasmissione dati,Sensore,UC-13.2,Trasmissione dati umidità
+UC-13: Trasmissione dati,Sensore,UC-13.3,Trasmissione dati qualità dell'aria
+UC-13: Trasmissione dati,Sensore,UC-13.4,Trasmissione dati precipitazioni
+UC-13: Trasmissione dati,Sensore,UC-13.5,Trasmissione dati traffico
+UC-13: Trasmissione dati,Sensore,UC-13.6,Trasmissione dati colonnine di ricarica
+UC-13: Trasmissione dati,Sensore,UC-13.7,Trasmissione dati parcheggi
+UC-13: Trasmissione dati,Sensore,UC-13.8,Trasmissione dati isole ecologiche
+UC-13: Trasmissione dati,Sensore,UC-13.9,Trasmissione dati livello di acqua
+SyncCity,Autorità locale,UC-14,Applicazione filtro
+SyncCity,Autorità locale,UC-15,Ricezione notifiche superamento soglie
