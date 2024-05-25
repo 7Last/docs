@@ -17,6 +17,9 @@
 \renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
 \renewcommand\familydefault{\sfdefault}
 
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
 \addto\captionsitalian{\renewcommand{\figurename}{Figura}}
 
 %-------------------INIZIO DOCUMENTO--------------
@@ -30,18 +33,23 @@
 
 %-----------tabella revisioni-----------%
 \begin{table}[!h]
-
+	\caption*{Versioni}
+	\footnotesize
 	\begin{center}
-		\caption*{Versioni}
-		\vspace{0.5cm}
 		\begin{tabular}{ l l l l p{6cm} }
-			\hline                                                                                \\[-2ex]
-			Ver. & Data       & Autore & Descrizione \\
+			\hline                                                                                        \\[-2ex]
+			Ver. & Data       & Redattore          & Verificatore       & Descrizione                     \\
 			\\[-2ex] \hline \\[-1.5ex]
-			1.0 & 2024-05-12 & Leonardo Baldo   & Verifica finale \\
-			0.3 & 2024-04-05 & Raul Seganfreddo & Aggiunta Introduzione \\
-			0.2 & 2024-04-05 & Matteo Tiozzo    & Modificato tabella versioni \\
-			0.1 & 2024-03-29 & Raul Seganfreddo & Creazione struttura documento \\
+			1.0  & 2024-05-24 & Elena Ferro 	   	& Matteo Tiozzo      & Modifica tabella delle versioni 		\\
+			0.9  & 2024-05-10 & Valerio Occhinegro 	& Leonardo Baldo 	 & Aggiunta metriche di qualità         \\
+			0.8  & 2024-05-08 & Matteo Tiozzo   	& Leonardo Baldo 	 & Aggiunta standard per la qualità     \\
+			0.7  & 2024-04-26 & Elena Ferro	   		& Antonio Benetazzo  & Aggiunta processi organizzativi 		\\
+			0.6  & 2024-04-22 & Leonardo Baldo	   	& Antonio Benetazzo  & Conclusione processi di supporto 	\\
+			0.5  & 2024-04-16 & Raul Seganfreddo    & Valerio Occhinegro & Continuazione processi di supporto   \\
+			0.4  & 2024-04-10 & Davide Malgarise    & Valerio Occhinegro & Inizio processi di supporto       	\\
+			0.3  & 2024-04-08 & Antonio Benetazzo   & Valerio Occhinegro & Conclusione processi primari       	\\
+			0.2  & 2024-04-04 & Antonio Benetazzo  	& Valerio Occhinegro & Inizio processi primari       		\\
+			0.1  & 2024-03-29 & Raul Seganfreddo   	& Valerio Occhinegro & Creazione template e aggiunta introduzione     \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
