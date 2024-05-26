@@ -11,7 +11,7 @@ La qualità di processo è un criterio fondamentale ed è alla base di ogni prod
 \subsubsection{Fornitura}
 Nella fase di fornitura si definiscono le procedure e le risorse necessarie per la consegna del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{1M-PV Planned Value}
+\hypertarget{1M}{\subsubsubsection*{1M-PV Planned Value}}
 \begin{itemize}
 	\item \textbf{Definizione}: il \textit{Planned Value} (o Valore Pianificato) rappresenta il valore del lavoro programmato per essere completato fino a un determinato momento. Si tratta del budget preventivato per lo sprint in corso.
 	\item \textbf{Come si calcola}: \begin{equation*}PV = BAC \times LP\end{equation*} dove:
@@ -23,7 +23,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}PV \leq BAC\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{2M-EV Earned Value}
+\hypertarget{2M}{\subsubsubsection*{2M-EV Earned Value}}
 \begin{itemize}
 	\item \textbf{Definizione}: l'\textit{Earned Value} (o Valore Guadagnato) rappresenta il valore del lavoro effettivamente completato fino al periodo in analisi.
 	\item \textbf{Come si calcola}: \begin{equation*}EV = BAC \times LC\end{equation*} dove:
@@ -35,7 +35,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}EV \leq EAC\ (Estimated\ At\ Completion)\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{3M-AC Actual Cost}
+\hypertarget{3M}{\subsubsubsection*{3M-AC Actual Cost}}
 \begin{itemize}
 	\item \textbf{Definizione}: l'\textit{Actual Cost} (o Costo Effettivo) rappresenta il costo effettivamente sostenuto per completare il lavoro fino al periodo in analisi.
 	\item \textbf{Come si calcola}: si ottiene sommando tutti i costi effettivi sostenuti fino a quella data.
@@ -43,7 +43,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}AC \leq EAC\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{4M-SV Schedule Variance}
+\hypertarget{4M}{\subsubsubsection*{4M-SV Schedule Variance}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Schedule Variance} (o Variazione di Programma) rappresenta la differenza tra il valore del lavoro effettivamente completato e il valore del lavoro pianificato, calcolata in percentuale.
 	\item \textbf{Come si calcola}: \begin{equation*}SV = \frac{EV - PV}{EV}\end{equation*}
@@ -51,7 +51,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}SV \geq 0\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{5M-CV Cost Variance}
+\hypertarget{5M}{\subsubsubsection*{5M-CV Cost Variance}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Cost Variance} (o Variazione dei Costi) rappresenta la differenza tra il valore del lavoro effettivamente completato e il costo effettivamente sostenuto per completarlo, calcolata in percentuale.
 	\item \textbf{Come si calcola}: \begin{equation*}CV = \frac{EV - AC}{EV}\end{equation*}
@@ -59,7 +59,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}CV \geq 0\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{6M-CPI Cost Performance Index}
+\hypertarget{6M}{\subsubsubsection*{6M-CPI Cost Performance Index}}
 \begin{itemize}
 	\item \textbf{Definizione}: il \textit{Cost Performance Index} rappresenta il rapporto tra il valore del lavoro effettivamente completato e i costi sostenuti per completarlo.
 	\item \textbf{Come si calcola}: \begin{equation*}CPI = \frac{EV}{AC}\end{equation*}
@@ -67,7 +67,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}CPI \geq 1\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{7M-SPI Schedule Performance Index}
+\hypertarget{7M}{\subsubsubsection*{7M-SPI Schedule Performance Index}}
 \begin{itemize}
 	\item \textbf{Definizione}: lo \textit{Schedule Performance Index} rappresenta l'efficienza con cui il progetto sta rispettando il programma.
 	\item \textbf{Come si calcola}: \begin{equation*}SPI = \frac{EV}{PV}\end{equation*}
@@ -75,7 +75,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}SPI \geq 1\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{8M-EAC Estimate At Completion}
+\hypertarget{8M}{\subsubsubsection*{8M-EAC Estimate At Completion}}
 \begin{itemize}
 	\item \textbf{Definizione}: l'\textit{Estimate at Completion} (o Stima al Completamento) rappresenta una previsione aggiornata del costo totale del progetto basata sulle performance attuali, calcolata in base ai costi effettivamente sostenuti e ai costi stimati per completare il lavoro rimanente.
 	\item \textbf{Come si calcola}: \begin{equation*}EAC = AC + ETC\end{equation*}
@@ -83,7 +83,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}EAC \leq BAC\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{9M-ETC Estimate To Complete}
+\hypertarget{9M}{\subsubsubsection*{9M-ETC Estimate To Complete}}
 \begin{itemize}
 	\item \textbf{Definizione}: l'\textit{Estimate to Complete} (o Stima al Completamento) rappresenta una previsione del costo necessario per completare le attività rimanenti del progetto basata sulle performance attuali.
 	\item \textbf{Come si calcola}: \begin{equation*}ETC = EAC - AC\end{equation*}
@@ -91,7 +91,7 @@ Nella fase di fornitura si definiscono le procedure e le risorse necessarie per 
 	\item \textbf{Valore ottimo}: \begin{equation*}ETC \leq EAC\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{10M-OTDR On-Time Delivery Rate}
+\hypertarget{10M}{\subsubsubsection*{10M-OTDR On-Time Delivery Rate}}
 \begin{itemize}
 	\item \textbf{Definizione}: l'\textit{On-Time Delivery Rate} (o Tasso di Consegna nei Tempi) rappresenta la percentuale di attività completate entro la data di scadenza.
 	\item \textbf{Come si calcola}: \begin{equation*}OTDR = \frac{AP}{AT}\end{equation*} dove:
@@ -111,7 +111,7 @@ Nella fase di sviluppo si realizza il prodotto software, seguendo le specifiche 
 \subsubsubsection{Analisi dei requisiti}
 Questa fase consiste nell'esaminare le richieste della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}} e nel definire i requisiti che il prodotto dovrà soddisfare. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{11M-PRO Percentuale Requisiti Obbligatori}
+\hypertarget{11M}{\subsubsubsection*{11M-PRO Percentuale Requisiti Obbligatori}}
 \begin{itemize}
 	\item \textbf{Definizione}: rappresenta la percentuale di requisiti obbligatori soddisfatti secondo quanto definito nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti\textsubscript{G}}}.
 	\item \textbf{Come si calcola}: \begin{equation*}PRO = \frac{ROS}{ROT}\end{equation*} dove:
@@ -123,7 +123,7 @@ Questa fase consiste nell'esaminare le richieste della \href{https://7last.githu
 	\item \textbf{Valore ottimo}: \begin{equation*}PRO = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{12M-PRD Percentuale Requisiti Desiderabili}
+\hypertarget{12M}{\subsubsubsection*{12M-PRD Percentuale Requisiti Desiderabili}}
 \begin{itemize}
 	\item \textbf{Definizione}: rappresenta la percentuale di requisiti desiderabili soddisfatti secondo quanto definito nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti\textsubscript{G}}}.
 	\item \textbf{Come si calcola}: \begin{equation*}PRD = \frac{RDS}{RDT}\end{equation*} dove:
@@ -135,7 +135,7 @@ Questa fase consiste nell'esaminare le richieste della \href{https://7last.githu
 	\item \textbf{Valore ottimo}: \begin{equation*}PRD = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{13M-PRO Percentuale Requisiti Opzionali}
+\hypertarget{13M}{\subsubsubsection*{13M-PRO Percentuale Requisiti Opzionali}}
 \begin{itemize}
 	\item \textbf{Definizione}: rappresenta la percentuale di requisiti opzionali soddisfatti secondo quanto definito nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti\textsubscript{G}}}.
 	\item \textbf{Come si calcola}: \begin{equation*}PRO = \frac{ROS}{ROT}\end{equation*} dove:
@@ -149,7 +149,7 @@ Questa fase consiste nell'esaminare le richieste della \href{https://7last.githu
 
 \subsubsubsection{Progettazione}
 Questa fase consiste nel definire l'architettura del prodotto software, in modo da soddisfare i requisiti definiti in fase di analisi. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
-\subsubsubsection*{14M-PG Profondità delle Gerarchie}
+\hypertarget{14M}{\subsubsubsection*{14M-PG Profondità delle Gerarchie}}
 \begin{itemize}
 	\item \textbf{Definizione}: la profondità delle gerarchie rappresenta il numero massimo di livelli di annidamento delle classi.
 	\item \textbf{Come si calcola}: si conta il numero massimo di livelli di annidamento delle classi.
@@ -160,7 +160,7 @@ Questa fase consiste nel definire l'architettura del prodotto software, in modo 
 \subsubsubsection{Codifica}
 Queste metriche aiutano a valutare la qualità del codice, la complessità e la manutenibilità.
 
-\subsubsubsection*{15M-PPM Parametri Per Metodo}
+\hypertarget{15M}{\subsubsubsection*{15M-PPM Parametri Per Metodo}}
 \begin{itemize}
 	\item \textbf{Definizione}: numero medio di parametri passati ai metodi. Un numero elevato di parametri può indicare che un metodo è troppo complesso o che potrebbe essere suddiviso in metodi più piccoli.
 	\item \textbf{Come si calcola}: \begin{equation*}PPM = \frac{P}{M}\end{equation*} dove:
@@ -172,7 +172,7 @@ Queste metriche aiutano a valutare la qualità del codice, la complessità e la 
 	\item \textbf{Valore ottimo}: \begin{equation*}PPM \leq 5\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{16M-CPC Campi Per Classe}
+\hypertarget{16M}{\subsubsubsection*{16M-CPC Campi Per Classe}}
 \begin{itemize}
 	\item \textbf{Definizione}: numero medio di campi (variabili di istanza) per classe. Un numero elevato di campi dati può indicare che una classe sta facendo troppo e che potrebbe essere suddivisa in classi più piccole.
 	\item \textbf{Come si calcola}: \begin{equation*}CPC = \frac{CD}{CL}\end{equation*} dove:
@@ -184,7 +184,7 @@ Queste metriche aiutano a valutare la qualità del codice, la complessità e la 
 	\item \textbf{Valore ottimo}: \begin{equation*}CPC \leq 5\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{17M-LCPM Linee di Codice Per Metodo}
+\hypertarget{17M}{\subsubsubsection*{17M-LCPM Linee di Codice Per Metodo}}
 \begin{itemize}
 	\item \textbf{Definizione}: numero medio di linee di codice per metodo. Metodi troppo lunghi possono essere difficili da leggere, capire e mantenere.
 	\item \textbf{Come si calcola}: \begin{equation*}LCPM = \frac{LC}{M}\end{equation*} dove:
@@ -196,7 +196,7 @@ Queste metriche aiutano a valutare la qualità del codice, la complessità e la 
 	\item \textbf{Valore ottimo}: \begin{equation*}LCPM \leq 20\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{18M-CCM Complessità CicloMatica}
+\hypertarget{18M}{\subsubsubsection*{18M-CCM Complessità CicloMatica}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Complessità CicloMatica} rappresenta la complessità di un programma sulla base del numero di percorsi lineari indipendenti attraverso il codice sorgente. Un valore elevato indica un codice più complesso e potenzialmente più difficile da mantenere.
 	\item \textbf{Come si calcola}: \begin{equation*}CCM = E - N + 2P\end{equation*} dove:
@@ -217,7 +217,7 @@ I processi di supporto si affiancano ai processi primari per garantire il corret
 \subsubsection{Documentazione}
 La documentazione è un aspetto fondamentale per la comprensione del prodotto e per la sua manutenibilità. A livello pratico consiste nella redazione di manuali e documenti tecnici che descrivano il funzionamento del prodotto e le scelte progettuali adottate. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{19M-IG Indice Gulpease}
+\hypertarget{19M}{\subsubsubsection*{19M-IG Indice Gulpease}}
 \begin{itemize}
 	\item \textbf{Definizione}: l'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Misura la lunghezza delle parole e delle frasi rispetto al numero di lettere.
 	\item \textbf{Come si calcola}: \begin{equation*}IG = 89 + \frac{300 \times F - 10 \times L}{P}\end{equation*} dove:
@@ -230,7 +230,7 @@ La documentazione è un aspetto fondamentale per la comprensione del prodotto e 
 	\item \textbf{Valore ottimo}: \begin{equation*}IG \geq 90\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{20M-CO Correttezza Ortografica}
+\hypertarget{20M}{\subsubsubsection*{20M-CO Correttezza Ortografica}}
 \begin{itemize}
 	\item \textbf{Definizione}: la correttezza ortografica indica la presenza di errori ortografici nei documenti.
 	\item \textbf{Come si calcola}: si contano gli errori ortografici presenti nei documenti.
@@ -238,11 +238,59 @@ La documentazione è un aspetto fondamentale per la comprensione del prodotto e 
 	\item \textbf{Valore ottimo}: \begin{equation*}0\ errori\end{equation*}
 \end{itemize}
 
+
+\subsubsection{Gestione della Qualità}
+La gestione della qualità è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
+
+\hypertarget{21M}{\subsubsubsection*{21M-FU Facilità di Utilizzo}}
+\begin{itemize}
+	\item \textbf{Definizione}: rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l'utilizzo del prodotto da parte di un utente generico.
+	\item \textbf{Come si calcola}: si contano gli errori riscontrati durante l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+	\item \textbf{Valore ammissibile}: \begin{equation*}FU \leq 3\ errori\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}FU = 0\ errori\end{equation*}
+\end{itemize}
+
+\hypertarget{22M}{\subsubsubsection*{22M-TA Tempo di Apprendimento}}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo richiesto da parte di un utente generico per apprendere l'utilizzo del prodotto.
+	\item \textbf{Come si calcola}: si misura il tempo necessario per apprendere l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
+	\item \textbf{Valore ammissibile}: \begin{equation*}TA \leq 12\ minuti\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}TA \leq 7\ minuti\end{equation*}
+\end{itemize}
+
+\hypertarget{23M}{\subsubsubsection*{23M-TR Tempo di Risposta}}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo di risposta del sistema sotto carico rilevato.
+	\item \textbf{Come si calcola}: si misura il tempo massimo necessario per ottenere una risposta dal sistema.
+	\item \textbf{Valore ammissibile}: \begin{equation*}TR \leq 8\ s\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}TR \leq 4\ s\end{equation*}
+\end{itemize}
+
+\hypertarget{24M}{\subsubsubsection*{24M-TE Tempo di Elaborazione}}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato.
+	\item \textbf{Come si calcola}: si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all'utente.
+	\item \textbf{Valore ammissibile}: \begin{equation*}TE \leq 10\ s\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}TE \leq 5\ s\end{equation*}
+\end{itemize}
+
+\hypertarget{25M}{\subsubsubsection*{25M-QMS Metriche di Qualità Soddisfatte}}
+\begin{itemize}
+	\item \textbf{Definizione}: indica il numero di metriche implementate e soddisfatte, tra quelle definite.
+	\item \textbf{Come si calcola}: \begin{equation*}QMS = \frac{MS}{MT}\end{equation*} dove:
+		\begin{itemize}
+			\item $MS$: metriche soddisfatte;
+			\item $MT$: metriche totali.
+		\end{itemize}
+	\item \textbf{Valore ammissibile}: \begin{equation*}QMS \geq 90\%\end{equation*}
+	\item \textbf{Valore ottimo}: \begin{equation*}QMS = 100\%\end{equation*}
+\end{itemize}
+
 \subsubsection{Verifica}
 La verifica è un processo che si occupa di controllare che il prodotto soddisfi i requisiti stabiliti
 e sia pienamente funzionante. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{21M-CC Code Coverage}
+\hypertarget{26M}{\subsubsubsection*{26M-CC Code Coverage}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Code Coverage} indica quale percentuale del codice sorgente è stata eseguita durante i test. Serve per capire quanto del codice è stato verificato dai test automatizzati.
 	\item \textbf{Come si calcola}: \begin{equation*}CC = \frac{LE}{LT}\end{equation*} dove:
@@ -254,7 +302,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\item \textbf{Valore ottimo}: \begin{equation*}CC = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{22M-BC Branch Coverage}
+\hypertarget{27M}{\subsubsubsection*{27M-BC Branch Coverage}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Branch Coverage} indica quale percentuale dei rami decisionali (percorsi derivanti da istruzioni condizionali come \textit{if}, \textit{for}, \textit{while}) del codice è stata eseguita durante i test.
 	\item \textbf{Come si calcola}: \begin{equation*}BC = \frac{BE}{BT}\end{equation*} dove:
@@ -266,7 +314,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\item \textbf{Valore ottimo}: \begin{equation*}BC = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{23M-SC Statement Coverage}
+\hypertarget{28M}{\subsubsubsection*{28M-SC Statement Coverage}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Statement Coverage} indica quale percentuale di istruzioni del codice è stata eseguita durante i test.
 	\item \textbf{Come si calcola}: \begin{equation*}SC = \frac{IE}{IT}\end{equation*} dove:
@@ -278,7 +326,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\item \textbf{Valore ottimo}: \begin{equation*}SC = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{24M-FD Failure Density}
+\hypertarget{29M}{\subsubsubsection*{29M-FD Failure Density}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Failure Density} indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo rispetto alla dimensione del software stesso.
 	\item \textbf{Come si calcola}: \begin{equation*}FD = \frac{DF}{LT}\end{equation*} dove:
@@ -290,7 +338,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 	\item \textbf{Valore ottimo}: \begin{equation*}FD = 0\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{25M-PTCP Passed Test Case Percentage}
+\hypertarget{30M}{\subsubsubsection*{30M-PTCP Passed Test Case Percentage}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Passed Test Case Percentage} indica la percentuale di test che sono stati eseguiti con successo su una base di test.
 	\item \textbf{Come si calcola}: \begin{equation*}PTCP = \frac{TS}{TT}\end{equation*} dove:
@@ -307,7 +355,7 @@ e sia pienamente funzionante. Per valutare la qualità di tale processo, sono st
 \subsubsection{Risoluzione dei problemi}
 La risoluzione dei problemi è un processo che mira a identificare, analizzare e risolvere le varie problematiche che possono emergere durante lo sviluppo. La gestione dei rischi, in particolare, si occupa di identificare, analizzare e gestire i rischi che possono insorgere durante lo svolgimento del progetto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{26M-RMR Risk Mitigation Rate}
+\hypertarget{31M}{\subsubsubsection*{31M-RMR Risk Mitigation Rate}}
 \begin{itemize}
 	\item \textbf{Definizione}: la \textit{Risk Mitigation Rate} indica la percentuale di rischi identificati che sono stati mitigati con successo.
 	\item \textbf{Come si calcola}: \begin{equation*}RMR = \frac{RM}{RT}\end{equation*} dove:
@@ -319,7 +367,7 @@ La risoluzione dei problemi è un processo che mira a identificare, analizzare e
 	\item \textbf{Valore ottimo}: \begin{equation*}RMR = 100\%\end{equation*}
 \end{itemize}
 
-\subsubsubsection*{27M-NCR Rischi Non Calcolati}
+\hypertarget{32M}{\subsubsubsection*{32M-NCR Rischi Non Calcolati}}
 \begin{itemize}
 	\item \textbf{Definizione}: indica il numero di rischi occorsi che non sono stati preventivati durante l'analisi dei rischi.
 	\item \textbf{Come si calcola}: si contano i rischi occorsi e non preventivati.
@@ -336,7 +384,7 @@ I processi organizzativi sono processi che si occupano di definire le linee guid
 \subsubsection{Pianificazione}
 La pianificazione è un processo che si occupa di definire le attività da svolgere e le risorse temporali e umane necessarie per il loro svolgimento. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
 
-\subsubsubsection*{28M-RSI Requirements Stability Index}
+\hypertarget{33M}{\subsubsubsection*{33M-RSI Requirements Stability Index}}
 \begin{itemize}
 	\item \textbf{Definizione}: il \textit{Requirements Stability Index} (RSI) indica la percentuale di requisiti che sono rimasti invariati rispetto al totale dei requisiti inizialmente definiti. Si tratta di una metrica utilizzata per misurare quanto i requisiti di un progetto rimangono stabili durante il ciclo di vita del progetto stesso, è particolarmente utile per comprendere l'impatto delle modifiche ai requisiti sul progetto.
 	\item \textbf{Come si calcola}: \begin{equation*}RSI = \frac{RI - (RA + RR + RC)}{RI}\end{equation*} dove:
@@ -348,54 +396,6 @@ La pianificazione è un processo che si occupa di definire le attività da svolg
 		\end{itemize}
 	\item \textbf{Valore ammissibile}: \begin{equation*}RSI \geq 75\%\end{equation*}
 	\item \textbf{Valore ottimo}: \begin{equation*}RSI = 100\%\end{equation*}
-\end{itemize}
-
-
-\subsubsection{Gestione della Qualità}
-La gestione della qualità è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
-
-\subsubsubsection*{29M-FU Facilità di Utilizzo}
-\begin{itemize}
-	\item \textbf{Definizione}: rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l'utilizzo del prodotto da parte di un utente generico.
-	\item \textbf{Come si calcola}: si contano gli errori riscontrati durante l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
-	\item \textbf{Valore ammissibile}: \begin{equation*}FU \leq 3\ errori\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}FU = 0\ errori\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{30M-TA Tempo di Apprendimento}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo richiesto da parte di un utente generico per apprendere l'utilizzo del prodotto.
-	\item \textbf{Come si calcola}: si misura il tempo necessario per apprendere l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
-	\item \textbf{Valore ammissibile}: \begin{equation*}TA \leq 12\ minuti\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}TA \leq 7\ minuti\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{31M-TR Tempo di Risposta}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo di risposta del sistema sotto carico rilevato.
-	\item \textbf{Come si calcola}: si misura il tempo massimo necessario per ottenere una risposta dal sistema.
-	\item \textbf{Valore ammissibile}: \begin{equation*}TR \leq 8\ s\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}TR \leq 4\ s\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{32M-TE Tempo di Elaborazione}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato.
-	\item \textbf{Come si calcola}: si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all'utente.
-	\item \textbf{Valore ammissibile}: \begin{equation*}TE \leq 10\ s\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}TE \leq 5\ s\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{33M-QMS Metriche di Qualità Soddisfatte}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il numero di metriche implementate e soddisfatte, tra quelle definite.
-	\item \textbf{Come si calcola}: \begin{equation*}QMS = \frac{MS}{MT}\end{equation*} dove:
-		\begin{itemize}
-			\item $MS$: metriche soddisfatte;
-			\item $MT$: metriche totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}QMS \geq 90\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}QMS = 100\%\end{equation*}
 \end{itemize}
 
 % \subsection{Metriche per la qualità di processo}

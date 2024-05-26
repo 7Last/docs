@@ -224,6 +224,73 @@ Gli strumenti utilizzati per la redazione dei documenti sono:
 	\item \textbf{Visual Studio Code}: utilizzato come editor di testo per la scrittura dei documenti.
 \end{itemize}
 
+\subsection{Gestione della qualità}
+\subsubsection{Introduzione}
+La gestione della qualità consiste in un insieme di attività e processi volti a garantire che il software sviluppato soddisfi gli standard di qualità richiesti. Questo include l'adesione a requisiti specificati, normative, e le aspettative degli stakeholder. La gestione della qualità è cruciale per assicurare che il prodotto finale sia affidabile, sicuro, e performante.
+
+\subsubsection{Attività}
+Il processo di gestione della qualità comprende le seguenti attività:
+\begin{enumerate}
+	\item \textbf{pianificazione della qualità}: vengono definiti gli standard di qualità e le metriche che il progetto deve raggiungere;
+	\item \textbf{assicurazione della qualità}: consiste in attività sistematiche e pianificate per garantire che i processi utilizzati durante lo sviluppo del software siano adeguati e seguiti correttamente;
+	\item \textbf{controllo della qualità}: consiste in ispezioni, test e revisioni tecniche per verificare che il prodotto soddisfi gli standard di qualità definiti;
+	\item \textbf{gestione dei requisiti}: assicurarsi che i requisiti siano chiari, completi e testabili, e che il software sviluppato soddisfi tali requisiti. Inoltre è importante tenere la tracciabilità tra i requisiti e le varie fasi del ciclo di vita del software per garantire che tutte le richieste siano soddisfatte;
+	\item \textbf{gestione delle configurazioni}: attraverso un sistema di gestione delle configurazioni ci si assicura che ciascuna di esse venga sottoposta ad opportuni controlli e valutazioni;
+	\item \textbf{monitoraggio e reporting}: in questa fase vengono generati report che descrivono lo stato della qualità del progetto, inclusi i risultati dei test, i difetti trovati e le azioni correttive intraprese;
+	\item \textbf{miglioramento continuo}: applicare le modifiche ai processi basate sui feedback e sulle analisi per migliorare continuamente la qualità del software e dei processi di sviluppo.
+\end{enumerate}
+
+\subsubsection{Piano di qualifica}
+Il documento \textit{Piano di Qualifica} è progettato per garantire che il software sviluppato rispetti gli standard di qualità richiesti e soddisfi le aspettative degli stakeholder. Il suo utilizzo e il suo scopo si estendono a diverse aree critiche del progetto, dalle fasi iniziali di pianificazione fino alla consegna finale del prodotto.
+
+\subsubsection{Ciclo di Deming}
+Il \textit{ciclo di Deming}, è un ciclo a 4 stadi che consente di apportare specifiche migliorie a specifici processi. È composto da:
+\begin{itemize}
+	\item \textbf{Plan}: in cui si definiscono le attività, scadenze, responsabilità e risorse per raggiungere specifici obiettivi di miglioramento;
+	\item \textbf{Do}: esecuzione delle attività definite dal punto precedente;
+	\item \textbf{Check}: verifica l'esito delle azioni di miglioramento rispetto alle attese;
+	\item \textbf{Act}: consolidare il buono e cercare modi per migliorare il resto.
+\end{itemize}
+Riteniamo di fondamentale importanza specificare che questo ciclo \textbf{non opera} sul prodotto, bensì sul \textbf{\textit{way of working}} del gruppo, per migliorarlo e renderlo più efficiente.
+
+\subsubsection{Struttura e identificazioni metriche}
+Ogni metrica presenta la seguente struttura:
+\begin{itemize}
+	\item \textbf{Metrica}:
+	      codice identificativo nel formato:
+	      \begin{center}
+		      \textbf{[numero]M-[acronimo]}
+	      \end{center}
+	      Dove:
+	      \begin{itemize}
+		      \item \textbf{[numero]}: numero progressivo univoco per ogni metrica;
+		      \item \textbf{M}: metrica;
+		      \item \textbf{[acronimo]}: abbreviazione del nome della metrica.
+	      \end{itemize}
+	\item \textbf{Nome}: nome della metrica;
+	\item \textbf{Valore accettabile}: valore minimo affinchè la metrica sia considerabile soddisfacente e conforme agli obiettivi di qualità;
+	\item \textbf{Valore ammissibile}: valore ottimale e ideale che dovrebbe essere raggiunto dalla metrica;
+	\item \textbf{Valore ottimo}:
+	\item \textbf{Descrizione}: breve descrizione della metrica adottata e delle sue funzionalità;
+\end{itemize}
+
+\subsubsection{Metriche}
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ | c | l | }
+		\hline
+		\textbf{Codice}                      & \textbf{Nome esteso}            \\
+		\hline
+		\underline{\hyperlink{21M}{21M-FU}}  & Facilità di utilizzo            \\
+        \underline{\hyperlink{22M}{22M-TA}}  & Tempo di apprendimento          \\
+        \underline{\hyperlink{23M}{23M-TR}}  & Tempo di risposta               \\
+        \underline{\hyperlink{24M}{24M-TE}}  & Tempo di elaborazione           \\
+        \underline{\hyperlink{25M}{25M-QMS}} & Metriche di qualità soddisfatte \\
+		\hline
+	\end{tabular}
+	\caption{Metriche relative alla Gestione della Qualità}
+\end{table}
+
 \subsection{Verifica}
 \subsubsection{Introduzione}
 La verifica nel ciclo di vita del software garantisce l'efficienza e la correttezza delle attività, assicurando che i prodotti soddisfino i requisiti. I Verificatori applicano tecniche di test seguendo procedure definite. Il Piano di Qualifica traccia il percorso di verifica, stabilendo obiettivi e criteri di accettazione.
@@ -599,67 +666,3 @@ Dove:
 \begin{itemize}
 	\item \textbf{ClickUp}: utilizzato per la gestione delle attività e delle issue;
 \end{itemize}
-
-\subsection{Gestione della qualità}
-\subsubsection{Introduzione}
-La gestione della qualità consiste in un insieme di attività e processi volti a garantire che il software sviluppato soddisfi gli standard di qualità richiesti. Questo include l'adesione a requisiti specificati, normative, e le aspettative degli stakeholder. La gestione della qualità è cruciale per assicurare che il prodotto finale sia affidabile, sicuro, e performante.
-
-\subsubsection{Attività}
-Il processo di gestione della qualità comprende le seguenti attività:
-\begin{enumerate}
-	\item \textbf{pianificazione della qualità}: vengono definiti gli standard di qualità e le metriche che il progetto deve raggiungere;
-	\item \textbf{assicurazione della qualità}: consiste in attività sistematiche e pianificate per garantire che i processi utilizzati durante lo sviluppo del software siano adeguati e seguiti correttamente;
-	\item \textbf{controllo della qualità}: consiste in ispezioni, test e revisioni tecniche per verificare che il prodotto soddisfi gli standard di qualità definiti;
-	\item \textbf{gestione dei requisiti}: assicurarsi che i requisiti siano chiari, completi e testabili, e che il software sviluppato soddisfi tali requisiti. Inoltre è importante tenere la tracciabilità tra i requisiti e le varie fasi del ciclo di vita del software per garantire che tutte le richieste siano soddisfatte;
-	\item \textbf{gestione delle configurazioni}: attraverso un sistema di gestione delle configurazioni ci si assicura che ciascuna di esse venga sottoposta ad opportuni controlli e valutazioni;
-	\item \textbf{monitoraggio e reporting}: in questa fase vengono generati report che descrivono lo stato della qualità del progetto, inclusi i risultati dei test, i difetti trovati e le azioni correttive intraprese;
-	\item \textbf{miglioramento continuo}: applicare le modifiche ai processi basate sui feedback e sulle analisi per migliorare continuamente la qualità del software e dei processi di sviluppo.
-\end{enumerate}
-
-\subsubsection{Piano di qualifica}
-Il documento \textit{Piano di Qualifica} è progettato per garantire che il software sviluppato rispetti gli standard di qualità richiesti e soddisfi le aspettative degli stakeholder. Il suo utilizzo e il suo scopo si estendono a diverse aree critiche del progetto, dalle fasi iniziali di pianificazione fino alla consegna finale del prodotto.
-
-\subsubsection{Ciclo di Deming}
-Il \textit{ciclo di Deming}, è un ciclo a 4 stadi che consente di apportare specifiche migliorie a specifici processi. È composto da:
-\begin{itemize}
-	\item \textbf{Plan}: in cui si definiscono le attività, scadenze, responsabilità e risorse per raggiungere specifici obiettivi di miglioramento;
-	\item \textbf{Do}: esecuzione delle attività definite dal punto precedente;
-	\item \textbf{Check}: verifica l'esito delle azioni di miglioramento rispetto alle attese;
-	\item \textbf{Act}: consolidare il buono e cercare modi per migliorare il resto.
-\end{itemize}
-Riteniamo di fondamentale importanza specificare che questo ciclo \textbf{non opera} sul prodotto, bensì sul \textbf{\textit{way of working}} del gruppo, per migliorarlo e renderlo più efficiente.
-
-\subsubsection{Struttura e identificazioni metriche}
-Ogni metrica presenta la seguente struttura:
-\begin{itemize}
-	\item \textbf{Metrica}:
-	      codice identificativo nel formato:
-	      \begin{center}
-		      \textbf{[numero]M-[acronimo]}
-	      \end{center}
-	      Dove:
-	      \begin{itemize}
-		      \item \textbf{[numero]}: numero progressivo univoco per ogni metrica;
-		      \item \textbf{M}: metrica;
-		      \item \textbf{[acronimo]}: abbreviazione del nome della metrica.
-	      \end{itemize}
-	\item \textbf{Nome}: nome della metrica;
-	\item \textbf{Valore accettabile}: valore minimo affinchè la metrica sia considerabile soddisfacente e conforme agli obiettivi di qualità;
-	\item \textbf{Valore ammissibile}: valore ottimale e ideale che dovrebbe essere raggiunto dalla metrica;
-	\item \textbf{Valore ottimo}:
-	\item \textbf{Descrizione}: breve descrizione della metrica adottata e delle sue funzionalità;
-\end{itemize}
-
-\subsubsection{Metriche}
-\begin{table}[h]
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		\textbf{Metrica} & \textbf{Nome}                   \\
-		\hline
-		30M-QMS          & Metriche di qualità soddisfatte \\
-		\hline
-	\end{tabular}
-	\caption{Metriche relative alla gestione della qualità}
-	\label{tab:2}
-\end{table}
