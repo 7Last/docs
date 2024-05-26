@@ -1,394 +1,152 @@
 \section{Metriche di qualità}
-La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte. Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale. Al fine di valutare nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche, meglio specificate nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#norme-di-progetto}{\textit{Norme di Progetto\textsubscript{G}}}. Il contenuto di questa sezione è necessario per identificare i parametri che le metriche devono rispettare per essere considerate accettabili o ottime. Esse sono state suddivise utilizzando lo \textbf{standard ISO/IEC 12207:1995}, il quale separa i processi di ciclo di vita del software, in tre categorie: % TODO aggiungere versione documento
-\begin{itemize}
-	\item processi di base e/o primari;
-	\item processi di supporto;
-	\item processi organizzativi.
-\end{itemize}
+La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte. Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale. Al fine di valutare nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche, meglio specificate nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#norme-di-progetto}{\textit{Norme di Progetto\textsubscript{G}}} e qui di seguito riepilogate. Esse sono state suddivise utilizzando lo \textbf{standard ISO/IEC 12207:1995}, il quale separa i processi di ciclo di vita del software in processi di base e/o primari, processi di supporto e processi organizzativi.
 
 
 
 \subsection{Processi di base e/o primari}
-
 \subsubsection{Fornitura}
-Nella fase di fornitura si definiscono le procedure e le risorse (economiche e temporali) necessarie per la consegna del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                       & Ammissibile          & Ottimo           \\
+		\hline
+		1M-PV    & Planned Value              & $PV \geq 0$          & $PV \leq BAC$    \\
+		2M-EV    & Earned Value               & $EV \geq 0$          & $EV \leq EAC$    \\
+		3M-AC    & Actual Cost                & $AC \geq 0$          & $AC \leq EAC$    \\
+		4M-SV    & Schedule Variance          & $SV \geq -10\%$      & $SV \geq 0\%$    \\
+		5M-CV    & Cost Variance              & $CV \geq -10\%$      & $CV \geq 0\%$    \\
+		6M-CPI   & Cost Performance Index     & $CPI \geq 0.8$       & $CPI \geq 1$     \\
+		7M-SPI   & Schedule Performance Index & $SPI \geq 0.8$       & $SPI \geq 1$     \\
+		8M-EAC   & Estimate At Completion     & $EAC \leq BAC + 5\%$ & $EAC \leq BAC$   \\
+		9M-ETC   & Estimate To Complete       & $ETC \geq 0$         & $ETC \leq EAC$   \\
+		10M-OTDR & On-Time Delivery Rate      & $OTDR \geq 90\%$     & $OTDR \geq 95\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Fornitura}
+\end{table}
 
-\subsubsubsection*{1M-PV Planned Value}
-\begin{itemize}
-	\item \textbf{Definizione}: il \textit{Planned Value} (o Valore Pianificato) rappresenta il valore del lavoro programmato per essere completato fino a un determinato momento. Si tratta del budget preventivato per lo sprint in corso.
-	\item \textbf{Come si calcola}: \begin{equation*}PV = BAC \times LP\end{equation*} dove:
-		\begin{itemize}
-			\item $BAC$: Budget At Completion;
-			\item $LP$: percentuale di lavoro pianificato.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}PV \geq 0\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}PV \leq BAC\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{2M-EV Earned Value}
-\begin{itemize}
-	\item \textbf{Definizione}: l'\textit{Earned Value} (o Valore Guadagnato) rappresenta il valore del lavoro effettivamente completato fino al periodo in analisi.
-	\item \textbf{Come si calcola}: \begin{equation*}EV = BAC \times LC\end{equation*} dove:
-		\begin{itemize}
-			\item $BAC$: Budget At Completion;
-			\item $LC$: percentuale di lavoro completato.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}EV \geq 0\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}EV \leq EAC\ (Estimated\ At\ Completion)\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{3M-AC Actual Cost}
-\begin{itemize}
-	\item \textbf{Definizione}: l'\textit{Actual Cost} (o Costo Effettivo) rappresenta il costo effettivamente sostenuto per completare il lavoro fino al periodo in analisi.
-	\item \textbf{Come si calcola}: si ottiene sommando tutti i costi effettivi sostenuti fino a quella data.
-	\item \textbf{Valore ammissibile}: \begin{equation*}AC \geq 0\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}AC \leq EAC\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{4M-SV Schedule Variance}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Schedule Variance} (o Variazione di Programma) rappresenta la differenza tra il valore del lavoro effettivamente completato e il valore del lavoro pianificato, calcolata in percentuale.
-	\item \textbf{Come si calcola}: \begin{equation*}SV = \frac{EV - PV}{EV}\end{equation*}
-	\item \textbf{Valore ammissibile}: \begin{equation*}SV \geq -10\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}SV \geq 0\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{5M-CV Cost Variance}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Cost Variance} (o Variazione dei Costi) rappresenta la differenza tra il valore del lavoro effettivamente completato e il costo effettivamente sostenuto per completarlo, calcolata in percentuale.
-	\item \textbf{Come si calcola}: \begin{equation*}CV = \frac{EV - AC}{EV}\end{equation*}
-	\item \textbf{Valore ammissibile}: \begin{equation*}CV \geq -10\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}CV \geq 0\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{6M-CPI Cost Performance Index}
-\begin{itemize}
-	\item \textbf{Definizione}: il \textit{Cost Performance Index} rappresenta il rapporto tra il valore del lavoro effettivamente completato e i costi sostenuti per completarlo.
-	\item \textbf{Come si calcola}: \begin{equation*}CPI = \frac{EV}{AC}\end{equation*}
-	\item \textbf{Valore ammissibile}: \begin{equation*}CPI \geq 0.8\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}CPI \geq 1\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{7M-SPI Schedule Performance Index}
-\begin{itemize}
-	\item \textbf{Definizione}: lo \textit{Schedule Performance Index} rappresenta l'efficienza con cui il progetto sta rispettando il programma.
-	\item \textbf{Come si calcola}: \begin{equation*}SPI = \frac{EV}{PV}\end{equation*}
-	\item \textbf{Valore ammissibile}: \begin{equation*}SPI \geq 0.8\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}SPI \geq 1\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{8M-EAC Estimate At Completion}
-\begin{itemize}
-	\item \textbf{Definizione}: l'\textit{Estimate at Completion} (o Stima al Completamento) rappresenta una previsione aggiornata del costo totale del progetto basata sulle performance attuali, calcolata in base ai costi effettivamente sostenuti e ai costi stimati per completare il lavoro rimanente.
-	\item \textbf{Come si calcola}: \begin{equation*}EAC = AC + ETC\end{equation*}
-	\item \textbf{Valore ammissibile}: \begin{equation*}EAC \leq BAC + 5\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}EAC \leq BAC\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{9M-ETC Estimate To Complete}
-\begin{itemize}
-	\item \textbf{Definizione}: l'\textit{Estimate to Complete} (o Stima al Completamento) rappresenta una previsione del costo necessario per completare le attività rimanenti del progetto basata sulle performance attuali.
-	\item \textbf{Come si calcola}: \begin{equation*}ETC = EAC - AC\end{equation*}
-	\item \textbf{Valore ammissibile}: \begin{equation*}ETC \geq 0\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}ETC \leq EAC\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{10M-OTDR On-Time Delivery Rate}
-\begin{itemize}
-	\item \textbf{Definizione}: l'\textit{On-Time Delivery Rate} (o Tasso di Consegna nei Tempi) rappresenta la percentuale di attività completate entro la data di scadenza.
-	\item \textbf{Come si calcola}: \begin{equation*}OTDR = \frac{AP}{AT}\end{equation*} dove:
-		\begin{itemize}
-			\item $AP$: attività completate entro la data di scadenza;
-			\item $AT$: attività totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}OTDR \geq 90\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}OTDR \geq 95\%\end{equation*}
-\end{itemize}
-
-
-
+\newpage
 \subsubsection{Sviluppo}
-Nella fase di sviluppo si realizza il prodotto software, seguendo le specifiche definite in fase di progettazione.
-Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
-
 \subsubsubsection{Analisi dei requisiti}
-Questa fase consiste nell'esaminare le richieste della \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}} e nel definire i requisiti che il prodotto dovrà soddisfare. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                               & Ammissibile      & Ottimo           \\
+		\hline
+		11M-PRO  & Percentuale Requisiti Obbligatori  & $PRO \geq 100\%$ & $PRO \geq 100\%$ \\
+		12M-PRD  & Percentuale Requisiti Desiderabili & $PRD \geq 35\%$  & $PRD \geq 100\%$ \\
+		13M-PRO  & Percentuale Requisiti Opzionali    & $PRO \geq 0\%$   & $PRO \geq 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Analisi dei requisiti}
+\end{table}
 
-\subsubsubsection*{11M-PRO Percentuale Requisiti Obbligatori}
-\begin{itemize}
-	\item \textbf{Definizione}: rappresenta la percentuale di requisiti obbligatori soddisfatti secondo quanto definito nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti\textsubscript{G}}}.
-	\item \textbf{Come si calcola}: \begin{equation*}PRO = \frac{ROS}{ROT}\end{equation*} dove:
-		\begin{itemize}
-			\item $ROS$: Requisiti Obbligatori Soddisfatti;
-			\item $ROT$: Requisiti Obbligatori Totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}PRO \geq 100\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}PRO = 100\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{12M-PRD Percentuale Requisiti Desiderabili}
-\begin{itemize}
-	\item \textbf{Definizione}: rappresenta la percentuale di requisiti desiderabili soddisfatti secondo quanto definito nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti\textsubscript{G}}}.
-	\item \textbf{Come si calcola}: \begin{equation*}PRD = \frac{RDS}{RDT}\end{equation*} dove:
-		\begin{itemize}
-			\item $RDS$: Requisiti Desiderabili Soddisfatti;
-			\item $RDT$: Requisiti Desiderabili Totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}PRD \geq 35\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}PRD = 100\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{13M-PRO Percentuale Requisiti Opzionali}
-\begin{itemize}
-	\item \textbf{Definizione}: rappresenta la percentuale di requisiti opzionali soddisfatti secondo quanto definito nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti\textsubscript{G}}}.
-	\item \textbf{Come si calcola}: \begin{equation*}PRO = \frac{ROS}{ROT}\end{equation*} dove:
-		\begin{itemize}
-			\item $ROS$: Requisiti Opzionali Soddisfatti;
-			\item $ROT$: Requisiti Opzionali Totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}PRO \geq 0\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}PRO \geq 100\%\end{equation*}
-\end{itemize}
-
-
+\subsubsubsection{Progettazione}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                       & Ammissibile & Ottimo           \\
+		\hline
+		14M-PG   & Profondità delle Gerarchie & $PG \leq 7$ & $PG \leq 5$      \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Progettazione}
+\end{table}
 
 \subsubsubsection{Codifica}
-Queste metriche aiutano a valutare la qualità del codice, la complessità e la manutenibilità.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                          & Ammissibile    & Ottimo         \\
+		\hline
+		15M-PPM  & Parametri Per Metodo          & $PPM \leq 7$   & $PPM \leq 5$   \\
+		16M-CPC  & Campi Per Classe 	         & $CPC \leq 8$   & $CPC \leq 5$   \\
+		17M-LCPM & Linee Di Commento Per Metodo  & $LCPM \geq 50$ & $LCPM \geq 20$ \\
+		18M-CCM  & Complessità Ciclomatica Media & $CCM \leq 6$   & $CCM \leq 3$   \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Codifica}
+\end{table}
 
-\subsubsubsection*{14M-PPM Parametri Per Metodo}
-\begin{itemize}
-	\item \textbf{Definizione}: numero medio di parametri passati ai metodi. Un numero elevato di parametri può indicare che un metodo è troppo complesso o che potrebbe essere suddiviso in metodi più piccoli.
-	\item \textbf{Come si calcola}: \begin{equation*}PPM = \frac{P}{M}\end{equation*} dove:
-		\begin{itemize}
-			\item $P$: numero totale di parametri;
-			\item $M$: numero totale di metodi.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}PPM \leq 7\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}PPM \leq 5\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{15M-CPC Campi Per Classe}
-\begin{itemize}
-	\item \textbf{Definizione}: numero medio di campi (variabili di istanza) per classe. Un numero elevato di campi dati può indicare che una classe sta facendo troppo e che potrebbe essere suddivisa in classi più piccole.
-	\item \textbf{Come si calcola}: \begin{equation*}CPC = \frac{CD}{CL}\end{equation*} dove:
-		\begin{itemize}
-			\item $CD$: numero totale di campi dati;
-			\item $CL$: numero totale di classi.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}CPC \leq 8\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}CPC \leq 5\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{16M-LCPM Linee di Codice Per Metodo}
-\begin{itemize}
-	\item \textbf{Definizione}: numero medio di linee di codice per metodo. Metodi troppo lunghi possono essere difficili da leggere, capire e mantenere.
-	\item \textbf{Come si calcola}: \begin{equation*}LCPM = \frac{LC}{M}\end{equation*} dove:
-		\begin{itemize}
-			\item $LC$: numero totale di linee di codice;
-			\item $M$: numero totale di metodi.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}LCPM \leq 50\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}LCPM \leq 20\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{17M-CCM Complessità CicloMatica}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Complessità CicloMatica} rappresenta la complessità di un programma sulla base del numero di percorsi lineari indipendenti attraverso il codice sorgente. Un valore elevato indica un codice più complesso e potenzialmente più difficile da mantenere.
-	\item \textbf{Come si calcola}: \begin{equation*}CCM = E - N + 2P\end{equation*} dove:
-		\begin{itemize}
-			\item $E$: numero di archi del grafo;
-			\item $N$: numero di nodi del grafo;
-			\item $P$: numero di componenti connesse.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}CCM \leq 6\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}CCM \leq 3\end{equation*}
-\end{itemize}
-
-
-
+\newpage
 \subsection{Processi di supporto}
-I processi di supporto si affiancano ai processi primari per garantire il corretto svolgimento delle attività.
-
 \subsubsection{Documentazione}
-La documentazione è un aspetto fondamentale per la comprensione del prodotto e per la sua manutenibilità. A livello pratico consiste nella redazione di manuali e documenti tecnici che descrivano il funzionamento del prodotto e le scelte progettuali adottate. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
-
-\subsubsubsection*{18M-IG Indice Gulpease}
-\begin{itemize}
-	\item \textbf{Definizione}: l'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana. Misura la lunghezza delle parole e delle frasi rispetto al numero di lettere.
-	\item \textbf{Come si calcola}: \begin{equation*}IG = 89 + \frac{300 \times F - 10 \times L}{P}\end{equation*} dove:
-		\begin{itemize}
-			\item $F$: numero totale di frasi nel documento;
-			\item $L$: numero totale di lettere nel documento;
-			\item $P$: numero totale di parole nel documento.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}IG \geq 60\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}IG \geq 90\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{19M-CO Correttezza Ortografica}
-\begin{itemize}
-	\item \textbf{Definizione}: la correttezza ortografica indica la presenza di errori ortografici nei documenti.
-	\item \textbf{Come si calcola}: si contano gli errori ortografici presenti nei documenti.
-	\item \textbf{Valore ammissibile}: \begin{equation*}0\ errori\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}0\ errori\end{equation*}
-\end{itemize}
-
-\subsubsection{Verifica}
-La verifica è un processo che si occupa di controllare che il prodotto soddisfi i requisiti stabiliti
-e sia pienamente funzionante. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
-
-\subsubsubsection*{20M-CC Code Coverage}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Code Coverage} indica quale percentuale del codice sorgente è stata eseguita durante i test. Serve per capire quanto del codice è stato verificato dai test automatizzati.
-	\item \textbf{Come si calcola}: \begin{equation*}CC = \frac{LE}{LT}\end{equation*} dove:
-		\begin{itemize}
-			\item $LE$: linee di codice eseguite;
-			\item $LT$: linee di codice totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}CC \geq 80\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}CC = 100\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{21M-BC Branch Coverage}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Branch Coverage} indica quale percentuale dei rami decisionali (percorsi derivanti da istruzioni condizionali come \textit{if}, \textit{for}, \textit{while}) del codice è stata eseguita durante i test.
-	\item \textbf{Come si calcola}: \begin{equation*}BC = \frac{BE}{BT}\end{equation*} dove:
-		\begin{itemize}
-			\item $BE$: rami eseguiti;
-			\item $BT$: rami totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}BC \geq 80\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}BC = 100\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{22M-SC Statement Coverage}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Statement Coverage} indica quale percentuale di istruzioni del codice è stata eseguita durante i test.
-	\item \textbf{Come si calcola}: \begin{equation*}SC = \frac{IE}{IT}\end{equation*} dove:
-		\begin{itemize}
-			\item $IE$: istruzioni eseguite;
-			\item $IT$: istruzioni totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}SC \geq 80\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}SC = 100\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{23M-FD Failure Density}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Failure Density} indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo rispetto alla dimensione del software stesso.
-	\item \textbf{Come si calcola}: \begin{equation*}FD = \frac{DF}{LT}\end{equation*} dove:
-		\begin{itemize}
-			\item $DF$: difetti trovati;
-			\item $LT$: linee di codice totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}FD \leq 15\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}FD = 0\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{24M-PTCP Passed Test Case Percentage}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Passed Test Case Percentage} indica la percentuale di test che sono stati eseguiti con successo su una base di test.
-	\item \textbf{Come si calcola}: \begin{equation*}PTCP = \frac{TS}{TT}\end{equation*} dove:
-		\begin{itemize}
-			\item $TS$: test superati;
-			\item $TT$: test totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}PTCP \geq 90\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}PTCP = 100\%\end{equation*}
-\end{itemize}
-
-
-
-\subsubsection{Risoluzione dei problemi}
-La risoluzione dei problemi è un processo che mira a identificare, analizzare e risolvere le varie problematiche che possono emergere durante lo sviluppo. La gestione dei rischi, in particolare, si occupa di identificare, analizzare e gestire i rischi che possono insorgere durante lo svolgimento del progetto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
-
-\subsubsubsection*{25M-RMR Risk Mitigation Rate}
-\begin{itemize}
-	\item \textbf{Definizione}: la \textit{Risk Mitigation Rate} indica la percentuale di rischi identificati che sono stati mitigati con successo.
-	\item \textbf{Come si calcola}: \begin{equation*}RMR = \frac{RM}{RT}\end{equation*} dove:
-		\begin{itemize}
-			\item $RM$: rischi mitigati;
-			\item $RT$: rischi totali identificati.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}RMR \geq 80\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}RMR = 100\%\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{26M-NCR Rischi Non Calcolati}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il numero di rischi occorsi che non sono stati preventivati durante l'analisi dei rischi.
-	\item \textbf{Come si calcola}: si contano i rischi occorsi e non preventivati.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 3\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}= 0\end{equation*}
-\end{itemize}
-
-
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                    & Ammissibile        & Ottimo             \\
+		\hline
+		19M-IG   & Indice Gulpease         & $IG \geq 40$       & $IG \geq 60$       \\
+		20M-CO   & Correttezza Ortografica & $CO = 0\ errori$   & $CO = 0\ errori$   \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Documentazione}
+\end{table}
 
 \subsubsection{Gestione della Qualità}
-La gestione della qualità è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                           & Ammissibile         & Ottimo              \\
+		\hline
+		21M-FU  & Facilità di Utilizzo            & $FU \geq 3\ errori$ & $FU \geq 0\ errori$ \\
+		22M-TA  & Tempo di Apprendimento	      & $TA \leq 12\ min$   & $TA \leq 7\ min$    \\
+		23M-TR  & Tempo di Risposta		          & $TR \leq 8\ sec$    & $TR \leq 4\ sec$    \\
+		24M-TE  & Tempo di Elaborazione		      & $TE \leq 10\ sec$   & $TE \leq 5\ sec$    \\
+		25M-QMS & Metriche di Qualità Soddisfatte & $QMS \geq 90\%$     & $QMS = 100\%$       \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Gestione della Qualità}
+\end{table}
 
-\subsubsubsection*{27M-FU Facilità di Utilizzo}
-\begin{itemize}
-	\item \textbf{Definizione}: rappresenta il livello di usabilità del prodotto software mediante il numero di errori riscontrati durante l'utilizzo del prodotto da parte di un utente generico.
-	\item \textbf{Come si calcola}: si contano gli errori riscontrati durante l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 3\ errori\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}= 0\ errori\end{equation*}
-\end{itemize}
+\subsubsection{Verifica}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                        & Ammissibile      & Ottimo            \\
+		\hline
+		26M-CC   & Code Coverage               & $CC \geq 80\%$   & $CC \geq 100\%$   \\
+		27M-BC   & Branch Coverage             & $BC \geq 80\%$   & $BC \geq 100\%$   \\
+		28M-SC   & Statement Coverage          & $SC \geq 80\%$   & $SC \geq 100\%$   \\
+		29M-FD   & Failure Density             & $FD \leq 15\%$   & $FD = 0\%$        \\
+		30M-PTCP & Passed Test Case Percentage & $PTCP \geq 90\%$ & $PTCP \geq 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Verifica}
+\end{table}
 
-\subsubsubsection*{28M-TA Tempo di Apprendimento}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo richiesto da parte di un utente generico per apprendere l'utilizzo del prodotto.
-	\item \textbf{Come si calcola}: si misura il tempo necessario per apprendere l'utilizzo del prodotto da parte di un utente che non ha conoscenze pregresse sul prodotto software.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 12\ minuti\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}\leq 7\ minuti\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{29M-TR Tempo di Risposta}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo di risposta del sistema sotto carico rilevato.
-	\item \textbf{Come si calcola}: si misura il tempo massimo necessario per ottenere una risposta dal sistema.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 8\ s\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}\leq 4\ s\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{30M-TE Tempo di Elaborazione}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione rilevato.
-	\item \textbf{Come si calcola}: si misura il tempo massimo di elaborazione di un dato grezzo dal momento della sua comparsa nel sistema fino alla sua presentazione all'utente.
-	\item \textbf{Valore ammissibile}: \begin{equation*}\leq 10\ s\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}\leq 5\ s\end{equation*}
-\end{itemize}
-
-\subsubsubsection*{31M-QMS Metriche di Qualità Soddisfatte}
-\begin{itemize}
-	\item \textbf{Definizione}: indica il numero di metriche implementate e soddisfatte, tra quelle definite.
-	\item \textbf{Come si calcola}: \begin{equation*}QMS = \frac{MS}{MT}\end{equation*} dove:
-		\begin{itemize}
-			\item $MS$: metriche soddisfatte;
-			\item $MT$: metriche totali.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}QMS \geq 90\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}QMS = 100\%\end{equation*}
-\end{itemize}
-
-
+\newpage
+\subsubsection{Risoluzione dei problemi}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                 & Ammissibile     & Ottimo           \\
+		\hline
+		31M-RMR  & Risk Mitigation Rate	& $RMR \geq 80\%$ & $RMR \geq 100\%$ \\
+		32M-NCR  & Rischi Non Calcolati	& $NCR \leq 3$    & $NCR = 0$        \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Risoluzione dei problemi}
+\end{table}
 
 \subsection{Processi organizzativi}
-I processi organizzativi sono processi che si occupano di definire le linee guida e le procedure da seguire per garantire un'efficace gestione e coordinazione del progetto.
-
 \subsubsection{Pianificazione}
-La pianificazione è un processo che si occupa di definire le attività da svolgere e le risorse temporali e umane necessarie per il loro svolgimento. Per valutare la qualità di tale processo, sono state definite le seguenti metriche.
-
-\subsubsubsection*{32M-RSI Requirements Stability Index}
-\begin{itemize}
-	\item \textbf{Definizione}: il \textit{Requirements Stability Index} (RSI) indica la percentuale di requisiti che sono rimasti invariati rispetto al totale dei requisiti inizialmente definiti. Si tratta di una metrica utilizzata per misurare quanto i requisiti di un progetto rimangono stabili durante il ciclo di vita del progetto stesso, è particolarmente utile per comprendere l'impatto delle modifiche ai requisiti sul progetto.
-	\item \textbf{Come si calcola}: \begin{equation*}RSI = \frac{RI - (RA + RR + RC)}{RI}\end{equation*} dove:
-		\begin{itemize}
-			\item $RI$: requisiti iniziali;
-			\item $RA$: requisiti aggiunti;
-			\item $RR$: requisiti rimossi;
-			\item $RC$: requisiti cambiati.
-		\end{itemize}
-	\item \textbf{Valore ammissibile}: \begin{equation*}RSI \geq 75\%\end{equation*}
-	\item \textbf{Valore ottimo}: \begin{equation*}RSI = 100\%\end{equation*}
-\end{itemize}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                         & Ammissibile    & Ottimo       \\
+		\hline
+		33M-RSI  & Requirements Stability Index & $RSI \geq 75\%$ & $RSI = 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Pianificazione}
+\end{table}
