@@ -18,6 +18,9 @@
 \renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
 \renewcommand\familydefault{\sfdefault}
 
+\let\theoldpage\thepage
+\renewcommand{\thepage}{\sffamily \theoldpage}
+
 %-------------------INIZIO DOCUMENTO--------------
 \begin{document}
 \include{title}
