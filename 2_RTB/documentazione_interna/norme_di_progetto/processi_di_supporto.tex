@@ -1,8 +1,8 @@
 \section{Processi di supporto}
 \subsection{Documentazione}
 \subsubsection{Introduzione}
-Il processo di documentazione è una fondamentale nella realizzazione e nel rilascio di un prodotto software,
-poichè fornisce informazioni utili alle parti coinvolte e tiene traccia di tutte le attività relative al ciclo di vita del software,
+Il processo di documentazione è una componente fondamentale nella realizzazione e nel rilascio di un prodotto software,
+poiché fornisce informazioni utili alle parti coinvolte e tiene traccia di tutte le attività relative al ciclo di vita del software,
 comprese scelte e norme adottate dal gruppo durante lo svolgimento del progetto. In particolare, la documentazione è utile per:
 \begin{itemize}
 	\item permettere una comprensione profonda del prodotto e delle sue funzionalità;
@@ -170,7 +170,7 @@ In particolare, la denominazione dei file nel branch \texttt{main} deve seguire 
 	\item \textbf{Grassetto}:
 	      \begin{itemize}
 		      \item titoli di sezione;
-		      \item termini importanti;https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+		      \item termini importanti;
 		      \item parole seguite da descrizione o elenchi puntati.
 	      \end{itemize}
 	\item \textbf{Corsivo}:
@@ -312,7 +312,7 @@ Al momento di completamento delle modifiche in un documento il redattore è tenu
 L'analisi è un processo essenziale che mira a garantire la qualità e l'affidabilità del prodotto finale. Questa fase critica comporta un esame dettagliato e sistematico di tutte le componenti del progetto per identificare e risolvere eventuali problemi prima della consegna. Si suddivide in \textbf{analisi dinamica} e \textbf{analisi statica}.
 
 \subsubsubsection{Analisi dinamica}
-L'analisi dinamica riguarda l'esame del comportamento del software durante la sua esecuzione. Questo tipo di analisi viene eseguito a tempo di esecuzione e si concentra sull'osservazione di come il software interagisce con il sistema operativo, le risorse di sistema e altre applicazioni. L'analisi dinamica è essenziale per valutare l'efficienza, le prestazioni e la sicurezza del software in condizioni operative reali; viene effettuata tramite l'utilizzo delle seguenti tipologie di test: 
+L'analisi dinamica riguarda l'esame del comportamento del software durante la sua esecuzione. Questo tipo di analisi viene eseguito a tempo di esecuzione e si concentra sull'osservazione di come il software interagisce con il sistema operativo, le risorse di sistema e altre applicazioni. L'analisi dinamica è essenziale per valutare l'efficienza, le prestazioni e la sicurezza del software in condizioni operative reali; viene effettuata tramite l'utilizzo delle seguenti tipologie di test:
 \begin{itemize}
 	\item test di unità;
 	\item test di integrazione;
@@ -455,7 +455,7 @@ Il walkthrough è una tecnica meno formale e più flessibile rispetto all'inspec
 
 \begin{itemize}
 	\item \href{http://aspell.net/}{Aspell} per il controllo ortografico;
-	\item \href{https://docs.python.org/3/library/unittest.html}{unittest} libreria di Python per lo sviluppo di test. 
+	\item \href{https://docs.python.org/3/library/unittest.html}{unittest} libreria di Python per lo sviluppo di test.
 \end{itemize}
 
 
@@ -549,21 +549,21 @@ L'approccio adottato per la redazione della documentazione segue il workflow not
         \item contiene il codice in produzione;
         \item ogni commit rappresenta una versione rilasciata.
     \end{itemize}
-    
+
     \item \textbf{develop branch}
     \begin{itemize}
         \item branch per lo sviluppo integrato;
         \item riceve i merge dai feature branches;
         \item rappresenta lo stato intermedio prima del rilascio.
     \end{itemize}
-    
+
     \item \textbf{feature branch}
     \begin{itemize}
         \item derivano dal branch develop;
         \item utilizzati per sviluppare nuove funzionalità;
         \item dopo il completamento, vengono mergiati in develop.
     \end{itemize}
-    
+
     \item \textbf{release branch}
     \begin{itemize}
         \item derivano dal branch develop;
@@ -571,7 +571,7 @@ L'approccio adottato per la redazione della documentazione segue il workflow not
         \item permettono di effettuare correzioni di bug e preparare la documentazione;
         \item dopo il completamento, vengono mergiati sia in master che in develop.
     \end{itemize}
-    
+
     \item \textbf{hotfix branch}
     \begin{itemize}
         \item derivano dal branch master;
@@ -584,7 +584,7 @@ L'approccio adottato per la redazione della documentazione segue il workflow not
 Il processo di consegna e rilascio secondo lo standard ISO/IEC 12207:1995 è una componente essenziale del ciclo di vita del software, che si concentra sulla gestione delle versioni del software e sulla distribuzione dei prodotti software agli utenti finali. Questo processo assicura che le versioni del software siano rilasciate in modo controllato, pianificato e che soddisfino i requisiti di qualità e sicurezza. Attraverso una serie di attività ben definite, il processo di gestione del rilascio garantisce che il software sia pronto per l'uso, minimizzando i rischi di problemi post-rilascio e massimizzando l'efficienza operativa. La creazione della prima release deve avvenire in concomitanza con la baseline RTB (Requirements and Technology Baseline), mentre la creazione delle successive release deve avvenire in concomitanza con la baseline PB (Product Baseline) e, se prevista, CA (Customer Acceptance).
 
 \subsubsection{Sito del gruppo}
-Il gruppo ha sviluppato un sito disponibile al link: \url{https://7last.github.io/}; che ha lo scopo di facilitare la consultazione dei documenti redatti fino ad ora. Tale pagina web viene aggiornata automaticamente per rispecchiare lo stato dei documenti presenti all'interno del branch main. Inoltre facilita la consultazione del glossario grazie a dei link, presenti nelle parole distinte dalla lettera G al pedice, diretti alla definizione del termine.  
+Il gruppo ha sviluppato un sito disponibile al link: \url{https://7last.github.io/}; che ha lo scopo di facilitare la consultazione dei documenti redatti fino ad ora. Tale pagina web viene aggiornata automaticamente per rispecchiare lo stato dei documenti presenti all'interno del branch main. Inoltre facilita la consultazione del glossario grazie a dei link, presenti nelle parole distinte dalla lettera G al pedice, diretti alla definizione del termine.
 
 \subsubsection{Strumenti} %to do%
 

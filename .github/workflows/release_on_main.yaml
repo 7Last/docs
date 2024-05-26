@@ -20,19 +20,24 @@ jobs:
           ref: develop
           path: .
 
-      - name: Configure SSH
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "7last.swe@gmail.com"
-          git config --global user.name "7last-bot"
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DOCS_DEPLOY_KEY }}
 
-      - name: Remove 0_template folder
-        run: rm -rf ./0_template
+      - name: Configure git
+        run: |
+          git config --global user.email "7last.swe@gmail.com"
+          git config --global user.name "github-actions"
+
+      - name: Cleanup files
+        run: |
+          rm -rf ./0_template
+          rm -rf ./images
+          rm aspell_check.sh
+          rm wordlist.txt
+          rm -rf ./scripts
+          rm -rf ./altri_documenti
 
       - name: Cleanup non pdf files
         run: |
@@ -57,9 +62,6 @@ jobs:
             rm -rf $(dirname $file)
           done
 
-      - name: If no changes, exit with success
-        run: git diff --exit-code || exit 0
-
       - name: git add
         run: git add .
 
@@ -69,7 +71,9 @@ jobs:
         run: git commit -m "[bot] $COMMIT_MESSAGE"
 
       - name: git push
-        run: git push -f origin develop:main
+        run: |
+          git remote set-url origin git@github.com:7Last/docs.git
+          git push -f origin develop:main
 
   deploy_docs_frontend:
     runs-on: ubuntu-latest
@@ -79,27 +83,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GITHUBIO_DEPLOY_KEY }}
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '21.7.0'
 
-      - name: Configure SSH and clone
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Configure git
         run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "7last.swe@gmail.com"
-          git config --global user.name "bot"
+          git config --global user.name "bot@7last"
 
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           repository: 7Last/7Last.github.io
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-key: ${{ secrets.GITHUBIO_DEPLOY_KEY }}
           path: .
           ref: main
 
@@ -112,17 +115,18 @@ jobs:
       - name: Generate docs
         run: python3 ./scripts/generate_docs.py
 
-      - name: Check for changes
+      - name: If no changes, exit with success
         run: |
-          git diff --exit-code || exit 0
-          git diff --cached --exit-code || exit 0
-          echo "No changes to the output on this push; exiting."
-          exit 0
+          if [[ -z $(git status -s) ]]; then
+            echo "No changes to commit"
+            exit 0
+          fi
 
       - name: Push updates on main
         run: |
           git add .
           git commit -m "[BOT] Update docs"
+          git remote set-url origin git@github.com:7Last/7Last.github.io.git
           git push origin main
 
       - name: Install dependencies
