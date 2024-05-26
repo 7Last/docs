@@ -15,16 +15,16 @@ Lo scopo della sezione è:
 \end{itemize}
 
 \subsubsection{Versionamento}
-La documentazione viene versionata allo stesso modo del codice sorgente, utilizzando la piattaforma Github.
+La documentazione viene versionata allo stesso modo del codice sorgente, utilizzando la piattaforma \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#github}{Github\textsubscript{G}}.
 Ciò permette di tenere traccia delle modifiche apportate ai documenti e di realizzare procedure automatiche per l'individuazione degli errori grammaticali,
-inserimento della "G" a pedice per i termini presenti nel glossario e la pubblicazione nel sito del progetto.\\
+inserimento della "G" a pedice per i termini presenti nel \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{glossario\textsubscript{G}} e la pubblicazione nel sito del progetto.\\
 Abbiamo stabilito di utilizzare il branch \texttt{main} per la pubblicazione dei documenti approvati dal verificatore e il branch \texttt{develop} per contenere
 i file in formato LaTex da cui derivano i documenti finali.
 
 \subsubsubsection{Branch policy}
 Sono state definite le seguenti regole per la gestione dei branch:
 \begin{itemize}
-	\item \texttt{main}: viene aggiornato solamente dalla \textit{Github Action} che si occupa di pubblicare i documenti approvati presenti nel branch \texttt{develop};
+	\item \texttt{main}: viene aggiornato solamente dalla \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#github}{\textit{Github \textsubscript{G}}Action} che si occupa di pubblicare i documenti approvati presenti nel branch \texttt{develop};
 	\item \texttt{develop}: per la pubblicazione in questo branch è necessario ricevere un'approvazione da parte del verificatore tramite \textit{pull request}.
 \end{itemize}
 
@@ -40,9 +40,9 @@ Ciascun documento segue un ciclo di vita ben definito, che prevede le seguenti f
 	\item \textbf{Scelta del template} da utilizzare per il documento, scegliendo tra \textit{documento}, \textit{verbale interno} o \textit{verbale esterno};
 	\item \textbf{Redazione} del documento, seguendo le norme tipografiche e le convenzioni stabilite;
 	\item \textbf{Commit} delle modifiche effettuate;
-	\item \textbf{Apertura \textit{pull request}} per la revisione del documento, che dovrà essere approvata dal verificatore e dal responsabile per lo sprint in corso;
+	\item \textbf{Apertura \textit{pull request}} per la revisione del documento, che dovrà essere approvata dal verificatore e dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} per lo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}} in corso;
 	\item \textbf{Chiusura \textit{pull request}} e \textbf{merge} del branch;
-	\item \textbf{Completamento task} su \textit{ClickUp}.
+	\item \textbf{Completamento task} su \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{\textit{ClickUp}\textsubscript{G}}.
 \end{enumerate}
 
 \subsubsection{Convenzioni nomenclatura e struttura di archiviazione}
@@ -75,17 +75,17 @@ Il redattore si occupa della stesura del documento, seguendo le norme tipografic
 chiarezza e la coerenza del testo. Dovrà rispettare le convenzioni sopracitate.
 
 \subsubsubsection{Il resposabile}
-Il responsabile coordina e gestisce le attività del gruppo. In particolare:
+Il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} coordina e gestisce le attività del gruppo. In particolare:
 \begin{itemize}
 	\item definire quali documenti devono essere prodotti e quali compiti devono essere svolti;
 	\item gestisce le risorse e gli strumenti necessari per ultimare tali attività;
 	\item approva la versione finale dei documenti;
-	\item comunica con gli stakeholder.
+	\item comunica con gli \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#stakeholder}{stakeholder\textsubscript{G}}.
 \end{itemize}
 
 \subsubsubsection{L'amministratore}
-L’amministratore è colui che si occupa della configurazione degli strumenti di supporto alla produzione del software; nel nostro caso,
-inserisce le attività nell'ITS ClickUp e le assegna ai membri del gruppo.
+L’\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#amministratore}{amministratore\textsubscript{G}} è colui che si occupa della configurazione degli strumenti di supporto alla produzione del software; nel nostro caso,
+inserisce le attività nell'ITS \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{ClickUp\textsubscript{G}} e le assegna ai membri del gruppo.
 
 \subsubsubsection{I verificatori}
 Il compito del verificatore è di controllare la correttezza e la qualità dei documenti prodotti, assicurandosi che siano conformi agli standard e alle norme stabilite.
@@ -159,11 +159,11 @@ Nel momento in cui il documento viene approvato, esso viene spostato nel branch 
 In particolare, la denominazione dei file nel branch \texttt{main} deve seguire la seguente convenzione:
 \begin{itemize}
 	\item \textbf{Verbali}: verbale\_esterno/interno\_YYYY\_MM\_DD\_vA.B;
-	\item \textbf{Norme di Progetto}: norme\_di\_progetto\_vA.B;
-	\item \textbf{Analisi dei Requisiti}: analisi\_dei\_requisiti\_vA.B;
-	\item \textbf{Piano di Progetto}: piano\_di\_progetto\_vA.B;
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{\textbf{Norme di Progetto}\textsubscript{G}}: norme\_di\_progetto\_vA.B;
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textbf{Analisi dei Requisiti}\textsubscript{G}}: analisi\_dei\_requisiti\_vA.B;
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{\textbf{Piano di Progetto}\textsubscript{G}}: piano\_di\_progetto\_vA.B;
 	\item \textbf{Lettera di Presentazione}: lettera\_di\_presentazione;
-	\item \textbf{Glossario}: glossario\_vA.B.
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{\textbf{Glossario}\textsubscript{G}}: \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{glossario\textsubscript{G}}\_vA.B.
 \end{itemize}
 \textbf{Stile del testo}
 \begin{itemize}
@@ -175,7 +175,7 @@ In particolare, la denominazione dei file nel branch \texttt{main} deve seguire 
 	      \end{itemize}
 	\item \textbf{Corsivo}:
 	      \begin{itemize}
-		      \item nome del gruppo e dell'azienda proponente;
+		      \item nome del gruppo e dell'azienda \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}};
 		      \item riferimenti a documenti esterni.
 	      \end{itemize}
 	\item \textbf{Maiuscolo}:
@@ -216,7 +216,7 @@ In particolare, la denominazione dei file nel branch \texttt{main} deve seguire 
 Gli strumenti utilizzati per la redazione dei documenti sono:
 \begin{itemize}
 	\item \textbf{LaTeX}: impiegato nella stesura dei documenti;
-	\item \textbf{GitHub}: utilizzato per la gestione del versionamento e per la condivisione dei documenti;
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#github}{\textbf{GitHub}\textsubscript{G}}: utilizzato per la gestione del versionamento e per la condivisione dei documenti;
 	\item \textbf{Visual Studio Code}: utilizzato come editor di testo per la scrittura dei documenti.
 \end{itemize}
 
@@ -224,21 +224,21 @@ Gli strumenti utilizzati per la redazione dei documenti sono:
 
 \subsection{Accertamento della qualità}
 \subsubsection{Introduzione}
-L'accertamento della qualità consiste in un insieme di attività e processi volti a garantire che il software sviluppato soddisfi gli standard di qualitativi richiesti. Questo include l'adesione a requisiti concordati con la proponente, normative ed è cruciale per assicurare che il prodotto finale sia affidabile e performante.
+L'accertamento della qualità consiste in un insieme di attività e processi volti a garantire che il software sviluppato soddisfi gli standard di qualitativi richiesti. Questo include l'adesione a requisiti concordati con la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}}, normative ed è cruciale per assicurare che il prodotto finale sia affidabile e performante.
 
 \subsubsection{Attività}
 Il processo di accertamento della qualità comprende le seguenti attività:
 \begin{enumerate}
-	\item \textbf{sviluppo del piano di qualifica}: vengono definiti gli standard di qualità e le metriche che il progetto deve raggiungere;
+	\item \textbf{sviluppo del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{piano di qualifica\textsubscript{G}}}: vengono definiti gli standard di qualità e le metriche che il progetto deve raggiungere;
 	\item \textbf{monitoraggio continuo della qualità}: consiste in attività sistematiche e pianificate per garantire che i processi utilizzati durante lo sviluppo del software siano adeguati e seguiti correttamente;
 	\item \textbf{gestione delle configurazioni}: attraverso un sistema di gestione delle configurazioni ci si assicura che ciascuna di esse venga sottoposta ad opportuni controlli e valutazioni;
 	\item \textbf{reporting}: in questa fase vengono generati report che descrivono lo stato della qualità del progetto, inclusi i risultati dei test, i difetti trovati e le azioni correttive intraprese;
 	\item \textbf{miglioramento continuo}: vengono applicate le modifiche ai processi basate sui feedback e sulle analisi per migliorare continuamente la qualità del software e dei processi di sviluppo;
-	\item \textbf{confronto con la proponente}: viene instaurata una comunicazione con la proponente per ricevere feedback costante sul lavoro svolto.
+	\item \textbf{confronto con la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}}}: viene instaurata una comunicazione con la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}} per ricevere feedback costante sul lavoro svolto.
 \end{enumerate}
 
 \subsubsection{Piano di qualifica}
-Il documento \textit{Piano di Qualifica} è redatto per garantire che il software sviluppato rispetti gli standard di qualità richiesti e soddisfi le aspettative degli stakeholder. Il suo utilizzo e il suo scopo si estendono a diverse aree critiche del progetto, dalle fasi iniziali di pianificazione fino alla consegna finale del prodotto.
+Il documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{\textit{Piano di Qualifica}\textsubscript{G}} è redatto per garantire che il software sviluppato rispetti gli standard di qualità richiesti e soddisfi le aspettative degli \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#stakeholder}{stakeholder\textsubscript{G}}. Il suo utilizzo e il suo scopo si estendono a diverse aree critiche del progetto, dalle fasi iniziali di pianificazione fino alla consegna finale del prodotto.
 
 \subsubsection{Ciclo di Deming}
 Il \textit{ciclo di Deming}, è un ciclo a 4 stadi che consente di apportare determinate migliorie a specifici processi. È composto da:
@@ -291,12 +291,12 @@ Ogni metrica presenta la seguente struttura:
 
 \subsection{Verifica}
 \subsubsection{Introduzione}
-La verifica nel ciclo di vita del software garantisce l'efficienza e la correttezza delle attività, assicurando che i prodotti soddisfino i requisiti. I verificatori applicano tecniche di test seguendo procedure definite all'interno del Piano di Qualifica, il quale traccia il percorso di verifica, stabilendo obiettivi e criteri di accettazione. Tutti i processi attivi vengono sottoposti a verifica dopo aver raggiunto un buon grado di completamento o a seguito di modifiche dello stato del processo stesso.
+La verifica nel ciclo di vita del software garantisce l'efficienza e la correttezza delle attività, assicurando che i prodotti soddisfino i requisiti. I verificatori applicano tecniche di test seguendo procedure definite all'interno del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}}, il quale traccia il percorso di verifica, stabilendo obiettivi e criteri di accettazione. Tutti i processi attivi vengono sottoposti a verifica dopo aver raggiunto un buon grado di completamento o a seguito di modifiche dello stato del processo stesso.
 
 \subsubsection{Verifica dei documenti} \label{verifica_dei_documenti}
 Nell'ambito della documentazione, la verifica è un'attività cruciale per garantire la correttezza e l'accuratezza dei contenuti. Questo processo coinvolge una serie di controlli sistematici e revisioni finalizzate a garantire che la documentazione sia accurata, completa e conforme agli standard e ai requisiti specificati.
 La verifica dei documenti assicura l'accuratezza, identificando e correggendo errori, omissioni e incongruenze. Questo riduce il rischio di malintesi o errori di implementazione, garantendo che tutte le informazioni tecniche e di progetto siano corrette e precise.
-Inoltre, la verifica garantisce che la documentazione rispetti gli standard aziendali, di settore e normativi, mantenendo la coerenza e la qualità attraverso tutti i documenti del progetto. Documenti verificati e accurati migliorano la comunicazione tra i membri del team e con gli stakeholder esterni, facilitando la comprensione e la collaborazione e riducendo i tempi di chiarimento e discussione. Essa si suddivide in:
+Inoltre, la verifica garantisce che la documentazione rispetti gli standard aziendali, di settore e normativi, mantenendo la coerenza e la qualità attraverso tutti i documenti del progetto. Documenti verificati e accurati migliorano la comunicazione tra i membri del team e con gli \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#stakeholder}{stakeholder\textsubscript{G}} esterni, facilitando la comprensione e la collaborazione e riducendo i tempi di chiarimento e discussione. Essa si suddivide in:
 \begin{itemize}
 	\item \textbf{correttezza tecnica}: vengono controllate le informazioni tecniche e i contenuti del documento, verificando che siano corretti e precisi;
 	\item \textbf{conformità agli standard}: verifica che il documento segua le linee guida e gli standard stabiliti per la formattazione, la struttura e lo stile;
@@ -306,7 +306,7 @@ Inoltre, la verifica garantisce che la documentazione rispetti gli standard azie
 \end{itemize}
 
 \subsubsubsection{Processo di revisione}
-Al momento di completamento delle modifiche in un documento il redattore è tenuto a creare una pull request dal branch in cui ha effettuato le modifiche verso il branch develop, richiedendo una revisione da parte del verificatore e del responsabile; in caso di approvazione verrà effettuato il merge e la issue creata su ClickUp verrà spostata da \textit{in progres} a \textit{done}.
+Al momento di completamento delle modifiche in un documento il redattore è tenuto a creare una pull request dal branch in cui ha effettuato le modifiche verso il branch \texttt{develop}, richiedendo una revisione da parte del verificatore e del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}}; in caso di approvazione verrà effettuato il merge e la issue creata su \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{ClickUp\textsubscript{G}} verrà spostata da \textit{in progres} a \textit{done}.
 
 \subsubsection{Analisi}
 L'analisi è un processo essenziale che mira a garantire la qualità e l'affidabilità del prodotto finale. Questa fase critica comporta un esame dettagliato e sistematico di tutte le componenti del progetto per identificare e risolvere eventuali problemi prima della consegna. Si suddivide in \textbf{analisi dinamica} e \textbf{analisi statica}.
@@ -368,7 +368,7 @@ Durante questa tipologia di test l'intero sistema viene valutato e verificato pe
 I test di regressione assicurano che le modifiche apportate al codice non abbiano introdotto nuovi difetti o intaccato funzionalità esistenti nel software. Questi test vengono eseguiti dopo che sono state apportate modifiche al software, come nuove funzionalità, correzioni di bug o aggiornamenti del sistema, per assicurare il corretto funzionamento anche dopo tali modifiche.
 
 \subsubsubsection{Test di accettazione}
-I test di accettazione sono una fase nel processo di sviluppo del software durante la quale il prodotto viene testato per valutare se soddisfa i requisiti e le aspettative degli utenti finali, dei clienti o degli stakeholder. Questi test vengono eseguiti dopo che il software è stato completamente sviluppato e prima del suo rilascio ufficiale, consentendo agli utenti finali di valutarlo in un ambiente simile a quello di produzione e fornire feedback sulle sue funzionalità, l'usabilità e la conformità ai requisiti.
+I test di accettazione sono una fase nel processo di sviluppo del software durante la quale il prodotto viene testato per valutare se soddisfa i requisiti e le aspettative degli utenti finali, dei clienti o degli \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#stakeholder}{stakeholder\textsubscript{G}}. Questi test vengono eseguiti dopo che il software è stato completamente sviluppato e prima del suo rilascio ufficiale, consentendo agli utenti finali di valutarlo in un ambiente simile a quello di produzione e fornire feedback sulle sue funzionalità, l'usabilità e la conformità ai requisiti.
 
 \subsubsubsection{Sequenza delle fasi di test}
 I test vengono eseguiti in sequenza, partendo da quelli di unità e procedendo verso quelli di integrazione, di sistema, di regressione e di accettazione. Questo approccio graduale consente di identificare e risolvere i difetti in modo sistematico e strutturato, garantendo che il software funzioni correttamente e soddisfi i requisiti specificati.
@@ -399,7 +399,7 @@ A ciascun test è associato uno stato che indica l'esito della sua esecuzione:
 	\item \textbf{NS}: il test non è stato superato;
 	\item \textbf{NI}: il test non è stato implementato.
 \end{itemize}
-Questi risultati saranno riportati nel documento \textit{"Piano di Qualifica"}, in particolare nella sezione \textit{"Metodologie di Testing"}.
+Questi risultati saranno riportati nel documento \textit{"\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}}"}, in particolare nella sezione \textit{"Metodologie di Testing"}.
 
 \subsubsubsection{Analisi statica}
 L'analisi statica è il processo mediante il quale si esamina il codice sorgente di un programma senza eseguirlo. Questo tipo di analisi viene effettuato utilizzando strumenti automatizzati che analizzano il codice per individuare possibili errori, violazioni delle best practice di codifica e potenziali vulnerabilità di sicurezza. L'analisi statica si concentra su aspetti come la sintassi, la semantica e le strutture di controllo del codice. I benefici di questo tipo di analisi sono molteplici, tra cui:
@@ -455,7 +455,7 @@ Il walkthrough è una tecnica meno formale e più flessibile rispetto all'inspec
 
 \begin{itemize}
 	\item \href{http://aspell.net/}{Aspell} per il controllo ortografico;
-	\item \href{https://docs.python.org/3/library/unittest.html}{unittest} libreria di Python per lo sviluppo di test.
+	\item \href{https://docs.python.org/3/library/unittest.html}{unittest} libreria di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#python}{Python\textsubscript{G}} per lo sviluppo di test.
 \end{itemize}
 
 
@@ -471,7 +471,7 @@ per la validazione. Essi dovranno verificare:
 \begin{itemize}
 	\item l'implementazione di tutti i casi d'uso;
 	\item la conformità del prodotto ai requisiti obbligatori;
-	\item il soddisfacimento di altri requisiti concordati con il committente.
+	\item il soddisfacimento di altri requisiti concordati con il \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#committente}{committente\textsubscript{G}}.
 \end{itemize}
 
 \subsection{Gestione della configurazione}
@@ -481,7 +481,7 @@ La gestione della configurazione è il processo di identificazione, controllo e 
 \subsubsection{Versionamento}
 La convenzione di versionamento adottata è nel formato X.Y dove:
 \begin{itemize}
-	\item \textbf{X}: rappresenta il completamento in vista di una delle fasi del progetto e dunque viene incrementato al raggiungimento di RTB, PB ed eventuale CA.
+	\item \textbf{X}: rappresenta il completamento in vista di una delle fasi del progetto e dunque viene incrementato al raggiungimento di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}} ed eventuale \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#customer-acceptance}{CA\textsubscript{G}}.
 	\item \textbf{Y}: rappresenta una versione intermedia e viene incrementata ad ogni modifica significativa del documento.
 \end{itemize}
 
@@ -489,7 +489,7 @@ La convenzione di versionamento adottata è nel formato X.Y dove:
 Il team utilizza due repository:
 \begin{itemize}
 	\item \href{https://github.com/7Last/docs.git}{\underline{docs}}: contenente la documentazione prodotta;
-	\item \href{https://github.com/7Last/SyncCity}{\underline{SyncCity}}: contenente il codice del progetto.
+	\item \href{https://github.com/7Last/SyncCity}{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#synccity}{\underline{SyncCity}\textsubscript{G}}}: contenente il codice del progetto.
 \end{itemize}
 
 \subsubsubsection{Struttura repository}
@@ -497,13 +497,13 @@ Il repository inerente alla documentazione è così organizzato:
 \begin{enumerate}
 	\item \textbf{Candidatura}:
 	      \begin{itemize}
-		      \item \textbf{verbali\_esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{SyncLab S.r.l.};
+		      \item \textbf{verbali\_esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{Sync Lab S.r.l.};
 		      \item \textbf{verbali\_interni}: contenente i verbali delle riunioni interne svolte;
-		      \item \textbf{lettera\_di\_presentazione}: documento di presentazione per la candidatura al capitolato scelto;
+		      \item \textbf{lettera\_di\_presentazione}: documento di presentazione per la candidatura al \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{capitolato\textsubscript{G}} scelto;
 		      \item \textbf{preventivo\_costi\_assunzione\_impegni}: documento in cui vengono specificati i costi previsti, il totale delle ore per persona e gli impegni assunti;
 		      \item \textbf{valutazione\_dei\_capitolati}: contenente il parere personale riguardo i capitolati offerti dalle varie aziende.
 	      \end{itemize}
-	\item \textbf{RTB}:
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}}:
 	      \begin{itemize}
 		      \item \textbf{documentazione\_esterna}: contenente i seguenti documenti:
 		            \begin{itemize}
@@ -513,13 +513,13 @@ Il repository inerente alla documentazione è così organizzato:
 		            \end{itemize}
 		      \item \textbf{documentazione\_interna}: contenente i seguenti documenti:
 		            \begin{itemize}
-			            \item \textbf{glossario};
+			            \item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{\textbf{glossario}\textsubscript{G}};
 			            \item \textbf{norme\_di\_progetto}.
 		            \end{itemize}
-		      \item \textbf{verbali\_esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{SyncLab S.r.l.};
+		      \item \textbf{verbali\_esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{Sync Lab S.r.l.};
 		      \item \textbf{verbali\_interni}: contenente i verbali delle riunioni interne svolte.
 	      \end{itemize}
-	\item \textbf{PB} %todo, da implementare
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} %todo, da implementare
 \end{enumerate}
 
 \subsubsection{Sincronizzazione e branching}
@@ -543,14 +543,14 @@ L'approccio adottato per la redazione della documentazione segue il workflow not
 	Flusso di lavoro Gitflow:
 \end{flushleft}
 \begin{enumerate}
-    \item \textbf{main branch}
+    \item \textbf{\texttt{main} branch}
     \begin{itemize}
         \item branch principale e stabile;
         \item contiene il codice in produzione;
         \item ogni commit rappresenta una versione rilasciata.
     \end{itemize}
 
-    \item \textbf{develop branch}
+    \item \textbf{\texttt{develop} branch}
     \begin{itemize}
         \item branch per lo sviluppo integrato;
         \item riceve i merge dai feature branches;
@@ -559,64 +559,64 @@ L'approccio adottato per la redazione della documentazione segue il workflow not
 
     \item \textbf{feature branch}
     \begin{itemize}
-        \item derivano dal branch develop;
+        \item derivano dal branch \texttt{develop};
         \item utilizzati per sviluppare nuove funzionalità;
-        \item dopo il completamento, vengono mergiati in develop.
+        \item dopo il completamento, vengono mergiati in \texttt{develop}.
     \end{itemize}
 
     \item \textbf{release branch}
     \begin{itemize}
-        \item derivano dal branch develop;
+        \item derivano dal branch \texttt{develop};
         \item preparano una nuova versione per il rilascio;
         \item permettono di effettuare correzioni di bug e preparare la documentazione;
-        \item dopo il completamento, vengono mergiati sia in master che in develop.
+        \item dopo il completamento, vengono mergiati sia in \texttt{main} che in \texttt{develop}.
     \end{itemize}
 
     \item \textbf{hotfix branch}
     \begin{itemize}
         \item derivano dal branch master;
         \item utilizzati per correggere rapidamente bug critici in produzione;
-        \item dopo il completamento, vengono mergiati sia in master che in develop.
+        \item dopo il completamento, vengono mergiati sia in \texttt{main} che in \texttt{develop}.
     \end{itemize}
 \end{enumerate}
 
 \subsubsection{Consegna e rilascio}
-Il processo di consegna e rilascio secondo lo standard \textit{ISO/IEC 12207:1995} è una componente essenziale del ciclo di vita del software, che si concentra sulla gestione delle versioni del software e sulla distribuzione dei prodotti software agli utenti finali. Questo processo assicura che le versioni del software siano rilasciate in modo controllato, pianificato e che soddisfino i requisiti di qualità e sicurezza. Attraverso una serie di attività ben definite, il processo di gestione del rilascio garantisce che il software sia pronto per l'uso, minimizzando i rischi di problemi post-rilascio e massimizzando l'efficienza operativa. La creazione della prima release deve avvenire in concomitanza con la baseline RTB (Requirements and Technology Baseline), mentre la creazione delle successive release deve avvenire in concomitanza con la baseline PB (Product Baseline) e, se prevista, CA (Customer Acceptance).
+Il processo di consegna e rilascio secondo lo standard \textit{ISO/IEC 12207:1995} è una componente essenziale del ciclo di vita del software, che si concentra sulla gestione delle versioni del software e sulla distribuzione dei prodotti software agli utenti finali. Questo processo assicura che le versioni del software siano rilasciate in modo controllato, pianificato e che soddisfino i requisiti di qualità e sicurezza. Attraverso una serie di attività ben definite, il processo di gestione del rilascio garantisce che il software sia pronto per l'uso, minimizzando i rischi di problemi post-rilascio e massimizzando l'efficienza operativa. La creazione della prima release deve avvenire in concomitanza con la baseline \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{Requirements and Technology Baseline\textsubscript{G}}), mentre la creazione delle successive release deve avvenire in concomitanza con la baseline \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}} (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{Product Baseline\textsubscript{G}}) e, se prevista, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#customer-acceptance}{CA\textsubscript{G}} (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#customer-acceptance}{Customer Acceptance\textsubscript{G}}).
 
 \subsubsection{Sito del gruppo}
-Il gruppo ha sviluppato un sito disponibile al link: \url{https://7last.github.io/}; che ha lo scopo di facilitare la consultazione dei documenti redatti fino ad ora. Tale pagina web viene aggiornata automaticamente per rispecchiare lo stato dei documenti presenti all'interno del branch main. Inoltre facilita la consultazione del glossario grazie a dei link, presenti nelle parole distinte dalla lettera G al pedice, diretti alla definizione del termine.
+Il gruppo ha sviluppato un sito disponibile al link: \url{https://7last.github.io/}; che ha lo scopo di facilitare la consultazione dei documenti redatti fino ad ora. Tale pagina web viene aggiornata automaticamente per rispecchiare lo stato dei documenti presenti all'interno del branch \texttt{main}. Inoltre facilita la consultazione del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{glossario\textsubscript{G}} grazie a dei link, presenti nelle parole distinte dalla lettera G al pedice, diretti alla definizione del termine.
 
-\subsubsection{Strumenti} 
+\subsubsection{Strumenti}
 
 \begin{itemize}
-	\item \textbf{Github}: utilizzato per la gestione del versionamento e per la condivisione dei documenti;
-	\item \textbf{ClickUp}: è una piattaforma di gestione del lavoro all-in-one progettata per pianificare, organizzare e collaborare su progetti e attività.
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#github}{\textbf{Github}\textsubscript{G}}: utilizzato per la gestione del versionamento e per la condivisione dei documenti;
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{\textbf{ClickUp}\textsubscript{G}}: è una piattaforma di gestione del lavoro all-in-one progettata per pianificare, organizzare e collaborare su progetti e attività.
 \end{itemize}
 
 
 \subsection{Analisi congiunta}
 \subsubsection{Introduzione}
-L'analisi congiunta è un'attività collaborativa cruciale in cui i recensori e i recensiti si incontrano per esaminare e valutare diversi aspetti del progetto.  Nel nostro caso i recensori sono costituiti da proponente, committente e stakeholder; mentre i recensiti sono rappresentati dal gruppo \textit{7Last}. Lo scopo principale di questa revisione congiunta è garantire che tutte le parti coinvolte abbiano una comprensione comune dello stato attuale del progetto e dei passi successivi necessari per raggiungere gli obiettivi fissati.
+L'analisi congiunta è un'attività collaborativa cruciale in cui i recensori e i recensiti si incontrano per esaminare e valutare diversi aspetti del progetto.  Nel nostro caso i recensori sono costituiti da \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#committente}{committente\textsubscript{G}} e \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#stakeholder}{stakeholder\textsubscript{G}}; mentre i recensiti sono rappresentati dal gruppo \textit{7Last}. Lo scopo principale di questa revisione congiunta è garantire che tutte le parti coinvolte abbiano una comprensione comune dello stato attuale del progetto e dei passi successivi necessari per raggiungere gli obiettivi fissati.
 
 \subsubsection{Realizzazione del processo}
 Il processo comprende i seguenti impegni:
 \subsubsubsection{Revisioni periodiche}
-In corrispondenza delle milestone stabilite saranno effettuate delle revisioni periodiche, come riportato nel
-documento \textit{Piano di Progetto}.
+In corrispondenza delle \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#milestone}{milestone\textsubscript{G}} stabilite saranno effettuate delle revisioni periodiche, come riportato nel
+documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{\textit{Piano di Progetto}\textsubscript{G}}.
 
 \subsubsubsection{Stato Avanzamento Lavori}
-Al termine di ogni sprint viene svolta una revisione SAL
-(Stato Avanzamento Lavori) tra il team e la proponente. Questa revisione ha lo scopo di valutare il lavoro svolto durante lo sprint precedente, per verificare che gli obiettivi prefissati siano stati correttamente raggiunti secondo le scadenze prefissate.
-Inoltre, durante questo incontro, si pianificano le attività per lo sprint successivo.
+Al termine di ogni \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}} viene svolta una revisione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#stato-avanzamento-lavori}{SAL\textsubscript{G}}
+(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#stato-avanzamento-lavori}{Stato Avanzamento Lavori\textsubscript{G}}) tra il team e la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}}. Questa revisione ha lo scopo di valutare il lavoro svolto durante lo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}} precedente, per verificare che gli obiettivi prefissati siano stati correttamente raggiunti secondo le scadenze prefissate.
+Inoltre, durante questo incontro, si pianificano le attività per lo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}} successivo.
 
 \subsubsubsection{Revisioni straordinarie}
-Se uno qualsiasi dei soggetti coinvolti tra gli stakeholder lo ritenga opportuno, è possibile istituire una revisione straordinaria per esaminare attentamente lo stato di avanzamento dei lavori. Durante questa revisione, si discutono eventuali problematiche emerse e le relative soluzioni adottabili.
+Se uno qualsiasi dei soggetti coinvolti tra gli \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#stakeholder}{stakeholder\textsubscript{G}} lo ritenga opportuno, è possibile istituire una revisione straordinaria per esaminare attentamente lo stato di avanzamento dei lavori. Durante questa revisione, si discutono eventuali problematiche emerse e le relative soluzioni adottabili.
 
 \subsubsubsection{Risorse per le revisioni}
 Le risorse coinvolte nelle revisioni possono essere differenti, ad esempio: strumenti hardware, software, documentazione... è fondamentale che tali risorse siano discusse e concordate tra tutte le parti coinvolte.
 
 \subsubsubsection{Organizzazione degli incontri}
-Pochi giorni prima della riunione con la proponente \textit{7Last} si impegna a consegnare un report con tutte le modifiche effettuate e i campi in cui sono state applicate.
+Pochi giorni prima della riunione con la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}} \textit{7Last} si impegna a consegnare un report con tutte le modifiche effettuate e i campi in cui sono state applicate.
 In ciascuna revisione rimane la necessità di concordare i seguenti elementi:
 \begin{itemize}
 	\item agenda della riunione;
@@ -638,7 +638,7 @@ La risoluzione dei problemi è un processo che mira a identificare, analizzare e
 \end{itemize}
 
 \subsubsection{Gestione dei rischi}
-All'interno del documento \textit{Piano di Progetto}, più precisamente nella sezione \textit{Analisi dei rischi} sono contenuti i rischi che potrebbero emergere durante lo svolgimento del progetto, con relativi approfondimenti e strategie di mitigazione.
+All'interno del documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{\textit{Piano di Progetto}\textsubscript{G}}, più precisamente nella sezione \textit{Analisi dei rischi} sono contenuti i rischi che potrebbero emergere durante lo svolgimento del progetto, con relativi approfondimenti e strategie di mitigazione.
 
 \subsubsubsection{Codifica dei rischi}
 Ogni rischio è identificato da un codice univoco nel seguente formato:
@@ -667,5 +667,5 @@ Dove:
 
 \subsubsection{Strumenti}
 \begin{itemize}
-	\item \textbf{ClickUp}: utilizzato per la gestione delle attività e delle issue;
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{\textbf{ClickUp}\textsubscript{G}}: utilizzato per la gestione delle attività e delle issue;
 \end{itemize}

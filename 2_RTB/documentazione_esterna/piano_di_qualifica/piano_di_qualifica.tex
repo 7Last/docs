@@ -18,6 +18,9 @@
 \renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
 \renewcommand\familydefault{\sfdefault}
 
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
 %-------------------INIZIO DOCUMENTO--------------
 \begin{document}
 \include{title}
@@ -30,18 +33,17 @@
 	\footnotesize
 	\begin{center}
 		\begin{tabular}{ l l l l p{6cm} }
-			\hline                                                                                                                     \\[-2ex]
-			Ver. & Data       & Autore             & Verificatore       & Descrizione                                                  \\
+			\hline                                                                                                                   \\[-2ex]
+			Ver. & Data       & Autore             & Verificatore       & Descrizione                                                \\
 			\\[-2ex] \hline \\[-1.5ex]
-			0.9  & 2024-05-08 & Matteo Tiozzo      & Leonardo Baldo     & Popolati grafici cruscotto e aggiornamento automiglioramento \\
-			0.8  & 2024-05-02 & Antonio Benetazzo  & Davide Malgarise   & Aggiunta sezione automiglioramento                           \\
-			0.7  & 2024-05-02 & Antonio Benetazzo  & Davide Malgarise   & Cruscotto di valutazione della qualità                       \\
-			0.6  & 2024-04-30 & Antonio Benetazzo  & Davide Malgarise   & Aggiunti testi introduttivi dei test                         \\
-			0.5  & 2024-04-22 & Antonio Benetazzo  & Davide Malgarise   & Revisione e piccole correzioni                               \\
-			0.4  & 2024-04-16 & Elena Ferro        & Valerio Occhinegro & Riordinamento obbiettivi di qualità                          \\
-			0.3  & 2024-04-07 & Valerio Occhinegro & Matteo Tiozzo      & Stesura documento                                            \\
-			0.2  & 2024-03-29 & Matteo Tiozzo      & Elena Ferro        & Modificato tabella versioni                                  \\
-			0.1  & 2024-03-28 & Valerio Occhinegro & Matteo Tiozzo      & Prima redazione                                              \\
+			1.0  & 2024-05-24 & Matteo Tiozzo      & Raul Seganfreddo   & Approvazione finale documento                              \\
+			0.7  & 2024-05-20 & Matteo Tiozzo      & Valerio Occhinegro & Stesura iniziative di automiglioramento                    \\
+			0.6  & 2024-05-14 & Leonardo Baldo     & Antonio Benetazzo  & Popolamento grafici Cruscotto di valutazione della qualità \\
+			0.5  & 2024-05-17 & Antonio Benetazzo  & Davide Malgarise   & Creazione grafici per Cruscotto                            \\
+			0.4  & 2024-04-22 & Antonio Benetazzo  & Davide Malgarise   & Fine stesura metodologie di testing                        \\
+			0.3  & 2024-04-16 & Valerio Occhinegro & Matteo Tiozzo      & Inizio stesura metodologie di testing                      \\
+			0.2  & 2024-03-29 & Valerio Occhinegro & Matteo Tiozzo      & Stesura metriche di qualità                                \\
+			0.1  & 2024-03-28 & Valerio Occhinegro & Matteo Tiozzo      & Prima redazione                                            \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -56,6 +58,6 @@
 \include{introduzione.tex}
 \include{metriche_qualita.tex}
 \include{testing.tex}
-\include{cruscotto.tex}
+\include{cruscotto_valutazione}
 \include{automiglioramento.tex}
 \end{document}
