@@ -1,11 +1,65 @@
-title,actor,uc_code,uc_desc,uc_extends_code,uc_extends_desc
-SyncCity,Autorità locale,UC-1,Visualizzazione dashboard generale,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-2,Visualizzazione dashboard temperatura,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-3,Visualizzazione dashboard umidità,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-4,Visualizzazione dashboard qualità dell'aria,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-5,Visualizzazione dashboard precipitazioni,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-6,Visualizzazione dashboard traffico,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-7,Visualizzazione dashboard colonnine di ricarica,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-8,Visualizzazione dashboard parcheggi,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-9,Visualizzazione dashboard isole ecologiche,UC-21,Applicazione filtro sensore
-SyncCity,Autorità locale,UC-10,Visualizzazione dashboard livello di acqua,UC-21,Applicazione filtro sensore
+title,actor,uc_code,uc_desc,uc_extends_code,uc_extends_desc,condition
+
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.1,Visualizzazione panel con tabella sensori,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.2,Visualizzazione mappa interattiva sensori,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.3,Visualizzazione panel numero sensori per tipo,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.4,Visualizzazione tabella sensori non trasmettenti,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.5,Visualizzazione tabella dati grezzi temperatura,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.6,Visualizzazione tabella dati grezzi umidità,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.7,Visualizzazione tabella dati grezzi traffico,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.8,Visualizzazione tabella dati grezzi qualità dell'aria,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.9,Visualizzazione tabella dati grezzi precipitazioni,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.10,Visualizzazione tabella dati grezzi isole ecologiche,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.11,Visualizzazione tabella dati grezzi livello di acqua,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.12,Visualizzazione tabella dati grezzi colonnine di ricarica,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.13,Visualizzazione grafico time series dati grezzi complessivi temperatura,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.14,Visualizzazione grafico time series dati grezzi complessivi umidità,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.15,Visualizzazione grafico time series dati grezzi complessivi traffico,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.16,Visualizzazione grafico time series dati grezzi complessivi qualità dell'aria,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.17,Visualizzazione grafico time series dati grezzi complessivi precipitazioni,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.18,Visualizzazione grafico time series dati grezzi complessivi isole ecologiche,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.19,Visualizzazione grafico time series dati grezzi complessivi livello di acqua,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.20,Visualizzazione grafico time series dati grezzi complessivi colonnine di ricarica,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3: Visualizzazione dashboard temperatura,Autorità locale,UC-3.1,Visualizzazione grafico time series temperatura,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3: Visualizzazione dashboard temperatura,Autorità locale,UC-3.2,Visualizzazione mappa sensori temperatura,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3: Visualizzazione dashboard temperatura,Autorità locale,UC-3.3,Visualizzazione panel temperatura media nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3: Visualizzazione dashboard temperatura,Autorità locale,UC-3.4,Visualizzazione panel temperatura in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3: Visualizzazione dashboard temperatura,Autorità locale,UC-3.5,Visualizzazione panel temperatura massima nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3: Visualizzazione dashboard temperatura,Autorità locale,UC-3.6,Visualizzazione panel temperatura minima nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4: Visualizzazione dashboard umidità,Autorità locale,UC-4.1,Visualizzazione grafico time series umidità,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4: Visualizzazione dashboard umidità,Autorità locale,UC-4.2,Visualizzazione mappa sensori umidità,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4: Visualizzazione dashboard umidità,Autorità locale,UC-4.3,Visualizzazione panel umidità media nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4: Visualizzazione dashboard umidità,Autorità locale,UC-4.4,Visualizzazione panel umidità in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4: Visualizzazione dashboard umidità,Autorità locale,UC-4.5,Visualizzazione panel umidità massima nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4: Visualizzazione dashboard umidità,Autorità locale,UC-4.6,Visualizzazione panel umidità minima nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-5: Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-5.1,Visualizzazione grafico time series qualità dell'aria,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-5: Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-5.2,Visualizzazione mappa interattiva sensori qualità dell'aria,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-5: Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-5.3,Visualizzazione panel qualità dell'aria media nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-5: Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-5.4,Visualizzazione panel qualità dell'aria in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-5: Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-5.5,Visualizzazione panel giorno con qualità dell'aria peggiore nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-5: Visualizzazione dashboard qualità dell'aria,Autorità locale,UC-5.6,Visualizzazione panel giorno con qualità dell'aria migliore nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-6: Visualizzazione dashboard precipitazioni,Autorità locale,UC-6.1,Visualizzazione grafico time series quantità precipitazioni nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-6: Visualizzazione dashboard precipitazioni,Autorità locale,UC-6.2,Visualizzazione mappa sensori precipitazioni,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-6: Visualizzazione dashboard precipitazioni,Autorità locale,UC-6.3,Visualizzazione panel quantità di precipitazioni media nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-6: Visualizzazione dashboard precipitazioni,Autorità locale,UC-6.4,Visualizzazione panel quantità di precipitazioni in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-6: Visualizzazione dashboard precipitazioni,Autorità locale,UC-6.5,Visualizzazione panel giorno con precipitazioni maggiori nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-6: Visualizzazione dashboard precipitazioni,Autorità locale,UC-6.6,Visualizzazione panel giorno con precipitazioni minori nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-7: Visualizzazione dashboard traffico,Autorità locale,UC-7.1,Visualizzazione grafico time series traffico,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-7: Visualizzazione dashboard traffico,Autorità locale,UC-7.2,Visualizzazione mappa sensori traffico,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-7: Visualizzazione dashboard traffico,Autorità locale,UC-7.3,Visualizzazione panel numero veicoli in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-7: Visualizzazione dashboard traffico,Autorità locale,UC-7.4,Visualizzazione panel velocità media in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-7: Visualizzazione dashboard traffico,Autorità locale,UC-7.5,Visualizzazione panel calcolo ora di punta (numero veicoli e velocità media),UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-8: Visualizzazione dashboard colonnine di ricarica,Autorità locale,UC-8.2,Visualizzazione panel numero colonnine di ricarica per stato in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-8: Visualizzazione dashboard colonnine di ricarica,Autorità locale,UC-8.1,Visualizzazione mappa colonnine di ricarica con stato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-9: Visualizzazione dashboard parcheggi,Autorità locale,UC-9.2,Visualizzazione panel con conteggio parcheggi per stato in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-9: Visualizzazione dashboard parcheggi,Autorità locale,UC-9.1,Visualizzazione mappa interattiva parcheggi con rispettivo stato di occupazione,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-10: Visualizzazione dashboard isole ecologiche,Autorità locale,UC-10.1,Visualizzazione panel con riempimento isole ecologiche in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-10: Visualizzazione dashboard isole ecologiche,Autorità locale,UC-10.2,Visualizzazione mappa sensori isole ecologiche,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-10: Visualizzazione dashboard isole ecologiche,Autorità locale,UC-10.3,Visualizzazione grafico time series isole ecologiche,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-10: Visualizzazione dashboard isole ecologiche,Autorità locale,UC-10.4,Visualizzazione panel ore di saturazione isole ecologiche,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-10: Visualizzazione dashboard isole ecologiche,Autorità locale,UC-10.5,Visualizzazione panel percentuale media di riempimento al momento dello svuotamento,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-10: Visualizzazione dashboard isole ecologiche,Autorità locale,UC-10.6,Visualizzazione panel con percentuale tempo trascorso per livello di riempimento,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-11: Visualizzazione dashboard livello di acqua,Autorità locale,UC-11.1,Visualizzazione grafico time series livello di acqua,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-11: Visualizzazione dashboard livello di acqua,Autorità locale,UC-11.2,Visualizzazione mappa sensori livello di acqua,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-11: Visualizzazione dashboard livello di acqua,Autorità locale,UC-11.3,Visualizzazione panel livello di acqua medio nel periodo di tempo selezionato,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-11: Visualizzazione dashboard livello di acqua,Autorità locale,UC-11.4,Visualizzazione panel livello di acqua in tempo reale,UC-12,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel

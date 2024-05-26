@@ -1,0 +1,119 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily\oldthepage}
+
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l l }
+			\hline                                                             \\[-2ex]
+			Ver. & Data       & Redattore   & Verificatore   & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-05-18 & Davide Malgarise & Raul Seganfreddo & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 16:30\\
+\textbf{Orario di fine}: 17:30\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     &                & Presente          \\
+			Davide Malgarise      & Redattore      & Presente          \\
+			Elena Ferro           & 		       & Presente          \\
+			Leonardo Baldo        & 		       & Presente          \\
+			Matteo Tiozzo         & Amministratore & Presente          \\
+			Raul Seganfreddo      & Verificatore   & Presente          \\
+			Valerio Occhinegro    &                & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Suddivisione dei ruoli per il quarto sprint
+	\item Riepilogo dei compiti da svolgere
+	\item Decisioni prese e conclusioni
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Suddivisione dei ruoli per il quarto sprint}
+Come prima cosa il gruppo stabilisce la suddivisione dei ruoli per il quarto periodo, cercando di assegnare a ciascun membro un compito non ancora svolto
+nei precedenti sprint. Ne risulta la seguente suddivisione:
+\begin{itemize}
+	\item \textbf{Amministratore}: Raul Seganfreddo
+	\item \textbf{Progettista}: Davide Malgarise
+	\item \textbf{Programmatore}: Elena Ferro
+	\item \textbf{Programmatore}: Antonio Benetazzo
+	\item \textbf{Responsabile}: Valerio Occhinegro
+	\item \textbf{Analista}: Leonardo Baldo
+	\item \textbf{Verificatore}: Matteo Tiozzo
+	% attenzione: nel documento verbale_interno_2024-05.15 i ruoli sono stati descritti in modo diverso, come si nota sotto
+\end{itemize}
+Definiamo, inoltre, i ruoli assegnati per ogni riunione interna od esterna 
+di questo quarto sprint (da riportare successivamente nei relativi verbali):
+\begin{itemize}
+	\item \textbf{Amministratore}: Matteo Tiozzo
+	\item \textbf{Redattore}: Davide Malgarise
+	\item \textbf{Verificatore}: Raul Seganfreddo
+\end{itemize}
+
+\subsection{Riepilogo dei compiti da svolgere}
+In seguito ad un'analisi e un confronto riguardo agli obiettivi fissati con il proponente,
+vengono stabilite le attività da svolgere durante il quarto sprint:
+\begin{itemize}
+	\item raffinamento delle dashboard in \textit{Grafana};
+	\item popolamento dei grafici del documento \textit{Piano di Qualifica};
+	\item stesura del quarto sprint all'interno del documento \textit{Piano di Progetto};
+	\item revisione dei documenti \textit{Piano di Qualifica} e \textit{Piano di Progetto};
+	\item formazione e analisi dei business case e relativi strumenti.
+\end{itemize}
+
+\subsection{Decisioni prese e conclusioni}
+Infine il gruppo ha deciso di richiedere due incontri, il primo con l'azienda per chiarire i dubbi sorti riguardo
+il \textit{PoC} (Proof of Concept) e il secondo con il professore per avere un dialogo di confronto riguardo a quanto
+fatto fino ad ora.
+
+\end{document}
