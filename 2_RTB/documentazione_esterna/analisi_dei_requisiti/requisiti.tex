@@ -2,18 +2,18 @@
 \subsection{Definizione di un requisito}
 Per ciascun requisito vengono fornite le seguenti informazioni:
 \begin{itemize}
-	\item \textbf{Codice}: codice identificativo del requisito, meglio specificato nella sezione \ref{sec:codifica_requisiti};
-	\item \textbf{Descrizione}: breve descrizione del requisito;
-	\item \textbf{Fonte}: provenienza del requisito, meglio specificata nella sezione \ref{sec:fonti_requisiti};
-	\item \textbf{Importanza}: indica l'importanza del requisito, meglio specificata nella sezione \ref{sec:importanza_requisiti}.
+	\item \textbf{codice} identificativo del requisito, meglio specificato nella sezione \ref{sec:codifica_requisiti};
+	\item \textbf{descrizione} del requisito;
+	\item \textbf{fonte}, ovvero la provenienza del requisito, meglio specificata nella sezione \ref{sec:fonti_requisiti};
+	\item \textbf{importanza} del requisito, meglio specificata nella sezione \ref{sec:importanza_requisiti}.
 \end{itemize}
 
 \subsection{Tipologie di requisiti}
-I requisiti possono essere di quattro tipologie:
+I requisiti possono essere di tre tipologie:
 \begin{itemize}
-	\item \textbf{Funzionali}: descrivono le funzionalità del sistema;
-	\item \textbf{Qualitativi}: descrivono le qualità che il sistema deve avere;
-	\item \textbf{Di vincolo}: descrivono i vincoli a cui il sistema deve sottostare;
+	\item \textbf{funzionali}, descrivono le funzionalità del sistema;
+	\item \textbf{qualitativi}, descrivono le qualità che il sistema deve avere;
+	\item \textbf{di vincolo}, descrivono i vincoli a cui il sistema deve sottostare.
 \end{itemize}
 
 \subsubsection{Codifica dei requisiti}
@@ -30,75 +30,119 @@ e \textbf{[Tipologia]} è una lettera che identifica la tipologia del requisito:
 	\item \textbf{V}: requisito di vincolo;
 \end{itemize}
 
+\newpage
+
 \subsubsection{Fonti dei requisiti}
 \label{sec:fonti_requisiti}
-I requisiti possono avere le seguenti fonti:
-\begin{itemize}
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#capitolato}{\textbf{Capitolato}\textsubscript{G}}: requisiti individuati a seguito dell'analisi del capitolato;
-	\item \textbf{Interno}: requisiti individuati durante le riunioni interne e da coloro che hanno il ruolo di analista;
-	\item \textbf{Esterno}: requisiti aggiuntivi individuati in seguito a incontri con la proponente;
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{\textbf{Piano di Qualifica}\textsubscript{G}}: requisiti necessari per adeguare il prodotto agli standard di qualità definiti nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{\textit{Piano di Qualifica}\textsubscript{G}}.
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{\textbf{Norme di Progetto}\textsubscript{G}}: requisiti necessari per adeguare il prodotto alle norme stabilite nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{\textit{Norme di Progetto}\textsubscript{G}};
-\end{itemize}
+I requisiti provengono dalle fonti meglio specificate di seguito.
+\subsubsubsection*{Capitolato}
+Requisiti individuati a seguito dell'analisi dello stesso;
+\subsubsubsection*{Interno}
+Requisiti individuati durante le riunioni interne e da coloro che hanno il ruolo di analista;
+\subsubsubsection*{Esterno}
+Requisiti individuati in seguito agli incontri tenuti con la proponente;
+\subsubsubsection*{Piano di Qualifica}
+Requisiti necessari per adeguare il prodotto agli standard di qualità definiti nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{\textit{Piano di Qualifica}\textsubscript{G}};
+\subsubsubsection*{Norme di Progetto}
+Requisiti necessari per adeguare il prodotto alle norme stabilite nel documento
+ \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{\textit{Norme di Progetto}\textsubscript{G}};
+
 
 \subsubsection{Importanza dei requisiti}
 \label{sec:importanza_requisiti}
 I requisiti possono avere tre livelli di importanza:
 \begin{itemize}
-	\item \textbf{Obbligatorio}: requisito irrinunciabile per il committente;
-	\item \textbf{Desiderabile}: requisito non strettamente necessario, ma che porta valore aggiunto al prodotto;
-	\item \textbf{Opzionale}: requisito relativo a funzionalità aggiuntive.
+	\item \textbf{Obbligatorio}, requisito irrinunciabile per il committente;
+	\item \textbf{Desiderabile}, requisito non strettamente necessario, ma che porta valore aggiunto al prodotto;
+	\item \textbf{Opzionale}, requisito relativo a funzionalità aggiuntive.
 \end{itemize}
 
 \pagebreak
 \subsection{Requisiti funzionali}
 \begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
 	\hline
-	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                                                                                             \\\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endfirsthead
 	\hline
-	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                                                                                             \\\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}\\\hline
 	\endhead
 	\hline
-	RF-1            & Obbligatorio        & Capitolato     & La parte \textit{IoT} dovrà essere simulata attraverso tool di generazione di dati casuali che tuttavia siano verosimili.                                                                                                                                                                                                                                                        \\\hline
-	RF-2            & Obbligatorio        & Capitolato     & Il sistema dovrà permettere la visualizzazione dei dati in tempo reale.                                                                                                                                                                                                                                                                                                          \\\hline
-	RF-3            & Obbligatorio        & Capitolato     & Il sistema dovrà permettere la visualizzazione dei dati storici.                                                                                                                                                                                                                                                                                                                 \\\hline
-	RF-4            & Obbligatorio        & Capitolato     & L'utente deve poter accedere all'applicativo senza bisogno di autenticazione.                                                                                                                                                                                                                                                                                                    \\\hline
-	RF-5            & Obbligatorio        & Capitolato     & L'utente dovrà poter visualizzare su una mappa la posizione geografica dei sensori.                                                                                                                                                                                                                                                                                              \\\hline
-	RF-6            & Obbligatorio        & Capitolato     & I tipi di dati che il sistema dovrà visualizzare sono: temperatura, umidità, qualità dell'aria, precipitazioni, traffico, stato delle colonnine di ricarica, stato di occupazione dei parcheggi, stato di riempimento delle isole ecologiche e livello di acqua.                                                                                                                 \\\hline
-	RF-7            & Obbligatorio        & Capitolato     & I dati dovranno essere salvati su un database OLAP.                                                                                                                                                                                                                                                                                                                              \\\hline
-	RF-8            & Obbligatorio        & Capitolato     & I sensori di temperatura rilevano i dati in gradi Celsius                                                                                                                                                                                                                                                                                                                        \\\hline
-	RF-9            & Obbligatorio        & Capitolato     & I sensori di umidità rilevano la percentuale di umidità nell’aria.                                                                                                                                                                                                                                                                                                               \\\hline
-	RF-10           & Obbligatorio        & Capitolato     & I sensori livello acqua rilevano il livello di acqua nella zona di installazione                                                                                                                                                                                                                                                                                                 \\\hline
-	RF-11           & Obbligatorio        & Capitolato     & I dati provenienti dai sensori dovranno contenere i seguenti dati: id sensore, data, ora e valore.                                                                                                                                                                                                                                                                               \\\hline
-	RF-12           & Obbligatorio        & Capitolato     & Sviluppo di componenti quali widget e grafici per la visualizzazione dei dati nelle dashboard.                                                                                                                                                                                                                                                                                   \\\hline
-	RF-13           & Obbligatorio        & Interno        & Il sistema deve permettere di visualizzare una dashboard generale con tutti i dati dei sensori.                                                                                                                                                                                                                                                                                  \\\hline
-	RF-14           & Obbligatorio        & Interno        & Il sistema deve permettere di visualizzare una dashboard specifica per ciascuna categoria di sensori.                                                                                                                                                                                                                                                                            \\\hline
-	RF-15           & Obbligatorio        & Esterno        & Il sistema deve permettere di visualizzare una dashboard con i dati grezzi provenienti da tutti i sensori.                                                                                                                                                                                                                                                                       \\\hline
-	RF-16           & Obbligatorio        & Interno        & Nella dashboard dei dati grezzi dovranno essere presenti: una mappa interattiva, un widget con il conteggio totale dei sensori divisi per tipo, una tabella contente tutti i sensori e la data in cui essi hanno trasmesso l'ultima volta. Inoltre verranno mostrate delle tabelle con i dati filtrabili suddivisi per sensore e un grafico time series con tutti i dati grezzi. \\\hline
-	RF-17           & Obbligatorio        & Interno        & Nella dashboard della temperatura dovranno essere visualizzati: un grafico time series, una mappa interattiva, la temperatura media, minima e massima di un certo periodo di tempo, la temperatura in tempo reale e la temperatura media per settimana e mese.                                                                                                                   \\\hline
-	RF-18           & Obbligatorio        & Interno        & Nella dashboard dell'umidità dovranno essere visualizzati: un grafico time series, una mappa interattiva, l'umidità media, minima e massima di un certo periodo di tempo e l'umidità in tempo reale.                                                                                                                                                                             \\\hline
-	RF-19           & Obbligatorio        & Interno        & Nella dashboard della qualità dell'aria dovranno essere visualizzati: un grafico time series, una mappa interattiva, la qualità media dell'aria in un certo periodo e in tempo reale, i giorni con la qualità dell'aria migliore e peggiore in un certo periodo di tempo.                                                                                                        \\\hline
-	RF-20           & Obbligatorio        & Interno        & Nella dashboard delle precipitazioni dovranno essere visualizzati: un grafico time series, una mappa interattiva, la quantità media di precipitazioni in un certo periodo e in tempo reale, i giorni con la quantità di precipitazioni maggiore e minore in un certo periodo di tempo.                                                                                           \\\hline
-	RF-21           & Obbligatorio        & Interno        & Nella dashboard del traffico dovranno essere visualizzati: un grafico time series, il numero di veicoli e la velocità media in tempo reale e il calcolo dell'ora di punta sulla base del numero di veicoli e velocità media.                                                                                                                                                     \\\hline
-	RF-22           & Obbligatorio        & Interno        & Nella dashboard delle colonnine di ricarica dovranno essere visualizzati: una mappa interattiva contenente anche lo stato e il numero di colonnine di ricarica suddivise per stato in tempo reale.                                                                                                                                                                               \\\hline
-	RF-23           & Obbligatorio        & Interno        & Nella dashboard dei parcheggi dovranno essere visualizzati: una mappa interattiva con il rispettivo stato di occupazione e il conteggio di parcheggi suddivisi per stato di occupazione in tempo reale.                                                                                                                                                                          \\\hline
-	RF-24           & Obbligatorio        & Interno        & Nella dashboard delle isole ecologiche dovranno essere visualizzati: una mappa interattiva con il rispettivo stato di riempimento e il conteggio di isole ecologiche suddivise per stato di riempimento in tempo reale.                                                                                                                                                          \\\hline
-	RF-25           & Obbligatorio        & Interno        & Nella dashboard del livello di acqua dovranno essere visualizzati: un grafico time series, una mappa interattiva, il livello medio di acqua in un certo periodo e in tempo reale.                                                                                                                                                                                                \\\hline
-	RF-26           & Obbligatorio        & Interno        & Nel caso in cui non ci siano dati visualizzabili, il sistema deve notificare l'utente mostrando un opportuno messaggio.                                                                                                                                                                                                                                                          \\\hline
+	RF-1            & Obbligatorio        & Capitolato     & La parte \textit{IoT} dovrà essere simulata attraverso tool di generazione di dati casuali che tuttavia siano verosimili.
+	\\\hline
+	RF-2            & Obbligatorio        & Capitolato     & Il sistema dovrà permettere la visualizzazione dei dati in tempo reale.
+	\\\hline
+	RF-3            & Obbligatorio        & Capitolato     & Il sistema dovrà permettere la visualizzazione dei dati storici.
+	\\\hline
+	RF-4            & Obbligatorio        & Capitolato     & L'utente deve poter accedere all'applicativo senza bisogno di autenticazione.\\\hline
+	RF-5            & Obbligatorio        & Capitolato     & L'utente dovrà poter visualizzare su una mappa la posizione geografica dei sensori.
+	\\\hline
+	RF-6            & Obbligatorio        & Capitolato     & I tipi di dati che il sistema dovrà visualizzare sono: temperatura, umidità, qualità dell'aria, precipitazioni, traffico, stato delle colonnine di ricarica, stato di occupazione dei parcheggi, stato di riempimento delle isole ecologiche e livello di acqua.
+	\\\hline
+	RF-7            & Obbligatorio        & Capitolato     & I dati dovranno essere salvati su un database OLAP.
+	\\\hline
+	RF-8            & Obbligatorio        & Capitolato     & I sensori di temperatura rilevano i dati in gradi Celsius
+	\\\hline
+	RF-9            & Obbligatorio        & Capitolato     & I sensori di umidità rilevano la percentuale di umidità nell’aria.
+	\\\hline
+	RF-10           & Obbligatorio        & Capitolato     & I sensori livello acqua rilevano il livello di acqua nella zona di installazione
+	\\\hline
+	RF-11           & Obbligatorio        & Capitolato     & I dati provenienti dai sensori dovranno contenere i seguenti dati: id sensore, data, ora e valore.
+	\\\hline
+	RF-12           & Obbligatorio        & Capitolato     & Sviluppo di componenti quali widget e grafici per la visualizzazione dei dati nelle dashboard.
+	\\\hline
+	RF-13           & Obbligatorio        & Interno        & Il sistema deve permettere di visualizzare una dashboard generale con tutti i dati dei sensori.
+	\\\hline
+	RF-14           & Obbligatorio        & Interno        & Il sistema deve permettere di visualizzare una dashboard specifica per ciascuna categoria di sensori.
+	\\\hline
+	RF-15           & Obbligatorio        & Esterno        & Il sistema deve permettere di visualizzare una dashboard con i dati grezzi provenienti da tutti i sensori.
+	\\\hline
+	RF-16           & Obbligatorio        & Interno        & Nella dashboard dei dati grezzi dovranno essere presenti: una mappa interattiva, un widget con il conteggio totale dei sensori divisi per tipo, una tabella contente tutti i sensori e la data in cui essi hanno trasmesso l'ultima volta. Inoltre verranno mostrate delle tabelle con i dati filtrabili suddivisi per sensore e un grafico time series con tutti i dati grezzi. 
+	\\\hline
+	RF-17           & Obbligatorio        & Interno        & Nella dashboard della temperatura dovranno essere visualizzati: un grafico time series, una mappa interattiva, la temperatura media, minima e massima di un certo periodo di tempo, la temperatura in tempo reale e la temperatura media per settimana e mese.
+	\\\hline
+	RF-18           & Obbligatorio        & Interno        & Nella dashboard dell'umidità dovranno essere visualizzati: un grafico time series, una mappa interattiva, l'umidità media, minima e massima di un certo periodo di tempo e l'umidità in tempo reale.
+	\\\hline
+	RF-19           & Obbligatorio        & Interno        & Nella dashboard della qualità dell'aria dovranno essere visualizzati: un grafico time series, una mappa interattiva, la qualità media dell'aria in un certo periodo e in tempo reale, i giorni con la qualità dell'aria migliore e peggiore in un certo periodo di tempo.
+	\\\hline
+	RF-20           & Obbligatorio        & Interno        & Nella dashboard delle precipitazioni dovranno essere visualizzati: un grafico time series, una mappa interattiva, la quantità media di precipitazioni in un certo periodo e in tempo reale, i giorni con la quantità di precipitazioni maggiore e minore in un certo periodo di tempo.
+	\\\hline
+	RF-21           & Obbligatorio        & Interno        & Nella dashboard del traffico dovranno essere visualizzati: un grafico time series, il numero di veicoli e la velocità media in tempo reale, il calcolo dell'ora di punta sulla base del numero di veicoli e velocità media.
+	\\\hline
+	RF-22           & Obbligatorio        & Interno        & Nella dashboard delle colonnine di ricarica dovranno essere visualizzati: una mappa interattiva contenente anche lo stato e il numero di colonnine di ricarica suddivise per stato in tempo reale.
+	\\\hline
+	RF-23           & Obbligatorio        & Interno        & Nella dashboard dei parcheggi dovranno essere visualizzati: una mappa interattiva con il rispettivo stato di occupazione e il conteggio di parcheggi suddivisi per stato di occupazione in tempo reale.
+	\\\hline
+	RF-24           & Obbligatorio        & Interno        & Nella dashboard delle isole ecologiche dovranno essere visualizzati: una mappa interattiva con il rispettivo stato di riempimento e il conteggio di isole ecologiche suddivise per stato di riempimento in tempo reale.
+	\\\hline
+	RF-25           & Obbligatorio        & Interno        & Nella dashboard del livello di acqua dovranno essere visualizzati: un grafico time series, una mappa interattiva, il livello medio di acqua in un certo periodo e in tempo reale.
+	\\\hline
+	RF-26           & Obbligatorio        & Interno        & Nel caso in cui non ci siano dati visualizzabili, il sistema deve notificare l'utente mostrando un opportuno messaggio.
+	\\\hline
 	RF-27           & Obbligatorio        & Interno        & I sensori di qualità dell'aria inviano i seguenti dati: \textit{PM10}, \textit{PM2.5}, \textit{NO2}, \textit{CO}, \textit{O3}, \textit{SO2} in $\mu g/m^3$ e la qualità dell'aria in base all'indice \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#european-air-quality-index}{\textit{EAQI}\textsubscript{G}}.                                       \\\hline
-	RF-28           & Obbligatorio        & Interno        & I sensori di precipitazioni inviano la quantità di pioggia caduta in mm.                                                                                                                                                                                                                                                                                                         \\\hline
-	RF-29           & Obbligatorio        & Interno        & I sensori di traffico inviano il numero di veicoli rilevati e la velocità in km/h.                                                                                                                                                                                                                                                                                               \\\hline
-	RF-30           & Obbligatorio        & Interno        & Le colonnine di ricarica inviano lo stato di occupazione e il tempo mancante alla fine della ricarica (se occupate) o il tempo passato dalla fine dell'ultima ricarica (se libere).                                                                                                                                                                                              \\\hline
-	RF-31           & Obbligatorio        & Interno        & I sensori di parcheggio inviano lo stato di occupazione del parcheggio (1 se occupato, 0 se libero) e il timestamp dell'ultimo cambiamento di stato.                                                                                                                                                                                                                             \\\hline
-	RF-32           & Obbligatorio        & Interno        & Le isole ecologiche inviano lo stato di riempimento come percentuale.                                                                                                                                                                                                                                                                                                            \\\hline
-	RF-33           & Obbligatorio        & Interno        & I sensori di livello di acqua inviano il livello di acqua in cm.                                                                                                                                                                                                                                                                                                                 \\\hline
-	RF-34           & Obbligatorio        & Esterno        & Il sistema deve permettere di filtrare i dati visualizzati in base a un intervallo di tempo.                                                                                                                                                                                                                                                                                     \\\hline
-	RF-35           & Obbligatorio        & Esterno        & Il sistema deve permettere di filtrare i dati visualizzati in base al sensore che li ha generati.                                                                                                                                                                                                                                                                                \\\hline
-	RF-36           & Desiderabile        & Esterno        & Devono essere messe in relazione più sorgenti di dati.                                                                                                                                                                                                                                                                                                                           \\\hline
-	RQ-37           & Opzionale           & Esterno        & Utilizzo di uno schema registry per la pubblicazione dei dati sui topic, per garantire la correttezza dei dati.                                                                                                                                                                                                                                                                  \\\hline
-	RQ-38           & Desiderabile        & Esterno        & Devono essere calcolati dei KPI per ogni categoria di sensori, che rappresentano la qualità di un servizio fornito ai cittadini o delle condizioni della città.                                                                                                                                                                                                                  \\\hline
-	RQ-39           & Desiderabile        & Esterno        & Nei grafici time series i dati devono essere aggregati calcolando la media di 5 minuti, in modo da risultare più leggibili.                                                                                                                                                                                                                                                      \\\hline
+	RF-28           & Obbligatorio        & Interno        & I sensori di precipitazioni inviano la quantità di pioggia caduta in mm.
+	\\\hline
+	RF-29           & Obbligatorio        & Interno        & I sensori di traffico inviano il numero di veicoli rilevati e la velocità in km/h.
+	\\\hline
+	RF-30           & Obbligatorio        & Interno        & Le colonnine di ricarica inviano lo stato di occupazione e il tempo mancante alla fine della ricarica (se occupate) o il tempo passato dalla fine dell'ultima ricarica (se libere).
+	\\\hline
+	RF-31           & Obbligatorio        & Interno        & I sensori di parcheggio inviano lo stato di occupazione del parcheggio (1 se occupato, 0 se libero) e il timestamp dell'ultimo cambiamento di stato.
+	\\\hline
+	RF-32           & Obbligatorio        & Interno        & Le isole ecologiche inviano lo stato di riempimento come percentuale.
+	\\\hline
+	RF-33           & Obbligatorio        & Interno        & I sensori di livello di acqua inviano il livello di acqua in cm.
+	\\\hline
+	RF-34           & Obbligatorio        & Esterno        & Il sistema deve permettere di filtrare i dati visualizzati in base a un intervallo di tempo.
+	\\\hline
+	RF-35           & Obbligatorio        & Esterno        & Il sistema deve permettere di filtrare i dati visualizzati in base al sensore che li ha generati.
+	\\\hline
+	RF-36           & Desiderabile        & Esterno        & Devono essere messe in relazione più sorgenti di dati.
+	\\\hline
+	RQ-37           & Opzionale           & Esterno        & Utilizzo di uno schema registry per la pubblicazione dei dati sui topic, per garantire la correttezza dei dati.
+	\\\hline
+	RQ-38           & Desiderabile        & Esterno        & Devono essere calcolati dei KPI per ogni categoria di sensori, che rappresentano la qualità di un servizio fornito ai cittadini o delle condizioni della città.
+	\\\hline
+	RQ-39           & Desiderabile        & Esterno        & Nei grafici time series i dati devono essere aggregati calcolando la media di 5 minuti, in modo da risultare più leggibili.
+	\\\hline
 	\caption{Requisiti funzionali}
 	\label{table:1}
 \end{longtable}
@@ -106,11 +150,15 @@ I requisiti possono avere tre livelli di importanza:
 \subsection{Requisiti qualitativi}
 \begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
 	\hline
-	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte}                 & \textbf{Descrizione}                                                                                                                                                                            \\\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}
+	\\\hline
 	\endfirsthead
-	RQ-40           & Obbligatorio        & Capitolato, Piano di Qualifica & Sviluppo di test che dimostrino il corretto funzionamento dei servizi e delle funzionalità previste. Viene richiesta una copertura dell'80\% corredata di report.                               \\\hline
-	RQ-41           & Obbligatorio        & Capitolato, Piano di Qualifica & Il progetto deve essere corredato di documentazione riguardo scelte implementative e progettuali effettuate e relative motivazioni.                                                             \\\hline
-	RQ-42           & Obbligatorio        & Capitolato, Piano di Qualifica & Il progetto deve essere corredato di documentazione riguardo problemi aperti e eventuali soluzioni proposte da esplorare.                                                                       \\\hline
+	RQ-40			& Obbligatorio        & Capitolato, Piano di Qualifica & Sviluppo di test che dimostrino il corretto funzionamento dei servizi e delle funzionalità previste. Viene richiesta una copertura dell'80\% corredata di report.
+	\\\hline
+	RQ-41           & Obbligatorio        & Capitolato, Piano di Qualifica & Il progetto deve essere corredato di documentazione riguardo scelte implementative e progettuali effettuate e relative motivazioni.
+	\\\hline
+	RQ-42           & Obbligatorio        & Capitolato, Piano di Qualifica & Il progetto deve essere corredato di documentazione riguardo problemi aperti e eventuali soluzioni proposte da esplorare.
+	\\\hline
 	RQ-43           & Obbligatorio        & Capitolato, Piano di Qualifica & Tutte le componenti del sistema devono essere testate con \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#test-end-to-end}{\textit{test end-to-end}\textsubscript{G}}. \\\hline
 	\caption{Requisiti qualitativi}
 	\label{table:2}
@@ -119,19 +167,27 @@ I requisiti possono avere tre livelli di importanza:
 \subsection{Requisiti di vincolo}
 \begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.20\textwidth}|>{\centering\arraybackslash}m{0.4\textwidth}|}
 	\hline
-	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}                                                                                    \\\hline
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Fonte} & \textbf{Descrizione}
+	\\\hline
 	\endfirsthead
 	\hline
 	\endhead
-	RV-44           & Obbligatorio        & Capitolato     & Deve essere implementato almeno un simulatore di dati.                                                  \\\hline
-	RV-45           & Desiderabile        & Capitolato     & Devono essere implementati più simulatori di dati.                                                      \\\hline
+	RV-44           & Obbligatorio        & Capitolato     & Deve essere implementato almeno un simulatore di dati.
+	\\\hline
+	RV-45           & Desiderabile        & Capitolato     & Devono essere implementati più simulatori di dati.
+	\\\hline
 	RV-46           & Obbligatorio        & Capitolato     & I simulatori devono produrre dei dati verosimili.                                                       \\\hline
-	RV-47           & Obbligatorio        & Capitolato     & Il simulatore di dati deve pubblicare messaggi in una piattaforma di \textit{data streaming}.           \\\hline
-	RV-48           & Obbligatorio        & Capitolato     & La piattaforma di \textit{data streaming} deve essere integrata con un un database OLAP.                \\\hline
-	RV-49           & Obbligatorio        & Capitolato     & Per ciascuna tipologia di sensore dev'essere sviluppata almeno una dashboard.                           \\\hline
+	RV-47           & Obbligatorio        & Capitolato     & Il simulatore di dati deve pubblicare messaggi in una piattaforma di \textit{data streaming}.
+	\\\hline
+	RV-48           & Obbligatorio        & Capitolato     & La piattaforma di \textit{data streaming} deve essere integrata con un un database OLAP.
+	\\\hline
+	RV-49           & Obbligatorio        & Capitolato     & Per ciascuna tipologia di sensore dev'essere sviluppata almeno una dashboard.
+	\\\hline
 	RV-50           & Opzionale           & Capitolato     & Previsione di dati futuri basati sui dati storici.                                                      \\\hline
-	RV-51           & Desiderabile        & Capitolato     & Deve esistere una dashboard per la visualizzazione della posizione geografica dei sensori su una mappa. \\\hline
-	RV-52           & Opzionale           & Capitolato     & Un sistema di notifiche che allerti l'utente in caso di superamento di soglie prestabilite.             \\\hline
+	RV-51           & Desiderabile        & Capitolato     & Deve esistere una dashboard per la visualizzazione della posizione geografica dei sensori su una mappa
+	\\\hline
+	RV-52           & Opzionale           & Capitolato     & Un sistema di notifiche che allerti l'utente in caso di superamento di soglie prestabilite.
+	\\\hline
 	\caption{Requisiti di vincolo}
 	\label{table:3}
 \end{longtable}
