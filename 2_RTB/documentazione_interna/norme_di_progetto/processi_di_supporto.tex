@@ -306,7 +306,7 @@ Inoltre, la verifica garantisce che la documentazione rispetti gli standard azie
 \end{itemize}
 
 \subsubsubsection{Processo di revisione}
-Al momento di completamento delle modifiche in un documento il redattore è tenuto a creare una pull request dal branch in cui ha effettuato le modifiche verso il branch develop, richiedendo una revisione da parte del verificatore e del responsabile; in caso di approvazione verrà effettuato il merge e la issue creata su ClickUp verrà spostata da \textit{in progres} a \textit{done}.
+Al momento di completamento delle modifiche in un documento il redattore è tenuto a creare una pull request dal branch in cui ha effettuato le modifiche verso il branch \texttt{develop}, richiedendo una revisione da parte del verificatore e del responsabile; in caso di approvazione verrà effettuato il merge e la issue creata su ClickUp verrà spostata da \textit{in progres} a \textit{done}.
 
 \subsubsection{Analisi}
 L'analisi è un processo essenziale che mira a garantire la qualità e l'affidabilità del prodotto finale. Questa fase critica comporta un esame dettagliato e sistematico di tutte le componenti del progetto per identificare e risolvere eventuali problemi prima della consegna. Si suddivide in \textbf{analisi dinamica} e \textbf{analisi statica}.
@@ -497,7 +497,7 @@ Il repository inerente alla documentazione è così organizzato:
 \begin{enumerate}
 	\item \textbf{Candidatura}:
 	      \begin{itemize}
-		      \item \textbf{verbali\_esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{SyncLab S.r.l.};
+		      \item \textbf{verbali\_esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{Sync Lab S.r.l.};
 		      \item \textbf{verbali\_interni}: contenente i verbali delle riunioni interne svolte;
 		      \item \textbf{lettera\_di\_presentazione}: documento di presentazione per la candidatura al capitolato scelto;
 		      \item \textbf{preventivo\_costi\_assunzione\_impegni}: documento in cui vengono specificati i costi previsti, il totale delle ore per persona e gli impegni assunti;
@@ -516,7 +516,7 @@ Il repository inerente alla documentazione è così organizzato:
 			            \item \textbf{glossario};
 			            \item \textbf{norme\_di\_progetto}.
 		            \end{itemize}
-		      \item \textbf{verbali\_esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{SyncLab S.r.l.};
+		      \item \textbf{verbali\_esterni}: al suo interno sono presenti i verbali delle riunioni avute con i membri di \textit{Sync Lab S.r.l.};
 		      \item \textbf{verbali\_interni}: contenente i verbali delle riunioni interne svolte.
 	      \end{itemize}
 	\item \textbf{PB} %todo, da implementare
@@ -543,14 +543,14 @@ L'approccio adottato per la redazione della documentazione segue il workflow not
 	Flusso di lavoro Gitflow:
 \end{flushleft}
 \begin{enumerate}
-    \item \textbf{main branch}
+    \item \textbf{\texttt{main} branch}
     \begin{itemize}
         \item branch principale e stabile;
         \item contiene il codice in produzione;
         \item ogni commit rappresenta una versione rilasciata.
     \end{itemize}
 
-    \item \textbf{develop branch}
+    \item \textbf{\texttt{develop} branch}
     \begin{itemize}
         \item branch per lo sviluppo integrato;
         \item riceve i merge dai feature branches;
@@ -559,24 +559,24 @@ L'approccio adottato per la redazione della documentazione segue il workflow not
 
     \item \textbf{feature branch}
     \begin{itemize}
-        \item derivano dal branch develop;
+        \item derivano dal branch \texttt{develop};
         \item utilizzati per sviluppare nuove funzionalità;
-        \item dopo il completamento, vengono mergiati in develop.
+        \item dopo il completamento, vengono mergiati in \texttt{develop}.
     \end{itemize}
 
     \item \textbf{release branch}
     \begin{itemize}
-        \item derivano dal branch develop;
+        \item derivano dal branch \texttt{develop};
         \item preparano una nuova versione per il rilascio;
         \item permettono di effettuare correzioni di bug e preparare la documentazione;
-        \item dopo il completamento, vengono mergiati sia in master che in develop.
+        \item dopo il completamento, vengono mergiati sia in \texttt{main} che in \texttt{develop}.
     \end{itemize}
 
     \item \textbf{hotfix branch}
     \begin{itemize}
         \item derivano dal branch master;
         \item utilizzati per correggere rapidamente bug critici in produzione;
-        \item dopo il completamento, vengono mergiati sia in master che in develop.
+        \item dopo il completamento, vengono mergiati sia in \texttt{main} che in \texttt{develop}.
     \end{itemize}
 \end{enumerate}
 
@@ -584,7 +584,7 @@ L'approccio adottato per la redazione della documentazione segue il workflow not
 Il processo di consegna e rilascio secondo lo standard ISO/IEC 12207:1995 è una componente essenziale del ciclo di vita del software, che si concentra sulla gestione delle versioni del software e sulla distribuzione dei prodotti software agli utenti finali. Questo processo assicura che le versioni del software siano rilasciate in modo controllato, pianificato e che soddisfino i requisiti di qualità e sicurezza. Attraverso una serie di attività ben definite, il processo di gestione del rilascio garantisce che il software sia pronto per l'uso, minimizzando i rischi di problemi post-rilascio e massimizzando l'efficienza operativa. La creazione della prima release deve avvenire in concomitanza con la baseline RTB (Requirements and Technology Baseline), mentre la creazione delle successive release deve avvenire in concomitanza con la baseline PB (Product Baseline) e, se prevista, CA (Customer Acceptance).
 
 \subsubsection{Sito del gruppo}
-Il gruppo ha sviluppato un sito disponibile al link: \url{https://7last.github.io/}; che ha lo scopo di facilitare la consultazione dei documenti redatti fino ad ora. Tale pagina web viene aggiornata automaticamente per rispecchiare lo stato dei documenti presenti all'interno del branch main. Inoltre facilita la consultazione del glossario grazie a dei link, presenti nelle parole distinte dalla lettera G al pedice, diretti alla definizione del termine.
+Il gruppo ha sviluppato un sito disponibile al link: \url{https://7last.github.io/}; che ha lo scopo di facilitare la consultazione dei documenti redatti fino ad ora. Tale pagina web viene aggiornata automaticamente per rispecchiare lo stato dei documenti presenti all'interno del branch \texttt{main}. Inoltre facilita la consultazione del glossario grazie a dei link, presenti nelle parole distinte dalla lettera G al pedice, diretti alla definizione del termine.
 
 \subsubsection{Strumenti} %to do%
 
