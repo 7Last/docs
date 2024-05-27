@@ -18,14 +18,14 @@ Lo scopo della sezione è:
 La documentazione viene versionata allo stesso modo del codice sorgente, utilizzando la piattaforma \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#github}{Github\textsubscript{G}}.
 Ciò permette di tenere traccia delle modifiche apportate ai documenti e di realizzare procedure automatiche per l'individuazione degli errori grammaticali,
 inserimento della "G" a pedice per i termini presenti nel \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{glossario\textsubscript{G}} e la pubblicazione nel sito del progetto.\\
-Abbiamo stabilito di utilizzare il branch \texttt{main} per la pubblicazione dei documenti approvati dal verificatore e il branch \texttt{develop} per contenere
+Abbiamo stabilito di utilizzare il branch \texttt{main} per la pubblicazione dei documenti approvati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{verificatore\textsubscript{G}} e il branch \texttt{develop} per contenere
 i file in formato LaTex da cui derivano i documenti finali.
 
 \subsubsubsection{Branch policy}
 Sono state definite le seguenti regole per la gestione dei branch:
 \begin{itemize}
 	\item \texttt{main}: viene aggiornato solamente dalla \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#github}{\textit{Github\textsubscript{G}} Action} che si occupa di pubblicare i documenti approvati presenti nel branch \texttt{develop};
-	\item \texttt{develop}: per la pubblicazione in questo branch è necessario ricevere un'approvazione da parte del verificatore tramite \textit{pull request}.
+	\item \texttt{develop}: per la pubblicazione in questo branch è necessario ricevere un'approvazione da parte del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{verificatore\textsubscript{G}} tramite \textit{pull request}.
 \end{itemize}
 
 \subsubsection{Tipografia e sorgente documenti}
@@ -40,7 +40,7 @@ Ciascun documento segue un ciclo di vita ben definito, che prevede le seguenti f
 	\item \textbf{Scelta del template} da utilizzare per il documento, scegliendo tra \textit{documento}, \textit{verbale interno} o \textit{verbale esterno};
 	\item \textbf{Redazione} del documento, seguendo le norme tipografiche e le convenzioni stabilite;
 	\item \textbf{Commit} delle modifiche effettuate;
-	\item \textbf{Apertura \textit{pull request}} per la revisione del documento, che dovrà essere approvata dal verificatore e dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} per lo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}} in corso;
+	\item \textbf{Apertura \textit{pull request}} per la revisione del documento, che dovrà essere approvata dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{verificatore\textsubscript{G}} e dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} per lo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}} in corso;
 	\item \textbf{Chiusura \textit{pull request}} e \textbf{merge} del branch;
 	\item \textbf{Completamento task} su \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{\textit{ClickUp}\textsubscript{G}}.
 \end{enumerate}
@@ -88,7 +88,7 @@ L’\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#amm
 inserisce le attività nell'ITS \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{ClickUp\textsubscript{G}} e le assegna ai membri del gruppo.
 
 \subsubsubsection{I verificatori}
-Il compito del verificatore è di controllare la correttezza e la qualità dei documenti prodotti, assicurandosi che siano conformi agli standard e alle norme stabilite.
+Il compito del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{verificatore\textsubscript{G}} è di controllare la correttezza e la qualità dei documenti prodotti, assicurandosi che siano conformi agli standard e alle norme stabilite.
 
 \subsubsection{Struttura del documento}
 Tutti i documenti produtti devono seguire una struttura ben definita, che prevede le componenti in seguito elencate.
@@ -108,7 +108,7 @@ in modo da garantire la rintracciabilità e la trasparenza delle modifiche. Ogni
 	\item \textbf{versione} del documento, nel formato vX.Y, dove X rappresenta il numero di versione principale e Y il numero di versione secondaria;
 	\item \textbf{data} di ultima modifica;
 	\item nome del \textbf{redattore};
-	\item nome del \textbf{verificatore};
+	\item nome del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{\textbf{verificatore}\textsubscript{G}};
 	\item \textbf{descrizione} della modifica.
 \end{itemize}
 
@@ -291,7 +291,7 @@ Ogni metrica presenta la seguente struttura:
 
 \subsection{Verifica}
 \subsubsection{Introduzione}
-La verifica nel ciclo di vita del software garantisce l'efficienza e la correttezza delle attività, assicurando che i prodotti soddisfino i requisiti. I verificatori applicano tecniche di test seguendo procedure definite all'interno del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}}, il quale traccia il percorso di verifica, stabilendo obiettivi e criteri di accettazione. Tutti i processi attivi vengono sottoposti a verifica dopo aver raggiunto un buon grado di completamento o a seguito di modifiche dello stato del processo stesso.
+La verifica nel ciclo di vita del software garantisce l'efficienza e la correttezza delle attività, assicurando che i prodotti soddisfino i requisiti. I \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{verificatori\textsubscript{G}} applicano tecniche di test seguendo procedure definite all'interno del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{Piano di Qualifica\textsubscript{G}}, il quale traccia il percorso di verifica, stabilendo obiettivi e criteri di accettazione. Tutti i processi attivi vengono sottoposti a verifica dopo aver raggiunto un buon grado di completamento o a seguito di modifiche dello stato del processo stesso.
 
 \subsubsection{Verifica dei documenti} \label{verifica_dei_documenti}
 Nell'ambito della documentazione, la verifica è un'attività cruciale per garantire la correttezza e l'accuratezza dei contenuti. Questo processo coinvolge una serie di controlli sistematici e revisioni finalizzate a garantire che la documentazione sia accurata, completa e conforme agli standard e ai requisiti specificati.
@@ -306,7 +306,7 @@ Inoltre, la verifica garantisce che la documentazione rispetti gli standard azie
 \end{itemize}
 
 \subsubsubsection{Processo di revisione}
-Al momento di completamento delle modifiche in un documento il redattore è tenuto a creare una pull request dal branch in cui ha effettuato le modifiche verso il branch \texttt{develop}, richiedendo una revisione da parte del verificatore e del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}}; in caso di approvazione verrà effettuato il merge e la issue creata su \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{ClickUp\textsubscript{G}} verrà spostata da \textit{in progres} a \textit{done}.
+Al momento di completamento delle modifiche in un documento il redattore è tenuto a creare una pull request dal branch in cui ha effettuato le modifiche verso il branch \texttt{develop}, richiedendo una revisione da parte del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{verificatore\textsubscript{G}} e del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}}; in caso di approvazione verrà effettuato il merge e la issue creata su \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickup}{ClickUp\textsubscript{G}} verrà spostata da \textit{in progres} a \textit{done}.
 
 \subsubsection{Analisi}
 L'analisi è un processo essenziale che mira a garantire la qualità e l'affidabilità del prodotto finale. Questa fase critica comporta un esame dettagliato e sistematico di tutte le componenti del progetto per identificare e risolvere eventuali problemi prima della consegna. Si suddivide in \textbf{analisi dinamica} e \textbf{analisi statica}.
