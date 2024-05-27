@@ -2,133 +2,17 @@
 \definecolor{amm}{HTML}{CC0000}
 
 \section{Cruscotto di valutazione della qualità}
-\subsection{Qualità del processo di Analisi dei requisiti}
-\subsubsection{1M-CRO - Copertura dei requisiti obbligatori}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ytick = {0, 25, 50, 75, 100},
-            ymin=0, ymax=100,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=3
-            },      
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 25) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 48) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 52)};
-            \legend{Valore ottimo ed ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    %44 requisiti obbligatori, 11 implementati nel primo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}}, 21 nel secondo e 24 nel terzo
-    \caption{Percentuale di copertura dei requisiti obbligatori}
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
-
-\newpage
-\subsubsection{2M-CRD - Copertura dei requisiti desiderabili}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ytick = {0, 25, 50, 75, 100},
-            ymin=0, ymax=100,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=3
-            },      
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 35) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 35) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 35)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 50) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentuale di copertura dei requisiti desiderabili}
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
-
-\newpage
-\subsubsection{3M-CROP - Copertura dei requisiti opzionali}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ytick = {0, 25, 50, 75, 100},
-            ymin=0, ymax=100,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=3
-            },      
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentuale di copertura dei requisiti opzionali} %non abbiamo implementato nessun requisito opzionale
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
-
-\newpage
 \subsection{Qualità del processo di Fornitura}
-\subsubsection{9M-EV - Earned Value (EV) e 10M-PV - Planned Value (PV)}
+\subsubsection{1M-PV - Planned Value e 2M-EV - Earned Value}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
     \begin{tikzpicture}
-        %da chiedere se è giusta questa interpretazione
         \begin{axis}[
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -138,28 +22,26 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },      
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 12670) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 11730) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 12660)}; % TODO mettere valori corretti EAC
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 1090) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 2220) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 2925)}; % TODO mettere valori corretti PV
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 977.5) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 2032.5) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 2792.5)}; % TODO mettere valori corretti EV
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650)}; % TODO mettere valori corretti EAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1090) (Sprint 2, 2107.5) (Sprint 3, 2737.5) (Sprint 4, 3442.5)}; % TODO mettere valori corretti PV
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5) (Sprint 4, 3412.5)}; % TODO mettere valori corretti EV
             \legend{EAC, PV, EV}
         \end{axis}
     \end{tikzpicture}
     \caption{Proiezione del PV e dell'EV}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+\subsubsection*{RTB}
+Visionando il grafico si può notare che i valori di EV e PV quasi si sovrappongono, questo indica la buona riuscita della pianificazione delle attività da parte del gruppo \textit{7Last}.
+%TODO mettere considerazioni finali PB
 
 \newpage
-\subsubsection{11M-AC - Actual Cost (AC) e 14M-ETC - Estimate to Complete (ETC)}
-% da controllare (sistemare ETC)
+\subsubsection{3M-AC - Actual Cost  e 9M-ETC - Estimate to Complete}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -168,7 +50,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -178,27 +60,26 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },      
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 12670) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 11730) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 12660)}; 
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 11695) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 10670) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 9670)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 977.5) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 2032.5) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 2792.5)};
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 11590) (Sprint 2, 10572.5) (Sprint 3, 9942.5) (Sprint 4, 9237.5)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5) (Sprint 4, 3412.5)};
             \legend{EAC, ETC, AC}
         \end{axis}
     \end{tikzpicture}
     \caption{Proiezione dell'AC e dell'ETC}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+\subsubsection*{RTB}
+Il grafico evidenzia chiaramente un aumento progressivo dei costi (AC). Parallelamente, si osserva una diminuzione della stima dei costi a finire (ETC), che sta calando in modo proporzionale all'incremento dei costi.
 
+%TODO mettere considerazioni finali PB
 \newpage
-\subsubsection{12M-CV - Cost Variance (CV) e 33M-SV - Schedule Variance (SV)}
+\subsubsection{4M-SV - Schedule Variance e 5M-CV - Cost Variance}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -207,9 +88,8 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
-            ymin=-10, ymax=10,
             axis lines*=left,
             legend cell align=left,
             legend style={
@@ -217,26 +97,27 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },      
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, -7.5) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, -7.5) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, -7.5)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 4) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 1) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, -3)}; % TODO mettere valori corretti SV terzo periodo
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 9) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 7) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, -8)}; % TODO mettere valori corretti CV terzo periodo
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, -10) (Sprint 2, -10) (Sprint 3, -10) (Sprint 4, -10)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 25) (Sprint 2, -9.09) (Sprint 3, 7.69) (Sprint 4, 0)};
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 51.82) (Sprint 2, 27.14) (Sprint 3, 15.30) (Sprint 4, 10.29)};
             \legend{Valore ottimo, Valore ammissibile, SV, CV}
         \end{axis}
     \end{tikzpicture}
     \caption{Andamento percentuale di SV e CV}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+\subsubsection*{RTB}
+Dal grafico si nota come sia SV che CV siano inizialmente elevati, per poi decrescere durante la prosecuzione del progetto, in particolare si nota un andamento altalenante del SV. \\
+L'andamento inizialmente alto del Schedule Variance (SV) e del Cost Variance (CV) indica una possibile sovrastima iniziale dei tempi e dei costi, dovuta all'inesperienza del team. La variabilità del SV suggerisce che le stime di tempistiche iniziali erano eccessivamente conservative, con aggiustamenti successivi man mano che il team acquisiva esperienza. La decrescita nel tempo di entrambe le metriche mostra che il gruppo sta diventando più preciso nelle sue previsioni, con un allineamento progressivo dei costi e delle tempistiche reali rispetto a quelle pianificate.
+
+%TODO mettere considerazioni finali PB
 
 \newpage
-\subsubsection{13M-EAC - Estimated at Completion (EAC)}
+\subsubsection{8M-EAC - Estimated at Completion}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -245,7 +126,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {10000, 11000, 12000, 13000, 14000, 15000},
             ymin=10000, ymax=15000,
@@ -256,29 +137,147 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },      
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 12670) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 12670) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 12670)}; % TODO mettere valori corretti BAC
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 13177) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 13177) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 13177)}; % TODO mettere valori corretti BAC + 4%
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 12162) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 12162) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 12162)}; % TODO mettere valori corretti BAC - 4%
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 11730) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 11605) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 11000)}; % TODO mettere valori corretti EAC
-            \legend{Valore ottimo (BAC), Valore ammissibile superiore, Valore ammissibile inferiore, Valore effettivo}
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12680) (Sprint 2, 12670) (Sprint 3, 12680) (Sprint 4, 12680) };
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 13314) (Sprint 2, 13314) (Sprint 3, 13314) (Sprint 4, 13314)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650)};
+            \legend{Valore ottimo (BAC), Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
     \caption{Proiezione dell'EAC}
 \end{figure*}
+%--------- FINE GRAFICO -----------%
+\subsubsection*{RTB}
+Osservando il grafico si può notare come l'EAC sia quasi sovrapposto al BAC durante i periodi di progetto analizzati fino ad ora. Questa situazione riflette come \textit{7Last} abbia attuato una gestione efficace sia dei costi che delle tempistiche durante i periodi analizzati fino ad ora.
+
+%TODO mettere considerazioni finali PB
+% \newpage
+
+% \subsection{Qualità del processo di Analisi dei requisiti}
+% \subsubsection{11M-PRO - Percentuale Requisiti Obbligatori}
+% %--------- GRAFICO -----------%
+% \begin{figure*}[!h]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width  = 0.85*\textwidth,
+%             height = 8cm,
+%             ymajorgrids = true,
+%             symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+%             xtick = data,
+%             ytick = {0, 25, 50, 75, 100},
+%             ymin=0, ymax=100,
+%             axis lines*=left,
+%             legend cell align=left,
+%             legend style={
+%                 at={(0.5,1.15)},
+%                 anchor=south,
+%                 column sep=0.1ex,
+%                 legend columns=3
+%             },
+%             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+%             ]
+%             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+%             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 25) (Sprint 2, 48) (Sprint 3, 52) (Sprint 4, 64)};
+%             \legend{Valore ottimo ed ammissibile, Valore effettivo}
+%         \end{axis}
+%     \end{tikzpicture}
+%     %44 requisiti obbligatori, 11 implementati nel primo sprint, 21 nel secondo e 24 nel terzo, 28 nel quarto
+%     \caption{Percentuale di copertura dei requisiti obbligatori}
+% \end{figure*}
+% %--------- FINE GRAFICO -----------%
+% \subsubsection*{RTB}
+
+% %TODO mettere considerazioni finali PB
+% \newpage
+% \subsubsection{12M-PRD - Percentuale Requisiti Desiderabili}
+% %--------- GRAFICO -----------%
+% \begin{figure*}[!h]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width  = 0.85*\textwidth,
+%             height = 8cm,
+%             ymajorgrids = true,
+%             symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+%             xtick = data,
+%             ytick = {0, 25, 50, 75, 100},
+%             ymin=0, ymax=100,
+%             axis lines*=left,
+%             legend cell align=left,
+%             legend style={
+%                 at={(0.5,1.15)},
+%                 anchor=south,
+%                 column sep=0.1ex,
+%                 legend columns=3
+%             },
+%             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+%             ]
+%             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+%             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 35) (Sprint 2, 35) (Sprint 3, 35) (Sprint 4, 35)};
+%             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 20) (Sprint 3, 40) (Sprint 4, 60)};
+%             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Percentuale di copertura dei requisiti desiderabili}
+% \end{figure*}
+% %5 requisiti desiderabili; 0 nel primo sprint, 1 nel secondo,1 nel terzo, 1 nel quarto
+% %--------- FINE GRAFICO -----------%
+% %\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
+% % TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
+% %\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
+% % TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+
+% \newpage
+% \subsubsection{13M-PRO - Percentuale Requisiti Opzionali}
+% %--------- GRAFICO -----------%
+% \begin{figure*}[!h]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width  = 0.85*\textwidth,
+%             height = 8cm,
+%             ymajorgrids = true,
+%             symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+%             xtick = data,
+%             ytick = {0, 25, 50, 75, 100},
+%             ymin=0, ymax=100,
+%             axis lines*=left,
+%             legend cell align=left,
+%             legend style={
+%                 at={(0.5,1.15)},
+%                 anchor=south,
+%                 column sep=0.1ex,
+%                 legend columns=3
+%             },
+%             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+%             ]
+%             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+%             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+%             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 33)};
+%             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Percentuale di copertura dei requisiti opzionali}
+%     %3 requisiti opzionali, 0 primo sprint, 0 secondo sprint, 0 terzo sprint 1 quarto sprint
+% \end{figure*}
+
+
 %--------- FINE GRAFICO -----------%
 %\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
 % TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
 %\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
 % TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
 
+
+
 \newpage
 \subsection{Qualità del processo di Documentazione}
-\subsubsection{22M-IG - Indice Gulpease}
+\subsubsection{19M-IG - Indice Gulpease}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -287,7 +286,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -298,31 +297,30 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },           
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 90) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 90) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 90)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 60) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 60) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 60)};
-            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 55) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 60) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 60)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{NdP\textsubscript{G}}
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 70) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 55) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 55)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{PdP\textsubscript{G}}
-            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 70) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 70)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{PdQ\textsubscript{G}}
-            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 85) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 90) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 90)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{Glossario\textsubscript{G}}
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 75) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 75)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{AdR\textsubscript{G}}
-            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)}; % TODO mettere valori corretti MU
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)}; % TODO mettere valori corretti ST
-            \legend{Valore ottimo, Valore ammissibile, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{NdP\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{PdP\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{PdQ\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{Glossario\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{AdR\textsubscript{G}}, MU, ST}
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 75) (Sprint 3, 75) (Sprint 4, 75)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 50) (Sprint 3, 50) (Sprint 4, 50)};
+            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 60) (Sprint 2, 55) (Sprint 3, 65) (Sprint 4, 70)};
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 75) (Sprint 3, 85) (Sprint 4, 80)};
+            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 70) (Sprint 3, 85) (Sprint 4, 90)};
+            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 65) (Sprint 2, 60) (Sprint 3, 68) (Sprint 4, 72)};
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 75) (Sprint 3, 65) (Sprint 4, 68)};
+            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \legend{Valore ottimo, Valore ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
         \end{axis}
     \end{tikzpicture}
     \caption{Andamento indice di Gulpease per ciascun documento}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+\subsubsection*{RTB}
+Visionando il grafico si può notare una tendenza generale di crescita, eccetto per alcuni documenti. L'indice relativamente basso rispetto agli altri documenti rappresenta il glossario, il quale contiene descrizioni di natura tecnica che possono influire negativamente sull'indice di Gulpease.
 
+%TODO mettere considerazioni finali PB
 \newpage
-\subsubsection{23M-CO - Correttezza Ortografica}
+\subsubsection{20M-CO - Correttezza Ortografica}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -331,7 +329,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0, ymax=10,
             axis lines*=left,
@@ -341,32 +339,29 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },           
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 9) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 5) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 5)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{NdP\textsubscript{G}}
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 8) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 7) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 4)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{PdP\textsubscript{G}}
-            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 9) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 3) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 3)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{PdQ\textsubscript{G}}
-            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{Glossario\textsubscript{G}}
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 6) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 3)}; % TODO mettere valori corretti \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{AdR\textsubscript{G}}
-            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)}; % TODO mettere valori corretti MU
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)}; % TODO mettere valori corretti ST
-            \legend{Valore ottimo ed ammissibile, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#norme-di-progetto}{NdP\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-progetto}{PdP\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#piano-di-qualifica}{PdQ\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#glossario}{Glossario\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{AdR\textsubscript{G}}, MU, ST}
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 5) (Sprint 3, 5) (Sprint 4, 0)};
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 8) (Sprint 2, 7) (Sprint 3, 4) (Sprint 4, 0)};
+            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4,0)};
+            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 6) (Sprint 3, 3) (Sprint 4, 0)};
+            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \legend{Valore ottimo ed ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
         \end{axis}
     \end{tikzpicture}
     \caption{Errori ortografici per ciascun documento}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+\subsubsection*{RTB}
+Si noti come inizialmente il numero di errori di ortografia rilevati nei documenti sia elevato, per poi diminuire progressivamente. Questo indica che il gruppo \textit{7Last} ha migliorato la qualità della documentazione prodotta, riducendo gli errori di ortografia.
 
 \newpage
-\subsection{Qualità del processo di Verifica}
-\subsubsection{24M-CC - Code coverage}
-%Da qui in poi byteops fanno da "periodo 6"
+\subsection{Qualità del processo di Gestione della qualità}
+\subsubsection{25M-QMS - Metriche di Qualità Soddisfatte}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -375,45 +370,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ytick = {0, 25, 50, 75, 100},
-            ymin=0, ymax=100,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=-1
-            },           
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 80)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentuale di code coverage dei test implementati}
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
-
-\newpage
-\subsubsection{25M-BC - Branch coverage}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -424,139 +381,211 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },      
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 80)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90) (Sprint 3, 90) (Sprint 4, 90)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 82) (Sprint 3, 96) (Sprint 4, 100)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
-    \caption{Percentuale di branch coverage dei test implementati}
+    \caption{Percentuale di metriche di qualità soddisfatte}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+\subsubsection*{RTB}
+Osservando il grafico si può notare come inizialmente il valore delle metriche soddisfatte sia inferiore al valore ammissibile, questo è dovuto principalmente all'inesperienza del team. Successivamente l'andamento cresce progressivamente fino ad arrivare al 100\% nell'ultimo sprint. Questo indica un miglioramento proressivo del \textit{Way of Working} del gruppo.
 
-\newpage
-\subsubsection{26M-SC - Statement coverage}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ytick = {0, 25, 50, 75, 100},
-            ymin=0, ymax=100,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=3
-            },      
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 80)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentuale di statement coverage dei test implementati}
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+%TODO mettere considerazioni finali PB
 
-\newpage
-\subsubsection{27M-FD - Failure density}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ytick = {0, 25, 50, 75, 100},
-            ymin=0, ymax=100,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=3
-            },      
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \legend{Valore ottimo ed ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentuale di failure density}
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+% \newpage
+% \subsection{Qualità del processo di Verifica}
+% \subsubsection{26M-CC - Code coverage}
+% %Da qui in poi byteops fanno da "periodo 6"
+% %--------- GRAFICO -----------%
+% \begin{figure*}[!h]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width  = 0.85*\textwidth,
+%             height = 8cm,
+%             ymajorgrids = true,
+%             symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+%             xtick = data,
+%             ytick = {0, 25, 50, 75, 100},
+%             ymin=0, ymax=100,
+%             axis lines*=left,
+%             legend cell align=left,
+%             legend style={
+%                 at={(0.5,1.15)},
+%                 anchor=south,
+%                 column sep=0.1ex,
+%                 legend columns=-1
+%             },
+%             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+%             ]
+%             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+%             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80) (Sprint 4, 80)};
+%             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+%             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Percentuale di code coverage dei test implementati}
+% \end{figure*}
+% %--------- FINE GRAFICO -----------%
+% % \subsubsection*{RTB}
 
-\newpage
-\subsubsection{28M-PTCP - Passed Test Cases Percentage}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ytick = {0, 25, 50, 75, 100},
-            ymin=0, ymax=100,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=3
-            },      
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 80)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentuale di casi di test superati}
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
 
+% %TODO mettere considerazioni finali PB
+
+% \newpage
+% \subsubsection{27M-BC - Branch coverage}
+% %--------- GRAFICO -----------%
+% \begin{figure*}[!h]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width  = 0.85*\textwidth,
+%             height = 8cm,
+%             ymajorgrids = true,
+%             symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+%             xtick = data,
+%             ytick = {0, 25, 50, 75, 100},
+%             ymin=0, ymax=100,
+%             axis lines*=left,
+%             legend cell align=left,
+%             legend style={
+%                 at={(0.5,1.15)},
+%                 anchor=south,
+%                 column sep=0.1ex,
+%                 legend columns=3
+%             },
+%             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+%             ]
+%             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+%             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80) (Sprint 4, 80)};
+%             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+%             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Percentuale di branch coverage dei test implementati}
+% \end{figure*}
+% %--------- FINE GRAFICO -----------%
+% % \subsubsection*{RTB}
+
+% %TODO mettere considerazioni finali PB
+% \newpage
+% \subsubsection{28M-SC - Statement coverage}
+% %--------- GRAFICO -----------%
+% \begin{figure*}[!h]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width  = 0.85*\textwidth,
+%             height = 8cm,
+%             ymajorgrids = true,
+%             symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+%             xtick = data,
+%             ytick = {0, 25, 50, 75, 100},
+%             ymin=0, ymax=100,
+%             axis lines*=left,
+%             legend cell align=left,
+%             legend style={
+%                 at={(0.5,1.15)},
+%                 anchor=south,
+%                 column sep=0.1ex,
+%                 legend columns=3
+%             },
+%             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+%             ]
+%             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+%             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 80) (Sprint 2, 80) (Sprint 3, 80) (Sprint 4, 80)};
+%             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0)  (Sprint 4, 0)};
+%             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Percentuale di statement coverage dei test implementati}
+% \end{figure*}
+% %--------- FINE GRAFICO -----------%
+% % \subsubsection*{RTB}
+
+% %TODO mettere considerazioni finali PB
+% \newpage
+% \subsubsection{29M-FD - Failure density}
+% %--------- GRAFICO -----------%
+% \begin{figure*}[!h]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width  = 0.85*\textwidth,
+%             height = 8cm,
+%             ymajorgrids = true,
+%             symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+%             xtick = data,
+%             ytick = {0, 25, 50, 75, 100},
+%             ymin=0, ymax=100,
+%             axis lines*=left,
+%             legend cell align=left,
+%             legend style={
+%                 at={(0.5,1.15)},
+%                 anchor=south,
+%                 column sep=0.1ex,
+%                 legend columns=3
+%             },
+%             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+%             ]
+%             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+%             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 15) (Sprint 2, 15) (Sprint 3, 15) (Sprint 4, 15)};
+%             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+%             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Percentuale di failure density}
+% \end{figure*}
+% %--------- FINE GRAFICO -----------%
+% % \subsubsection*{RTB}
+
+% %TODO mettere considerazioni finali PB
+
+% \newpage
+% \subsubsection{30M-PTCP - Passed Test Case Percentage}
+% %--------- GRAFICO -----------%
+% \begin{figure*}[!h]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             width  = 0.85*\textwidth,
+%             height = 8cm,
+%             ymajorgrids = true,
+%             symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+%             xtick = data,
+%             ytick = {0, 25, 50, 75, 100},
+%             ymin=0, ymax=100,
+%             axis lines*=left,
+%             legend cell align=left,
+%             legend style={
+%                 at={(0.5,1.15)},
+%                 anchor=south,
+%                 column sep=0.1ex,
+%                 legend columns=3
+%             },
+%             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
+%             ]
+%             \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+%             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90) (Sprint 3, 90) (Sprint 4, 90)};
+%             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+%             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Percentuale di casi di test superati}
+% \end{figure*}
+% %--------- FINE GRAFICO -----------%
+% \subsubsection*{RTB}
+
+% %TODO mettere considerazioni finali PB
 \newpage
 \subsection{Qualità del processo di Gestione dei rischi}
-\subsubsection{29M-NCR - Non-Calculated Risk}
+\subsubsection{32M-NCR - Rischi Non Calcolati}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -565,7 +594,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ymin=0, ymax=5,
             axis lines*=left,
@@ -575,102 +604,25 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },      
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 3) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 3) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 3)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 1) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 1) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 0)};
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 3) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4, 3)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 1) (Sprint 2, 1) (Sprint 3, 0) (Sprint 4, 0)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
     \caption{Rischi non calcolati occorsi durante il progetto}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
-
-\newpage
-\subsection{Qualità del processo di Gestione della qualità}
-\subsubsection{30M-QMS - Quality Metrics Satisfied}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ytick = {0, 25, 50, 75, 100},
-            ymin=0, ymax=100,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=3
-            },      
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 90) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 90) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 90)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 43) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 70) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 80)};
-            \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Percentuale di metriche di qualità soddisfatte}
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
-
-\newpage
-\subsubsection{31M-TE - Efficienza Temporale}
-%--------- GRAFICO -----------%
-\begin{figure*}[!h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            width  = 0.85*\textwidth,
-            height = 8cm,
-            ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
-            xtick = data,
-            ymin=0,
-            axis lines*=left,
-            legend cell align=left,
-            legend style={
-                at={(0.5,1.15)},
-                anchor=south,
-                column sep=0.1ex,
-                legend columns=3
-            },      
-            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 1) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 1) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 1)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 3) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 3) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 3)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 2.5) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 2) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 4)};
-            \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Andamento dell'efficienza temporale}
-\end{figure*}
-%--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+\subsubsection*{RTB}
+Dal grafico si evince che durante i primi sprint sono emersi rischi non calcolati, sintomo di una pianificazione non ottimale dovuta all'inesperienza. Successivamente il team ha accumulato esperienza, mediante automiglioramento, imparando a gestire e prevenire i rischi in modo migliore.
+%TODO mettere considerazioni finali PB
 
 \newpage
 \subsection{Qualità del processo di Pianificazione}
-\subsubsection{32M-RSI - Requirements stability index (RSI)}
+\subsubsection{33M-RSI - Requirements Stability Index}
 %--------- GRAFICO -----------%
 \begin{figure*}[!h]
     \centering
@@ -679,7 +631,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -690,19 +642,18 @@
                 anchor=south,
                 column sep=0.1ex,
                 legend columns=3
-            },      
+            },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
-            ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 100) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 75) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 75) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 75)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 1, 0) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 2, 80) (\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{Sprint\textsubscript{G}} 3, 90)};
+        ]
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 75) (Sprint 3, 75) (Sprint 4, 75)};
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 60) (Sprint 4, 85)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
     \caption{Percentuale di stabilità dei requisiti}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{\textbf{RTB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#requirements-and-technology-baseline}{RTB\textsubscript{G}} \\
-%\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{\textbf{PB}\textsubscript{G}} \\
-% TODO considerazioni finali per \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#product-baseline}{PB\textsubscript{G}}
+\subsubsection*{RTB}
+L'analisi del RSI mostra un forte incremento tra il secondo e il terzo sprint, segnalando un'intensa attività di revisione e aggiustamento dei requisiti. Nei due sprint successivi, il RSI si stabilizza, indicando una riduzione delle modifiche e una maggiore stabilità dei requisiti. Questo andamento riflette un'efficace fase iniziale di consolidamento dei requisiti seguita da una stabilizzazione che facilita l'implementazione del progetto.
+%TODO mettere considerazioni finali PB
