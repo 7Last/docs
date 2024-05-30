@@ -28,6 +28,7 @@ EV
 familiarizzazione
 FFB
 FFF
+Flink
 Frontend
 getter
 Gls
@@ -51,6 +52,7 @@ modularizzato
 MSK
 multimodale
 NCR
+NiFi
 NVMe
 Occhinegro
 OLAP
