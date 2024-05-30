@@ -2,7 +2,6 @@ Airbnb
 amm
 Analizzabilità
 Apprendibilità
-aseline
 Autoformazione
 BAC
 Backend
@@ -10,10 +9,8 @@ Benetazzo
 Bernacca
 BSL
 BT
-BT
 BV
 BYOC
-cceptance
 CCM
 ciclomatica
 Ciclomatico
@@ -24,9 +21,7 @@ codicePadre
 CRD
 devops
 DF
-DF
 Dorigo
-EAC
 EAC
 european
 EV
@@ -52,7 +47,6 @@ LLM
 Malgarise
 manutenibile
 manutenibili
-mergiati
 modularizzato
 MSK
 multimodale
@@ -60,9 +54,6 @@ NCR
 NVMe
 Occhinegro
 OLAP
-OTDR
-OTDR
-OTDR
 OTDR
 Pallaro
 pdf
@@ -72,14 +63,10 @@ POC
 pos
 Postcondizioni
 PRD
-PRD
-PRD
-PRD
 Precondizioni
 PTCP
 PV
 QMS
-RDT
 RDT
 realizzativo
 reportistica
@@ -87,11 +74,7 @@ rifinimento
 ripianificarlo
 riutilizzabilità
 RMR
-RMR
-RMR
-RMR
 RO
-roduct
 rpk
 RQ
 Seastar
@@ -103,8 +86,8 @@ Sottocasi
 Sottocaso
 SpA
 stickman
+str
 SV
-tato
 Testabilità
 tex
 Tiozzo
@@ -114,12 +97,10 @@ TLS
 tracciabilità
 Trello
 TT
-TT
 UC
 UI
 UML
 vA
-vanzamento
 Ver
 Versionamento
 Videochiamate
@@ -135,4 +116,3 @@ yshift
 ytick
 yy
 Zorzi
-str

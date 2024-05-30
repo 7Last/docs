@@ -4,7 +4,7 @@
 files=$(find . -name '*.tex' | 
     grep -v '0_template' |
     grep -v '1_candidatura' |
-    grep -v 'verbali_esterni')
+    grep -v 'verbale_esterno_2024-05-06')
 
 output_file="misspelled_words.txt"
 > "$output_file"  # Clear the output file if it exists
