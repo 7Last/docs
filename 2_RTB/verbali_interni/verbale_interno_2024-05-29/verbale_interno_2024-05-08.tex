@@ -1,0 +1,112 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily\oldthepage}
+
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l l }
+			\hline                                                             \\[-2ex]
+			Ver. & Data       & Redattore   & Verificatore   & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-06-02 & Leonardo Baldo & Raul Seganfreddo & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 15:30\\
+\textbf{Orario di fine}: 16:30\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     &                & Presente          \\
+			Davide Malgarise      &                & Assente           \\
+			Elena Ferro           &                & Presente          \\
+			Leonardo Baldo        & Redattore      & Presente          \\
+			Matteo Tiozzo         &                & Presente          \\
+			Raul Seganfreddo      & Verificatore   & Presente          \\
+			Valerio Occhinegro    & Amministratore & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Cosa è stato fatto fino ad ora
+	\item Cosa rimane da fare
+	\item Varie ed eventuali
+	\item Decisioni prese e conclusioni
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Cosa è stato fatto fino ad ora}
+È stato fatto un riepilogo di quanto completato fino ad ora.
+\begin{itemize}
+	\item \textbf{Verbali} \\
+	      Revisionati e approvati il verbali delle riunioni interna ed esterna del 2024-05-22.
+	\item \textbf{Documentazione} \\
+	      Revisione generale documentazione. Popolazione grafici nel \textit{Piano di Qualfifica}.
+	\item Raffinate le dashboard.
+\end{itemize}
+
+\subsection{Cosa rimane da fare}
+Per questo sprint ci sono ancora alcune attività da completare:
+\begin{itemize}
+	\item \textbf{Verbali} \\
+		  Stesura del verbale della riunione in corso.
+	\item \textbf{Documenti:} \\
+		  Compilare il \textit{Piano di Progetto} per questo sprint e i grafici del \textit{Piano di Qualifica}. Stesura del manuale utente e della scheda tecnica. 
+	\item \textbf{Studio:} \\
+		  Studio e analisi di: architettura e pattern, \textit{Business Case}, \textit{Apache Flink}, kpi.
+	\item Per ogni metrica del cruscotto trovare un sistema automatico per calcolarlo.
+\end{itemize}
+
+\subsection{Varie ed eventuali}
+Durante la riunione è stata discussa la possibilità di pianificare tutti gli sprint da qui alla fine del progetto per organizziare il progetto al meglio. Al fine di completare il progetto per luglio e dare la possibilità ad alcuni componenti di laurearsi a settembre.
+
+\subsection{Decisioni prese e conclusioni}
+Chiediamo un incontro al proponente per discutere assieme della possibilità di pianificare tutti gli sprint.
+Ci diamo appuntamento per il prossimo incontro interno previsto per il 2024-06-05.
+
+\end{document}
