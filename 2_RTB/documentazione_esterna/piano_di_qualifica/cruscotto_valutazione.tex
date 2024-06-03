@@ -12,7 +12,7 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -27,9 +27,9 @@
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650)}; % TODO mettere valori corretti EAC
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1090) (Sprint 2, 2107.5) (Sprint 3, 2737.5) (Sprint 4, 3442.5)}; % TODO mettere valori corretti PV
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5) (Sprint 4, 3412.5)}; % TODO mettere valori corretti EV
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650) (Sprint 5, 12705) (Sprint 6, 12685)}; % EAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 1090) (Sprint 2, 2107.5) (Sprint 3, 2737.5) (Sprint 4, 3442.5) (Sprint 5, 3804) (Sprint 6, 4564.8)}; % PV
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5) (Sprint 4, 3412.5) (Sprint 5, 4057.6) (Sprint 6, 4691.6)}; % EV
             \legend{EAC, PV, EV}
         \end{axis}
     \end{tikzpicture}
@@ -50,7 +50,7 @@ Visionando il grafico si può notare che i valori di EV e PV quasi si sovrappong
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -65,9 +65,9 @@ Visionando il grafico si può notare che i valori di EV e PV quasi si sovrappong
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 11590) (Sprint 2, 10572.5) (Sprint 3, 9942.5) (Sprint 4, 9237.5)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5) (Sprint 4, 3412.5)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650) (Sprint 5, 12705) (Sprint 6, 12685)}; % EAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 11590) (Sprint 2, 10572.5) (Sprint 3, 9942.5) (Sprint 4, 9237.5) (Sprint 5, 8527.5) (Sprint 6, 7532.5)}; % ETC
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 977.5) (Sprint 2, 2032.5) (Sprint 3, 2792.5) (Sprint 4, 3412.5) (Sprint 5, 4177.5) (Sprint 6, 5152.5)}; % AC
             \legend{EAC, ETC, AC}
         \end{axis}
     \end{tikzpicture}
@@ -88,7 +88,7 @@ Il grafico evidenzia chiaramente un aumento progressivo dei costi (AC). Parallel
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             axis lines*=left,
             legend cell align=left,
@@ -100,10 +100,10 @@ Il grafico evidenzia chiaramente un aumento progressivo dei costi (AC). Parallel
             },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, -10) (Sprint 2, -10) (Sprint 3, -10) (Sprint 4, -10)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 25) (Sprint 2, -9.09) (Sprint 3, 7.69) (Sprint 4, 0)};
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 51.82) (Sprint 2, 27.14) (Sprint 3, 15.30) (Sprint 4, 10.29)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0) (Sprint 5, 0) (Sprint 6, 0)}; % ottimo = 0
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, -10) (Sprint 2, -10) (Sprint 3, -10) (Sprint 4, -10) (Sprint 5, -10) (Sprint 6, -10)}; % ammissibile = -10
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 25) (Sprint 2, -9.09) (Sprint 3, 7.69) (Sprint 4, 0) (Sprint 5, 6.25) (Sprint 6, 2.7)}; % SV
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 51.82) (Sprint 2, 27.14) (Sprint 3, 15.30) (Sprint 4, 10.29) (Sprint 5, -2.95) (Sprint 6, -9.82)}; % CV
             \legend{Valore ottimo, Valore ammissibile, SV, CV}
         \end{axis}
     \end{tikzpicture}
@@ -126,7 +126,7 @@ L'andamento inizialmente alto del Schedule Variance (SV) e del Cost Variance (CV
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             ytick = {10000, 11000, 12000, 13000, 14000, 15000},
             ymin=10000, ymax=15000,
@@ -142,9 +142,9 @@ L'andamento inizialmente alto del Schedule Variance (SV) e del Cost Variance (CV
             scaled y ticks = false,
             yticklabel style={/pgf/number format/fixed}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12680) (Sprint 2, 12670) (Sprint 3, 12680) (Sprint 4, 12680) };
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 13314) (Sprint 2, 13314) (Sprint 3, 13314) (Sprint 4, 13314)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 12680) (Sprint 2, 12670) (Sprint 3, 12680) (Sprint 4, 12680) (Sprint 5, 12680) (Sprint 6, 12680)}; % ottimo = BAC
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 13314) (Sprint 2, 13314) (Sprint 3, 13314) (Sprint 4, 13314) (Sprint 5, 13314) (Sprint 6, 13314)}; % ammissibile = BAC + 5%
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 12567.5) (Sprint 2, 12605) (Sprint 3, 12735) (Sprint 4, 12650) (Sprint 5, 12705) (Sprint 6, 12685)}; % EAC
             \legend{Valore ottimo (BAC), Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -286,7 +286,7 @@ Osservando il grafico si può notare come l'EAC sia quasi sovrapposto al BAC dur
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -300,15 +300,15 @@ Osservando il grafico si può notare come l'EAC sia quasi sovrapposto al BAC dur
             },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 75) (Sprint 3, 75) (Sprint 4, 75)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 50) (Sprint 3, 50) (Sprint 4, 50)};
-            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 60) (Sprint 2, 55) (Sprint 3, 65) (Sprint 4, 70)};
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 75) (Sprint 3, 85) (Sprint 4, 80)};
-            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 70) (Sprint 3, 85) (Sprint 4, 90)};
-            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 65) (Sprint 2, 60) (Sprint 3, 68) (Sprint 4, 72)};
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 75) (Sprint 3, 65) (Sprint 4, 68)};
-            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 75) (Sprint 3, 75) (Sprint 4, 75) (Sprint 5, 75) (Sprint 6, 75)}; % ottimo = 75
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 50) (Sprint 2, 50) (Sprint 3, 50) (Sprint 4, 50) (Sprint 5, 50) (Sprint 6, 50)}; % ammissibile = 50
+            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 60) (Sprint 2, 55) (Sprint 3, 65) (Sprint 4, 70) (Sprint 5, 78) (Sprint 6, 78)}; % NdP
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 75) (Sprint 3, 85) (Sprint 4, 80) (Sprint 5, 84) (Sprint 6, 84)}; % PdP
+            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 70) (Sprint 3, 85) (Sprint 4, 90) (Sprint 5, 90) (Sprint 6, 90)}; % PdQ
+            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 65) (Sprint 2, 60) (Sprint 3, 68) (Sprint 4, 72) (Sprint 5, 75) (Sprint 6, 75)}; % Glo
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 70) (Sprint 2, 75) (Sprint 3, 65) (Sprint 4, 68) (Sprint 5, 77) (Sprint 6, 77)}; % AdR
+            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {}; % MU
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {}; % ST
             \legend{Valore ottimo, Valore ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
         \end{axis}
     \end{tikzpicture}
@@ -329,7 +329,7 @@ Visionando il grafico si può notare una tendenza generale di crescita, eccetto 
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             ymin=0, ymax=10,
             axis lines*=left,
@@ -342,14 +342,14 @@ Visionando il grafico si può notare una tendenza generale di crescita, eccetto 
             },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
-            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 5) (Sprint 3, 5) (Sprint 4, 0)};
-            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 8) (Sprint 2, 7) (Sprint 3, 4) (Sprint 4, 0)};
-            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4,0)};
-            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
-            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 6) (Sprint 3, 3) (Sprint 4, 0)};
-            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
-            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0) (Sprint 5, 0) (Sprint 6, 0)}; % ottimo e ammissibile = 0
+            \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 5) (Sprint 3, 5) (Sprint 4, 0) (Sprint 5, 0) (Sprint 6, 0)}; % NdP
+            \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 8) (Sprint 2, 7) (Sprint 3, 4) (Sprint 4, 0) (Sprint 5, 0) (Sprint 6, 0)}; % PdP
+            \addplot[color=lime, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 9) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4,0) (Sprint 5, 0) (Sprint 6, 0)}; % PdQ
+            \addplot[color=brown, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0) (Sprint 5, 0) (Sprint 6, 0)}; % Glo
+            \addplot[color=pink, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 6) (Sprint 3, 3) (Sprint 4, 0) (Sprint 5, 0) (Sprint 6, 0)}; % AdR
+            \addplot[color=violet, style={line width=1pt}, mark=none] coordinates {}; % MU
+            \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates {}; % ST
             \legend{Valore ottimo ed ammissibile, NdP, PdP, PdQ, Glossario, AdR, MU, ST}
         \end{axis}
     \end{tikzpicture}
@@ -370,7 +370,7 @@ Si noti come inizialmente il numero di errori di ortografia rilevati nei documen
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -384,9 +384,9 @@ Si noti come inizialmente il numero di errori di ortografia rilevati nei documen
             },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90) (Sprint 3, 90) (Sprint 4, 90)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 82) (Sprint 3, 96) (Sprint 4, 100)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100) (Sprint 5, 100) (Sprint 6, 100)}; % ottimo = 100
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 90) (Sprint 2, 90) (Sprint 3, 90) (Sprint 4, 90) (Sprint 5, 90) (Sprint 6, 90)}; % ammissibile = 90
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 82) (Sprint 3, 96) (Sprint 4, 100) (Sprint 5, 100) (Sprint 6, 100)};
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -594,7 +594,7 @@ Osservando il grafico si può notare come inizialmente il valore delle metriche 
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             ymin=0, ymax=5,
             axis lines*=left,
@@ -607,9 +607,9 @@ Osservando il grafico si può notare come inizialmente il valore delle metriche 
             },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 3) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4, 3)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 1) (Sprint 2, 1) (Sprint 3, 0) (Sprint 4, 0)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 0) (Sprint 4, 0) (Sprint 5, 0) (Sprint 6, 0)}; % ottimo = 0
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 3) (Sprint 2, 3) (Sprint 3, 3) (Sprint 4, 3) (Sprint 5, 3) (Sprint 6, 3)}; % ammissibile = 3
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 1) (Sprint 2, 1) (Sprint 3, 0) (Sprint 4, 0) (Sprint 5, 0) (Sprint 6, 0)}; % rischi non calcolati
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -631,7 +631,7 @@ Dal grafico si evince che durante i primi sprint sono emersi rischi non calcolat
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -645,9 +645,9 @@ Dal grafico si evince che durante i primi sprint sono emersi rischi non calcolat
             },
             xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex}
         ]
-            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100)};
-            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 75) (Sprint 3, 75) (Sprint 4, 75)};
-            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 60) (Sprint 4, 85)};
+            \addplot[color=opt, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 100) (Sprint 2, 100) (Sprint 3, 100) (Sprint 4, 100) (Sprint 5, 100) (Sprint 6, 100)}; % ottimo = 100
+            \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {(Sprint 1, 75) (Sprint 2, 75) (Sprint 3, 75) (Sprint 4, 75) (Sprint 5, 75) (Sprint 6, 75)}; % ammissibile = 75
+            \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {(Sprint 1, 0) (Sprint 2, 0) (Sprint 3, 60) (Sprint 4, 85) (Sprint 5, 94) (Sprint 6, 100)}; % RSI
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
