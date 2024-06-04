@@ -17,6 +17,9 @@
 \renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
 \renewcommand\familydefault{\sfdefault}
 
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
 \addto\captionsitalian{\renewcommand{\figurename}{Figura}}
 
 %-------------------INIZIO DOCUMENTO--------------
@@ -30,18 +33,23 @@
 
 %-----------tabella revisioni-----------%
 \begin{table}[!h]
+	\caption*{Versioni}
 	\footnotesize
 	\begin{center}
-		\caption*{Versioni}
-		\vspace{0.5cm}
 		\begin{tabular}{ l l l l p{6cm} }
-			\hline                                                                                \\[-2ex]
-			Ver. & Data       & Autore & Descrizione \\
+			\hline                                                                                                   \\[-2ex]
+			Ver. & Data       & Redattore          & \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{Verificatore\textsubscript{G}}       & Descrizione                                \\
 			\\[-2ex] \hline \\[-1.5ex]
-			1.0 & 2024-05-12 & Leonardo Baldo   & Verifica finale \\
-			0.3 & 2024-04-05 & Raul Seganfreddo & Aggiunta Introduzione \\
-			0.2 & 2024-04-05 & Matteo Tiozzo    & Modificato tabella versioni \\
-			0.1 & 2024-03-29 & Raul Seganfreddo & Creazione struttura documento \\
+			1.0  & 2024-05-24 & Elena Ferro        & Valerio Occhinegro & Approvazione finale documento              \\
+			0.9  & 2024-05-10 & Valerio Occhinegro & Leonardo Baldo     & Aggiunta metriche di qualità               \\
+			0.8  & 2024-05-08 & Matteo Tiozzo      & Leonardo Baldo     & Aggiunta standard per la qualità           \\
+			0.7  & 2024-04-26 & Leonardo Baldo     & Antonio Benetazzo  & Aggiunta processi organizzativi            \\
+			0.6  & 2024-04-22 & Leonardo Baldo     & Antonio Benetazzo  & Conclusione processi di supporto           \\
+			0.5  & 2024-04-16 & Antonio Benetazzo  & Valerio Occhinegro & Continuazione processi di supporto         \\
+			0.4  & 2024-04-10 & Antonio Benetazzo  & Valerio Occhinegro & Inizio processi di supporto                \\
+			0.3  & 2024-04-08 & Antonio Benetazzo  & Valerio Occhinegro & Conclusione processi primari               \\
+			0.2  & 2024-04-04 & Antonio Benetazzo  & Valerio Occhinegro & Inizio processi primari                    \\
+			0.1  & 2024-03-29 & Raul Seganfreddo   & Valerio Occhinegro & Creazione template e aggiunta introduzione \\
 			\\[-1.5ex] \hline
 		\end{tabular}
 	\end{center}
@@ -108,7 +116,7 @@
 % 	 \hline
 % 	\end{tabular}
 %     \caption{Valori delle metriche inerenti al processo di Fornitura}
-% 	\label{table:1}
+%
 % \end{table}
 %---------------------------------------------%
 
@@ -136,7 +144,7 @@
 %         \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
 %         \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
 %         \addplot coordinates {(Antonio,4) (Davide,4) (Elena,4) (Leonardo,4) (Matteo,4) (Raul,4) (Valerio,4)};
-%         \legend{Amministratore, Responsabile, Verificatore, Analista, Progettista}
+%         \legend{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#amministratore}{Amministratore\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{Responsabile\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{Verificatore\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analista}{Analista\textsubscript{G}}, \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#progettista}{Progettista\textsubscript{G}}}
 %         \end{axis}
 %     \end{tikzpicture}
 % \caption{impegno preventivo per ruolo di ciascun membro del team durante il primo periodo}
