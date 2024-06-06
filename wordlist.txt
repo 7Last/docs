@@ -45,6 +45,7 @@ kafka
 LaTeX
 LCPM
 LLM
+MacOS
 Malgarise
 manutenibile
 manutenibili
@@ -109,6 +110,7 @@ Videochiamate
 Vodafone
 VPC
 vX
+WSL
 xshift
 xtick
 ybar

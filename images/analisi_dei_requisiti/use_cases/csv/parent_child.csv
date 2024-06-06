@@ -1,11 +1,8 @@
 title,actor,uc_parent_code,uc_parent_desc,uc_child_code,uc_child_desc
-SyncCity,Autorità locale,UC-14,Applicazione filtro,UC-14.1,Applicazione filtro per tipo di sensore
-SyncCity,Autorità locale,UC-14,Applicazione filtro,UC-14.2,Applicazione filtro per nome sensore
-SyncCity,Autorità locale,UC-14,Applicazione filtro,UC-14.3,Applicazione filtro temporale
-
-SyncCity,Autorità locale,UC-15,Ricezione notifiche superamento soglie,UC-15.1,Ricezione notifiche superamento soglie di temperatura
-SyncCity,Autorità locale,UC-15,Ricezione notifiche superamento soglie,UC-15.2,Ricezione notifiche superamento soglia di riempimento dell'isole ecologiche
-
+SyncCity,Autorità locale,UC-15,Visualizzazione notifica superamento soglie,UC-15.1,Visualizzazione notifica superamento soglie di temperatura
+SyncCity,Autorità locale,UC-15,Visualizzazione notifica superamento soglie,UC-15.2,Visualizzazione notifica superamento soglia di riempimento dell'isole ecologiche
+SyncCity,Autorità locale,UC-15,Visualizzazione notifica superamento soglie,UC-15.3,Visualizzazione notifica superamento indice 3 EAQI
+SyncCity,Autorità locale,UC-15,Visualizzazione notifica superamento soglie,UC-15.4,Visualizzazione notifica superamento livello di precipitazioni
 
 SyncCity,Autorità locale,UC-1,Visualizzazione dashboard,UC-2,Visualizzazione dashboard dati grezzi
 SyncCity,Autorità locale,UC-1,Visualizzazione dashboard,UC-3,Visualizzazione dashboard temperatura
