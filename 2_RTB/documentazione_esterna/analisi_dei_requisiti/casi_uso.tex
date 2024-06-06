@@ -2088,13 +2088,13 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: nessuna
-	\item \textbf{Postcondizioni}: l'autorità locale riceve una notifica relativa al superamento delle soglie.
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza una notifica relativa al superamento delle soglie.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item si verificano delle condizioni che portano al superamento di soglie prestabilite per uno dei sensori.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter ricevere delle notifiche relative al superamento delle soglie in modo da poter intervenire tempestivamente in caso di criticità.
+	      come autorità locale desidero poter visualizzare delle notifiche relative al superamento delle soglie in modo da poter intervenire tempestivamente in caso di criticità.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-15.png}
@@ -2105,14 +2105,14 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: nessuna
-	\item \textbf{Postcondizioni}: l'autorità locale riceve una notifica relativa al superamento della soglia di temperatura.
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza una notifica relativa al superamento della soglia di temperatura.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item la temperatura rilevata supera i 40°C per più di 30 minuti;
 		      \item il sistema invia una notifica all'autorità locale.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter ricevere delle notifiche relative al superamento delle soglie di temperatura
+	      come autorità locale desidero poter visualizzare delle notifiche relative al superamento delle soglie di temperatura
 	      in modo da poter avvisare la popolazione e prendere eventuali misure precauzionali.
 \end{itemize}
 \begin{center}
@@ -2124,17 +2124,55 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: nessuna.
-	\item \textbf{Postcondizioni}: l'autorità locale riceve una notifica relativa al superamento della soglia di riempimento dell'isola ecologica.
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza una notifica relativa al superamento della soglia di riempimento dell'isola ecologica.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'isola ecologica rimane piena al 100\% per più di 24 ore;
 		      \item il sistema invia una notifica all'autorità locale.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter ricevere delle notifiche relative al superamento delle soglie di riempimento dell'isola ecologica
+	      come autorità locale desidero poter visualizzare delle notifiche relative al superamento delle soglie di riempimento dell'isola ecologica
 	      in modo da poter intervenire per svuotarla.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-15.2.png}
 	\captionof{figure}{UC-15.2: Visualizzazione notifica superamento soglia di riempimento dell'isola ecologica}
+\end{center}
+
+\subsubsection{UC-15.3: Visualizzazione notifica superamento indice 3 EAQI}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}: nessuna.
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza una notifica relativa al superamento dell'indice 3 EAQI.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item l'indice EAQI supera il valore 3;
+		      \item il sistema invia una notifica all'autorità locale.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      come autorità locale desidero poter visualizzare delle notifiche relative al superamento dell'indice 3 EAQI
+	      per poter avvisare la popolazione e prendere eventuali misure precauzionali.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-15.3.png}
+	\captionof{figure}{UC-15.3: Visualizzazione notifica superamento indice 3 EAQI}
+\end{center}
+
+\subsubsection{UC-15.4: Visualizzazione notifica superamento livello di precipitazioni}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}: nessuna.
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza una notifica relativa al superamento di 10mm di precipitazioni in un'ora.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item il livello di precipitazioni supera i 10mm in un'ora;
+		      \item il sistema invia una notifica all'autorità locale.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      come autorità locale desidero poter visualizzare delle notifiche relative al superamento del livello di precipitazioni
+	      per poter avvisare la popolazione e prendere eventuali misure precauzionali.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-15.4.png}
+	\captionof{figure}{UC-15.4: Visualizzazione notifica superamento livello di precipitazioni}
 \end{center}

@@ -1,6 +1,8 @@
 title,actor,uc_parent_code,uc_parent_desc,uc_child_code,uc_child_desc
 SyncCity,Autorità locale,UC-15,Visualizzazione notifica superamento soglie,UC-15.1,Visualizzazione notifica superamento soglie di temperatura
 SyncCity,Autorità locale,UC-15,Visualizzazione notifica superamento soglie,UC-15.2,Visualizzazione notifica superamento soglia di riempimento dell'isole ecologiche
+SyncCity,Autorità locale,UC-15,Visualizzazione notifica superamento soglie,UC-15.3,Visualizzazione notifica superamento indice 3 EAQI
+SyncCity,Autorità locale,UC-15,Visualizzazione notifica superamento soglie,UC-15.4,Visualizzazione notifica superamento livello di precipitazioni
 
 SyncCity,Autorità locale,UC-1,Visualizzazione dashboard,UC-2,Visualizzazione dashboard dati grezzi
 SyncCity,Autorità locale,UC-1,Visualizzazione dashboard,UC-3,Visualizzazione dashboard temperatura
