@@ -3,7 +3,7 @@ name: Pre merge checks
 on:
   pull_request:
     branches: [develop]
-    types: [opened, reopened, review_requested, edited, synchronize]
+    types: [opened, reopened, edited, synchronize]
 
   workflow_dispatch:
 
