@@ -1,0 +1,234 @@
+\section{Architettura di sistema}
+\subsection{Modello architetturale}
+Il prodotto necessita di un'architettura in grado di gestire in tempo reale un vasto flusso di dati provenienti da sensori, offrendo contemporaneamente strumenti di visualizzazione efficaci per rendere comprensibili e utili queste informazioni. A tal fine è stata scelta la \textit{k-architecture}.
+\subsubsection{k-architecture}
+Introdotta come alternativa alla \textit{Lambda Architecture}, la \textit{Kappa Architecture} semplifica questo modello. In questa architettura i dati vengono acquisiti, elaborati e analizzati in tempo reale senza la necessità di separare il flusso di dati in due percorsi distinti per il batch processing e il processing in tempo reale. 
+\subsubsubsection{Vantaggi}
+\begin{itemize}
+    \item \textbf{Semplicità}: semplifica notevolmente il processo di sviluppo e manutenzione dei sistemi di data processing in tempo reale, in quanto elimina la necessità di gestire due percorsi separati per il batch processing e il processing in tempo reale;
+    \item \textbf{costi ridotti}: la gestione di un'unica pipeline di dati riduce i costi di sviluppo e manutenzione;
+    \item \textbf{reattività}: grazie alla capacità di elaborare i dati in arrivo immediatamente senza attendere il completamento di finestre di tempo predefinite, consente di ottenere risposte e feedback in tempo reale sui dati;
+    \item \textbf{scalabilità}: i sistemi basati su quest'architettura possono essere facilmente scalati per gestire grandi volumi di dati e picchi di carico improvvisi, poiché è progettata per essere distribuita e può essere facilmente adattata alle esigenze di crescita del sistema;
+    \item \textbf{flessibilità}: è altamente flessibile e può essere implementata utilizzando una varietà di strumenti e tecnologie.
+\end{itemize}
+\subsubsection{Componenti di sistema}
+%TODO inserire immagine dei componenti di sistema + descrizione dei vari componenti
+\subsubsubsection*{Sorgenti di dati}
+Costituite dai simulatori di sensori IoT distribuiti per la città.
+\subsubsubsection*{Streaming layer}
+Gestisce il flusso di dati in tempo reale provenienti dai sensori. È composto da \textit{Redpanda} e \textit{Schema Registry}.
+\subsubsubsection*{Processing layer}
+Elabora i dati in tempo reale per calcolare i KPI richiesti. È composto da \textit{Flink}.
+\subsubsubsection*{Storage layer}
+Memorizza i dati elaborati per l'analisi e la visualizzazione. È composto da \textit{ClickHouse}.
+\subsubsubsection*{Data visualization layer}
+Visualizza i dati elaborati in modo chiaro e intuitivo. È composto da \textit{Grafana}. 
+
+%-------------------CHIEDERE QUESTA PARTE----------------------%
+\subsection{Flusso di dati}
+%TODO guardare disegno presentato a sal
+\subsection{Architettura dei simulatori}
+\subsubsection{Modulo simulatori sensori}
+%TODO inserire immagine modulo dei sensori
+\subsubsection{Modulo Writers}
+\subsubsection{Modulo Threading/Scheduling}
+\subsubsection{Progettazione - Panoramica UML}
+%--------------------------------------------------------------%
+\subsection{Redpanda}
+\subsubsection{Kafka topic}
+I Kafka topic sono categorie o canali di messaggi all'interno di \textit{Redpanda}. Un topic in Kafka è come una cassetta postale virtuale o una categoria di messaggi in cui i dati vengono pubblicati dai produttori e letti dai consumatori.
+\subsubsection{Formato messaggi}
+\textit{7Last} ha scelto di adottare lo standard Avro per i messaggi scambiati tra i produttori e i consumatori. Avro è un sistema di serializzazione dati che offre un modo efficiente per rappresentare dati complessi in un formato binario, rendendoli adatti per il trasporto su rete o per la persistenza su disco. Uno dei principali vantaggi di Avro è la possibilità di definire uno schema per i dati, che viene incluso nei dati stessi. Ecco una panoramica del formato dei messaggi Avro:
+\begin{itemize}
+    \item \textbf{schema}: definito in formato JSON e descrive la struttura dei dati. Include informazioni come il tipo di ogni campo e la loro posizione all'interno della struttura dei dati;
+    \item \textbf{serializzazione binaria}: Avro serializza i dati in un formato binario compatto, che rende efficiente il trasporto e la memorizzazione dei dati. Utilizza un'organizzazione binaria che incorpora lo schema dei dati insieme ai dati stessi. Questo significa che non c'è bisogno di includere esplicitamente il tipo di dato per ogni campo, poiché lo schema fornisce questa informazione;
+    \item \textbf{compatibilità}: è progettato per supportare l'evoluzione dei dati nel tempo. Puoi aggiungere nuovi campi, rimuovere campi esistenti o modificare il tipo di dati di un campo mantenendo la compatibilità con le versioni precedenti degli schemi;
+    \item \textbf{condivisione dello schema}:supporta la condivisione dello schema tramite un registro dello schema (Schema Registry). Questo consente di registrare gli schemi Avro utilizzati nel sistema in un registro centralizzato, in modo che i produttori e i consumatori possano recuperare gli schemi necessari quando ne hanno bisogno.
+\end{itemize}
+
+% TODO finire questa parte simulatore
+\subsubsection{Modulo producers}
+\subsubsection{Modulo serializers}
+\subsubsection{Modulo simulators}
+
+\subsection{Flink - Processing Layer}
+\subsubsection{Introduzione}
+È un framework di elaborazione dati distribuito e open-source che si distingue per la sua capacità di gestire sia dati di flusso in tempo reale che dati batch. Una delle sue caratteristiche principali è la capacità di gestire dati in tempo reale con latenze molto basse. Ciò significa che può elaborare i dati man mano che arrivano, consentendo alle applicazioni di reagire istantaneamente ai cambiamenti nell'input. Questa caratteristica è particolarmente importante per le applicazioni che richiedono analisi in tempo reale, come il monitoraggio di sensori, il rilevamento di anomalie o la personalizzazione di contenuti.
+\subsubsection{Componenti Flink \& Processing Layer}
+È costituito da diverse componenti fondamentali che lavorano insieme per consentire l'elaborazione efficiente e scalabile dei dati in tempo reale e batch. Queste componenti formano il cuore del sistema Flink e forniscono le basi per la sua potente capacità di elaborazione dei dati. In questa sezione, esamineremo le principali componenti di Flink e il loro ruolo nella creazione di un'infrastruttura robusta per l'analisi dei dati.
+\begin{itemize}
+    \item \textbf{JobManager}: è il componente centrale di Flink responsabile della pianificazione e del coordinamento dei job di elaborazione dei dati. Gestisce il flusso di lavoro complessivo, assegnando i task ai TaskManager per l'esecuzione;
+    \item \textbf{TaskManager}: è responsabile dell'esecuzione effettiva delle operazioni di elaborazione dei dati, eseguendo i task assegnati loro dal JobManager e gestendo il caricamento, l'elaborazione e la distribuzione dei dati all'interno del cluster;
+    \item \textbf{Processing layer}: è responsabile dell'esecuzione delle operazioni di elaborazione dei dati all'interno del cluster distribuito. Questa layer sfrutta le risorse di calcolo e memorizzazione disponibili nei nodi del cluster per eseguire le operazioni di trasformazione, aggregazione, filtraggio e altro ancora sui dati in ingresso. Utilizzando un modello di esecuzione distribuita, la Processing Layer di Flink è in grado di scalare orizzontalmente per gestire grandi volumi di dati e carichi di lavoro ad alta intensità computazionale.
+\end{itemize}
+\subsubsection{Processing layer data-flow}
+%TODO mettere foto del processing layer data-flow di flink
+\begin{enumerate}
+    \item \textbf{Acquisizione dei dati};
+    \item \textbf{partizione e distribuzione}: i dati vengono divisi in parti più piccole e distribuiti tra i nodi del cluster per massimizzare l'utilizzo delle risorse;
+    \item \textbf{pianificazione dei task}: il JobManager assegna compiti di elaborazione ai TaskManager basandosi sullo stato del cluster e sull'ottimizzazione delle prestazioni;
+    \item \textbf{esecuzione dei task}: i TaskManager eseguono i compiti assegnati in parallelo, elaborando i dati in base alla logica definita nell'applicazione Flink;
+    \item \textbf{scambio e movimento dei dati}: i dati possono essere scambiati e spostati tra i nodi del cluster per supportare operazioni complesse come il join o l'aggregazione;
+    \item \textbf{persistenza e output}: una volta elaborati, i risultati vengono eventualmente salvati o inviati ad altre destinazioni per l'analisi o l'utilizzo successivo.
+\end{enumerate}
+\subsubsection{Modello per il calcolo dei KPI}
+%TODO inserire foto del modello per il calcolo del punteggio di salute
+
+% KPI che useremo :european air quality index, heat index, charging station efficiency index, comfort heat zone index 
+
+
+\subsection{Database ClickHouse}
+Come detto in precedenza, il database adottato è \textit{ClickHouse}. Per ogni sensore è stata creata una tabella \textit{MergeTree}, che permette di memorizzare i dati in modo efficiente e di eseguire query complesse in modo veloce.
+
+\subsubsection{Funzionalità utilizzate}
+\subsubsubsection{Materialized View}
+Sono una potente funzionalità di \textit{ClickHouse} per migliorare le prestazioni delle query e semplificare l'analisi dei dati. In sostanza, una materialized view è una vista pre-calcolata o una copia di una query, memorizzata fisicamente su disco in forma tabellare. Ciò consente di evitare il calcolo ripetuto dei risultati della query ogni volta che viene eseguita.
+\subsubsubsection*{Documentazione}
+\url{https://clickhouse.com/docs/en/guides/developer/cascading-materialized-views} (Consultato il 2024-06-05)
+\subsubsubsection*{Utilizzi}
+\begin{itemize}
+    \item \textbf{Aggregazioni pre-calcoltate}: le materialized view possono essere utilizzate per memorizzare i risultati di aggregazioni complesse, come somme, medie, conteggi, ecc., in modo che non debbano essere calcolati ogni volta che viene eseguita una query;
+    \item \textbf{rapporti pre-calcolati}: possono essere utilizzate per memorizzare i risultati di query complesse o di rapporti, in modo che i risultati siano immediatamente disponibili senza dover eseguire la query ogni volta;
+    \item \textbf{join ottimizzati}: possono essere utilizzate per memorizzare i risultati di join complessi tra più tabelle, in modo che i risultati siano immediatamente disponibili senza dover eseguire il join ogni volta;
+    \item \textbf{filtraggio e selezione efficiente}: possono essere utilizzate per filtrare e selezionare dati in base a criteri specifici, migliorando le prestazioni delle query che richiedono l'accesso solo a una parte dei dati.
+\end{itemize}
+\subsubsubsection{MergeTree}
+MergeTree è uno dei principali motori di archiviazione di ClickHouse, progettato per gestire grandi volumi di dati e fornire elevate prestazioni di lettura e scrittura. È particolarmente adatto per applicazioni in cui i dati vengono aggiunti in modo incrementale e le query vengono eseguite su intervalli di tempo specifici.
+Le caratteristiche principali sono:
+\begin{itemize}
+    \item \textbf{partizionamento}, in cui i dati vengono partizionati in base a una colonna di data o di tempo, in modo che i dati più recenti siano memorizzati in partizioni separate e possano essere facilmente eliminati o archiviati;
+    \item \textbf{ordine dei dati}, dove i dati vengono ordinati in base a una colonna di ordinamento, in modo che i dati siano memorizzati in modo sequenziale e possano essere letti in modo efficiente;
+    \item \textbf{indice primario}, tramite il quale i dati vengono indicizzati in base a una colonna di chiave primaria, in modo che le query di ricerca e di join siano veloci ed efficienti;
+    \item \textbf{merging dei dati}, in questo modo i dati vengono uniti in modo incrementale in background, in modo che le query di aggregazione e di analisi siano veloci ed efficienti;
+    \item \textbf{compressione}, i dati vengono compressi in modo efficiente per ridurre lo spazio di archiviazione e migliorare le prestazioni di lettura e scrittura;
+    \item \textbf{replica e distribuzione}, i dati possono essere replicati e distribuiti su più nodi per garantire l'affidabilità e la disponibilità del sistema.
+\end{itemize}
+\subsubsubsection*{Documentazione}
+\url{https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree} \\(Consultato il 2024-06-05)
+
+\subsubsubsection*{Utilizzi}
+\begin{itemize}
+    \item \textbf{Analisi dei dati storici}: i dati storici vengono memorizzati in tabelle MergeTree per consentire l'analisi e l'elaborazione dei dati storici;
+    \item \textbf{applicazioni di business intelligence}: i dati vengono memorizzati in tabelle MergeTree per consentire l'analisi e la generazione di report per le applicazioni di business intelligence;
+    \item \textbf{log e monitoraggio}: i dati di log e di monitoraggio vengono memorizzati in tabelle MergeTree per consentire l'analisi e il monitoraggio delle attività di sistema.
+\end{itemize}
+
+
+\subsubsection{Trasferimento dati tramite Materialized View}
+Le Materialized View in ClickHouse sono viste che memorizzano fisicamente i risultati di una query specifica in modo da permettere un accesso rapido e efficiente ai dati pre-elaborati. Quando vengono create, le Materialized View eseguono la query definita e archiviano i risultati in una struttura di dati ottimizzata per l'accesso veloce. Questo consente di evitare il calcolo ripetuto dei risultati della query ogni volta che viene eseguita, migliorando notevolmente le prestazioni complessive del sistema. I vantaggi derivanti da questo approccio sono molteplici, tra questi troviamo:
+\begin{itemize}
+    \item \textbf{prestazioni ottimizzate}: grazie alla memorizzazione fisica dei risultati delle query, le Materialized View consentono un accesso rapido ai dati pre-elaborati, riducendo i tempi di risposta delle query complesse;
+    \item \textbf{riduzione del carico di lavoro}: trasferendo i dati pre-elaborati in Materialized View, si riduce il carico di lavoro sul sistema sorgente, consentendo una maggiore scalabilità e riducendo il rischio di sovraccarico del sistema durante le operazioni di estrazione dei dati;
+    \item \textbf{sempre aggiornate}: possono essere progettate per aggiornarsi automaticamente in risposta alle modifiche nei dati sottostanti, garantendo che i risultati siano sempre aggiornati e coerenti con lo stato attuale dei dati;
+    \item \textbf{semplificazione dell'architettura}: è possibile semplificare l'architettura complessiva del sistema eliminando la necessità di eseguire query complesse e costose ogni volta che si accede ai dati.
+\end{itemize}
+%TODO prendere le query che creano le materialized view
+\subsubsection{Misurazioni isole ecologiche}
+Di seguito viene riportata la configurazione della tabella per le misurazioni delle isole ecologiche. Le misurazioni includono:
+\begin{itemize}
+    \item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
+    \item \textbf{sensor\_name}: nome del sensore (formato String);
+    \item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
+    \item \textbf{latitude}: latitudine del sensore (formato Float64);
+    \item \textbf{longitude}: longitudine del sensore (formato Float64);
+    \item \textbf{filling\_value}: percentuale di riempimento dell'isola ecologica (formato Float32).
+\end{itemize}
+%TODO mettere foto della tabella isole ecologiche
+\subsubsection{Misurazioni temperatura}
+Di seguito viene riportata la configurazione della tabella per le misurazioni della temperatura. Le misurazioni includono:
+\begin{itemize}
+    \item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
+    \item \textbf{sensor\_name}: nome del sensore (formato String);
+    \item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
+    \item \textbf{value}: valore della temperatura rilevata (formato Float32);
+    \item \textbf{latitude}: latitudine del sensore (formato Float64);
+    \item \textbf{longitude}: longitudine del sensore (formato Float64);
+\end{itemize}
+%TODO mettere foto della tabella temperatura
+\subsubsection{Misurazioni traffico}
+Di seguito viene riportata la configurazione della tabella per le misurazioni della traffico. Le misurazioni includono:
+\begin{itemize}
+    \item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
+    \item \textbf{sensor\_name}: nome del sensore (formato String);
+    \item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
+    \item \textbf{latitude}: latitudine del sensore (formato Float64);
+    \item \textbf{longitude}: longitudine del sensore (formato Float64);
+    \item \textbf{vehicles}: numero di veicoli rilevati (formato Int32);
+    \item \textbf{avg\_speed}: velocità media del traffico (formato Float32).
+\end{itemize}
+%TODO mettere foto della tabella traffico
+\subsection{Grafana}
+Grafana è uno strumento di analisi e monitoraggio che permette di visualizzare dati provenienti da una varietà di fonti. È sviluppato principalmente in Go e Typescript ed è noto per la sua capacità di creare dashboard personalizzabili e intuitive.
+\subsubsection{Dashboard}
+%metti stessa cosa del manuale utente riguardo le dashboard. 
+
+\subsubsection{ClickHouse datasource plugin}
+Il plugin ClickHouse per Grafana è un'implementazione che consente di utilizzare ClickHouse come fonte di dati per Grafana. Questo plugin facilita la connessione e l'interrogazione dei dati archiviati in ClickHouse direttamente da Grafana, permettendo di creare dashboard dinamiche e interattive.
+\subsubsubsection*{Documentazione}
+\url{https://grafana.com/grafana/plugins/grafana-clickhouse-datasource/}
+\subsubsubsection{Configurazione del Datasource}
+La configurazione  grafana/provisioning/datasources/default.yaml
+
+
+\subsubsection{Variabili Grafana}
+\subsubsubsection{Documentazione}
+\url{https://grafana.com/docs/grafana/latest/dashboards/variables/} (Consultato il 2024-06-05)
+\subsubsubsection*{Variabili nella dashboard principale}
+Le variabili presenti nella dashboard principale sono:
+\begin{itemize}
+    \item \textbf{tipo sensore}: permette di selezionare il tipo di sensore da visualizzare (temperatura, traffico, isola ecologica);
+    \item \textbf{nome sensore}: permette di selezionare il nome del sensore da visualizzare (es. sensore1, sensore2, ecc.);
+\end{itemize}
+%TODO mettere foto codice query
+\subsubsubsection*{Variabili nella dashboard dettagliata}
+Le variabili presenti nelle dashboard dettagliate sono:
+\begin{itemize}
+    \item \textbf{nome sensore}: permette di selezionare il nome del sensore da visualizzare (es. sensore1, sensore2, ecc.);
+\end{itemize}
+
+\subsubsection{Grafana Alerts}
+Sono una funzionalità che permettono di definire, configurare e gestire avvisi basati su condizioni specifiche rilevate nei dati monitorati. Questi avvisi consentono agli utenti di essere informati tempestivamente su eventuali problemi o cambiamenti critici nei loro sistemi, applicazioni o infrastrutture.
+\subsubsubsection*{Documentazione}
+\url{https://grafana.com/docs/grafana/latest/alerting/} (Consultato il 2024-06-05)
+\subsubsubsection{Configurazione delle regole di alert}
+Definiscono le condizioni che devono essere soddisfatte per attivare un alert. Gli eventi che generano un alert sono:
+\begin{itemize}
+    \item temperatura maggiore di 40°C per più di 30 minuti;
+    \item isola ecologica piena al 100\% per più di 24 ore;
+    \item superamento dell'indice 3 dell'EAQI (indice di qualità dell'aria);
+    \item livello di precipitazioni superiore a 10 mm in 1 ora.
+\end{itemize}
+Gli alert possono possedere tre diversi tipi di stati:
+\begin{itemize}
+    \item \textbf{normal}, indica che l'alert non è attivo perché le condizioni definite per l'attivazione dell'avviso non sono soddisfatte;
+    \item \textbf{pending}, indica che le metriche monitorate stanno iniziando a deviare dalle condizioni normali ma non hanno ancora soddisfatto completamente le condizioni per attivare l'alert;
+    \item \textbf{firing}, significa che le condizioni definite per l'avviso sono state soddisfatte e l'alert è attivo.
+\end{itemize}
+\subsubsubsection{Configurazione canale di notifica}
+Per configurare un canale di notifica è necessario:
+\begin{enumerate}
+    \item nel menù di sinistra, cliccare sull'icona "Alerting";
+    \item selezionare la voce "Notification channels";  
+    \item cliccare sul pulsante "Add channel" per aggiungere un nuovo canale di notifica;
+    \item selezionare il tipo di canale di notifica desiderato tra quelli disponibili;
+    \item configurare le impostazioni del canale di notifica in base alle proprie esigenze;
+    \item cliccare sul pulsante "Save" per salvare le impostazioni del canale di notifica.
+\end{enumerate}
+\textit{7Last} ha deciso di rendere risponibile il server \textit{Discord} configurato a questo scopo e raggiungibile a questo link:
+\begin{center}
+    \url{https://discord.com/channels/1214553333113556992/1241974479345942568}
+\end{center}
+\subsubsection{Altri plugin}
+\subsubsubsection{Orchestra Cities Map plugin}
+Progettato per facilitare la visualizzazione e l'analisi dei dati geospaziali all'interno di piattaforme di pianificazione urbana e sviluppo territoriale.\\
+Le principali funzionalità offerte da questo plugin sono:
+\begin{itemize}
+    \item \textbf{visualizzazione dei dati geospaziali}: consente agli utenti di visualizzare dati geografici, come mappe, strati di dati GIS (Geographic Information System), punti di interesse e altre informazioni territoriali;
+    \item \textbf{interfaccia interattiva}: offre un'interfaccia utente intuitiva e interattiva che consente agli utenti di esplorare e interagire con i dati geospaziali in modo dinamico;
+    \item \textbf{personalizzazione}: offre opzioni di personalizzazione per adattarsi alle esigenze specifiche dell'utente o dell'applicazione;
+    \item \textbf{analisi dei dati}: oltre alla semplice visualizzazione dei dati geospaziali, il plugin può anche supportare funzionalità avanzate di analisi dei dati, come l'identificazione di cluster, la creazione di heatmap e l'esecuzione di analisi spaziali per identificare tendenze o pattern significativi nei dati territoriali;
+    \item \textbf{integrazione}: è progettato per integrarsi facilmente con altre componenti dell'ecosistema Orchestra Cities e con altre piattaforme software di pianificazione urbana e sviluppo territoriale.
+\end{itemize}
+
+\subsubsubsection*{Documentazione}
+\url{https://grafana.com/grafana/plugins/orchestracities-map-panel/?tab=installation} (Consultato il 2024-06-05)
