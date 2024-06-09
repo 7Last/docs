@@ -1,0 +1,130 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily\oldthepage}
+
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l l }
+			\hline                                                             \\[-2ex]
+			Ver. & Data       & Redattore   & Verificatore   & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-06-09 & Leonardo Baldo & Elena Ferro & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 16:30\\
+\textbf{Orario di fine}: 17:30\\
+
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     &                & Presente          \\
+			Davide Malgarise      & Amministratore & Presente          \\
+			Elena Ferro           & Verificatore   & Presente          \\
+			Leonardo Baldo        & Redattore      & Presente          \\
+			Matteo Tiozzo         &                & Presente          \\
+			Raul Seganfreddo      &                & Presente          \\
+			Valerio Occhinegro    &                & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\subsection{Suddivisione dei ruoli per il sesto sprint}
+Come prima cosa il gruppo stabilisce la suddivisione dei ruoli per il quarto periodo, cercando di assegnare a ciascun membro un compito non ancora svolto
+nei precedenti sprint. Ne risulta la seguente suddivisione:
+\begin{itemize}
+	\item \textbf{Responsabile}: Leonardo Baldo
+	\item \textbf{Amministratore}: Davide Malgarise
+	\item \textbf{Analista}: Raul Seganfreddo
+	\item \textbf{Progettista}: Matteo Tiozzo, Davide Malgarise, Valerio Occhinegro
+	\item \textbf{Programmatore}: Antonio Benetazzo
+	\item \textbf{Verificatore}: Elena Ferro
+\end{itemize}
+Definiamo, inoltre, i ruoli assegnati per ogni riunione interna od esterna 
+di questo quarto sprint (da riportare successivamente nei relativi verbali):
+\begin{itemize}
+	\item \textbf{Amministratore}: Davide Malgarise
+	\item \textbf{Redattore}: Leonardo Baldo
+	\item \textbf{Verificatore}: Elena Ferro
+\end{itemize}
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Cosa è stato fatto fino ad ora
+	\item Cosa rimane da fare
+	\item Varie ed eventuali
+	\item Decisioni prese e conclusioni
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Cosa è stato fatto fino ad ora}
+È stato fatto un riepilogo di quanto completato fino ad ora:
+\begin{itemize}
+	\item \textbf{Verbali} \\
+	      Revisionato e approvato il verbali delle riunioni interna del 2024-05-29.
+	\item \textbf{Documentazione} \\
+	      Compilazione del \textit{Piano di Progetto}. Popolazione grafici nel \textit{Piano di Qualfifica}. Stesura iniziale del \textit{Manuale Utente} e della \textit{Scheda Tecnica}.
+	\item \textbf{Studio} \\
+		  Inizio studio architetturale.
+\end{itemize}
+
+\subsection{Cosa rimane da fare}
+Per questo sprint ci sono ancora alcune attività da completare:
+\begin{itemize}
+	\item \textbf{Verbali} \\
+		  Stesura del verbale della riunione in corso.
+	\item \textbf{Documenti} \\
+		  Compilare il \textit{Piano di Progetto} per questo sprint e i grafici del \textit{Piano di Qualifica}. Aggiunta test nel \textit{Piano di Qualifica}.  
+	\item \textbf{Codice} \\
+		  Aggiungere sensori per umidità, parcheggio e qualità dell'aria. Implementazione unit test.
+\end{itemize}
+
+\subsection{Varie ed eventuali}
+...
+
+\subsection{Decisioni prese e conclusioni}
+Ci diamo appuntamento per il prossimo incontro interno previsto per il 2024-06-12.
+
+\end{document}
