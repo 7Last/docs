@@ -85,7 +85,12 @@ di requisiti di performance e tempistica, tenendo in considerazione casi di late
 
 \subsection{Discussione sull'architettura del prodotto}
 L'incontro prosegue con la presentazione dell'architettura progettata, che viene valutata positivamente e in linea con il progetto.
-Il gruppo espone due principali dubbi
+Quindi il gruppo espone due principali dubbi: il primo riguarda il topic di \textit{Apache Kafka} che tratta i dati grezzi, è corretto che venga 'consumato' sia da \textit{Apache Flink},
+che fa aggregazioni sui dati e li pubblica in altri topic, sia dal sink connector per \textit{Clickhouse}, che salva i dati in apposite tabelle?
+La seconda questione, invece, poneva il dubbio sulle operazioni da eseguire con lo strumento \textit{Apache Flink}. Il proponente conferma la correttezza della
+prima domanda e riguardo la seconda suggerisce l'uso dello strumento in questione solo per aggregazioni complesse, come KPI o calcoli che coinvolgono dati provenienti
+da sensori diversi. Di conseguenza, per calcoli più semplici, come la media per un certo periodo di tempo, è consigliato utilizzare le \textit{materialized views} di \textit{Clickhouse},
+come è stato fatto fino ad ora dal gruppo.
 
 \subsection{Obiettivi per il settimo sprint}
 Sono stati definiti i seguenti obiettivi per il settimo sprint:
@@ -101,7 +106,6 @@ In accordo con il proponente, si mantiene la durata del periodo di lavoro di una
 12 giugno 2024. La riunione si conclude con una breve discussione sulle possibile tempistiche di completamento e consegna del progetto,
 auspicabile per la prima metà di luglio.
 
-\newpage
 \begin{table}[b]
 	\begin{tabular}{@{}p{5cm}p{10cm}@{}}
 		Data:  & \hrulefill \\
