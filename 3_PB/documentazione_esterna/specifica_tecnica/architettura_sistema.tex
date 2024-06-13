@@ -2,14 +2,14 @@
 \subsection{Modello architetturale}
 Il prodotto necessita di un'architettura in grado di gestire in tempo reale un vasto flusso di dati provenienti da sensori, offrendo contemporaneamente strumenti di visualizzazione efficaci per rendere comprensibili e utili queste informazioni. A tal fine è stata scelta la \textit{k-architecture}.
 \subsubsection{k-architecture}
-Introdotta come alternativa alla \textit{Lambda Architecture}, la \textit{Kappa Architecture} semplifica questo modello. In questa architettura i dati vengono acquisiti, elaborati e analizzati in tempo reale senza la necessità di separare il flusso di dati in due percorsi distinti per il batch processing e il processing in tempo reale. 
+Introdotta come alternativa alla \textit{Lambda Architecture}, la \textit{Kappa Architecture} semplifica questo modello. In questa architettura i dati vengono acquisiti, elaborati e analizzati in tempo reale senza la necessità di separare il flusso di dati in due percorsi distinti per il batch processing e il processing in tempo reale.
 \subsubsubsection{Vantaggi}
 \begin{itemize}
-    \item \textbf{Semplicità}: semplifica notevolmente il processo di sviluppo e manutenzione dei sistemi di data processing in tempo reale, in quanto elimina la necessità di gestire due percorsi separati per il batch processing e il processing in tempo reale;
-    \item \textbf{costi ridotti}: la gestione di un'unica pipeline di dati riduce i costi di sviluppo e manutenzione;
-    \item \textbf{reattività}: grazie alla capacità di elaborare i dati in arrivo immediatamente senza attendere il completamento di finestre di tempo predefinite, consente di ottenere risposte e feedback in tempo reale sui dati;
-    \item \textbf{scalabilità}: i sistemi basati su quest'architettura possono essere facilmente scalati per gestire grandi volumi di dati e picchi di carico improvvisi, poiché è progettata per essere distribuita e può essere facilmente adattata alle esigenze di crescita del sistema;
-    \item \textbf{flessibilità}: è altamente flessibile e può essere implementata utilizzando una varietà di strumenti e tecnologie.
+	\item \textbf{Semplicità}: semplifica notevolmente il processo di sviluppo e manutenzione dei sistemi di data processing in tempo reale, in quanto elimina la necessità di gestire due percorsi separati per il batch processing e il processing in tempo reale;
+	\item \textbf{costi ridotti}: la gestione di un'unica pipeline di dati riduce i costi di sviluppo e manutenzione;
+	\item \textbf{reattività}: grazie alla capacità di elaborare i dati in arrivo immediatamente senza attendere il completamento di finestre di tempo predefinite, consente di ottenere risposte e feedback in tempo reale sui dati;
+	\item \textbf{scalabilità}: i sistemi basati su quest'architettura possono essere facilmente scalati per gestire grandi volumi di dati e picchi di carico improvvisi, poiché è progettata per essere distribuita e può essere facilmente adattata alle esigenze di crescita del sistema;
+	\item \textbf{flessibilità}: è altamente flessibile e può essere implementata utilizzando una varietà di strumenti e tecnologie.
 \end{itemize}
 \subsubsection{Componenti di sistema}
 %TODO inserire immagine dei componenti di sistema + descrizione dei vari componenti
@@ -22,7 +22,7 @@ Elabora i dati in tempo reale per calcolare i KPI richiesti. È composto da \tex
 \subsubsubsection*{Storage layer}
 Memorizza i dati elaborati per l'analisi e la visualizzazione. È composto da \textit{ClickHouse}.
 \subsubsubsection*{Data visualization layer}
-Visualizza i dati elaborati in modo chiaro e intuitivo. È composto da \textit{Grafana}. 
+Visualizza i dati elaborati in modo chiaro e intuitivo. È composto da \textit{Grafana}.
 
 %TODO per ogni modulo bisogna:
 % 1. Mettere foto diagramma delle classi UML
@@ -35,101 +35,101 @@ Visualizza i dati elaborati in modo chiaro e intuitivo. È composto da \textit{G
 \subsubsection{Modulo serializers}
 \subsubsection{Modulo simulators}
 \begin{itemize}
-    \item Classe astratta \texttt{Simulator}: rappresenta un simulatore generico. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi:
-        \begin{itemize}
-            \item \texttt{start() None [public]}: avvia il simulatore;
-            \item \texttt{stop() None [public]}: ferma il simulatore;
-            \item \texttt{stream() Iterable[RawData]}: metodo astratto che verrà implementato dalle sottoclassi per generare i dati;
-        \end{itemize}
-        \item Attributi:
-        \begin{itemize}
-            \item \texttt{sensor\_uuid UUID [public]}: identificativo univoco del sensore;
-            \item \texttt{sensor\_name str [public]}: nome del sensore;
-            \item \texttt{latitude float [public]}: latitudine del sensore;
-            \item \texttt{longitude float [public]}: longitudine del sensore;
-            \item \texttt{generation\_delay timedelta [public]}: tempo effettivamente atteso tra la generazione di un dato e il successivo;
-            \item \texttt{points\_spacing timedelta [public]}: distanza temporale dei dati generati;
-            \item \texttt{limit int [public]}: limite di dati da produrre;
-            \item \texttt{timestamp datetime [public]}: data da cui iniziare a produrre dati;
-            \item \texttt{running bool [private]}: flag che indica se il simulatore è in esecuzione.
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{AirQualitySimulator}: estende \texttt{Simulator} e rappresenta un simulatore per la generazione di dati relativi alla qualità dell'aria. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi:
-        \begin{itemize}
-            \item \texttt{stream() Iterable[AirQualityRawData] [public]}: genera i dati relativi alla qualità dell'aria;
-        \end{itemize}
-        \item Attributi aggiuntivi rispetto a \texttt{Simulator}:
-        \begin{itemize}
-            \item \texttt{o3\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati;
-            \item \texttt{no2\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati;
-            \item \texttt{so2\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati;
-            \item \texttt{pm10\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati;
-            \item \texttt{pm25\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati.
-        \end{itemize}
-        \item Funzioni di supporto:
-        \begin{itemize}
-            \item \texttt{daily\_variation(timestamp: datetime) float [private]}: genera una variazione giornaliera in base alla data e ora passata come argomento;
-            \item \texttt{weekly\_variation(timestamp: datetime) float [private]}: genera una variazione settimanale in base alla data e ora passata come argomento;
-            \item \texttt{seasonal\_variation(timestamp: datetime) float [private]}: genera una variazione stagionale in base alla data e ora passata come argomento;
-            \item \texttt{sinusoidal\_value(timestamp: datetime) float [private]}: genera un valore sinusoidale in base alla data e ora passata come argomento, richiamando le funzioni di variazione giornaliera, settimanale e stagionale e sommandole tra di loro.
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{RecyclingPointSimulator}: estende \texttt{Simulator} e rappresenta un simulatore per la generazione di dati relativi alle isole ecologiche. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi:
-        \begin{itemize}
-            \item \texttt{stream() Iterable[RecyclingPointRawData] [public]}: genera i dati relativi alle isole ecologiche;
-            \item \texttt{calculate\_fill\_rate() None [private]}: calcola la velocità di riempimento dell'isola ecologica dall'ultimo dato generato;
-            \item \texttt{filling() float [private]}: calcola la percentuale di riempimento dell'isola ecologica;
-        \end{itemize}
-        \item Attributi aggiuntivi rispetto a \texttt{Simulator}:
-        \begin{itemize}
-            \item \texttt{last\_value float [private]}: percentuale di riempimento dell'isola ecologica dell'ultimo dato generato;
-            \item \texttt{prev\_timestamp datetime [private]}: data e ora dell'ultimo dato generato;
-            \item \texttt{fill\_rate float [private]}: velocità di riempimento dell'isola ecologica;
-            \item \texttt{emptying\_hours List[Tuple[int, int]] [private]}: lista di giorni della settimana in cui l'isola ecologica verrà svuotata;
-            \item \texttt{noise\_limit float [private]}: numero casuale generato con distribuzione uniforme che rappresenta il rumore;
-            \item \texttt{partial\_emptying\_chance float [private]}: probabilità che l'isola ecologica venga svuotata parzialmente;
-            \item \texttt{partial\_emptying\_max\_percentage float [private]}: percentuale di rifiuti rimanente dopo uno svuotamento parziale;
-        \end{itemize}
-        \item Funzioni di supporto:
-        \begin{itemize}
-            \item \texttt{generate\_emptying\_hours() List[Tuple[int, int]] [private]}: genera una lista di giorni della settimana in cui l'isola ecologica verrà svuotata;
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{TemperatureSimulator}: estende \texttt{Simulator} e rappresenta un simulatore per la generazione di dati relativi alla temperatura. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi:
-        \begin{itemize}
-            \item \texttt{stream() Iterable[TemperatureRawData] [public]}: genera i dati relativi alla temperatura;
-        \end{itemize}
-        \item Funzioni di supporto:
-        \begin{itemize}
-            \item \texttt{seasonal\_coefficient(timestamp: datetime) float [private]}: genera un coefficiente stagionale in base alla data e ora passata come argomento;
-            \item \texttt{thermal\_excursion(timestamp: datetime) float [private]}: genera un'escursione termica giornaliera in base alla data e ora passata come argomento;
-            \item \texttt{sinusoidal\_value(timestamp: datetime) float [private]}: genera un valore sinusoidale in base alla data e ora passata come argomento, richiamando le funzioni di variazione stagionale e di escursione termica.
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{TrafficSimulator}: estende \texttt{Simulator} e rappresenta un simulatore per la generazione di dati relativi al traffico. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi:
-        \begin{itemize}
-            \item \texttt{stream() Iterable[TrafficRawData] [public]}: genera i dati relativi al traffico;
-        \end{itemize}
-        \item Costanti:
-        \begin{itemize}
-            \item \texttt{VEHICLES\_MULTIPLICATIVE\_FACTOR int [private]}: costante moltiplicativa per il numero di veicoli;
-            \item \texttt{SPEED\_MULTIPLICATIVE\_FACTOR int [private]}: costante moltiplicativa per la velocità media.
-        \end{itemize}
-        \item Funzioni di supporto:
-        \begin{itemize}
-            \item \texttt{multimodal\_gauss\_value(x: float, modes: list[tuple[float, float]]) float [private]}: genera un valore gaussiano multimodale in base ai secondi passati dall'inizio della giornata e ai modi passati come argomento;
-        \end{itemize}
-    \end{itemize}
+	\item Classe astratta \texttt{Simulator}: rappresenta un simulatore generico. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi:
+		            \begin{itemize}
+			            \item \texttt{start() None [public]}: avvia il simulatore;
+			            \item \texttt{stop() None [public]}: ferma il simulatore;
+			            \item \texttt{stream() Iterable[RawData]}: metodo astratto che verrà implementato dalle sottoclassi per generare i dati;
+		            \end{itemize}
+		      \item Attributi:
+		            \begin{itemize}
+			            \item \texttt{sensor\_uuid UUID [public]}: identificativo univoco del sensore;
+			            \item \texttt{sensor\_name str [public]}: nome del sensore;
+			            \item \texttt{latitude float [public]}: latitudine del sensore;
+			            \item \texttt{longitude float [public]}: longitudine del sensore;
+			            \item \texttt{generation\_delay timedelta [public]}: tempo effettivamente atteso tra la generazione di un dato e il successivo;
+			            \item \texttt{points\_spacing timedelta [public]}: distanza temporale dei dati generati;
+			            \item \texttt{limit int [public]}: limite di dati da produrre;
+			            \item \texttt{timestamp datetime [public]}: data da cui iniziare a produrre dati;
+			            \item \texttt{running bool [private]}: flag che indica se il simulatore è in esecuzione.
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{AirQualitySimulator}: estende \texttt{Simulator} e rappresenta un simulatore per la generazione di dati relativi alla qualità dell'aria. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi:
+		            \begin{itemize}
+			            \item \texttt{stream() Iterable[AirQualityRawData] [public]}: genera i dati relativi alla qualità dell'aria;
+		            \end{itemize}
+		      \item Attributi aggiuntivi rispetto a \texttt{Simulator}:
+		            \begin{itemize}
+			            \item \texttt{o3\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati;
+			            \item \texttt{no2\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati;
+			            \item \texttt{so2\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati;
+			            \item \texttt{pm10\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati;
+			            \item \texttt{pm25\_coefficient float [private]}: coefficiente generato con distribuzione uniforme tra -50 e 50 che viene sommato ogni volta ai valori generati per far si che varino a seconda del sensore che li ha generati.
+		            \end{itemize}
+		      \item Funzioni di supporto:
+		            \begin{itemize}
+			            \item \texttt{daily\_variation(timestamp: datetime) float [private]}: genera una variazione giornaliera in base alla data e ora passata come argomento;
+			            \item \texttt{weekly\_variation(timestamp: datetime) float [private]}: genera una variazione settimanale in base alla data e ora passata come argomento;
+			            \item \texttt{seasonal\_variation(timestamp: datetime) float [private]}: genera una variazione stagionale in base alla data e ora passata come argomento;
+			            \item \texttt{sinusoidal\_value(timestamp: datetime) float [private]}: genera un valore sinusoidale in base alla data e ora passata come argomento, richiamando le funzioni di variazione giornaliera, settimanale e stagionale e sommandole tra di loro.
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{RecyclingPointSimulator}: estende \texttt{Simulator} e rappresenta un simulatore per la generazione di dati relativi alle isole ecologiche. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi:
+		            \begin{itemize}
+			            \item \texttt{stream() Iterable[RecyclingPointRawData] [public]}: genera i dati relativi alle isole ecologiche;
+			            \item \texttt{calculate\_fill\_rate() None [private]}: calcola la velocità di riempimento dell'isola ecologica dall'ultimo dato generato;
+			            \item \texttt{filling() float [private]}: calcola la percentuale di riempimento dell'isola ecologica;
+		            \end{itemize}
+		      \item Attributi aggiuntivi rispetto a \texttt{Simulator}:
+		            \begin{itemize}
+			            \item \texttt{last\_value float [private]}: percentuale di riempimento dell'isola ecologica dell'ultimo dato generato;
+			            \item \texttt{prev\_timestamp datetime [private]}: data e ora dell'ultimo dato generato;
+			            \item \texttt{fill\_rate float [private]}: velocità di riempimento dell'isola ecologica;
+			            \item \texttt{emptying\_hours List[Tuple[int, int]] [private]}: lista di giorni della settimana in cui l'isola ecologica verrà svuotata;
+			            \item \texttt{noise\_limit float [private]}: numero casuale generato con distribuzione uniforme che rappresenta il rumore;
+			            \item \texttt{partial\_emptying\_chance float [private]}: probabilità che l'isola ecologica venga svuotata parzialmente;
+			            \item \texttt{partial\_emptying\_max\_percentage float [private]}: percentuale di rifiuti rimanente dopo uno svuotamento parziale;
+		            \end{itemize}
+		      \item Funzioni di supporto:
+		            \begin{itemize}
+			            \item \texttt{generate\_emptying\_hours() List[Tuple[int, int]] [private]}: genera una lista di giorni della settimana in cui l'isola ecologica verrà svuotata;
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{TemperatureSimulator}: estende \texttt{Simulator} e rappresenta un simulatore per la generazione di dati relativi alla temperatura. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi:
+		            \begin{itemize}
+			            \item \texttt{stream() Iterable[TemperatureRawData] [public]}: genera i dati relativi alla temperatura;
+		            \end{itemize}
+		      \item Funzioni di supporto:
+		            \begin{itemize}
+			            \item \texttt{seasonal\_coefficient(timestamp: datetime) float [private]}: genera un coefficiente stagionale in base alla data e ora passata come argomento;
+			            \item \texttt{thermal\_excursion(timestamp: datetime) float [private]}: genera un'escursione termica giornaliera in base alla data e ora passata come argomento;
+			            \item \texttt{sinusoidal\_value(timestamp: datetime) float [private]}: genera un valore sinusoidale in base alla data e ora passata come argomento, richiamando le funzioni di variazione stagionale e di escursione termica.
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{TrafficSimulator}: estende \texttt{Simulator} e rappresenta un simulatore per la generazione di dati relativi al traffico. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi:
+		            \begin{itemize}
+			            \item \texttt{stream() Iterable[TrafficRawData] [public]}: genera i dati relativi al traffico;
+		            \end{itemize}
+		      \item Costanti:
+		            \begin{itemize}
+			            \item \texttt{VEHICLES\_MULTIPLICATIVE\_FACTOR int [private]}: costante moltiplicativa per il numero di veicoli;
+			            \item \texttt{SPEED\_MULTIPLICATIVE\_FACTOR int [private]}: costante moltiplicativa per la velocità media.
+		            \end{itemize}
+		      \item Funzioni di supporto:
+		            \begin{itemize}
+			            \item \texttt{multimodal\_gauss\_value(x: float, modes: list[tuple[float, float]]) float [private]}: genera un valore gaussiano multimodale in base ai secondi passati dall'inizio della giornata e ai modi passati come argomento;
+		            \end{itemize}
+	      \end{itemize}
 \end{itemize}
 \subsubsection{Modulo models}
 \subsubsubsection{config}
@@ -139,109 +139,109 @@ Contiene le classi e le funzioni utilizzate per leggere ed effettuare il parsing
 %TODO mettere spiegazione dello standard usato
 %TODO mettere spiegazione del simulator factory
 \begin{itemize}
-    \item Classe concreta \texttt{EnvConfig}: legge le variabili d'ambiente e nel caso siano assenti ma ammettano valore di default lo assegna. 
-    \begin{itemize}
-        \item Metodi
-        \begin{itemize}
-            \item \texttt{get\_or\_throw(key: str) str [private]}: ritorna il valore della variabile d'ambiente con quella chiave o se non esiste lancia un'eccezione;
-            \item \texttt{get\_or\_none(key: str) str | None [private]}: ritorna il valore della variabile d'ambiente con quella chiave o se non esiste ritorna \texttt{None};
-            \item \texttt{bootstrap\_server() str [public]}: ritorna concatenati i valori delle variabili d'ambiente \texttt{KAFKA\_HOST} e \texttt{KAFKA\_PORT} separati da il simbolo ":";
-        \end{itemize}
-        \item Attributi
-        \begin{itemize}
-            \item \texttt{kafka\_host str [public]}: host del broker Kafka;
-            \item \texttt{kafka\_port str [public]}: porta del broker Kafka;
-            \item \texttt{log\_level str [public]}: livello di log;
-            \item \texttt{max\_block\_ms str [public]}: massimo numero di millisecondi che il producer kafka può rimanere bloccato durante \texttt{send()}.
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{SensorConfig}: legge il file di configurazione \textit{sensor.toml} e ne effettua il parsing.
-    \begin{itemize}
-        \item Attributi
-        \begin{itemize}
-            \item \texttt{uuid UUID [public]}: identificativo univoco del sensore;
-            \item \texttt{limit int [public]}: limite di dati da produrre;
-            \item \texttt{begin\_date datetime [public]}: data da cui iniziare a produrre dati. Opzionale e nel caso non sia presente viene presa la data attuale;
-            \item \texttt{latitude float [public]}: latitudine del sensore;
-            \item \texttt{longitude float [public]}: longitudine del sensore;
-            \item \texttt{generation\_delay timedelta [public]}: tempo effettivamente atteso tra la generazione di un dato e il successivo. Espresso in formato ISO 8601 e nel caso non sia conforme viene sollevata un'eccezione; 
-            \item \texttt{points\_spacing timedelta [public]}: distanza temporale dei dati generati. Espresso in formato ISO 8601 e nel caso non sia conforme viene sollevata un'eccezione.
-        \end{itemize}
-    \end{itemize}
+	\item Classe concreta \texttt{EnvConfig}: legge le variabili d'ambiente e nel caso siano assenti ma ammettano valore di default lo assegna.
+	      \begin{itemize}
+		      \item Metodi
+		            \begin{itemize}
+			            \item \texttt{get\_or\_throw(key: str) str [private]}: ritorna il valore della variabile d'ambiente con quella chiave o se non esiste lancia un'eccezione;
+			            \item \texttt{get\_or\_none(key: str) str | None [private]}: ritorna il valore della variabile d'ambiente con quella chiave o se non esiste ritorna \texttt{None};
+			            \item \texttt{bootstrap\_server() str [public]}: ritorna concatenati i valori delle variabili d'ambiente \texttt{KAFKA\_HOST} e \texttt{KAFKA\_PORT} separati da il simbolo ":";
+		            \end{itemize}
+		      \item Attributi
+		            \begin{itemize}
+			            \item \texttt{kafka\_host str [public]}: host del broker Kafka;
+			            \item \texttt{kafka\_port str [public]}: porta del broker Kafka;
+			            \item \texttt{log\_level str [public]}: livello di log;
+			            \item \texttt{max\_block\_ms str [public]}: massimo numero di millisecondi che il producer kafka può rimanere bloccato durante \texttt{send()}.
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{SensorConfig}: legge il file di configurazione \textit{sensor.toml} e ne effettua il parsing.
+	      \begin{itemize}
+		      \item Attributi
+		            \begin{itemize}
+			            \item \texttt{uuid UUID [public]}: identificativo univoco del sensore;
+			            \item \texttt{limit int [public]}: limite di dati da produrre;
+			            \item \texttt{begin\_date datetime [public]}: data da cui iniziare a produrre dati. Opzionale e nel caso non sia presente viene presa la data attuale;
+			            \item \texttt{latitude float [public]}: latitudine del sensore;
+			            \item \texttt{longitude float [public]}: longitudine del sensore;
+			            \item \texttt{generation\_delay timedelta [public]}: tempo effettivamente atteso tra la generazione di un dato e il successivo. Espresso in formato ISO 8601 e nel caso non sia conforme viene sollevata un'eccezione;
+			            \item \texttt{points\_spacing timedelta [public]}: distanza temporale dei dati generati. Espresso in formato ISO 8601 e nel caso non sia conforme viene sollevata un'eccezione.
+		            \end{itemize}
+	      \end{itemize}
 \end{itemize}
 \subsubsubsection{raw\_data}
 %TODO aggiornare con nuovi sensori
 \begin{itemize}
-    \item Classe astratta \texttt{RawData}: rappresenta un dato grezzo generato da un sensore. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi
-        \begin{itemize}
-            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: metodo astratto che verrà utilizzato dalle sottoclassi per poter implementare il pattern Visitor;
-            \item \texttt{topic() str [public]}: ritorna il nome del topic Kafka a cui il dato deve essere inviato;
-            \item \texttt{subject() str [public]}: ritorna un identificativo associato allo schema del raw data. Nello specifico ritorna il nome del topic seguito da "-value";
-        \end{itemize}
-        \item Attributi
-        \begin{itemize}
-            \item \texttt{sensor\_uuid UUID [public]}: identificativo univoco del sensore;
-            \item \texttt{sensor\_name str [public]}: nome del sensore;
-            \item \texttt{latitude float [public]}: latitudine del sensore;
-            \item \texttt{longitude float [public]}: longitudine del sensore;
-            \item \texttt{timestamp datetime [public]}: data e ora della misurazione;
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{AirQualityRawData}: estende \texttt{RawData} e rappresenta un dato grezzo generato da un sensore di qualità dell'aria. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi
-        \begin{itemize}
-            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: implementa il metodo della classe padre, invocando il metodo per la serializzazione della classe AirQualityRawData;
-            \item \texttt{topic() str [public]}: ritorna "air\_quality".
-        \end{itemize}
-        \item Attributi aggiuntivi rispetto a \texttt{RawData}:
-        \begin{itemize}
-            \item \texttt{pm25 float [public]}: quantità di particolato atmosferico con un diametro aerodinamico inferiore o uguale a 2.5 micrometri e misurato in $\mu g/m^3$;
-            \item \texttt{pm10 float [public]}: quantità di particolato atmosferico con un diametro aerodinamico inferiore o uguale a 10 micrometri e misurato in $\mu g/m^3$;
-            \item \texttt{no2 float [public]}: concentrazione di biossido di azoto misurata in $\mu g/m^3$;
-            \item \texttt{o3 float [public]}: concentrazione di ozono misurata in $\mu g/m^3$;
-            \item \texttt{so2 float [public]}: concentrazione di biossido di zolfo misurata in $\mu g/m^3$.
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{RecyclingPointRawData}: estende \texttt{RawData} e rappresenta un dato grezzo generato da un sensore di isola ecologica. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi:
-        \begin{itemize}
-            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: implementa il metodo della classe padre, invocando il metodo per la serializzazione della classe RecyclingPointRawData;
-            \item \texttt{topic() str [public]}: ritorna "recycling\_point".
-        \end{itemize}
-        \item Attributi aggiuntivi rispetto a \texttt{RawData}:
-        \begin{itemize}
-            \item \texttt{filling float [public]}: percentuale di riempimento dell'isola ecologica.
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{TemperatureRawData}: estende \texttt{RawData} e rappresenta un dato grezzo generato da un sensore di temperatura. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi:
-        \begin{itemize}
-            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: implementa il metodo della classe padre, invocando il metodo per la serializzazione della classe TemperatureRawData;
-            \item \texttt{topic() str [public]}: ritorna "temperature".
-        \end{itemize}
-        \item Attributi aggiuntivi rispetto a \texttt{RawData}:
-        \begin{itemize}
-            \item \texttt{value float [public]}: valore della temperatura rilevata espressa in °C.
-        \end{itemize}
-    \end{itemize}
-    \item Classe concreta \texttt{TrafficRawData}: estende \texttt{RawData} e rappresenta un dato grezzo generato da un sensore di traffico. Contiene i seguenti metodi e attributi:
-    \begin{itemize}
-        \item Metodi:
-        \begin{itemize}
-            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: implementa il metodo della classe padre, invocando il metodo per la serializzazione della classe TrafficRawData;
-            \item \texttt{topic() str [public]}: ritorna "traffic".
-        \end{itemize}
-        \item Attributi aggiuntivi rispetto a \texttt{RawData}:
-        \begin{itemize}
-            \item \texttt{vehicles int [public]}: numero di veicoli rilevati;
-            \item \texttt{avg\_speed float [public]}: velocità media dei veicoli rilevati espressa in km/h.
-        \end{itemize}
-    \end{itemize}
+	\item Classe astratta \texttt{RawData}: rappresenta un dato grezzo generato da un sensore. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi
+		            \begin{itemize}
+			            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: metodo astratto che verrà utilizzato dalle sottoclassi per poter implementare il pattern Visitor;
+			            \item \texttt{topic() str [public]}: ritorna il nome del topic Kafka a cui il dato deve essere inviato;
+			            \item \texttt{subject() str [public]}: ritorna un identificativo associato allo schema del raw data. Nello specifico ritorna il nome del topic seguito da "-value";
+		            \end{itemize}
+		      \item Attributi
+		            \begin{itemize}
+			            \item \texttt{sensor\_uuid UUID [public]}: identificativo univoco del sensore;
+			            \item \texttt{sensor\_name str [public]}: nome del sensore;
+			            \item \texttt{latitude float [public]}: latitudine del sensore;
+			            \item \texttt{longitude float [public]}: longitudine del sensore;
+			            \item \texttt{timestamp datetime [public]}: data e ora della misurazione;
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{AirQualityRawData}: estende \texttt{RawData} e rappresenta un dato grezzo generato da un sensore di qualità dell'aria. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi
+		            \begin{itemize}
+			            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: implementa il metodo della classe padre, invocando il metodo per la serializzazione della classe AirQualityRawData;
+			            \item \texttt{topic() str [public]}: ritorna "air\_quality".
+		            \end{itemize}
+		      \item Attributi aggiuntivi rispetto a \texttt{RawData}:
+		            \begin{itemize}
+			            \item \texttt{pm25 float [public]}: quantità di particolato atmosferico con un diametro aerodinamico inferiore o uguale a 2.5 micrometri e misurato in $\mu g/m^3$;
+			            \item \texttt{pm10 float [public]}: quantità di particolato atmosferico con un diametro aerodinamico inferiore o uguale a 10 micrometri e misurato in $\mu g/m^3$;
+			            \item \texttt{no2 float [public]}: concentrazione di biossido di azoto misurata in $\mu g/m^3$;
+			            \item \texttt{o3 float [public]}: concentrazione di ozono misurata in $\mu g/m^3$;
+			            \item \texttt{so2 float [public]}: concentrazione di biossido di zolfo misurata in $\mu g/m^3$.
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{RecyclingPointRawData}: estende \texttt{RawData} e rappresenta un dato grezzo generato da un sensore di isola ecologica. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi:
+		            \begin{itemize}
+			            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: implementa il metodo della classe padre, invocando il metodo per la serializzazione della classe RecyclingPointRawData;
+			            \item \texttt{topic() str [public]}: ritorna "recycling\_point".
+		            \end{itemize}
+		      \item Attributi aggiuntivi rispetto a \texttt{RawData}:
+		            \begin{itemize}
+			            \item \texttt{filling float [public]}: percentuale di riempimento dell'isola ecologica.
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{TemperatureRawData}: estende \texttt{RawData} e rappresenta un dato grezzo generato da un sensore di temperatura. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi:
+		            \begin{itemize}
+			            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: implementa il metodo della classe padre, invocando il metodo per la serializzazione della classe TemperatureRawData;
+			            \item \texttt{topic() str [public]}: ritorna "temperature".
+		            \end{itemize}
+		      \item Attributi aggiuntivi rispetto a \texttt{RawData}:
+		            \begin{itemize}
+			            \item \texttt{value float [public]}: valore della temperatura rilevata espressa in °C.
+		            \end{itemize}
+	      \end{itemize}
+	\item Classe concreta \texttt{TrafficRawData}: estende \texttt{RawData} e rappresenta un dato grezzo generato da un sensore di traffico. Contiene i seguenti metodi e attributi:
+	      \begin{itemize}
+		      \item Metodi:
+		            \begin{itemize}
+			            \item \texttt{accept(visitor: SerializerVisitor) Dict [str,any] [public]}: implementa il metodo della classe padre, invocando il metodo per la serializzazione della classe TrafficRawData;
+			            \item \texttt{topic() str [public]}: ritorna "traffic".
+		            \end{itemize}
+		      \item Attributi aggiuntivi rispetto a \texttt{RawData}:
+		            \begin{itemize}
+			            \item \texttt{vehicles int [public]}: numero di veicoli rilevati;
+			            \item \texttt{avg\_speed float [public]}: velocità media dei veicoli rilevati espressa in km/h.
+		            \end{itemize}
+	      \end{itemize}
 \end{itemize}
 
 \subsubsection{Progettazione - Panoramica UML}
@@ -253,10 +253,10 @@ I Kafka topic sono categorie o canali di messaggi all'interno di \textit{Redpand
 \subsubsection{Formato messaggi}
 \textit{7Last} ha scelto di adottare lo standard Avro per i messaggi scambiati tra i produttori e i consumatori. Avro è un sistema di serializzazione dati che offre un modo efficiente per rappresentare dati complessi in un formato binario, rendendoli adatti per il trasporto su rete o per la persistenza su disco. Uno dei principali vantaggi di Avro è la possibilità di definire uno schema per i dati, che viene incluso nei dati stessi. Ecco una panoramica del formato dei messaggi Avro:
 \begin{itemize}
-    \item \textbf{schema}: definito in formato JSON e descrive la struttura dei dati. Include informazioni come il tipo di ogni campo e la loro posizione all'interno della struttura dei dati;
-    \item \textbf{serializzazione binaria}: Avro serializza i dati in un formato binario compatto, che rende efficiente il trasporto e la memorizzazione dei dati. Utilizza un'organizzazione binaria che incorpora lo schema dei dati insieme ai dati stessi. Questo significa che non c'è bisogno di includere esplicitamente il tipo di dato per ogni campo, poiché lo schema fornisce questa informazione;
-    \item \textbf{compatibilità}: è progettato per supportare l'evoluzione dei dati nel tempo. Puoi aggiungere nuovi campi, rimuovere campi esistenti o modificare il tipo di dati di un campo mantenendo la compatibilità con le versioni precedenti degli schemi;
-    \item \textbf{condivisione dello schema}: supporta la condivisione dello schema tramite un registro dello schema (Schema Registry). Questo consente di registrare gli schemi Avro utilizzati nel sistema in un registro centralizzato, in modo che i produttori e i consumatori possano recuperare gli schemi necessari quando ne hanno bisogno.
+	\item \textbf{schema}: definito in formato JSON e descrive la struttura dei dati. Include informazioni come il tipo di ogni campo e la loro posizione all'interno della struttura dei dati;
+	\item \textbf{serializzazione binaria}: Avro serializza i dati in un formato binario compatto, che rende efficiente il trasporto e la memorizzazione dei dati. Utilizza un'organizzazione binaria che incorpora lo schema dei dati insieme ai dati stessi. Questo significa che non c'è bisogno di includere esplicitamente il tipo di dato per ogni campo, poiché lo schema fornisce questa informazione;
+	\item \textbf{compatibilità}: è progettato per supportare l'evoluzione dei dati nel tempo. Puoi aggiungere nuovi campi, rimuovere campi esistenti o modificare il tipo di dati di un campo mantenendo la compatibilità con le versioni precedenti degli schemi;
+	\item \textbf{condivisione dello schema}: supporta la condivisione dello schema tramite un registro dello schema (Schema Registry). Questo consente di registrare gli schemi Avro utilizzati nel sistema in un registro centralizzato, in modo che i produttori e i consumatori possano recuperare gli schemi necessari quando ne hanno bisogno.
 \end{itemize}
 
 \subsection{Flink - Processing Layer}
@@ -265,19 +265,19 @@ I Kafka topic sono categorie o canali di messaggi all'interno di \textit{Redpand
 \subsubsection{Componenti Flink \& Processing Layer}
 È costituito da diverse componenti fondamentali che lavorano insieme per consentire l'elaborazione efficiente e scalabile dei dati in tempo reale e batch. Queste componenti formano il cuore del sistema Flink e forniscono le basi per la sua potente capacità di elaborazione dei dati. In questa sezione, esamineremo le principali componenti di Flink e il loro ruolo nella creazione di un'infrastruttura robusta per l'analisi dei dati.
 \begin{itemize}
-    \item \textbf{JobManager}: è il componente centrale di Flink responsabile della pianificazione e del coordinamento dei job di elaborazione dei dati. Gestisce il flusso di lavoro complessivo, assegnando i task ai TaskManager per l'esecuzione;
-    \item \textbf{TaskManager}: è responsabile dell'esecuzione effettiva delle operazioni di elaborazione dei dati, eseguendo i task assegnati loro dal JobManager e gestendo il caricamento, l'elaborazione e la distribuzione dei dati all'interno del cluster;
-    \item \textbf{Processing layer}: è responsabile dell'esecuzione delle operazioni di elaborazione dei dati all'interno del cluster distribuito. Questa layer sfrutta le risorse di calcolo e memorizzazione disponibili nei nodi del cluster per eseguire le operazioni di trasformazione, aggregazione, filtraggio e altro ancora sui dati in ingresso. Utilizzando un modello di esecuzione distribuita, la Processing Layer di Flink è in grado di scalare orizzontalmente per gestire grandi volumi di dati e carichi di lavoro ad alta intensità computazionale.
+	\item \textbf{JobManager}: è il componente centrale di Flink responsabile della pianificazione e del coordinamento dei job di elaborazione dei dati. Gestisce il flusso di lavoro complessivo, assegnando i task ai TaskManager per l'esecuzione;
+	\item \textbf{TaskManager}: è responsabile dell'esecuzione effettiva delle operazioni di elaborazione dei dati, eseguendo i task assegnati loro dal JobManager e gestendo il caricamento, l'elaborazione e la distribuzione dei dati all'interno del cluster;
+	\item \textbf{Processing layer}: è responsabile dell'esecuzione delle operazioni di elaborazione dei dati all'interno del cluster distribuito. Questa layer sfrutta le risorse di calcolo e memorizzazione disponibili nei nodi del cluster per eseguire le operazioni di trasformazione, aggregazione, filtraggio e altro ancora sui dati in ingresso. Utilizzando un modello di esecuzione distribuita, la Processing Layer di Flink è in grado di scalare orizzontalmente per gestire grandi volumi di dati e carichi di lavoro ad alta intensità computazionale.
 \end{itemize}
 \subsubsection{Processing layer data-flow}
 %TODO mettere foto del processing layer data-flow di flink
 \begin{enumerate}
-    \item \textbf{Acquisizione dei dati};
-    \item \textbf{partizione e distribuzione}: i dati vengono divisi in parti più piccole e distribuiti tra i nodi del cluster per massimizzare l'utilizzo delle risorse;
-    \item \textbf{pianificazione dei task}: il JobManager assegna compiti di elaborazione ai TaskManager basandosi sullo stato del cluster e sull'ottimizzazione delle prestazioni;
-    \item \textbf{esecuzione dei task}: i TaskManager eseguono i compiti assegnati in parallelo, elaborando i dati in base alla logica definita nell'applicazione Flink;
-    \item \textbf{scambio e movimento dei dati}: i dati possono essere scambiati e spostati tra i nodi del cluster per supportare operazioni complesse come il join o l'aggregazione;
-    \item \textbf{persistenza e output}: una volta elaborati, i risultati vengono eventualmente salvati o inviati ad altre destinazioni per l'analisi o l'utilizzo successivo.
+	\item \textbf{Acquisizione dei dati};
+	\item \textbf{partizione e distribuzione}: i dati vengono divisi in parti più piccole e distribuiti tra i nodi del cluster per massimizzare l'utilizzo delle risorse;
+	\item \textbf{pianificazione dei task}: il JobManager assegna compiti di elaborazione ai TaskManager basandosi sullo stato del cluster e sull'ottimizzazione delle prestazioni;
+	\item \textbf{esecuzione dei task}: i TaskManager eseguono i compiti assegnati in parallelo, elaborando i dati in base alla logica definita nell'applicazione Flink;
+	\item \textbf{scambio e movimento dei dati}: i dati possono essere scambiati e spostati tra i nodi del cluster per supportare operazioni complesse come il join o l'aggregazione;
+	\item \textbf{persistenza e output}: una volta elaborati, i risultati vengono eventualmente salvati o inviati ad altre destinazioni per l'analisi o l'utilizzo successivo.
 \end{enumerate}
 \subsubsection{Modello per il calcolo dei KPI}
 %TODO inserire foto del modello per il calcolo del punteggio di salute
@@ -292,77 +292,82 @@ Come detto in precedenza, il database adottato è \textit{ClickHouse}. Per ogni 
 \subsubsubsection{Materialized View}
 Sono una potente funzionalità di \textit{ClickHouse} per migliorare le prestazioni delle query e semplificare l'analisi dei dati. In sostanza, una materialized view è una vista pre-calcolata o una copia di una query, memorizzata fisicamente su disco in forma tabellare. Ciò consente di evitare il calcolo ripetuto dei risultati della query ogni volta che viene eseguita.
 \subsubsubsection*{Documentazione}
-\url{https://clickhouse.com/docs/en/guides/developer/cascading-materialized-views} (Consultato il 2024-06-05)
+\url{https://clickhouse.com/docs/en/guides/developer/cascading-materialized-views}
+
+[Ultima consultazione 2024-06-05]
+
 \subsubsubsection*{Utilizzi}
 \begin{itemize}
-    \item \textbf{Aggregazioni pre-calcoltate}: le materialized view possono essere utilizzate per memorizzare i risultati di aggregazioni complesse, come somme, medie, conteggi, ecc., in modo che non debbano essere calcolati ogni volta che viene eseguita una query;
-    \item \textbf{rapporti pre-calcolati}: possono essere utilizzate per memorizzare i risultati di query complesse o di rapporti, in modo che i risultati siano immediatamente disponibili senza dover eseguire la query ogni volta;
-    \item \textbf{join ottimizzati}: possono essere utilizzate per memorizzare i risultati di join complessi tra più tabelle, in modo che i risultati siano immediatamente disponibili senza dover eseguire il join ogni volta;
-    \item \textbf{filtraggio e selezione efficiente}: possono essere utilizzate per filtrare e selezionare dati in base a criteri specifici, migliorando le prestazioni delle query che richiedono l'accesso solo a una parte dei dati.
+	\item \textbf{Aggregazioni pre-calcolate}: le materialized view possono essere utilizzate per memorizzare i risultati di aggregazioni complesse, come somme, medie, conteggi, ecc., in modo che non debbano essere calcolati ogni volta che viene eseguita una query;
+	\item \textbf{rapporti pre-calcolati}: possono essere utilizzate per memorizzare i risultati di query complesse o di rapporti, in modo che i risultati siano immediatamente disponibili senza dover eseguire la query ogni volta;
+	\item \textbf{join ottimizzati}: possono essere utilizzate per memorizzare i risultati di join complessi tra più tabelle, in modo che i risultati siano immediatamente disponibili senza dover eseguire il join ogni volta;
+	\item \textbf{filtraggio e selezione efficiente}: possono essere utilizzate per filtrare e selezionare dati in base a criteri specifici, migliorando le prestazioni delle query che richiedono l'accesso solo a una parte dei dati.
 \end{itemize}
 \subsubsubsection{MergeTree}
 MergeTree è uno dei principali motori di archiviazione di ClickHouse, progettato per gestire grandi volumi di dati e fornire elevate prestazioni di lettura e scrittura. È particolarmente adatto per applicazioni in cui i dati vengono aggiunti in modo incrementale e le query vengono eseguite su intervalli di tempo specifici.
 Le caratteristiche principali sono:
 \begin{itemize}
-    \item \textbf{partizionamento}, in cui i dati vengono partizionati in base a una colonna di data o di tempo, in modo che i dati più recenti siano memorizzati in partizioni separate e possano essere facilmente eliminati o archiviati;
-    \item \textbf{ordine dei dati}, dove i dati vengono ordinati in base a una colonna di ordinamento, in modo che i dati siano memorizzati in modo sequenziale e possano essere letti in modo efficiente;
-    \item \textbf{indice primario}, tramite il quale i dati vengono indicizzati in base a una colonna di chiave primaria, in modo che le query di ricerca e di join siano veloci ed efficienti;
-    \item \textbf{merging dei dati}, in questo modo i dati vengono uniti in modo incrementale in background, in modo che le query di aggregazione e di analisi siano veloci ed efficienti;
-    \item \textbf{compressione}, i dati vengono compressi in modo efficiente per ridurre lo spazio di archiviazione e migliorare le prestazioni di lettura e scrittura;
-    \item \textbf{replica e distribuzione}, i dati possono essere replicati e distribuiti su più nodi per garantire l'affidabilità e la disponibilità del sistema.
+	\item \textbf{partizionamento}, in cui i dati vengono partizionati in base a una colonna di data o di tempo, in modo che i dati più recenti siano memorizzati in partizioni separate e possano essere facilmente eliminati o archiviati;
+	\item \textbf{ordine dei dati}, dove i dati vengono ordinati in base a una colonna di ordinamento, in modo che i dati siano memorizzati in modo sequenziale e possano essere letti in modo efficiente;
+	\item \textbf{indice primario}, tramite il quale i dati vengono indicizzati in base a una colonna di chiave primaria, in modo che le query di ricerca e di join siano veloci ed efficienti;
+	\item \textbf{merging dei dati}, in questo modo i dati vengono uniti in modo incrementale in background, in modo che le query di aggregazione e di analisi siano veloci ed efficienti;
+	\item \textbf{compressione}, i dati vengono compressi in modo efficiente per ridurre lo spazio di archiviazione e migliorare le prestazioni di lettura e scrittura;
+	\item \textbf{replica e distribuzione}, i dati possono essere replicati e distribuiti su più nodi per garantire l'affidabilità e la disponibilità del sistema.
 \end{itemize}
 \subsubsubsection*{Documentazione}
-\url{https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree} \\(Consultato il 2024-06-05)
+\url{https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree}
+
+[Ultima consultazione 2024-06-05]
 
 \subsubsubsection*{Utilizzi}
 \begin{itemize}
-    \item \textbf{Analisi dei dati storici}: i dati storici vengono memorizzati in tabelle MergeTree per consentire l'analisi e l'elaborazione dei dati storici;
-    \item \textbf{applicazioni di business intelligence}: i dati vengono memorizzati in tabelle MergeTree per consentire l'analisi e la generazione di report per le applicazioni di business intelligence;
-    \item \textbf{log e monitoraggio}: i dati di log e di monitoraggio vengono memorizzati in tabelle MergeTree per consentire l'analisi e il monitoraggio delle attività di sistema.
+	\item \textbf{Analisi dei dati storici}: i dati storici vengono memorizzati in tabelle MergeTree per consentire l'analisi e l'elaborazione dei dati storici;
+	\item \textbf{applicazioni di business intelligence}: i dati vengono memorizzati in tabelle MergeTree per consentire l'analisi e la generazione di report per le applicazioni di business intelligence;
+	\item \textbf{log e monitoraggio}: i dati di log e di monitoraggio vengono memorizzati in tabelle MergeTree per consentire l'analisi e il monitoraggio delle attività di sistema.
 \end{itemize}
 
 
 \subsubsection{Trasferimento dati tramite Materialized View}
 Le Materialized View in ClickHouse sono viste che memorizzano fisicamente i risultati di una query specifica in modo da permettere un accesso rapido e efficiente ai dati pre-elaborati. Quando vengono create, le Materialized View eseguono la query definita e archiviano i risultati in una struttura di dati ottimizzata per l'accesso veloce. Questo consente di evitare il calcolo ripetuto dei risultati della query ogni volta che viene eseguita, migliorando notevolmente le prestazioni complessive del sistema. I vantaggi derivanti da questo approccio sono molteplici, tra questi troviamo:
 \begin{itemize}
-    \item \textbf{prestazioni ottimizzate}: grazie alla memorizzazione fisica dei risultati delle query, le Materialized View consentono un accesso rapido ai dati pre-elaborati, riducendo i tempi di risposta delle query complesse;
-    \item \textbf{riduzione del carico di lavoro}: trasferendo i dati pre-elaborati in Materialized View, si riduce il carico di lavoro sul sistema sorgente, consentendo una maggiore scalabilità e riducendo il rischio di sovraccarico del sistema durante le operazioni di estrazione dei dati;
-    \item \textbf{sempre aggiornate}: possono essere progettate per aggiornarsi automaticamente in risposta alle modifiche nei dati sottostanti, garantendo che i risultati siano sempre aggiornati e coerenti con lo stato attuale dei dati;
-    \item \textbf{semplificazione dell'architettura}: è possibile semplificare l'architettura complessiva del sistema eliminando la necessità di eseguire query complesse e costose ogni volta che si accede ai dati.
+	\item \textbf{prestazioni ottimizzate}: grazie alla memorizzazione fisica dei risultati delle query, le Materialized View consentono un accesso rapido ai dati pre-elaborati, riducendo i tempi di risposta delle query complesse;
+	\item \textbf{riduzione del carico di lavoro}: trasferendo i dati pre-elaborati in Materialized View, si riduce il carico di lavoro sul sistema sorgente, consentendo una maggiore scalabilità e riducendo il rischio di sovraccarico del sistema durante le operazioni di estrazione dei dati;
+	\item \textbf{sempre aggiornate}: possono essere progettate per aggiornarsi automaticamente in risposta alle modifiche nei dati sottostanti, garantendo che i risultati siano sempre aggiornati e coerenti con lo stato attuale dei dati;
+	\item \textbf{semplificazione dell'architettura}: è possibile semplificare l'architettura complessiva del sistema eliminando la necessità di eseguire query complesse e costose ogni volta che si accede ai dati.
 \end{itemize}
 %TODO prendere le query che creano le materialized view
 \subsubsection{Misurazioni isole ecologiche}
 Di seguito viene riportata la configurazione della tabella per le misurazioni delle isole ecologiche. Le misurazioni includono:
 \begin{itemize}
-    \item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
-    \item \textbf{sensor\_name}: nome del sensore (formato String);
-    \item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
-    \item \textbf{latitude}: latitudine del sensore (formato Float64);
-    \item \textbf{longitude}: longitudine del sensore (formato Float64);
-    \item \textbf{filling\_value}: percentuale di riempimento dell'isola ecologica (formato Float32).
+	\item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
+	\item \textbf{sensor\_name}: nome del sensore (formato String);
+	\item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
+	\item \textbf{latitude}: latitudine del sensore (formato Float64);
+	\item \textbf{longitude}: longitudine del sensore (formato Float64);
+	\item \textbf{filling\_value}: percentuale di riempimento dell'isola ecologica (formato Float32).
 \end{itemize}
 %TODO mettere foto della tabella isole ecologiche
 \subsubsection{Misurazioni temperatura}
 Di seguito viene riportata la configurazione della tabella per le misurazioni della temperatura. Le misurazioni includono:
 \begin{itemize}
-    \item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
-    \item \textbf{sensor\_name}: nome del sensore (formato String);
-    \item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
-    \item \textbf{value}: valore della temperatura rilevata (formato Float32);
-    \item \textbf{latitude}: latitudine del sensore (formato Float64);
-    \item \textbf{longitude}: longitudine del sensore (formato Float64);
+	\item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
+	\item \textbf{sensor\_name}: nome del sensore (formato String);
+	\item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
+	\item \textbf{value}: valore della temperatura rilevata (formato Float32);
+	\item \textbf{latitude}: latitudine del sensore (formato Float64);
+	\item \textbf{longitude}: longitudine del sensore (formato Float64);
 \end{itemize}
 %TODO mettere foto della tabella temperatura
 \subsubsection{Misurazioni traffico}
 Di seguito viene riportata la configurazione della tabella per le misurazioni della traffico. Le misurazioni includono:
 \begin{itemize}
-    \item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
-    \item \textbf{sensor\_name}: nome del sensore (formato String);
-    \item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
-    \item \textbf{latitude}: latitudine del sensore (formato Float64);
-    \item \textbf{longitude}: longitudine del sensore (formato Float64);
-    \item \textbf{vehicles}: numero di veicoli rilevati (formato Int32);
-    \item \textbf{avg\_speed}: velocità media del traffico (formato Float32).
+	\item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
+	\item \textbf{sensor\_name}: nome del sensore (formato String);
+	\item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
+	\item \textbf{latitude}: latitudine del sensore (formato Float64);
+	\item \textbf{longitude}: longitudine del sensore (formato Float64);
+	\item \textbf{vehicles}: numero di veicoli rilevati (formato Int32);
+	\item \textbf{avg\_speed}: velocità media del traffico (formato Float32).
 \end{itemize}
 %TODO mettere foto della tabella traffico
 \subsection{Grafana}
@@ -374,69 +379,75 @@ Grafana è uno strumento di analisi e monitoraggio che permette di visualizzare 
 Il plugin ClickHouse per Grafana è un'implementazione che consente di utilizzare ClickHouse come fonte di dati per Grafana. Questo plugin facilita la connessione e l'interrogazione dei dati archiviati in ClickHouse direttamente da Grafana, permettendo di creare dashboard dinamiche e interattive.
 \subsubsubsection*{Documentazione}
 \url{https://grafana.com/grafana/plugins/grafana-clickhouse-datasource/}
+
+[Ultima consultazione 2024-06-05]
 \subsubsubsection{Configurazione del Datasource}
 La configurazione  grafana/provisioning/datasources/default.yaml
 
 
 \subsubsection{Variabili Grafana}
 \subsubsubsection{Documentazione}
-\url{https://grafana.com/docs/grafana/latest/dashboards/variables/} (Consultato il 2024-06-05)
+\url{https://grafana.com/docs/grafana/latest/dashboards/variables/}
+
+[Ultima consultazione 2024-06-05]
 \subsubsubsection*{Variabili nella dashboard principale}
 Le variabili presenti nella dashboard principale sono:
 \begin{itemize}
-    \item \textbf{tipo sensore}: permette di selezionare il tipo di sensore da visualizzare (temperatura, traffico, isola ecologica);
-    \item \textbf{nome sensore}: permette di selezionare il nome del sensore da visualizzare (es. sensore1, sensore2, ecc.);
+	\item \textbf{tipo sensore}: permette di selezionare il tipo di sensore da visualizzare (temperatura, traffico, isola ecologica...);
+	\item \textbf{nome sensore}: permette di selezionare il nome del sensore da visualizzare (ad esempio sensore1, sensore2, ecc.); % TODO
 \end{itemize}
 %TODO mettere foto codice query
 \subsubsubsection*{Variabili nella dashboard dettagliata}
 Le variabili presenti nelle dashboard dettagliate sono:
 \begin{itemize}
-    \item \textbf{nome sensore}: permette di selezionare il nome del sensore da visualizzare (es. sensore1, sensore2, ecc.);
+	\item \textbf{nome sensore}: permette di selezionare il nome del sensore da visualizzare (es. sensore1, sensore2, ecc.);
 \end{itemize}
 
 \subsubsection{Grafana Alerts}
 Sono una funzionalità che permettono di definire, configurare e gestire avvisi basati su condizioni specifiche rilevate nei dati monitorati. Questi avvisi consentono agli utenti di essere informati tempestivamente su eventuali problemi o cambiamenti critici nei loro sistemi, applicazioni o infrastrutture.
 \subsubsubsection*{Documentazione}
-\url{https://grafana.com/docs/grafana/latest/alerting/} (Consultato il 2024-06-05)
+\url{https://grafana.com/docs/grafana/latest/alerting/} [Ultima consultazione 2024-06-05]
 \subsubsubsection{Configurazione delle regole di alert}
 Definiscono le condizioni che devono essere soddisfatte per attivare un alert. Gli eventi che generano un alert sono:
 \begin{itemize}
-    \item temperatura maggiore di 40°C per più di 30 minuti;
-    \item isola ecologica piena al 100\% per più di 24 ore;
-    \item superamento dell'indice 3 dell'EAQI (indice di qualità dell'aria);
-    \item livello di precipitazioni superiore a 10 mm in 1 ora.
+	\item temperatura maggiore di 40°C per più di 30 minuti;
+	\item isola ecologica piena al 100\% per più di 24 ore;
+	\item superamento dell'indice 3 dell'EAQI (indice di qualità dell'aria);
+	\item livello di precipitazioni superiore a 10 mm in 1 ora.
 \end{itemize}
 Gli alert possono possedere tre diversi tipi di stati:
 \begin{itemize}
-    \item \textbf{normal}, indica che l'alert non è attivo perché le condizioni definite per l'attivazione dell'avviso non sono soddisfatte;
-    \item \textbf{pending}, indica che le metriche monitorate stanno iniziando a deviare dalle condizioni normali ma non hanno ancora soddisfatto completamente le condizioni per attivare l'alert;
-    \item \textbf{firing}, significa che le condizioni definite per l'avviso sono state soddisfatte e l'alert è attivo.
+	\item \textbf{normal}, indica che l'alert non è attivo perché le condizioni definite per l'attivazione dell'avviso non sono soddisfatte;
+	\item \textbf{pending}, indica che le metriche monitorate stanno iniziando a deviare dalle condizioni normali ma non hanno ancora soddisfatto completamente le condizioni per attivare l'alert;
+	\item \textbf{firing}, significa che le condizioni definite per l'avviso sono state soddisfatte e l'alert è attivo.
 \end{itemize}
 \subsubsubsection{Configurazione canale di notifica}
 Per configurare un canale di notifica è necessario:
 \begin{enumerate}
-    \item nel menù di sinistra, cliccare sull'icona "Alerting";
-    \item selezionare la voce "Notification channels";  
-    \item cliccare sul pulsante "Add channel" per aggiungere un nuovo canale di notifica;
-    \item selezionare il tipo di canale di notifica desiderato tra quelli disponibili;
-    \item configurare le impostazioni del canale di notifica in base alle proprie esigenze;
-    \item cliccare sul pulsante "Save" per salvare le impostazioni del canale di notifica.
+	\item nel menù di sinistra, cliccare sull'icona "Alerting";
+	\item selezionare la voce "Notification channels";
+	\item cliccare sul pulsante "Add channel" per aggiungere un nuovo canale di notifica;
+	\item selezionare il tipo di canale di notifica desiderato tra quelli disponibili;
+	\item configurare le impostazioni del canale di notifica in base alle proprie esigenze;
+	\item cliccare sul pulsante "Save" per salvare le impostazioni del canale di notifica.
 \end{enumerate}
 \textit{7Last} ha deciso di rendere risponibile il server \textit{Discord} configurato a questo scopo e raggiungibile a questo link:
 \begin{center}
-    \url{https://discord.com/channels/1214553333113556992/1241974479345942568}
+	\url{https://discord.com/channels/1214553333113556992/1241974479345942568}
 \end{center}
 \subsubsection{Altri plugin}
 \subsubsubsection{Orchestra Cities Map plugin}
 Progettato per facilitare la visualizzazione e l'analisi dei dati geospaziali all'interno di piattaforme di pianificazione urbana e sviluppo territoriale.\\
 Le principali funzionalità offerte da questo plugin sono:
 \begin{itemize}
-    \item \textbf{visualizzazione dei dati geospaziali}: consente agli utenti di visualizzare dati geografici, come mappe, strati di dati GIS (Geographic Information System), punti di interesse e altre informazioni territoriali;
-    \item \textbf{interfaccia interattiva}: offre un'interfaccia utente intuitiva e interattiva che consente agli utenti di esplorare e interagire con i dati geospaziali in modo dinamico;
-    \item \textbf{personalizzazione}: offre opzioni di personalizzazione per adattarsi alle esigenze specifiche dell'utente o dell'applicazione;
-    \item \textbf{analisi dei dati}: oltre alla semplice visualizzazione dei dati geospaziali, il plugin può anche supportare funzionalità avanzate di analisi dei dati, come l'identificazione di cluster, la creazione di heatmap e l'esecuzione di analisi spaziali per identificare tendenze o pattern significativi nei dati territoriali;
-    \item \textbf{integrazione}: è progettato per integrarsi facilmente con altre componenti dell'ecosistema Orchestra Cities e con altre piattaforme software di pianificazione urbana e sviluppo territoriale.
+	\item \textbf{visualizzazione dei dati geospaziali}: consente agli utenti di visualizzare dati geografici, come mappe, strati di dati GIS (Geographic Information System), punti di interesse e altre informazioni territoriali;
+	\item \textbf{interfaccia interattiva}: offre un'interfaccia utente intuitiva e interattiva che consente agli utenti di esplorare e interagire con i dati geospaziali in modo dinamico;
+	\item \textbf{personalizzazione}: offre opzioni di personalizzazione per adattarsi alle esigenze specifiche dell'utente o dell'applicazione;
+	\item \textbf{analisi dei dati}: oltre alla semplice visualizzazione dei dati geospaziali, il plugin può anche supportare funzionalità avanzate di analisi dei dati, come l'identificazione di cluster, la creazione di heatmap e l'esecuzione di analisi spaziali per identificare tendenze o pattern significativi nei dati territoriali;
+	\item \textbf{integrazione}: è progettato per integrarsi facilmente con altre componenti dell'ecosistema Orchestra Cities e con altre piattaforme software di pianificazione urbana e sviluppo territoriale.
 \end{itemize}
 
 \subsubsubsection*{Documentazione}
-\url{https://grafana.com/grafana/plugins/orchestracities-map-panel/?tab=installation} (Consultato il 2024-06-05)
+\url{https://grafana.com/grafana/plugins/orchestracities-map-panel/?tab=installation}
+
+[Ultima consultazione 2024-06-05]

@@ -16,6 +16,10 @@
 
 \renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
 \renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily\oldthepage}
+
 %-------------------INIZIO DOCUMENTO--------------
 \begin{document}
 
@@ -27,17 +31,16 @@
 
 %-----------tabella revisioni-----------%
 \begin{table}[!h]
-    \caption*{Versioni}
-    \begin{center}
-        \begin{tabular}{ l l l l l }
-            \hline                                                                                                          \\[-2ex]
-            Ver. & Data       & Autore          & Verificatore              & Descrizione                                   \\
-            \\[-2ex] \hline \\[-1.5ex]\\
-            
-            0.1  & 02/06/2024 & Matteo Tiozzo   &	                        & Stesura struttura del documento               \\
-            \\[-1.5ex] \hline
-        \end{tabular}
-    \end{center}
+	\caption*{Versioni}
+	\begin{center}
+		\begin{tabular}{ l l l l l }
+			\hline                                                                             \\[-2ex]
+			Ver. & Data       & Autore        & Verificatore & Descrizione                     \\
+			\hline                                                                             \\[-1.5ex]
+			0.1  & 02/06/2024 & Matteo Tiozzo &              & Stesura struttura del documento \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
 \end{table}
 %---------------------------------------%
 
@@ -56,11 +59,19 @@
 
 \input{introduzione.tex}
 
+\newpage
+
 \input{tecnologie.tex}
+
+\newpage
 
 \input{architettura_sistema.tex}
 
+\newpage
+
 \input{architettura_deployment.tex}
+
+\newpage
 
 \input{stato_requisiti.tex}
 

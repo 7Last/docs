@@ -1,355 +1,206 @@
 \section{Tecnologie}
-Questa sezione si occupa di fornire una panoramica delle tecnologie utilizzate per implementare il sistema software. In particolare delinea le piattaforme, gli strumenti, i linguaggi di programmazione, i framework e altre risorse tecnologiche che sono state impiegate durante lo sviluppo.
+Questa sezione si occupa di fornire una panoramica delle tecnologie utilizzate per implementare il sistema software.
+In particolare, delinea le piattaforme, gli strumenti, i linguaggi di programmazione, i framework e altre risorse tecnologiche che sono state impiegate durante lo sviluppo.
 
 \subsection{Docker}
-È una piattaforma di virtualizzazione leggera che semplifica lo sviluppo, il testing e il deployment delle applicazioni fornendo un ambiente isolato e riproducibile. È utilizzato per creare ambienti di sviluppo standardizzati, facilitare la scalabilità delle applicazioni e semplificare la gestione delle risorse. 
+È una piattaforma di virtualizzazione leggera che semplifica lo sviluppo, il testing e il rilascio delle applicazioni fornendo un ambiente isolato e riproducibile.
+È utilizzato per creare ambienti di sviluppo standardizzati, facilitare la scalabilità delle applicazioni e semplificare la gestione delle risorse.
+
 \subsubsection{Ambienti}
-\subsubsubsection*{Ambiente di sviluppo locale}
+Per lo sviluppo di questo progetto sono stati ipotizzati i due seguenti scenari di esecuzione, separati grazie all'utilizzo di profili diversi di Docker Compose:
 \begin{itemize}
-    \item Ambiente in cui gli sviluppatori lavorano sui propri computer;
-    \item permette di creare e gestire i container localmente;
-    \item utilizzato per testare le modifiche e sviluppare le funzionalità senza influenzare gli altri membri del gruppo.
+	\item \texttt{local}: utilizzato dagli sviluppatori per testare e sviluppare le funzionalità dell'applicazione sui propri computer.
+	      Questo ambiente permette di eseguire tutti i componenti del sistema all'interno di un container Docker, ad eccezione del simulatore Python.
+	      Esso viene eseguito direttamente sul sistema operativo dell'utente, in modo da facilitare il debugging e il testing delle funzionalità,
+	      senza dover necessariamente eseguire la \textit{build} dell'immagine Docker ad ogni modifica del codice;
+	\item \texttt{release}: utilizzato quando si desidera simulare un ipotetico ambiente di produzione o non è necessario modificare il codice Python. Consente di non dover manualmente
+	      installare le dipendenze o configurare l'ambiente di esecuzione. In questo caso, tutti i componenti del sistema vengono eseguiti all'interno di container Docker.
+
 \end{itemize}
-\subsubsubsection*{Ambiente di sviluppo condiviso}
-\begin{itemize}
-    \item Ambiente utilizzato quando più membri del team devono collaborare su un progetto;
-    \item è possibile utilizzare strumenti di orchestrazione come Docker Compose per definire un set di container che costituiscono l'applicazione in sviluppo;
-    \item tutti i membri del team possono utilizzare lo stesso set di container per sviluppare e testare le loro modifiche.
-\end{itemize}
-\subsubsubsection*{Ambiente di test}
-\begin{itemize}
-    \item Questo ambiente viene utilizzato per testare l'applicazione in un ambiente simile a quello di produzione prima di rilasciarla;
-    \item può includere una replica dell'infrastruttura di produzione, con configurazioni simili e dati di test;
-    \item gli ambienti di test possono essere automaticamente aggiornati con le ultime versioni dell'applicazione dai rami di sviluppo tramite integrazione continua (CI) o integrazione continua/produzione (CI/CD).
-\end{itemize}
-\subsubsubsection*{Ambiente di produzione}
-\begin{itemize}
-    \item Questo è l'ambiente in cui viene eseguita effettivamente l'applicazione per gli utenti finali;
-    \item gli ambienti di produzione sono solitamente più rigorosamente controllati e configurati rispetto agli ambienti di sviluppo e di test;
-    \item le applicazioni vengono distribuite qui dopo essere state testate e validate in ambienti di test.
-\end{itemize}
-\subsubsection{Docker images}
+
+\subsubsection{Immagini Docker}
 Nello sviluppo di questo progetto \textit{7Last} ha utilizzato diverse immagini Docker di seguito elencate.
 \begin{itemize}
-    \item \textbf{Simulatore - Python}
-    \begin{itemize}
-        \item Immagine: 3.11.9-alpine;
-        \item Riferimento: \href{https://hub.docker.com/_/python}{Python Official Docker Image} (Consultato 2024-06-02).
-        \item Ambiente: 
-        \begin{itemize}
-            \item sviluppo;
-            \item produzione.
-        \end{itemize}
-    \end{itemize}
-    \item \textbf{Broker - Redpanda}
-    \begin{itemize}
-        \item Immagine: docker.redpanda.com/redpandadata/redpanda:v23.3.11;
-        \item Riferimento: \href{https://hub.docker.com/r/redpandadata/redpanda}{Redpanda Official Docker Image} (Consultato 2024-06-02).
-        \item Ambiente: 
-        \begin{itemize}
-            \item sviluppo;
-            \item produzione;
-            \item test.
-        \end{itemize}
-    \end{itemize}
-    \item \textbf{Redpanda console}
-    \begin{itemize}
-        \item Immagine: docker.redpanda.com/redpandadata/console:v2.4.6;
-        \item Riferimento: \href{https://hub.docker.com/r/redpandadata/redpanda}{Redpanda Official Docker Image}(Consultato 2024-06-02).
-        \item Ambiente: 
-        \begin{itemize}
-            \item sviluppo;
-            \item produzione;
-            \item test.
-        \end{itemize}
-    \end{itemize}
-    \item \textbf{Database - ClickHouse}
-    \begin{itemize}
-        \item Immagine: clickhouse/clickhouse-server:24-alpine;
-        \item Riferimento: \href{https://hub.docker.com/r/clickhouse/clickhouse-server}{ClickHouse Official Docker Image} (Consultato 2024-06-02).
-        \item Ambiente: 
-        \begin{itemize}
-            \item sviluppo;
-            \item produzione;
-            \item test.
-        \end{itemize}
-    \end{itemize}
-    \item \textbf{Grafana}
-    \begin{itemize}
-        \item Immagine: grafana/grafana-oss:10.3.0;
-        \item Riferimento: \href{https://hub.docker.com/r/grafana/grafana-oss}{Grafana Official Docker Image} (Consultato 2024-06-02).
-        \item Ambiente: 
-        \begin{itemize}
-            \item sviluppo;
-            \item produzione.
-        \end{itemize}
-    \end{itemize}
+	\item \textbf{Simulator - Python}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: 3.11.9-alpine;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/_/python}{Python Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{release};
+	      \end{itemize}
+
+	\item \textbf{Redpanda}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/redpanda:v23.3.11;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/redpanda}{Redpanda Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+	      \end{itemize}
+
+	\item \textbf{Redpanda console}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/console:v2.4.6;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/redpanda}{Redpanda Console Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+	      \end{itemize}
+
+	\item \textbf{Connectors}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/connectors:v1.0.27;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/connectors}{Redpanda Connectors Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+	      \end{itemize}
+
+	\item \textbf{ClickHouse}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: clickhouse/clickhouse-server:24-alpine;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/clickhouse/clickhouse-server}{ClickHouse Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+	      \end{itemize}
+
+	\item \textbf{Grafana}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: grafana/grafana-oss:10.3.0;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/grafana/grafana-oss}{Grafana Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+	      \end{itemize}
+
+	\item \textbf{Apache Flink}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: flink:1.18.1-java17;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/_/flink}{Flink Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+	      \end{itemize}
 \end{itemize}
+
 \subsection{Linguaggi e formato dati}
-\subsubsection{Python}
-Python è un linguaggio di programmazione versatile, noto per la sua semplicità, leggibilità e vasta gamma di applicazioni.
-\subsubsubsection{Versione}
-\begin{itemize}
-    \item Versione utilizzata: 3.11.9
-\end{itemize}
-\subsubsubsection{Documentazione}
-\begin{center}
-    \url{https://docs.python.org/3.11/} (Consultato 2024-06-02).
-\end{center}
-\subsubsubsection{Utilizzo nel progetto}
-\begin{itemize}
-    \item Sviluppo dei simulatori di sensori;
-    \item sviluppo di moduli di elaborazione dei dati;
-    \item automazione e testing.
-\end{itemize}
-\subsubsubsection{Librerie}
-\begin{itemize}
-    \item \textbf{Astroid}:
-    \begin{itemize}
-        \item Versione: 3.1.0;
-        \item Documentazione: \url{https://pypi.org/project/astroid/} (Consultato 2024-06-02);
-        \item Descrizione: utilizzata per rappresentare e manipolare l'Abstract Syntax Tree (AST) del codice Python. È ampiamente utilizzata da strumenti di analisi del codice come pylint per effettuare analisi statiche del codice Python. Astroid fornisce una rappresentazione astratta del codice sorgente che permette di esplorare e navigare la struttura del codice, compresi moduli, classi, funzioni e variabili, in modo dettagliato e programmabile.
-    \end{itemize}
-    \item \textbf{Avro}:
-    \begin{itemize}
-        \item Versione: 1.11.3;
-        \item Documentazione: \url{https://avro.apache.org/docs/1.11.1/getting-started-python/} (Consultato 2024-06-02);
-        \item Descrizione: è progettata per essere utilizzata da applicazioni che necessitano di una rappresentazione compatta, veloce e binaria dei dati, con un robusto supporto per l'evoluzione degli schemi dei dati. Avro è particolarmente utilizzata in ambienti di big data e di elaborazione distribuita.
-    \end{itemize}
-    \item \textbf{Certifi}:
-    \begin{itemize}
-        \item Versione: 2024.2.2;
-        \item Documentazione: \url{https://certifi.io/} (Consultato 2024-06-02);
-        \item Descrizione: è una libreria Python che fornisce una versione aggiornata del pacchetto di certificati CA (Certificate Authority) per la verifica dei certificati SSL/TLS.
-    \end{itemize}
-    \item \textbf{Charset-normalizer}:
-    \begin{itemize}
-        \item Versione: 3.3.2;
-        \item Documentazione: \url{https://charset-normalizer.readthedocs.io/en/stable/} (Consultato 2024-06-02);
-        \item Descrizione: è progettata per rilevare e normalizzare automaticamente la codifica del testo. È particolarmente utile quando si lavora con dati di origine sconosciuta o con file di testo che potrebbero avere diverse codifiche.
-    \end{itemize}
-    \item \textbf{Dill}:
-    \begin{itemize}
-        \item Versione: 0.3.8;
-        \item Documentazione: \url{https://dill.readthedocs.io/en/latest/} (Consultato 2024-06-02);
-        \item Descrizione: estende le funzionalità del modulo standard pickle, permettendo di serializzare e deserializzare una gamma più ampia di oggetti.
-    \end{itemize}
-    \item \textbf{Idna}:
-    \begin{itemize}
-        \item Versione: 3.7;
-        \item Documentazione: \url{https://pypi.org/project/idna/} (Consultato 2024-06-02);
-        \item Descrizione: implementa l'Internationalized Domain Names in Applications (IDNA) standard. Questo standard consente l'uso di caratteri Unicode nei nomi di dominio, permettendo l'inclusione di caratteri non-ASCII come quelli utilizzati in molte lingue del mondo.
-    \end{itemize}
-    \item \textbf{Isolate}:
-    \begin{itemize}
-        \item Versione: 0.6.1;
-        \item Documentazione: \url{https://docs.python.org/3/howto/isolating-extensions.html} (Consultato 2024-06-02);
-        \item Descrizione: progettata per eseguire codice Python in un ambiente isolato, separato dal contesto globale dell'applicazione.
-    \end{itemize}
-    \item \textbf{Isort}:
-    \begin{itemize}
-        \item Versione: 5.13.2;
-        \item Documentazione: \url{https://pycqa.github.io/isort/} (Consultato 2024-06-02);
-        \item Descrizione: utilizzata per ordinare automaticamente le dichiarazioni di import in un file Python in base a determinati criteri. Mantenere un ordine coerente e ben strutturato delle importazioni può rendere il codice più leggibile e facilitare la manutenzione. 
-    \end{itemize}
-    \item \textbf{Kafka-python}:
-    \begin{itemize}
-        \item Versione: 2.2.2;
-        \item Documentazione: \url{https://kafka-python.readthedocs.io/en/master/} (Consultato 2024-06-02);
-        \item Descrizione: libreria Python ampiamente utilizzata per interagire con Apache Kafka, una piattaforma di streaming distribuita. 
-    \end{itemize}
-    \item \textbf{McCabe}:
-    \begin{itemize}
-        \item Versione: 0.7.0;
-        \item Documentazione: \url{https://here-be-pythons.readthedocs.io/en/latest/python/mccabe.html} (Consultato 2024-06-02);
-        \item Descrizione: fornisce strumenti per misurare la complessità ciclomatica del codice sorgente Python.
-    \end{itemize}
-    \item \textbf{Pip-autoremove}:
-    \begin{itemize}
-        \item Versione: 0.10.0;
-        \item Documentazione: \url{https://pypi.org/project/pip-autoremove/} (Consultato 2024-06-02);
-        \item Descrizione: è uno strumento aggiuntivo per pip che consente di rimuovere automaticamente i pacchetti Python non utilizzati da un ambiente virtuale.
-    \end{itemize}
-    \item \textbf{Platformdirs}:
-    \begin{itemize}
-        \item Versione: 4.2.0;
-        \item Documentazione: \url{https://platformdirs.readthedocs.io/en/latest/} (Consultato 2024-06-02);
-        \item Descrizione: fornisce un'interfaccia semplice e multi-piattaforma per ottenere i percorsi di directory standard per l'archiviazione di dati specifici dell'applicazione su diverse piattaforme.
-    \end{itemize}
-    \item \textbf{Python-dotenv}:
-    \begin{itemize}
-        \item Versione: 1.0.1;
-        \item Documentazione: \url{https://pypi.org/project/python-dotenv/} (Consultato 2024-06-02);
-        \item Descrizione: carica le variabili d'ambiente da file .env nel sistema operativo. Questo è particolarmente utile durante lo sviluppo per mantenere segrete e configurabili le variabili d'ambiente utilizzate nel progetto.
-    \end{itemize}
-    \item \textbf{Requests}:
-    \begin{itemize}
-        \item Versione: 2.31.0;
-        \item Documentazione: \url{https://requests.readthedocs.io/en/latest/} (Consultato 2024-06-02);
-        \item Descrizione: semplifica notevolmente l'invio di richieste HTTP e la gestione delle risposte, fornendo un'API semplice e intuitiva per interagire con servizi web.
-    \end{itemize}
-    \item \textbf{Ruff}:
-    \begin{itemize}
-        \item Versione: 0.3.5;
-        \item Documentazione: \url{https://docs.astral.sh/ruff/} (Consultato 2024-06-02);
-        \item Descrizione: impiegato per l'analisi statica del codice sorgente.
-    \end{itemize}
-    \item \textbf{Setuptools}:
-    \begin{itemize}
-        \item Versione: 69.5.1;
-        \item Documentazione: \url{https://setuptools.pypa.io/en/latest/} (Consultato 2024-06-02);
-        \item Descrizione: fornisce strumenti per la creazione, la distribuzione e l'installazione di pacchetti Python.
-    \end{itemize}
-    \item \textbf{Six}:
-    \begin{itemize}
-        \item Versione: 1.16.0;
-        \item Documentazione: \url{https://six.readthedocs.io/} (Consultato 2024-06-02);
-        \item Descrizione: progettata per semplificare la scrittura di codice Python che deve essere compatibile con entrambe le versioni di Python 2 e 3.
-    \end{itemize}
-    \item \textbf{Toml}:
-    \begin{itemize}
-        \item Versione: 0.10.2;
-        \item Documentazione: \url{https://pypi.org/project/toml/} (Consultato 2024-06-02);
-        \item Descrizione: utilizzata per la lettura e la scrittura di file di configurazione nel formato TOML.
-    \end{itemize}
-    \item \textbf{Urllib3}:
-    \begin{itemize}
-        \item Versione: 2.2.1;
-        \item Documentazione: \url{https://urllib3.readthedocs.io/en/2.2.1/} (Consultato 2024-06-02);
-        \item Descrizione: è una libreria Python che fornisce funzionalità avanzate per effettuare richieste HTTP in modo sicuro e affidabile.
-    \end{itemize}
-\end{itemize}
-\subsubsection{JSON}
-JSON (JavaScript Object Notation) è un formato di scambio dati leggero e facile da leggere e scrivere sia per gli esseri umani che per le macchine. È ampiamente utilizzato per trasmettere dati tra un server e un client, in particolare nelle applicazioni web. JSON è basato su un sottoinsieme del linguaggio di programmazione JavaScript, ma è indipendente dal linguaggio, il che significa che può essere utilizzato con quasi tutti i linguaggi di programmazione. Questo linguaggio è composto da due strutture fondamentali, \textbf{oggetti} e \textbf{array}.
-\begin{itemize}
-    \item \textbf{Oggetti}:
-	\begin{itemize}
-		\item racchiusi tra parentesi graffe;
-		\item contengono coppie chiave-valore, dove le chiavi sono le stringhe e i valori possono essere di vari tipi;
-		\item le coppia chiave-valore sono separate dal simbolo ":" e ogni coppia è separata dal simbolo ",".
-	\end{itemize}
-   \item \textbf{Array}:
-	\begin{itemize}
-		\item racchiusi tra parentesi quadre;
-		\item contengono una lista ordinata di valori separati da virgole.
-	\end{itemize}
-\end{itemize}
-\subsubsubsection{Impiego nel progetto}
-\begin{itemize}
-	\item Configurazione dashboard Grafana;
-	\item struttura dei dati inviati dai simulatori dei sensori al broker Kafka.
-\end{itemize}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.35\textwidth}|>{\centering\arraybackslash}m{0.35\textwidth}|}
+	\hline
+	\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione}                                                                                                                                 & \textbf{Impiego}                                                                                                             \\\hline
+	\endfirsthead
+	\hline
+	\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione}                                                                                                                                 & \textbf{Impiego}                                                                                                             \\\hline
+	\endhead
+	Python        & 3.11.9            & Linguaggio di programmazione ad alto livello, interpretato e multiparadigma.                                                                         & Simulatore di sensori, \textit{testing}, \textit{script} per automatizzare il \textit{deployment} dei \textit{job} di Flink. \\\hline
+	JSON          & -                 & Formato di dati semplice da interpretare e generare, ampiamente utilizzato per lo scambio di dati tra applicazioni.                                  & Configurazione dashboard Grafana.                                                                                            \\\hline
+	YAML          & -                 & Linguaggio di serializzazione dei dati leggibile sia per gli esseri umani sia per le macchine.                                                       & Docker Compose, provisioning Grafana e configurazione \textit{alert}, file di \textit{workflow} per le GitHub Actions.       \\\hline
+	SQL           & Ansi SQL          & Linguaggio di programmazione specificamente progettato per la gestione e la manipolazione di dati all'interno di sistemi di gestione di database.    & \textit{Query} e gestione database ClickHouse.                                                                               \\\hline
+	TOML          & 1.0.0             & Linguaggio di \textit{markup} progettato per essere più leggibile e facile da scrivere rispetto ad altri formati di configurazione come JSON e YAML. & Configurazione e gestione dei sensori simulati.                                                                              \\\hline
+	Java          & 17                & Linguaggio di programmazione ad alto livello, orientato agli oggetti.                                                                                & Creazione di job per le aggregazioni dei dati di Flink.                                                                      \\\hline
+	\caption{Linguaggi e formato dati}
+\end{longtable}
 
-\subsubsection{YAML}
-YAML (YAML Ain't Markup Language) è un linguaggio di serializzazione dei dati, concepito per essere leggibile sia per gli esseri umani sia per le macchine. YAML viene spesso utilizzato per configurare file e scambiare dati tra applicazioni. 
-\subsubsubsection{Impiego nel progetto}
-\begin{itemize}
-	\item Configurazione Docker Compose per l'avvio del progetto;
-	\item configurazione provisioning Grafana.
-\end{itemize}
-\subsubsection{SQL}
-SQL (Structured Query Language) è un linguaggio di programmazione specificamente progettato per la gestione e la manipolazione di dati all'interno di sistemi di gestione di database.
-\subsubsubsection{Impiego nel progetto}
-\begin{itemize}
-        \item Configurazione e gestione database ClickHouse.
-\end{itemize}
-\subsubsection{Toml} 
-TOML (Tom's Obvious, Minimal Language) è un linguaggio di serializzazione configurabile utilizzato principalmente per i file di configurazione.
-\subsubsubsection{Impiego nel progetto}
-\begin{itemize}
-    \item Configurazione e gestione dei sensori simulati.
-\end{itemize}
+\subsection{Librerie}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.35\textwidth}|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.45\textwidth}|}
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Python}}                                                                                                          \\
+	\hline
+	\textbf{Nome}                          & \textbf{Versione} & \textbf{Impiego}                                                                  \\\hline
+	\endfirsthead
+	\hline
+	\textbf{Nome}                          & \textbf{Versione} & \textbf{Impiego}                                                                  \\
+	\endhead
+	% \texttt{avro} & 1.11.3            & Libreria per la serializzazione dei dati in formato Avro. & Serializzazione dei dati in formato Avro. \\\hline
+	\texttt{confluent\_avro}               & 1.8.0             & Serializzazione dei dati in formato Avro.                                         \\\hline
+	\texttt{coverage}                      & 7.5.1             & Strumento per misurare la percentuale di linee di codice e rami coperti dai test. \\\hline
+	\texttt{isodate}                       & 0.6.1             & Libreria per la manipolazione delle date e delle ore in formato ISO8601.          \\\hline
+	\texttt{kafka-python-ng}               & 2.2.2             & Client Kafka per Python.                                                          \\\hline
+	% \texttt{requests}          & 2.32.3            & Libreria per effettuare richieste HTTP.                                           \\\hline
+	\texttt{ruff}                          & 0.3.5             & Libreria per l'analisi statica del codice.                                        \\\hline
+	\texttt{toml}                          & 0.10.2            & Libreria per effettuare il parsing dei file di configurazione in formato TOML.    \\\hline
 
-\subsubsection{Java} 
-È un linguaggio di programmazione ad alto livello, orientato agli oggetti e progettato per avere il minor numero possibile di dipendenze di implementazione.
-\subsubsubsection{Versione}
-\begin{itemize}
-    \item Versione utilizzata: 21
-\end{itemize}
-\subsubsubsection{Documentazione}
-\begin{center}
-    \url{https://docs.oracle.com/en/java/} (Consultato 2024-06-02).
-\end{center}
-\subsubsubsection{Impiego nel progetto}
-\begin{itemize}
-    \item Creazione di job per le aggregazioni dei dati di Flink.
-\end{itemize}
+	\multicolumn{3}{|c|}{\textbf{Java}}                                                                                                            \\\hline
+	% TODO: controllare quali effettivamente necessarie/utilizzate
+	\texttt{flink-streaming-java}          & 1.18.0            & Utilizzo di DataStream API di Flink.                                              \\\hline
+	\texttt{flink-connector-kafka}         & 3.1.0-1.18        & Connessione di Flink a Kafka.                                                     \\\hline
+	\texttt{flink-clients}                 & 1.18.0            & Creazione di \textit{job} di Flink.                                               \\\hline
+	\texttt{flink-java}                    & 1.18.0            & Creazione di \textit{job} di Flink.                                               \\\hline
+	\texttt{flink-avro-confluent-registry} & 1.18.0            & Connessione di Flink a uno \textit{schema registry} che utilizza Avro.            \\\hline
+	% \texttt{flink-avro}            & 1.18.0            & Libreria per la connessione di Flink ad Avro.                                      \\\hline
+	\texttt{flink-shaded-guava}            & 31.1-jre-17.0     & Gestione delle dipendenze di Flink.                                               \\\hline
+	\texttt{slf4j-simple}                  & 1.7.36            & Implementazione di SLF4J.                                                         \\\hline
+	\texttt{lombok}                        & 1.18.32           & Libreria per la generazione di codice \textit{boilerplate}.                       \\\hline
+	\texttt{maven-assembly-plugin}         & 3.7.1             & Plugin Maven per la creazione di un \textit{fat jar}.                             \\\hline
+	\caption{Librerie utilizzate}
+\end{longtable}
 
-\subsection{Database e servizi}
+\subsection{Servizi}
 \subsubsection{Redpanda}
-Redpanda è una piattaforma di streaming sviluppata in C++. Il suo obiettivo è fornire una soluzione leggera, semplice e performante, pensata per essere un'alternativa ad Apache Kafka. Viene utilizzato per disaccoppiare i dati provenienti dal simulatore. Ciascun tipo di dato viene inviato su un topic specifico, in modo da poter essere elaborato in modo indipendente.
+Redpanda è una piattaforma di streaming sviluppata in C++. Il suo obiettivo è fornire una soluzione leggera, semplice e performante, pensata per essere un'alternativa ad Apache Kafka. Viene utilizzato per disaccoppiare i dati provenienti dal simulatore.
+% Ciascun tipo di dato viene inviato su un topic specifico, in modo da poter essere elaborato in modo indipendente.
 \subsubsubsection{Versione}
-La versione impiegata al momento dello sviluppo del progetto è la seguente: v23.3.11.
+La versione impiegata per lo sviluppo del progetto è la v23.3.11.
 \subsubsubsection{Documentazione}
-\url{https://docs.redpanda.com/current/home/} (Consultato 2024-06-02).
+\url{https://docs.redpanda.com/current/home/} [Ultima consultazione: 2024-06-02].
 \subsubsubsection{Vantaggi}
 I vantaggi nell'utilizzo di questo strumento consistono in:
 \begin{itemize}
-	\item \textbf{performance}: è scritto in C++ e utilizza il \textit{framework} Seastar, offrendo un'architettura \textit{thread-per-core} ad alte prestazioni.
-    Ciò permette di ottenere un'elevata \textit{throughput} e latenze costantemente basse, evitando cambi di contesto e blocchi.
-    Inoltre, è progettato per sfruttare l'\textit{hardware} moderno, tra cui unità NVMe, processori \textit{multi-core} e interfacce di rete ad alta velocità;
-    \item \textbf{costi}: rispetto ad altre tecnologie il carico di lavoro può essere ridotto fino a 5 volte in meno;
-    \item \textbf{semplicità di configurazione}: oltre al \textit{message broker}, contiene anche un \textit{proxy} HTTP e uno \textit{schema registry};
-    \item \textbf{BYOC (Bring Your Own Cluster)}: consente agli utenti finali di implementare una soluzione parzialmente gestita dal fornitore nella propria infrastruttura (come il proprio \textit{data center} o il proprio \textit{VPC cloud});
-    \item \textbf{compatibilità con le API di Kafka}: è compatibile con le API di Apache Kafka, consentendo di utilizzare le librerie e gli strumenti esistenti;
-    \item \textbf{self-healing}: redistribuisce continuamente i dati e la \textit{leadership} tra i nodi per mantenere il \textit{cluster} in uno stato ottimale mentre evolve o quando i nodi falliscono.
+	\item \textbf{\textit{performance}}: è scritto in C++ e utilizza il \textit{framework} Seastar, offrendo un'architettura \textit{thread-per-core} ad alte prestazioni.
+	      Ciò permette di ottenere un'elevata \textit{throughput} e latenze costantemente basse, evitando cambi di contesto e blocchi.
+	      Inoltre, è progettato per sfruttare l'\textit{hardware} moderno, tra cui unità NVMe, processori \textit{multi-core} e interfacce di rete ad alta velocità;
+	\item \textbf{semplicità di configurazione}: oltre al \textit{message broker}, contiene anche un \textit{proxy} HTTP e uno \textit{schema registry};
+	\item \textbf{minore richiesta di risorse}: rispetto ad Apache Kafka, richiede meno risorse per l'esecuzione in locale, rendendolo più adatto per l'esecuzione su \textit{hardware} meno potente;
+	\item \textbf{compatibilità con le API di Kafka}: è compatibile con le API di Apache Kafka, consentendo di utilizzare le librerie e gli strumenti esistenti;
 \end{itemize}
 \subsubsubsection{Casi d'Uso}
-Esistono molteplici casi d'uso associati all'uso di \textit{Redpanda}, tra cui:
+Tra i casi d'uso di Redpanda si possono citare:
 \begin{itemize}
-	\item \textbf{streaming di eventi}, permettendo la gestione e l'elaborazione di flussi di dati in tempo reale; 
-	\item \textbf{data integration}, agisce come un intermediario flessibile e robusto per l'integrazione dei dati, consentendo la raccolta, il trasporto e la trasformazione dei dati provenienti da diverse sorgenti verso varie destinazioni;
-	\item \textbf{elaborazione di big data}, permette di gestire e processare enormi volumi di dati in modo efficiente e scalabile;
-	\item \textbf{messaggistica real time}, supporta la messaggistica in tempo reale tra applicazioni e sistemi distribuiti.
+	\item \textbf{\textit{streaming} di eventi}, permettendo la gestione e l'elaborazione di flussi di dati in tempo reale;
+	\item \textbf{\textit{data integration}}, agisce come un intermediario flessibile e robusto per l'integrazione dei dati, consentendo la raccolta, il trasporto e la trasformazione dei dati provenienti da diverse sorgenti verso varie destinazioni;
+	\item \textbf{elaborazione di \textit{big data}}, permette di gestire e processare enormi volumi di dati in modo efficiente e scalabile;
+	\item \textbf{messaggistica \textit{real time}}, supporta la messaggistica in tempo reale tra applicazioni e sistemi distribuiti.
 \end{itemize}
+
 \subsubsubsection{Impiego nel progetto}
+Il \textbf{broker} Redpanda gestisce i dati provenienti dai simulatori e li rende disponibili per i due consumatori. Inoltre,
+con lo \textit{schema registry} integrato è possibile garantire la compatibilità tra i dati prodotti dai simulatori e i consumatori.
+I consumatori sono:
 \begin{itemize}
-	\item \textbf{Broker}: riceve i dati prodotti dal simulatore e li rende disponibili ai consumatori. 
+	\item Il \textbf{connector sink ClickHouse}, che salva i dati nelle tabelle di ClickHouse;
+	\item \textbf{Apache Flink}, che elabora i dati in tempo reale.
 \end{itemize}
-All'interno di questo progetto i dati vengono trasmessi in formato JSON.
-In questo momento il consumatore è rappresentato dal database \textit{CLickHouse}, il quale salva i dati resi disponibili da \textit{Redpanda}. 
+
+\subsubsubsection{Formato dei dati e Schema Registry}
+% TODO: parlare di Avro e del formato di serializzazione delle chiavi
+% TODO: parlare di topic name strategy
+% TODO: parlare di partitioning strategy
 
 
 \subsubsection{ClickHouse}
-ClickHouse è un sistema di gestione di database colonnare open-source progettato per l'analisi dei dati in tempo reale e l'elaborazione di grandi volumi di dati.
+ClickHouse è un sistema di gestione di database colonnare \textit{open-source} progettato per l'analisi dei dati in tempo reale e l'elaborazione di grandi volumi di dati.
 \subsubsubsection{Versione}
-La versione impiegata al momento dello sviluppo del progetto è la seguente: 24.3.2.23.
+La versione impiegata per lo sviluppo del progetto è la 24.3.2.23.
 \subsubsubsection{Documentazione}
-\url{https://clickhouse.com/docs/en/intro} (Consultato 2024-06-02).
+\url{https://clickhouse.com/docs/en/intro} [Ultima consultazione: 2024-06-02].
 \subsubsubsection{Vantaggi}
 I vantaggi nell'utilizzo di questo strumento consistono in:
 \begin{itemize}
-    \item \textbf{alte prestazioni}, è progettato per eseguire query analitiche complesse in modo estremamente rapido;
-	\item \textbf{scalabilità orizzontale}, può essere scalato orizzontalmente su più nodi, permettendo di gestire petabyte di dati;
+	\item \textbf{alte prestazioni}, è progettato per eseguire query analitiche complesse in modo estremamente rapido;
+	\item \textbf{scalabilità orizzontale}, può essere scalato orizzontalmente su più nodi, permettendo di gestire grandi volumi di dati;
 	\item \textbf{elaborazione in tempo reale}, è in grado di gestire l'ingestione e l'elaborazione dei dati in tempo reale, rendendolo ideale per applicazioni che richiedono l'analisi immediata dei dati appena arrivano;
-	\item \textbf{replica ad alta disponibilità}, supporta la replica dei dati tra diversi nodi, offrendo tolleranza ai guasti e alta disponibilità;
 	\item \textbf{compressione efficiente}, utilizza algoritmi di compressione avanzati per ridurre lo spazio di archiviazione e migliorare l'efficienza I/O;
-	\item \textbf{supporto SQL avanzato}, supporta un dialetto SQL ricco di funzionalità, permettendo agli utenti di eseguire query complesse e di sfruttare funzioni avanzate per l'analisi dei dati;
 	\item \textbf{facilità di integrazione}, si integra facilmente con molti strumenti di visualizzazione dei dati e piattaforme di business intelligence come Grafana;
 	\item \textbf{partizionamento e indici}, supporta il partizionamento dei dati e l'uso di indici per ottimizzare le query;
-	\item \textbf{costo efficacia}, essendo open source non ha costi di licenza, il che lo rende una soluzione economica.
 \end{itemize}
 \subsubsubsection{Casi d'Uso}
-Esistono molteplici casi d'uso associati all'uso di \textit{Redpanda}, tra cui:
+ClickHouse è utilizzato in una varietà di casi d'uso, tra cui:
 \begin{itemize}
-        \item \textbf{analisi dei log e monitoraggio}, utilizzato per l'analisi e il monitoraggio dei log in tempo reale;
-        \item \textbf{business intelligence}, impiegato in applicazioni di BI per eseguire analisi approfondite dei dati aziendali, supportando la presa di decisioni basata sui dati;
-        \item \textbf{data warehousing}, funziona come data warehouse per memorizzare e analizzare grandi volumi di dati.
+	\item \textbf{analisi dei log e monitoraggio}, utilizzato per l'analisi e il monitoraggio dei log in tempo reale;
+	\item \textbf{\textit{business intelligence}}, impiegato in applicazioni di BI per eseguire analisi approfondite dei dati aziendali, supportando la presa di decisioni basata sui dati;
+	\item \textbf{\textit{data warehousing}}, funziona come data warehouse per memorizzare e analizzare grandi volumi di dati.
 \end{itemize}
 \subsubsubsection{Impiego nel progetto}
 \begin{itemize}
-    \item \textbf{Organizzazione efficiente dei dati}: il tipo di architettura di \textit{ClickHouse} permette di comprimere i dati in modo più efficace e di leggere solo le colonne necessarie durante l'esecuzione delle query. 
-    \item \textbf{Integrazione con Redpanda}: può essere utilizzato in sinergia con Redpanda, una piattaforma di streaming dati compatibile con Apache Kafka. Questa integrazione permette di ingestire, elaborare e analizzare flussi di dati in tempo reale. 
-	\item \textbf{Aggregazione rapida dei dati}: è progettato per eseguire aggregazioni di dati in modo estremamente veloce. Grazie alle sue capacità di elaborazione colonnare, alle tecniche avanzate di compressione e all'uso di indici, ClickHouse può eseguire calcoli aggregati su grandi dataset in tempi molto ridotti. 
-	\item \textbf{Integrazione con Grafana}: si integra facilmente con Grafana, una delle piattaforme di visualizzazione dei dati più popolari. Questa integrazione permette di creare dashboard interattivi e personalizzati che visualizzano i dati in tempo reale provenienti da ClickHouse. 
+	\item \textbf{Organizzazione efficiente dei dati}: il tipo di architettura di \textit{ClickHouse} permette di comprimere i dati in modo più efficace e di leggere solo le colonne necessarie durante l'esecuzione delle query.
+	\item \textbf{Integrazione con Redpanda}: può essere utilizzato in sinergia con Redpanda, una piattaforma di streaming dati compatibile con Apache Kafka. Questa integrazione permette di ingestire, elaborare e analizzare flussi di dati in tempo reale.
+	\item \textbf{Aggregazione rapida dei dati}: è progettato per eseguire aggregazioni di dati in modo estremamente veloce. Grazie alle sue capacità di elaborazione colonnare, alle tecniche avanzate di compressione e all'uso di indici, ClickHouse può eseguire calcoli aggregati su grandi dataset in tempi molto ridotti.
+	\item \textbf{Integrazione con Grafana}: si integra facilmente con Grafana, una delle piattaforme di visualizzazione dei dati più popolari.
 \end{itemize}
 
 \subsubsection{Grafana}
 È una potente piattaforma di visualizzazione dei dati progettata per creare, esplorare e condividere dashboard interattive che visualizzano metriche, log e altri dati di monitoraggio in tempo reale.
 \subsubsubsection{Versione}
-La versione impiegata al momento dello sviluppo del progetto è la seguente: 10.3.0.
+La versione impiegata per lo sviluppo del progetto è la 10.3.0.
 \subsubsubsection{Documentazione}
-\url{https://grafana.com/docs/grafana/v10.4/} (Consultato 2024-06-02).
+\url{https://grafana.com/docs/grafana/v10.4/} [Ultima consultazione: 2024-06-02].
 
 \subsubsubsection{Vantaggi}
 \begin{itemize}
@@ -360,15 +211,15 @@ La versione impiegata al momento dello sviluppo del progetto è la seguente: 10.
 \end{itemize}
 \subsubsubsection{Casi d'Uso}
 \begin{itemize}
-    \item \textbf{Monitoraggio delle infrastrutture}: utilizzato per monitorare le prestazioni e la disponibilità delle infrastrutture IT, inclusi server, database, servizi cloud e altro;
-    \item \textbf{analisi delle performance delle applicazioni}: utilizzato per monitorare le prestazioni delle applicazioni e identificare eventuali problemi di prestazioni;
-    \item \textbf{analisi delle serie temporali}: utilizzato per visualizzare e analizzare dati di serie temporali, come metriche di monitoraggio, log e dati di sensori;
-    \item \textbf{business intelligence}: utilizzato per creare dashboard personalizzate per l'analisi dei dati aziendali e la visualizzazione delle metriche chiave.
+	\item \textbf{Monitoraggio delle infrastrutture}: utilizzato per monitorare le prestazioni e la disponibilità delle infrastrutture IT, inclusi server, database, servizi cloud e altro;
+	\item \textbf{analisi delle performance delle applicazioni}: utilizzato per monitorare le prestazioni delle applicazioni e identificare eventuali problemi di prestazioni;
+	\item \textbf{analisi delle serie temporali}: utilizzato per visualizzare e analizzare dati di serie temporali, come metriche di monitoraggio, log e dati di sensori;
+	\item \textbf{business intelligence}: utilizzato per creare dashboard personalizzate per l'analisi dei dati aziendali e la visualizzazione delle metriche chiave.
 \end{itemize}
 \subsubsubsection{Impiego nel progetto}
 \begin{itemize}
-    \item \textbf{Visualizzazione dei dati}: utilizzato per creare dashboard interattive che visualizzano i dati provenienti da ClickHouse;
-    \item \textbf{analisi dei dati}: utilizzato per analizzare i dati e identificare tendenze, pattern e anomalie;
-    \item \textbf{monitoraggio degli allarmi}: utilizzato per monitorare e visualizzare gli allarmi generati dai simulatori e dagli altri componenti del sistema;
-    \item \textbf{notifiche}: utilizzato per inviare notifiche in caso di superamento di soglie critiche.
+	\item \textbf{Visualizzazione dei dati}: utilizzato per creare dashboard interattive che visualizzano i dati provenienti da ClickHouse;
+	\item \textbf{analisi dei dati}: utilizzato per analizzare i dati e identificare tendenze, pattern e anomalie;
+	\item \textbf{monitoraggio degli allarmi}: utilizzato per monitorare e visualizzare gli allarmi generati dai simulatori e dagli altri componenti del sistema;
+	\item \textbf{notifiche}: utilizzato per inviare notifiche in caso di superamento di soglie critiche.
 \end{itemize}
