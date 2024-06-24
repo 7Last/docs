@@ -1,0 +1,148 @@
+\section{Metodologie di Testing}
+In questa sezione verranno illustrate le metodologie di \textit{testing} adottate per garantire il rispetto dei vincoli individuati
+nella sezione \textit{Requisiti} del documento \href{https://7last.github.io/docs/rtb/documentazione-esterna/analisi-dei-requisiti}{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti}\textsubscript{G}}}.
+I test verranno suddivisi in cinque categorie:
+\begin{itemize}
+    \item test di unità;
+    \item test di integrazione;
+    \item test di sistema;
+    \item test di regressione;
+    \item test di accettazione.
+\end{itemize}
+
+Verranno elencate le varie tipologie di test eseguite, indicando il codice del test, una breve descrizione di ciò che viene verificato e lo stato di avanzamento del test, espresso come segue:
+\begin{itemize}
+	\item \textbf{S}: test superato;
+	\item \textbf{NS}: test non superato;
+	\item \textbf{NI}: test non implementato.
+\end{itemize}
+
+\newpage
+\subsection{Test di sistema}
+I test di sistema sono finalizzati alla verifica del soddisfacimento dei requisiti richiesti ed evidenziati nel documento \href{https://7last.github.io/docs/rtb/documentazione-esterna/analisi-dei-requisiti}{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti}\textsubscript{G}}}. Questi test vengono effettuati sul sistema nel suo complesso, per verificare che il software funzioni correttamente e che sia in grado di eseguire le operazioni richieste. \\
+\begin{longtable}{|>{\raggedright\arraybackslash}m{0.1\textwidth}|>{\raggedright\arraybackslash}m{0.6\textwidth}|>{\raggedright\arraybackslash}m{0.1\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                             & \textbf{Stato} \\
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                             & \textbf{Stato} \\
+	\endhead
+	\textbf{1T-S}   & Verificare che l'accesso al sistema non richieda alcuna procedura di login e che sia direttamente accessibile dall'utente.                                                                       & NI             \\
+	\hline
+	\textbf{2T-S}   & Verificare che il prodotto non abbia alcuna sezione o funzionalità di amministrazione o gestione riservata.                                                                                      & NI             \\
+	\hline
+	\textbf{3T-S}   & Verificare che i sensori integrati producano una misurazione coerente con il tipo di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} simulato.                                                                                           & NI             \\
+	\hline
+	\textbf{4T-S}   & Verificare che ogni misurazione inviata dal simulatore contenga l’identificativo del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, le misurazioni d'interesse e il timestamp.                                                         & NI             \\
+	\hline
+	\textbf{5T-S}   & Verificare che il sistema sia in grado di ricevere e memorizzare correttamente le misurazioni inviate dai sensori.                                                                               & NI             \\
+	\hline
+	\textbf{6T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare la temperatura.                                                                                                & NI             \\
+	\hline
+	\textbf{7T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il traffico.                                                                                                   & NI             \\
+	\hline
+	\textbf{8T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il riempimento delle isole ecologiche.                                                                         & NI             \\
+	\hline
+	\textbf{9T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare l'umidità.                                                                                                     & NI             \\
+	\hline
+	\textbf{10T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare la qualità dell'aria.                                                                                          & NI             \\
+	\hline
+	\textbf{11T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare le precipitazioni.                                                                                             & NI             \\
+	\hline
+	\textbf{12T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare le colonnine di ricarica.                                                                                      & NI             \\
+	\hline
+	\textbf{13T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare l'occupazione dei parcheggi.                                                                                   & NI             \\
+	\hline
+	\textbf{14T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il livello dell'acqua.                                                                                         & NI             \\
+	\hline
+	\textbf{14T-S}  & Verificare che ogni dato generato dai simulatori dei sensori sia strettamente correlato al dato successivo, garantendo una transizione realistica tra le misurazioni.                            & NI             \\
+	\hline
+	\textbf{15T-S}  & Verificare la facilità di comprensione e l'intuitività dell'interfaccia grafica, garantendo un'esperienza utente piacevole e soddisfacente.                                                      & NI             \\
+	\hline
+	\textbf{16T-S}  & Verificare che le \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} si aggiornino quasi istantaneamente per riflettere i dati provenienti dai sensori entro un massimo di 15 secondi.                                                    & NI             \\
+	\hline
+	\textbf{17T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} del traffico contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                           & NI             \\
+	\hline
+	\textbf{18T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} della temperatura contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                      & NI             \\
+	\hline
+	\textbf{19T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle isole ecologiche contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                 & NI             \\
+	\hline
+	\textbf{20T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dell'umidità contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                           & NI             \\
+	\hline
+	\textbf{21T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} della qualità dell'aria contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                & NI             \\
+	\hline
+	\textbf{22T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle precipitazioni contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                   & NI             \\
+	\hline
+	\textbf{23T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei parcheggi contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                          & NI             \\
+	\hline
+	\textbf{24T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle colonnine di ricarica contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                            & NI             \\
+	\hline
+	\textbf{25T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} del livello di acqua contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                   & NI             \\
+	\hline
+	\textbf{26T-S}  & Verificare che la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle isole ecologiche contenga almeno un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                 & NI             \\
+	\hline
+	\textbf{27T-S}  & Verificare che i sensori presenti sulla mappa siano distinguibili in modo chiaro ed inequivocabile, permettendo il riconoscimento della loro tipologia.                                          & NI             \\
+	\hline
+	\textbf{28T-S}  & Verificare che in ciascuna \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} l’utente possa filtrare la visualizzazione delle misurazioni di uno specifico \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                                                      & NI             \\
+	\hline
+	\textbf{29T-S}  & Verificare che nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi l’utente possa visualizzare la lista delle misurazioni in un formato tabellare, divise per tipo di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                       & NI             \\ %da controllare
+	\hline
+	\textbf{30T-S}  & Verificare che l’utente riceva notifiche quando i sensori superano determinate soglie di sicurezza.                                                                                          & NI             \\
+	\hline
+	\textbf{31T-S}  & Verificare che l’utente possa visualizzare correttamente le coordinate dei sensori, con un numero congruo di cifre decimali.                                                                     & NI             \\
+	\hline
+	\textbf{32T-S}  & Verificare che l’utente possa visualizzare correttamente l’unità di misura associata a ciascuna misurazione.                                                                                     & NI             \\
+	\hline
+	\textbf{33T-S}  & Verificare che nella \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi l'utente possa visualizzare una tabella contente l'indentificativo del \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, la sua tipologia e la data dell'ultimo messaggio da esso inviato. & NI             \\
+	\hline
+	\caption{Test di sistema}
+\end{longtable}
+
+\subsection{Test di accettazione}
+I test di accettazione vengono effettuati per verificare che il software soddisfi i requisiti richiesti e consentono di ultimare il processo di validazione del prodotto finale.
+Essi verranno eseguiti sia dal gruppo di sviluppo \textit{7Last} che dall'azienda \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}} \textit{SyncLab S.r.l.}. \\
+\begin{longtable}{|>{\raggedright\arraybackslash}m{0.1\textwidth}|>{\raggedright\arraybackslash}m{0.6\textwidth}|>{\raggedright\arraybackslash}m{0.1\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                   & \textbf{Stato} \\
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                   & \textbf{Stato} \\
+	\endhead
+	\textbf{1T-A}   & Verificare che tutti i \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#widget}{widget\textsubscript{G}} relativi alle diverse tipologie di sensori siano visibili sulla \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}}.               & NI             \\
+	\hline
+	\textbf{2T-A}   & Verificare che la mappa dei sensori si carichi correttamente e permetta interazioni fluide.                            & NI             \\
+	\hline
+	\textbf{3T-A}   & Verifica della gestione corretta degli errori nel caso in cui i dati dei sensori non siano disponibili.                & NI             \\
+	\hline
+	\textbf{4T-A}   & Verifica della corretta visualizzazione delle misurazioni effettuate nel tempo dai sensori.                            & NI             \\
+	\hline
+	\textbf{6T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di temperatura.                       & NI             \\
+	\hline
+	\textbf{7T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di traffico.                          & NI             \\
+	\hline
+	\textbf{8T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di isola ecologica.                   & NI             \\
+	\hline
+	\textbf{9T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di umidità.                           & NI             \\
+	\hline
+	\textbf{10T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di qualità dell'aria.                 & NI             \\
+	\hline
+	\textbf{11T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di precipitazioni.                    & NI             \\
+	\hline
+	\textbf{12T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di colonnine di ricarica.             & NI             \\
+	\hline
+	\textbf{13T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di occupazione di parcheggi.          & NI             \\
+	\hline
+	\textbf{14T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di livello dell'acqua.                & NI             \\
+	\hline
+	\textbf{15T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi                                   & NI             \\
+	\hline
+	\textbf{16T-A}  & Verificare si possa filtrare correttamente la visualizzazione delle misurazioni in base al \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} che le ha prodotte. & NI             \\
+	\hline
+	\textbf{17T-A}  & Verificare che si possa rimuovere correttamente i filtri attivi per visualizzazione delle misurazioni dei sensori.     & NI             \\
+	\hline
+	\textbf{18T-A}  & Verificare che si riceva correttamente una notifica in caso di superamento delle soglie impostate per le misurazioni.  & NI             \\
+	\hline
+	\caption{Test di accettazione}
+\end{longtable}
