@@ -270,7 +270,8 @@ I Kafka topic sono categorie o canali di messaggi all'interno di \textit{Redpand
 \subsubsection{Introduzione}
 È un framework di elaborazione dati distribuito e open-source che si distingue per la sua capacità di gestire sia dati di flusso in tempo reale che dati batch. Una delle sue caratteristiche principali è la capacità di gestire dati in tempo reale con latenze molto basse. Ciò significa che può elaborare i dati man mano che arrivano, consentendo alle applicazioni di reagire istantaneamente ai cambiamenti nell'input. Questa caratteristica è particolarmente importante per le applicazioni che richiedono analisi in tempo reale, come il monitoraggio di sensori, il rilevamento di anomalie o la personalizzazione di contenuti.
 \subsubsection{Componenti Flink \& Processing Layer}
-È costituito da diverse componenti fondamentali che lavorano insieme per consentire l'elaborazione efficiente e scalabile dei dati in tempo reale e batch. Queste componenti formano il cuore del sistema Flink e forniscono le basi per la sua potente capacità di elaborazione dei dati. In questa sezione, esamineremo le principali componenti di Flink e il loro ruolo nella creazione di un'infrastruttura robusta per l'analisi dei dati.
+È costituito da diverse componenti fondamentali che lavorano insieme per consentire l'elaborazione efficiente e scalabile dei dati in tempo reale e batch. Queste componenti formano il cuore del sistema Flink e forniscono le basi per la sua potente capacità di elaborazione dei dati.
+% In questa sezione, esamineremo le principali componenti di Flink e il loro ruolo nella creazione di un'infrastruttura robusta per l'analisi dei dati.
 \begin{itemize}
 	\item \textbf{JobManager}: è il componente centrale di Flink responsabile della pianificazione e del coordinamento dei job di elaborazione dei dati. Gestisce il flusso di lavoro complessivo, assegnando i task ai TaskManager per l'esecuzione;
 	\item \textbf{TaskManager}: è responsabile dell'esecuzione effettiva delle operazioni di elaborazione dei dati, eseguendo i task assegnati loro dal JobManager e gestendo il caricamento, l'elaborazione e la distribuzione dei dati all'interno del cluster;
@@ -286,14 +287,27 @@ I Kafka topic sono categorie o canali di messaggi all'interno di \textit{Redpand
 	\item \textbf{scambio e movimento dei dati}: i dati possono essere scambiati e spostati tra i nodi del cluster per supportare operazioni complesse come il join o l'aggregazione;
 	\item \textbf{persistenza e output}: una volta elaborati, i risultati vengono eventualmente salvati o inviati ad altre destinazioni per l'analisi o l'utilizzo successivo.
 \end{enumerate}
-\subsubsection{Modello per il calcolo dei KPI}
-%TODO inserire foto del modello per il calcolo del punteggio di salute
 
-% KPI che useremo :european air quality index, heat index, charging station efficiency index, comfort heat zone index 
+\subsubsection{\textit{Job}}
+
+\subsubsubsection{Heat Index}
+A partire dai dati rilevati dai sensori di temperatura e umidità; esso consente di stimare la percezione della temperatura da parte dell'essere umano.
+Nella configurazione del Simulatore, oltre a posizione e identificativo per ciascun sensore, è possibile specificare un \texttt{group\_name}, una stringa che identifica il gruppo o zona di appartenenza;
+si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \textit{job} calcola prima separatamente
+la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo Heat Index,
+utilizzando la \underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3801457/}{formula empirica ideata da Blazejczyk}} [Ultima consultazione 2024-06-25].
+Nel risultato finale, oltre al valore dell'Heat Index, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
+(utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
+distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio, rappresentante la zona di influenza del gruppo di sensori.
+\subsubsubsection{European Air Quality Index}
+\subsubsubsection{Efficienza delle colonnine elettriche}
+% TODO: aggiungere dettagli implementativi
+
+% KPI che useremo :european air quality index, heat index, charging station efficiency index
 
 
 \subsection{Database ClickHouse}
-Come detto in precedenza, il database adottato è \textit{ClickHouse}. Per ogni sensore è stata creata una tabella \textit{MergeTree}, che permette di memorizzare i dati in modo efficiente e di eseguire query complesse in modo veloce.
+% Come detto in precedenza, il database adottato è \textit{ClickHouse}. Per ogni sensore è stata creata una tabella \textit{MergeTree}, che permette di memorizzare i dati in modo efficiente e di eseguire query complesse in modo veloce.
 
 \subsubsection{Funzionalità utilizzate}
 \subsubsubsection{Materialized View}

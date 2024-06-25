@@ -206,7 +206,7 @@ Sviluppato in Java e Scala, è progettato per gestire \textit{data stream} in mo
 Flink si distingue per la sua capacità di fornire elaborazione a bassa latenza, esecuzione \textit{fault-tolerant} e scalabilità orizzontale.
 
 \begin{itemize}
-	\item \textbf{Versione}: 1.18.1
+	\item \textbf{Versione}: v1.18.1;
 	\item \textbf{documentazione}: \url{https://flink.apache.org} [Ultima consultazione: 2024-06-25].
 \end{itemize}
 
@@ -216,7 +216,7 @@ Flink si distingue per la sua capacità di fornire elaborazione a bassa latenza,
 	\item \textbf{Fault Tolerance}: Flink utilizza una tecnologia chiamata \textit{Stateful Stream Processing} che garantisce che lo stato dell'applicazione venga memorizzato in modo sicuro e possa essere recuperato in caso di guasti. Questo consente un'elaborazione affidabile e continua anche in presenza di errori hardware o software.
 	\item \textbf{Scalabilità}: Flink può scalare orizzontalmente su cluster di grandi dimensioni, distribuendo il carico di lavoro tra molteplici nodi per gestire volumi di dati crescenti senza compromettere le prestazioni.
 	      % datastream vs table
-	\item \textbf{Modello di programmazione flessibile}: Flink offre due tipologie di API per l'elaborazione dei dati: DataStream, utilizzato per l'elaborazione di flussi di dati non strutturati in tempo reale, e Table API, un'astrazione di livello superiore per manipolare dati strutturati come tabelle, facilitando l'uso di operazioni simili a SQL;
+	\item \textbf{Modello di programmazione flessibile}: Flink offre due tipologie di API per l'elaborazione dei dati: DataStream API, utilizzato per l'elaborazione di flussi di dati non strutturati in tempo reale, e Table API, un'astrazione di livello superiore per manipolare dati strutturati come tabelle, facilitando l'uso di operazioni simili a SQL;
 	\item \textbf{Supporto per analisi complesse}: Flink fornisce potenti funzionalità di analisi come aggregazioni, join e \textit{windowing}, che consentono di realizzare analisi complesse sui flussi di dati.
 \end{itemize}
 
@@ -229,17 +229,11 @@ Tra i principali casi d'uso di Apache Flink si trovano:
 \end{itemize}
 
 \subsubsubsection{Impiego nel progetto}
-Vengono utilizzate le \textit{Data Streaming API} per elaborare ed aggregare dati provenienti da sensori di tipologie differenti. Nello specifico, sono stati implementati i \textit{job} di seguito elencati.
+Vengono utilizzate le \textit{Data Streaming API} per elaborare ed aggregare dati provenienti da sensori di tipologie differenti. Nello specifico, per ciascuno degli indici in seguito elencati è stato sviluppato un \textit{job}; i dettagli
+implementativi di ciascuno di essi sono meglio discussi nella sezione \href{sec:flink-jobs}.
 \begin{itemize}
-	\item \textbf{Calcolo dello Heat Index}, a partire dai dati rilevati dai sensori di temperatura e umidità; esso consente di stimare la percezione della temperatura da parte dell'essere umano.
-	      Nella configurazione del Simulatore, oltre a posizione e identificativo per ciascun sensore, è possibile specificare un \texttt{group\_name}, una stringa che identifica il gruppo o zona di appartenenza;
-	      si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \textit{job} calcola prima separatamente
-	      la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo Heat Index,
-	      utilizzando la \underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3801457/}{formula empirica ideata da Blazejczyk}} [Ultima consultazione 2024-06-25].
-	      Nel risultato finale, oltre al valore dell'Heat Index, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
-	      (utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
-	      distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio, rappresentante la zona di influenza del gruppo di sensori.
-	      % \item \textbf{Calcolo dell'EAQI}
+	\item \textbf{Heat Index}: una misura che combina la temperatura dell'aria e l'umidità relativa per determinare la temperatura percepita dall'uomo. Questa misura riflette meglio il livello di disagio che una persona potrebbe sperimentare rispetto alla sola temperatura dell'aria;
+	\item \textbf{European Air Quality Index}: un indice che misura la qualità dell'aria in base ai livelli di inquinanti atmosferici come il biossido di azoto, il biossido di zolfo, l'ozono e le particelle sospese;
 	\item \textbf{Efficienza delle colonnine elettriche} % TODO: aggiungere dettagli implementativi
 
 \end{itemize}
