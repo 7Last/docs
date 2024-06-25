@@ -23,9 +23,17 @@ Nello sviluppo di questo progetto \textit{7Last} ha utilizzato diverse immagini 
 \begin{itemize}
 	\item \textbf{Simulator - Python}
 	      \begin{itemize}
-		      \item \textbf{Immagine}: 3.11.9-alpine;
+		      \item \textbf{Immagine}: python:3.11.9-alpine;
 		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/_/python}{Python Docker Image}} [Ultima consultazione: 2024-06-02].
 		      \item \textbf{Ambiente}: \texttt{release};
+	      \end{itemize}
+
+	\item \textbf{Redpanda Init}:
+	      l'immagine di \texttt{alpine} viene utilizzata per creare un container che si occupa di inizializzare il broker Redpanda.
+	      \begin{itemize}
+		      \item \textbf{Immagine}: alpine:3.20.1;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/_/alpine}{Alpine}} [Ultima consultazione: 2024-06-25].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
 	      \end{itemize}
 
 	\item \textbf{Redpanda}
@@ -125,11 +133,12 @@ Nello sviluppo di questo progetto \textit{7Last} ha utilizzato diverse immagini 
 \subsection{Servizi}
 \subsubsection{Redpanda}
 Redpanda è una piattaforma di streaming sviluppata in C++. Il suo obiettivo è fornire una soluzione leggera, semplice e performante, pensata per essere un'alternativa ad Apache Kafka. Viene utilizzato per disaccoppiare i dati provenienti dal simulatore.
-% Ciascun tipo di dato viene inviato su un topic specifico, in modo da poter essere elaborato in modo indipendente.
-\subsubsubsection{Versione}
-La versione impiegata per lo sviluppo del progetto è la v23.3.11.
-\subsubsubsection{Documentazione}
-\url{https://docs.redpanda.com/current/home/} [Ultima consultazione: 2024-06-02].
+
+\begin{itemize}
+	\item \textbf{Versione}: v23.3.11;
+	\item \textbf{documentazione}: \url{https://docs.redpanda.com/current/home/} [Ultima consultazione: 2024-06-02].
+\end{itemize}
+
 \subsubsubsection{Vantaggi}
 I vantaggi nell'utilizzo di questo strumento consistono in:
 \begin{itemize}
@@ -140,7 +149,7 @@ I vantaggi nell'utilizzo di questo strumento consistono in:
 	\item \textbf{minore richiesta di risorse}: rispetto ad Apache Kafka, richiede meno risorse per l'esecuzione in locale, rendendolo più adatto per l'esecuzione su \textit{hardware} meno potente;
 	\item \textbf{compatibilità con le API di Kafka}: è compatibile con le API di Apache Kafka, consentendo di utilizzare le librerie e gli strumenti esistenti;
 \end{itemize}
-\subsubsubsection{Casi d'Uso}
+\subsubsubsection{Casi d'uso}
 Tra i casi d'uso di Redpanda si possono citare:
 \begin{itemize}
 	\item \textbf{\textit{streaming} di eventi}, permettendo la gestione e l'elaborazione di flussi di dati in tempo reale;
@@ -158,18 +167,13 @@ I consumatori sono:
 	\item \textbf{Apache Flink}, che elabora i dati in tempo reale.
 \end{itemize}
 
-\subsubsubsection{Formato dei dati e Schema Registry}
-% TODO: parlare di Avro e del formato di serializzazione delle chiavi
-% TODO: parlare di topic name strategy
-% TODO: parlare di partitioning strategy
-
-
 \subsubsection{ClickHouse}
 ClickHouse è un sistema di gestione di database colonnare \textit{open-source} progettato per l'analisi dei dati in tempo reale e l'elaborazione di grandi volumi di dati.
-\subsubsubsection{Versione}
-La versione impiegata per lo sviluppo del progetto è la 24.3.2.23.
-\subsubsubsection{Documentazione}
-\url{https://clickhouse.com/docs/en/intro} [Ultima consultazione: 2024-06-02].
+\begin{itemize}
+	\item \textbf{Versione}: v24-alpine;
+	\item \textbf{documentazione}: \url{https://clickhouse.com/docs/en/intro} [Ultima consultazione: 2024-06-02].
+\end{itemize}
+
 \subsubsubsection{Vantaggi}
 I vantaggi nell'utilizzo di questo strumento consistono in:
 \begin{itemize}
@@ -180,7 +184,7 @@ I vantaggi nell'utilizzo di questo strumento consistono in:
 	\item \textbf{facilità di integrazione}, si integra facilmente con molti strumenti di visualizzazione dei dati e piattaforme di business intelligence come Grafana;
 	\item \textbf{partizionamento e indici}, supporta il partizionamento dei dati e l'uso di indici per ottimizzare le query;
 \end{itemize}
-\subsubsubsection{Casi d'Uso}
+\subsubsubsection{Casi d'uso}
 ClickHouse è utilizzato in una varietà di casi d'uso, tra cui:
 \begin{itemize}
 	\item \textbf{analisi dei log e monitoraggio}, utilizzato per l'analisi e il monitoraggio dei log in tempo reale;
@@ -188,19 +192,65 @@ ClickHouse è utilizzato in una varietà di casi d'uso, tra cui:
 	\item \textbf{\textit{data warehousing}}, funziona come data warehouse per memorizzare e analizzare grandi volumi di dati.
 \end{itemize}
 \subsubsubsection{Impiego nel progetto}
+ClickHouse viene utilizzato per memorizzare i dati grezzi provenienti dai simulatori; attraverso il \textit{connector sink} di Redpanda, i \textit{record} pubblicati nei \textit{topic} vengono
+salvati in tabelle di ClickHouse.
+Inoltre, tramite l'utilizzo di Materialized Views, vengono effettuate delle semplici aggregazioni sui dati, come ad esempio la media oraria o giornaliera, le quali sono poi memorizzate in apposite tabelle,
+in modo da poterne monitorare l'andamento nel tempo.\\
+Le aggregazioni più complesse che coinvolgono dati provenienti da sensori differenti sono invece effettuate utilizzando Apache Flink, come meglio descritto nella sezione \ref{sec:flink}.\\
+ClickHouse si integra semplicemente con Grafana, attraverso l'utilizzo del plugin \\
+\texttt{datasource-clickhouse}, fornito da Grafana Labs.
+
+\subsubsection{Apache Flink} \label{sec:flink}
+Apache Flink è un framework open-source per l'elaborazione dei dati in tempo reale e in \textit{batch}.
+Sviluppato in Java e Scala, è progettato per gestire \textit{data stream} in modo efficiente, consentendo l'elaborazione di grandi volumi di dati in tempo reale.
+Flink si distingue per la sua capacità di fornire elaborazione a bassa latenza, esecuzione \textit{fault-tolerant} e scalabilità orizzontale.
+
 \begin{itemize}
-	\item \textbf{Organizzazione efficiente dei dati}: il tipo di architettura di \textit{ClickHouse} permette di comprimere i dati in modo più efficace e di leggere solo le colonne necessarie durante l'esecuzione delle query.
-	\item \textbf{Integrazione con Redpanda}: può essere utilizzato in sinergia con Redpanda, una piattaforma di streaming dati compatibile con Apache Kafka. Questa integrazione permette di ingestire, elaborare e analizzare flussi di dati in tempo reale.
-	\item \textbf{Aggregazione rapida dei dati}: è progettato per eseguire aggregazioni di dati in modo estremamente veloce. Grazie alle sue capacità di elaborazione colonnare, alle tecniche avanzate di compressione e all'uso di indici, ClickHouse può eseguire calcoli aggregati su grandi dataset in tempi molto ridotti.
-	\item \textbf{Integrazione con Grafana}: si integra facilmente con Grafana, una delle piattaforme di visualizzazione dei dati più popolari.
+	\item \textbf{Versione}: 1.18.1
+	\item \textbf{documentazione}: \url{https://flink.apache.org} [Ultima consultazione: 2024-06-25].
+\end{itemize}
+
+\subsubsubsection{Vantaggi}
+\begin{itemize}
+	\item \textbf{Elaborazione a bassa latenza}: Flink è progettato per elaborare i dati in tempo reale con latenza estremamente bassa, rendendolo ideale per applicazioni che richiedono risposte rapide ai cambiamenti dei dati.
+	\item \textbf{Fault Tolerance}: Flink utilizza una tecnologia chiamata \textit{Stateful Stream Processing} che garantisce che lo stato dell'applicazione venga memorizzato in modo sicuro e possa essere recuperato in caso di guasti. Questo consente un'elaborazione affidabile e continua anche in presenza di errori hardware o software.
+	\item \textbf{Scalabilità}: Flink può scalare orizzontalmente su cluster di grandi dimensioni, distribuendo il carico di lavoro tra molteplici nodi per gestire volumi di dati crescenti senza compromettere le prestazioni.
+	      % datastream vs table
+	\item \textbf{Modello di programmazione flessibile}: Flink offre due tipologie di API per l'elaborazione dei dati: DataStream, utilizzato per l'elaborazione di flussi di dati non strutturati in tempo reale, e Table API, un'astrazione di livello superiore per manipolare dati strutturati come tabelle, facilitando l'uso di operazioni simili a SQL;
+	\item \textbf{Supporto per analisi complesse}: Flink fornisce potenti funzionalità di analisi come aggregazioni, join e \textit{windowing}, che consentono di realizzare analisi complesse sui flussi di dati.
+\end{itemize}
+
+\subsubsubsection{Casi d'uso}
+Tra i principali casi d'uso di Apache Flink si trovano:
+\begin{itemize}
+	\item \textbf{Applicazioni \textit{event-driven}}: applicazioni \textit{stateful} che elaborano eventi provenienti da uno o più flussi di eventi e reagiscono agli eventi in ingresso attivando calcoli, aggiornamenti di stato o azioni esterne;
+	\item \textbf{\textit{data analytics}}: estrazione di informazioni e \textit{insight} a partire dall'elaborazione dei dati grezzi, sia in \textit{real time} che in modalità \textit{batch};
+	\item \textbf{\textit{data pipeline}}: ad esempio per la costruzione di \textit{Extract-transform-load} (ETL) o integrazione di dati provenienti da sorgenti differenti.
+\end{itemize}
+
+\subsubsubsection{Impiego nel progetto}
+Vengono utilizzate le \textit{Data Streaming API} per elaborare ed aggregare dati provenienti da sensori di tipologie differenti. Nello specifico, sono stati implementati i \textit{job} di seguito elencati.
+\begin{itemize}
+	\item \textbf{Calcolo dello Heat Index}, a partire dai dati rilevati dai sensori di temperatura e umidità; esso consente di stimare la percezione della temperatura da parte dell'essere umano.
+	      Nella configurazione del Simulatore, oltre a posizione e identificativo per ciascun sensore, è possibile specificare un \texttt{group\_name}, una stringa che identifica il gruppo o zona di appartenenza;
+	      si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \textit{job} calcola prima separatamente
+	      la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo Heat Index,
+	      utilizzando la \underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3801457/}{formula empirica ideata da Blazejczyk}} [Ultima consultazione 2024-06-25].
+	      Nel risultato finale, oltre al valore dell'Heat Index, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
+	      (utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
+	      distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio, rappresentante la zona di influenza del gruppo di sensori.
+	      % \item \textbf{Calcolo dell'EAQI}
+	\item \textbf{Efficienza delle colonnine elettriche} % TODO: aggiungere dettagli implementativi
+
 \end{itemize}
 
 \subsubsection{Grafana}
 È una potente piattaforma di visualizzazione dei dati progettata per creare, esplorare e condividere dashboard interattive che visualizzano metriche, log e altri dati di monitoraggio in tempo reale.
-\subsubsubsection{Versione}
-La versione impiegata per lo sviluppo del progetto è la 10.3.0.
-\subsubsubsection{Documentazione}
-\url{https://grafana.com/docs/grafana/v10.4/} [Ultima consultazione: 2024-06-02].
+
+\begin{itemize}
+	\item \textbf{Versione}: v10.3.0;
+	\item \textbf{documentazione}: \url{https://grafana.com/docs/grafana/v10.4/} [Ultima consultazione: 2024-06-02].
+\end{itemize}
 
 \subsubsubsection{Vantaggi}
 \begin{itemize}
@@ -209,7 +259,7 @@ La versione impiegata per lo sviluppo del progetto è la 10.3.0.
 	\item \textbf{personalizzazione}: permette una personalizzazione completa delle dashboard, soddisfando ogni possibile necessità di visualizzazione dei dati;
 	\item \textbf{gestione degli accessi}: offre funzionalità avanzate di gestione degli accessi e delle autorizzazioni, consentendo di controllare chi può accedere alle dashboard e quali azioni possono eseguire.
 \end{itemize}
-\subsubsubsection{Casi d'Uso}
+\subsubsubsection{Casi d'uso}
 \begin{itemize}
 	\item \textbf{Monitoraggio delle infrastrutture}: utilizzato per monitorare le prestazioni e la disponibilità delle infrastrutture IT, inclusi server, database, servizi cloud e altro;
 	\item \textbf{analisi delle performance delle applicazioni}: utilizzato per monitorare le prestazioni delle applicazioni e identificare eventuali problemi di prestazioni;
@@ -218,8 +268,6 @@ La versione impiegata per lo sviluppo del progetto è la 10.3.0.
 \end{itemize}
 \subsubsubsection{Impiego nel progetto}
 \begin{itemize}
-	\item \textbf{Visualizzazione dei dati}: utilizzato per creare dashboard interattive che visualizzano i dati provenienti da ClickHouse;
-	\item \textbf{analisi dei dati}: utilizzato per analizzare i dati e identificare tendenze, pattern e anomalie;
-	\item \textbf{monitoraggio degli allarmi}: utilizzato per monitorare e visualizzare gli allarmi generati dai simulatori e dagli altri componenti del sistema;
-	\item \textbf{notifiche}: utilizzato per inviare notifiche in caso di superamento di soglie critiche.
+	\item \textbf{Visualizzazione dei dati}: creazione dashboard interattive che visualizzano i dati provenienti da ClickHouse;
+	\item \textbf{notifiche superamento soglie}: invio di notifiche nel caso in cui vengano superate delle soglie prestabilite, che rappresentano situazioni di eventuale pericolo, forte disagio o disservizio per i cittadini.
 \end{itemize}

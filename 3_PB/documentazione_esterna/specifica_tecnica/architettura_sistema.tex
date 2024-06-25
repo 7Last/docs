@@ -250,7 +250,14 @@ Contiene le classi e le funzioni utilizzate per leggere ed effettuare il parsing
 \subsection{Redpanda}
 \subsubsection{Kafka topic}
 I Kafka topic sono categorie o canali di messaggi all'interno di \textit{Redpanda}. Un topic in Kafka è come una cassetta postale virtuale o una categoria di messaggi in cui i dati vengono pubblicati dai produttori e letti dai consumatori.
-\subsubsection{Formato messaggi}
+
+\subsubsubsection{Formato dei dati e Schema Registry}
+% Ciascun tipo di dato viene inviato su un topic specifico, in modo da poter essere elaborato in modo indipendente.
+% TODO: parlare di Avro e del formato di serializzazione delle chiavi
+% TODO: parlare di topic name strategy
+% TODO: parlare di partitioning strategy
+
+% \subsubsection{Formato messaggi}
 \textit{7Last} ha scelto di adottare lo standard Avro per i messaggi scambiati tra i produttori e i consumatori. Avro è un sistema di serializzazione dati che offre un modo efficiente per rappresentare dati complessi in un formato binario, rendendoli adatti per il trasporto su rete o per la persistenza su disco. Uno dei principali vantaggi di Avro è la possibilità di definire uno schema per i dati, che viene incluso nei dati stessi. Ecco una panoramica del formato dei messaggi Avro:
 \begin{itemize}
 	\item \textbf{schema}: definito in formato JSON e descrive la struttura dei dati. Include informazioni come il tipo di ogni campo e la loro posizione all'interno della struttura dei dati;
