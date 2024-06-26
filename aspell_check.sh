@@ -22,10 +22,10 @@ sort -u personal.txt -o personal.txt
 
 status_code=0
 for file in $files; do
-    misspelled=$(aspell pipe -t --lang=it_IT < "$file" |
+    misspelled=$(aspell pipe -t --lang=it_IT --add-tex-command="mySkip op" < "$file" |
         grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
         grep '[a-zA-Z]\+' -o |
-        aspell pipe -t --lang=en_US  |
+        aspell pipe -t --lang=en_US --add-tex-command="mySkip op"  |
         grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
         grep '[a-zA-Z]\+' -o | grep -v -i -F -f  personal.txt)
 
