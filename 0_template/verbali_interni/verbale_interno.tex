@@ -15,6 +15,8 @@
 
 \begin{document}
 
+\newcommand{\mySkip}[1][]{#1}
+
 \include{title}
 
 \newpage
@@ -67,11 +69,11 @@
 
 \subsection*{Ordine del giorno:}
 \begin{itemize}
-	\item Suddivisione dei ruoli per il xxx sprint; % TODO: inserire numero sprint
-	\item Retrospettiva sullo sprint appena concluso;
-	\item Attività da svolgere per il xxx sprint; % TODO: inserire numero sprint
-	\item Varie ed eventuali;  % TODO: inserire eventuali argomenti o togliere se non necessario
-	\item Decisioni prese e conclusioni.
+	\item retrospettiva sullo sprint appena concluso;
+	\item suddivisione dei ruoli per il xxx sprint; % TODO: inserire numero sprint
+	\item attività da svolgere per il xxx sprint; % TODO: inserire numero sprint
+	\item varie ed eventuali;  % TODO: inserire eventuali argomenti o togliere se non necessario
+	\item decisioni prese e conclusioni.
 \end{itemize}
 
 
@@ -108,8 +110,8 @@ Vengono definite le seguenti attività da svolgere per il xxx periodo: % TODO: i
 		\hline
 		\textbf{Codice} & \textbf{Nome attività} & \textbf{Assegnatario} & \textbf{Scadenza} \\
 		\hline
-		86bz7hfte       & Attività 1             & nome cognome        & yyyy/mm/dd \\
-		86bz7hfte       & Attività 2             & nome cognome        & yyyy/mm/dd \\
+		\mySkip[86bz7hfte]       & Attività 1             & nome cognome        & yyyy/mm/dd \\
+		\mySkip[86bz7hfte]       & Attività 2             & nome cognome        & yyyy/mm/dd \\
 		\hline
 	\end{tabular}
 	\caption{Attività da svolgere per il xxx sprint} % TODO: inserire numero sprint
