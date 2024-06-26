@@ -15,6 +15,8 @@
 
 \begin{document}
 
+\newcommand{\mySkip}[1][]{#1}
+
 \include{title}
 
 \newpage
@@ -43,11 +45,9 @@
 
 \section{Dettagli della riunione}
 
-
 \textbf{Sede della riunione}: Piattaforma Discord\\
 \textbf{Orario di inizio}: 21:00\\
 \textbf{Orario di fine}: 22:00\\
-
 
 \begin{flushleft}
 	\begin{table}[!h]
@@ -67,11 +67,13 @@
 	\end{table}
 \end{flushleft}
 
-\section{Ordine del giorno}
-
+\subsection*{Ordine del giorno:}
 \begin{itemize}
-	\item Item 1
-	\item Item 2
+	\item retrospettiva sullo sprint appena concluso;
+	\item suddivisione dei ruoli per il xxx sprint; % TODO: inserire numero sprint
+	\item attività da svolgere per il xxx sprint; % TODO: inserire numero sprint
+	\item varie ed eventuali;  % TODO: inserire eventuali argomenti o togliere se non necessario
+	\item decisioni prese e conclusioni.
 \end{itemize}
 
 
@@ -79,17 +81,46 @@
 
 \section{Verbale}
 
-\subsection{Argomento 1}
-bla bla bla
+\subsection{Suddivisione dei ruoli per il xxx sprint} % TODO: inserire numero sprint
+Il gruppo stabilisce innanzitutto la suddivisione dei ruoli per il xxx periodo, assegnando a ciascun membro un compito non ancora svolto. La suddivisione risultante è la seguente: % TODO: inserire numero sprint e mettere suddivisione ruoli corretta
 \begin{itemize}
-	\item \textbf{Item 1}: bla bla bla
-	\item \textbf{Item 2}: bla bla bla
+	\item \textbf{Responsabile}: nome cognome;
+	\item \textbf{Amministratore}: nome cognome;
+	\item \textbf{Analista}: nome cognome;
+	\item \textbf{Progettista}: nome cognome;
+	\item \textbf{Programmatore}: nome cognome;
+	\item \textbf{Verificatore}: nome cognome.
+\end{itemize}
+Successivamente vengono definiti i ruoli per ogni riunione interna o esterna:
+\begin{itemize}
+	\item \textbf{Amministratore}: nome cognome;
+	\item \textbf{Redattore}: nome cognome;
+	\item \textbf{Verificatore}: nome cognome.
 \end{itemize}
 
-\subsection{Argomento 2}
-bla bla bla
+\subsection{Retrospettiva sullo sprint appena concluso}
+Il gruppo discute brevemente sull'andamento dello sprint appena concluso, riepilogando quanto è stato fatto, punti di forza e criticità riscontrate. % TODO: inserire cosa è stato fatto, eventuali punti di forza e criticità riscontrate
+
+\subsection{Attività da svolgere per il xxx sprint} % TODO: inserire numero sprint
+Vengono definite le seguenti attività da svolgere per il xxx periodo: % TODO: inserire numero sprint
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ |l||l|l|l| }
+		\hline
+		\textbf{Codice} & \textbf{Nome attività} & \textbf{Assegnatario} & \textbf{Scadenza} \\
+		\hline
+		\mySkip[86bz7hfte]       & Attività 1             & nome cognome        & yyyy/mm/dd \\
+		\mySkip[86bz7hfte]       & Attività 2             & nome cognome        & yyyy/mm/dd \\
+		\hline
+	\end{tabular}
+	\caption{Attività da svolgere per il xxx sprint} % TODO: inserire numero sprint
+\end{table}
+
+\subsection{Varie ed eventuali}
+...
 
 \subsection{Decisioni prese e conclusioni}
-bla bla bla
+...
 
 \end{document}
