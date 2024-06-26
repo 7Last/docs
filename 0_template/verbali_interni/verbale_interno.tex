@@ -15,6 +15,8 @@
 
 \begin{document}
 
+\newcommand{\mySkip}[1][]{#1}
+
 \include{title}
 
 \newpage
@@ -108,8 +110,8 @@ Vengono definite le seguenti attività da svolgere per il xxx periodo: % TODO: i
 		\hline
 		\textbf{Codice} & \textbf{Nome attività} & \textbf{Assegnatario} & \textbf{Scadenza} \\
 		\hline
-		86bz7hfte       & Attività 1             & nome cognome        & yyyy/mm/dd \\
-		86bz7hfte       & Attività 2             & nome cognome        & yyyy/mm/dd \\
+		\mySkip[86bz7hfte]       & Attività 1             & nome cognome        & yyyy/mm/dd \\
+		\mySkip[86bz7hfte]       & Attività 2             & nome cognome        & yyyy/mm/dd \\
 		\hline
 	\end{tabular}
 	\caption{Attività da svolgere per il xxx sprint} % TODO: inserire numero sprint
