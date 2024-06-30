@@ -16,6 +16,8 @@
 
 \begin{document}
 
+\newcommand{\mySkip}[1][]{#1}
+
 \include{title}
 
 \newpage
@@ -72,7 +74,7 @@
 \begin{itemize}
 	\item Suddivisione dei ruoli per il settimo sprint;
 	\item Cosa è stato fatto fino ad ora;
-	\item Obiettivi per il prossimo sprint;
+	\item Attività da svolgere per il settimo sprint;
 	\item Varie ed eventuali;
 	\item Decisioni prese e conclusioni.
 \end{itemize}
@@ -108,18 +110,29 @@ Viene fatta una panoramica sul lavoro svolto fino ad ora:
 		  Inoltre come prossimo passo, inizia lo studio dell'architettura di progetto.
 \end{itemize}
 
-\subsection{Obiettivi per il prossimo sprint}
-Per questo sprint ci sono ancora alcune attività da completare, riportate di seguito:
-\begin{itemize}
-	\item \textbf{Verbali} \\
-		  Stesura del verbale della riunione in corso, ovvero della riunione interna del 2024-06-05.
-	\item \textbf{Documenti} \\
-		  Compilare il \textit{Piano di Progetto} per questo sprint e il \textit{Piano di Qualifica}, aggiungendo il consuntivo e i grafici con i dati dello sprint. \\
-		  Inoltre inizia la stesura dei prossimi documenti, ovvero quelli relativi al \textit{Manuale Utente} e alla \textit{Scheda Tecnica}.
-	\item \textbf{Codice} \\
-		  Come richiesto dal proponente, verrà aggiornato il codice del progetto, aggiungendo alcune tipologie di sensori nuovi, ovvero un sensore per l'umidità, uno per il parcheggio e uno per la qualità dell'aria. \\
-		  Inoltre viene chiesto di iniziare a implementare Unit Test per il simulatore, per arrivare ad avere un Code Coverage.
-\end{itemize}
+\subsection{Attività da svolgere per il settimo sprint}
+Vengono definite le seguenti attività da svolgere per il settimo periodo:
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ |l||p{7cm}|l|l| }
+		\hline
+		\textbf{Codice}          & \textbf{Nome attività}                           & \textbf{Assegnatario} & \textbf{Scadenza} \\
+		\hline
+		\mySkip[86bz36wet]       & Glo - Eventuale aggiunta nuovi termini           & Davide Malgarise      & 2024-06-12        \\
+		\mySkip[86bz36ugd]       & ST - Prima stesura documento                     & Matteo Tiozzo         & 2024-06-12        \\
+		\mySkip[86bz36uee]       & MU - Prima stesura documento                     & Antonio Benetazzo     & 2024-06-12        \\
+		\mySkip[86bz36u3g]       & PdQ - Aggiornare grafici 6 sprint                & Elena Ferro           & 2024-06-12        \\
+		\mySkip[86bz36tuh]       & PdP - Consuntivo 6 sprint e preventivo 7 sprint  & Leonardo Baldo        & 2024-06-12        \\
+		\mySkip[86bz36tj8]       & PdQ - Aggiunta test di integrazione e unità      & Elena Ferro           & 2024-06-12        \\
+		\mySkip[86bz36p9v]       & Implementazione primi test                       & Antonio Benetazzo     & 2024-06-12        \\
+		\mySkip[86bz36jf7]       & AdR - Aggiornamento                              & Raul Seganfreddo      & 2024-06-12        \\
+		\mySkip[86bz36hj6]       & Aggiungere tipi di sensori                       & Antonio Benetazzo     & 2024-06-12        \\
+		\mySkip[86bz36hgq]       & Verbale esterno 2024-05-05                       & Valerio Occhinegro    & 2024-06-12        \\
+		\mySkip[86bz36h8r]       & Verbale interno 2024-05-05                       & Valerio Occhinegro    & 2024-06-12        \\
+		\hline
+	\end{tabular}
+	\caption{Attività da svolgere per il settimo sprint}
+\end{table}
 
 \subsection{Varie ed eventuali}
 Sono sorti alcuni dubbi e difficoltà riguardanti lo studio architetturale. Soprattutto nella individuazione di una architettura di progetto che meglio si adatti al nostro scopo. \\
