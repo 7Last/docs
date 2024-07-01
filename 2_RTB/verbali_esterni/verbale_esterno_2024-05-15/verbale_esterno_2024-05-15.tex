@@ -1,0 +1,139 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                             \\[-2ex]
+			Ver. & Data       & Redattore   & Verificatore   & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-05-16 & Davide Malgarise & Raul Seganfreddo & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Google Meet\\
+\textbf{Orario di inizio}: 15:30\\
+\textbf{Orario di fine}: 16:30\\
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo}  & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     &                 & Presente          \\
+			Davide Malgarise      & Redattore       & Presente          \\
+			Elena Ferro           &                 & Presente          \\
+			Leonardo Baldo        & 			    & Presente          \\
+			Matteo Tiozzo         & Amministratore  & Presente          \\
+			Raul Seganfreddo      & Verificatore    & Presente          \\
+			Valerio Occhinegro    &                 & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+	\textbf{Partecipanti esterni}: Andrea Dorigo, Daniele Zorzi, Fabio Pallaro.\\
+\end{flushleft}
+
+
+\section{Ordine del giorno}
+\begin{itemize}
+	\item Stato di avanzamento della documentazione
+	\item Stato di avanzamento dello sviluppo
+	\item Stream processing
+	\item Obiettivi per il quarto sprint
+	\item Decisioni prese
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Stato di avanzamento della documentazione}
+Come prima cosa, il responsabile del terzo sprint, Antonio Benetazzo, ha riassunto quanto è stato svolto nel corso del periodo di lavoro corrente.
+Riguardo la documentazione, il gruppo ha aggiunto i casi d'uso mancanti al documento \textit{Analisi dei Requisiti}, 
+ha provveduto a popolare i grafici nel cruscotto di valutazione della qualità all'interno del \textit{Piano di Qualifica} e
+ha aggiornato il documento \textit{Piano di Progetto} con i dati relativi al terzo sprint. Nel frattempo, sono stati aggiunti nuovi termini al \textit{Glossario}.
+
+\subsection{Stato di avanzamento dello sviluppo}
+In seguito il team ha proseguito con la presentazione delle modifiche apportate alle dashboard in \textit{Grafana}. Come richiesto nel precedente
+incontro, sono state aggiunte le cifre decimali alle variabili di latitudine e longitudine nelle mappe e le unità di misura nei grafici,
+è stato implementato un filtro in base al sensore desiderato e una lista delle dashboard disponibili, che aiuta l'utente nella navigazione.
+Inoltre sono stati introdotti nuovi grafici, sia nella dashboard riguardante la temperatura, sia in quella riguardante il traffico, infine
+è stato implementato un nuovo sensore che gestisce il riempimento delle isole ecologiche. Nel corso della presentazione la proponente ha suggerito
+alcune modifiche per raffinare la visualizzazione delle dashboard, come ad esempio:
+\begin{itemize}
+	\item aggiunta di altri sensori dislocati in modo significativo;
+	\item utilizzo della funzione \textit{zoom to data} per una maggiore immediatezza nella visualizzazione dei dati;
+	\item distinzione tra dashboard di monitoraggio e dashboard di analisi.
+\end{itemize}
+
+\newpage
+\subsection{Stream processing}
+Segue una breve discussione riguardante lo stream processing, ovvero il processo di elaborazione di dati in tempo reale. In particolare la proponente
+ha richiesto l'analisi di un possibile sistema di stream processing in modo da poter ricavare informazioni non visibili direttamente dai dati grezzi.
+Per farlo sono stati proposti diversi strumenti che verranno analizzati nel corso del prossimo sprint, tra cui:
+\begin{itemize}
+	\item \textit{Apache Flink};
+	\item \textit{Apache NiFi};
+	\item \textit{Apache Spark};
+	\item \textit{Kafka Streams}.
+\end{itemize}
+Per garantire maggiore chiarezza, sono stati forniti alcuni esempi di possibili utilizzi, come ad esempio la gestione di un parcheggio dotato di
+colonnine di ricarica per veicoli elettrici, oppure il monitoraggio della temperatura percepita attraverso i dati di temperatura ed umidità.
+
+\subsection{Obiettivi per il quarto sprint}
+Sono stati definiti i seguenti obiettivi per il quarto sprint:
+\begin{itemize}
+	\item popolamento dei grafici del documento \textit{Piano di Qualifica};
+	\item revisione dei documenti \textit{Piano di Progetto} e \textit{Piano di Qualifica};
+	\item formazione e analisi dei business case e relativi strumenti;
+	\item raffinamento delle dashboard attraverso le modifiche elencate precedentemente.
+\end{itemize}
+
+\subsection{Decisioni prese}
+In comune accordo con la proponente, si decide di mantenere la durata del quarto sprint di una settimana,
+dal momento che il carico di lavoro è sostenibile.
+L'incontro si conclude con la definizione della data del prossimo Stato Avanzamento Lavori (SAL),
+ovvero il 2024-05-22.
+
+\newpage
+\begin{table}[b]
+	\begin{tabular}{@{}p{5cm}p{10cm}@{}}
+		Data:  & \hrulefill \\
+		       &            \\
+		       &            \\
+		Firma della proponente: & \hrulefill \\
+	\end{tabular}
+\end{table}
+
+\end{document}

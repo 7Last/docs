@@ -67,8 +67,8 @@ def is_already_subscripted(file_content, end):
     return False
 
 
-def is_within_href(file_content, start):
-    matches = [m for m in re.finditer(r'\\href{[^}]*', file_content[:start])]
+def is_within_href_or_url(file_content, start):
+    matches = [m for m in re.finditer(r'\\(?:href|url){[^}]*', file_content[:start])]
     for match in reversed(matches):
         match_end = match.end()
         if '}' not in file_content[match_end:start]:
@@ -78,7 +78,7 @@ def is_within_href(file_content, start):
 
 def style_command(file_content, start):
     style_commands = ['\\textit{', '\\itshape{', '\\emph{', '\\textbf{', '\\bfseries{', '\\uline{', '\\underline{',
-                      '\\textsc{', '\\scshape{']
+                      '\\textsc{', '\\scshape{', '\\texttt{']
     for command in style_commands:
         if command in file_content[max(0, start - len(command)):start]:
             return command
@@ -104,20 +104,32 @@ def replace_words(path, glossary):
             for match in reversed(matches):
                 match_start = match.start()
                 match_end = match.end()
+                style_command_to_split = False
+                style_command_string = ''
+                style_commands = 0
                 while True:
-                    len_style_command = len(style_command(file_content, match_start))
+                    this_style_command_string = style_command(file_content, match_start)
+                    style_command_string += this_style_command_string
+                    len_style_command = len(this_style_command_string)
                     if len_style_command > 0:
+                        style_commands += 1
                         match_start -= len_style_command
-                        match_end += 1
+                        if file_content[match_end] != '}':
+                            style_command_to_split = True
+                        else:
+                            match_end += 1
                     else:
                         break
 
-                if is_within_href(file_content, match_start) \
+                if is_within_href_or_url(file_content, match_start) \
                         or is_within_section(file_content, match_start) \
                         or is_already_subscripted(file_content, match_end):
                     continue
                 url = glossary_url + "\\#" + word.lower().replace(' ', '-')
-                replacement = '\\href{' + url + '}{' + file_content[match_start:match_end] + '\\textsubscript{G}}'
+                if style_command_to_split:
+                    replacement = '\\href{' + url + '}{' + file_content[match_start:match_end] + ('}' * style_commands) + '\\textsubscript{G}}' + style_command_string
+                else:
+                    replacement = '\\href{' + url + '}{' + file_content[match_start:match_end] + '\\textsubscript{G}}'
                 file_content = file_content[:match_start] + replacement + file_content[match_end:]
 
     if initial_content != file_content:

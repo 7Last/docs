@@ -1,0 +1,22 @@
+name: Pre merge checks
+
+on:
+  pull_request:
+    branches: [develop]
+    types: [opened, reopened, edited, synchronize]
+
+  workflow_dispatch:
+
+jobs:
+  aspell_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install aspell and Italian dictionary
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y aspell aspell-it aspell-en
+
+      - name: Run aspell check
+        run: ./aspell_check.sh

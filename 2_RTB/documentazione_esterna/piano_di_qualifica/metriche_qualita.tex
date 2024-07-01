@@ -1,230 +1,150 @@
-\section{Metriche di qualità per obiettivo}
-La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte. Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale. Dunque, al fine di valutare nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche, meglio specificate nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#norme-di-progetto}{Norme di Progetto\textsubscript{G}}. Il contenuto di questa sezione è necessario per identificare i parametri che le metriche devono rispettare per essere considerate accettabili o ottime. Esse sono state suddivise utilizzando lo \textbf{standard ISO/IEC 12207:1995}, il quale separa i processi di ciclo di vita del software, in tre categorie: % TODO aggiungere versione documento
-\begin{itemize}
-	\item Processi di base e/o primari;
-	\item Processi di supporto;
-	\item Processi organizzativi.
-\end{itemize}
+\section{Metriche di qualità}
+La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte. Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale. Al fine di valutare nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche, meglio specificate nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#norme-di-progetto}{\textit{Norme di Progetto\textsubscript{G}}} e qui di seguito riepilogate. Esse sono state suddivise utilizzando lo \textbf{standard ISO/IEC 12207:1995}, il quale separa i processi di ciclo di vita del software in processi di base e/o primari, processi di supporto e processi organizzativi.
 
 \subsection{Processi di base e/o primari}
-\subsubsection{Analisi dei requisiti}
-Questa fase consiste nell'esaminare le richieste del proponente e nel definire i requisiti che il prodotto dovrà soddisfare. Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica} & \textbf{Nome}                        & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                                                                                                                                      \\
-	\hline
-	\endfirsthead
-	\hline
-	\textbf{Metrica} & \textbf{Nome}                        & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                                                                                                                                      \\
-	\endhead
-	\textbf{1M-CRO}  & Copertura dei requisiti obbligatori  & 100\%                       & 100\%                  & Descrive quanto del lavoro svolto durante lo sviluppo corrisponde ai requisiti essenziali o obbligatori definiti in fase di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{Analisi dei Requisiti\textsubscript{G}}.                                                        \\
-	\hline
-	\textbf{2M-CRD}  & Copertura dei requisiti desiderabili & $\geq 50\% $                & 100\%                  & Rileva la percentuale di requisiti (i quali, una volta integrati arricchiscono l'esperienza dell'utente o forniscono vantaggi aggiuntivi non strettamente necessari) che sono stati implementati o soddisfatti nel prodotto. \\
-	\hline
-	\textbf{3M-CROP} & Copertura dei requisiti opzionali    & $\geq 0\% $                 & $\geq 50\% $           & Stima la percentuale di requisiti aggiuntivi (non essenziali o di bassa priorità) che sono stati implementati o soddisfatti nel prodotto.                                                                            \\
-	\hline
-	\caption{Metriche di Analisi dei Requisiti}
-	\label{table:1}
-\end{longtable}
-
-\subsubsection{Progettazione}
-In questa fase si definiscono le specifiche del prodotto, quali ad esempio dettagli tecnici e design architetturale del sistema.
-Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\subsubsubsection{Usabilità}
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica} & \textbf{Nome}          & \textbf{Valore ammissibile}  & \textbf{Valore ottimo} & \textbf{Descrizione}                                                      \\
-	\hline
-	\endfirsthead
-	\hline
-	\textbf{Metrica} & \textbf{Nome}          & \textbf{Valore ammissibile}  & \textbf{Valore ottimo} & \textbf{Descrizione}                                                      \\
-	\endhead
-	\textbf{4M-FU}   & Facilità di utilizzo   & $\leq 3 $ errori di utilizzo & 0 errori di utilizzo   & Rappresenta l'usabilità di un sistema software.                           \\
-	\hline
-	\textbf{5M-TA}   & Tempo di apprendimento & $\leq 12 $ minuti            & $\leq 8 $ minuti       & Indica il tempo massimo richiesto per apprendere l'utilizzo del prodotto. \\
-	\hline
-	\caption{Metriche di Progettazione - Usabilità}
-	\label{table:2}
-\end{longtable}
-
-\subsubsubsection{Manutenibilità}
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica}  & \textbf{Nome}                 & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                                                  \\
-	\hline
-	\endfirsthead
-	\hline
-	\textbf{6M-COC}   & Coefficient of Coupling (COC) & $\leq 30\% $                & $\leq 10\% $           & Rappresenta il grado di dipendenza tra diversi moduli o componenti di un sistema software.                            \\
-	\hline
-	\textbf{7M-SFIN}  & Structural Fan-In (SFIN)      & $\leq$ 7                    & $\le$ 5                & Riferita ad una classe che è progettata in modo tale che un gran numero di altre classi possa facilmente utilizzarla. \\
-	\hline
-	\textbf{8M-SFOUT} & Structural Fan-Out (SFOUT)    & $\leq$ 7                    & $\le$ 5                & Rappresenta il numero dei moduli subordinati immediati di un metodo.                                                  \\
-	\hline
-	\caption{Metriche di Progettazione - Manutenibilità}
-	\label{table:3}
-\end{longtable}
-
 \subsubsection{Fornitura}
-Nella fase di fornitura si definiscono le procedure e le risorse (economiche e temporali) necessarie per la consegna del prodotto.
-Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica}  & \textbf{Nome}                & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\
-	\hline
-	\endhead
-	\textbf{9M-EV}   & Earned Value (EV)             & $\geq 0$                                                    & $\leq$ EAC (Estimated At Completion)      & Valore del lavoro effettivamente svolto fino al periodo in analisi.                                                            \\
-	\hline
-	\textbf{10M-PV}   & Planned Value (PV)            & $\geq 0$                                                    & $\leq$ BAC (Budget At Completion)         & Consente di stimare i costi realizzativi delle attività imminenti periodo per periodo.                                         \\
-	\hline
-	\textbf{11M-AC}  & Actual Cost (AC)              & $\geq 0$                                                    & $\leq$ EAC (Estimated At Completion)      & Misura i costi effettivamente sostenuti dall'inizio del progetto fino al presente.                                             \\
-	\hline
-	\textbf{12M-CV}  & Cost Variance (CV)            & $\geq -7.5\%$                                               & $\geq 0\%$                                & Valuta la differenza percentuale di budget tra quanto previsto nella pianificazione di un periodo e l'effettiva realizzazione. \\
-	\hline
-	\textbf{13M-EAC} & Estimated at Completion (EAC) & Errore del $\pm 4\%$ rispetto al BAC (Budget At Completion) & Equivalente al BAC (Budget At Completion) & Calcola il costo realizzativo stimato per terminare il progetto.                                                               \\
-	\hline
-	\textbf{14M-ETC} & Estimate to Complete (ETC)    & $\geq 0$                                                    & $\leq$ EAC (Estimated At Completion)      & Previsione dei costi realizzativi fino alla fine del progetto.                                                                 \\
-	\hline
-	\textbf{15M-CPI} & Cost Performance Index (CPI)  & $\pm 13\%$                                                  & 0                                         & Indica il rapporto tra il valore del lavoro effettivamente svolto e i costi sostenuti.                                         \\
-	\hline
-	\caption{Metriche di Fornitura}
-	\label{table:4}
-\end{longtable}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                       & Ammissibile          & Ottimo           \\
+		\hline
+		1M-PV    & Planned Value              & $PV \geq 0$          & $PV \leq BAC$    \\
+		2M-EV    & Earned Value               & $EV \geq 0$          & $EV \leq EAC$    \\
+		3M-AC    & Actual Cost                & $AC \geq 0$          & $AC \leq EAC$    \\
+		4M-SV    & Schedule Variance          & $SV \geq -10\%$      & $SV \geq 0\%$    \\
+		5M-CV    & Cost Variance              & $CV \geq -10\%$      & $CV \geq 0\%$    \\
+		6M-CPI   & Cost Performance Index     & $CPI \geq 0.8$       & $CPI \geq 1$     \\
+		7M-SPI   & Schedule Performance Index & $SPI \geq 0.8$       & $SPI \geq 1$     \\
+		8M-EAC   & Estimate At Completion     & $EAC \leq BAC + 5\%$ & $EAC \leq BAC$   \\
+		9M-ETC   & Estimate To Complete       & $ETC \geq 0$         & $ETC \leq EAC$   \\
+		10M-OTDR & On-Time Delivery Rate      & $OTDR \geq 90\%$     & $OTDR \geq 95\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Fornitura}
+\end{table}
 
+\newpage
 \subsubsection{Sviluppo}
-Nella fase di sviluppo si realizza il prodotto software, seguendo le specifiche definite in fase di progettazione.
-Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\subsubsubsection{Complessità e struttura del codice}
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica}  & \textbf{Nome}              & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                                \\
-	\hline
-	\endhead
-	\textbf{16M-CCM}  & Complessità ciclomatica    & $\leq 3$                    & $\leq 6$               & Indica il numero di cammini linearmente indipendenti attraverso il codice sorgente di un programma. \\
-	\hline
-	\textbf{17M-PPM}  & Parametri per metodo       & $\leq 7$                    & $\leq 5$               & Indica il numero di parametri per metodo.                                                           \\
-	\hline
-	\textbf{18M-CPC}  & Campi per classe           & $\leq 10$                   & $\leq 7$               & Indica il numero di parametri per classe.                                                           \\
-	\hline
-	\textbf{19M-LCPM} & Linee di codice per metodo & $\leq 30$                   & $\leq 20$              & Indica il numero di linee di codice per metodo.                                                     \\
-	\hline
-	\caption{Metriche di Sviluppo - Complessità e struttura del codice}
-	\label{table:5}
-\end{longtable}
+\subsubsubsection{Analisi dei requisiti}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                               & Ammissibile      & Ottimo           \\
+		\hline
+		11M-PRO  & Percentuale Requisiti Obbligatori  & $PRO \geq 100\%$ & $PRO \geq 100\%$ \\
+		12M-PRD  & Percentuale Requisiti Desiderabili & $PRD \geq 35\%$  & $PRD \geq 100\%$ \\
+		13M-PRO  & Percentuale Requisiti Opzionali    & $PRO \geq 0\%$   & $PRO \geq 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{Analisi dei requisiti\textsubscript{G}}}
+\end{table}
 
-\subsubsubsection{Efficienza}
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica}  & \textbf{Nome}                & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\
-	\hline
-	\endhead
-	\textbf{20M-TR}  & Tempo di risposta (interfaccia utente)  & $\leq 1.5$ s                 & $\leq 1$s              & Indica il tempo massimo di risposta del sistema.                                       \\
-	\hline
-	\textbf{21M-TE}  & Tempo di elaborazione di un dato grezzo & $\leq 1.5$ s                 & $\leq 1$s              & Indica il tempo massimo di elaborazione di un dato grezzo fino alla sua presentazione. \\
-	\hline
-	\caption{Metriche di Sviluppo - Efficienza}
-	\label{table:6}
-\end{longtable}
+\subsubsubsection{Progettazione}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                       & Ammissibile & Ottimo           \\
+		\hline
+		14M-PG   & Profondità delle Gerarchie & $PG \leq 7$ & $PG \leq 5$      \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Progettazione}
+\end{table}
 
+\subsubsubsection{Codifica}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                          & Ammissibile    & Ottimo         \\
+		\hline
+		15M-PPM  & Parametri Per Metodo          & $PPM \leq 7$   & $PPM \leq 5$   \\
+		16M-CPC  & Campi Per Classe 	         & $CPC \leq 8$   & $CPC \leq 5$   \\
+		17M-LCPM & Linee Di Commento Per Metodo  & $LCPM \geq 50$ & $LCPM \geq 20$ \\
+		18M-CCM  & Complessità Ciclomatica Media & $CCM \leq 6$   & $CCM \leq 3$   \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Codifica}
+\end{table}
 
+\newpage
 \subsection{Processi di supporto}
-I processi di supporto si affiancano ai processi primari per garantire il corretto svolgimento delle attività.
-
 \subsubsection{Documentazione}
-La documentazione è un aspetto fondamentale per la comprensione del prodotto e per la sua manutenibilità. Consiste,
-a livello pratico, nella redazione di manuali e documenti tecnici che descrivano il funzionamento del prodotto e le
-scelte progettuali adottate.
-Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica} & \textbf{Nome}           & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                 \\
-	\hline
-	\endfirsthead
-	\textbf{22M-IG}  & Indice Gulpease         & $\geq 60\% $                & $\geq 90\% $           & Misura la leggibilità di un testo in base alla lunghezza delle parole e delle frasi. \\
-	\hline
-	\textbf{23M-CO}  & Correttezza Ortografica & 0 errori                    & 0 errori               & Presenza di errori ortografici nei documenti.                                        \\
-	\hline
-	\caption{Metriche di Documentazione}
-	\label{table:7}
-\end{longtable}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                    & Ammissibile        & Ottimo             \\
+		\hline
+		19M-IG   & Indice Gulpease         & $IG \geq 50$       & $IG \geq 75$       \\
+		20M-CO   & Correttezza Ortografica & $CO = 0\ errori$   & $CO = 0\ errori$   \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Documentazione}
+\end{table}
+
+\subsubsection{Gestione della qualità}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                           & Ammissibile         & Ottimo              \\
+		\hline
+		21M-FU  & Facilità di Utilizzo            & $FU \geq 3\ errori$ & $FU \geq 0\ errori$ \\
+		22M-TA  & Tempo di Apprendimento	      & $TA \leq 12\ min$   & $TA \leq 7\ min$    \\
+		23M-TR  & Tempo di Risposta		          & $TR \leq 8\ sec$    & $TR \leq 4\ sec$    \\
+		24M-TE  & Tempo di Elaborazione		      & $TE \leq 10\ sec$   & $TE \leq 5\ sec$    \\
+		25M-QMS & Metriche di Qualità Soddisfatte & $QMS \geq 90\%$     & $QMS = 100\%$       \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Gestione della Qualità}
+\end{table}
 
 \subsubsection{Verifica}
-La verifica è un processo che si occupa di controllare che il prodotto soddisfi i requisiti stabiliti
-e sia pienamente funzionante. Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica}  & \textbf{Nome}                & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}\\
-	\hline
-	\endhead
-	\textbf{24M-CC}   & Code Coverage                & $\geq 80\% $                & 100\%                  & Fornisce una misura quantitativa del grado o della percentuale di codice eseguito durante i test.                  \\
-	\hline
-	\textbf{25M-BC}   & Branch Coverage              & $\geq 80\% $                & 100\%                  & Metrica di copertura del codice che indica la percentuale dei rami decisione del codice coperti dai test.          \\
-	\hline
-	\textbf{26M-SC}   & Statement Coverage           & $\geq 80\% $                & 100\%                  & Metrica di copertura del codice che indica la percentuale degli statement del codice coperti dai test.             \\
-	\hline
-	\textbf{27M-FD}   & Failure Density              & 100\%                       & 100\%                  & Misura che indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo. \\
-	\hline
-	\textbf{28M-PTCP} & Passed Test Cases Percentage & $\geq 80\%$                 & 100\%                  & Percentuale di casi di test superati.                                                                              \\
-	\hline
-	\caption{Metriche di Verifica}
-	\label{table:8}
-\end{longtable}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                        & Ammissibile      & Ottimo            \\
+		\hline
+		26M-CC   & Code Coverage               & $CC \geq 80\%$   & $CC \geq 100\%$   \\
+		27M-BC   & Branch Coverage             & $BC \geq 80\%$   & $BC \geq 100\%$   \\
+		28M-SC   & Statement Coverage          & $SC \geq 80\%$   & $SC \geq 100\%$   \\
+		29M-FD   & Failure Density             & $FD \leq 15\%$   & $FD = 0\%$        \\
+		30M-PTCP & Passed Test Case Percentage & $PTCP \geq 90\%$ & $PTCP \geq 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Verifica}
+\end{table}
 
-\subsubsection{Gestione dei rischi}
-La gestione dei rischi è un processo che si occupa di identificare, analizzare e gestire i rischi che possono
-insorgere durante lo svolgimento del progetto. Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica} & \textbf{Nome}       & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                     \\
-	\hline
-	\endfirsthead
-	\hline
-	\textbf{Metrica} & \textbf{Nome}       & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                     \\
-	\endhead
-	\textbf{29M-NCR} & Non Calculated Risk & $\leq 3 $                   & 0                      & Indica un rischio che è stato trascurato o non considerato durante l’Analisi dei Rischi. \\
-	\hline
-	\hline
-	\caption{Metriche di Gestione dei processi}
-	\label{table:9}
-\end{longtable}
-
-\subsubsection{Gestione della Qualità}
-La gestione della qualità è un processo che si occupa di definire una metodologia per garantire la qualità del prodotto.
-Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica} & \textbf{Nome}             & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                          \\
-	\hline
-	\endfirsthead
-	\hline
-	\textbf{Metrica} & \textbf{Nome}             & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                          \\
-	\endhead
-	\textbf{30M-QMS} & Quality Metrics Satisfied & $\geq 85\% $                & 100\%                  & Indica il numero di metriche implementate e soddisfatte, tra quelle definite. \\
-	\hline
-	\textbf{31M-TE}  & Time Efficiency           & $\leq 3 $                   & $\leq 1 $              & Livello di efficienza del team nello sviluppo di codice di alta qualità.      \\
-	\hline
-	\caption{Metriche di Gestione della Qualità}
-	\label{table:10}
-\end{longtable}
+\newpage
+\subsubsection{Risoluzione dei problemi}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                 & Ammissibile     & Ottimo           \\
+		\hline
+		31M-RMR  & Risk Mitigation Rate	& $RMR \geq 80\%$ & $RMR \geq 100\%$ \\
+		32M-NCR  & Rischi Non Calcolati	& $NCR \leq 3$    & $NCR = 0$        \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Risoluzione dei problemi}
+\end{table}
 
 \subsection{Processi organizzativi}
-I processi organizzativi sono processi che si occupano di definire le linee guida e le procedure da seguire per garantire
-un'efficace gestione e coordinazione del progetto.
-
 \subsubsection{Pianificazione}
-La pianificazione è un processo che si occupa di definire le attività da svolgere e le risorse temporali e umane necessarie
-per il loro svolgimento. Per valutare la qualità di tale processo, sono state definite le seguenti metriche:
-\begin{longtable}{|>{\raggedright\arraybackslash}m{0.13\textwidth}|>{\raggedright\arraybackslash}m{0.17\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.14\textwidth}|>{\raggedright\arraybackslash}m{0.29\textwidth}|}
-	\hline
-	\textbf{Metrica} & \textbf{Nome}                      & \textbf{Valore ammissibile} & \textbf{Valore ottimo} & \textbf{Descrizione}                                                                                  \\
-	\hline
-	\endfirsthead
-	\hline
-	\textbf{32M-RSI} & Requirements Stability Index (RSI) & $\geq 75\% $                & 100\%                  & Misura utilizzata per quantificare il grado di cambiamento dei requisiti in un progetto. \\
-	\hline
-	\textbf{33M-SV}  & Schedule Variance (SV)             & $\geq -7.5\%$               & $\geq 0\%$             & Indica in percentuale il livello di anticipo (+) o ritardo (-) rispetto le attività pianificate.              \\
-	\hline
-	\textbf{34M-BV}  & Budget Variance (BV)               & $\geq -7.5\%$               & $\geq 0\%$             & Indica in percentuale il livello di eccedenze (+) o risparmi (-) rispetto al budget pianificato.                \\
-	\hline
-	\caption{Metriche di Pianificazione}
-	\label{table:11}
-\end{longtable}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                         & Ammissibile    & Ottimo       \\
+		\hline
+		33M-RSI  & Requirements Stability Index & $RSI \geq 75\%$ & $RSI = 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di Pianificazione}
+\end{table}

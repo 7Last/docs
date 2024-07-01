@@ -1,0 +1,150 @@
+\section{Metriche di qualità}
+La qualità di processo è un criterio fondamentale ed è alla base di ogni prodotto che rispecchi lo stato dell'arte. Per raggiungere tale obiettivo è necessario sfruttare delle pratiche rigorose che consentano lo svolgimento di ogni attività in maniera ottimale. Al fine di valutare nel miglior modo possibile la qualità del prodotto e l'efficacia dei processi, sono state definite delle metriche, meglio specificate nel documento \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario#norme-di-progetto}{\textit{Norme di Progetto\textsubscript{G}}} e qui di seguito riepilogate. Esse sono state suddivise utilizzando lo \textbf{standard ISO/IEC 12207:1995}, il quale separa i processi di ciclo di vita del software in processi di base e/o primari, processi di supporto e processi organizzativi.
+
+\subsection{Processi di base e/o primari}
+\subsubsection{Fornitura}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                       & Ammissibile          & Ottimo           \\
+		\hline
+		1M-PV    & Planned Value              & $PV \geq 0$          & $PV \leq BAC$    \\
+		2M-EV    & Earned Value               & $EV \geq 0$          & $EV \leq EAC$    \\
+		3M-AC    & Actual Cost                & $AC \geq 0$          & $AC \leq EAC$    \\
+		4M-SV    & Schedule Variance          & $SV \geq -10\%$      & $SV \geq 0\%$    \\
+		5M-CV    & Cost Variance              & $CV \geq -10\%$      & $CV \geq 0\%$    \\
+		6M-CPI   & Cost Performance Index     & $CPI \geq 0.8$       & $CPI \geq 1$     \\
+		7M-SPI   & Schedule Performance Index & $SPI \geq 0.8$       & $SPI \geq 1$     \\
+		8M-EAC   & Estimate At Completion     & $EAC \leq BAC + 5\%$ & $EAC \leq BAC$   \\
+		9M-ETC   & Estimate To Complete       & $ETC \geq 0$         & $ETC \leq EAC$   \\
+		10M-OTDR & On-Time Delivery Rate      & $OTDR \geq 90\%$     & $OTDR \geq 95\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di fornitura}
+\end{table}
+
+\newpage
+\subsubsection{Sviluppo}
+\subsubsubsection{Analisi dei requisiti}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                               & Ammissibile      & Ottimo           \\
+		\hline
+		11M-PRO  & Percentuale Requisiti Obbligatori  & $PRO \geq 100\%$ & $PRO \geq 100\%$ \\
+		12M-PRD  & Percentuale Requisiti Desiderabili & $PRD \geq 35\%$  & $PRD \geq 100\%$ \\
+		13M-PRO  & Percentuale Requisiti Opzionali    & $PRO \geq 0\%$   & $PRO \geq 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analisi-dei-requisiti}{analisi dei requisiti\textsubscript{G}}}
+\end{table}
+
+\subsubsubsection{Progettazione}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                       & Ammissibile & Ottimo           \\
+		\hline
+		14M-PG   & Profondità delle Gerarchie & $PG \leq 7$ & $PG \leq 5$      \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di progettazione}
+\end{table}
+
+\subsubsubsection{Codifica}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                          & Ammissibile    & Ottimo         \\
+		\hline
+		15M-PPM  & Parametri Per Metodo          & $PPM \leq 7$   & $PPM \leq 5$   \\
+		16M-CPC  & Campi Per Classe 	         & $CPC \leq 8$   & $CPC \leq 5$   \\
+		17M-LCPM & Linee Di Commento Per Metodo  & $LCPM \geq 50$ & $LCPM \geq 20$ \\
+		18M-CCM  & Complessità Ciclomatica Media & $CCM \leq 6$   & $CCM \leq 3$   \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di codifica}
+\end{table}
+
+\newpage
+\subsection{Processi di supporto}
+\subsubsection{Documentazione}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                    & Ammissibile        & Ottimo             \\
+		\hline
+		19M-IG   & Indice Gulpease         & $IG \geq 50$       & $IG \geq 75$       \\
+		20M-CO   & Correttezza Ortografica & $CO = 0\ errori$   & $CO = 0\ errori$   \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di documentazione}
+\end{table}
+
+\subsubsection{Gestione della qualità}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                           & Ammissibile         & Ottimo              \\
+		\hline
+		21M-FU  & Facilità di Utilizzo            & $FU \geq 3\ errori$ & $FU \geq 0\ errori$ \\
+		22M-TA  & Tempo di Apprendimento	      & $TA \leq 12\ min$   & $TA \leq 7\ min$    \\
+		23M-TR  & Tempo di Risposta		          & $TR \leq 8\ sec$    & $TR \leq 4\ sec$    \\
+		24M-TE  & Tempo di Elaborazione		      & $TE \leq 10\ sec$   & $TE \leq 5\ sec$    \\
+		25M-QMS & Metriche di Qualità Soddisfatte & $QMS \geq 90\%$     & $QMS = 100\%$       \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di gestione della qualità}
+\end{table}
+
+\subsubsection{Verifica}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                        & Ammissibile      & Ottimo            \\
+		\hline
+		26M-CC   & Code Coverage               & $CC \geq 80\%$   & $CC \geq 100\%$   \\
+		27M-BC   & Branch Coverage             & $BC \geq 80\%$   & $BC \geq 100\%$   \\
+		28M-SC   & Statement Coverage          & $SC \geq 80\%$   & $SC \geq 100\%$   \\
+		29M-FD   & Failure Density             & $FD \leq 15\%$   & $FD = 0\%$        \\
+		30M-PTCP & Passed Test Case Percentage & $PTCP \geq 90\%$ & $PTCP \geq 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di verifica}
+\end{table}
+
+\newpage
+\subsubsection{Risoluzione dei problemi}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                 & Ammissibile     & Ottimo           \\
+		\hline
+		31M-RMR  & Risk Mitigation Rate	& $RMR \geq 80\%$ & $RMR \geq 100\%$ \\
+		32M-NCR  & Rischi Non Calcolati	& $NCR \leq 3$    & $NCR = 0$        \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di risoluzione dei problemi}
+\end{table}
+
+\subsection{Processi organizzativi}
+\subsubsection{Pianificazione}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | l | c | c | }
+		\hline
+		Codice   & Nome                         & Ammissibile    & Ottimo       \\
+		\hline
+		33M-RSI  & Requirements Stability Index & $RSI \geq 75\%$ & $RSI = 100\%$ \\
+		\hline
+	\end{tabular}
+	\caption{Metriche di qualità per il processo di pianificazione}
+\end{table}
