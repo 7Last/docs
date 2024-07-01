@@ -88,7 +88,7 @@ Nello sviluppo di questo progetto \textit{7Last} ha utilizzato diverse immagini 
 	\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione}                                                                                                                                 & \textbf{Impiego}                                                                                                             \\\hline
 	\endhead
 	Python        & 3.11.9            & Linguaggio di programmazione ad alto livello, interpretato e multiparadigma.                                                                         & Simulatore di sensori, \textit{testing}, \textit{script} per automatizzare il \textit{deployment} dei \textit{job} di Flink. \\\hline
-	JSON          & -                 & Formato di dati semplice da interpretare e generare, ampiamente utilizzato per lo scambio di dati tra applicazioni.                                  & Configurazione dashboard Grafana.                                                                                            \\\hline
+	JSON          & -                 & Formato di dati semplice da interpretare e generare, ampiamente utilizzato per lo scambio di dati tra applicazioni.                                  & Configurazione \textit{dashboard} Grafana.                                                                                   \\\hline
 	YAML          & -                 & Linguaggio di serializzazione dei dati leggibile sia per gli esseri umani sia per le macchine.                                                       & Docker Compose, provisioning Grafana e configurazione \textit{alert}, file di \textit{workflow} per le GitHub Actions.       \\\hline
 	SQL           & Ansi SQL          & Linguaggio di programmazione specificamente progettato per la gestione e la manipolazione di dati all'interno di sistemi di gestione di database.    & \textit{Query} e gestione database ClickHouse.                                                                               \\\hline
 	TOML          & 1.0.0             & Linguaggio di \textit{markup} progettato per essere più leggibile e facile da scrivere rispetto ad altri formati di configurazione come JSON e YAML. & Configurazione e gestione dei sensori simulati.                                                                              \\\hline
@@ -187,7 +187,7 @@ I vantaggi nell'utilizzo di questo strumento consistono in:
 \subsubsubsection{Casi d'uso}
 ClickHouse è utilizzato in una varietà di casi d'uso, tra cui:
 \begin{itemize}
-	\item \textbf{analisi dei log e monitoraggio}, utilizzato per l'analisi e il monitoraggio dei log in tempo reale;
+	\item \textbf{analisi dei \textit{log} e monitoraggio}, utilizzato per l'analisi e il monitoraggio dei log in tempo reale;
 	\item \textbf{\textit{business intelligence}}, impiegato in applicazioni di BI per eseguire analisi approfondite dei dati aziendali, supportando la presa di decisioni basata sui dati;
 	\item \textbf{\textit{data warehousing}}, funziona come data warehouse per memorizzare e analizzare grandi volumi di dati.
 \end{itemize}
@@ -239,7 +239,7 @@ implementativi di ciascuno di essi sono meglio discussi nella sezione \href{sec:
 \end{itemize}
 
 \subsubsection{Grafana}
-È una potente piattaforma di visualizzazione dei dati progettata per creare, esplorare e condividere dashboard interattive che visualizzano metriche, log e altri dati di monitoraggio in tempo reale.
+È una potente piattaforma di visualizzazione dei dati progettata per creare, esplorare e condividere \textit{dashboard}  interattive che visualizzano metriche, \textit{log} e altri dati di monitoraggio in tempo reale.
 
 \begin{itemize}
 	\item \textbf{Versione}: v10.3.0;
@@ -251,17 +251,17 @@ implementativi di ciascuno di essi sono meglio discussi nella sezione \href{sec:
 	\item \textbf{Facilità d'uso}: possiede un'interfaccia intuitiva che rende facile la creazione e la gestione delle dashboard;
 	\item \textbf{flessibilità}: La capacità di integrarsi con molteplici sorgenti dati e l'ampia gamma di plugin disponibili la rendono estremamente flessibile;
 	\item \textbf{personalizzazione}: permette una personalizzazione completa delle dashboard, soddisfando ogni possibile necessità di visualizzazione dei dati;
-	\item \textbf{gestione degli accessi}: offre funzionalità avanzate di gestione degli accessi e delle autorizzazioni, consentendo di controllare chi può accedere alle dashboard e quali azioni possono eseguire.
+	\item \textbf{gestione degli accessi}: offre funzionalità avanzate di gestione degli accessi e delle autorizzazioni, consentendo di controllare chi può accedere alle \textit{dashboard} e quali azioni possono eseguire.
 \end{itemize}
 \subsubsubsection{Casi d'uso}
 \begin{itemize}
 	\item \textbf{Monitoraggio delle infrastrutture}: utilizzato per monitorare le prestazioni e la disponibilità delle infrastrutture IT, inclusi server, database, servizi cloud e altro;
 	\item \textbf{analisi delle performance delle applicazioni}: utilizzato per monitorare le prestazioni delle applicazioni e identificare eventuali problemi di prestazioni;
 	\item \textbf{analisi delle serie temporali}: utilizzato per visualizzare e analizzare dati di serie temporali, come metriche di monitoraggio, log e dati di sensori;
-	\item \textbf{business intelligence}: utilizzato per creare dashboard personalizzate per l'analisi dei dati aziendali e la visualizzazione delle metriche chiave.
+	\item \textbf{business intelligence}: utilizzato per creare \textit{dashboard} personalizzate per l'analisi dei dati aziendali e la visualizzazione delle metriche chiave.
 \end{itemize}
 \subsubsubsection{Impiego nel progetto}
 \begin{itemize}
-	\item \textbf{Visualizzazione dei dati}: creazione dashboard interattive che visualizzano i dati provenienti da ClickHouse;
+	\item \textbf{Visualizzazione dei dati}: creazione \textit{dashboard} interattive che visualizzano i dati salvati su ClickHouse;
 	\item \textbf{notifiche superamento soglie}: invio di notifiche nel caso in cui vengano superate delle soglie prestabilite, che rappresentano situazioni di eventuale pericolo, forte disagio o disservizio per i cittadini.
 \end{itemize}

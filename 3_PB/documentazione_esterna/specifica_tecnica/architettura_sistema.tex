@@ -1,28 +1,71 @@
 \section{Architettura di sistema}
-\subsection{Modello architetturale}
-Il prodotto necessita di un'architettura in grado di gestire in tempo reale un vasto flusso di dati provenienti da sensori, offrendo contemporaneamente strumenti di visualizzazione efficaci per rendere comprensibili e utili queste informazioni. A tal fine è stata scelta la \textit{k-architecture}.
-\subsubsection{k-architecture}
-Introdotta come alternativa alla \textit{Lambda Architecture}, la \textit{Kappa Architecture} semplifica questo modello. In questa architettura i dati vengono acquisiti, elaborati e analizzati in tempo reale senza la necessità di separare il flusso di dati in due percorsi distinti per il batch processing e il processing in tempo reale.
-\subsubsubsection{Vantaggi}
+\subsection{\textit{Data processing architectures}}
+Le architetture di tipo \textit{data processing} sono progettate per gestire l'\textit{ingestion}, \textit{processing} e memorizzazione di grandi quantità di dati.
+Esse permettono di analizzare e ottenere informazioni utili (\textit{insight}) da questi dati, consentendo di ottimizzare i processi decisionali e migliorare le prestazioni aziendali.
+Esistono diverse architettura, ciascuna con le proprie caratteristiche e vantaggi. Tra le più comuni troviamo l'architettura \textit{lambda} e l'architettura \textit{kappa}.
+
+\subsubsection{Architettura \textit{lambda}}
+L'architettura \textit{lambda} è costituita dalle seguenti quattro componenti:
 \begin{itemize}
-	\item \textbf{Semplicità}: semplifica notevolmente il processo di sviluppo e manutenzione dei sistemi di data processing in tempo reale, in quanto elimina la necessità di gestire due percorsi separati per il batch processing e il processing in tempo reale;
-	\item \textbf{costi ridotti}: la gestione di un'unica pipeline di dati riduce i costi di sviluppo e manutenzione;
-	\item \textbf{reattività}: grazie alla capacità di elaborare i dati in arrivo immediatamente senza attendere il completamento di finestre di tempo predefinite, consente di ottenere risposte e feedback in tempo reale sui dati;
-	\item \textbf{scalabilità}: i sistemi basati su quest'architettura possono essere facilmente scalati per gestire grandi volumi di dati e picchi di carico improvvisi, poiché è progettata per essere distribuita e può essere facilmente adattata alle esigenze di crescita del sistema;
-	\item \textbf{flessibilità}: è altamente flessibile e può essere implementata utilizzando una varietà di strumenti e tecnologie.
+	\item \textbf{sorgente di dati}: responsabile dell'acquisizione dei dati grezzi da diverse sorgenti;
+	\item \textbf{\textit{batch layer}}: responsabile dell'elaborazione e persistenza di dati storici in \textit{batch} di grandi dimensioni; il suo scopo è fornire risposte complete e accurate, anche se con una latenza più elevata rispetto allo \textit{speed layer}. Tale componente è tipicamente rappresentata da \textit{framework} come Apache Hadoop o Apache Spark;
+	\item \textbf{\textit{speed (real-time) layer}}: responsabile dell'elaborazione e persistenza di dati in tempo reale. I dati vengono elaborati in modo rapido e con una latenza molto bassa, fornendo tuttavia risposte elaborate rispetto al \textit{batch layer}. Questa componente è tipicamente rappresentata da \textit{framework} come Apache Storm o Apache Flink;
+	\item \textbf{\textit{serving layer}}: responsabile della fornitura dei dati elaborati in modo veloce ed affidabile, indipendentemente dal \textit{layer} di elaborazione utilizzato.
 \end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{./specifica_tecnica/architettura_lambda.png}
+	\captionof{figure}{Architettura \textit{lambda}}
+\end{center}
+
+\subsubsubsection{Vantaggi e svantaggi}
+L'architettura \textit{lambda} offre diversi vantaggi, tra cui la \textbf{scalabilità orizzontale}, la \textbf{tolleranza ai guasti} e la \textbf{flessibilità}. Tuttavia, la presenza
+di due \textit{layer} di elaborazione separati può portare a problemi di coerenza dei dati, duplicazione della logica di aggregazione e complessità aggiuntiva nella gestione del sistema.
+Inoltre, rispetto all'architettura \textit{kappa}, l'architettura \textit{lambda} può avere una latenza più elevata.
+
+\subsubsubsection{Casi d'uso}
+L'architettura \textit{lambda} è particolarmente adatta per applicazioni che richiedono sia un'analisi sui dati in tempo reale che un'analisi storica.
+
+\subsubsection{Architettura \textit{kappa}}
+L'architettura \textit{kappa} è stata introdotta per semplificare l'architettura \textit{lambda}, eliminando la necessità di gestire due \textit{layer} di elaborazione separati per il \textit{batch processing} e il \textit{real-time processing}.
+Essa si divide in tre componenti principali:
+\begin{itemize}
+	\item \textbf{sorgente di dati}: responsabile dell'acquisizione dei dati grezzi da diverse sorgenti;
+	\item \textbf{\textit{processing layer}}: responsabile dell'elaborazione dei dati in tempo reale, senza la necessità di separare i dati in \textit{batch} e \textit{real-time};
+	\item \textbf{\textit{serving layer}}: responsabile della fornitura dei dati elaborati in modo veloce ed affidabile.
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{./specifica_tecnica/architettura_kappa.png}
+	\captionof{figure}{Architettura \textit{kappa}}
+\end{center}
+
+\subsubsubsection{Vantaggi e svantaggi}
+L'architettura \textit{kappa} offre diversi vantaggi, tra cui la \textbf{semplicità}, la \textbf{riduzione dei costi} e la \textbf{bassa latenza}.
+Tuttavia, può non essere adatta per applicazioni che richiedono un'analisi storica dei dati.
+
+\subsubsubsection{Casi d'uso}
+L'architettura \textit{kappa} è particolarmente adatta per gli scenari in cui sono critici i dati in tempo reale e l'analisi dei dati storici è meno importante. Inoltre, semplifica notevolmente il processo di sviluppo e manutenzione dei sistemi di elaborazione dei dati.
+
+\subsection{Architettura scelta}
+Nello scenario del capitolato proposto da \textit{SyncLab S.r.L.}, è critica l'analisi in tempo reale, in quanto i dati provenienti dai sensori IoT devono fornire informazioni sempre aggiornate ed eventualmente
+sollevare allarmi in caso di situazioni critiche. Inoltre, non è richiesta l'aggregazione storica di dati, dunque i vantaggi dell'architettura \textit{lambda} non risultano utili per i nostri fini.
+Per soddisfare tali requisiti, è stata dunque scelta l'architettura \textit{kappa}.
+
 \subsubsection{Componenti di sistema}
-%TODO inserire immagine dei componenti di sistema + descrizione dei vari componenti
-\subsubsubsection*{Sorgenti di dati}
-Costituite dai simulatori di sensori IoT distribuiti per la città.
-\subsubsubsection*{Streaming layer}
-Gestisce il flusso di dati in tempo reale provenienti dai sensori. È composto da \textit{Redpanda} e \textit{Schema Registry}.
-\subsubsubsection*{Processing layer}
-Elabora i dati in tempo reale per calcolare i KPI richiesti. È composto da \textit{Flink}.
-\subsubsubsection*{Storage layer}
-Memorizza i dati elaborati per l'analisi e la visualizzazione. È composto da \textit{ClickHouse}.
-\subsubsubsection*{Data visualization layer}
-Visualizza i dati elaborati in modo chiaro e intuitivo. È composto da \textit{Grafana}.
+All'interno del sistema da noi progettato sono dunque presenti le seguenti componenti:
+\begin{itemize}
+	\item \textbf{sorgenti di dati}: costituite dal simulatore di sensori, il quale genera periodicamente i dati grezzi che in un contesto reale sarebbero provenienti dai sensori IoT;
+	\item \textbf{\textit{streaming layer}}: gestisce il flusso di dati in tempo reale provenienti dai sensori. È composto da \textit{Redpanda} e lo \textit{Schema Registry};
+	\item \textbf{\textit{processing layer}}: elabora i dati in tempo reale per calcolare metriche e indici. È composto da \textit{Apache Flink};
+	\item \textbf{\textit{storage layer}}: memorizza i dati elaborati per l'analisi e la visualizzazione. È composto da \textit{ClickHouse};
+	\item \textbf{\textit{data visualization layer}}: fornisce un'interfaccia utente per visualizzare i dati elaborati. È composto da \textit{Grafana}.
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/architettura_sistema.png}
+	\captionof{figure}{Componenti di sistema}
+\end{center}
 
 %TODO per ogni modulo bisogna:
 % 1. Mettere foto diagramma delle classi UML
