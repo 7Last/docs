@@ -1,0 +1,35 @@
+\section{Architettura di ClickHouse}
+Gli elementi architettonici elencati nelle sottosezioni sono stati implementati dal team di ClickHouse per rispettare i requisiti OLAP. 
+\subsection{Archiviazione compressa e orientata alle colonne}
+ClickHouse sfrutta un sistema che consente di archiviare le colonne contenenti la stessa tipologia di dato nello stesso luogo. Questa soluzione rende possibile una migliore compressione e velocizza notevolmente le query.
+
+
+\subsection{Table engines}
+Le table engines determinano la tipologia di tabelle e le features che saranno disponibili per processare i dati contenuti al loro interno.
+La più utilizzata è la mergetree table engine che rappresenta il metodo base di scrittura e combinazione dei dati. Quasi tutte le altre table engine derivano dalla MergeTree. 
+MergeTree consente di scrivere e archiviare i dati su file immutabili chiamati “parts”. I file sono processati in background e uniti in un file più grande con l’obiettivo di ridurre la quantità di parts presenti su disco (meno file= letture più rapide).
+Tutte le colonne contenute in una tabella sono salvate in parts differenti, e ogni dato è salvato seguendo l’ordine della chiave primaria; in questa maniera la lettura dei dati sarà più efficiente.
+
+
+\subsection{Indici}
+Clickhouse utilizza solo due tipi di indici: primari e secondari.
+Visto che tutti i dati sono salvati in ordine di chiave primaria, l’indice primario archivia il valore della chiave primaria in ogni N-riga. Questo ha lo scopo di salvare l’indice nella memoria per ottenere un’alta velocità di processazione. 
+
+
+\subsection{Vector computation engine}
+Grazie ai vector algorithms ClickHouse può elaborare dati contenuti in decine di migliaia di righe per colonna. Inoltre, gli algoritmi consentono di scrivere codice più efficiente che sfrutta i processori SIMD (Single Instruction stream, Multiple Data stream:struttura che consiste in un elevato numero di processori identici che eseguono la stessa sequenza di istruzioni su insiemi di diversi di dati) e tiene codice e dati vicini per avere dei pattern di accesso alla memoria migliori.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

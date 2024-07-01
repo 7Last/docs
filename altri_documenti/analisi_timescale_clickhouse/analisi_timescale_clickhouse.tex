@@ -1,0 +1,60 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{name=Tabella}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\listtablename}{Indice delle tabelle}
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\listfigurename}{Indice delle immagini}
+\renewcommand\familydefault{\sfdefault}
+
+% set sfdefault for page numbers
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily\oldthepage}
+
+\begin{document}
+\include{title}
+\newpage
+\include{header}
+
+\begin{table}[!h]
+	\caption*{Versioni}
+	\begin{center}
+		\begin{tabular}{ c c c c p{6.1cm} }
+			\hline                                                                                                 \\[-2ex]
+			Ver. & Data       & Redattore          & Verificatore      & Descrizione                                    \\
+			\\[-2ex] \hline \\[-1.5ex]
+			0.1  & 2024-05-08 & Valerio Occhinegro &                   & Prima Stesura \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+\tableofcontents
+\listoftables
+\listoffigures
+\newpage
+
+\include{introduzione}
+
+\include{Requisiti}
+
+\include{architettura}
+
+\include{svantaggi}
+
+\include{benchmark}
+
+\include{conclusioni}
+
+\end{document}
+
+
+

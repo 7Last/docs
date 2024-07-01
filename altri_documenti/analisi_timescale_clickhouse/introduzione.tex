@@ -1,0 +1,29 @@
+\section{Introduzione}
+Questo documento si pone l'obiettivo di riassumere le principali differenze tra  ClickHouse e TimescaleDB.
+In particolare, verranno analizzate le caratteristiche, i vantaggi e gli svantaggi delle due piattaforme.\\
+
+\subsection{ClickHouse}
+ClickHouse è un database colonnare (i dati contenuti nella stessa colonna sono archiviati insieme) ideato per workflow di tipo OLAP (On-Line Analytical Processing: insieme di tecniche software per l'analisi interattiva e veloce di grandi quantità di dati)
+
+\subsection{TimescaleDB}
+TimescaleDB è un database relazionale specializzato nelle time-series, costruito su PostgreSQL aggiungendo nuove features che ne migliorano le performance, riducono i costi e forniscono un’esperienza migliore per gli sviluppatori che si occupano di time-series.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}m{0.5\textwidth}|>{\raggedright\arraybackslash}m{0.5\textwidth}|}
+	\hline
+	\textbf{OLTP} & \textbf{OLAP}\\
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{OLTP} & \textbf{OLAP}\\
+	\endhead
+	 Dataset di piccole e ampie dimensioni  & Dataset ampi con focus su report e analisi\\
+	\hline
+	 Dati transazionali  & Dati aggregati o modificati in precedenza per migliorare analisi e report \\
+	\hline
+	 Molti utenti che query e aggiornamenti dei dati & Pochi utenti che eseguono analisi dei dati e scarsi update    \\
+	\hline
+     SQL come linguaggio primario per l'interazione & Spesso utilizzano un linguaggio differente da SQL    \\
+	\hline
+	\caption{Tabella di confronto tra OLTP e OLAP}
+	\label{table:1}
+\end{longtable}
