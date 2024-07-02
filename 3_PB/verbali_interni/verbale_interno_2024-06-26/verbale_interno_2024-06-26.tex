@@ -1,0 +1,126 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
+\begin{document}
+
+\newcommand{\mySkip}[1][]{#1}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                                      \\[-2ex]
+			Ver. & Data       & Redattore        & Verificatore       & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-07-01 & Leonardo Baldo   & Matteo Tiozzo      & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 16:30\\
+\textbf{Orario di fine}: 17:15\\
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     & 			   & Presente          \\
+			Davide Malgarise      & Amministratore & Presente          \\
+			Elena Ferro           &                & Assente           \\
+			Leonardo Baldo        & Redattore      & Presente          \\
+			Matteo Tiozzo         & Verificatore   & Presente          \\
+			Raul Seganfreddo      & 			   & Presente          \\
+			Valerio Occhinegro    &                & Assente           \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\subsection*{Ordine del giorno:}
+\begin{itemize}
+	\item retrospettiva sullo sprint appena concluso;
+	\item suddivisione dei ruoli per il decimo sprint;
+	\item attività da svolgere per il decimo sprint;
+	\item decisioni prese e conclusioni.
+\end{itemize}
+
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Retrospettiva sullo sprint appena concluso}
+L'incontro si apre con una discussione volta alla valutazione e alla revisione del periodo di lavoro appena concluso, così da riflettere sugli impedimenti che hanno causato un inadempimento
+parziale degli obiettivi prefissati. In particolare si è sottovalutato il rischio derivato dagli impegni della maggior parte del gruppo riguardo agli esami universitari, il che ha portato
+ad un rallenamento delle attività. Alla luce di questo il gruppo si impegna a pianificare con maggiore attenzione le attività per il prossimo sprint, cercando di dosare il carico di lavoro
+in modo da evitare quanto successo in precedenza ma, allo stesso tempo, senza abbassare il ritmo di lavoro. \\
+
+\subsection{Suddivisione dei ruoli per il decimo sprint}
+Il gruppo stabilisce la suddivisione dei ruoli per il prossimo periodo di lavoro:
+\begin{itemize}
+	\item \textbf{Responsabile}: Antonio Benetazzo;
+	\item \textbf{Amministratore}: Davide Malgarise;
+	\item \textbf{Progettista}: Leonardo Baldo;
+	\item \textbf{Programmatore}: Raul Seganfreddo, Elena Ferro;
+	\item \textbf{Verificatore}: Matteo Tiozzo, Valerio Occhinegro.
+\end{itemize}
+
+\newpage
+
+\subsection{Attività da svolgere per il decimo sprint}
+Vengono definite le seguenti attività da svolgere per il prossimo periodo:
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ |l||l|l|l| }
+		\hline
+		\textbf{Codice}          & \textbf{Nome attività}                           & \textbf{Assegnatario} & \textbf{Scadenza} \\
+		\hline
+		\mySkip[86bz8e29k]       & NdP - Aggiunta dei test previsti ed implementati & Antonio Benetazzo     & 2024-07-03        \\
+		\mySkip[86bz8e6dg]       & PdP - Saldo 10 sprint               				& Davide Malgarise      & 2024-07-03        \\
+		\mySkip[86bz8e4c2]       & PdQ - Aggiornare grafici 10 sprint               & Matteo Tiozzo      	& 2024-07-03        \\
+		\mySkip[86bz8e54v]       & PdQ - Tracciamento test casi d'uso               & Valerio Occhinegro    & 2024-07-03        \\
+		\mySkip[86bz8e8hb]       & Glo - Eventuale aggiunta nuovi termini           & Raul Seganfreddo      & 2024-07-03        \\
+		\mySkip[86bz8e2n7]       & MU - Completamento stesura documento     		& Elena Ferro           & 2024-07-03        \\
+		\mySkip[86bz8e3y2]       & ST - Completamento stesura documento            	& Leonardo Baldo        & 2024-07-03        \\
+		\mySkip[86bz9gkmf]       & Verbale esterno 26 giugno                        & Davide Malgarise      & 2024-07-03        \\
+		\mySkip[86bz9gkth]       & Verbale interno 26 giugno                        & Leonardo Baldo        & 2024-07-03        \\
+		\hline
+	\end{tabular}
+	\caption{Attività da svolgere per il decimo sprint}
+\end{table}
+
+\subsection{Decisioni prese e conclusioni}
+Infine il gruppo decide di pianificare la prossima riunione per il giorno 3 luglio indicativamente per le ore 16:30, successivamente al SAL con il proponente.
+
+\end{document}
