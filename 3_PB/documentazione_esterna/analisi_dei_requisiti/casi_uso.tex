@@ -1633,43 +1633,43 @@ I seguenti attori sono coinvolti nei casi d'uso:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{UC-10: Visualizzazione sezione isole ecologiche}
+\subsubsubsection{UC-4.4: Visualizzazione sezione isole ecologiche}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
-	      alle isole ecologiche presenti nella città.
+	      ai sensori urbani presenti nella città.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa alle isole ecologiche.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una dashboard relativa alle isole ecologiche presenti nella città, la quale
-	      dovrà contenere informazioni utili per monitorare il loro stato di riempimento. In questo modo potrò intervenire
+	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori urbani presenti nella città, la quale
+	      dovrà contenere informazioni utili per monitorare lo stato di riempimento delle isole ecologiche. In questo modo potrò intervenire
 	      per poter svuotare le isole ecologiche piene.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-10.png}
-	\captionof{figure}{UC-10: Visualizzazione dashboard isole ecologiche}
+	\captionof{figure}{UC-4.4: Visualizzazione sezione isole ecologiche}
 \end{center}
 
 
-\subsubsubsection{UC-10.1: Visualizzazione \textit{panel} con riempimento isole ecologiche in tempo reale}
+\subsubsubsubsection{UC-4.4.1: Visualizzazione \textit{panel} con riempimento isole ecologiche in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa alle isole ecologiche.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il riempimento in percentuale delle isole ecologiche in tempo reale.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa alle isole ecologiche.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare il riempimento in percentuale delle isole ecologiche in tempo reale in modo da poterne monitorare l'andamento
@@ -1677,24 +1677,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-10.1.png}
-	\captionof{figure}{UC-10.1: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} riempimento isole ecologiche in tempo reale}
+	\captionof{figure}{UC-4.4.1: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} riempimento isole ecologiche in tempo reale}
 \end{center}
 
 
-\subsubsubsection{UC-10.2: Visualizzazione mappa interattiva isole ecologiche}
+\subsubsubsubsection{UC-4.4.2: Visualizzazione mappa interattiva isole ecologiche}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} contenenti l'identificativo e le coordinate geografiche dei sensori delle isole ecologiche.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori delle isole ecologiche piene.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei sensori delle isole ecologiche
@@ -1702,17 +1702,17 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-10.2.png}
-	\captionof{figure}{UC-10.2: Visualizzazione mappa interattiva sensori isole ecologiche}
+	\captionof{figure}{UC-4.4.2: Visualizzazione mappa interattiva sensori isole ecologiche}
 \end{center}
 
 
-\subsubsubsection{UC-10.3: Visualizzazione grafico time series isole ecologiche}
+\subsubsubsubsection{UC-4.4.3: Visualizzazione grafico time series isole ecologiche}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un grafico time series contenente le misurazioni storiche di riempimento e svuotamento
 	      di isole ecologiche.
@@ -1720,7 +1720,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di isole ecologiche.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche
@@ -1728,17 +1728,17 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-10.3.png}
-	\captionof{figure}{UC-10.3: Visualizzazione grafico time series isole ecologiche}
+	\captionof{figure}{UC-4.4.3: Visualizzazione grafico time series isole ecologiche}
 \end{center}
 
 
-\subsubsubsection{UC-10.4: Visualizzazione panel ore di saturazione isole ecologiche}
+\subsubsubsubsection{UC-4.4.4: Visualizzazione panel ore di saturazione isole ecologiche}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{panel\textsubscript{G}} contenente il conteggio delle ore di saturazione delle isole ecologiche,
 	      ovvero il numero di ore in cui le isole ecologiche sono rimaste piene al 100\% prima di essere svuotate.
@@ -1746,7 +1746,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di isole ecologiche.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare il conteggio delle ore di saturazione delle isole ecologiche in modo da poter monitorare
@@ -1754,17 +1754,17 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-10.4.png}
-	\captionof{figure}{UC-10.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{panel\textsubscript{G}} ore di saturazione isole ecologiche}
+	\captionof{figure}{UC-4.4.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{panel\textsubscript{G}} ore di saturazione isole ecologiche}
 \end{center}
 
 
-\subsubsubsection{UC-10.5: Visualizzazione \textit{panel} con percentuale media di riempimento al momento dello svuotamento}
+\subsubsubsubsection{UC-4.4.5: Visualizzazione \textit{panel} con percentuale media di riempimento al momento dello svuotamento}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente la percentuale media di riempimento delle isole ecologiche al momento dello svuotamento,
 	      che rappresenta l'efficienza del servizio di svuotamento.
@@ -1772,7 +1772,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di isole ecologiche.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare la percentuale media di riempimento delle isole ecologiche al momento dello svuotamento in modo da poter monitorare
@@ -1780,16 +1780,16 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-10.5.png}
-	\captionof{figure}{UC-10.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{panel\textsubscript{G}} percentuale media di riempimento al momento dello svuotamento}
+	\captionof{figure}{UC-4.4.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{panel\textsubscript{G}} percentuale media di riempimento al momento dello svuotamento}
 \end{center}
 
-\subsubsubsection{UC-10.6: Visualizzazione \textit{panel} con percentuale tempo trascorso per livello di riempimento}
+\subsubsubsubsection{UC-4.4.6: Visualizzazione \textit{panel} con percentuale tempo trascorso per livello di riempimento}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di isole ecologiche
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente la percentuale di tempo trascorso in ciascuno dei seguenti livelli:
 	      \begin{itemize}
@@ -1801,7 +1801,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di isole ecologiche.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare la percentuale di tempo trascorso in ciascuno dei livelli di riempimento delle isole ecologiche,
@@ -1809,7 +1809,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-10.6.png}
-	\captionof{figure}{UC-10.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} percentuale tempo trascorso per livello di riempimento}
+	\captionof{figure}{UC-4.4.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} percentuale tempo trascorso per livello di riempimento}
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FINE URBANI%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
