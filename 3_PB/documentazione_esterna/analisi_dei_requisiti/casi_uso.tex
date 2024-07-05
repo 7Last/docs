@@ -333,7 +333,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-2.13.png}
-	\captionof{figure}{UC-2.6: Visualizzazione grafico time series dati grezzi complessivi temperatura}
+	\captionof{figure}{UC-2.13: Visualizzazione grafico time series dati grezzi complessivi temperatura}
 \end{center}
 
 
@@ -490,36 +490,57 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\captionof{figure}{UC-2.20: Visualizzazione grafico time series dati grezzi complessivi colonnine di ricarica}
 \end{center}
 
-\subsubsection{UC-3: Visualizzazione dashboard temperatura}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INIZIO AMBIENTALI%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC-3: Visualizzazione dashboard dati ambientali}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
-	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard contenente le sezioni relative ai sensori ambientali presenti nella città.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item l'autorità locale accede alla piattaforma;
+		      \item il sistema carica i dati relativi ai sensori interrogando il database.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: come autorità locale desidero poter visualizzare una \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati ambientali contenente le sezioni relative ai sensori ambientali presenti nella città, la quale mi consente di monitorare la situazione ambientale.
+\end{itemize}
+\begin{center}
+%	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/.png}
+%	\captionof{figure}{UC-3: Visualizzazione dashboard dei dati ambientali}
+\end{center}
+
+
+\subsubsubsection{UC-3.1: Visualizzazione sezione temperatura}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza la sezione relativa
 	      ai sensori di temperatura presenti nella città.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di temperatura.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori di temperatura presenti nella città, la quale
+	      come autorità locale desidero poter visualizzare una sezione relativa ai sensori di temperatura presenti nella città, la quale
 	      dovrà contenere informazioni utili per monitorare l'andamento della temperatura sulla base di dati storici e in tempo reale, mostrando
 	      anche statistiche come la temperatura media, massima e minima nel periodo di tempo selezionato.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-3.png}
-	\captionof{figure}{UC-3: Visualizzazione dashboard temperatura}
+	\captionof{figure}{UC-3.1: Visualizzazione sezione temperatura}
 \end{center}
 
 
-\subsubsubsection{UC-3.1: Visualizzazione grafico time series temperatura}
+\subsubsubsubsection{UC-3.1.1: Visualizzazione grafico time series temperatura}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di temperatura.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un grafico time series contenente le misurazioni storiche
 	      della temperatura aggregate per 5 minuti.
@@ -527,66 +548,66 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di temperatura.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche della temperatura
 	      per poter monitorarne l'andamento nel tempo e facilmente individuare eventuali anomalie.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.70\textwidth]{analisi_dei_requisiti/UC-3.1.png}
-	\captionof{figure}{UC-3.1: Visualizzazione grafico time series per temperatura}
+	\captionof{figure}{UC-3.1.1: Visualizzazione grafico time series per temperatura}
 \end{center}
 
 
-\subsubsubsection{UC-3.2: Visualizzazione mappa sensori temperatura}
+\subsubsubsubsection{UC-3.1.2: Visualizzazione mappa sensori temperatura}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di temperatura.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} contenenti l'identificativo e le coordinate geografiche dei sensori di temperatura.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di temperatura.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei sensori di temperatura e contenenti il loro identificativo. Essa mi consentirà di visualizzare la distribuzione dei sensori di temperatura nel territorio ed eventualmente intervenire nel caso in cui siano presenti zone non coperte.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.62\textwidth]{analisi_dei_requisiti/UC-3.2.png}
-	\captionof{figure}{UC-3.2: Visualizzazione mappa interattiva sensori temperatura}
+	\captionof{figure}{UC-3.1.2: Visualizzazione mappa interattiva sensori temperatura}
 \end{center}
 
 
-\subsubsubsection{UC-3.3: Visualizzazione \textit{panel} temperatura media nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.1.3: Visualizzazione \textit{panel} temperatura media nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di temperatura.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente la temperatura media nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di temperatura.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: come autorità locale desidero poter visualizzare la temperatura media nel periodo di tempo selezionato
 	      in modo da poterne monitorare l'andamento.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{analisi_dei_requisiti/UC-3.3.png}
-	\captionof{figure}{UC-3.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} temperatura media nel periodo di tempo selezionato}
+	\captionof{figure}{UC-3.1.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} temperatura media nel periodo di tempo selezionato}
 \end{center}
 
 
-\subsubsubsection{UC-3.4: Visualizzazione \textit{panel} temperatura in tempo reale}
+\subsubsubsubsection{UC-3.1.4: Visualizzazione \textit{panel} temperatura in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
@@ -607,24 +628,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{analisi_dei_requisiti/UC-3.4.png}
-	\captionof{figure}{UC-3.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} temperatura in tempo reale}
+	\captionof{figure}{UC-3.1.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} temperatura in tempo reale}
 \end{center}
 
 
-\subsubsubsection{UC-3.5: Visualizzazione \textit{panel} temperatura massima nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.1.5: Visualizzazione \textit{panel} temperatura massima nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di temperatura.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente la temperatura massima nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di temperatura.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare la temperatura massima nel periodo di tempo selezionato
@@ -632,24 +653,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{analisi_dei_requisiti/UC-3.5.png}
-	\captionof{figure}{UC-3.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} temperatura massima}
+	\captionof{figure}{UC-3.1.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} temperatura massima}
 \end{center}
 
 
-\subsubsubsection{UC-3.6: Visualizzazione \textit{panel} temperatura minima nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.1.6: Visualizzazione \textit{panel} temperatura minima nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di temperatura.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente la temperatura minima nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di temperatura.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare la temperatura minima nel periodo di tempo selezionato
@@ -657,20 +678,21 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{analisi_dei_requisiti/UC-3.6.png}
-	\captionof{figure}{UC-3.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} temperatura minima}
+	\captionof{figure}{UC-3.1.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} temperatura minima}
 \end{center}
 
-\subsubsection{UC-4: Visualizzazione dashboard umidità}
+
+\subsubsubsection{UC-3.2: Visualizzazione sezione umidità}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
-	      ai sensori di umidità presenti nella città.
+	      ai sensori ambientali presenti nella città.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di umidità.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori di umidità presenti nella città, la quale
@@ -679,24 +701,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-4.png}
-	\captionof{figure}{UC-4: Visualizzazione dashboard umidità}
+	\captionof{figure}{UC-3.2: Visualizzazione sezione umidità}
 \end{center}
 
 
-\subsubsubsection{UC-4.1: Visualizzazione grafico time series umidità}
+\subsubsubsubsection{UC-3.2.1: Visualizzazione grafico time series umidità}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di umidità.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un grafico time series contenente le misurazioni storiche di umidità aggregate per 5 minuti.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di umidità.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche
@@ -704,24 +726,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{analisi_dei_requisiti/UC-4.1.png}
-	\captionof{figure}{UC-4.1: Visualizzazione grafico time series umidità}
+	\captionof{figure}{UC-3.2.1: Visualizzazione grafico time series umidità}
 \end{center}
 
 
-\subsubsubsection{UC-4.2: Visualizzazione mappa sensori umidità}
+\subsubsubsubsection{UC-3.2.2: Visualizzazione mappa sensori umidità}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di umidità.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} contenenti l'identificativo e le coordinate geografiche dei sensori di umidità.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di umidità.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei sensori di umidità
@@ -729,48 +751,48 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-4.2.png}
-	\captionof{figure}{UC-4.2: Visualizzazione mappa interattiva sensori umidità}
+	\captionof{figure}{UC-3.2.2: Visualizzazione mappa interattiva sensori umidità}
 \end{center}
 
 
-\subsubsubsection{UC-4.3: Visualizzazione \textit{panel} umidità media nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.2.3: Visualizzazione \textit{panel} umidità media nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di umidità.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente l'umidità media nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di umidità.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: come autorità locale desidero poter visualizzare l'umidità media nel periodo di tempo selezionato
 	      in modo da poterne monitorare l'andamento.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{analisi_dei_requisiti/UC-4.3.png}
-	\captionof{figure}{UC-4.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} umidità media nel periodo di tempo selezionato}
+	\captionof{figure}{UC-3.2.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} umidità media nel periodo di tempo selezionato}
 \end{center}
 
 
-\subsubsubsection{UC-4.4: Visualizzazione \textit{panel} umidità in tempo reale}
+\subsubsubsubsection{UC-3.2.4: Visualizzazione \textit{panel} umidità in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di umidità.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente l'umidità in tempo reale.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di umidità.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare l'umidità in tempo reale in modo da poterne monitorare l'andamento
@@ -778,24 +800,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.65\textwidth]{analisi_dei_requisiti/UC-4.4.png}
-	\captionof{figure}{UC-4.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} umidità in tempo reale}
+	\captionof{figure}{UC-3.2.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} umidità in tempo reale}
 \end{center}
 
 
-\subsubsubsection{UC-4.5: Visualizzazione \textit{panel} umidità massima nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.2.5: Visualizzazione \textit{panel} umidità massima nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di umidità.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente l'umidità massima nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di umidità.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare l'umidità massima nel periodo di tempo selezionato
@@ -803,24 +825,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-4.5.png}
-	\captionof{figure}{UC-4.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} umidità massima}
+	\captionof{figure}{UC-3.2.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} umidità massima}
 \end{center}
 
 
-\subsubsubsection{UC-4.6: Visualizzazione \textit{panel} umidità minima nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.2.6: Visualizzazione \textit{panel} umidità minima nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di umidità.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente l'umidità minima nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di umidità.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare l'umidità minima nel periodo di tempo selezionato
@@ -828,39 +850,39 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-4.6.png}
-	\captionof{figure}{UC-4.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} umidità minima}
+	\captionof{figure}{UC-3.2.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} umidità minima}
 \end{center}
 
-\subsubsection{UC-5: Visualizzazione dashboard qualità dell'aria}
+\subsubsubsection{UC-3.3: Visualizzazione sezione qualità dell'aria}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
-	      ai sensori di qualità dell'aria presenti nella città.
+	      ai sensori ambientali presenti nella città.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di qualità dell'aria.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori di qualità dell'aria presenti nella città, la quale
+	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori ambientali presenti nella città, la quale
 	      dovrà contenere informazioni utili per monitorare l'andamento della qualità dell'aria sulla base di dati storici e in tempo reale, mostrando
 	      anche statistiche quali il giorno con la qualità dell'aria peggiore e il giorno con la qualità dell'aria migliore nel periodo di tempo selezionato.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-5.png}
-	\captionof{figure}{UC-5: Visualizzazione dashboard qualità dell'aria}
+	\captionof{figure}{UC-3.3: Visualizzazione dashboard qualità dell'aria}
 \end{center}
 
 
-\subsubsubsection{UC-5.1: Visualizzazione grafico time series qualità dell'aria}
+\subsubsubsubsection{UC-3.3.1: Visualizzazione grafico time series qualità dell'aria}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di qualità dell'aria.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un grafico time series contenente le misurazioni storiche
 	      di qualità dell'aria aggregate per 5 minuti.
@@ -868,7 +890,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di qualità dell'aria.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche
@@ -876,17 +898,17 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-5.1.png}
-	\captionof{figure}{UC-5.1: Visualizzazione grafico time series qualità dell'aria}
+	\captionof{figure}{UC-3.3.1: Visualizzazione grafico time series qualità dell'aria}
 \end{center}
 
 
-\subsubsubsection{UC-5.2: Visualizzazione mappa interattiva sensori qualità dell'aria}
+\subsubsubsubsection{UC-3.3.2: Visualizzazione mappa interattiva sensori qualità dell'aria}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di qualità dell'aria.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} contenenti l'identificativo e le coordinate geografiche dei sensori della qualità dell'aria.
 	\item \textbf{Scenario principale}:
@@ -901,48 +923,48 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-5.2.png}
-	\captionof{figure}{UC-5.2: Visualizzazione mappa interattiva sensori qualità dell'aria}
+	\captionof{figure}{UC-3.3.2: Visualizzazione mappa interattiva sensori qualità dell'aria}
 \end{center}
 
 
-\subsubsubsection{UC-5.3: Visualizzazione \textit{panel} qualità dell'aria media nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.3.3: Visualizzazione \textit{panel} qualità dell'aria media nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di qualità dell'aria.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente qualità dell'aria media nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di qualità dell'aria.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: come autorità locale desidero poter visualizzare della qualità dell'aria media nel periodo di tempo selezionato
 	      in modo da poterne monitorare l'andamento.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-5.3.png}
-	\captionof{figure}{UC-5.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} qualità dell'aria media nel periodo di tempo selezionato}
+	\captionof{figure}{UC-3.3.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} qualità dell'aria media nel periodo di tempo selezionato}
 \end{center}
 
 
-\subsubsubsection{UC-5.4: Visualizzazione \textit{panel} qualità dell'aria in tempo reale}
+\subsubsubsubsection{UC-3.3.4: Visualizzazione \textit{panel} qualità dell'aria in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di qualità dell'aria.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente qualità dell'aria in tempo reale.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di qualità dell'aria.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare della qualità dell'aria in tempo reale in modo da poterne monitorare l'andamento
@@ -950,23 +972,23 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-5.4.png}
-	\captionof{figure}{UC-5.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} qualità dell'aria in tempo reale}
+	\captionof{figure}{UC-3.3.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} qualità dell'aria in tempo reale}
 \end{center}
 
-\subsubsubsection{UC-5.5: Visualizzazione \textit{panel} giorno con qualità dell'aria peggiore nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.3.5: Visualizzazione \textit{panel} giorno con qualità dell'aria peggiore nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di qualità dell'aria.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il giorno con la qualità dell'aria peggiore nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di qualità dell'aria.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare il giorno con la qualità dell'aria peggiore nel periodo di tempo selezionato
@@ -974,24 +996,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-5.5.png}
-	\captionof{figure}{UC-5.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} giorno con qualità dell'aria peggiore nel periodo di tempo selezionato}
+	\captionof{figure}{UC-3.3.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} giorno con qualità dell'aria peggiore nel periodo di tempo selezionato}
 \end{center}
 
 
-\subsubsubsection{UC-5.6: Visualizzazione \textit{panel} giorno con qualità dell'aria migliore nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.3.6: Visualizzazione \textit{panel} giorno con qualità dell'aria migliore nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di qualità dell'aria.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il giorno con la qualità dell'aria migliore nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di qualità dell'aria.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare il giorno con la qualità dell'aria migliore nel periodo di tempo selezionato
@@ -1002,36 +1024,36 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\captionof{figure}{UC-5.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} giorno con qualità dell'aria peggiore nel periodo di tempo selezionato}
 \end{center}
 
-\subsubsection{UC-6: Visualizzazione dashboard precipitazioni}
+\subsubsubsection{UC-3.4: Visualizzazione sezione precipitazioni}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
-	      ai sensori di precipitazioni presenti nella città.
+	      ai sensori ambientali presenti nella città.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori di precipitazioni presenti nella città, la quale
+	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori ambientali presenti nella città, la quale
 	      dovrà contenere informazioni utili per monitorare l'andamento delle precipitazioni sulla base di dati storici e in tempo reale, mostrando
 	      anche statistiche quali quantità di precipitazioni media, massima e minima nel periodo di tempo selezionato.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-6.png}
-	\captionof{figure}{UC-6: Visualizzazione dashboard precipitazioni}
+	\captionof{figure}{UC-3.4: Visualizzazione sezione precipitazioni}
 \end{center}
 
 
-\subsubsubsection{UC-6.1: Visualizzazione grafico time series quantità precipitazioni nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.4.1: Visualizzazione grafico time series quantità precipitazioni nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di precipitazioni
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un grafico time series contenente le misurazioni storiche
 	      di precipitazioni aggregate per 5 minuti.
@@ -1039,7 +1061,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche
@@ -1047,24 +1069,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-6.1.png}
-	\captionof{figure}{UC-6.1: Visualizzazione grafico time series precipitazioni}
+	\captionof{figure}{UC-3.4.1: Visualizzazione grafico time series precipitazioni}
 \end{center}
 
 
-\subsubsubsection{UC-6.2: Visualizzazione mappa sensori precipitazioni}
+\subsubsubsubsection{UC-3.4.2: Visualizzazione mappa sensori precipitazioni}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di precipitazioni.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} contenenti l'identificativo e le coordinate geografiche dei sensori di precipitazioni.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei sensori di precipitazioni
@@ -1073,48 +1095,48 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-6.2.png}
-	\captionof{figure}{UC-6.2: Visualizzazione mappa interattiva sensori precipitazioni}
+	\captionof{figure}{UC-3.4.2: Visualizzazione mappa interattiva sensori precipitazioni}
 \end{center}
 
 
-\subsubsubsection{UC-6.3: Visualizzazione \textit{panel} quantità di precipitazioni media nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.4.3: Visualizzazione \textit{panel} quantità di precipitazioni media nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di precipitazioni.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente di quantità di precipitazioni media nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: come autorità locale desidero poter visualizzare di quantità di precipitazioni media nel periodo di tempo selezionato
 	      in modo da poterne monitorare l'andamento.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-6.3.png}
-	\captionof{figure}{UC-6.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} quantità di precipitazioni media nel periodo di tempo selezionato}
+	\captionof{figure}{UC-3.4.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} quantità di precipitazioni media nel periodo di tempo selezionato}
 \end{center}
 
 
-\subsubsubsection{UC-6.4: Visualizzazione \textit{panel} quantità di precipitazioni in tempo reale}
+\subsubsubsubsection{UC-3.4.4: Visualizzazione \textit{panel} quantità di precipitazioni in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di precipitazioni.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente di quantità di precipitazioni in tempo reale.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare di quantità di precipitazioni in tempo reale in modo da poterne monitorare l'andamento
@@ -1122,24 +1144,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-6.3.png}
-	\captionof{figure}{UC-6.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} quantità di precipitazioni in tempo reale}
+	\captionof{figure}{UC-3.4.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} quantità di precipitazioni in tempo reale}
 \end{center}
 
 
-\subsubsubsection{UC-6.5: Visualizzazione \textit{panel} giorno con precipitazioni maggiori nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.4.5: Visualizzazione \textit{panel} giorno con precipitazioni maggiori nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di precipitazioni.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il giorno con la quantità di precipitazioni maggiori nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare il giorno con la quantità di precipitazioni maggiori nel periodo di tempo selezionato
@@ -1147,24 +1169,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-6.5.png}
-	\captionof{figure}{UC-6.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} giorno con precipitazioni maggiori nel periodo di tempo selezionato}
+	\captionof{figure}{UC-3.4.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} giorno con precipitazioni maggiori nel periodo di tempo selezionato}
 \end{center}
 
 
-\subsubsubsection{UC-6.6: Visualizzazione \textit{panel} giorno con precipitazioni minori nel periodo di tempo selezionato}
+\subsubsubsubsection{UC-3.4.6: Visualizzazione \textit{panel} giorno con precipitazioni minori nel periodo di tempo selezionato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di precipitazioni.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il giorno con la quantità di precipitazioni minori nel periodo di tempo selezionato.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di precipitazioni.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare il giorno con la quantità di precipitazioni minori nel periodo di tempo selezionato
@@ -1172,46 +1194,189 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-6.6.png}
-	\captionof{figure}{UC-6.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} giorno con precipitazioni minori nel periodo di tempo selezionato}
+	\captionof{figure}{UC-3.4.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} giorno con precipitazioni minori nel periodo di tempo selezionato}
 \end{center}
 
-\subsubsection{UC-7: Visualizzazione dashboard traffico}
+
+\subsubsubsection{UC-3.5: Visualizzazione sezione livello di acqua}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
-	      ai sensori di traffico presenti nella città.
+	      ai sensori ambientali presenti nella città.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di traffico.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori di traffico presenti nella città, la quale
-	      dovrà contenere informazioni utili per monitorare l'andamento del traffico sulla base di dati storici e in tempo reale, mostrando
-	      anche statistiche quali numero di veicoli in tempo reale, velocità media in tempo reale e calcolo dell'ora di punta (basato su numero veicoli e velocità media).
+	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori ambientali presenti nella città, la quale
+	      dovrà contenere informazioni utili per monitorare il livello di acqua sulla base di dati storici e in tempo reale, mostrando
+	      anche statistiche quali del livello di acqua medio nel periodo di tempo selezionato e il livello di acqua in tempo reale.
 \end{itemize}
 \begin{center}
-	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-7.png}
-	\captionof{figure}{UC-7: Visualizzazione dashboard traffico}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-11.png}
+	\captionof{figure}{UC-3.5: Visualizzazione sezione livello di acqua}
 \end{center}
 
 
-\subsubsubsection{UC-7.1: Visualizzazione grafico time series traffico}
+\subsubsubsubsection{UC-3.5.1: Visualizzazione grafico time series livello di acqua}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di traffico.
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza un grafico time series contenente le misurazioni storiche
+	      del livello di acqua aggregate per 5 minuti.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item l'autorità locale accede alla piattaforma;
+		      \item il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche
+	      del livello di acqua per poter monitorarne l'andamento nel tempo e facilmente individuare eventuali anomalie.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-11.1.png}
+	\captionof{figure}{UC-3.5.1, Visualizzazione grafico time series livello di acqua}
+\end{center}
+
+
+\subsubsubsubsection{UC-3.5.2: Visualizzazione mappa sensori livello di acqua}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} contenenti l'identificativo e le coordinate geografiche dei sensori del livello di acqua.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item l'autorità locale accede alla piattaforma;
+		      \item il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei sensori del livello di acqua
+	      e contenenti il loro identificativo. Essa mi consentirà di visualizzare la distribuzione dei sensori del livello di acqua nel territorio ed eventualmente intervenire nel caso in cui siano presenti zone non coperte.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-11.2.png}
+	\captionof{figure}{UC-3.5.2: Visualizzazione mappa interattiva sensori livello di acqua}
+\end{center}
+
+\subsubsubsubsection{UC-3.5.3: Visualizzazione \textit{panel} livello di acqua medio nel periodo di tempo selezionato}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente del livello di acqua medio nel periodo di tempo selezionato.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item l'autorità locale accede alla piattaforma;
+		      \item il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      come autorità locale desidero poter visualizzare del livello di acqua medio nel periodo di tempo selezionato
+	      in modo da poterne monitorare l'andamento.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-11.3.png}
+	\captionof{figure}{UC-3.5.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} livello di acqua medio nel periodo di tempo selezionato}
+\end{center}
+
+
+\subsubsubsubsection{UC-3.5.4: Visualizzazione \textit{panel} livello di acqua in tempo reale}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item il sistema ha caricato la dashboard relativa ai sensori ambientali.
+	      \end{enumerate}
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il livello di acqua in tempo reale.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item l'autorità locale accede alla piattaforma;
+		      \item il sistema carica i dati relativi ai sensori interrogando il database;
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori ambientali.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      come autorità locale desidero poter visualizzare il livello di acqua in tempo reale in modo da poterne monitorare l'andamento
+	      e poterlo facilmente confrontare con i dati storici.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-11.4.png}
+	\captionof{figure}{UC-3.5.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} livello di acqua in tempo reale}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INIZIO URBANI%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC-4: Visualizzazione dashboard dati urbani}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard contenente le sezioni relative ai sensori urbani presenti nella città.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item l'autorità locale accede alla piattaforma;
+		      \item il sistema carica i dati relativi ai sensori interrogando il database.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}: come autorità locale desidero poter visualizzare una \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati ambientali contenente le sezioni relative ai sensori urbani presenti nella città, la quale mi consente di monitorare la situazione urbanistica.
+\end{itemize}
+\begin{center}
+%	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/.png}
+%	\captionof{figure}{UC-4: Visualizzazione dashboard dei dati urbani}
+\end{center}
+
+\subsubsubsection{UC-4.1: Visualizzazione sezione traffico}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
+	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
+	      ai sensori urbani presenti nella città.
+	\item \textbf{Scenario principale}:
+	      \begin{enumerate}
+		      \item l'autorità locale accede alla piattaforma;
+		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
+	      \end{enumerate}
+	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
+	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori urbani presenti nella città, la quale
+	      dovrà contenere informazioni utili per monitorare l'andamento del traffico sulla base di dati storici e in tempo reale, mostrando
+	      anche statistiche quali numero di veicoli in tempo reale, velocità media in tempo reale e calcolo dell'ora di punta (basato su numero veicoli e velocità media).
+\end{itemize}
+\begin{center}
+	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-7.png}
+	\captionof{figure}{UC-4.1: Visualizzazione dashboard traffico}
+\end{center}
+
+
+\subsubsubsubsection{UC-4.1.1: Visualizzazione grafico time series traffico}
+\begin{itemize}
+	\item \textbf{Attore principale}: autorità locale.
+	\item \textbf{Precondizioni}:
+	      \begin{enumerate}
+		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un grafico time series contenente le misurazioni storiche di traffico aggregate per 5 minuti.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di traffico.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche
@@ -1220,24 +1385,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-7.1.png}
-	\captionof{figure}{UC-7.1: Visualizzazione grafico time series traffico}
+	\captionof{figure}{UC-4.1.1: Visualizzazione grafico time series traffico}
 \end{center}
 
 
-\subsubsubsection{UC-7.2: Visualizzazione mappa sensori traffico}
+\subsubsubsubsection{UC-4.1.2: Visualizzazione mappa sensori traffico}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di traffico.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} contenenti l'identificativo e le coordinate geografiche dei sensori del traffico.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori del traffico.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei sensori del traffico
@@ -1245,24 +1410,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-7.2.png}
-	\captionof{figure}{UC-7.2: Visualizzazione mappa interattiva sensori traffico}
+	\captionof{figure}{UC-4.1.2: Visualizzazione mappa interattiva sensori traffico}
 \end{center}
 
 
-\subsubsubsection{UC-7.3: Visualizzazione \textit{panel} numero veicoli in tempo reale}
+\subsubsubsubsection{UC-4.1.3: Visualizzazione \textit{panel} numero veicoli in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di traffico.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il numero di veicoli in tempo reale.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di traffico.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare del numero di veicoli in tempo reale in modo da poterne monitorare l'andamento
@@ -1270,24 +1435,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-7.3.png}
-	\captionof{figure}{UC-7.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} numero di veicoli in tempo reale}
+	\captionof{figure}{UC-4.1.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} numero di veicoli in tempo reale}
 \end{center}
 
 
-\subsubsubsection{UC-7.4: Visualizzazione \textit{panel} velocità media in tempo reale}
+\subsubsubsubsection{UC-4.1.4: Visualizzazione \textit{panel} velocità media in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di traffico.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente la velocità media in tempo reale.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di traffico.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare della velocità media in tempo reale in modo da poterne monitorare l'andamento
@@ -1295,24 +1460,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-7.4.png}
-	\captionof{figure}{UC-7.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} velocità media in tempo reale}
+	\captionof{figure}{UC-4.1.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} velocità media in tempo reale}
 \end{center}
 
 
-\subsubsubsection{UC-7.5: Visualizzazione \textit{panel} calcolo ora di punta}
+\subsubsubsubsection{UC-4.1.5: Visualizzazione \textit{panel} calcolo ora di punta}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di traffico.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il calcolo dell'ora di punta basato sul numero di veicoli e sulla velocità media.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di traffico.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare il calcolo dell'ora di punta basato sul numero di veicoli e sulla velocità media in modo da poter monitorare
@@ -1320,45 +1485,45 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-7.5.png}
-	\captionof{figure}{UC-7.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} calcolo ora di punta}
+	\captionof{figure}{UC-4.1.5: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} calcolo ora di punta}
 \end{center}
 
-\subsubsection{UC-8: Visualizzazione dashboard colonnine di ricarica}
+\subsubsubsection{UC-4.2: Visualizzazione sezione colonnine di ricarica}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
-	      alle colonnine di ricarica presenti nella città.
+	      ai sensori urbani presenti nella città.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa alle colonnine di ricarica.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una dashboard relativa alle colonnine di ricarica presenti nella città, la quale
-	      dovrà contenere informazioni riguardo il loro stato di funzionamento e manutenzione.
+	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori urbani presenti nella città, la quale
+	      dovrà contenere informazioni riguardanti lo stato di funzionamento e manutenzione delle colonine di ricarica.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-8.png}
-	\captionof{figure}{UC-8: Visualizzazione dashboard colonnine di ricarica}
+	\captionof{figure}{UC-4.2: Visualizzazione sezione colonnine di ricarica}
 \end{center}
 
 
-\subsubsubsection{UC-8.1: Visualizzazione mappa colonnine di ricarica con stato}
+\subsubsubsubsection{UC-4.2.1: Visualizzazione mappa colonnine di ricarica con stato}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa alle colonnine di ricarica.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione delle colonnine di ricarica.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa delle colonnine di ricarica.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione delle colonnine di ricarica
@@ -1367,24 +1532,24 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-8.1.png}
-	\captionof{figure}{UC-8.1: Visualizzazione mappa interattiva sensori colonnine di ricarica}
+	\captionof{figure}{UC-4.2.1: Visualizzazione mappa interattiva sensori colonnine di ricarica}
 \end{center}
 
 
-\subsubsubsection{UC-8.2: Visualizzazione \textit{panel} numero colonnine di ricarica per stato in tempo reale}
+\subsubsubsubsection{UC-4.2.2: Visualizzazione \textit{panel} numero colonnine di ricarica per stato in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai dati atmosferici.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il conteggio delle colonnine di ricarica suddivise per stato di funzionamento.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa alle colonnine di ricarica.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il conteggio delle colonnine di ricarica suddivise per stato di funzionamento
@@ -1392,46 +1557,46 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-8.2.png}
-	\captionof{figure}{UC-8.2: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} numero colonnine di ricarica per stato}
+	\captionof{figure}{UC-4.2.2: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} numero colonnine di ricarica per stato}
 \end{center}
 
-\subsubsection{UC-9: Visualizzazione dashboard parcheggi}
+\subsubsubsection{UC-4.3: Visualizzazione sezione parcheggi}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
-	      ai parcheggi presenti nella città.
+	      ai sensori urbani presenti nella città.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai parcheggi.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una dashboard relativa ai parcheggi presenti nella città, la quale
+	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori urbani presenti nella città, la quale
 	      dovrà contenere informazioni utili per monitorare lo stato di occupazione dei parcheggi sulla base di dati storici e in tempo reale,
 	      in modo da poter individuare eventuali zone di criticità e intervenire per aumentare la disponibilità di parcheggi.
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.png}
-	\captionof{figure}{UC-9: Visualizzazione dashboard parcheggi}
+	\captionof{figure}{UC-4.3: Visualizzazione dashboard parcheggi}
 \end{center}
 
 
-\subsubsubsection{UC-9.1: Visualizzazione mappa interattiva parcheggi con rispettivo stato di occupazione}
+\subsubsubsubsection{UC-4.3.1: Visualizzazione mappa interattiva parcheggi con rispettivo stato di occupazione}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai parcheggi con rispettivo stato di occupazione.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei parcheggi con rispettivo stato di occupazione.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai parcheggi.
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei parcheggi con rispettivo stato di occupazione
@@ -1439,33 +1604,36 @@ I seguenti attori sono coinvolti nei casi d'uso:
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.1.png}
-	\captionof{figure}{UC-9.1: Visualizzazione mappa interattiva sensori parcheggi con rispettivo stato di occupazione}
+	\captionof{figure}{UC-4.3.1: Visualizzazione mappa interattiva sensori parcheggi con rispettivo stato di occupazione}
 \end{center}
 
-\subsubsubsection{UC-9.2: Visualizzazione \textit{panel} con conteggio parcheggi per stato in tempo reale}
+\subsubsubsubsection{UC-4.3.2: Visualizzazione \textit{panel} con conteggio parcheggi per stato in tempo reale}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}:
 	      \begin{enumerate}
 		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai parcheggi.
+		      \item il sistema ha caricato la dashboard relativa ai sensori urbani.
 	      \end{enumerate}
 	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente i parcheggi con rispettivo stato di occupazione in tempo reale.
 	\item \textbf{Scenario principale}:
 	      \begin{enumerate}
 		      \item l'autorità locale accede alla piattaforma;
 		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai parcheggi con rispettivo stato di occupazione.
-	      \end{enumerate}
+		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori urbani.
 	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
 	      come autorità locale desidero poter visualizzare i parcheggi con rispettivo stato di occupazione in tempo reale in modo da poterne monitorare l'andamento
 	      e poterla facilmente confrontare con i dati storici.
+		  \end{enumerate}
 \end{itemize}
 \begin{center}
 	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-9.2.png}
-	\captionof{figure}{UC-9.2: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} parcheggi con rispettivo stato di occupazione in tempo reale}
+	\captionof{figure}{UC-4.3.2: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} parcheggi con rispettivo stato di occupazione in tempo reale}
 \end{center}
-\subsubsection{UC-10: Visualizzazione dashboard isole ecologiche}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{UC-10: Visualizzazione sezione isole ecologiche}
 \begin{itemize}
 	\item \textbf{Attore principale}: autorità locale.
 	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
@@ -1644,127 +1812,7 @@ I seguenti attori sono coinvolti nei casi d'uso:
 	\captionof{figure}{UC-10.6: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} percentuale tempo trascorso per livello di riempimento}
 \end{center}
 
-\subsubsection{UC-11: Visualizzazione dashboard livello di acqua}
-\begin{itemize}
-	\item \textbf{Attore principale}: autorità locale.
-	\item \textbf{Precondizioni}: l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione.
-	\item \textbf{Postcondizioni}: l'autorità locale visualizza la dashboard relativa
-	      ai sensori del livello di acqua presenti nella città.
-	\item \textbf{Scenario principale}:
-	      \begin{enumerate}
-		      \item l'autorità locale accede alla piattaforma;
-		      \item il sistema carica i dati trasmessi dai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori del livello di acqua.
-	      \end{enumerate}
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una dashboard relativa ai sensori del livello di acqua presenti nella città, la quale
-	      dovrà contenere informazioni utili per monitorare il livello di acqua sulla base di dati storici e in tempo reale, mostrando
-	      anche statistiche quali del livello di acqua medio nel periodo di tempo selezionato e il livello di acqua in tempo reale.
-\end{itemize}
-\begin{center}
-	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-11.png}
-	\captionof{figure}{UC-11: Visualizzazione dashboard livello di acqua}
-\end{center}
-
-
-\subsubsubsection{UC-11.1: Visualizzazione grafico time series livello di acqua}
-\begin{itemize}
-	\item \textbf{Attore principale}: autorità locale.
-	\item \textbf{Precondizioni}:
-	      \begin{enumerate}
-		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori del livello di acqua.
-	      \end{enumerate}
-	\item \textbf{Postcondizioni}: l'autorità locale visualizza un grafico time series contenente le misurazioni storiche
-	      del livello di acqua aggregate per 5 minuti.
-	\item \textbf{Scenario principale}:
-	      \begin{enumerate}
-		      \item l'autorità locale accede alla piattaforma;
-		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori del livello di acqua.
-	      \end{enumerate}
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare un grafico time series contenente le misurazioni storiche
-	      del livello di acqua per poter monitorarne l'andamento nel tempo e facilmente individuare eventuali anomalie.
-\end{itemize}
-\begin{center}
-	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-11.1.png}
-	\captionof{figure}{UC-11.1, Visualizzazione grafico time series livello di acqua}
-\end{center}
-
-
-\subsubsubsection{UC-11.2: Visualizzazione mappa sensori livello di acqua}
-\begin{itemize}
-	\item \textbf{Attore principale}: autorità locale.
-	\item \textbf{Precondizioni}:
-	      \begin{enumerate}
-		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori del livello di acqua.
-	      \end{enumerate}
-	\item \textbf{Postcondizioni}: l'autorità locale visualizza una mappa interattiva popolata con dei \textit{marker} contenenti l'identificativo e le coordinate geografiche dei sensori del livello di acqua.
-	\item \textbf{Scenario principale}:
-	      \begin{enumerate}
-		      \item l'autorità locale accede alla piattaforma;
-		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori del livello di acqua.
-	      \end{enumerate}
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare una mappa interattiva popolata con dei \textit{marker} rappresentanti la posizione dei sensori del livello di acqua
-	      e contenenti il loro identificativo. Essa mi consentirà di visualizzare la distribuzione dei sensori del livello di acqua nel territorio ed eventualmente intervenire nel caso in cui siano presenti zone non coperte.
-\end{itemize}
-\begin{center}
-	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-11.2.png}
-	\captionof{figure}{UC-11.2: Visualizzazione mappa interattiva sensori livello di acqua}
-\end{center}
-
-\subsubsubsection{UC-11.3: Visualizzazione \textit{panel} livello di acqua medio nel periodo di tempo selezionato}
-\begin{itemize}
-	\item \textbf{Attore principale}: autorità locale.
-	\item \textbf{Precondizioni}:
-	      \begin{enumerate}
-		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di livello di acqua.
-	      \end{enumerate}
-	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente del livello di acqua medio nel periodo di tempo selezionato.
-	\item \textbf{Scenario principale}:
-	      \begin{enumerate}
-		      \item l'autorità locale accede alla piattaforma;
-		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di livello di acqua.
-	      \end{enumerate}
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare del livello di acqua medio nel periodo di tempo selezionato
-	      in modo da poterne monitorare l'andamento.
-\end{itemize}
-\begin{center}
-	\includegraphics[width=0.75\textwidth]{analisi_dei_requisiti/UC-11.3.png}
-	\captionof{figure}{UC-11.3: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} livello di acqua medio nel periodo di tempo selezionato}
-\end{center}
-
-
-\subsubsubsection{UC-11.4: Visualizzazione \textit{panel} livello di acqua in tempo reale}
-\begin{itemize}
-	\item \textbf{Attore principale}: autorità locale.
-	\item \textbf{Precondizioni}:
-	      \begin{enumerate}
-		      \item l'autorità locale ha effettuato l'accesso al sistema ed esso è in funzione;
-		      \item il sistema ha caricato la dashboard relativa ai sensori di livello di acqua.
-	      \end{enumerate}
-	\item \textbf{Postcondizioni}: l'autorità locale visualizza un \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} contenente il livello di acqua in tempo reale.
-	\item \textbf{Scenario principale}:
-	      \begin{enumerate}
-		      \item l'autorità locale accede alla piattaforma;
-		      \item il sistema carica i dati relativi ai sensori interrogando il database;
-		      \item l'autorità locale seleziona la visualizzazione della dashboard relativa ai sensori di livello di acqua.
-	      \end{enumerate}
-	\item \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#user-story}{\textbf{User story}\textsubscript{G}}:
-	      come autorità locale desidero poter visualizzare il livello di acqua in tempo reale in modo da poterne monitorare l'andamento
-	      e poterlo facilmente confrontare con i dati storici.
-\end{itemize}
-\begin{center}
-	\includegraphics[width=0.6\textwidth]{analisi_dei_requisiti/UC-11.4.png}
-	\captionof{figure}{UC-11.4: Visualizzazione \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} livello di acqua in tempo reale}
-\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FINE URBANI%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{UC-12: Visualizzazione messaggio assenza di dati}
 \begin{itemize}
