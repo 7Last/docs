@@ -55,7 +55,7 @@ Per soddisfare tali requisiti, è stata dunque scelta l'architettura \textit{kap
 \subsubsection{Componenti di sistema}
 All'interno del sistema da noi progettato sono dunque presenti le seguenti componenti:
 \begin{itemize}
-	\item \textbf{sorgenti di dati}: costituite dal simulatore di sensori, il quale genera periodicamente i dati grezzi che in un contesto reale sarebbero provenienti dai sensori IoT;
+	\item \textbf{sorgenti di dati}: costituite dal simulatore di sensori, il quale genera i dati grezzi che in un contesto reale sarebbero provenienti dai sensori IoT;
 	\item \textbf{\textit{streaming layer}}: gestisce il flusso di dati in tempo reale provenienti dai sensori. È composto da \textit{Redpanda} e lo \textit{Schema Registry};
 	\item \textbf{\textit{processing layer}}: elabora i dati in tempo reale per calcolare metriche e indici. È composto da \textit{Apache Flink};
 	\item \textbf{\textit{storage layer}}: memorizza i dati elaborati per l'analisi e la visualizzazione. È composto da \textit{ClickHouse};
@@ -76,8 +76,8 @@ Per illustrare il flusso di dati all'interno del sistema, è stato realizzato il
 \linebreak
 Il flusso seguito dai dati si può riassumere nei seguenti passaggi:
 \begin{enumerate}
-	\item \textbf{generazione dei dati}: ciascun simulatore emula il comportamento di un singolo sensore IoT, generando ad intervalli periodici o ad eventi (\textit{event-driven}) i dati grezzi relativi alla propria tipologia di dato;
-	\item \textbf{serializzazione e produzione dei dati}: i dati grezzi generati nel punto precedente vengono serializzati utilizzando il formato Avro e inviati nel \textit{topic} corrispondente al tipo di dato generato;
+	\item \textbf{generazione dei dati}: ciascun simulatore emula il comportamento di un singolo sensore IoT, generando ad intervalli periodici o ad eventi (\textit{event-driven}) i dati grezzi relativi alla propria tipologia di dato.
+	\item \textbf{serializzazione e produzione dei dati}: i dati grezzi generati nel punto precedente vengono serializzati utilizzando il formato Confluent Avro e inviati nel \textit{topic} corrispondente al tipo di dato generato;
 	\item \textbf{elaborazione dei dati}: i \textit{topic} contenenti i dati grezzi di temperatura, umidità, occupazione dei parcheggi e colonnine di ricarica vengono consumati da Apache Flink.
 	      Due \textit{job} distinti si occupano di calcolare la temperatura percepita e il grado di efficienza delle colonnine di ricarica. Una volta elaborati, i dati vengono inviati rispettivamente
 	      nei \textit{topic} \texttt{heat\_index} e \texttt{charging\_station\_efficiency};
@@ -85,22 +85,62 @@ Il flusso seguito dai dati si può riassumere nei seguenti passaggi:
 	\item \textbf{aggregazioni con \textit{materialized view}}: attraverso l'utilizzo di \textit{materialized view} in ClickHouse, vengono calcolate le statistiche relative ai dati memorizzati, come ad esempio la media oraria o giornaliera.
 	      Tali aggregazioni sono più semplici rispetto a quelle effettuate da Flink, in quanto non richiedono elaborazioni complesse sui dati;
 	\item \textbf{visualizzazione dei dati}: i dati memorizzati in ClickHouse vengono visualizzati tramite Grafana, che permette di creare \textit{dashboard} personalizzate per monitorare i dati in tempo reale;
-	\item \textbf{notifiche}: in caso di superamento di soglie critiche, Grafana invia notifiche tramite canali di messaggistica come Discord.
+	\item \textbf{notifiche}: Grafana esegue periodicamente delle \textit{query} per verificare se sono state superate delle soglie predeterminate. In caso affermativo, vengono inviate notifiche tramite il canale Discord dedicato, in modo tale da poter avvisare l'autorità locale.
 \end{enumerate}
 
 \subsection{Architettura dei simulatori}
+I simulatori vengono utilizzati per produrre dati grezzi che sostituiscono le rilevazioni effettuate dai sensori IoT in un contesto reale.
+Per tale motivo, questa parte del sistema non è ufficialmente parte del prodotto finale, ma è stata sviluppata per scopi di \textit{test}
+e dimostrativi nell'ambito del progetto didattico; ai fini di quest'ultimo, il gruppo ha deciso di dedicare alcune risorse per la progettazione.\\
+Nei paragrafi successivi verranno descritti i moduli che compongono i simulatori, le classi e metodi principali e i \textit{design pattern} utilizzati.\\
+Sono stati implementati simulatori per i seguenti tipi dato:
+\begin{itemize}
+	\item qualità dell'aria;
+	\item precipitazioni;
+	\item isole ecologiche;
+	\item livello dei fiumi;
+	\item traffico;
+	\item colonnine di ricarica;
+	\item parcheggi;
+	\item temperatura;
+	\item umidità.
+\end{itemize}
+
 %TODO per ogni modulo bisogna:
 % 1. Mettere foto diagramma delle classi UML
 % 2. Descrizione ad alto livello di quello che fa il modulo
 % 3. Descrivere i design pattern utilizzati
 % 4. Descrivere le classi del modulo
 %TODO diagramma progettazione sensori UML
-\subsubsection{Modulo producers}
-% TODO diagramma producers
-\subsubsection{Modulo serializers}
-% TODO diagramma serializers
 
-\subsubsection{Modulo simulators}
+\subsubsection{Modulo \texttt{models}}
+Questo modulo contiene le classi che rappresentano i dati grezzi generati dai sensori (\texttt{raw\_data}) e la configurazione dei sensori stessi (\texttt{config}) letta
+dal file di configurazione \texttt{sensors.toml} e dalle variabili d'ambiente.\\
+Ciascun tipo di dato grezzo è rappresentato da una classe che estende la classe astratta \texttt{RawData}, la quale contiene i campi comuni a tutti i tipi di dato,
+i metodi \textit{helper} \texttt{topic} e \texttt{value\_subject()} e il metodo \texttt{to\_json()} per la serializzazione in formato JSON.\\
+Lo classe \texttt{SensorConfig} riceve nel costruttore la configurazione sotto forma di dizionario, effettua \textit{parsing}, validazione,
+popola con valori di \textit{default} i campi mancanti (nel caso lo prevedano) ed inizializza i propri attributi, corrispondenti ai campi del file di configurazione.\\
+Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il metodo \texttt{bootstrap\_server()} che combina \textit{host} e \textit{port} per formare l'indirizzo del \textit{broker} Kafka.\\
+
+\begin{center}
+	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/models.png}
+	\captionof{figure}{Diagramma delle classi del modulo \texttt{models}}
+\end{center}
+
+
+\subsubsection{Modulo \texttt{producers}}
+\begin{center}
+	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/producers.png}
+	\captionof{figure}{Diagramma delle classi del modulo \texttt{producers}}
+\end{center}
+
+\subsubsection{Modulo \texttt{serializers}}
+\begin{center}
+	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/serializers.png}
+	\captionof{figure}{Diagramma delle classi del modulo \texttt{serializers}}
+\end{center}
+
+\subsubsection{Modulo \texttt{simulators}}
 % TDOD diagramma simulators
 
 \subsection{Redpanda}
@@ -109,7 +149,7 @@ I Kafka topic sono categorie o canali di messaggi all'interno di \textit{Redpand
 
 \subsubsubsection{Formato dei dati e Schema Registry}
 % Ciascun tipo di dato viene inviato su un topic specifico, in modo da poter essere elaborato in modo indipendente.
-% TODO: parlare di Avro, del formato di serializzazione delle chiavi e partitioning strategy e di topic name strategy <topic>-value
+% TODO: parlare di Confluent Avro, del formato di serializzazione delle chiavi e partitioning strategy e di topic name strategy <topic>-value
 
 \subsection{Flink - \textit{Processing layer}}
 \subsubsection{Introduzione}
@@ -139,16 +179,15 @@ anomalie o la personalizzazione di contenuti.
 % \end{enumerate}
 
 \subsubsection{\textit{Job}}
-\subsubsubsection{Heat Index}
+\subsubsubsection{\textit{Heat Index}}
 A partire dai dati rilevati dai sensori di temperatura e umidità; esso consente di stimare la percezione della temperatura da parte dell'essere umano.
 Nella configurazione del Simulatore, oltre a posizione e identificativo per ciascun sensore, è possibile specificare un \texttt{group\_name}, una stringa che identifica il gruppo o zona di appartenenza;
 si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \textit{job} calcola prima separatamente
-la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo Heat Index,
+la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo \textit{Heat Index},
 utilizzando la \underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3801457/}{formula empirica ideata da Blazejczyk}} [Ultima consultazione 2024-06-25].
-Nel risultato finale, oltre al valore dell'Heat Index, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
+Nel risultato finale, oltre al valore dello \textit{Heat Index}, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
 (utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
 distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio, rappresentante la zona di influenza del gruppo di sensori.
-\subsubsubsection{European Air Quality Index}
 \subsubsubsection{Efficienza delle colonnine elettriche}
 % TODO: aggiungere dettagli implementativi
 
@@ -167,12 +206,16 @@ Sono una potente funzionalità di \textit{ClickHouse} per migliorare le prestazi
 [Ultima consultazione 2024-06-05]
 
 \subsubsubsection*{Utilizzi}
-\begin{itemize}
-	\item \textbf{Aggregazioni pre-calcolate}: le materialized view possono essere utilizzate per memorizzare i risultati di aggregazioni complesse, come somme, medie, conteggi, ecc., in modo che non debbano essere calcolati ogni volta che viene eseguita una query;
-	\item \textbf{rapporti pre-calcolati}: possono essere utilizzate per memorizzare i risultati di query complesse o di rapporti, in modo che i risultati siano immediatamente disponibili senza dover eseguire la query ogni volta;
-	\item \textbf{join ottimizzati}: possono essere utilizzate per memorizzare i risultati di join complessi tra più tabelle, in modo che i risultati siano immediatamente disponibili senza dover eseguire il join ogni volta;
-	\item \textbf{filtraggio e selezione efficiente}: possono essere utilizzate per filtrare e selezionare dati in base a criteri specifici, migliorando le prestazioni delle query che richiedono l'accesso solo a una parte dei dati.
-\end{itemize}
+% TODO: utilizzi nel progetto
+% \begin{itemize}
+% 	\item \textbf{Aggregazioni pre-calcolate}: le materialized view possono essere utilizzate per memorizzare i risultati di aggregazioni complesse, come somme, medie, conteggi, ecc., in modo che non debbano essere calcolati ogni volta che viene eseguita una query;
+% 	\item \textbf{rapporti pre-calcolati}: possono essere utilizzate per memorizzare i risultati di query complesse o di rapporti, in modo che i risultati siano immediatamente disponibili senza dover eseguire la query ogni volta;
+% 	\item \textbf{join ottimizzati}: possono essere utilizzate per memorizzare i risultati di join complessi tra più tabelle, in modo che i risultati siano immediatamente disponibili senza dover eseguire il join ogni volta;
+% 	\item \textbf{filtraggio e selezione efficiente}: possono essere utilizzate per filtrare e selezionare dati in base a criteri specifici, migliorando le prestazioni delle query che richiedono l'accesso solo a una parte dei dati.
+% 	\item \textbf{Analisi dei dati storici}: i dati storici vengono memorizzati in tabelle MergeTree per consentire l'analisi e l'elaborazione dei dati storici;
+% 	\item \textbf{applicazioni di business intelligence}: i dati vengono memorizzati in tabelle MergeTree per consentire l'analisi e la generazione di report per le applicazioni di business intelligence;
+% 	\item \textbf{log e monitoraggio}: i dati di log e di monitoraggio vengono memorizzati in tabelle MergeTree per consentire l'analisi e il monitoraggio delle attività di sistema.
+% \end{itemize}
 \subsubsubsection{MergeTree}
 MergeTree è uno dei principali motori di archiviazione di ClickHouse, progettato per gestire grandi volumi di dati e fornire elevate prestazioni di lettura e scrittura. È particolarmente adatto per applicazioni in cui i dati vengono aggiunti in modo incrementale e le query vengono eseguite su intervalli di tempo specifici.
 Le caratteristiche principali sono:
@@ -188,14 +231,6 @@ Le caratteristiche principali sono:
 \url{https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree}
 
 [Ultima consultazione 2024-06-05]
-
-\subsubsubsection*{Utilizzi}
-\begin{itemize}
-	\item \textbf{Analisi dei dati storici}: i dati storici vengono memorizzati in tabelle MergeTree per consentire l'analisi e l'elaborazione dei dati storici;
-	\item \textbf{applicazioni di business intelligence}: i dati vengono memorizzati in tabelle MergeTree per consentire l'analisi e la generazione di report per le applicazioni di business intelligence;
-	\item \textbf{log e monitoraggio}: i dati di log e di monitoraggio vengono memorizzati in tabelle MergeTree per consentire l'analisi e il monitoraggio delle attività di sistema.
-\end{itemize}
-
 
 \subsubsection{Trasferimento dati tramite Materialized View}
 Le Materialized View in ClickHouse sono viste che memorizzano fisicamente i risultati di una query specifica in modo da permettere un accesso rapido e efficiente ai dati pre-elaborati. Quando vengono create, le Materialized View eseguono la query definita e archiviano i risultati in una struttura di dati ottimizzata per l'accesso veloce. Questo consente di evitare il calcolo ripetuto dei risultati della query ogni volta che viene eseguita, migliorando notevolmente le prestazioni complessive del sistema. I vantaggi derivanti da questo approccio sono molteplici, tra questi troviamo:
@@ -287,9 +322,9 @@ Definiscono le condizioni che devono essere soddisfatte per attivare un alert. G
 \end{itemize}
 Gli alert possono possedere tre diversi tipi di stati:
 \begin{itemize}
-	\item \textbf{normal}, indica che l'alert non è attivo perché le condizioni definite per l'attivazione dell'avviso non sono soddisfatte;
-	\item \textbf{pending}, indica che le metriche monitorate stanno iniziando a deviare dalle condizioni normali ma non hanno ancora soddisfatto completamente le condizioni per attivare l'alert;
-	\item \textbf{firing}, significa che le condizioni definite per l'avviso sono state soddisfatte e l'alert è attivo.
+	\item \textbf{\textit{normal}}, indica che l'alert non è attivo perché le condizioni definite per l'attivazione dell'avviso non sono soddisfatte;
+	\item \textbf{\textit{pending}}, indica che le metriche monitorate stanno iniziando a deviare dalle condizioni normali ma non hanno ancora soddisfatto completamente le condizioni per attivare l'alert;
+	\item \textbf{\textit{firing}}, significa che le condizioni definite per l'avviso sono state soddisfatte e l'alert è attivo.
 \end{itemize}
 \subsubsubsection{Configurazione canale di notifica}
 Per configurare un canale di notifica è necessario:
@@ -301,10 +336,10 @@ Per configurare un canale di notifica è necessario:
 	\item configurare le impostazioni del canale di notifica in base alle proprie esigenze;
 	\item cliccare sul pulsante "Save" per salvare le impostazioni del canale di notifica.
 \end{enumerate}
-\textit{7Last} ha deciso di rendere risponibile il server \textit{Discord} configurato a questo scopo e raggiungibile a questo link:
-\begin{center}
-	\url{https://discord.com/channels/1214553333113556992/1241974479345942568}
-\end{center}
+% \textit{7Last} ha deciso di rendere risponibile il server \textit{Discord} configurato a questo scopo e raggiungibile a questo link:
+% \begin{center}
+% 	\url{https://discord.com/channels/1214553333113556992/1241974479345942568}
+% \end{center}
 \subsubsection{Altri plugin}
 \subsubsubsection{Orchestra Cities Map plugin}
 Progettato per facilitare la visualizzazione e l'analisi dei dati geospaziali all'interno di piattaforme di pianificazione urbana e sviluppo territoriale.\\
