@@ -1,0 +1,133 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
+\begin{document}
+
+\newcommand{\mySkip}[1][]{#1}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                                      \\[-2ex]
+			Ver. & Data       & Redattore        & Verificatore       & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-07-08 & Leonardo Baldo   & Antonio Benetazzo  & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 17:00\\
+\textbf{Orario di fine}: 18:00\\
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     & Verificatore   & Presente          \\
+			Davide Malgarise      &                & Presente          \\
+			Elena Ferro           &                & Assente           \\
+			Leonardo Baldo        & Redattore      & Presente          \\
+			Matteo Tiozzo         & Amministratore & Presente          \\
+			Raul Seganfreddo      &                & Presente          \\
+			Valerio Occhinegro    &                & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\subsection*{Ordine del giorno:}
+\begin{itemize}
+	\item retrospettiva sullo sprint appena concluso;
+	\item suddivisione dei ruoli per l'undicesimo sprint;
+	\item attività da svolgere per l'undicesimo sprint;
+	\item decisioni prese e conclusioni.
+\end{itemize}
+
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Retrospettiva sullo sprint appena concluso}
+Il gruppo comincia la riunione discutendo della proposta dell'azienda di sostenere un collaudo finale, direttamente nella loro sede, così da presentare il prodotto e conoscere il proponete anche fisicamente. \\
+Inoltre viene fatta un'ultima verifica e modifica degli ultimi verbali, prima di inviarli all'azienda per farli firmare. \\
+...
+
+\subsection{Suddivisione dei ruoli per l'undicesimo sprint}
+Il gruppo stabilisce la suddivisione dei ruoli per il prossimo periodo di lavoro:
+\begin{itemize}
+	\item \textbf{Responsabile}: Davide Malgarise, Raul Seganfreddo;
+	\item \textbf{Amministratore}: Matteo Tiozzo;
+	\item \textbf{Programmatore}: Davide Malgarise, Valerio Occhinegro;
+	\item \textbf{Verificatore}: Antonio Benetazzo, Elena Ferro, Leonardo Baldo.
+\end{itemize}
+Inoltre si decide di usare i seguenti ruoli per ogni riunione interna o esterna:
+\begin{itemize}
+	\item \textbf{Amministratore}: Matteo Tiozzo;
+	\item \textbf{Redattore}: Leonardo Baldo;
+	\item \textbf{Verificatore}: Antonio Benetazzo.
+\end{itemize}
+
+\newpage
+\subsection{Attività da svolgere per l'undicesimo sprint}
+Vengono definite le seguenti attività da svolgere per l'undicesimo periodo:
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ |l||p{7cm}|l|l| }
+		\hline
+		\textbf{Codice}          & \textbf{Nome attività}                           & \textbf{Assegnatario} & \textbf{Scadenza} \\
+		\hline
+		\mySkip[]       & NdP - Aggiunta dei test previsti ed implementati &  & 2024-07-10        \\
+		\mySkip[]       & PdP - Saldo 11 sprint                            &  & 2024-07-10        \\
+		\mySkip[]       & PdQ - Aggiornare grafici 11 sprint               &  & 2024-07-10        \\
+		\mySkip[]       & Glo - Eventuale aggiunta nuovi termini           &  & 2024-07-10        \\
+		\mySkip[]       & AdR - Aggiornamento                              &  & 2024-07-10        \\
+		\mySkip[]       & MU - Prosecuzione stesura documento              &  & 2024-07-10        \\
+		\mySkip[]       & ST - Prosecuzione stesura documento              &  & 2024-07-10        \\
+		\mySkip[]       & Verbale esterno 2024-07-03                       &  & 2024-07-10        \\
+		\mySkip[]       & Verbale interno 2024-07-03                       &  & 2024-07-10        \\
+		\mySkip[]       & Modifiche alle ashboard                          &  & 2024-07-10        \\
+		\mySkip[]       & Implementazione integration test                 &  & 2024-07-10        \\
+		\mySkip[]       & ...                                              &  & 2024-07-10        \\
+		\hline
+	\end{tabular}
+	\caption{Attività da svolgere per l'undicesimo sprint}
+\end{table}
+
+\subsection{Decisioni prese e conclusioni}
+Dopo aver discusso tra i membri del gruppo, decidiamo di pianificare il collaudo finale con il proponente nel pomeriggio del 2024-07-19.
+Non essendo emersi problemi o dubbi degni di nota durante la riunione, il gruppo decide di pianificare la prossima riunione per il giorno 2024-07-10 indicativamente per le ore 17:00, successivamente al SAL con il proponente.
+
+\end{document}
