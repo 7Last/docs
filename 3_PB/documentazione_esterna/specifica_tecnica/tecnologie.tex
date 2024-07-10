@@ -88,11 +88,11 @@ Nello sviluppo di questo progetto \textit{7Last} ha utilizzato diverse immagini 
 	\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione}                                                                                                                                 & \textbf{Impiego}                                                                                                             \\\hline
 	\endhead
 	Python        & 3.11.9            & Linguaggio di programmazione ad alto livello, interpretato e multiparadigma.                                                                         & Simulatore di sensori, \textit{testing}, \textit{script} per automatizzare il \textit{deployment} dei \textit{job} di Flink. \\\hline
-	JSON          & -                 & Formato di dati semplice da interpretare e generare, ampiamente utilizzato per lo scambio di dati tra applicazioni.                                  & Configurazione \textit{dashboard} Grafana.                                                                                   \\\hline
+	JSON          & -                 & Formato di dati semplice da interpretare e generare, ampiamente utilizzato per lo scambio di dati tra applicazioni.                                  & Configurazione \textit{dashboard} Grafana, definizione di schemi Avro.                                                       \\\hline
 	YAML          & -                 & Linguaggio di serializzazione dei dati leggibile sia per gli esseri umani sia per le macchine.                                                       & Docker Compose, provisioning Grafana e configurazione \textit{alert}, file di \textit{workflow} per le GitHub Actions.       \\\hline
 	SQL           & Ansi SQL          & Linguaggio di programmazione specificamente progettato per la gestione e la manipolazione di dati all'interno di sistemi di gestione di database.    & \textit{Query} e gestione database ClickHouse.                                                                               \\\hline
 	TOML          & 1.0.0             & Linguaggio di \textit{markup} progettato per essere più leggibile e facile da scrivere rispetto ad altri formati di configurazione come JSON e YAML. & Configurazione e gestione dei sensori simulati.                                                                              \\\hline
-	Java          & 17                & Linguaggio di programmazione ad alto livello, orientato agli oggetti.                                                                                & Creazione di job per le aggregazioni dei dati di Flink.                                                                      \\\hline
+	Java          & 17                & Linguaggio di programmazione ad alto livello, orientato agli oggetti.                                                                                & Creazione di \textit{job} per le aggregazioni dei dati in Apache Flink.                                                      \\\hline
 	\caption{Linguaggi e formato dati}
 \end{longtable}
 
@@ -230,10 +230,9 @@ Tra i principali casi d'uso di Apache Flink si trovano:
 
 \subsubsubsection{Impiego nel progetto}
 Vengono utilizzate le \textit{Data Streaming API} per elaborare ed aggregare dati provenienti da sensori di tipologie differenti. Nello specifico, per ciascuno degli indici in seguito elencati è stato sviluppato un \textit{job}; i dettagli
-implementativi di ciascuno di essi sono meglio discussi nella sezione \href{sec:flink-jobs}.
+implementativi di ciascuno di essi sono meglio discussi nella sezione 3.5. %TODO: numero corretto
 \begin{itemize}
 	\item \textbf{Heat Index}: una misura che combina la temperatura dell'aria e l'umidità relativa per determinare la temperatura percepita dall'uomo. Questa misura riflette meglio il livello di disagio che una persona potrebbe sperimentare rispetto alla sola temperatura dell'aria;
-	\item \textbf{European Air Quality Index}: un indice che misura la qualità dell'aria in base ai livelli di inquinanti atmosferici come il biossido di azoto, il biossido di zolfo, l'ozono e le particelle sospese;
 	\item \textbf{Efficienza delle colonnine elettriche} % TODO: aggiungere dettagli implementativi
 
 \end{itemize}

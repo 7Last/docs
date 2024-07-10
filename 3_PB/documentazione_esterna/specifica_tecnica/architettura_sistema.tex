@@ -144,12 +144,129 @@ Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il 
 % TDOD diagramma simulators
 
 \subsection{Redpanda}
-\subsubsection{Kafka topic}
-I Kafka topic sono categorie o canali di messaggi all'interno di \textit{Redpanda}. Un topic in Kafka è come una cassetta postale virtuale o una categoria di messaggi in cui i dati vengono pubblicati dai produttori e letti dai consumatori.
+\subsubsection{\textit{Topic}}
+Nel contesto di Redpanda, un \textit{topic} è una categoria o canale a cui vengono inviati i dati. Essi sono utili per
+organizzare logicamente i diversi tipi di messaggi o eventi. Nel nostro sistema, i dati grezzi provenienti dai simulatori vengono pubblicati in un \textit{topic}
+differente per ciascun tipo di dato; ciò consente di elaborare in modo indipendente le varie tipologie di messaggi.
 
-\subsubsubsection{Formato dei dati e Schema Registry}
-% Ciascun tipo di dato viene inviato su un topic specifico, in modo da poter essere elaborato in modo indipendente.
+\subsubsection{Partizioni e chiavi}
+I \textit{topic} possono essere suddivisi in più partizioni, le quali consentono la distribuzione del carico di lavoro tra più \textit{broker} Redpanda,
+allo scopo di migliorare le prestazioni e la scalabilità. Ciascuna partizione di un \textit{topic} viene memorizzata in diversi nodi del \textit{cluster}; la numerosità
+delle partizioni può essere configurata a seconda delle necessità.\\
+Redpanda garantisce l'ordine degli eventi all'interno della stessa partizione, tuttavia di \textit{default} non è garantito l'ordine tra partizioni diverse.
+Il partizionamento consente di elaborare i dati in parallelo, infatti i consumatori possono leggere da più partizioni contemporaneamente, distribuendo il carico computazionale e migliorando il \textit{throughput}.
+Ogni messaggio pubblicato è detto \textit{record} e ha una chiave, che può essere utilizzata per determinare la partizione a cui il messaggio verrà assegnato, ed un valore,
+che costituisce il vero e proprio \textit{payload}; eventi con la stessa chiave vengono inviati alla stessa partizione.\\
+Nel caso del nostro progetto, abbiamo deciso di utilizzare come chiave il \texttt{sensor\_uuid}, un identificativo univoco globale per ciascun sensore, affinché i dati
+siano inviati alla stessa partizione e conseguentemente elaborati nell'ordine in cui sono stati prodotti.
+
+\subsubsection{Redpanda schema registry}
+Lo \textit{schema registry} offre un archivio centralizzato per gestire e convalidare gli schemi associati ai messaggi Kafka, facilitandone la serializzazione e deserializzazione.
+I produttori e consumatori dei \textit{topic} Kafka possono utilizzare questi schemi per garantire coerenza e compatibilità dei dati durante la loro evoluzione nel tempo.
+
+\subsubsubsection{\textit{Compatibility mode}}
+Le modalità di compatibilità di uno schema sono delle regole che determinano come i cambiamenti ad uno schema influiscono sulla capacità dei dati serializzati con
+versioni precedenti di essere letti da versioni successive e viceversa; sono essenziali per garantire che i dati rimangano compatibili durante l'evoluzione degli schemi.
+Di seguito sono descritte le principali modalità di compatibilità supportate dallo \textit{schema registry} di Redpanda:
+
+\begin{itemize}
+	\item \texttt{BACKWARD}: i consumatori che utilizzano lo schema più recente possono leggere i dati prodotti con lo schema precedente;
+	\item \texttt{BACKWARD\_TRANSITIVE}: i consumatori che utilizzano lo schema più recente possono leggere i dati prodotti con tutti gli schemi precedenti;
+	\item \texttt{FORWARD}: i consumatori che utilizzano lo schema precedente possono leggere i dati prodotti con lo schema più recente;
+	\item \texttt{FORWARD\_TRANSITIVE}: i consumatori che utilizzano uno qualsiasi degli schemi precedenti possono leggere i dati prodotti con lo schema più recente;
+	\item \texttt{FULL}: i dati prodotti con lo schema più recente possono essere letti da consumatori che utilizzano lo schema precedente e viceversa;
+	\item \texttt{FULL\_TRANSITIVE}: i dati prodotti con uno qualsiasi degli schemi possono essere letti da consumatori che utilizzano qualsiasi altro schema;
+	\item \texttt{NONE}: nessun controllo di compatibilità viene effettuato.
+\end{itemize}
+Nel progetto proposto da \textit{SyncLab S.r.L.} l'obiettivo principale è l'elaborazione dei dati in tempo reale piuttosto che di quelli storici, pertanto
+è importante che i consumatori possano sempre ricevere i messaggi più recenti, anche se prodotti con un nuovo schema. Pertanto questo tipo di applicazioni beneficiano
+della modalità \texttt{FORWARD}, ovvero quella che abbiamo scelto di utilizzare.
+
+\subsubsubsection{Serializzazione dei dati}
+\subsubsubsubsection{Chiavi}
+Come menzionato in precedenza, si utilizza il \texttt{sensor\_uuid} per poplare il campo chiave dei \textit{record}; tale identificativo viene, prima di essere pubblicato
+nel \textit{topic}, convertito a stringa e codificato in UTF-8.
+
+\subsubsubsubsection{Valori}
 % TODO: parlare di Confluent Avro, del formato di serializzazione delle chiavi e partitioning strategy e di topic name strategy <topic>-value
+Il formato Avro consente di definire attraverso JSON uno schema che descriva la struttura dei dati, permettendo di serializzare e deserializzarli in modo affidabile; la serializzazione tramite
+Avro produce dati binari compatti, che consentono di ridurre l'\textit{overhead} di rete e migliore le prestazioni di trasmissione dei dati.
+Solamente i dati che rispettano lo schema definito possono essere inviati nel \textit{topic}, garantendo la coerenza dei dati e facilitando la gestione delle evoluzioni dello schema.\\
+Per la serializzazione dei valori abbiamo stabilito di utilizzare il formato Confluent Avro; la principale differenza rispetto al formato Avro standard è l'inclusione di un \textit{magic byte}
+e dell'ID dello schema all'inizio del messaggio, seguiti dal \textit{payload} vero e proprio. Ciò consente di evitare di includere lo schema all'interno di ogni messaggio, riducendo la dimensione dei dati trasmessi.\\
+Il produttore consulta lo \textit{schema registry} per ottenere l'ID corretto da utilizzare quando invia un messaggio, mentre il consumatore lo utilizza per ottenere lo schema con
+cui deserializzare il messaggio.
+
+\subsubsubsection{Formato dei dati} % TODO
+\subsubsubsection{\textit{Topic name strategy}} % TODO
+
+\subsubsection{Redpanda Connect}
+Redpanda Connect è una piattaforma integrata nel sistema Redpanda, progettata per facilitare l'integrazione e il trasferimento dei dati tra Redpanda e altre fonti o destinazioni.
+Esso consente di gestire dei connettori, componenti \textit{software} che si occupano automatizzare lo spostamento dei dati da e verso Redpanda. Tali connettori si dividono in due categorie:
+\begin{itemize}
+	\item \textbf{\textit{source connector}}: si occupano di trasferire i dati da una sorgente esterna a Redpanda;
+	\item \textbf{\textit{sink connector}}: si occupano di trasferire i dati da Redpanda a una destinazione esterna.
+\end{itemize}
+
+\subsubsubsection{\textit{Sink connector} per ClickHouse}
+All'interno del progetto abbiamo utilizzato Redpanda Connect per persistere su ClickHouse i dati provenienti dai sensori pubblicati nei differenti \textit{topic}. Per
+poter effettuare questa operazione è stato necessario utilizzare un \textit{sink connector}, che si occupasse di deserializzare i messaggi in formato Confluent Avro, effettuare
+il \textit{parsing} dei campi di tipo \texttt{DateTime} (pubblicati come stringhe in formato \href{https://www.iso.org/iso-8601-date-and-time-format.html}{\underline{ISO 8601}})
+ed infine salvare i dati in ClickHouse.\\
+La documentazione relativa è consultabile al seguente \href{https://clickhouse.com/docs/en/integrations/kafka/clickhouse-kafka-connect-sink}{\underline{url}}
+[Ultima consultazione 2024-07-10].\\
+La configurazione di tale connettore è disponibile all'interno del \textit{repository} del progetto al percorso \texttt{redpanda/connectors/configs/clickhouse.json}.
+Al fine di effettuare il \textit{parsing} delle date è stato necessario definire all'interno di tale file un \textit{transformer}, il quale si occupa di leggere il campo \texttt{timestamp}
+e convertirlo in \texttt{DateTime}, tipo riconosciuto da ClickHouse.\\
+La versione utilizzata è la 1.1.1, scaricabile dal seguente \href{https://github.com/ClickHouse/clickhouse-kafka-connect/releases}{\underline{url}} [Ultima consultazione 2024-07-10].
+
+La configurazione del \textit{transformer} è la seguente:
+\begin{lstlisting}[language=json]
+{
+    //...
+    "transforms": "TimestampConverter",
+    "transforms.TimestampConverter.type": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+    "transforms.TimestampConverter.format": "yyyy-MM-dd'T'HH:mm:ss",
+    "transforms.TimestampConverter.field": "timestamp",
+    "transforms.TimestampConverter.target.type": "Timestamp"
+    //...
+}
+\end{lstlisting}
+\captionof{lstlisting}{Configurazione del \textit{transformer} all'interno del file \texttt{clickhouse.json}}
+
+La creazione del connettore viene effettuata eseguendo il seguente comando nella radice del progetto:
+\begin{verbatim}
+curl "localhost:8083/connectors" -H 'Content-Type: application/json' \
+    -d @./redpanda/connectors/configs/clickhouse.json
+\end{verbatim}
+
+\subsubsubsection{Avro converter}
+È stato inoltre necessario utilizzare un ulteriore \textit{plugin}, \texttt{avro-converter} (versione 7.6.1), scaricabile dal seguente
+\href{https://www.confluent.io/hub/confluentinc/kafka-connect-avro-converter}{\underline{url}} [Ultima consultazione 2024-07-10],
+il quale consente di effettuare la deserializzazione dei messaggi in formato Confluent Avro.\\
+Il \textit{connector sink} è stato configurato per utilizzarlo come segue:
+\begin{lstlisting}[language=json]
+{
+    //...
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schemas.enable": "true",
+    "value.converter.schema.registry.url": "http://redpanda:8081",
+    //...
+}
+\end{lstlisting}
+\captionof{lstlisting}{Utilizzo del \textit{plugin} \texttt{avro-converter} all'interno del file \texttt{clickhouse.json}}
+
+\subsubsection{Redpanda Console}
+Redpanda Console è un'applicazione web che consente di gestire e effettuare \textit{debug} di un'istanza Redpanda. Essa ha diverse funzionalità, tra cui:
+%
+\begin{itemize}
+	\item \textbf{Visualizzazione dei messaggi}: consente di esplorare i messaggi dei \textit{topic} attraverso query ad-hoc e filtri dinamici, scritti con semplici funzioni JavaScript;
+	\item \textbf{Gruppi di consumatori}: permette di visualizzare tutti i gruppi di consumatori attivi, insieme ai relativi offset, modificarli o eliminarli;
+	\item \textbf{Panoramica dei \textit{topic}}: permette di visualizzare la lista dei \textit{topic}, controllarne la configurazione, lo spazio utilizzato, la lista dei consumatori e i dettagli delle partizioni;
+	\item \textbf{Panoramica del \textit{cluster}}: permette di visualizzare le ACL, i \textit{broker} disponibili, il loro spazio utilizzato, l'ID del rack e altre informazioni per ottenere una panoramica del \textit{cluster};
+	\item \textbf{Schema Registry}: permette di visualizzare tutti gli schemi Avro, Protobuf o JSON all'interno del registro degli schemi;
+	\item \textbf{Kafka Connect}: permette di gestire i connettori da più \textit{cluster} di connessione, modificare le configurazioni, visualizzare lo stato corrente o riavviare i task.
+\end{itemize}
 
 \subsection{Flink - \textit{Processing layer}}
 \subsubsection{Introduzione}
@@ -188,6 +305,7 @@ utilizzando la \underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC380
 Nel risultato finale, oltre al valore dello \textit{Heat Index}, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
 (utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
 distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio, rappresentante la zona di influenza del gruppo di sensori.
+% TODO: aggiungere formule
 \subsubsubsection{Efficienza delle colonnine elettriche}
 % TODO: aggiungere dettagli implementativi
 
