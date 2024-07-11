@@ -86,6 +86,7 @@ sep
 SFIN
 SFOUT
 sinergicamente
+SIMD
 Sottocasi
 Sottocaso
 SpA
