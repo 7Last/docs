@@ -105,16 +105,11 @@ Sono stati implementati simulatori per i seguenti tipi dato:
 	\item temperatura;
 	\item umidità.
 \end{itemize}
-
-%TODO per ogni modulo bisogna:
-% 1. Mettere foto diagramma delle classi UML
-% 2. Descrizione ad alto livello di quello che fa il modulo
-% 3. Descrivere i design pattern utilizzati
-% 4. Descrivere le classi del modulo
-%TODO diagramma progettazione sensori UML
+\subsubsection{Flusso di dati}
+% TODO
 
 \subsubsection{Modulo \texttt{models}}
-Questo modulo contiene le classi che rappresentano i dati grezzi generati dai sensori (\texttt{raw\_data}) e la configurazione dei sensori stessi (\texttt{config}) letta
+Questo modulo contiene le classi che rappresentano i dati grezzi generati dai sensori (sottomodulo \texttt{raw\_data}) e la configurazione dei sensori stessi (sottomodulo \texttt{config}) letta
 dal file di configurazione \texttt{sensors.toml} e dalle variabili d'ambiente.\\
 Ciascun tipo di dato grezzo è rappresentato da una classe che estende la classe astratta \texttt{RawData}, la quale contiene i campi comuni a tutti i tipi di dato,
 i metodi \textit{helper} \texttt{topic} e \texttt{value\_subject()} e il metodo \texttt{to\_json()} per la serializzazione in formato JSON.\\
@@ -124,23 +119,23 @@ Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il 
 
 \begin{center}
 	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/models.png}
-	\captionof{figure}{Diagramma delle classi del modulo \texttt{models}}
-\end{center}
-
-
-\subsubsection{Modulo \texttt{producers}}
-\begin{center}
-	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/producers.png}
-	\captionof{figure}{Diagramma delle classi del modulo \texttt{producers}}
-\end{center}
-
-\subsubsection{Modulo \texttt{serializers}}
-\begin{center}
-	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/serializers.png}
-	\captionof{figure}{Diagramma delle classi del modulo \texttt{serializers}}
+	\captionof{figure}{Diagramma delle classi del modulo \texttt{models}. Per ragioni di spazio, le implementazioni di \texttt{RawData} sono illustrate nel diagramma successivo}
 \end{center}
 
 \subsubsection{Modulo \texttt{simulators}}
+\begin{center}
+	\includegraphics[width=1\textwidth]{./specifica_tecnica/simulators.png}
+	\captionof{figure}{Diagramma delle classi modulo \texttt{simulators} e \texttt{models}}
+\end{center}
+
+\subsubsection{Modulo \texttt{producers}}
+
+\subsubsection{Modulo \texttt{serializers}}
+\begin{center}
+	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/producers_serializers.png}
+	\captionof{figure}{Diagramma delle classi modulo \texttt{producers} e \texttt{serializers}}
+\end{center}
+
 % TDOD diagramma simulators
 
 \subsection{Redpanda}
@@ -197,8 +192,86 @@ e dell'ID dello schema all'inizio del messaggio, seguiti dal \textit{payload} ve
 Il produttore consulta lo \textit{schema registry} per ottenere l'ID corretto da utilizzare quando invia un messaggio, mentre il consumatore lo utilizza per ottenere lo schema con
 cui deserializzare il messaggio.
 
-\subsubsubsection{Formato dei dati} % TODO
+\subsubsubsection{Formato dei messaggi}
+\subsubsubsubsection{Dati grezzi prodotti dai simulatori}
+Per ciascun \textit{topic} è stato definito uno schema Avro che descrive la struttura dei dati grezzi generati dai simulatori. Rispetto all'utilizzo di uno schema comune per tutti i \textit{topic},
+questa scelta consente di:
+\begin{itemize}
+	\item rendere \textbf{indipendenti} i vari tipi di messaggi. Se una tipologia sensore dovesse cambiare il formato dei dati, sarebbe sufficiente modificare lo schema relativo al \textit{topic} corrispondente;
+	\item non dover stabilire a priori il \textbf{numero di misurazioni} che un sensore può effettuare. Se si utilizzasse uno schema comune, sarebbe necessario prevedere un numero massimo di campi, anche se non tutti i sensori potrebbero utilizzarli;
+	\item far conoscere al consumatore il \textbf{tipo esatto} del dato che riceverà, senza dover utilizzare un campo di tipo \textit{union}. Le misurazioni effettuate dai sensori possono essere numeri interi, decimali, stringhe o booleani;
+\end{itemize}
+\pagebreak
+I sensori inviano, oltre alle misurazioni relative alla propria tipologia, i campi contenuti nella seguente tabella:
+\begin{table}[ht]
+	\begin{tabular}{lll}
+		\textbf{Campo}        & \textbf{Tipo} & \textbf{Descrizione}                                     \\
+		\texttt{sensor\_uuid} & string        & Identificativo univoco del sensore.                      \\
+		\texttt{sensor\_name} & string        & Nome del sensore.                                        \\
+		\texttt{latitude}     & double        & Latitudine del sensore.                                  \\
+		\texttt{longitude}    & double        & Longitudine del sensore.                                 \\
+		\texttt{timestamp}    & string        & Data e ora della misurazione in formato ISO 8601.        \\
+		\texttt{group\_name}  & string        & Nome (opzionale) del gruppo di sensori a cui appartiene. \\
+	\end{tabular}
+\end{table}
+\\
+Un esempio di schema Avro per il tipo di dato \texttt{Temperature} è il seguente:
+\begin{lstlisting}[language=json, caption=Esempio di schema Avro per il tipo di dato \texttt{Temperature},captionpos=b]
+{
+  "type": "record",
+  "name": "Temperature",
+  "fields": [
+    { "name": "sensor_uuid", "type": "string" },
+    { "name": "sensor_name", "type": "string" },
+    { "name": "latitude", "type": "double" },
+    { "name": "longitude", "type": "double" },
+    { "name": "timestamp", "type": "string" },
+    { "name": "value", "type": "float" },
+    { "name": "group_name", "type": [ "string", "null" ] }
+  ]
+}
+\end{lstlisting}
+
+\subsubsubsubsection{Dati elaborati da Apache Flink}
+Per quanto riguarda invece i dati aggregati da Apache Flink, è stato definito uno schema Avro per ciascuno di essi, il quale viene pubblicato in un \textit{topic} dedicato.
+Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
+\begin{lstlisting}[language=json, caption=Schema Avro per il tipo di dato \texttt{HeatIndex},captionpos=b]
+{
+  "type": "record",
+  "name": "Heat_Index",
+  "fields": [
+    {"name":"sensor_names", "type": {"type":"array", "items":"string"}},
+    {"name":"group_name", "type": "string"},
+    {"name":"heat_index", "type": "float"},
+    {"name":"avg_temperature", "type": "float"},
+    {"name":"avg_humidity", "type": "float"},
+    {"name":"center_of_mass_latitude", "type": "float"},
+    {"name":"center_of_mass_longitude", "type": "float"},
+    {"name":"radius_in_km", "type": "float"},
+    {"name":"timestamp", "type": "string"}
+  ]
+}
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=json, caption=Schema Avro per il tipo di dato \texttt{ChargingEfficiency},captionpos=b]
+{
+  "type": "record",
+  "name": "Charging_Efficiency",
+  "fields": [
+    { "name": "sensor_uuid", "type": "string" },
+    { "name": "utilization_rate", "type": "double" },
+    { "name": "efficiency_rate", "type": "double" },
+    { "name": "timestamp", "type": "string" },
+    { "name": "group_name", "type": "string" },
+    { "name":"sensor_names", "type": { "type": "array",  "items": "string" } }
+  ]
+}
+
+\end{lstlisting}
+
 \subsubsubsection{\textit{Topic name strategy}} % TODO
+TODO
 
 \subsubsection{Redpanda Connect}
 Redpanda Connect è una piattaforma integrata nel sistema Redpanda, progettata per facilitare l'integrazione e il trasferimento dei dati tra Redpanda e altre fonti o destinazioni.
@@ -221,7 +294,7 @@ e convertirlo in \texttt{DateTime}, tipo riconosciuto da ClickHouse.\\
 La versione utilizzata è la 1.1.1, scaricabile dal seguente \href{https://github.com/ClickHouse/clickhouse-kafka-connect/releases}{\underline{url}} [Ultima consultazione 2024-07-10].
 
 La configurazione del \textit{transformer} è la seguente:
-\begin{lstlisting}[language=json]
+\begin{lstlisting}[language=json, caption=Configurazione del \textit{transformer} all'interno del file \texttt{clickhouse.json},captionpos=b]
 {
     //...
     "transforms": "TimestampConverter",
@@ -232,8 +305,6 @@ La configurazione del \textit{transformer} è la seguente:
     //...
 }
 \end{lstlisting}
-\captionof{lstlisting}{Configurazione del \textit{transformer} all'interno del file \texttt{clickhouse.json}}
-
 La creazione del connettore viene effettuata eseguendo il seguente comando nella radice del progetto:
 \begin{verbatim}
 curl "localhost:8083/connectors" -H 'Content-Type: application/json' \
@@ -245,7 +316,7 @@ curl "localhost:8083/connectors" -H 'Content-Type: application/json' \
 \href{https://www.confluent.io/hub/confluentinc/kafka-connect-avro-converter}{\underline{url}} [Ultima consultazione 2024-07-10],
 il quale consente di effettuare la deserializzazione dei messaggi in formato Confluent Avro.\\
 Il \textit{connector sink} è stato configurato per utilizzarlo come segue:
-\begin{lstlisting}[language=json]
+\begin{lstlisting}[language=json, caption=Utilizzo del \textit{plugin} \texttt{avro-converter} all'interno del file \texttt{clickhouse.json},captionpos=b]
 {
     //...
     "value.converter": "io.confluent.connect.avro.AvroConverter",
@@ -254,17 +325,16 @@ Il \textit{connector sink} è stato configurato per utilizzarlo come segue:
     //...
 }
 \end{lstlisting}
-\captionof{lstlisting}{Utilizzo del \textit{plugin} \texttt{avro-converter} all'interno del file \texttt{clickhouse.json}}
 
 \subsubsection{Redpanda Console}
 Redpanda Console è un'applicazione web che consente di gestire e effettuare \textit{debug} di un'istanza Redpanda. Essa ha diverse funzionalità, tra cui:
 %
 \begin{itemize}
-	\item \textbf{Visualizzazione dei messaggi}: consente di esplorare i messaggi dei \textit{topic} attraverso query ad-hoc e filtri dinamici, scritti con semplici funzioni JavaScript;
-	\item \textbf{Gruppi di consumatori}: permette di visualizzare tutti i gruppi di consumatori attivi, insieme ai relativi offset, modificarli o eliminarli;
-	\item \textbf{Panoramica dei \textit{topic}}: permette di visualizzare la lista dei \textit{topic}, controllarne la configurazione, lo spazio utilizzato, la lista dei consumatori e i dettagli delle partizioni;
-	\item \textbf{Panoramica del \textit{cluster}}: permette di visualizzare le ACL, i \textit{broker} disponibili, il loro spazio utilizzato, l'ID del rack e altre informazioni per ottenere una panoramica del \textit{cluster};
-	\item \textbf{Schema Registry}: permette di visualizzare tutti gli schemi Avro, Protobuf o JSON all'interno del registro degli schemi;
+	\item \textbf{visualizzazione dei messaggi}: consente di esplorare i messaggi dei \textit{topic} attraverso query ad-hoc e filtri dinamici, scritti con semplici funzioni JavaScript;
+	\item \textbf{gruppi di consumatori}: permette di visualizzare tutti i gruppi di consumatori attivi, insieme ai relativi offset, modificarli o eliminarli;
+	\item \textbf{panoramica dei \textit{topic}}: permette di visualizzare la lista dei \textit{topic}, controllarne la configurazione, lo spazio utilizzato, la lista dei consumatori e i dettagli delle partizioni;
+	\item \textbf{panoramica del \textit{cluster}}: permette di visualizzare le ACL, i \textit{broker} disponibili, il loro spazio utilizzato, l'ID del rack e altre informazioni per ottenere una panoramica del \textit{cluster};
+	\item \textbf{schema registry}: permette di visualizzare tutti gli schemi Avro, Protobuf o JSON all'interno del registro degli schemi;
 	\item \textbf{Kafka Connect}: permette di gestire i connettori da più \textit{cluster} di connessione, modificare le configurazioni, visualizzare lo stato corrente o riavviare i task.
 \end{itemize}
 
@@ -305,12 +375,63 @@ utilizzando la \underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC380
 Nel risultato finale, oltre al valore dello \textit{Heat Index}, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
 (utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
 distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio, rappresentante la zona di influenza del gruppo di sensori.
-% TODO: aggiungere formule
+
+\subsubsubsubsection{Formule utilizzate}
+\subsubsubsubsubsection{Heat Index}
+Lo \textit{Heat Index} viene calcolato con la seguente formula, dove $T$ è la temperatura in gradi Celsius, $R$ l'umidità relativa in percentuale:
+\[
+	HI = c_1 + c_2 T + c_3 R + c_4 TR + c_5 T^2 + c_6 R^2 + c_7 T^2 R + c_8 TR^2 + c_9 T^2 R^2
+\]
+e i coefficienti $c_i$ sono:
+\[
+	\begin{aligned}
+		c_1 & = -8.78469475556          & \quad c_2 & = 1.61139411            & \quad c_3 & = 2.33854883889         \\
+		c_4 & = -0.14611605             & \quad c_5 & = -0.012308094          & \quad c_6 & = -0.0164248277778      \\
+		c_7 & = 2.211732 \times 10^{-3} & \quad c_8 & = 7.2546 \times 10^{-4} & \quad c_9 & = -3.582 \times 10^{-6}
+	\end{aligned}
+\]
+\subsubsubsubsubsection{Centro di massa o centroide}
+Il calcolo del centro di massa tiene in considerazione la sfericità della Terra. Sia dato un insieme di punti $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$, dove $a_i$ rappresenta
+la latitudine del punto $i$-esimo e $b_i$ la longitudine. Per calcolare il centro di massa si procede, per ciascun punto, a convertire in radianti le coordinate:
+\[
+	\begin{align*}
+		lat_i = \frac{\pi}{180} \cdot a_i, & \quad lon_i = \frac{\pi}{180} \cdot b_i
+	\end{align*}
+\]
+Successivamente si calcolano i coefficienti $x_i$, $y_i$ e $z_i$:
+\[
+	\begin{align*}
+		x_i = \cos(lat_i) \cdot \cos(lon_i),       &
+		\quad y_i = \cos(lat_i) \cdot \sin(lon_i), &
+		\quad z_i = \sin(lat_i)
+	\end{align*}
+\]
+Una volta ottenuti i coefficienti per tutti i punti, si calcola la media di tutti i coefficienti:
+\[
+	\begin{aligned}
+		x & = \frac{1}{n} \sum_{i=1}^{n} x_i, & \quad y = \frac{1}{n} \sum_{i=1}^{n} y_i, & \quad z = \frac{1}{n} \sum_{i=1}^{n} z_i
+	\end{aligned}
+\]
+
+% lon: The longitude in radians, derived from the average Cartesian coordinates.
+% hyp: The hypotenuse in the Cartesian coordinate plane, which is the distance from the origin to the projection of the point onto the XY plane.
+% lat: The latitude in radians, derived from the average Cartesian coordinates. 
+Infine si calcolano $lat$ (latitudine in radianti), $lon$ (longitudine in radianti) e $hyp$ (ipotenusa ne piano cartesiano, che rappresenta la distanza dall'origine alla proiezione del punto sul piano $lat_i, lon_i$):
+\begin{align*}
+	lon = atan2(y, x)      \\
+	hyp = \sqrt{x^2 + y^2} \\
+	lat = atan2(z, hyp)
+\end{align*}
+Una volta ottenuti $lat$ e $lon$, si convertono in gradi e si ottiene il centro di massa $CM = (c_a, c_b)$.
+\[
+	\begin{align*}
+		c_a = \frac{180}{\pi} \cdot lat, & \quad c_b = \frac{180}{\pi} \cdot lon
+	\end{align*}
+\]
+
+
 \subsubsubsection{Efficienza delle colonnine elettriche}
 % TODO: aggiungere dettagli implementativi
-
-% KPI che useremo :european air quality index, heat index, charging station efficiency index
-
 
 \subsection{Database ClickHouse}
 % Come detto in precedenza, il database adottato è \textit{ClickHouse}. Per ogni sensore è stata creata una tabella \textit{MergeTree}, che permette di memorizzare i dati in modo efficiente e di eseguire query complesse in modo veloce.

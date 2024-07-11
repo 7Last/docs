@@ -9,14 +9,16 @@
 \captionsetup[figure]{name=Figura}
 \geometry{headsep=1.5cm}
 
-\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand{\contentsname}{Indice}
 \renewcommand\familydefault{\sfdefault}
 
-\renewcommand{\listtablename}{Indice delle tabelle}%imposto il nome della lista tabelle
+\renewcommand{\listtablename}{Indice delle tabelle}
 \renewcommand\familydefault{\sfdefault}
 
-\renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
+\renewcommand{\listfigurename}{Indice delle immagini}
 \renewcommand\familydefault{\sfdefault}
+
+\renewcommand{\lstlistlistingname}{Indice dei listati}
 
 \let\oldthepage\thepage
 \renewcommand{\thepage}{\sffamily\oldthepage}
@@ -51,6 +53,50 @@
          {9}{{{\color{numb}9}}}{1}
 }
 
+\newcommand\JSONnumbervaluestyle{\color{blue}}
+\newcommand\JSONstringvaluestyle{\color{red}}
+
+% switch used as state variable
+\newif\ifcolonfoundonthisline
+
+\makeatletter
+
+\lstdefinestyle{json}
+{
+  showstringspaces    = false,
+  keywords            = {false,true},
+  alsoletter          = 0123456789.,
+  morestring          = [s]{"}{"},
+  stringstyle         = \ifcolonfoundonthisline\JSONstringvaluestyle\fi,
+  MoreSelectCharTable =%
+    \lst@DefSaveDef{`:}\colon@json{\processColon@json},
+  basicstyle          = \ttfamily,
+  keywordstyle        = \ttfamily\bfseries,
+}
+
+% flip the switch if a colon is found in Pmode
+\newcommand\processColon@json{%
+  \colon@json%
+  \ifnum\lst@mode=\lst@Pmode%
+    \global\colonfoundonthislinetrue%
+  \fi
+}
+
+\lst@AddToHook{Output}{%
+  \ifcolonfoundonthisline%
+    \ifnum\lst@mode=\lst@Pmode%
+      \def\lst@thestyle{\JSONnumbervaluestyle}%
+    \fi
+  \fi
+  %override by keyword style if a keyword is detected!
+  \lsthk@DetectKeywords% 
+}
+
+% reset the switch at the end of line
+\lst@AddToHook{EOL}%
+  {\global\colonfoundonthislinefalse}
+\makeatother
+
 %-------------------INIZIO DOCUMENTO--------------
 \begin{document}
 
@@ -84,6 +130,8 @@
 \listoftables
 
 \listoffigures
+
+\lstlistoflistings
 
 \newpage
 
