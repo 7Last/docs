@@ -12,7 +12,7 @@ glossary=$(
         match($0, /\\newglossaryentry\{([^}]*)\}|acronym=\{([^}]*)\}/, arr);
         if (arr[1] != "") print arr[1];
         else if (arr[2] != "") print arr[2];
-    }' 2_RTB/documentazione_interna/glossario/glossario.tex
+    }' 3_PB/documentazione_interna/glossario/glossario.tex
 )
 
 > personal.txt
