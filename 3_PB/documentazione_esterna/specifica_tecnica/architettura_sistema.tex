@@ -48,12 +48,12 @@ Tuttavia, può non essere adatta per applicazioni che richiedono un'analisi stor
 L'architettura \textit{kappa} è particolarmente adatta per gli scenari in cui sono critici i dati in tempo reale e l'analisi dei dati storici è meno importante. Inoltre, semplifica notevolmente il processo di sviluppo e manutenzione dei sistemi di elaborazione dei dati.
 
 \subsection{Architettura scelta}
-Nello scenario del capitolato proposto da \textit{SyncLab S.r.L.}, è critica l'analisi in tempo reale, in quanto i dati provenienti dai sensori IoT devono fornire informazioni sempre aggiornate ed eventualmente
+Nello scenario del capitolato proposto da \textit{SyncLab S.r.L.}, è importante l'analisi in tempo reale, in quanto i dati provenienti dai sensori IoT devono fornire informazioni sempre aggiornate ed eventualmente
 sollevare allarmi in caso di situazioni critiche. Inoltre, non è richiesta l'aggregazione storica di dati, dunque i vantaggi dell'architettura \textit{lambda} non risultano utili per i nostri fini.
 Per soddisfare tali requisiti, è stata dunque scelta l'architettura \textit{kappa}.
 
 \subsubsection{Componenti di sistema}
-All'interno del sistema da noi progettato sono dunque presenti le seguenti componenti:
+All'interno del sistema progettato sono dunque presenti le seguenti componenti:
 \begin{itemize}
 	\item \textbf{sorgenti di dati}: costituite dal simulatore di sensori, il quale genera i dati grezzi che in un contesto reale sarebbero provenienti dai sensori IoT;
 	\item \textbf{\textit{streaming layer}}: gestisce il flusso di dati in tempo reale provenienti dai sensori. È composto da \textit{Redpanda} e lo \textit{Schema Registry};
@@ -73,7 +73,7 @@ Per illustrare il flusso di dati all'interno del sistema, è stato realizzato il
 	\includegraphics[width=1\textwidth]{./specifica_tecnica/data_flow.png}
 	\captionof{figure}{Flusso di dati all'interno del sistema. I sensori di precipitazioni, isole ecologiche, livello dei fiumi e traffico sono stati omessi per chiarezza, ma il percorso di tali dati è analogo a quello dei sensori di qualità dell'aria.}
 \end{center}
-\linebreak
+
 Il flusso seguito dai dati si può riassumere nei seguenti passaggi:
 \begin{enumerate}
 	\item \textbf{generazione dei dati}: ciascun simulatore emula il comportamento di un singolo sensore IoT, generando ad intervalli periodici o ad eventi (\textit{event-driven}) i dati grezzi relativi alla propria tipologia di dato.
@@ -105,38 +105,481 @@ Sono stati implementati simulatori per i seguenti tipi dato:
 	\item temperatura;
 	\item umidità.
 \end{itemize}
-\subsubsection{Flusso di dati}
-% TODO
 
 \subsubsection{Modulo \texttt{models}}
 Questo modulo contiene le classi che rappresentano i dati grezzi generati dai sensori (sottomodulo \texttt{raw\_data}) e la configurazione dei sensori stessi (sottomodulo \texttt{config}) letta
 dal file di configurazione \texttt{sensors.toml} e dalle variabili d'ambiente.\\
-Ciascun tipo di dato grezzo è rappresentato da una classe che estende la classe astratta \texttt{RawData}, la quale contiene i campi comuni a tutti i tipi di dato,
-i metodi \textit{helper} \texttt{topic} e \texttt{value\_subject()} e il metodo \texttt{to\_json()} per la serializzazione in formato JSON.\\
-Lo classe \texttt{SensorConfig} riceve nel costruttore la configurazione sotto forma di dizionario, effettua \textit{parsing}, validazione,
+Ciascun tipo di dato grezzo è rappresentato da una classe che estende \texttt{RawData} (astratta).\\
+La classe \texttt{SensorConfig} riceve nel costruttore la configurazione sotto forma di dizionario, effettua \textit{parsing}, validazione,
 popola con valori di \textit{default} i campi mancanti (nel caso lo prevedano) ed inizializza i propri attributi, corrispondenti ai campi del file di configurazione.\\
 Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il metodo \texttt{bootstrap\_server()} che combina \textit{host} e \textit{port} per formare l'indirizzo del \textit{broker} Kafka.\\
-
 \begin{center}
 	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/models.png}
 	\captionof{figure}{Diagramma delle classi del modulo \texttt{models}. Per ragioni di spazio, le implementazioni di \texttt{RawData} sono illustrate nel diagramma successivo}
 \end{center}
 
+\subsubsubsection{Classi, interfacce metodi e attributi}
+\begin{itemize}
+	\item \textbf{Classe astratta \texttt{RawData}}:
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{sensor\_uuid} string [protected]: identificativo univoco del sensore;
+			            \item \texttt{latitude} float [protected]: latitudine del sensore;
+			            \item \texttt{longitude} float [protected]: longitudine del sensore;
+			            \item \texttt{sensor\_name} string [protected]: nome del sensore;
+			            \item \texttt{group\_name} string [protected]: nome del gruppo di sensori a cui appartiene.
+		            \end{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{topic()} string [public,abstract]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati;
+			            \item \texttt{value\_subject()} string [public]: restituisce il nome del campo value del record.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe EnvConfig}:
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{kafka\_host} string [private]: \textit{host} del \textit{broker} Kafka;
+			            \item \texttt{kafka\_port} string [private]: porta del \textit{broker} Kafka;
+			            \item \texttt{log\_level} string [private]: livello di \textit{logging} da utilizzare;
+			            \item \texttt{max\_block\_ms} int [private]: tempo massimo di blocco per la produzione di messaggi.
+		            \end{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{get\_or\_throw(key: string)} string [private,static]: restituisce il valore della variable d'ambiente associato alla chiave \texttt{key} se presente, altrimenti lancia un'eccezione;
+			            \item \texttt{get\_or\_none(key: string)} string [private,static]: restituisce il valore della variable d'ambiente associato alla chiave \texttt{key} se presente, altrimenti \texttt{None};
+			            \item \texttt{bootstrap\_server()} string [public]: restituisce l'indirizzo del \textit{broker} Kafka.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe SensorConfig}:
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{sensor\_uuid} string [private]: identificativo univoco del sensore;
+			            \item \texttt{limit} int [private]: limite massimo di misurazioni da effettuare;
+			            \item \texttt{begin\_date} datetime [private]: data e ora di inizio delle misurazioni;
+			            \item \texttt{latitude} float [private]: latitudine del sensore;
+			            \item \texttt{longitude} float [private]: longitudine del sensore;
+			            \item \texttt{group\_name} string [private]: nome del gruppo di sensori a cui appartiene;
+			            \item \texttt{type} SensorType [private]: tipo di sensore;
+			            \item \texttt{points\_spacing} timedelta [private]: intervallo temporale tra due misurazioni;
+			            \item \texttt{generation\_delay} timedelta [private]: ritardo tra la generazione di due misurazioni adiacenti.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Enum SensorType}:
+	      \begin{itemize}
+		      \item \textbf{Valori}
+		            \begin{itemize}
+			            \item \texttt{AIR\_QUALITY}
+			            \item \texttt{PARKING}
+			            \item \texttt{RECYCLING\_POINT}
+			            \item \texttt{TEMPERATURE}
+			            \item \texttt{TRAFFIC}
+			            \item \texttt{CHARGING\_STATION}
+			            \item \texttt{PRECIPITATION}
+			            \item \texttt{RIVER\_LEVEL}
+			            \item \texttt{HUMIDITY}
+		            \end{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{from\_str(value: string)} SensorType [public,static]: restituisce il valore dell'enum corrispondente alla stringa \texttt{value}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe AirQualityRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ChargingStationRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe HumidityRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ParkingRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe PrecipitationRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe RecyclingPointRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe RiverLevelRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe TemperatureRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe TrafficRawData}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
+
 \subsubsection{Modulo \texttt{simulators}}
+Il modulo \texttt{simulators} contiene la logica per la generazione dei dati grezzi e l'orchestrazione dei simulatori.\\
+L'\textit{entrypoint} di tutto il sistema è la classe \texttt{SimulatorExecutor}, che riceve la configurazione dei sensori
+ed utilizzando il \texttt{SimulatorFactory} crea un \texttt{SimulatorThread} per ogni sensore.
+Quest'ultimo, a partire da una \texttt{SimulatorStrategy} ed una \texttt{ProducerStrategy}, genera i dati grezzi e li invia al \texttt{Producer}.\\
+La classe \texttt{SimulatorThread} utilizza un \texttt{threading.Event}, che contiene un \textit{flag} booleano.
+Quest'ultimo può essere impostato a \texttt{True} per far partire il \textit{thread}; il metodo \texttt{wait()} permette di mettere in attesa il \textit{thread} fino a quando il \textit{flag} è
+impostato a \texttt{True}, per un periodo di tempo massimo espresso dal parametro \texttt{timeout}.\\ Tale metodo è utilizzato per attendere un determinato periodo di tempo tra la generazione di due misurazioni.\\
+
 \begin{center}
 	\includegraphics[width=1\textwidth]{./specifica_tecnica/simulators.png}
-	\captionof{figure}{Diagramma delle classi modulo \texttt{simulators} e \texttt{models}}
+	\captionof{figure}{Diagramma delle classi modulo \texttt{simulators} e \texttt{models}. Per semplicità e chiarezza, la classe \texttt{SimulatorFactory} è stata rappresentata senza campi e metodi, presenti nel diagramma successivo.}
 \end{center}
 
+\subsubsubsection{\textit{Design Pattern}}
+\subsubsubsubsection{\textit{Strategy}}
+All'interno del modulo \texttt{simulators} è stato utilizzato il \textit{design pattern} \textit{Strategy} per permettere la generazione di dati grezzi di diversi tipi.
+Ciascuna tipologia simulatore implementa l'interfaccia \texttt{SimulatorStrategy} che definisce il metodo \texttt{simulate()}. In questo modo, la classe \texttt{SimulatorThread}
+può eseguire il simulatore senza conoscere il tipo di dato generato, rendendo inoltre semplice l'aggiunta di nuovi tipi di dati grezzi senza dover modificare il codice esistente.
+
+\subsubsubsubsection{\textit{Factory}}
+La classe \texttt{SimulatorFactory} implementa il \textit{design pattern} \textit{Factory}, fornendo un metodo che si occupa della creazione dei simulatori
+a partire da un valore dell'enum \texttt{SensorType}.
+
+
+\subsubsubsection{Classi, interfacce metodi e attributi}
+\begin{itemize}
+	\item \textbf{Classe SimulatorExecutor}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{simulator\_threads} List[SimulatorThread] [private]: lista dei simulatori da eseguire;
+			            \item \texttt{stop\_event}: threading.Event [private]: evento utilizzato per tenere attivo il \textit{thread} principale dopo aver lanciato i \textit{thread} dei simulatori.
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{stop\_all()} None [public]:
+			            \item \texttt{run()} None [public]:
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe SimulatorFactory}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{build(name: str, config: SensorConfig, producer: ProducerStrategy)} SimulatorStrategy [public, static]: restituisce un'istanza del simulatore \\ corrispondente al nome \texttt{name}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Interfaccia SimulatorStrategy}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{generation\_delay} timedelta [protected]: ritardo tra la generazione di due misurazioni adiacenti.
+			            \item \texttt{group\_name} str [protected]: nome del gruppo di sensori a cui appartiene il sensore;
+			            \item \texttt{latitude} float [protected]: latitudine del sensore;
+			            \item \texttt{limit} int [protected]: limite massimo di misurazioni da produrre;
+			            \item \texttt{longitude} float [protected]: longitudine del sensore;
+			            \item \texttt{points\_spacing} timedelta [protected]: intervallo temporale tra due misurazioni;
+			            \item \texttt{producer} ProducerStrategy [protected]: strategia di produzione dei dati.
+			            \item \texttt{sensor\_name} str [protected]: nome del sensore per cui il simulatore genera dati;
+			            \item \texttt{sensor\_uuid} str [protected]: identificativo univoco del sensore per cui il simulatore genera dati;
+			            \item \texttt{timestamp} datetime [protected]: data e ora dell'ultima misurazione;
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate} RawData [public]: metodo che simula la generazione di dati grezzi;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe SimulatorThread}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{simulator} SimulatorStrategy [private]: simulatore da eseguire;
+			            \item \texttt{event} threading.Event [private]: evento utilizzato per fermare, far partire o lasciare in attesa il \textit{thread} del simulatore.
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{run()} None [public]: esegue il simulatore;
+			            \item \texttt{is\_running()} bool [public]: restituisce \texttt{True} se il \textit{thread} è in esecuzione, \texttt{False} altrimenti;
+			            \item \texttt{stop()} None [public]: ferma il \textit{thread} del simulatore.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe AirQualitySimulatorStrategy}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{o3\_coefficient} float [private]: coefficiente randomico utilizzato per generare il valore di \texttt{o3};
+			            \item \texttt{pm25\_coefficient} float [private]: coefficiente randomico utilizzato per generare il valore di \texttt{pm25};
+			            \item \texttt{pm10\_coefficient} float [private]: coefficiente randomico utilizzato per generare il valore di \texttt{pm10};
+			            \item \texttt{no2\_coefficient} float [private]: coefficiente randomico utilizzato per generare il valore di \texttt{no2};
+			            \item \texttt{so2\_coefficient} float [private]: coefficiente randomico utilizzato per generare il valore di \texttt{so2};
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} AirQualityRawData [public]: genera un dato di tipo AirQualityRawData;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ChargingStationSimulatorStrategy}
+	      \begin{itemize}
+	      \end{itemize}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{VEHICLE\_TYPES}: Dict[str, Dict[str, float]] [private]: dizionario contenente i tipi di veicoli supportati e la capacità minima e massima della batteria;
+			            \item \texttt{CHARGING\_STATION\_TYPES} Dict[str, Dict[str, float]] [private]: dizionario contenente i tipi di colonnine di ricarica supportati e la potenza minima e massima;
+			            \item \texttt{charging\_station\_power} float [private]: potenza della colonnina di ricarica;
+			            \item \texttt{vehicle\_type} str [private]: tipo di veicolo supportato dalla colonnina di ricarica;
+			            \item \texttt{battery\_level} float [private]: livello di carica della batteria;
+			            \item \texttt{remaining\_charge\_time} timedelta [private]: tempo rimanente per completare la ricarica;
+			            \item \texttt{elapsed\_time} timedelta [private]: tempo trascorso dall'inizio della ricarica;
+			            \item \texttt{idle\_time} timedelta [private]: tempo in cui la colonnina di ricarica è inattiva;
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} ChargingStationRawData [public]: genera un dato di
+			                  tipo \\ChargingStationRawData;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe HumiditySimulatorStrategy}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} HumidityRawData [public]: genera un dato di tipo HumidityRawData;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ParkingSimulatorStrategy}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{is\_occupied} bool [private]: indica se il parcheggio è occupato;
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} ParkingRawData [public]: genera un dato di tipo ParkingRawData;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe PrecipitationSimulatorStrategy}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} PrecipitationRawData [public]: genera un dato di tipo\\ PrecipitationRawData;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe RecyclingPointSimulatorStrategy}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{last\_value} float [private]: ultimo valore generato;
+			            \item \texttt{prev\_timestamp} datetime [private]: data e ora dell'ultima misurazione;
+			            \item \texttt{fill\_rate} float [private]: tasso di riempimento del contenitore;
+			            \item \texttt{emptying\_hours} int [private]: ore necessarie per svuotare il contenitore;
+			            \item \texttt{noise\_limit} float [private]: quantità massima di rumore da aggiungere al valore generato;
+			            \item \texttt{partial\_emptying\_chance} float [private]: probabilità di svuotamento parziale;
+			            \item \texttt{partial\_emptying\_max\_percentage} float [private]: percentuale massima di svuotamento parziale;
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} RecyclingPointRawData [public]: genera un dato di tipo\\ RecyclingPointRawData;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe RiverLevelSimulatorStrategy}
+	      \begin{itemize}
+	      \end{itemize}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{DAILY\_VARIATION} float [private]: variazione giornaliera massima del livello del fiume;
+			            \item \texttt{SEASONAL\_VARIATION} float [private]: variazione stagionale massima del livello del fiume;
+			            \item \texttt{BASE\_LEVEL} float [private]: livello base del fiume;
+			            \item \texttt{RANDOM\_VARIABILITY} float [private]: massima variazione casuale del livello del fiume;
+			            \item \texttt{SEASONAL\_COEFFICIENTS} Dict[int, float] [private]: coefficienti stagionali per la variazione del livello del fiume;
+			            \item \texttt{latitude\_factor} float [private]: fattore moltiplicativo per la latitudine;
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} RiverLevelRawData [public]: genera un dato di tipo RiverLevelRawData;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe TemperatureSimulatorStrategy}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} TemperatureRawData [public]: genera un dato di tipo\\ TemperatureRawData;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe TrafficSimulatorStrategy}
+	      \begin{itemize}
+	      \end{itemize}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{SPEED\_FACTOR} float [private]: fattore moltiplicativo per la velocità;
+			            \item \texttt{VEHICLES\_FACTOR} [private]: fattore moltiplicativo per il numero di veicoli;
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{simulate()} TrafficRawData [public]: genera un dato di tipo TrafficRawData;
+		            \end{itemize}
+	      \end{itemize}
+
+\end{itemize}
+
 \subsubsection{Modulo \texttt{producers}}
+Il modulo \texttt{producers} contiene le classi che si occupano della produzione dei dati grezzi.
+\subsubsubsection{Design Pattern}
+\subsubsubsubsection{\textit{Strategy}}
+Analogamente a quanto effettuato nel modulo \texttt{simulators}, anche in questo caso è stato utilizzato il \textit{design pattern} \textit{Strategy} per permettere la produzione di dati grezzi di diversi tipi.
+Sono stati implementati due produttori: \texttt{KafkaProducerAdapter} e \texttt{StdOutProducer}, rispettivamente per la produzione di dati su Kafka e su \textit{standard output}.
+
+\subsubsubsubsection{\textit{Object Adapter}}
+Al fine di adattare la classe \texttt{KafkaProducer}, contenuta nella libreria \texttt{kafka}, abbiamo utilizzato il \textit{design pattern} \textit{Adapter}, nella sua variante
+\textit{Object Adapter}. Esso consente di rendere compatibile con l'interfaccia \texttt{ProducerStrategy} la classe \texttt{KafkaProducer}, la quale potrebbe subire
+cambiamenti da noi non controllabili. In tale eventualità, il \textit{pattern} \textit{Adapter} consente di poter continuare ad utilizzare tale classe senza dover modificare altre parti del sistema.
+
+\subsubsubsection{Classi, interfacce metodi e attributi}
+\begin{itemize}
+	\item \textbf{Interfaccia ProducerStrategy}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{serialization\_strategy} SerializationStrategy [protected]: strategia di serializzazione dei dati grezzi.
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{produce(data: RawData)} bool [public]: metodo che produce i dati grezzi in base alla strategia utilizzata, ritornando \texttt{True} in caso di successo, \texttt{False} altrimenti.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe KafkaProducerAdapter}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{serialization\_strategy} SerializationStrategy [protected]: strategia di serializzazione dei dati grezzi.
+			            \item \texttt{adaptee} KafkaProducer [private]: produttore di dati su Kafka.
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{produce(data: RawData)} bool [public]: produce i dati grezzi su Kafka, ritornando \texttt{True} in caso di successo, \texttt{False} altrimenti.
+		            \end{itemize}
+		      \item \textbf{Note}:
+		            \begin{itemize}
+			            \item la classe \texttt{KafkaProducerAdapter} si appoggia alla libreria \texttt{kafka} per interagire con il \textit{broker}, realizzando
+			                  il \textit{pattern} \textit{Adapter} per adattare la classe \texttt{KafkaProducer} all'interfaccia \texttt{ProducerStrategy}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe StdOutProducer}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{serialization\_strategy} SerializationStrategy [protected]: strategia di serializzazione dei dati grezzi.
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{produce(data: RawData)} bool [public]: produce i dati grezzi su \textit{standard output}.
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
 
 \subsubsection{Modulo \texttt{serializers}}
+Il modulo \texttt{serializers} contiene le classi che si occupano della serializzazione dei dati grezzi. Questi vengono serializzati in due formati: JSON e Confluent Avro.
+La serializzazione in JSON viene principalmente utilizzata per il \textit{debugging} e la visualizzazione dei dati grezzi su \textit{standard output}, mentre la serializzazione in Avro
+per l'effettiva produzione dei dati su Kafka.
+
+\subsubsubsection{\textit{Design Pattern}}
+\subsubsubsubsection{\textit{Strategy}}
+Abbiamo deciso di utilizzare il \textit{design pattern} \textit{Strategy} per convertire le istanze di \texttt{RawData} in \textit{byte}, senza dover modificare il codice che le utilizza;
+per tale motivo sono state implementate le classi \\\texttt{JsonSerializationStrategy} e \texttt{AvroSerializationStrategy}.
+\texttt{DictSerializable} è un'interfaccia che definisce il metodo \texttt{to\_dict()}, il quale restituisce un dizionario Python.
+L'interfaccia \texttt{SerializationStrategy} definisce il metodo \texttt{serialize(data: DictSerializable)}, che prende in input un \texttt{DictSerializable} restituisce i \textit{byte} corrispondenti.
+\texttt{AvroSerializationStrategy} si appoggia sulla libreria \texttt{confluent\_avro} per interagire con lo \textit{schema registry} e costruire un oggetto di tipo
+\texttt{AvroValueSerde}, necessario per la serializzazione a partire da uno schema Avro e un dizionario.
+
+\subsubsubsubsection{\textit{Object Adapter}}
+Entrambe le classi \texttt{JsonSerializationStrategy} e \texttt{AvroSerializationStrategy} necessitano di convertire un oggetto di tipo \texttt{RawData} in un dizionario Python
+prima della serializzazione vera e propria. Nel primo caso poi la conversione in \textit{byte} è direttamente effettuata dal metodo \texttt{dumps()} della libreria \texttt{json}. Nel
+secondo caso invece, il dizionario costituisce l'input per il metodo \texttt{serialize()} di \texttt{AvroValueSerde}.\\
+Per tale motivo, abbiamo deciso di utilizzare il \textit{design pattern} \textit{Adapter} nella sua variante \textit{Object Adapter}, al fine di rendere compatibile la classe \texttt{RawData}
+con l'interfaccia \\\texttt{DictSerializable}.
+
 \begin{center}
 	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/producers_serializers.png}
 	\captionof{figure}{Diagramma delle classi modulo \texttt{producers} e \texttt{serializers}}
 \end{center}
 
-% TDOD diagramma simulators
+\subsubsubsection{Classi, interfacce metodi e attributi}
+\begin{itemize}
+	\item \textbf{Interfaccia SerializationStrategy}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{serialize(data: DictSerializable)} bytes [public]: metodo che serializza i dati grezzi in \textit{byte}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Interfaccia DictSerializable}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{to\_dict()} dict [public]: metodo che restituisce un dizionario Python.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe AvroSerializationStrategy}
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{schemas\_path} str [private]: percorso della cartella contenente gli schemi Avro;
+			            \item \texttt{registry\_client} SchemaRegistry [private]: client per interagire con lo schema registry, contenuto nella libreria \texttt{confluent\_avro};
+			            \item \texttt{serde\_by\_subject} Dict[str, (AvroValueSerde, str)] [private]: \textit{cache} per memorizzare gli oggetti \texttt{AvroValueSerde} e gli schemi Avro associati.
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{serialize(data: DictSerializable)} bytes [public]: serializza i dati grezzi in \textit{byte} utilizzando il formato Confluent Avro.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe DictRawDataAdapter}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{to\_dict()} dict [public]: restituisce un dizionario Python a partire da un'istanza di \texttt{RawData};
+			            \item \texttt{beautify\_key(key: str)} str [private]: formatta una chiave del dizionario;
+			            \item \texttt{beautify\_value(value: object)} str [private]: formatta un valore del dizionario.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe JsonSerializationStrategy}
+	      \begin{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{serialize(data: DictSerializable)} bytes [public]:
+		            \end{itemize}
+	      \end{itemize}
+
+\end{itemize}
 
 \subsection{Redpanda}
 \subsubsection{\textit{Topic}}
@@ -273,6 +716,9 @@ Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
 \subsubsubsection{\textit{Topic name strategy}} % TODO
 TODO
 
+\subsubsection{Inizializzazione e configurazione}
+TODO: parlare dell'immagine redpanda\_init
+
 \subsubsection{Redpanda Connect}
 Redpanda Connect è una piattaforma integrata nel sistema Redpanda, progettata per facilitare l'integrazione e il trasferimento dei dati tra Redpanda e altre fonti o destinazioni.
 Esso consente di gestire dei connettori, componenti \textit{software} che si occupano automatizzare lo spostamento dei dati da e verso Redpanda. Tali connettori si dividono in due categorie:
@@ -291,8 +737,7 @@ La documentazione relativa è consultabile al seguente \href{https://clickhouse.
 La configurazione di tale connettore è disponibile all'interno del \textit{repository} del progetto al percorso \texttt{redpanda/connectors/configs/clickhouse.json}.
 Al fine di effettuare il \textit{parsing} delle date è stato necessario definire all'interno di tale file un \textit{transformer}, il quale si occupa di leggere il campo \texttt{timestamp}
 e convertirlo in \texttt{DateTime}, tipo riconosciuto da ClickHouse.\\
-La versione utilizzata è la 1.1.1, scaricabile dal seguente \href{https://github.com/ClickHouse/clickhouse-kafka-connect/releases}{\underline{url}} [Ultima consultazione 2024-07-10].
-
+La versione utilizzata è la 1.1.1, scaricabile dal seguente \href{https://github.com/ClickHouse/clickhouse-kafka-connect/releases}{\underline{url}} [Ultima consultazione 2024-07-10].\\
 La configurazione del \textit{transformer} è la seguente:
 \begin{lstlisting}[language=json, caption=Configurazione del \textit{transformer} all'interno del file \texttt{clickhouse.json},captionpos=b]
 {
@@ -338,45 +783,31 @@ Redpanda Console è un'applicazione web che consente di gestire e effettuare \te
 	\item \textbf{Kafka Connect}: permette di gestire i connettori da più \textit{cluster} di connessione, modificare le configurazioni, visualizzare lo stato corrente o riavviare i task.
 \end{itemize}
 
-\subsection{Flink - \textit{Processing layer}}
-\subsubsection{Introduzione}
-È un \textit{framework} di elaborazione dati distribuito e \textit{open-source} che si distingue per la sua capacità di gestire sia dati di flusso in tempo reale che dati \textit{batch}.
-Una delle sue caratteristiche principali è la capacità di gestire dati in tempo reale con latenze molto basse.
-Ciò significa che può elaborare i dati man mano che arrivano, consentendo alle applicazioni di reagire istantaneamente ai cambiamenti nell'\textit{input}.
-Questa caratteristica è particolarmente importante per le applicazioni che richiedono analisi in tempo reale, come il monitoraggio di sensori, il rilevamento di
-anomalie o la personalizzazione di contenuti.
+\subsection{Apache Flink - \textit{Processing layer}}
+Nel contesto di Apache Flink, un \textit{job} è un'applicazione che definisce una serie di operazioni di trasformazione su un flusso di dati.
+Essi possono essere eseguiti su \textit{cluster} distribuiti per sfruttare la scalabilità e la potenza di calcolo necessaria per elaborare grandi quantità di dati in tempo reale.
+Tipicamente, un \textit{job} consiste di tre componenti principali:
+\begin{itemize}
+	\item \textbf{sorgente di dati (\textit{source})}: il punto di ingresso del flusso di dati, ad esempio un \textit{topic} Kafka o un file di log;
+	\item \textbf{transformations}: operazioni come map, filter, aggregate, join, che trasformano i dati in ingresso;
+	\item \textbf{\textit{sink}}: il punto di uscita dove i dati elaborati vengono scritti, ad esempio un database o un altro \textit{topic} Kafka.
+\end{itemize}
+Flink offre due API per la definizione dei \textit{job}: \textit{DataStream API} e \textit{Table API}
+Il primo consente di lavorare con \textit{stream} di dati, avendo un controllo più fine sul flusso di dati, mentre il secondo permette di lavorare con tabelle, offrendo una sintassi più simile a SQL.\\
+Per questo progetto abbiamo utilizzato le \textit{DataStream API} per la realizzazione di due \textit{job} indipendenti tra loro, che tuttavia condividono alcune classi di utilità.
 
-\subsubsection{Componenti Flink e \textit{processing layer}}
-È costituito da diverse componenti fondamentali che lavorano insieme per consentire l'elaborazione efficiente e scalabile dei dati in tempo reale e batch. Queste componenti formano il cuore del sistema Flink e forniscono le basi per la sua potente capacità di elaborazione dei dati.
-% In questa sezione, esamineremo le principali componenti di Flink e il loro ruolo nella creazione di un'infrastruttura robusta per l'analisi dei dati.
-% \begin{itemize}
-% 	\item \textbf{JobManager}: è il componente centrale di Flink responsabile della pianificazione e del coordinamento dei job di elaborazione dei dati. Gestisce il flusso di lavoro complessivo, assegnando i task ai TaskManager per l'esecuzione;
-% 	\item \textbf{TaskManager}: è responsabile dell'esecuzione effettiva delle operazioni di elaborazione dei dati, eseguendo i task assegnati loro dal JobManager e gestendo il caricamento, l'elaborazione e la distribuzione dei dati all'interno del cluster;
-% 	\item \textbf{\textit{Processing layer}}: è responsabile dell'esecuzione delle operazioni di elaborazione dei dati all'interno del cluster distribuito. Questa layer sfrutta le risorse di calcolo e memorizzazione disponibili nei nodi del cluster per eseguire le operazioni di trasformazione, aggregazione, filtraggio e altro ancora sui dati in ingresso. Utilizzando un modello di esecuzione distribuita, la \textit{Processing layer} di Flink è in grado di scalare orizzontalmente per gestire grandi volumi di dati e carichi di lavoro ad alta intensità computazionale.
-% \end{itemize}
-\subsubsection{\textit{Processing layer data-flow}}
-%TODO mettere foto del processing layer data-flow di flink
-% \begin{enumerate}
-% 	\item \textbf{Acquisizione dei dati};
-% 	\item \textbf{partizione e distribuzione}: i dati vengono divisi in parti più piccole e distribuiti tra i nodi del cluster per massimizzare l'utilizzo delle risorse;
-% 	\item \textbf{pianificazione dei task}: il JobManager assegna compiti di elaborazione ai TaskManager basandosi sullo stato del cluster e sull'ottimizzazione delle prestazioni;
-% 	\item \textbf{esecuzione dei task}: i TaskManager eseguono i compiti assegnati in parallelo, elaborando i dati in base alla logica definita nell'applicazione Flink;
-% 	\item \textbf{scambio e movimento dei dati}: i dati possono essere scambiati e spostati tra i nodi del cluster per supportare operazioni complesse come il join o l'aggregazione;
-% 	\item \textbf{persistenza e output}: una volta elaborati, i risultati vengono eventualmente salvati o inviati ad altre destinazioni per l'analisi o l'utilizzo successivo.
-% \end{enumerate}
-
-\subsubsection{\textit{Job}}
 \subsubsubsection{\textit{Heat Index}}
-A partire dai dati rilevati dai sensori di temperatura e umidità; esso consente di stimare la percezione della temperatura da parte dell'essere umano.
-Nella configurazione del Simulatore, oltre a posizione e identificativo per ciascun sensore, è possibile specificare un \texttt{group\_name}, una stringa che identifica il gruppo o zona di appartenenza;
-si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \textit{job} calcola prima separatamente
+A partire dai dati rilevati dai sensori di temperatura e umidità relativa lo \textit{Heat Index} consente di stimare la percezione della temperatura da parte dell'essere umano.
+Nella configurazione di ciascun simulatore, oltre a posizione e identificativo dello stesso, è possibile specificare un \texttt{group\_name}, ovvero una stringa che identifica
+il gruppo o zona di appartenenza; si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \textit{job} calcola prima separatamente
 la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo \textit{Heat Index},
 utilizzando la \underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3801457/}{formula empirica ideata da Blazejczyk}} [Ultima consultazione 2024-06-25].
 Nel risultato finale, oltre al valore dello \textit{Heat Index}, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
 (utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
-distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio, rappresentante la zona di influenza del gruppo di sensori.
+distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio,
+rappresentante la zona di influenza del gruppo di sensori.
 
-\subsubsubsubsection{Formule utilizzate}
+\subsubsubsubsection{Modello di calcolo}
 \subsubsubsubsubsection{Heat Index}
 Lo \textit{Heat Index} viene calcolato con la seguente formula, dove $T$ è la temperatura in gradi Celsius, $R$ l'umidità relativa in percentuale:
 \[
@@ -412,10 +843,6 @@ Una volta ottenuti i coefficienti per tutti i punti, si calcola la media di tutt
 		x & = \frac{1}{n} \sum_{i=1}^{n} x_i, & \quad y = \frac{1}{n} \sum_{i=1}^{n} y_i, & \quad z = \frac{1}{n} \sum_{i=1}^{n} z_i
 	\end{aligned}
 \]
-
-% lon: The longitude in radians, derived from the average Cartesian coordinates.
-% hyp: The hypotenuse in the Cartesian coordinate plane, which is the distance from the origin to the projection of the point onto the XY plane.
-% lat: The latitude in radians, derived from the average Cartesian coordinates. 
 Infine si calcolano $lat$ (latitudine in radianti), $lon$ (longitudine in radianti) e $hyp$ (ipotenusa ne piano cartesiano, che rappresenta la distanza dall'origine alla proiezione del punto sul piano $lat_i, lon_i$):
 \begin{align*}
 	lon = atan2(y, x)      \\
@@ -428,10 +855,36 @@ Una volta ottenuti $lat$ e $lon$, si convertono in gradi e si ottiene il centro 
 		c_a = \frac{180}{\pi} \cdot lat, & \quad c_b = \frac{180}{\pi} \cdot lon
 	\end{align*}
 \]
+\subsubsubsubsubsection{Raggio del cerchio}
+Il raggio del cerchio viene calcolato come la distanza dal centro di massa al punto più lontano. Sia $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$ l'insieme di punti, $CM = (c_a, c_b)$, il
+raggio $r$ è dato da:
+\[
+	r = \max_{i=1}^{n} haversine(c_a, c_b, a_i, b_i)
+\]
 
 
-\subsubsubsection{Efficienza delle colonnine elettriche}
-% TODO: aggiungere dettagli implementativi
+\subsubsubsubsection{Flusso di dati}
+TODO: aggiungere schema flusso dati
+\subsubsubsubsection{Architettura}
+TODO: aggiungere schema classi + design pattern + metodi
+\subsubsubsubsection{\textit{Deployment}}
+TODO
+
+\subsubsubsection{\textit{Charging Efficiency} (efficienza delle colonnine elettriche)}
+A partire dai dati rilevati dai sensori di occupazione dei parcheggi e delle colonnine elettriche, questo \textit{job} calcola giornalmente per ciascun sensore i seguenti valori:
+\begin{itemize}
+	\item \texttt{utilization\_rate}: percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale considerato;
+	\item \texttt{efficiency\_rate}: percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale in cui il parcheggio è occupato.
+\end{itemize}
+
+\subsubsubsubsection{Modello di calcolo}
+TODO: spiegare come vengono calcolati i coefficienti
+
+\subsubsubsubsection{Flusso di dati}
+TODO: aggiungere schema flusso dati
+
+\subsubsubsubsection{Architettura}
+TODO: aggiungere schema classi + design pattern + metodi
 
 \subsection{Database ClickHouse}
 % Come detto in precedenza, il database adottato è \textit{ClickHouse}. Per ogni sensore è stata creata una tabella \textit{MergeTree}, che permette di memorizzare i dati in modo efficiente e di eseguire query complesse in modo veloce.
