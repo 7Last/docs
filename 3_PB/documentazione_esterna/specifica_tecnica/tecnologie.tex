@@ -19,7 +19,7 @@ Per lo sviluppo di questo progetto sono stati ipotizzati i due seguenti scenari 
 \end{itemize}
 
 \subsubsection{Immagini Docker}
-Nello sviluppo di questo progetto \textit{7Last} ha utilizzato diverse immagini Docker di seguito elencate.
+Nello sviluppo di questo progetto abbiamo utilizzato diverse immagini Docker, di seguito elencate.
 \begin{itemize}
 	\item \textbf{Simulator - Python}
 	      \begin{itemize}
@@ -212,18 +212,17 @@ Flink si distingue per la sua capacità di fornire elaborazione a bassa latenza,
 
 \subsubsubsection{Vantaggi}
 \begin{itemize}
-	\item \textbf{Elaborazione a bassa latenza}: Flink è progettato per elaborare i dati in tempo reale con latenza estremamente bassa, rendendolo ideale per applicazioni che richiedono risposte rapide ai cambiamenti dei dati.
-	\item \textbf{Fault Tolerance}: Flink utilizza una tecnologia chiamata \textit{Stateful Stream Processing} che garantisce che lo stato dell'applicazione venga memorizzato in modo sicuro e possa essere recuperato in caso di guasti. Questo consente un'elaborazione affidabile e continua anche in presenza di errori hardware o software.
-	\item \textbf{Scalabilità}: Flink può scalare orizzontalmente su cluster di grandi dimensioni, distribuendo il carico di lavoro tra molteplici nodi per gestire volumi di dati crescenti senza compromettere le prestazioni.
-	      % datastream vs table
-	\item \textbf{Modello di programmazione flessibile}: Flink offre due tipologie di API per l'elaborazione dei dati: DataStream API, utilizzato per l'elaborazione di flussi di dati non strutturati in tempo reale, e Table API, un'astrazione di livello superiore per manipolare dati strutturati come tabelle, facilitando l'uso di operazioni simili a SQL;
-	\item \textbf{Supporto per analisi complesse}: Flink fornisce potenti funzionalità di analisi come aggregazioni, join e \textit{windowing}, che consentono di realizzare analisi complesse sui flussi di dati.
+	\item \textbf{elaborazione a bassa latenza}: Flink è progettato per elaborare i dati in tempo reale con latenza estremamente bassa, rendendolo ideale per applicazioni che richiedono risposte rapide ai cambiamenti dei dati.
+	\item \textbf{\textit{fault tolerance}}: Flink utilizza una tecnologia chiamata \textit{Stateful Stream Processing} che garantisce che lo stato dell'applicazione venga memorizzato in modo sicuro e possa essere recuperato in caso di guasti. Questo consente un'elaborazione affidabile e continua anche in presenza di errori hardware o software.
+	\item \textbf{scalabilità}: Flink può scalare orizzontalmente su cluster di grandi dimensioni, distribuendo il carico di lavoro tra molteplici nodi per gestire volumi di dati crescenti senza compromettere le prestazioni.
+	\item \textbf{modello di programmazione flessibile}: Flink offre due tipologie di API per l'elaborazione dei dati: DataStream API, utilizzato per l'elaborazione di flussi di dati non strutturati in tempo reale, e Table API, un'astrazione di livello superiore per manipolare dati strutturati come tabelle, facilitando l'uso di operazioni simili a SQL;
+	\item \textbf{supporto per analisi complesse}: Flink fornisce potenti funzionalità di analisi come aggregazioni, join e \textit{windowing}, che consentono di realizzare analisi complesse sui flussi di dati.
 \end{itemize}
 
 \subsubsubsection{Casi d'uso}
 Tra i principali casi d'uso di Apache Flink si trovano:
 \begin{itemize}
-	\item \textbf{Applicazioni \textit{event-driven}}: applicazioni \textit{stateful} che elaborano eventi provenienti da uno o più flussi di eventi e reagiscono agli eventi in ingresso attivando calcoli, aggiornamenti di stato o azioni esterne;
+	\item \textbf{applicazioni \textit{event-driven}}: applicazioni \textit{stateful} che elaborano eventi provenienti da uno o più flussi di eventi e reagiscono agli eventi in ingresso attivando calcoli, aggiornamenti di stato o azioni esterne;
 	\item \textbf{\textit{data analytics}}: estrazione di informazioni e \textit{insight} a partire dall'elaborazione dei dati grezzi, sia in \textit{real time} che in modalità \textit{batch};
 	\item \textbf{\textit{data pipeline}}: ad esempio per la costruzione di \textit{Extract-transform-load} (ETL) o integrazione di dati provenienti da sorgenti differenti.
 \end{itemize}

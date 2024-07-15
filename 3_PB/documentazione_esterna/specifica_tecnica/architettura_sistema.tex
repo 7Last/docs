@@ -63,7 +63,7 @@ All'interno del sistema progettato sono dunque presenti le seguenti componenti:
 \end{itemize}
 
 \begin{center}
-	\includegraphics[width=0.7\textwidth]{./specifica_tecnica/architettura_sistema.png}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/architettura_sistema.png}
 	\captionof{figure}{Componenti di sistema ad alto livello}
 \end{center}
 
@@ -73,7 +73,6 @@ Per illustrare il flusso di dati all'interno del sistema, è stato realizzato il
 	\includegraphics[width=1\textwidth]{./specifica_tecnica/data_flow.png}
 	\captionof{figure}{Flusso di dati all'interno del sistema. I sensori di precipitazioni, isole ecologiche, livello dei fiumi e traffico sono stati omessi per chiarezza, ma il percorso di tali dati è analogo a quello dei sensori di qualità dell'aria.}
 \end{center}
-
 Il flusso seguito dai dati si può riassumere nei seguenti passaggi:
 \begin{enumerate}
 	\item \textbf{generazione dei dati}: ciascun simulatore emula il comportamento di un singolo sensore IoT, generando ad intervalli periodici o ad eventi (\textit{event-driven}) i dati grezzi relativi alla propria tipologia di dato.
@@ -598,7 +597,7 @@ che costituisce il vero e proprio \textit{payload}; eventi con la stessa chiave 
 Nel caso del nostro progetto, abbiamo deciso di utilizzare come chiave il \texttt{sensor\_uuid}, un identificativo univoco globale per ciascun sensore, affinché i dati
 siano inviati alla stessa partizione e conseguentemente elaborati nell'ordine in cui sono stati prodotti.
 
-\subsubsection{Redpanda schema registry}
+\subsubsection{Redpanda \textit{schema registry}}
 Lo \textit{schema registry} offre un archivio centralizzato per gestire e convalidare gli schemi associati ai messaggi Kafka, facilitandone la serializzazione e deserializzazione.
 I produttori e consumatori dei \textit{topic} Kafka possono utilizzare questi schemi per garantire coerenza e compatibilità dei dati durante la loro evoluzione nel tempo.
 
@@ -716,6 +715,9 @@ Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
 \subsubsubsection{\textit{Topic name strategy}} % TODO
 TODO
 
+\subsubsubsection{Partizionamento}
+TODO
+
 \subsubsection{Inizializzazione e configurazione}
 TODO: parlare dell'immagine redpanda\_init
 
@@ -801,7 +803,7 @@ A partire dai dati rilevati dai sensori di temperatura e umidità relativa lo \t
 Nella configurazione di ciascun simulatore, oltre a posizione e identificativo dello stesso, è possibile specificare un \texttt{group\_name}, ovvero una stringa che identifica
 il gruppo o zona di appartenenza; si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \textit{job} calcola prima separatamente
 la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo \textit{Heat Index},
-utilizzando la \underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3801457/}{formula empirica ideata da Blazejczyk}} [Ultima consultazione 2024-06-25].
+utilizzando la \\\underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3801457/}{formula empirica ideata da Blazejczyk}} [Ultima consultazione 2024-06-25].
 Nel risultato finale, oltre al valore dello \textit{Heat Index}, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
 (utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
 distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio,
@@ -864,9 +866,151 @@ raggio $r$ è dato da:
 
 
 \subsubsubsubsection{Flusso di dati}
-TODO: aggiungere schema flusso dati
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/heat_index_flow.png}
+	\captionof{figure}{Flusso di dati del \textit{job} \textit{Heat Index}}
+\end{center}
+
 \subsubsubsubsection{Architettura}
-TODO: aggiungere schema classi + design pattern + metodi
+Al fine di realizzare un \textit{job}, è necessario implementare una classe dotata di un metodo \texttt{main} che si occupi di inizializzare l'ambiente di esecuzione, definire
+sorgente e \textit{sink} dei dati e infine di far partire il \textit{job} vero e proprio.
+La classe che svolge tale ruolo per il \textit{job} \textit{Heat Index} è \texttt{HeatIndexJob}, che definisce come sorgente di dati
+i \textit{topic} relativi alla temperatura e all'umidità, leggendo le variabili d'ambiente relative all'indirizzo del \textit{bootstrap server} e \textit{schema registry},
+applica le trasformazioni illustrate nel paragrafo precedente ed infine pubblica i risultati nel \textit{topic} dedicato allo \textit{Heat Index}.
+In tale classe viene definito un metodo \texttt{execute}, il quale applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}. Separare
+la logica di esecuzione del \textit{job} dalla sua definizione consente di rendere il codice più modulare e rende possibile la realizzazione di test di integrazione sull'esecuzione
+dell'intero \textit{job}, fornendo una versione \textit{mock} di \textit{source} e \textit{sink} di dati.\\
+Come illustrato nel diagramma seguente, per ciascuna fase di elaborazione dei dati viene definita una classe che estende la funzione appropriata per il tipo di operazione che si
+vuole effettuare. Per i casi più semplici sarebbe possibile utilizzare direttamente delle classi anonime o funzioni \textit{lambda}, tuttavia definendo classi separate
+per ciascuna trasformazione consente di sottoporre ciascuna di esse a test di unità e riutilizzarle se necessario; la funzione \texttt{AverageWindowFunction} viene ad esempio
+utilizzata sia per calcolare la media della temperatura che dell'umidità.
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{./specifica_tecnica/heat_index_job.png}
+	\captionof{figure}{Architettura del \textit{job} \textit{Heat Index}}
+\end{center}
+
+\subsubsubsubsubsection{\textit{Object adapter}}
+Data la necessità di convertire la classe \texttt{HeatIndexResult}, prodotto delle aggregazioni, in un oggetto di tipo \texttt{GenericRecord} (contenuto nella libreria \texttt{avro}),
+abbiamo implementato il \textit{pattern} \textit{object adapter}, che si occupa di effettuare tale conversione.\\
+A tale scopo, è stata definita un'interfaccia \texttt{RecordSerializable} che espone il metodo \texttt{toGenericRecord}, il quale restituisce un oggetto di tipo \texttt{GenericRecord}.\\
+\texttt{HeatIndexRecordSerializableAdapter} implementa tale interfaccia e ha un campo \texttt{adaptee} di tipo \texttt{HeatIndexResult}. Prima di effettuare dunque il \textit{sink}
+dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \textit{record} da pubblicare nel \textit{topic} dedicato allo \textit{Heat Index}.
+
+\subsubsubsubsubsection{Classi, interfacce metodi e attributi}
+\begin{itemize}
+	\item \textbf{Classe HeatIndexJob}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{TEMPERATURE\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo alla temperatura;
+			            \item \texttt{HUMIDITY\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo all'umidità;
+			            \item \texttt{HEAT\_INDEX\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo allo \textit{Heat Index};
+			            \item \texttt{GROUP\_ID} str [private,final,static]: identificativo del gruppo di consumatori;
+			            \item \texttt{WINDOW\_SIZE} int [private,final,static]: dimensione della finestra temporale per cui calcolare le aggregazioni.
+		            \end{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{main(String[] args)} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \textit{job} vero e proprio;
+
+			            \item \texttt{execute(StreamExecutionEnvironment env)} [public]: metodo che applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe AverageWindowFunction}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{apply(String groupName, TimeWindow window, Iterable<HumTempRawData> input, Collector<AverageResult> out)} void [public]: metodo che calcola la media delle misurazioni di temperatura e umidità per una certa finestra temporale.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe HeatIndexJoinFunction}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{join(AverageResult averageTemperature, AverageResult averageHumidity)} HeatIndexResult [public]: metodo che calcola lo \textit{Heat Index}, il centro di massa e il raggio del cerchio a partire dai valori di temperatura e umidità medi e i sensori che li hanno prodotti.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe HumTempRawDataMapFunction}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{map(GenericRecord record)} HumTempRawData [public]: metodo che converte un \texttt{GenericRecord} in un oggetto di tipo \texttt{HumTempRawData}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Interfaccia RecordSerializable}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{toGenericRecord()} GenericRecord [public]: metodo che restituisce un oggetto di tipo \texttt{GenericRecord}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe HeatIndexRecordSerializableAdapter}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{adaptee} HeatIndexResult [private, final]: oggetto da adattare.
+		            \end{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{toGenericRecord()} GenericRecord [public]: metodo che restituisce un oggetto di tipo \texttt{GenericRecord} a partire da \texttt{adaptee}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe AverageResult}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{groupName} String [private]: nome del gruppo di sensori che ha prodotto la misurazione;
+			            \item \texttt{sensors} Set \texttt{<}String\texttt{>} [private]: insieme degli identificativi dei sensori che hanno prodotto la misurazione;
+			            \item \texttt{value} double [private]: valore medio di tutte le misurazioni considerate;
+			            \item \texttt{windowStart} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui è stata calcolata la media.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe SensorLocation}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{sensorName} String [private]: nome del sensore;
+			            \item \texttt{latitude} double [private]: latitudine del sensore;
+			            \item \texttt{longitude} double [private]: longitudine del sensore.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe HeatIndexResult}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{sensors} Set \texttt{<}String\texttt{>} [private]: insieme degli identificativi dei sensori che hanno prodotto le misurazioni;
+			            \item \texttt{groupName} String [private]: nome del gruppo di sensori che ha prodotto la misurazione;
+			            \item \texttt{heatIndex} double [private]: valore dello \textit{Heat Index};
+			            \item \texttt{averageTemperature} double [private]: valore medio della temperatura;
+			            \item \texttt{averageHumidity} double [private]: valore medio dell'umidità;
+			            \item \texttt{centerOfMassLatitude} double [private]: latitudine del centro di massa;
+			            \item  \texttt{centerOfMassLongitude} double [private]: longitudine del centro di massa;
+			            \item  \texttt{radius} double [private]: raggio del cerchio;
+			            \item  \texttt{windowStart} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui è stato calcolato lo \textit{Heat Index}.
+		            \end{itemize}
+
+	      \end{itemize}
+	\item \textbf{Classe astratta RawData}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{sensorUuid} String [protected]: identificativo univoco del sensore;
+			            \item \texttt{sensorName} String [protected]: nome del sensore;
+			            \item \texttt{groupName} String [protected]: nome del gruppo di sensori a cui appartiene;
+			            \item \texttt{latitude} double [protected]: latitudine del sensore;
+			            \item \texttt{longitude} double [protected]: longitudine del sensore;
+			            \item \texttt{timestamp} LocalDateTime [protected]: data e ora della misurazione.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe HumTempRawData}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{value} double [private]: valore della misurazione.
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
+
 \subsubsubsubsection{\textit{Deployment}}
 TODO
 
@@ -878,12 +1022,63 @@ A partire dai dati rilevati dai sensori di occupazione dei parcheggi e delle col
 \end{itemize}
 
 \subsubsubsubsection{Modello di calcolo}
-TODO: spiegare come vengono calcolati i coefficienti
+Siano dati $P$ e $C$, due insiemi di misurazioni rispettivamente di parcheggi e colonnine elettriche, tali che:
+\begin{itemize}
+	\item $P = \{(tp_1, o_1), (tp_2, o_2)\ldots (tp_n, o_n)\}$, dove:
+	      \begin{itemize}
+		      \item $tp_i$ è il \textit{timestamp} della misurazione;
+		      \item $tp_i < tp_{i+1}\forall i\in\{1\ldots n\}$, ovvero le misurazioni sono ordinate cronologicamente;
+		      \item $o_i$ è un intero pari a 1 se il parcheggio è occupato, 0 altrimenti.
+	      \end{itemize}
+	\item $C = \{(tc_1, k_1), (tc_2, k_2)\ldots (tc_m, k_m)\}$, dove:
+	      \begin{itemize}
+		      \item $tc_i$ è il \textit{timestamp} della misurazione;
+		      \item $tc_i < tc_{i+1}\forall i\in\{1\ldots m\}$, ovvero le misurazioni sono ordinate cronologicamente;
+		      \item $k_i$ è il numero di $kwh$ erogati dalla colonnina elettrica al momento della misurazione.
+	      \end{itemize}
+\end{itemize}
+
+\subsubsubsubsubsection{\textit{Utilization rate}}
+L' \textit{utilization rate} è calcolato come la percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale considerato.
+Sia $T = tp_m - tp_1$ il tempo totale considerato. Il tempo in cui le colonnine sono utilizzate è dato dalla somma delle differenze tra due misurazioni consecutive
+in cui $k_i > 0$, ovvero
+\[
+	S = \sum_{i=1}^{m-1} (tc_{i+1} - tc_i) \cdot \mathbbm{1}_{k_i > 0}
+\]
+Il \textit{utilization rate} è dunque ottenuto nel seguente modo:
+\[
+	\textit{utilization rate} = \frac{S}{T} \cdot 100
+\]
+
+\subsubsubsubsubsection{\textit{Efficiency rate}}
+L' \textit{efficiency rate} è calcolato come la percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale in cui il parcheggio è occupato.
+Il tempo totale in cui il parcheggio è occupato è dato dalla somma delle differenze tra due misurazioni consecutive in cui $o_i > 0$, ovvero:
+\[
+	O = \sum_{i=1}^{n-1} (tp_{i+1} - tp_i) \cdot \mathbbm{1}_{o_i > 0}
+\]
+Si utilizza quindi $S$ calcolato nel paragrafo precedente per ottenere l' \textit{efficiency rate}:
+\[
+	\textit{efficiency rate} = \frac{S}{O} \cdot 100
+\]
+
 
 \subsubsubsubsection{Flusso di dati}
-TODO: aggiungere schema flusso dati
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/charging_efficiency_flow.png}
+	\captionof{figure}{Flusso di dati del \textit{job} \textit{Charging Efficiency}}
+\end{center}
 
 \subsubsubsubsection{Architettura}
+Analogamente a quanto svolto per il \textit{job} \textit{Heat Index}, anche per il \textit{job} \textit{Charging Efficiency} è stata definita la
+classe \texttt{ChargingEfficiencyJob}, la quale funge da punto di ingresso per l'esecuzione del \textit{job}. Essa definisce come sorgente di dati
+i \textit{topic} relativi all'occupazione dei parcheggi e delle colonnine elettriche, prepara l'esecuzione del \textit{job} e infine lo avvia
+attraverso il metodo \texttt{execute}.\\
+
+\begin{center}
+	\includegraphics[width=1\textwidth]{./specifica_tecnica/charging_efficiency_job.png}
+	\captionof{figure}{Architettura del \textit{job} \textit{Charging Efficiency}}
+\end{center}
+
 TODO: aggiungere schema classi + design pattern + metodi
 
 \subsection{Database ClickHouse}
