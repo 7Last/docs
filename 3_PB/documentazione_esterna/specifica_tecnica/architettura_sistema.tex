@@ -721,7 +721,7 @@ TODO
 \subsubsection{Inizializzazione e configurazione}
 TODO: parlare dell'immagine redpanda\_init
 
-\subsubsection{Redpanda Connect}
+\subsubsection{Redpanda Connect}\label{redpanda_connect}
 Redpanda Connect è una piattaforma integrata nel sistema Redpanda, progettata per facilitare l'integrazione e il trasferimento dei dati tra Redpanda e altre fonti o destinazioni.
 Esso consente di gestire dei connettori, componenti \textit{software} che si occupano automatizzare lo spostamento dei dati da e verso Redpanda. Tali connettori si dividono in due categorie:
 \begin{itemize}
@@ -777,11 +777,11 @@ Il \textit{connector sink} è stato configurato per utilizzarlo come segue:
 Redpanda Console è un'applicazione web che consente di gestire e effettuare \textit{debug} di un'istanza Redpanda. Essa ha diverse funzionalità, tra cui:
 %
 \begin{itemize}
-	\item \textbf{visualizzazione dei messaggi}: consente di esplorare i messaggi dei \textit{topic} attraverso query ad-hoc e filtri dinamici, scritti con semplici funzioni JavaScript;
+	\item \textbf{visualizzazione dei messaggi}: consente di esplorare i messaggi dei \textit{topic} attraverso \textit{query} ad-hoc e filtri dinamici, scritti con semplici funzioni JavaScript;
 	\item \textbf{gruppi di consumatori}: permette di visualizzare tutti i gruppi di consumatori attivi, insieme ai relativi offset, modificarli o eliminarli;
 	\item \textbf{panoramica dei \textit{topic}}: permette di visualizzare la lista dei \textit{topic}, controllarne la configurazione, lo spazio utilizzato, la lista dei consumatori e i dettagli delle partizioni;
 	\item \textbf{panoramica del \textit{cluster}}: permette di visualizzare le ACL, i \textit{broker} disponibili, il loro spazio utilizzato, l'ID del rack e altre informazioni per ottenere una panoramica del \textit{cluster};
-	\item \textbf{schema registry}: permette di visualizzare tutti gli schemi Avro, Protobuf o JSON all'interno del registro degli schemi;
+	\item \textbf{\textit{schema registry}}: permette di visualizzare tutti gli schemi Avro, Protobuf o JSON all'interno del registro degli schemi;
 	\item \textbf{Kafka Connect}: permette di gestire i connettori da più \textit{cluster} di connessione, modificare le configurazioni, visualizzare lo stato corrente o riavviare i task.
 \end{itemize}
 
@@ -797,6 +797,9 @@ Tipicamente, un \textit{job} consiste di tre componenti principali:
 Flink offre due API per la definizione dei \textit{job}: \textit{DataStream API} e \textit{Table API}
 Il primo consente di lavorare con \textit{stream} di dati, avendo un controllo più fine sul flusso di dati, mentre il secondo permette di lavorare con tabelle, offrendo una sintassi più simile a SQL.\\
 Per questo progetto abbiamo utilizzato le \textit{DataStream API} per la realizzazione di due \textit{job} indipendenti tra loro, che tuttavia condividono alcune classi di utilità.
+
+\subsubsection{\textit{Watermark}}\label{watermark}
+TODO
 
 \subsubsubsection{\textit{Heat Index}}
 A partire dai dati rilevati dai sensori di temperatura e umidità relativa lo \textit{Heat Index} consente di stimare la percezione della temperatura da parte dell'essere umano.
@@ -867,9 +870,20 @@ raggio $r$ è dato da:
 
 \subsubsubsubsection{Flusso di dati}
 \begin{center}
-	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/heat_index_flow.png}
+	\includegraphics[width=1\textwidth]{./specifica_tecnica/heat_index_flow.png}
 	\captionof{figure}{Flusso di dati del \textit{job} \textit{Heat Index}}
 \end{center}
+I seguenti passaggi vengono eseguiti indipentendemente ed in parallelo per i dati provenienti dai \textit{topic} di temperatura ed umidità:
+\begin{enumerate}
+	\item lettura dei dati grezzi dai \textit{topic} relativi alla temperatura e all'umidità, attraverso la classe \texttt{KafkaSource};
+	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{Watermark}}};
+	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{keyBy} fornita da Flink;
+	\item creazione di una finestra temporale di un'ora, utilizzando la funzione \texttt{window} di Flink;
+	\item calcolo della media della temperatura e dell'umidità, utilizzando la classe \\\texttt{AverageWindowFunction};
+\end{enumerate}
+Successivamente, attraverso l'utilizzo dell'operatore \texttt{join} si uniscono i due \textit{stream} di dati, calcolando
+attraverso la classe \texttt{HeatIndexJoinFunction} il valore dello \textit{Heat Index}, la latitudine e longitudine del centro di massa e il raggio del cerchio.
+Infine, i dati vengono pubblicati nel \textit{topic} dedicato allo \textit{Heat Index}.
 
 \subsubsubsubsection{Architettura}
 Al fine di realizzare un \textit{job}, è necessario implementare una classe dotata di un metodo \texttt{main} che si occupi di inizializzare l'ambiente di esecuzione, definire
@@ -890,7 +904,7 @@ utilizzata sia per calcolare la media della temperatura che dell'umidità.
 	\captionof{figure}{Architettura del \textit{job} \textit{Heat Index}}
 \end{center}
 
-\subsubsubsubsubsection{\textit{Object adapter}}
+\subsubsubsubsubsection{\textit{Object adapter}}\label{object_adapter}
 Data la necessità di convertire la classe \texttt{HeatIndexResult}, prodotto delle aggregazioni, in un oggetto di tipo \texttt{GenericRecord} (contenuto nella libreria \texttt{avro}),
 abbiamo implementato il \textit{pattern} \textit{object adapter}, che si occupa di effettuare tale conversione.\\
 A tale scopo, è stata definita un'interfaccia \texttt{RecordSerializable} che espone il metodo \texttt{toGenericRecord}, il quale restituisce un oggetto di tipo \texttt{GenericRecord}.\\
@@ -937,7 +951,7 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 			            \item \texttt{map(GenericRecord record)} HumTempRawData [public]: metodo che converte un \texttt{GenericRecord} in un oggetto di tipo \texttt{HumTempRawData}.
 		            \end{itemize}
 	      \end{itemize}
-	\item \textbf{Interfaccia RecordSerializable}
+	\item \textbf{Interfaccia RecordSerializable}\label{record_serializable}
 	      \begin{itemize}
 		      \item \textbf{Metodi}
 		            \begin{itemize}
@@ -988,9 +1002,8 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 			            \item  \texttt{radius} double [private]: raggio del cerchio;
 			            \item  \texttt{windowStart} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui è stato calcolato lo \textit{Heat Index}.
 		            \end{itemize}
-
 	      \end{itemize}
-	\item \textbf{Classe astratta RawData}
+	\item \textbf{Classe astratta RawData}\label{abstract_class_raw_data}
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
@@ -1012,7 +1025,34 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 \end{itemize}
 
 \subsubsubsubsection{\textit{Deployment}}
-TODO
+Per poter effettuare il \textit{deployment} dei due \textit{job} sviluppati è stato necessario creare un \textit{fat jar} contenente tutte le dipendenze necessarie per l'esecuzione.
+Tale operazione è stata effettuata utilizzando il \textit{plugin Maven} \texttt{maven-assembly-plugin}, con la seguente configurazione:
+
+\begin{lstlisting}[language=XML, caption=Configurazione del \textit{plugin} \texttt{maven-assembly-plugin} per la creazione del \textit{fat jar},captionpos=b]
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>3.7.1</version>
+    <configuration>
+        <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+    </configuration>
+    <executions>
+        <execution>
+            <id>assemble-all</id>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+\end{lstlisting}
+Al fine di poter caricare ed eseguire i \textit{job} all'interno di un \textit{cluster} Flink, è necessario effettuare una chiamata \texttt{POST} all'\textit{endpoint} \texttt{/jars/upload}
+esposto dal \textit{job manager} di Flink. A tale scopo, è stata realizzata un'immagine Docker chiamata \texttt{deployer} con all'interno uno \textit{script}
+Python che si occupa di effettuare tale operazione. Essendo lo \textit{script} parametrico, è sufficiente ridefinire \texttt{command} all'interno del \texttt{docker-compose.yml},
+montando la cartella contenente il \textit{fat jar} all'interno del \textit{container} e passando come argomento il percorso del file e le \textit{entry class} dei due \textit{job}.
 
 \subsubsubsection{\textit{Charging Efficiency} (efficienza delle colonnine elettriche)}
 A partire dai dati rilevati dai sensori di occupazione dei parcheggi e delle colonnine elettriche, questo \textit{job} calcola giornalmente per ciascun sensore i seguenti valori:
@@ -1067,6 +1107,18 @@ Si utilizza quindi $S$ calcolato nel paragrafo precedente per ottenere l' \texti
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/charging_efficiency_flow.png}
 	\captionof{figure}{Flusso di dati del \textit{job} \textit{Charging Efficiency}}
 \end{center}
+Le seguenti operazioni vengono eseguite indipendentemente per i dati provenienti dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche:
+\begin{enumerate}
+	\item lettura dei dati grezzi dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche, attraverso la classe \texttt{KafkaSource};
+	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{Watermark}}};
+	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{keyBy} fornita da Flink;
+	\item creazione di una finestra temporale di un giorno, utilizzando la funzione \texttt{window} di Flink;
+	\item calcolo del tempo totale in cui le colonnine sono in uso e del tempo totale in cui i parcheggi sono occupati, utilizzando rispettivamente le classi
+	      \\\texttt{ChargingStationTimeDifferenceWindowFunction} e \texttt{ParkingTimeDifferenceWindowFunction}.
+\end{enumerate}
+Successivamente, attraverso l'utilizzo dell'operatore \texttt{join} si uniscono i due \textit{stream} di dati, calcolando
+attraverso la classe \texttt{ChargingEfficiencyJoinFunction} il valore dell'\textit{utilization rate} e dell'\textit{efficiency rate}.
+Infine, i risultati vengono pubblicati nel \textit{topic} dedicato all'efficienza delle colonnine elettriche.
 
 \subsubsubsubsection{Architettura}
 Analogamente a quanto svolto per il \textit{job} \textit{Heat Index}, anche per il \textit{job} \textit{Charging Efficiency} è stata definita la
@@ -1079,126 +1131,401 @@ attraverso il metodo \texttt{execute}.\\
 	\captionof{figure}{Architettura del \textit{job} \textit{Charging Efficiency}}
 \end{center}
 
-TODO: aggiungere schema classi + design pattern + metodi
+\subsubsubsubsubsection{\textit{Object adapter}}
+La classe \texttt{ChargingEfficiencyResult} è stata adattata in un oggetto di tipo \texttt{GenericRecord} attraverso la classe \texttt{ChargingEfficiencyRecordSerializableAdapter},
+analogamente a quanto descritto nella sezione \ref{object_adapter}.
 
-\subsection{Database ClickHouse}
-% Come detto in precedenza, il database adottato è \textit{ClickHouse}. Per ogni sensore è stata creata una tabella \textit{MergeTree}, che permette di memorizzare i dati in modo efficiente e di eseguire query complesse in modo veloce.
+\subsubsubsubsubsection{\textit{Template method}}
+Per poter ottenere il tempo totale in cui le colonnine e i parcheggi sono in uso in un certo periodo di tempo è necessario utilizzare una \texttt{WindowFunction},
+funzione di Flink che si occupa di calcolare una determinata aggregazione in una finestra temporale. In questo caso, si occupa calcolare la somma delle differenze
+tra due misurazioni consecutive in cui i kwh erogati dalle colonnine sono maggiori di 0 o i parcheggi sono occupati.\\
+Risulta quindi evidente che le due funzioni di aggregazione sono molto simili tra loro, differendo solo per il campo utilizzato per determinare se la misurazione
+è relativa ad un momento in cui le colonnine sono in uso o i parcheggi sono occupati. Per evitare di duplicare il codice, abbiamo deciso di utilizzare il \textit{pattern}
+\textit{template method}, definendo una classe astratta \texttt{TimeDifferenceWindowFunction} che implementa l'interfaccia \texttt{WindowFunction}
+e utilizza un \textit{generic type} \texttt{T extends RawData} per rappresentare il tipo di dato su cui effettuare l'aggregazione.
+\texttt{TimeDifferenceWindowFunction} definisce un metodo astratto \texttt{isOccupied(T data)} che restituisce \texttt{true} se il dato passato come argomento è relativo ad una misurazione in cui
+l'entità è in uso, \texttt{false} altrimenti. Inoltre, siccome implementa \texttt{WindowFunction}, deve ridefinire il metodo \texttt{apply}.
+Riassumendo:
+\begin{itemize}
+	\item \texttt{isOccupied} è un metodo astratto e nel contesto del \textit{pattern} \textit{template method} è un metodo primitivo;
+	\item \texttt{apply} è un metodo concreto e \texttt{final} e costituisce il \textit{template method};
+	\item non sono presenti \textit{hook}, ovvero metodi che possono opzionalmente essere sovrascritti dalle sottoclassi, definiti con implementazione di \textit{default} nella superclasse.
+\end{itemize}
+
+\subsubsubsubsubsection{Classi, interfacce metodi e attributi}
+\begin{itemize}
+	\item \textbf{Classe astratta RawData}: precedentemente descritta nella sezione relativa al \hyperref[abstract_class_raw_data]{\textit{\underline{job Heat Index}}};
+	\item \textbf{Classe ParkingRawData}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{is\_occupied} boolean [private]: valore che indica se il parcheggio è occupato o meno.
+			                  [wid\end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ChargingStationRawData}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{vehicleType} String [private]: tipo di veicolo che la colonnina ricarica;
+			            \item \texttt{batteryLevel} double [private]: livello di batteria del veicolo collegato alla colonnina;
+			            \item \texttt{kwhSupplied} double [private]: kilowatt ora che la colonnina sta erogando al momento della misurazione;
+			            \item \texttt{remainingChargeTime} Duration [private]: tempo di ricarica rimanente;
+			            \item \texttt{elapsedTime} Duration [private]: tempo di ricarica rimanente;
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ChargingEfficiencyJob}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{PARKING\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo all'occupazione dei parcheggi;
+			            \item \texttt{CHARGING\_STATION\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo all'utilizzo delle colonnine di ricarica;
+			            \item \texttt{CHARGING\_EFFICIENCY\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo all'efficienza delle colonnine;
+			            \item \texttt{GROUP\_ID} str [private,final,static]: identificativo del gruppo di consumatori;
+			            \item \texttt{WINDOW\_SIZE} int [private,final,static]: dimensione della finestra temporale per cui calcolare le aggregazioni.
+		            \end{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{main(String[] args)} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \textit{job} vero e proprio;
+
+			            \item \texttt{execute(StreamExecutionEnvironment env)} [public]: metodo che applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe astratta TimeDifferenceWindowFunction}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{isOccupied(T data)} boolean [protected,abstract]: metodo che restituisce \texttt{true} se il dato passato come argomento è relativo ad una misurazione in cui l'entità è in uso, \texttt{false} altrimenti;
+			            \item \texttt{apply(String uuid, TimeWindow window, Iterable<T> input,} \\\texttt{Collector<TimestampDifferenceResult> out)} void [public]: metodo
+			                  che calcola il tempo totale in cui una data entità (colonnine o parcheggi) sono in uso in un certo periodo di tempo.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ChargingStationTimeDifferenceWindowFunction}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{isOccupied(ChargingStationRawData data)} boolean [protected]: metodo che restituisce \texttt{true} se il dato passato come argomento è relativo ad una misurazione in cui le colonnine sono in uso, \texttt{false} altrimenti.
+		            \end{itemize}
+		      \item \textbf{Note}
+		            \begin{itemize}
+			            \item \texttt{ChargingStationTimeDifferenceWindowFunction} estende la classe \\\texttt{TimeDifferenceWindowFunction} e implementa il metodo \texttt{isOccupied}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ParkingTimeDifferenceWindowFunction}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{isOccupied(ParkingTimeDifferenceWindowFunction data)} boolean [protected]: metodo che restituisce \texttt{true} se il dato passato come argomento è relativo ad una misurazione in cui i
+			                  parcheggi sono occupati, \texttt{false} altrimenti.
+		            \end{itemize}
+		      \item \textbf{Note}
+		            \begin{itemize}
+			            \item \texttt{ParkingTimeDifferenceWindowFunction} estende la classe \\\texttt{TimeDifferenceWindowFunction} e implementa il metodo \texttt{isOccupied}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe TimestampDifferenceResult}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{occupiedDuration} Duration [private]: durata in cui l'entità è in uso;
+			            \item \texttt{notOccupiedDuration} Duration [private]: durata in cui l'entità non è in uso;
+			            \item \texttt{sensorUuid} String [private]: identificativo univoco del sensore;
+			            \item \texttt{timestamp} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui sono state calcolate le durate di occupazione e non occupazione;
+			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il sensore;
+			            \item \texttt{sensorNames} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ChargingEfficiencyJoinFunction}
+	      \begin{itemize}
+		      \item \texttt{join(TimestampDifferenceResult parkingDiff, TimestampDifferenceResult chargingDiff)}: calcola \textit{efficiency} e \textit{utilization rate} a partire da \texttt{TimestampDifferenceResult}
+		            di parcheggi e colonnine.
+	      \end{itemize}
+	\item \textbf{Classe ChargingEfficiencyResult}
+
+	      \begin{itemize}
+		      \item \textbf{Attributi}:
+		            \begin{itemize}
+			            \item \texttt{utilizationRate} double [private]: tasso di utilizzo della colonnina di ricarica;
+			            \item \texttt{efficiencyRate} double [private]: tasso di efficienza della colonnina di ricarica;
+			            \item \texttt{sensorUuid} String [private]: identificativo univoco del sensore;
+			            \item \texttt{timestamp} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui sono state calcolate le durate di occupazione e non occupazione;
+			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il sensore;
+			            \item \texttt{sensorNames} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
+		            \end{itemize}
+		      \item \textbf{Metodi}:
+		            \begin{itemize}
+			            \item \texttt{zero(String sensorUuid, LocalDateTime timestamp, String groupName, Set<String> sensorNames)} ChargingEfficiencyResult [public,static]: metodo che costruisce e ritorna un'istanza di ChargingEfficiencyResult
+			                  con\texttt{utilizationRate} e \texttt{efficiencyRate} posti a 0.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ParkingRawDataMapFunction}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{map(GenericRecord record)} ParkingRawData [public]: metodo che converte un \texttt{GenericRecord} in un oggetto di tipo \texttt{ParkingRawData}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Classe ChargingStationRawDataMapFunction}
+	      \begin{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{map(GenericRecord record)} ChargingStationRawData [public]: metodo che converte un \texttt{GenericRecord} in un oggetto di tipo \texttt{ChargingStationRawData}.
+		            \end{itemize}
+	      \end{itemize}
+	\item \textbf{Interfaccia RecordSerializable}: precedentemente descritta nella sezione relativa al \hyperref[record_serializable]{\textit{\underline{job Heat Index}}};
+	\item \textbf{Classe ChargingEfficiencyRecordSerializableAdapter}
+	      \begin{itemize}
+		      \item \textbf{Attributi}
+		            \begin{itemize}
+			            \item \texttt{adaptee} ChargingEfficiencyResult [private, final]: oggetto da adattare.
+		            \end{itemize}
+		      \item \textbf{Metodi}
+		            \begin{itemize}
+			            \item \texttt{toGenericRecord()} GenericRecord [public]: metodo che restituisce un oggetto di tipo \texttt{GenericRecord} a partire da \texttt{adaptee}.
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
+
+\subsection{ClickHouse}
+ClickHouse viene utilizzato per memorizzare i dati grezzi provenienti dai sensori, i risultati delle elaborazioni effettuate da Apache Flink e i dati aggregati tramite
+\textit{Materialized View}.\\
 
 \subsubsection{Funzionalità utilizzate}
-\subsubsubsection{Materialized View}
-Sono una potente funzionalità di \textit{ClickHouse} per migliorare le prestazioni delle query e semplificare l'analisi dei dati. In sostanza, una materialized view è una vista pre-calcolata o una copia di una query, memorizzata fisicamente su disco in forma tabellare. Ciò consente di evitare il calcolo ripetuto dei risultati della query ogni volta che viene eseguita.
-\subsubsubsection*{Documentazione}
-\url{https://clickhouse.com/docs/en/guides/developer/cascading-materialized-views}
+\subsubsubsection{\textit{Materialized View}}
+Le \textit{Materialized View} in ClickHouse sono un meccanismo per memorizzare fisicamente i risultati di una \textit{query} specifica di selezione,
+che viene periodicamente aggiornata in base ai dati sottostanti. Questo meccanismo consente di migliorare le prestazioni delle \textit{query} complesse
+e di semplificare l'architettura del sistema, riducendo la necessità di eseguire \textit{query} costose e complesse ogni volta che si accede ai dati.
 
-[Ultima consultazione 2024-06-05]
+All'interno del progetto sono state utilizzate ai seguenti scopi:
+\begin{itemize}
+	\item \textbf{calcolo aggregazioni}: per calcolare la media aritmetica delle misurazioni per un certo periodo di tempo;
+	\item \textbf{miglioramento prestazioni}: per rendere più efficienti le \textit{query} utilizzate più frequentemente per il popolamento di grafici e dashboard;
+\end{itemize}
 
-\subsubsubsection*{Utilizzi}
-% TODO: utilizzi nel progetto
-% \begin{itemize}
-% 	\item \textbf{Aggregazioni pre-calcolate}: le materialized view possono essere utilizzate per memorizzare i risultati di aggregazioni complesse, come somme, medie, conteggi, ecc., in modo che non debbano essere calcolati ogni volta che viene eseguita una query;
-% 	\item \textbf{rapporti pre-calcolati}: possono essere utilizzate per memorizzare i risultati di query complesse o di rapporti, in modo che i risultati siano immediatamente disponibili senza dover eseguire la query ogni volta;
-% 	\item \textbf{join ottimizzati}: possono essere utilizzate per memorizzare i risultati di join complessi tra più tabelle, in modo che i risultati siano immediatamente disponibili senza dover eseguire il join ogni volta;
-% 	\item \textbf{filtraggio e selezione efficiente}: possono essere utilizzate per filtrare e selezionare dati in base a criteri specifici, migliorando le prestazioni delle query che richiedono l'accesso solo a una parte dei dati.
-% 	\item \textbf{Analisi dei dati storici}: i dati storici vengono memorizzati in tabelle MergeTree per consentire l'analisi e l'elaborazione dei dati storici;
-% 	\item \textbf{applicazioni di business intelligence}: i dati vengono memorizzati in tabelle MergeTree per consentire l'analisi e la generazione di report per le applicazioni di business intelligence;
-% 	\item \textbf{log e monitoraggio}: i dati di log e di monitoraggio vengono memorizzati in tabelle MergeTree per consentire l'analisi e il monitoraggio delle attività di sistema.
-% \end{itemize}
+La documentazione è disponibile al seguente link:
+\begin{center}
+	\url{https://clickhouse.com/docs/en/guides/developer/cascading-materialized-views} [Ultima consultazione 2024-06-05]
+\end{center}
+
 \subsubsubsection{MergeTree}
-MergeTree è uno dei principali motori di archiviazione di ClickHouse, progettato per gestire grandi volumi di dati e fornire elevate prestazioni di lettura e scrittura. È particolarmente adatto per applicazioni in cui i dati vengono aggiunti in modo incrementale e le query vengono eseguite su intervalli di tempo specifici.
+MergeTree è uno dei principali motori di archiviazione di ClickHouse, progettato per gestire grandi volumi di dati e fornire elevate prestazioni di lettura e scrittura. È particolarmente adatto per applicazioni in cui i dati vengono aggiunti in modo incrementale e le \textit{query} vengono eseguite su intervalli di tempo specifici.
 Le caratteristiche principali sono:
 \begin{itemize}
 	\item \textbf{partizionamento}, in cui i dati vengono partizionati in base a una colonna di data o di tempo, in modo che i dati più recenti siano memorizzati in partizioni separate e possano essere facilmente eliminati o archiviati;
 	\item \textbf{ordine dei dati}, dove i dati vengono ordinati in base a una colonna di ordinamento, in modo che i dati siano memorizzati in modo sequenziale e possano essere letti in modo efficiente;
-	\item \textbf{indice primario}, tramite il quale i dati vengono indicizzati in base a una colonna di chiave primaria, in modo che le query di ricerca e di join siano veloci ed efficienti;
-	\item \textbf{merging dei dati}, in questo modo i dati vengono uniti in modo incrementale in background, in modo che le query di aggregazione e di analisi siano veloci ed efficienti;
+	\item \textbf{indice primario}, tramite il quale i dati vengono indicizzati in base a una colonna di chiave primaria, in modo che le \textit{query} di ricerca e di \textit{join} siano veloci ed efficienti;
+	\item \textbf{\textit{merging} dei dati}, in questo modo i dati vengono uniti in modo incrementale in background, in modo che le \textit{query} di aggregazione e di analisi siano veloci ed efficienti;
 	\item \textbf{compressione}, i dati vengono compressi in modo efficiente per ridurre lo spazio di archiviazione e migliorare le prestazioni di lettura e scrittura;
 	\item \textbf{replica e distribuzione}, i dati possono essere replicati e distribuiti su più nodi per garantire l'affidabilità e la disponibilità del sistema.
 \end{itemize}
-\subsubsubsection*{Documentazione}
-\url{https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree}
 
-[Ultima consultazione 2024-06-05]
+La documentazione è disponibile al seguente link:
+\begin{center}
+	\url{https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree} [Ultima consultazione 2024-06-05]
+\end{center}
 
-\subsubsection{Trasferimento dati tramite Materialized View}
-Le Materialized View in ClickHouse sono viste che memorizzano fisicamente i risultati di una query specifica in modo da permettere un accesso rapido e efficiente ai dati pre-elaborati. Quando vengono create, le Materialized View eseguono la query definita e archiviano i risultati in una struttura di dati ottimizzata per l'accesso veloce. Questo consente di evitare il calcolo ripetuto dei risultati della query ogni volta che viene eseguita, migliorando notevolmente le prestazioni complessive del sistema. I vantaggi derivanti da questo approccio sono molteplici, tra questi troviamo:
-\begin{itemize}
-	\item \textbf{prestazioni ottimizzate}: grazie alla memorizzazione fisica dei risultati delle query, le Materialized View consentono un accesso rapido ai dati pre-elaborati, riducendo i tempi di risposta delle query complesse;
-	\item \textbf{riduzione del carico di lavoro}: trasferendo i dati pre-elaborati in Materialized View, si riduce il carico di lavoro sul sistema sorgente, consentendo una maggiore scalabilità e riducendo il rischio di sovraccarico del sistema durante le operazioni di estrazione dei dati;
-	\item \textbf{sempre aggiornate}: possono essere progettate per aggiornarsi automaticamente in risposta alle modifiche nei dati sottostanti, garantendo che i risultati siano sempre aggiornati e coerenti con lo stato attuale dei dati;
-	\item \textbf{semplificazione dell'architettura}: è possibile semplificare l'architettura complessiva del sistema eliminando la necessità di eseguire query complesse e costose ogni volta che si accede ai dati.
-\end{itemize}
-%TODO prendere le query che creano le materialized view
-\subsubsection{Misurazioni isole ecologiche}
-Di seguito viene riportata la configurazione della tabella per le misurazioni delle isole ecologiche. Le misurazioni includono:
-\begin{itemize}
-	\item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
-	\item \textbf{sensor\_name}: nome del sensore (formato String);
-	\item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
-	\item \textbf{latitude}: latitudine del sensore (formato Float64);
-	\item \textbf{longitude}: longitudine del sensore (formato Float64);
-	\item \textbf{filling\_value}: percentuale di riempimento dell'isola ecologica (formato Float32).
-\end{itemize}
-%TODO mettere foto della tabella isole ecologiche
-\subsubsection{Misurazioni temperatura}
-Di seguito viene riportata la configurazione della tabella per le misurazioni della temperatura. Le misurazioni includono:
-\begin{itemize}
-	\item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
-	\item \textbf{sensor\_name}: nome del sensore (formato String);
-	\item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
-	\item \textbf{value}: valore della temperatura rilevata (formato Float32);
-	\item \textbf{latitude}: latitudine del sensore (formato Float64);
-	\item \textbf{longitude}: longitudine del sensore (formato Float64);
-\end{itemize}
-%TODO mettere foto della tabella temperatura
-\subsubsection{Misurazioni traffico}
-Di seguito viene riportata la configurazione della tabella per le misurazioni della traffico. Le misurazioni includono:
-\begin{itemize}
-	\item \textbf{sensor\_uuid}: identificativo univoco del sensore (formato UUID);
-	\item \textbf{sensor\_name}: nome del sensore (formato String);
-	\item \textbf{timestamp}: data e ora della misurazione (formato DateTime64);
-	\item \textbf{latitude}: latitudine del sensore (formato Float64);
-	\item \textbf{longitude}: longitudine del sensore (formato Float64);
-	\item \textbf{vehicles}: numero di veicoli rilevati (formato Int32);
-	\item \textbf{avg\_speed}: velocità media del traffico (formato Float32).
-\end{itemize}
-%TODO mettere foto della tabella traffico
+\subsubsection{Struttura}
+Per ciascuna tipologia di dati o aggregazioni è stata definita una tabella all'interno del database \texttt{sensors}, mantenendo il nome esatto del \textit{topic}
+da cui provengono i dati.\\
+Le tabelle di questo tipo vengono popolate da Redpanda Connect, come precedentemente descritto nella \hyperref[redpanda_connect]{\underline{sezione apposita}}.
+Per alcune tipologie di dati viene inoltre definita una \textit{Materialized View} che calcola aggregazioni sui dati grezzi,
+in modo da rendere più efficienti le \textit{query} che necessitano di tali elaborazioni.
+In particolare, viene calcolata la media aritmetica delle misurazioni per un certo periodo di tempo (differente a seconda del tipo di sensore e meglio descritto nelle sezioni seguenti),
+dato frequentemente utilizzato per il popolamento di grafici e \textit{dashboard} in Grafana e che dunque necessita di essere calcolato in modo efficiente.
+
+\subsubsubsection{Misurazioni \textit{air quality}}
+Di seguito viene rappresentata la tabella che contiene le misurazioni relative alla qualità dell'aria. Essa viene popolata da Redpanda Connect ed utilizza il motore di \textit{storage}
+MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
+utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+
+\begin{center}
+	\includegraphics[width=0.25\textwidth]{./specifica_tecnica/air_quality_mv.png}
+	\captionof{figure}{Tabella \texttt{air\_quality}}
+\end{center}
+\subsubsubsection{Misurazioni \textit{parking}}
+Di seguito viene rappresentata la tabella che contiene le misurazioni relative all'occupazione dei parcheggi. Essa viene popolata da Redpanda Connect ed utilizza il motore di \textit{storage}
+MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
+utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+\begin{center}
+	\includegraphics[width=0.25\textwidth]{./specifica_tecnica/parking_mv.png}
+	\captionof{figure}{Tabella \texttt{parking}}
+\end{center}
+\subsubsubsection{Misurazioni \textit{recycling point}}
+Di seguito viene rappresentata la tabella che contiene le misurazioni relative al riempimento delle isole ecologiche. Essa viene popolata da Redpanda Connect ed utilizza il motore di \textit{storage}
+MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
+utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+\begin{center}
+	\includegraphics[width=0.25\textwidth]{./specifica_tecnica/recycling_point_mv.png}
+	\captionof{figure}{Tabella \texttt{recycling\_point}}
+\end{center}
+\subsubsubsection{Misurazioni \textit{temperature}}
+Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni di temperatura. La tabella \texttt{temperature} utilizza il motore di \textit{storage}
+MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
+utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+Tramite l'utilizzo delle \textit{Materialized View} \texttt{temperature\_5m\_mv}, \texttt{temperature\_weekly\_mv} e \texttt{temperature\_daily\_mv}
+è possibile aggregare e trasferire i dati sulle tabelle \texttt{temperature\_5m}, \texttt{temperature\_weekly} e \texttt{temperature\_daily},
+che contengono rispettivamente la media delle misurazioni per 5 minuti, giornaliere e settimanali.
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/temperature_mv.png}
+	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{temperature}}
+\end{center}
+
+\subsubsubsection{Misurazioni \textit{traffic}}
+Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni di temperatura. La tabella \texttt{traffic} utilizza il motore di \textit{storage}
+MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
+utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+Tramite l'utilizzo della \textit{Materialized View} \texttt{traffic\_1h\_mv}
+è possibile aggregare e trasferire i dati sulla tabella \texttt{traffic\_1h}, che contiene la media del numero di veicoli e velocità per ogni ora.
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/traffic_mv.png}
+	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{traffic}}
+\end{center}
+
+\subsubsubsection{Misurazioni \textit{charging station}}
+Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni riguardanti l'occupazione delle colonnine di ricarica.
+La tabella \texttt{charging\_station} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
+in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+Tramite l'utilizzo delle \textit{Materialized View} \texttt{charging\_station\_5m\_mv}, \texttt{charging\_station\_weekly\_mv} e \\\texttt{charging\_station\_daily\_mv}
+è possibile aggregare e trasferire i dati sulle tabelle \texttt{charging\_station\_5m}, \texttt{charging\_station\_weekly} e \texttt{charging\_station\_daily},
+che contengono rispettivamente la media dei kwh erogati per 5 minuti, giornalmente e settimanalmente.
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/charging_mv.png}
+	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{charging\_station}}
+\end{center}
+
+\subsubsubsection{Misurazioni \textit{precipitation}}
+Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni riguardanti le precipitazioni.
+La tabella \texttt{precipitation} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
+in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+Tramite l'utilizzo delle \textit{Materialized View} \texttt{precipitation\_1h\_mv},\\\texttt{precipitation\_daily\_mv}, \texttt{precipitation\_weekly\_mv} e \texttt{precipitation\_yearly\_mv}
+è possibile aggregare e trasferire i dati sulle tabelle \texttt{precipitation\_1h},\texttt{precipitation\_daily},\\ \texttt{precipitation\_weekly} e \texttt{precipitation\_yearly}
+che contengono la media dei millimetri di acqua caduti rispettivamente per ogni ora, giorno, settimana e anno.
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{./specifica_tecnica/precipitation_mv.png}
+	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{precipitation}}
+\end{center}
+
+\subsubsubsection{Misurazioni \textit{river level}}
+Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni riguardanti il livello dei fiumi.
+La tabella \texttt{river\_level} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
+in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+Tramite l'utilizzo delle \textit{Materialized View} \texttt{river\_level\_1h\_mv},\\\texttt{river\_level\_daily\_mv}, \texttt{river\_level\_weekly\_mv} e \texttt{river\_level\_yearly\_mv}
+è possibile aggregare e trasferire i dati sulle tabelle \texttt{river\_level\_1h},\texttt{river\_level\_daily},\\ \texttt{river\_level\_weekly} e \texttt{river\_level\_yearly}
+che contengono rispettivamente la media oraria, giornaliera, mensile e annuale del livello dei fiumi (misurato in metri).
+
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{./specifica_tecnica/river_mv.png}
+	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{river\_level}}
+\end{center}
+
+\subsubsubsection{Misurazioni \textit{humidity}}
+Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni di umidità. La tabella \texttt{humidity} utilizza il motore di \textit{storage}
+MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
+utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+Tramite l'utilizzo delle \textit{Materialized View} \texttt{humidity\_5m\_mv}, \texttt{humidity\_weekly\_mv} e \texttt{humidity\_daily\_mv}
+è possibile aggregare e trasferire i dati sulle tabelle \texttt{humidity\_5m}, \texttt{humidity\_weekly} e \texttt{humidity\_daily},
+che contengono rispettivamente la media delle misurazioni di umidità relativa per 5 minuti, giornaliere e settimanali.
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{./specifica_tecnica/humidity_mv.png}
+	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{humidity}}
+\end{center}
+
+\subsubsubsection{Misurazioni \textit{heat index}}
+Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni dello \textit{heat\_index}. La tabella \texttt{humidity} utilizza il motore di \textit{storage}
+MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
+utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+Tramite l'utilizzo della \textit{Materialized View} \texttt{heat\_index\_daily\_mv} è possibile aggregare e trasferire i dati sulla tabella \texttt{heat\_index\_daily}
+che contiene la media giornaliera delle misurazioni.
+
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/heat_index_mv.png}
+	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{heat\_index}}
+\end{center}
+
+\subsubsubsection{Misurazioni \textit{charging efficiency}}
+Di seguito viene rappresentata la tabella che contiene le misurazioni relative all'efficienza delle colonnine elettriche. Essa viene popolata da Redpanda Connect ed utilizza il motore di \textit{storage}
+MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
+utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
+
+\begin{center}
+	\includegraphics[width=0.35\textwidth]{./specifica_tecnica/charging_efficiency_mv.png}
+	\captionof{figure}{Tabella \texttt{charging\_efficiency}}
+\end{center}
+\subsubsubsection{Tabella sensors}
+In diversi scenari all'interno di Grafana è necessario poter ottenere i dati di tutti i sensori, indipendentemente dalla loro tipologia, per mostrarli ad esempio in una mappa
+complessiva o in una tabella contenente la data di ricezione dell'ultimo messaggio da parte di un determinato dispositivo o ancora per la costruzione dei filtri sul tipo e nome di sensore.
+Al fine di rendere maggiormente efficiente queste operazioni abbiamo realizzato una tabella \texttt{sensors} popolata attraverso delle \textit{Materialized View},
+che si occupano di trasferire i dati a partire dalle tabelle dei dati grezzi (come \texttt{temperature}, \texttt{humidity}...).
+All'interno commento contenuto nel diagramma seguente è presente un esempio generico di \textit{query} utilizzata per la definizione delle \textit{Materialized View}; al posto del \textit{placeholder}
+\texttt{{type}} è sufficiente sostituire il nome di ciascuna tabella di dati grezzi (\texttt{temperature}, \texttt{humidity}...).
+I campi di quest'ultime sono omessi per semplicità del diagramma e sono stati precedentemente illustrati nella sezione dedicata alle misurazioni di ciascuna tipologia.
+
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/sensors_mv.png}
+	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{sensors}}
+\end{center}
+
+\pagebreak
 \subsection{Grafana}
-Grafana è uno strumento di analisi e monitoraggio che permette di visualizzare dati provenienti da una varietà di fonti. È sviluppato principalmente in Go e Typescript ed è noto per la sua capacità di creare dashboard personalizzabili e intuitive.
+Grafana è uno strumento di analisi e monitoraggio che permette di visualizzare dati provenienti da una varietà di fonti. È sviluppato principalmente in Go e Typescript ed si è diffuso notevolmente
+in quanto offre funzionalità per la creazione di \textit{dashboard} personalizzabili e intuitive.
 \subsubsection{Dashboard}
-%metti stessa cosa del manuale utente riguardo le dashboard. 
+Sono state realizzate tre \textit{dashboard} distinte, ciascuna per adempiere a uno specifico compito:
+\begin{itemize}
+	\item \textbf{\textit{raw data}}: mostra i dati grezzi provenienti dai sensori in delle tabelle filtrabili. Inoltre contiene dei pannelli che consentono
+	      di visualizzare informazioni generali sui sensori, come una mappa con la loro posizione e una tabella con l'ultimo messaggio ricevuto da ciascuno di essi;
+	\item \textbf{\textit{urban data}}: mostra i dati aggregati relativi al traffico, isole ecologiche, parcheggi e colonnine di ricarica. In particolare, sono presenti
+	      grafici che mostrano l'andamento temporale delle misurazioni e delle aggregazioni calcolate;
+	\item \textbf{\textit{environmental data}}: mostra i dati aggregati relativi alla qualità dell'aria, temperatura, umidità, precipitazioni, e livello dei fiumi.
+	      Anche in questo caso sono presenti grafici che mostrano l'andamento temporale delle misurazioni e delle aggregazioni calcolate.
+\end{itemize}
+La suddivisione è stata realizzata in quanto, oltre alla differenza riguardante la natura dei dati, le varie \textit{dashboard} vengono utilizzate da utenti con esigenze diverse:
+i dati ambientali possono essere adoperati al fine di prevenire situazioni di emergenza, mentre quelli urbanistici possono essere utilizzati con fini economici
+o per migliorare i servizi offerti ai cittadini.
 
 \subsubsection{ClickHouse datasource plugin}
-Il plugin ClickHouse per Grafana è un'implementazione che consente di utilizzare ClickHouse come fonte di dati per Grafana. Questo plugin facilita la connessione e l'interrogazione dei dati archiviati in ClickHouse direttamente da Grafana, permettendo di creare dashboard dinamiche e interattive.
-\subsubsubsection*{Documentazione}
-\url{https://grafana.com/grafana/plugins/grafana-clickhouse-datasource/}
-
-[Ultima consultazione 2024-06-05]
-\subsubsubsection{Configurazione del Datasource}
-La configurazione  grafana/provisioning/datasources/default.yaml
-
+Il plugin ClickHouse per Grafana è un'implementazione che consente di utilizzare ClickHouse come fonte di dati per Grafana. Questo plugin facilita la connessione e l'interrogazione dei dati archiviati in ClickHouse direttamente da Grafana.
+La documentazione è disponibile al seguente link:
+\begin{center}
+	\url{https://grafana.com/grafana/plugins/grafana-clickhouse-datasource/} [Ultima consultazione 2024-06-05]
+\end{center}
+\\\\
+La configurazione di tale \textit{datasource} è contenuta nella cartella \\\texttt{grafana/provisioning/datasources/default.yaml} della repository del progetto.
 
 \subsubsection{Variabili Grafana}
-\subsubsubsection{Documentazione}
-\url{https://grafana.com/docs/grafana/latest/dashboards/variables/}
-
-[Ultima consultazione 2024-06-05]
-\subsubsubsection*{Variabili nella dashboard principale}
-Le variabili presenti nella dashboard principale sono:
+Al fine di rendere le \textit{dashboard} più flessibili e personalizzabili, sono state utilizzate le variabili di Grafana. Esse consentono di definire parametri dinamici che possono essere utilizzati per filtrare, raggruppare o personalizzare i dati visualizzati nei pannelli delle dashboard.
+La documentazione è disponibile al seguente link:
+\begin{center}
+	\url{https://grafana.com/docs/grafana/latest/dashboards/variables/} [Ultima consultazione 2024-06-05]
+\end{center}
+\subsubsubsection{Variabili nella \textit{dashboard} \textit{raw data}}
 \begin{itemize}
-	\item \textbf{tipo sensore}: permette di selezionare il tipo di sensore da visualizzare (temperatura, traffico, isola ecologica...);
-	\item \textbf{nome sensore}: permette di selezionare il nome del sensore da visualizzare (ad esempio sensore1, sensore2, ecc.); % TODO
+	\item \texttt{sensor\_type}: permette di filtrare i dati visualizzati in base al tipo di sensore;
+	\item \texttt{sensor\_name}: dipendente dalla variabile \texttt{sensor\_type} e permette di filtrare i dati visualizzati in base al nome del sensore;
 \end{itemize}
-%TODO mettere foto codice query
-\subsubsubsection*{Variabili nella dashboard dettagliata}
-Le variabili presenti nelle dashboard dettagliate sono:
+
+\subsubsubsection{Variabili nella \textit{dashboard} \textit{urban data}}
 \begin{itemize}
-	\item \textbf{nome sensore}: permette di selezionare il nome del sensore da visualizzare (es. sensore1, sensore2, ecc.);
+	\item \texttt{group\_name\_charging}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di colonnine di ricarica;
+	\item \texttt{group\_name\_parking}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di parcheggi;
+	\item \texttt{sensor\_name\_recycling\_point}: permette di filtrare i dati visualizzati in base al nome del sensore di isole ecologiche;
+	\item \texttt{sensor\_name\_traffic}: permette di filtrare i dati visualizzati in base al nome del sensore di traffico;
+\end{itemize}
+\subsubsubsection{Variabili nella \textit{dashboard} \textit{environmental data}}
+\begin{itemize}
+	\item \texttt{group\_name\_temperature}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di sensori di temperatura;
+	\item \texttt{sensor\_name\_humidity}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di sensori di umidità;
+	\item \texttt{sensor\_name\_precipitation}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di sensori di precipitazioni;
+	\item \texttt{sensor\_name\_river\_level}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di sensori di livello dei fiumi;
+	\item \texttt{sensor\_name\_air\_quality}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di sensori di qualità dell'aria;
 \end{itemize}
 
 \subsubsection{Grafana Alerts}
-Sono una funzionalità che permettono di definire, configurare e gestire avvisi basati su condizioni specifiche rilevate nei dati monitorati. Questi avvisi consentono agli utenti di essere informati tempestivamente su eventuali problemi o cambiamenti critici nei loro sistemi, applicazioni o infrastrutture.
-\subsubsubsection*{Documentazione}
-\url{https://grafana.com/docs/grafana/latest/alerting/} [Ultima consultazione 2024-06-05]
+Gli \textit{alert} di Grafana sono una funzionalità che permettono di definire, configurare e gestire avvisi basati su condizioni specifiche rilevate nei dati monitorati. Questi avvisi consentono agli utenti di essere informati tempestivamente su eventuali problemi o cambiamenti critici nei loro sistemi, applicazioni o infrastrutture.\\
+La documentazione è disponibile al seguente link:
+\begin{center}
+	\url{https://grafana.com/docs/grafana/latest/alerting/} [Ultima consultazione 2024-06-05]
+\end{center}
+
 \subsubsubsection{Configurazione delle regole di alert}
 Definiscono le condizioni che devono essere soddisfatte per attivare un alert. Gli eventi che generano un alert sono:
 \begin{itemize}
@@ -1223,10 +1550,7 @@ Per configurare un canale di notifica è necessario:
 	\item configurare le impostazioni del canale di notifica in base alle proprie esigenze;
 	\item cliccare sul pulsante "Save" per salvare le impostazioni del canale di notifica.
 \end{enumerate}
-% \textit{7Last} ha deciso di rendere risponibile il server \textit{Discord} configurato a questo scopo e raggiungibile a questo link:
-% \begin{center}
-% 	\url{https://discord.com/channels/1214553333113556992/1241974479345942568}
-% \end{center}
+
 \subsubsection{Altri plugin}
 \subsubsubsection{Orchestra Cities Map plugin}
 Progettato per facilitare la visualizzazione e l'analisi dei dati geospaziali all'interno di piattaforme di pianificazione urbana e sviluppo territoriale.\\
@@ -1239,7 +1563,8 @@ Le principali funzionalità offerte da questo plugin sono:
 	\item \textbf{integrazione}: è progettato per integrarsi facilmente con altre componenti dell'ecosistema Orchestra Cities e con altre piattaforme software di pianificazione urbana e sviluppo territoriale.
 \end{itemize}
 
-\subsubsubsection*{Documentazione}
-\url{https://grafana.com/grafana/plugins/orchestracities-map-panel/?tab=installation}
+La documentazione è disponibile al seguente link:
+\begin{center}
+	\url{https://grafana.com/grafana/plugins/orchestracities-map-panel/?tab=installation} [Ultima consultazione 2024-06-05]
+\end{center}
 
-[Ultima consultazione 2024-06-05]

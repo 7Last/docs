@@ -25,3 +25,21 @@
 \usepackage{longtable}
 \usepackage{listings}
 \usepackage{amsmath}
+
+\lstset{
+	basicstyle=\ttfamily,
+	columns=fullflexible,
+	showstringspaces=false,
+	commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+	morestring=[b]",
+	morestring=[s]{>}{<},
+	morecomment=[s]{<?}{?>},
+	stringstyle=\color{black},
+	identifierstyle=\color{darkblue},
+	keywordstyle=\color{cyan},
+	morekeywords={plugin,groupId,artifactId,configuration,version,executions,execution,goals,goal,phase,dependency,scope,packaging,build,plugins,pluginManagement,properties,profiles,profile,id,activation,activeByDefault,modules,module,reporting,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,reportSets,reportSet,reports,report,reporting,reportPlugins,reportPlugin,descriptorRefs,descriptorRef}
+}
