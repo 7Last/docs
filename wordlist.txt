@@ -1,6 +1,7 @@
 Airbnb
 amm
 Analizzabilità
+andamento
 Apprendibilità
 Autoformazione
 BAC
