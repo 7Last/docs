@@ -1,8 +1,8 @@
 import re, os
 
 root_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-glossary_tex = f'{root_folder}/2_RTB/documentazione_interna/glossario/glossario.tex'
-glossary_url = 'https://7last.github.io/docs/rtb/documentazione-interna/glossario'
+glossary_tex = f'{root_folder}/3_PB/documentazione_interna/glossario/glossario.tex'
+glossary_url = 'https://7last.github.io/docs/pb/documentazione-interna/glossario'
 
 
 def parse_glossary():

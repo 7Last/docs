@@ -1,0 +1,102 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                                           \\[-2ex]
+			Ver. & Data       & Redattore       & Verificatore       & Descrizione           \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-06-16 & Matteo Tiozzo   & Raul Seganfreddo   & Stesura verbale       \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+
+\textbf{Sede della riunione}: Google Meet\\
+\textbf{Orario di inizio}: 16:00\\
+\textbf{Orario di fine}: 16:30\\
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     &                & Presente          \\
+			Davide Malgarise      & Verificatore   & Presente          \\
+			Elena Ferro           & 			   & Presente          \\
+			Leonardo Baldo        & 			   & Assente           \\
+			Matteo Tiozzo         & Amministratore & Presente          \\
+			Raul Seganfreddo      & Redattore	   & Presente          \\
+			Valerio Occhinegro    &                & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+	\textbf{Partecipanti esterni}: Andrea Dorigo, Daniele Zorzi, Fabio Pallaro.\\
+\end{flushleft}
+
+\subsection*{Ordine del giorno:}
+\begin{itemize}
+	\item stato di sviluppo del prodotto;
+	\item obiettivi per il prossimo sprint;
+	\item decisioni prese e conclusioni.
+\end{itemize}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Stato di sviluppo del prodotto}
+Interviene Matteo Tiozzo in qualità di sostituto responsabile, in quanto Leonardo Baldo, responsabile effettivo per questo sprint, non ha potuto partecipare. \\
+Viene effettuata una dimostrazione per mostrare i progressi fatti durante il periodo appena concluso. In particolare vengono presentate le nuove dashboard riguardanti i sensori di parcheggio e di qualità dell'aria di cui sono stati implementati i simulatori. Il proponente ha apprezzato il lavoro svolto, ma ha richiesto alcune modifiche: ritiene possa essere particolarmente utile ed efficace organizzare le dashboard in modo più organizzato, ad esempio prevedendo una dashboard per i dati grezzi ed in tempo reale e una o più dashboard distinte per i dati analitici.\\
+
+\subsection{Obiettivi per il prossimo sprint}
+Per il prossimo sprint il proponente suggerisce di arricchire le dashboard relative ai nuovi sensori con nuove informazioni e grafici, in modo da renderle più complete e utili. Inoltre, l'azienda richiede che venga implementato nel progetto anche un sistema di processing dei dati in tempo reale, utilizzando strumenti come Apache Flink, in modo da poter ottenere informazioni più elaborate ed interessanti da mostrare nelle dashboard.
+
+\subsection{Decisioni prese e conclusioni}
+Dopo aver posto gli obiettivi per il prossimo sprint, il gruppo ha concordato con il proponente di mantenere la durata degli sprint a una settimana, pianificando il prossimo SAL in data 2024-06-19.
+
+
+\newpage
+\begin{table}[b]
+	\begin{tabular}{@{}p{5cm}p{10cm}@{}}
+		Data:                 & \hrulefill \\
+		                      &            \\
+		                      &            \\
+		Firma del proponente: & \hrulefill \\
+	\end{tabular}
+\end{table}
+
+\end{document}

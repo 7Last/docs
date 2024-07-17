@@ -12,7 +12,7 @@ glossary=$(
         match($0, /\\newglossaryentry\{([^}]*)\}|acronym=\{([^}]*)\}/, arr);
         if (arr[1] != "") print arr[1];
         else if (arr[2] != "") print arr[2];
-    }' 2_RTB/documentazione_interna/glossario/glossario.tex
+    }' 3_PB/documentazione_interna/glossario/glossario.tex
 )
 
 > personal.txt
@@ -22,10 +22,10 @@ sort -u personal.txt -o personal.txt
 
 status_code=0
 for file in $files; do
-    misspelled=$(aspell pipe -t --lang=it_IT < "$file" |
+    misspelled=$(aspell pipe -t --lang=it_IT --add-tex-command="mySkip op" < "$file" |
         grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
         grep '[a-zA-Z]\+' -o |
-        aspell pipe -t --lang=en_US  |
+        aspell pipe -t --lang=en_US --add-tex-command="mySkip op"  |
         grep '[a-zA-Z]\+ [0-9]\+ [0-9]\+' -oh |
         grep '[a-zA-Z]\+' -o | grep -v -i -F -f  personal.txt)
 
