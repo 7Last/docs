@@ -2691,3 +2691,214 @@ Questo sprint, come preventivato, ha richiesto un maggior impegno da parte dei v
 
 \subsubsubsection{Retrospettiva}
 Anche questo sprint si è concluso senza l'insorgere di rischi, nè tra quelli preventivati nè tra quelli non preventivati. Siamo riusciti a raggiungere un livello di maturazione sul prodotto che possiamo considerare soddisfacente per un possibile \textit{Minimum Viable Product}. Attendiamo il riscontro da parte del proponente in occasione del collaudo finale previsto per venerdì 19 luglio.
+
+
+
+\newpage
+\subsubsection{Tredicesimo sprint}
+\begin{itemize}
+    \item Inizio: 2024-07-18
+    \item Fine: 2024-07-24
+    \item Fine attuale: 2024-07-24
+    \item Giorni di ritardo: nessuno
+\end{itemize}
+
+\subsubsubsection{Pianificazione}
+Il primo obiettivo di questo sprint corrisponde al collaudo finale con il proponente previsto per il 2024-07-19 da effettuare in sede dell'azienda. Ci attendiamo un esito positivo, in ogni caso le attività da svolgere terranno in considerazione la possibilità di dover effettuare delle correzioni. In particolare gli obiettivi per questo periodo sono particolarmente concentrati nella verifica finale di tutta la documentazione sino a qui prodotta e quindi di \textit{Norme di Progetto}, \textit{Piano di Progetto}, \textit{Piano di Qualifica}, \textit{Analisi dei Requisiti}, \textit{Glossario}, \textit{Specifica Tecnica} e \textit{Manuale Utente}. Prevediamo inoltre di fare richiesta per la revisione PB e quindi ci prepareremo per le due presentazioni previste con i professori Cardin e Vardanega.
+
+\subsubsubsubsection{Rischi attesi}
+I rischi attesi per questo periodo sono:
+\begin{itemize}
+	\item ritardi rispetto alle tempistiche previste (RO-3);
+    \item disaccordi all'interno del gruppo (RC-1).
+\end{itemize}
+
+\newpage
+\subsubsubsection{Preventivo}
+Ruoli coinvolti: \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{Responsabile\textsubscript{G}} (Re), \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#amministratore}{Amministratore\textsubscript{G}} (Am), \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#progettista}{Progettista\textsubscript{G}} (Pj), \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#programmatore}{Programmatore\textsubscript{G}} (Pg), \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{Verificatore\textsubscript{G}} (Ve).
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{ | l | c | c | c | c | c | c | c | }
+        \hline
+        \textbf{} & \textbf{Re} & \textbf{Am} &\textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
+        \hline
+        Baldo            &  4   &  -   &  -   &  -   &  -   &  -   &  4   \\
+        Benetazzo        &  -   &  -   &  -   &  -   &  -   &  8   &  8   \\
+        Ferro            &  -   &  -   &  -   &  -   &  -   &  8   &  8   \\
+        Malgarise        &  -   &  4   &  -   &  -   &  -   &  -   &  4   \\
+        Occhinegro       &  -   &  -   &  -   &  -   & 12   &  -   & 12   \\
+        Seganfreddo      &  -   &  -   &  -   &  -   &  -   &  8   &  8   \\
+        Tiozzo           &  -   &  -   &  -   &  -   &  -   &  8   &  8   \\
+        \hline
+        Totale per ruolo &  4   &  4   &  -   &  -   & 12   & 32   &  -   \\
+        \hline
+    \end{tabular}
+    \caption{Preventivo orario per ruolo dei membri del team durante il tredicesimo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}}}
+    
+\end{table}
+
+%---------1_ISTOGRAMMA-----------%
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width  = 0.85*\textwidth,
+            height = 8cm,
+            ybar stacked,
+            bar width=14pt,
+            ymajorgrids = true,
+            symbolic x coords={Baldo, Benetazzo, Ferro, Malgarise, Occhinegro, Seganfreddo, Tiozzo},
+            xtick = data,
+            scaled y ticks = false,
+            enlarge x limits=0.2,
+            ymin=0,
+            legend cell align=left,
+            legend style={
+                at={(0.5,1.15)},
+                anchor=south,
+                column sep=1ex,
+                legend columns=-1
+            },
+            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
+            ]
+            \addplot+[ybar, resp, fill=resp, mark=none] plot coordinates {
+                (Baldo, 4)
+                (Benetazzo, 0)
+                (Ferro, 0)
+                (Malgarise, 0)
+                (Occhinegro, 0)
+                (Seganfreddo, 0)
+                (Tiozzo, 0)
+            };
+            \addplot+[ybar, amm, fill=amm, mark=none] plot coordinates {
+                (Baldo, 0)
+                (Benetazzo, 0)
+                (Ferro, 0)
+                (Malgarise, 4)
+                (Occhinegro, 0)
+                (Seganfreddo, 0)
+                (Tiozzo, 0)
+            };
+            \addplot+[ybar, an, fill=an, mark=none] plot coordinates {
+                (Baldo, 0)
+                (Benetazzo, 0)
+                (Ferro, 0)
+                (Malgarise, 0)
+                (Occhinegro, 0)
+                (Seganfreddo, 0)
+                (Tiozzo, 0)
+            };
+            \addplot+[ybar, pj, fill=pj, mark=none] plot coordinates {
+                (Baldo, 0)
+                (Benetazzo, 0)
+                (Ferro, 0)
+                (Malgarise, 0)
+                (Occhinegro, 0)
+                (Seganfreddo, 0)
+                (Tiozzo, 0)
+            };
+            \addplot+[ybar, pg, fill=pg, mark=none] plot coordinates {
+                (Baldo, 0)
+                (Benetazzo, 0)
+                (Ferro, 0)
+                (Malgarise, 0)
+                (Occhinegro, 12)
+                (Seganfreddo, 0)
+                (Tiozzo, 0)
+            };
+            \addplot+[ybar, ver, fill=ver, mark=none] plot coordinates {
+                (Baldo, 0)
+                (Benetazzo, 8)
+                (Ferro, 8)
+                (Malgarise, 0)
+                (Occhinegro, 0)
+                (Seganfreddo, 8)
+                (Tiozzo, 8)
+            };
+            \legend{Re, Am, An, Pj, Pg, Ve}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Impegno preventivo per ruolo dei membri durante il tredicesimo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}}}
+    
+\end{figure}
+
+%---------1_GRAFICO A TORTA-----------%
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}
+        \def\printonlypositive#1{\ifdim#1pt>0pt
+        #1
+        \fi}
+        \pie[pos={8,0},radius=3.5,text=legend,
+        before number=\printonlypositive,color={resp,amm,pg,ver}] {
+             7.7/\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{Responsabile\textsubscript{G}},
+             7.7/\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#amministratore}{Amministratore\textsubscript{G}},
+             23.1/\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#programmatore}{Programmatore\textsubscript{G}},
+             61.5/\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{Verificatore\textsubscript{G}}
+        }
+        \end{tikzpicture}
+    \caption{Ripartizione in percentuale dei ruoli nel tredicesimo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}}}
+\end{figure}
+
+\subsubsubsection{Consuntivo}
+% TODO: scrivere consuntivo
+
+\subsubsubsubsection{Prospetto orario}
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{ | l | c | c | c | c | c | c | c | }
+        \hline
+        \textbf{} & \textbf{Re} & \textbf{Am} &\textbf{An} & \textbf{Pj} & \textbf{Pg} & \textbf{Ve} & \textbf{Totale per persona} \\
+        \hline
+        Baldo            &  4   &  -   &  -   &  -   &  -   &  -   &  4   \\
+        Benetazzo        &  -   &  -   &  -   &  -   &  -   &  9   &  9   \\
+        Ferro            &  -   &  -   &  -   &  -   &  -   & 11   & 11   \\
+        Malgarise        &  -   &  5   &  -   &  -   &  -   &  -   &  5   \\
+        Occhinegro       &  -   &  -   &  -   &  -   &  9   &  -   &  9   \\
+        Seganfreddo      &  -   &  -   &  -   &  -   &  -   &  6   &  6   \\
+        Tiozzo           &  -   &  -   &  -   &  -   &  -   &  7,5 &  7,5 \\
+        \hline
+        Totale per ruolo &  4   &  5   &  -   &  -   &  9   & 33,5 &  -   \\
+        \hline
+    \end{tabular}
+    \caption{Consuntivo orario per ruolo dei membri durante il tredicesimo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}}}
+\end{table}
+
+\newpage
+\subsubsubsubsection{Prospetto economico}
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{ | l | c | c | c | c | c | }
+        \hline
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo} & \textbf{Ore rimanenti preventivo} & \textbf{Ore rimanenti consuntivo} \\
+        \hline
+        \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#responsabile}{Responsabile\textsubscript{G}}     &  4   &  120,00 € &   2   &   2   \\
+        \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#amministratore}{Amministratore\textsubscript{G}} &  5   &  100,00 € &  -2   &  -3   \\
+        \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#analista}{Analista\textsubscript{G}}             &  0   &    0,00 € &  -8   &  -8   \\
+        \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#progettista}{Progettista\textsubscript{G}}       &  0   &    0,00 € &   8   &   8   \\
+        \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#programmatore}{Programmatore\textsubscript{G}}   &  9   &  135,00 € &  14   &  17   \\
+        \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#verificatore}{Verificatore\textsubscript{G}}     & 33,5 &  502,50 € &   4,5 &   3   \\
+        \hline
+        \textbf{Totale preventivo} & 52   &  860,00 € &  18,5 &   -   \\
+        \hline
+        \textbf{Totale consuntivo} & 51,5 &  857,50 € &   -   &  19   \\
+        \hline
+    \end{tabular}
+    \caption{Consuntivo economico durante il tredicesimo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}}}
+\end{table}
+
+\subsubsubsubsection{Rischi effettivamente occorsi e loro mitigazione}
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{ | p{6cm} | p{2.5cm} | p{7.5cm} | }
+        \hline
+        \textbf{Tipologia} & \textbf{Rischio preventivato} & \textbf{Mitigazione}  \\
+        \hline
+        Impegni personali o universitari (Rischio \textbf{RO-2})& SI & Comunicato in anticipo gli impegni, lavoro affidato svolto prima o dopo l'impegno.\\
+        \hline
+    \end{tabular}
+    \caption{Rischi effettivamente occorsi e loro mitigazione durante il decimo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sprint}{sprint\textsubscript{G}}}
+\end{table}
+
+\subsubsubsection{Retrospettiva}
+% TODO: scrivere retrospettiva
