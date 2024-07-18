@@ -1,0 +1,63 @@
+\documentclass[italian,12pt]{article} %tipo di documento
+
+\input{variables}
+\input{packages}
+\input{subX3_section.tex}
+
+\linespread{1.2}
+
+\captionsetup[table]{name=Tabella}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}%imposto il nome dell'indice
+\renewcommand\familydefault{\sfdefault}
+
+\renewcommand{\listtablename}{Indice delle tabelle}%imposto il nome della lista tabelle
+\renewcommand\familydefault{\sfdefault}
+
+\renewcommand{\listfigurename}{Indice delle immagini}%imposto il nome della lista immagini
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
+%-------------------INIZIO DOCUMENTO--------------
+\begin{document}
+\include{title}
+\newpage
+\include{header}
+%-----------tabella revisioni-----------%
+\captionsetup[table]{list=no}
+\begin{table}[!h]
+	\caption*{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                                                                                   \\[-2ex]
+			Ver. & Data       & Autore             & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#verificatore}{Verificatore\textsubscript{G}}       & Descrizione                                                \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-05-24 & Matteo Tiozzo      & Raul Seganfreddo   & Approvazione finale documento                              \\
+			0.7  & 2024-05-20 & Matteo Tiozzo      & Valerio Occhinegro & Stesura iniziative di automiglioramento                    \\
+			0.6  & 2024-05-14 & Leonardo Baldo     & Antonio Benetazzo  & Popolamento grafici \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#cruscotto}{Cruscotto\textsubscript{G}} di valutazione della qualità \\
+			0.5  & 2024-05-17 & Antonio Benetazzo  & Davide Malgarise   & Creazione grafici per \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#cruscotto}{Cruscotto\textsubscript{G}}                            \\
+			0.4  & 2024-04-22 & Antonio Benetazzo  & Davide Malgarise   & Fine stesura metodologie di testing                        \\
+			0.3  & 2024-04-16 & Valerio Occhinegro & Matteo Tiozzo      & Inizio stesura metodologie di testing                      \\
+			0.2  & 2024-03-29 & Valerio Occhinegro & Matteo Tiozzo      & Stesura metriche di qualità                                \\
+			0.1  & 2024-03-28 & Valerio Occhinegro & Matteo Tiozzo      & Prima redazione                                            \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\captionsetup[table]{list=yes}
+%---------------------------------------%
+\newpage
+\tableofcontents
+\listoftables
+\listoffigures
+\newpage
+\include{introduzione.tex}
+\include{metriche_qualita.tex}
+\include{testing.tex}
+\include{cruscotto_valutazione.tex}
+\include{automiglioramento.tex}
+\end{document}
