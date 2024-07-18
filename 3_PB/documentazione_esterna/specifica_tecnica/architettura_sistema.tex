@@ -261,7 +261,7 @@ impostato a \texttt{True}, per un periodo di tempo massimo espresso dal parametr
 
 \begin{center}
 	\includegraphics[width=1\textwidth]{./specifica_tecnica/simulators.png}
-	\captionof{figure}{Diagramma delle classi modulo \texttt{simulators} e \texttt{models}. Per semplicità e chiarezza, la classe \texttt{SimulatorFactory} è stata rappresentata senza campi e metodi, presenti nel diagramma successivo.}
+	\captionof{figure}{Diagramma delle classi modulo \texttt{simulators} e \texttt{models}.}
 \end{center}
 
 \subsubsubsection{\textit{Design Pattern}}
@@ -294,7 +294,7 @@ a partire da un valore dell'enum \texttt{SensorType}.
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{build(name: str, config: SensorConfig, producer: ProducerStrategy)} SimulatorStrategy [public, static]: restituisce un'istanza del simulatore \\ corrispondente al nome \texttt{name}.
+			            \item \texttt{build(name: str, config: SensorConfig)} SimulatorStrategy [public, static]: restituisce un'istanza del simulatore \\ corrispondente al nome \texttt{name}.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Interfaccia SimulatorStrategy}
@@ -307,7 +307,6 @@ a partire da un valore dell'enum \texttt{SensorType}.
 			            \item \texttt{limit} int [protected]: limite massimo di misurazioni da produrre;
 			            \item \texttt{longitude} float [protected]: longitudine del sensore;
 			            \item \texttt{points\_spacing} timedelta [protected]: intervallo temporale tra due misurazioni;
-			            \item \texttt{producer} ProducerStrategy [protected]: strategia di produzione dei dati.
 			            \item \texttt{sensor\_name} str [protected]: nome del sensore per cui il simulatore genera dati;
 			            \item \texttt{sensor\_uuid} str [protected]: identificativo univoco del sensore per cui il simulatore genera dati;
 			            \item \texttt{timestamp} datetime [protected]: data e ora dell'ultima misurazione;
