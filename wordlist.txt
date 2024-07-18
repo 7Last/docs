@@ -45,6 +45,7 @@ JMX
 kafka
 LaTeX
 LCPM
+Liskov
 LLM
 MacOS
 Malgarise
