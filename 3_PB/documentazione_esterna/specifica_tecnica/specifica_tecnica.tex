@@ -24,12 +24,12 @@
 \renewcommand{\thepage}{\sffamily\oldthepage}
 \newcommand{\mySkip}[1][]{#1}
 
-\mySkip{\definecolor{eclipseStrings}{RGB}{42,0.0,255}}
-\mySkip{\definecolor{eclipseKeywords}{RGB}{127,0,85}}
-\mySkip{\colorlet{punct}{red!60!black}}
-\mySkip{\definecolor{background}{HTML}{FFFFFF}}
-\mySkip{\definecolor{delim}{RGB}{20,105,176}}
-\mySkip{\colorlet{numb}{magenta!60!black}}
+\definecolor{eclipseStrings}{RGB}{42,0.0,255}
+\definecolor{eclipseKeywords}{RGB}{127,0,85}
+\colorlet{\mySkip{punct}}{red!60!black}
+\definecolor{background}{HTML}{FFFFFF}
+\definecolor{\mySkip{delim}}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
 
 \lstdefinelanguage{json}{
     basicstyle=\normalfont\ttfamily,

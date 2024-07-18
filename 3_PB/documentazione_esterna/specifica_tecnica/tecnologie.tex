@@ -29,7 +29,7 @@ Le porte sono indicate nel formato \texttt{<porta\_host>:<porta\_container>}, do
 		      \item \textbf{Ambiente}: \texttt{release};
 	      \end{itemize}
 
-	\item \textbf{Redpanda Init}:
+	\item \textbf{Redpanda \mySkip{Init}}:
 	      l'immagine di \texttt{alpine} viene utilizzata per creare un container che si occupa di inizializzare il broker Redpanda.
 	      \begin{itemize}
 		      \item \textbf{Immagine}: alpine:3.20.1;
@@ -135,10 +135,10 @@ Le porte sono indicate nel formato \texttt{<porta\_host>:<porta\_container>}, do
 	\textbf{Nome}                          & \textbf{Versione} & \textbf{Impiego}                                                                  \\
 	\endhead
 	% \texttt{avro} & 1.11.3            & Libreria per la serializzazione dei dati in formato Avro. & Serializzazione dei dati in formato Avro. \\\hline
-	\texttt{confluent\_avro}               & 1.8.0             & Serializzazione dei dati in formato Avro.                                         \\\hline
+	\texttt{confluent\_avro}               & 1.8.0             & Serializzazione dei dati in formato Confluent Avro.                                         \\\hline
 	\texttt{coverage}                      & 7.5.1             & Strumento per misurare la percentuale di linee di codice e rami coperti dai test. \\\hline
-	\texttt{isodate}                       & 0.6.1             & Libreria per la manipolazione delle date e delle ore in formato ISO8601.          \\\hline
-	\texttt{kafka-python-ng}               & 2.2.2             & Client Kafka per Python.                                                          \\\hline
+	\texttt{\mySkip{isodate}}                       & 0.6.1             & Libreria per la manipolazione delle date e delle ore in formato ISO8601.          \\\hline
+	\texttt{kafka-python-\mySkip{ng}}               & 2.2.2             & Client Kafka per Python.                                                          \\\hline
 	% \texttt{requests}          & 2.32.3            & Libreria per effettuare richieste HTTP.                                           \\\hline
 	\texttt{ruff}                          & 0.3.5             & Libreria per l'analisi statica del codice.                                        \\\hline
 	\texttt{toml}                          & 0.10.2            & Libreria per effettuare il parsing dei file di configurazione in formato TOML.    \\\hline
@@ -152,7 +152,7 @@ Le porte sono indicate nel formato \texttt{<porta\_host>:<porta\_container>}, do
 	\texttt{flink-avro-confluent-registry} & 1.18.0            & Connessione di Flink a uno \textit{schema registry} che utilizza Avro.            \\\hline
 	% \texttt{flink-avro}            & 1.18.0            & Libreria per la connessione di Flink ad Avro.                                      \\\hline
 	\texttt{flink-shaded-guava}            & 31.1-jre-17.0     & Gestione delle dipendenze di Flink.                                               \\\hline
-	\texttt{slf4j-simple}                  & 1.7.36            & Implementazione di SLF4J.                                                         \\\hline
+	\texttt{\mySkip{slf}4j-simple}                  & 1.7.36            & Implementazione di \mySkip{SLF4J}.                                                         \\\hline
 	\texttt{lombok}                        & 1.18.32           & Libreria per la generazione di codice \textit{boilerplate}.                       \\\hline
 	\texttt{maven-assembly-plugin}         & 3.7.1             & Plugin Maven per la creazione di un \textit{fat jar}.                             \\\hline
 	\caption{Librerie utilizzate}

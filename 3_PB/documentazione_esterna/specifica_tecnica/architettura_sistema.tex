@@ -620,7 +620,7 @@ della modalità \texttt{FORWARD}, ovvero quella che abbiamo scelto di utilizzare
 
 \subsubsubsection{Serializzazione dei dati}
 \subsubsubsubsection{Chiavi}
-Come menzionato in precedenza, si utilizza il \texttt{sensor\_uuid} per poplare il campo chiave dei \textit{record}; tale identificativo viene, prima di essere pubblicato
+Come menzionato in precedenza, si utilizza il \texttt{sensor\_uuid} per popolare il campo chiave dei \textit{record}; tale identificativo viene, prima di essere pubblicato
 nel \textit{topic}, convertito a stringa e codificato in UTF-8.
 
 \subsubsubsubsection{Valori}
@@ -852,13 +852,13 @@ Una volta ottenuti i coefficienti per tutti i punti, si calcola la media di tutt
 		x & = \frac{1}{n} \sum_{i=1}^{n} x_i, & \quad y = \frac{1}{n} \sum_{i=1}^{n} y_i, & \quad z = \frac{1}{n} \sum_{i=1}^{n} z_i
 	\end{aligned}
 \]
-Infine si calcolano $lat$ (latitudine in radianti), $lon$ (longitudine in radianti) e $hyp$ (ipotenusa ne piano cartesiano, che rappresenta la distanza dall'origine alla proiezione del punto sul piano $lat_i, lon_i$):
+Infine si calcolano $\mySkip{lat}$ (latitudine in radianti), $\mySkip{lon}$ (longitudine in radianti) e $\mySkip{hyp}$ (ipotenusa ne piano cartesiano, che rappresenta la distanza dall'origine alla proiezione del punto sul piano $lat_i, lon_i$):
 \begin{align*}
 	lon = atan2(y, x)      \\
 	hyp = \sqrt{x^2 + y^2} \\
 	lat = atan2(z, hyp)
 \end{align*}
-Una volta ottenuti $lat$ e $lon$, si convertono in gradi e si ottiene il centro di massa $CM = (c_a, c_b)$.
+Una volta ottenuti $\mySkip{lat}$ e $\mySkip{lon}$, si convertono in gradi e si ottiene il centro di massa $CM = (c_a, c_b)$.
 \[
 	\begin{align*}
 		c_a = \frac{180}{\pi} \cdot lat, & \quad c_b = \frac{180}{\pi} \cdot lon
@@ -881,7 +881,7 @@ I seguenti passaggi vengono eseguiti indipentendemente ed in parallelo per i dat
 \begin{enumerate}
 	\item lettura dei dati grezzi dai \textit{topic} relativi alla temperatura e all'umidità, attraverso la classe \texttt{KafkaSource};
 	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{Watermark}}};
-	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{keyBy} fornita da Flink;
+	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{\mySkip{keyBy}} fornita da Flink;
 	\item creazione di una finestra temporale di un'ora, utilizzando la funzione \texttt{window} di Flink;
 	\item calcolo della media della temperatura e dell'umidità, utilizzando la classe \\\texttt{AverageWindowFunction};
 \end{enumerate}
@@ -929,9 +929,9 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 		            \end{itemize}
 		      \item \textbf{Metodi}
 		            \begin{itemize}
-			            \item \texttt{main(String[] args)} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \textit{job} vero e proprio;
+			            \item \texttt{main(String[] \mySkip{args})} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \textit{job} vero e proprio;
 
-			            \item \texttt{execute(StreamExecutionEnvironment env)} [public]: metodo che applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}.
+			            \item \texttt{execute(StreamExecutionEnvironment \mySkip{env})} [public]: metodo che applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe AverageWindowFunction}
@@ -987,7 +987,7 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
-			            \item \texttt{sensorName} String [private]: nome del sensore;
+			            \item \texttt{\mySkip{sensorName}} String [private]: nome del sensore;
 			            \item \texttt{latitude} double [private]: latitudine del sensore;
 			            \item \texttt{longitude} double [private]: longitudine del sensore.
 		            \end{itemize}
@@ -1012,7 +1012,7 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 		      \item \textbf{Attributi}
 		            \begin{itemize}
 			            \item \texttt{sensorUuid} String [protected]: identificativo univoco del sensore;
-			            \item \texttt{sensorName} String [protected]: nome del sensore;
+			            \item \texttt{\mySkip{sensorName}} String [protected]: nome del sensore;
 			            \item \texttt{groupName} String [protected]: nome del gruppo di sensori a cui appartiene;
 			            \item \texttt{latitude} double [protected]: latitudine del sensore;
 			            \item \texttt{longitude} double [protected]: longitudine del sensore;
@@ -1054,7 +1054,7 @@ Tale operazione è stata effettuata utilizzando il \textit{plugin Maven} \texttt
 </plugin>
 \end{lstlisting}
 Al fine di poter caricare ed eseguire i \textit{job} all'interno di un \textit{cluster} Flink, è necessario effettuare una chiamata \texttt{POST} all'\textit{endpoint} \texttt{/jars/upload}
-esposto dal \textit{job manager} di Flink. A tale scopo, è stata realizzata un'immagine Docker chiamata \texttt{deployer} con all'interno uno \textit{script}
+esposto dal \textit{job manager} di Flink. A tale scopo, è stata realizzata un'immagine Docker chiamata \texttt{\mySkip{deployer}} con all'interno uno \textit{script}
 Python che si occupa di effettuare tale operazione. Essendo lo \textit{script} parametrico, è sufficiente ridefinire \texttt{command} all'interno del \texttt{docker-compose.yml},
 montando la cartella contenente il \textit{fat jar} all'interno del \textit{container} e passando come argomento il percorso del file e le \textit{entry class} dei due \textit{job}.
 
@@ -1078,7 +1078,7 @@ Siano dati $P$ e $C$, due insiemi di misurazioni rispettivamente di parcheggi e 
 	      \begin{itemize}
 		      \item $tc_i$ è il \textit{timestamp} della misurazione;
 		      \item $tc_i < tc_{i+1}\forall i\in\{1\ldots m\}$, ovvero le misurazioni sono ordinate cronologicamente;
-		      \item $k_i$ è il numero di $kwh$ erogati dalla colonnina elettrica al momento della misurazione.
+		      \item $k_i$ è il numero di $\mySkip{kwh}$ erogati dalla colonnina elettrica al momento della misurazione.
 	      \end{itemize}
 \end{itemize}
 
@@ -1115,7 +1115,7 @@ Le seguenti operazioni vengono eseguite indipendentemente per i dati provenienti
 \begin{enumerate}
 	\item lettura dei dati grezzi dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche, attraverso la classe \texttt{KafkaSource};
 	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{Watermark}}};
-	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{keyBy} fornita da Flink;
+	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{\mySkip{keyBy}} fornita da Flink;
 	\item creazione di una finestra temporale di un giorno, utilizzando la funzione \texttt{window} di Flink;
 	\item calcolo del tempo totale in cui le colonnine sono in uso e del tempo totale in cui i parcheggi sono occupati, utilizzando rispettivamente le classi
 	      \\\texttt{ChargingStationTimeDifferenceWindowFunction} e \texttt{ParkingTimeDifferenceWindowFunction}.
@@ -1142,7 +1142,7 @@ analogamente a quanto descritto nella sezione \ref{object_adapter}.
 \subsubsubsubsubsection{\textit{Template method}}
 Per poter ottenere il tempo totale in cui le colonnine e i parcheggi sono in uso in un certo periodo di tempo è necessario utilizzare una \texttt{WindowFunction},
 funzione di Flink che si occupa di calcolare una determinata aggregazione in una finestra temporale. In questo caso, si occupa calcolare la somma delle differenze
-tra due misurazioni consecutive in cui i kwh erogati dalle colonnine sono maggiori di 0 o i parcheggi sono occupati.\\
+tra due misurazioni consecutive in cui i kilowattora erogati dalle colonnine sono maggiori di 0 o i parcheggi sono occupati.\\
 Risulta quindi evidente che le due funzioni di aggregazione sono molto simili tra loro, differendo solo per il campo utilizzato per determinare se la misurazione
 è relativa ad un momento in cui le colonnine sono in uso o i parcheggi sono occupati. Per evitare di duplicare il codice, abbiamo deciso di utilizzare il \textit{pattern}
 \textit{template method}, definendo una classe astratta \texttt{TimeDifferenceWindowFunction} che implementa l'interfaccia \texttt{WindowFunction}
@@ -1189,9 +1189,9 @@ Riassumendo:
 		            \end{itemize}
 		      \item \textbf{Metodi}
 		            \begin{itemize}
-			            \item \texttt{main(String[] args)} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \textit{job} vero e proprio;
+			            \item \texttt{main(String[] \mySkip{args})} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \textit{job} vero e proprio;
 
-			            \item \texttt{execute(StreamExecutionEnvironment env)} [public]: metodo che applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}.
+			            \item \texttt{execute(StreamExecutionEnvironment \mySkip{env})} [public]: metodo che applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe astratta TimeDifferenceWindowFunction}
@@ -1235,7 +1235,7 @@ Riassumendo:
 			            \item \texttt{sensorUuid} String [private]: identificativo univoco del sensore;
 			            \item \texttt{timestamp} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui sono state calcolate le durate di occupazione e non occupazione;
 			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il sensore;
-			            \item \texttt{sensorNames} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
+			            \item \texttt{\mySkip{sensorNames}} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ChargingEfficiencyJoinFunction}
@@ -1253,7 +1253,7 @@ Riassumendo:
 			            \item \texttt{sensorUuid} String [private]: identificativo univoco del sensore;
 			            \item \texttt{timestamp} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui sono state calcolate le durate di occupazione e non occupazione;
 			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il sensore;
-			            \item \texttt{sensorNames} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
+			            \item \textt{\mySkip{sensorNames}} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
 		            \end{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
@@ -1560,7 +1560,7 @@ Per configurare un canale di notifica è necessario:
 Progettato per facilitare la visualizzazione e l'analisi dei dati geospaziali all'interno di piattaforme di pianificazione urbana e sviluppo territoriale.\\
 Le principali funzionalità offerte da questo plugin sono:
 \begin{itemize}
-	\item \textbf{visualizzazione dei dati geospaziali}: consente agli utenti di visualizzare dati geografici, come mappe, strati di dati GIS (Geographic Information System), punti di interesse e altre informazioni territoriali;
+	\item \textbf{visualizzazione dei dati geospaziali}: consente agli utenti di visualizzare dati geografici, come mappe, strati di dati \mySkip{GIS} (\textit{Geographic Information System}), punti di interesse e altre informazioni territoriali;
 	\item \textbf{interfaccia interattiva}: offre un'interfaccia utente intuitiva e interattiva che consente agli utenti di esplorare e interagire con i dati geospaziali in modo dinamico;
 	\item \textbf{personalizzazione}: offre opzioni di personalizzazione per adattarsi alle esigenze specifiche dell'utente o dell'applicazione;
 	\item \textbf{analisi dei dati}: oltre alla semplice visualizzazione dei dati geospaziali, il plugin può anche supportare funzionalità avanzate di analisi dei dati, come l'identificazione di cluster, la creazione di heatmap e l'esecuzione di analisi spaziali per identificare tendenze o pattern significativi nei dati territoriali;
