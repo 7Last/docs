@@ -711,14 +711,19 @@ Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
 
 \end{lstlisting}
 
-\subsubsubsection{\textit{Topic name strategy}} % TODO
-TODO
-
-\subsubsubsection{Partizionamento}
-TODO
+\subsubsubsection{Altre configurazioni}
+\begin{itemize}
+	\item \textbf{Numero di partizioni}: il numero di partizioni di un \textit{topic} è stato configurato con \textit{default} a 3;
+	\item \textit{Subject name strategy}, ovvero la strategia per la generazione del nome dello schema all'interno dello \textit{schema registry}, è stata impostata a \texttt{TopicNameStrategy},
+	      che prevede che il nome dello schema sia composto dal nome del \textit{topic} seguito da \texttt{-value} per i valori e \texttt{-key} per le chiavi.
+\end{itemize}
 
 \subsubsection{Inizializzazione e configurazione}
-TODO: parlare dell'immagine redpanda\_init
+Apache Flink necessita che i \textit{topic} da cui consuma, ovvero temperatura, umidità, colonnine di ricarica e parcheggi, e quelli in cui pubblica, ovvero \texttt{heat\_index} e \texttt{charging\_efficiency},
+siano creati precedentemente all'esecuzione del \textit{job}, con i rispettivi schemi. A tale scopo, è stata realizzata un'immagine Docker basata su \href{https://hub.docker.com/_/alpine}{\underline{Alpine Linux}} [Ultima consultazione 2024-07-18],
+al cui interno viene scaricato il binario \href{https://docs.redpanda.com/current/get-started/intro-to-rpk/}{\underline{rpk}} [Ultima consultazione 2024-07-18], strumento
+messo a disposizione da Redpanda per interagire e configurare un \textit{cluster} Redpanda, anche remoto. Al suo interno inoltre è presente uno \textit{script} Bash che
+dato il nome di un \textit{topic} lo crea se non esiste e ne registra lo schema all'interno dello \textit{schema registry}.
 
 \subsubsection{Redpanda Connect}\label{redpanda_connect}
 Redpanda Connect è una piattaforma integrata nel sistema Redpanda, progettata per facilitare l'integrazione e il trasferimento dei dati tra Redpanda e altre fonti o destinazioni.

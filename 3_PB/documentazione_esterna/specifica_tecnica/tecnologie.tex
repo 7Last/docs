@@ -20,6 +20,7 @@ Per lo sviluppo di questo progetto sono stati ipotizzati i due seguenti scenari 
 
 \subsubsection{Immagini Docker}
 Nello sviluppo di questo progetto abbiamo utilizzato diverse immagini Docker, di seguito elencate.
+Le porte sono indicate nel formato \texttt{<porta\_host>:<porta\_container>}, dove \texttt{<porta\_host>} è la porta del sistema host a cui si mappa la porta del container \texttt{<porta\_container>}.
 \begin{itemize}
 	\item \textbf{Simulator - Python}
 	      \begin{itemize}
@@ -40,21 +41,35 @@ Nello sviluppo di questo progetto abbiamo utilizzato diverse immagini Docker, di
 	      \begin{itemize}
 		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/redpanda:v23.3.11;
 		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/redpanda}{Redpanda Docker Image}} [Ultima consultazione: 2024-06-02].
-		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release};
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 18081:18081: \textit{schema registry};
+			            \item 18082:18082: \textit{proxy};
+			            \item 19092:19092: \textit{broker}.
+		            \end{itemize}
 	      \end{itemize}
 
 	\item \textbf{Redpanda console}
 	      \begin{itemize}
 		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/console:v2.4.6;
 		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/redpanda}{Redpanda Console Docker Image}} [Ultima consultazione: 2024-06-02].
-		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release};
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 8080:8080.
+		            \end{itemize}
 	      \end{itemize}
 
 	\item \textbf{Connectors}
 	      \begin{itemize}
 		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/connectors:v1.0.27;
 		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/connectors}{Redpanda Connectors Docker Image}} [Ultima consultazione: 2024-06-02].
-		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release};
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 8083:8083.
+		            \end{itemize}
 	      \end{itemize}
 
 	\item \textbf{ClickHouse}
@@ -62,13 +77,10 @@ Nello sviluppo di questo progetto abbiamo utilizzato diverse immagini Docker, di
 		      \item \textbf{Immagine}: clickhouse/clickhouse-server:24-alpine;
 		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/clickhouse/clickhouse-server}{ClickHouse Docker Image}} [Ultima consultazione: 2024-06-02].
 		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
-	      \end{itemize}
-
-	\item \textbf{Grafana}
-	      \begin{itemize}
-		      \item \textbf{Immagine}: grafana/grafana-oss:10.3.0;
-		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/grafana/grafana-oss}{Grafana Docker Image}} [Ultima consultazione: 2024-06-02].
-		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 8123:8123.
+		            \end{itemize}
 	      \end{itemize}
 
 	\item \textbf{Apache Flink}
@@ -76,6 +88,22 @@ Nello sviluppo di questo progetto abbiamo utilizzato diverse immagini Docker, di
 		      \item \textbf{Immagine}: flink:1.18.1-java17;
 		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/_/flink}{Flink Docker Image}} [Ultima consultazione: 2024-06-02].
 		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item servizio \texttt{jobmanager}: 9001:8081 interfaccia \textit{web};
+			            \item servizio \texttt{taskmanager}: 6121:6121.
+		            \end{itemize}
+	      \end{itemize}
+
+	\item \textbf{Grafana}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: grafana/grafana-oss:10.3.0;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/grafana/grafana-oss}{Grafana Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 3000:3000.
+		            \end{itemize}
 	      \end{itemize}
 \end{itemize}
 
