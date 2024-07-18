@@ -22,13 +22,14 @@
 
 \let\oldthepage\thepage
 \renewcommand{\thepage}{\sffamily\oldthepage}
+\newcommand{\mySkip}[1][]{#1}
 
-\definecolor{eclipseStrings}{RGB}{42,0.0,255}
-\definecolor{eclipseKeywords}{RGB}{127,0,85}
-\colorlet{punct}{red!60!black}
-\definecolor{background}{HTML}{FFFFFF}
-\definecolor{delim}{RGB}{20,105,176}
-\colorlet{numb}{magenta!60!black}
+\mySkip{\definecolor{eclipseStrings}{RGB}{42,0.0,255}}
+\mySkip{\definecolor{eclipseKeywords}{RGB}{127,0,85}}
+\mySkip{\colorlet{punct}{red!60!black}}
+\mySkip{\definecolor{background}{HTML}{FFFFFF}}
+\mySkip{\definecolor{delim}{RGB}{20,105,176}}
+\mySkip{\colorlet{numb}{magenta!60!black}}
 
 \lstdefinelanguage{json}{
     basicstyle=\normalfont\ttfamily,
@@ -75,26 +76,29 @@
 }
 
 % flip the switch if a colon is found in Pmode
-\newcommand\processColon@json{%
-  \colon@json%
-  \ifnum\lst@mode=\lst@Pmode%
+\mySkip{
+    \newcommand\processColon@json{%
+    \colon@json%
+    \ifnum\lst@mode=\lst@Pmode%
     \global\colonfoundonthislinetrue%
-  \fi
+    \fi
+    }
 }
 
-\lst@AddToHook{Output}{%
-  \ifcolonfoundonthisline%
+\mySkip{\lst@AddToHook{Output}{%
+    \ifcolonfoundonthisline%
     \ifnum\lst@mode=\lst@Pmode%
-      \def\lst@thestyle{\JSONnumbervaluestyle}%
+    \def\lst@thestyle{\JSONnumbervaluestyle}%
     \fi
-  \fi
-  %override by keyword style if a keyword is detected!
-  \lsthk@DetectKeywords% 
-}
+    \fi
+    %override by keyword style if a keyword is detected!
+    \lsthk@DetectKeywords% 
+    }
+    }
 
 % reset the switch at the end of line
-\lst@AddToHook{EOL}%
-  {\global\colonfoundonthislinefalse}
+\mySkip{\lst@AddToHook{EOL}%
+    {\global\colonfoundonthislinefalse}}
 \makeatother
 
 %-------------------INIZIO DOCUMENTO--------------
