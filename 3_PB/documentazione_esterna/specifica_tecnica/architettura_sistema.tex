@@ -803,7 +803,25 @@ Il primo consente di lavorare con \textit{stream} di dati, avendo un controllo p
 Per questo progetto abbiamo utilizzato le \textit{DataStream API} per la realizzazione di due \textit{job} indipendenti tra loro, che tuttavia condividono alcune classi di utilità.
 
 \subsubsection{\textit{Watermark}}\label{watermark}
-TODO
+I \textit{watermark} sono un meccanismo che Flink utilizza per tracciare l'avanzamento del tempo degli eventi
+(il tempo in cui gli eventi si sono effettivamente verificati nel mondo reale, rispetto al tempo in cui gli eventi vengono elaborati dal sistema)
+per un flusso di dati. I \textit{watermark} non sono necessari in tutti gli scenari di elaborazione dei flussi,
+ma quando vengono utilizzati sono emessi da Flink nel flusso di dati di origine.
+Non si tratta di eventi di dati veri e propri, ma di marcatori di metadati utilizzati per tracciare l'aspetto temporale del flusso durante l'elaborazione degli eventi.\\
+In un flusso di dati, un \textit{watermark} indica che non devono arrivare altri eventi più vecchi del timestamp del \textit{watermark} stesso,
+trasmettendo l'informazione di completezza dei dati fino a quel momento.
+I \textit{watermark} hanno diversi scopi fondamentali in Apache Flink:
+\begin{itemize}
+	\item consentono a Flink di elaborare i flussi di dati in base all'ora di produzione dell'evento piuttosto che quella di elaborazione e consentono a Flink
+	      di tracciare la progressione dell'ora dell'evento per ogni sorgente di dati. Questo è particolarmente importante quando gli eventi arrivano fuori ordine,
+	      poiché i \textit{watermark} assicurano che Flink elabori gli eventi nell'ordine corretto in base ai loro timestamp;
+	\item sono fondamentali per le operazioni basate sul tempo, come l'utilizzo di funzioni di \textit{window}, che consentono di raggruppare gli eventi in finestre temporali
+	      e calcolare risultati basati su tali finestre. Flink utilizza i \textit{watermark} per determinare quando attivare i calcoli delle finestre ed emettere i risultati delle stesse;
+	\item aiutano Flink a rilevare gli eventi in ritardo, cioè quelli che arrivano dopo un \textit{watermark}, in termini di tempo.
+	      Tracciando i \textit{watermark}, Flink può permettere all'applicazione di decidere se ignorare o elaborare tali eventi e per quanto tempo continuare ad accettare dati in ritardo.
+\end{itemize}
+All'interno dei due \textit{job} implementati abbiamo assegnato i \textit{watermark} ammettendo un ritardo massimo di 10 secondi. Il \textit{timestamp} considerato per
+ciascun evento è quello relativo al campo \texttt{timestamp} presente nei dati grezzi prodotti dai simulatori e dunque non considera il tempo di elaborazione ma quello di produzione del dato.
 
 \subsubsubsection{\textit{Heat Index}}
 A partire dai dati rilevati dai sensori di temperatura e umidità relativa lo \textit{Heat Index} consente di stimare la percezione della temperatura da parte dell'essere umano.
@@ -880,7 +898,7 @@ raggio $r$ è dato da:
 I seguenti passaggi vengono eseguiti indipentendemente ed in parallelo per i dati provenienti dai \textit{topic} di temperatura ed umidità:
 \begin{enumerate}
 	\item lettura dei dati grezzi dai \textit{topic} relativi alla temperatura e all'umidità, attraverso la classe \texttt{KafkaSource};
-	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{Watermark}}};
+	\item assegnazione di un \textit{\textit{watermark}} ai dati, come precedentemente descritto nel paragrafo \hyperref[\textit{watermark}]{\underline{\textit{\textit{watermark}}}};
 	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{\mySkip{keyBy}} fornita da Flink;
 	\item creazione di una finestra temporale di un'ora, utilizzando la funzione \texttt{window} di Flink;
 	\item calcolo della media della temperatura e dell'umidità, utilizzando la classe \\\texttt{AverageWindowFunction};
@@ -1114,7 +1132,7 @@ Si utilizza quindi $S$ calcolato nel paragrafo precedente per ottenere l' \texti
 Le seguenti operazioni vengono eseguite indipendentemente per i dati provenienti dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche:
 \begin{enumerate}
 	\item lettura dei dati grezzi dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche, attraverso la classe \texttt{KafkaSource};
-	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{Watermark}}};
+	\item assegnazione di un \textit{\textit{watermark}} ai dati, come precedentemente descritto nel paragrafo \hyperref[\textit{watermark}]{\underline{\textit{\textit{watermark}}}};
 	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{\mySkip{keyBy}} fornita da Flink;
 	\item creazione di una finestra temporale di un giorno, utilizzando la funzione \texttt{window} di Flink;
 	\item calcolo del tempo totale in cui le colonnine sono in uso e del tempo totale in cui i parcheggi sono occupati, utilizzando rispettivamente le classi
