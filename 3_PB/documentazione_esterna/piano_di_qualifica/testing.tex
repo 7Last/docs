@@ -149,9 +149,11 @@ per assicurarsi che ognuna funzioni correttamente e che sia in grado di eseguire
 	\textbf{58-U}   & Verificare che la classe \texttt{TimeDifferenceAggregateFunction} calcoli il tempo totale in cui una colonnina di ricarica è stata utilizzata.                                                                                                   & S              \\
 	\hline
 	\textbf{59-U}   & Verificare che la classe \texttt{TimeDifferenceAggregateFunction} calcoli il tempo totale in cui un parcheggio è stata utilizzato.                                                                                                               & S              \\
+	\hline
 	\caption{Test di unità}
 \end{longtable}
 
+\newpage
 \subsection{Test di integrazione}
 I test di integrazione verificano il corretto funzionamento delle interfacce tra le varie unità di codice,
 assicurandosi che esse interagiscano correttamente tra di loro e che siano in grado di comunicare e scambiarsi i dati necessari. \\
@@ -216,6 +218,18 @@ assicurandosi che esse interagiscano correttamente tra di loro e che siano in gr
 	\textbf{25T-I}  & Verificare che i dati salvati su \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickhouse}{Clickhouse\textsubscript{G}} siano correttamente accessibili da \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}}.                                  & S              \\
 	\hline
 	\multicolumn{3}{|c|}{\textbf{Apache Flink}}
+	\hline
+	\textbf{26T-I}  & Verificare che il \textit{job} \texttt{ChargingEfficiencyJob} calcoli correttamente l'efficienza di ricarica per un singolo sensore.                                                                                                                                                                                                & S              \\
+	\hline
+	\textbf{27T-I}  & Verificare che il \textit{job} \texttt{ChargingEfficiencyJob} calcoli correttamente l'efficienza di ricarica per più sensori.                                                                                                                                                                                                       & S              \\
+	\hline
+	\textbf{28T-I}  & Verificare che il \textit{job} \texttt{ChargingEfficiencyJob} calcoli correttamente l'efficienza nel caso di efficienza e utilizzo massimi.                                                                                                                                                                                         & S              \\
+	\hline
+	\textbf{29T-I}  & Verificare che il \textit{job} \texttt{ChargingEfficiencyJob} calcoli correttamente l'efficienza nel caso di utilizzo massimo e efficienza minima.                                                                                                                                                                                  & S              \\
+	\hline
+	\textbf{30T-I}  & Verificare che il \textit{job} \texttt{HeatIndexJob} calcoli correttamente l'indice di calore per un singolo sensore.                                                                                                                                                                                                               & S              \\
+	\hline
+	\textbf{31T-I}  & Verificare che il \textit{job} \texttt{HeatIndexJob} calcoli correttamente l'indice di calore per più sensori.                                                                                                                                                                                                                      & S              \\
 	\hline
 	\caption{Test di integrazione}
 \end{longtable}
