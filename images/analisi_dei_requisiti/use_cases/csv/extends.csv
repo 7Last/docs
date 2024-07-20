@@ -6,19 +6,20 @@ UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.3,Visualizzazi
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.4,Visualizzazione tabella sensori non trasmettenti,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.5,Visualizzazione tabella dati grezzi temperatura,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.6,Visualizzazione tabella dati grezzi umidità,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.3.5,Visualizzazione tabella dati grezzi traffico,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.3.6,Visualizzazione tabella dati grezzi qualità dell'aria,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.3.7,Visualizzazione tabella dati grezzi precipitazioni,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.7,Visualizzazione tabella dati grezzi traffico,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.8,Visualizzazione tabella dati grezzi qualità dell'aria,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.9,Visualizzazione tabella dati grezzi precipitazioni,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.10,Visualizzazione tabella dati grezzi isole ecologiche,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.11,Visualizzazione tabella dati grezzi livello di acqua,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.11,Visualizzazione tabella dati grezzi livello dei fiumi,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.12,Visualizzazione tabella dati grezzi colonnine di ricarica,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.13,Visualizzazione grafico time series dati grezzi complessivi temperatura,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.14,Visualizzazione grafico time series dati grezzi complessivi umidità,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.15,Visualizzazione grafico time series dati grezzi complessivi traffico,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.16,Visualizzazione grafico time series dati grezzi complessivi qualità dell'aria,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.13.5,Visualizzazione grafico time series dati grezzi complessivi precipitazioni,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.13.6,Visualizzazione grafico time series dati grezzi complessivi isole ecologiche,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.13.7,Visualizzazione grafico time series dati grezzi complessivi livello di acqua,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.17,Visualizzazione grafico time series dati grezzi complessivi precipitazioni,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.18,Visualizzazione grafico time series dati grezzi complessivi isole ecologiche,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.19,Visualizzazione grafico time series dati grezzi complessivi livello dei fiumi,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.20,Visualizzazione grafico time series dati grezzi complessivi colonnine di ricarica,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 
 UC-3.1: Visualizzazione sezione temperatura,Autorità locale,UC-3.1.1,Visualizzazione grafico time series temperatura,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
@@ -49,6 +50,11 @@ UC-3.4: Visualizzazione sezione precipitazioni,Autorità locale,UC-3.4.4,Visuali
 UC-3.4: Visualizzazione sezione precipitazioni,Autorità locale,UC-3.4.5,Visualizzazione panel giorno con precipitazioni maggiori nel periodo di tempo selezionato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-3.4: Visualizzazione sezione precipitazioni,Autorità locale,UC-3.4.6,Visualizzazione panel giorno con precipitazioni minori nel periodo di tempo selezionato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 
+UC-3.5: Visualizzazione sezione livello dei fiumi,Autorità locale,UC-3.5.1,Visualizzazione grafico time series livello dei fiumi,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3.5: Visualizzazione sezione livello dei fiumi,Autorità locale,UC-3.5.2,Visualizzazione mappa sensori livello dei fiumi,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3.5: Visualizzazione sezione livello dei fiumi,Autorità locale,UC-3.5.3,Visualizzazione panel livello dei fiumi medio nel periodo di tempo selezionato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3.5: Visualizzazione sezione livello dei fiumi,Autorità locale,UC-3.5.4,Visualizzazione panel livello dei fiumi in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+
 UC-4.1: Visualizzazione sezione traffico,Autorità locale,UC-4.1.1,Visualizzazione grafico time series traffico,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-4.1: Visualizzazione sezione traffico,Autorità locale,UC-4.1.2,Visualizzazione mappa sensori traffico,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-4.1: Visualizzazione sezione traffico,Autorità locale,UC-4.1.3,Visualizzazione panel numero veicoli in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
@@ -66,10 +72,4 @@ UC-4.4: Visualizzazione sezione isole ecologiche,Autorità locale,UC-4.4.3,Visua
 UC-4.4: Visualizzazione sezione isole ecologiche,Autorità locale,UC-4.4.4,Visualizzazione panel ore di saturazione isole ecologiche,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-4.4: Visualizzazione sezione isole ecologiche,Autorità locale,UC-4.4.5,Visualizzazione panel percentuale media di riempimento al momento dello svuotamento,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-4.4: Visualizzazione sezione isole ecologiche,Autorità locale,UC-4.4.6,Visualizzazione panel con percentuale tempo trascorso per livello di riempimento,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-
-UC-4.5: Visualizzazione sezione livello di acqua,Autorità locale,UC-4.5.1,Visualizzazione grafico time series livello di acqua,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-4.5: Visualizzazione sezione livello di acqua,Autorità locale,UC-4.5.2,Visualizzazione mappa sensori livello di acqua,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-4.5: Visualizzazione sezione livello di acqua,Autorità locale,UC-4.5.3,Visualizzazione panel livello di acqua medio nel periodo di tempo selezionato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-4.5: Visualizzazione sezione livello di acqua,Autorità locale,UC-4.5.4,Visualizzazione panel livello di acqua in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-
 
