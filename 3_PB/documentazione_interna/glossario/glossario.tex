@@ -110,6 +110,11 @@ name={Capitolato},
 description={Documento che contiene le specifiche e le condizioni per lo sviluppo di un progetto software. II capitolato viene redatto dal proponente e viene presentato ai fornitori o agli sviluppatori interessati a partecipare all'appalto per la realizzazione del prodotto software}
 }
 
+\newglossaryentry{Centro di massa}{
+name={Centro di massa},
+description={Il centro di massa è il punto in un sistema fisico o astratto in cui si può considerare concentrata la massa totale del sistema. Il centro di massa è un concetto fondamentale in fisica e ingegneria, utilizzato per descrivere il movimento e il comportamento di un sistema in base alla sua massa e alla sua distribuzione spaziale. Nel caso di un insieme di punti in un piano, il centro di massa è il punto medio tra i punti, calcolato come la media ponderata delle coordinate dei punti rispetto alla loro massa}
+}
+
 \newglossaryentry{Committente}{
 name={Committente},
 description={Il committente è la persona o l'organizzazione che richiede la realizzazione di un progetto software e finanzia il suo sviluppo. Il committente definisce i requisiti e le specifiche del progetto e valuta il prodotto finale rispetto ai propri obiettivi e aspettative},
@@ -138,6 +143,11 @@ name={Dashboard},
 description={Una dashboard è un'interfaccia utente che fornisce una panoramica visiva delle informazioni più importanti, utilizzando grafici, tabelle e altri elementi visivi per rappresentare i dati in modo chiaro e conciso. Le dashboard sono ampiamente utilizzate in diversi contesti, come il monitoraggio delle prestazioni aziendali, la visualizzazione dei dati di analisi e la gestione dei progetti}
 }
 
+\newglossaryentry{Design Pattern}{
+name={Design Pattern},
+description={Un design pattern è una soluzione generale e riutilizzabile a un problema comune di progettazione del software. I design pattern forniscono un approccio strutturato e convenzionale per risolvere problemi ricorrenti nel design del software, consentendo ai progettisti di adottare soluzioni collaudate e ottimizzate per problemi specifici}
+}
+
 \newglossaryentry{Development Team}{
 name={Development Team},
 description={In Scrum, il Development Team si riferisce all'insieme dei membri che svolge un ruolo nello sviluppo e nel supporto del prodotto e può includere ricercatori, architetti, designer, programmatori, e molti altri}
@@ -154,6 +164,17 @@ description={Strumento che semplifica la specifica dei servizi, reti e volumi ne
 }
 
 %----- E -----
+\newglossaryentry{Enumerazione}{
+name={Enumerazione},
+description={In informatica, un'enumerazione è un tipo di dato che consiste in un insieme di costanti denominate, ciascuna delle quali rappresenta un valore specifico. Le enumerazioni sono utilizzate per definire insiemi di costanti correlate e per rendere il codice più leggibile e manutenibile},
+acronym={Enum}
+}
+
+\newglossaryentry{Extract Transform Load}{
+name={Extract Transform Load},
+description={Il processo di Extract, Transform, Load (ETL) è un approccio comune per l'importazione, la trasformazione e il caricamento dei dati da diverse fonti in un database o un data warehouse. L'ETL coinvolge tre fasi principali: l'estrazione dei dati da una o più fonti, la trasformazione dei dati in un formato comune e la struttura e il caricamento dei dati in un database o un data warehouse},
+acronym={ETL}
+}
 
 %----- F -----
 
@@ -192,6 +213,15 @@ description={L'heat index è una misura della temperatura percepita dal corpo um
 %----- I -----
 
 %----- J -----
+\newglossaryentry{Job}{
+name={Job},
+description={Nel contesto di Apache Flink, è un'unità fondamentale di lavoro che rappresenta un'insieme di operazioni di elaborazione dati definite da un programma Flink. Un job in Flink è una pipeline di trasformazioni che prendono dati in ingresso, li elaborano attraverso una serie di operatori, e producono un output}
+}
+\newglossaryentry{JavaScript Object Notation}{
+name={JavaScript Object Notation},
+description={JavaScript Object Notation (JSON) è un formato di dati leggero e indipendente dal linguaggio di programmazione, basato su un sottoinsieme di JavaScript. È ampiamente utilizzato per lo scambio di dati tra applicazioni web e server, poiché è facile da leggere e scrivere per gli esseri umani e facile da analizzare e generare per le macchine},
+acronym={JSON}
+}
 
 %----- K -----
 \newglossaryentry{Key Performance Indicator}{
@@ -201,8 +231,18 @@ acronym={KPI}
 }
 
 %----- L -----
+\newglossaryentry{Lombok}{
+name={Lombok},
+description={Libreria Java che consente di ridurre la quantità di codice boilerplate necessario per la scrittura di classi Java, fornendo annotazioni per generare automaticamente metodi getter, setter, costruttori e altri metodi comuni. Lombok semplifica lo sviluppo di applicazioni Java riducendo la quantità di codice ripetitivo e migliorando la leggibilità e la manutenibilità del codice},
+}
 
 %----- M -----
+
+\newglossaryentry{Materialized View}{
+name={Materialized View},
+description={Una Materialized View in ClickHouse è una vista computata in precedenza e memorizzata fisicamente, che viene aggiornata automaticamente quando i dati sottostanti cambiano. A differenza di una vista standard che calcola i dati al momento della query, una materialized view mantiene i dati aggiornati e pronti per essere letti rapidamente, migliorando le prestazioni delle query di lettura. Viene tipicamente utilizzata per accelerare le operazioni di lettura su set di dati complessi e di grandi dimensioni, aggregando e trasformando i dati in anticipo},
+plural={Materialized Views}
+}
 
 \newglossaryentry{Milestone}{
 name={Milestone},
@@ -376,7 +416,16 @@ name={SOLID},
 description={In ingegneria del software, SOLID è un acrostico riferito a cinque principi dello sviluppo del software orientato agli oggetti descritti da Robert C. Martin in diverse pubblicazioni dei primi anni 2000. Tali principi vengono detti SOLID principles (letteralmente "principi solidi"). La parola è un acronimo che serve a ricordare tali principi (Single responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion), e fu coniata da Michael Feathers. I principi SOLID sono intesi come linee guida per lo sviluppo di software leggibile, estendibile e manutenibile, in particolare nel contesto di pratiche di sviluppo agili e fondate sull'identificazione di code smell e sul refactoring.},
 }
 
+\newglossaryentry{Superclasse}{
+name={Superclasse},
+description={In programmazione orientata agli oggetti, una superclasse è una classe che viene estesa da una o più sottoclassi. La superclasse definisce i comportamenti e le proprietà comuni a tutte le sottoclassi, che ereditano questi attributi e metodi. Le sottoclassi possono estendere o sovrascrivere i metodi della superclasse per adattarli alle proprie esigenze},
+}
+
 %----- T -----
+\newglossaryentry{TaskManager}{
+name={TaskManager},
+description={Nel contesto di Apache Flink, un TaskManager è un processo che esegue i task di elaborazione dei dati all'interno di un cluster Flink. Ogni TaskManager è responsabile dell'esecuzione di uno o più task di elaborazione, che possono includere operazioni di lettura, trasformazione e scrittura dei dati}
+}
 
 \newglossaryentry{Time series} {
 name={Time series},
@@ -392,6 +441,13 @@ description={I test end-to-end sono test che simulano il flusso di dati attraver
 name={Topic},
 description={Nel contesto di Apache Kafka, un topic è una categoria o un canale logico in cui vengono pubblicati i messaggi. I topic sono utilizzati per organizzare e classificare i messaggi in base al loro contenuto e alla loro destinazione}
 }
+
+\newglossaryentry{Tom's Obvious Minimal Language}{
+name={Tom's Obvious Minimal Language},
+description={TOML (Tom's Obvious, Minimal Language) è un formato di file di configurazione leggibile dall'uomo, progettato per essere semplice e intuitivo. Utilizza una sintassi basata su chiavi e valori, organizzati in sezioni, che lo rende facile da leggere e modificare. TOML è utilizzato principalmente per configurazioni di software e progetti, e il suo obiettivo principale è mantenere la chiarezza e la semplicità, evitando la complessità di formati come XML o JSON},
+acronym={TOML}
+}
+
 
 %----- U -----
 
@@ -422,6 +478,11 @@ description={Un widget è un componente grafico o un'interfaccia utente che forn
 %----- X -----
 
 %----- Y -----
+\newglossaryentry{Yet Another Markup Language}{
+name={Yet Another Markup Language},
+description={YAML (YAML Ain't Markup Language) è un formato di serializzazione di dati leggibile dall'uomo, progettato per essere facile da scrivere e da leggere. YAML è spesso utilizzato per la configurazione di software, la definizione di dati strutturati e altri scopi in cui è necessario rappresentare i dati in un formato leggibile e flessibile},
+acronym={YAML}
+}
 
 %----- Z -----
 

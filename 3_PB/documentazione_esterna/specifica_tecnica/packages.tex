@@ -1,0 +1,48 @@
+
+%pacchetti extra da scaricare dblfloatfix, fancyhdr
+\usepackage[left=2cm, right=2cm, bottom=3cm, top=3cm]{geometry}
+\usepackage{fancyhdr}%creazione header-footer
+\usepackage{graphicx} %serve per inserire immagini
+\graphicspath{ {../../../images/} }
+
+%\usepackage{dblfloatfix} %serve per posizionare gli elementi dove si vuole
+\usepackage[hidelinks]{hyperref} %serve per i link
+\usepackage{tikz}
+\usepackage{tgadventor} % font
+\usepackage[useregional=numeric,showseconds=true,showzone=false]{datetime2}
+\usepackage{caption}
+
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{ulem}
+\usepackage{pgfplots}
+\usepackage{pgf-pie}
+\usepackage[italian]{babel}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}  
+\usepackage{amsfonts}
+
+\lstset{
+	basicstyle=\ttfamily,
+	columns=fullflexible,
+	showstringspaces=false,
+	commentstyle=\color{gray}\upshape
+}
+
+\lstdefinelanguage{XML}
+{
+	morestring=[b]",
+	morestring=[s]{>}{<},
+	morecomment=[s]{<?}{?>},
+	stringstyle=\color{black},
+	identifierstyle=\color{darkblue},
+	keywordstyle=\color{cyan},
+	morekeywords={plugin,groupId,artifactId,configuration,version,executions,execution,goals,goal,phase,dependency,scope,packaging,build,plugins,pluginManagement,properties,profiles,profile,id,activation,activeByDefault,modules,module,reporting,reports,report,reporting,reportPlugins,reportPlugin,descriptorRefs,descriptorRef}
+}

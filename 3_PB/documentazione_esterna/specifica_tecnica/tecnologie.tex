@@ -1,0 +1,295 @@
+\section{Tecnologie}
+Questa sezione si occupa di fornire una panoramica delle tecnologie utilizzate per implementare il sistema software.
+In particolare, delinea le piattaforme, gli strumenti, i linguaggi di programmazione, i framework e altre risorse tecnologiche che sono state impiegate durante lo sviluppo.
+
+\subsection{Docker}
+È una piattaforma di virtualizzazione leggera che semplifica lo sviluppo, il testing e il rilascio delle applicazioni fornendo un ambiente isolato e riproducibile.
+È utilizzato per creare ambienti di sviluppo standardizzati, facilitare la scalabilità delle applicazioni e semplificare la gestione delle risorse.
+
+\subsubsection{Ambienti}
+Per lo sviluppo di questo progetto sono stati ipotizzati i due seguenti scenari di esecuzione, separati grazie all'utilizzo di profili diversi di Docker Compose:
+\begin{itemize}
+	\item \texttt{local}: utilizzato dagli sviluppatori per testare e sviluppare le funzionalità dell'applicazione sui propri computer.
+	      Questo ambiente permette di eseguire tutti i componenti del sistema all'interno di un container Docker, ad eccezione del simulatore Python.
+	      Esso viene eseguito direttamente sul sistema operativo dell'utente, in modo da facilitare il debugging e il testing delle funzionalità,
+	      senza dover necessariamente eseguire la \textit{build} dell'immagine Docker ad ogni modifica del codice;
+	\item \texttt{release}: utilizzato quando si desidera simulare un ipotetico ambiente di produzione o non è necessario modificare il codice Python. Consente di non dover manualmente
+	      installare le dipendenze o configurare l'ambiente di esecuzione. In questo caso, tutti i componenti del sistema vengono eseguiti all'interno di container Docker.
+
+\end{itemize}
+
+\subsubsection{Immagini Docker}
+Nello sviluppo di questo progetto abbiamo utilizzato diverse immagini Docker, di seguito elencate.
+Le porte sono indicate nel formato \texttt{<porta\_host>:<porta\_container>}, dove \texttt{<porta\_host>} è la porta del sistema host a cui si mappa la porta del container \texttt{<porta\_container>}.
+\begin{itemize}
+	\item \textbf{Simulator - Python}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: python:3.11.9-alpine;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/_/python}{Python Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{release};
+	      \end{itemize}
+
+	\item \textbf{Redpanda \mySkip{Init}}:
+	      l'immagine di \texttt{alpine} viene utilizzata per creare un container che si occupa di inizializzare il broker Redpanda.
+	      \begin{itemize}
+		      \item \textbf{Immagine}: alpine:3.20.1;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/_/alpine}{Alpine}} [Ultima consultazione: 2024-06-25].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+	      \end{itemize}
+
+	\item \textbf{Redpanda}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/redpanda:v23.3.11;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/redpanda}{Redpanda Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release};
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 18081:18081: \textit{schema registry};
+			            \item 18082:18082: \textit{proxy};
+			            \item 19092:19092: \textit{broker}.
+		            \end{itemize}
+	      \end{itemize}
+
+	\item \textbf{Redpanda console}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/console:v2.4.6;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/redpanda}{Redpanda Console Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release};
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 8080:8080.
+		            \end{itemize}
+	      \end{itemize}
+
+	\item \textbf{Connectors}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: docker.redpanda.com/redpandadata/connectors:v1.0.27;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/redpandadata/connectors}{Redpanda Connectors Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release};
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 8083:8083.
+		            \end{itemize}
+	      \end{itemize}
+
+	\item \textbf{ClickHouse}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: clickhouse/clickhouse-server:24-alpine;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/clickhouse/clickhouse-server}{ClickHouse Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 8123:8123.
+		            \end{itemize}
+	      \end{itemize}
+
+	\item \textbf{Apache Flink}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: flink:1.18.1-java17;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/_/flink}{Flink Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item servizio \texttt{jobmanager}: 9001:8081 interfaccia \textit{web};
+			            \item servizio \texttt{taskmanager}: 6121:6121.
+		            \end{itemize}
+	      \end{itemize}
+
+	\item \textbf{Grafana}
+	      \begin{itemize}
+		      \item \textbf{Immagine}: grafana/grafana-oss:10.3.0;
+		      \item \textbf{Riferimento}: \underline{\href{https://hub.docker.com/r/grafana/grafana-oss}{Grafana Docker Image}} [Ultima consultazione: 2024-06-02].
+		      \item \textbf{Ambiente}: \texttt{local}, \texttt{release}.
+		      \item \textbf{Porte}:
+		            \begin{itemize}
+			            \item 3000:3000.
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Linguaggi e formato dati}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.35\textwidth}|>{\centering\arraybackslash}m{0.35\textwidth}|}
+	\hline
+	\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione}                                                                                                                                 & \textbf{Impiego}                                                                                                             \\\hline
+	\endfirsthead
+	\hline
+	\textbf{Nome} & \textbf{Versione} & \textbf{Descrizione}                                                                                                                                 & \textbf{Impiego}                                                                                                             \\\hline
+	\endhead
+	Python        & 3.11.9            & Linguaggio di programmazione ad alto livello, interpretato e multiparadigma.                                                                         & Simulatore di sensori, \textit{testing}, \textit{script} per automatizzare il \textit{deployment} dei \textit{job} di Flink. \\\hline
+	JSON          & -                 & Formato di dati semplice da interpretare e generare, ampiamente utilizzato per lo scambio di dati tra applicazioni.                                  & Configurazione \textit{dashboard} Grafana, definizione di schemi Avro.                                                       \\\hline
+	YAML          & -                 & Linguaggio di serializzazione dei dati leggibile sia per gli esseri umani sia per le macchine.                                                       & Docker Compose, provisioning Grafana e configurazione \textit{alert}, file di \textit{workflow} per le GitHub Actions.       \\\hline
+	SQL           & Ansi SQL          & Linguaggio di programmazione specificamente progettato per la gestione e la manipolazione di dati all'interno di sistemi di gestione di database.    & \textit{Query} e gestione database ClickHouse.                                                                               \\\hline
+	TOML          & 1.0.0             & Linguaggio di \textit{markup} progettato per essere più leggibile e facile da scrivere rispetto ad altri formati di configurazione come JSON e YAML. & Configurazione e gestione dei sensori simulati.                                                                              \\\hline
+	Java          & 17                & Linguaggio di programmazione ad alto livello, orientato agli oggetti.                                                                                & Creazione di \textit{job} per le aggregazioni dei dati in Apache Flink.                                                      \\\hline
+	\caption{Linguaggi e formato dati}
+\end{longtable}
+
+\subsection{Librerie}
+\begin{longtable}{|>{\centering\arraybackslash}m{0.35\textwidth}|>{\centering\arraybackslash}m{0.10\textwidth}|>{\centering\arraybackslash}m{0.45\textwidth}|}
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Python}}                                                                                                          \\
+	\hline
+	\textbf{Nome}                          & \textbf{Versione} & \textbf{Impiego}                                                                  \\\hline
+	\endfirsthead
+	\hline
+	\textbf{Nome}                          & \textbf{Versione} & \textbf{Impiego}                                                                  \\
+	\endhead
+	% \texttt{avro} & 1.11.3            & Libreria per la serializzazione dei dati in formato Avro. & Serializzazione dei dati in formato Avro. \\\hline
+	\texttt{confluent\_avro}               & 1.8.0             & Serializzazione dei dati in formato Confluent Avro.                                         \\\hline
+	\texttt{coverage}                      & 7.5.1             & Strumento per misurare la percentuale di linee di codice e rami coperti dai test. \\\hline
+	\texttt{\mySkip{isodate}}                       & 0.6.1             & Libreria per la manipolazione delle date e delle ore in formato ISO8601.          \\\hline
+	\texttt{kafka-python-\mySkip{ng}}               & 2.2.2             & Client Kafka per Python.                                                          \\\hline
+	% \texttt{requests}          & 2.32.3            & Libreria per effettuare richieste HTTP.                                           \\\hline
+	\texttt{ruff}                          & 0.3.5             & Libreria per l'analisi statica del codice.                                        \\\hline
+	\texttt{toml}                          & 0.10.2            & Libreria per effettuare il parsing dei file di configurazione in formato TOML.    \\\hline
+
+	\multicolumn{3}{|c|}{\textbf{Java}}                                                                                                            \\\hline
+	% TODO: controllare quali effettivamente necessarie/utilizzate
+	\texttt{flink-streaming-java}          & 1.18.0            & Utilizzo di DataStream API di Flink.                                              \\\hline
+	\texttt{flink-connector-kafka}         & 3.1.0-1.18        & Connessione di Flink a Kafka.                                                     \\\hline
+	\texttt{flink-clients}                 & 1.18.0            & Creazione di \textit{job} di Flink.                                               \\\hline
+	\texttt{flink-java}                    & 1.18.0            & Creazione di \textit{job} di Flink.                                               \\\hline
+	\texttt{flink-avro-confluent-registry} & 1.18.0            & Connessione di Flink a uno \textit{schema registry} che utilizza Avro.            \\\hline
+	% \texttt{flink-avro}            & 1.18.0            & Libreria per la connessione di Flink ad Avro.                                      \\\hline
+	\texttt{flink-shaded-guava}            & 31.1-jre-17.0     & Gestione delle dipendenze di Flink.                                               \\\hline
+	\texttt{\mySkip{slf}4j-simple}                  & 1.7.36            & Implementazione di \mySkip{SLF4J}.                                                         \\\hline
+	\texttt{lombok}                        & 1.18.32           & Libreria per la generazione di codice \textit{boilerplate}.                       \\\hline
+	\texttt{maven-assembly-plugin}         & 3.7.1             & Plugin Maven per la creazione di un \textit{fat jar}.                             \\\hline
+	\caption{Librerie utilizzate}
+\end{longtable}
+
+\subsection{Servizi}
+\subsubsection{Redpanda}
+Redpanda è una piattaforma di streaming sviluppata in C++. Il suo obiettivo è fornire una soluzione leggera, semplice e performante, pensata per essere un'alternativa ad Apache Kafka. Viene utilizzato per disaccoppiare i dati provenienti dal simulatore.
+
+\begin{itemize}
+	\item \textbf{Versione}: v23.3.11;
+	\item \textbf{documentazione}: \url{https://docs.redpanda.com/current/home/} [Ultima consultazione: 2024-06-02].
+\end{itemize}
+
+\subsubsubsection{Vantaggi}
+I vantaggi nell'utilizzo di questo strumento consistono in:
+\begin{itemize}
+	\item \textbf{\textit{performance}}: è scritto in C++ e utilizza il \textit{framework} Seastar, offrendo un'architettura \textit{thread-per-core} ad alte prestazioni.
+	      Ciò permette di ottenere un'elevata \textit{throughput} e latenze costantemente basse, evitando cambi di contesto e blocchi.
+	      Inoltre, è progettato per sfruttare l'\textit{hardware} moderno, tra cui unità NVMe, processori \textit{multi-core} e interfacce di rete ad alta velocità;
+	\item \textbf{semplicità di configurazione}: oltre al \textit{message broker}, contiene anche un \textit{proxy} HTTP e uno \textit{schema registry};
+	\item \textbf{minore richiesta di risorse}: rispetto ad Apache Kafka, richiede meno risorse per l'esecuzione in locale, rendendolo più adatto per l'esecuzione su \textit{hardware} meno potente;
+	\item \textbf{compatibilità con le API di Kafka}: è compatibile con le API di Apache Kafka, consentendo di utilizzare le librerie e gli strumenti esistenti;
+\end{itemize}
+\subsubsubsection{Casi d'uso}
+Tra i casi d'uso di Redpanda si possono citare:
+\begin{itemize}
+	\item \textbf{\textit{streaming} di eventi}, permettendo la gestione e l'elaborazione di flussi di dati in tempo reale;
+	\item \textbf{\textit{data integration}}, agisce come un intermediario flessibile e robusto per l'integrazione dei dati, consentendo la raccolta, il trasporto e la trasformazione dei dati provenienti da diverse sorgenti verso varie destinazioni;
+	\item \textbf{elaborazione di \textit{big data}}, permette di gestire e processare enormi volumi di dati in modo efficiente e scalabile;
+	\item \textbf{messaggistica \textit{real time}}, supporta la messaggistica in tempo reale tra applicazioni e sistemi distribuiti.
+\end{itemize}
+
+\subsubsubsection{Impiego nel progetto}
+Il \textbf{broker} Redpanda gestisce i dati provenienti dai simulatori e li rende disponibili per i due consumatori. Inoltre,
+con lo \textit{schema registry} integrato è possibile garantire la compatibilità tra i dati prodotti dai simulatori e i consumatori.
+I consumatori sono:
+\begin{itemize}
+	\item Il \textbf{connector sink ClickHouse}, che salva i dati nelle tabelle di ClickHouse;
+	\item \textbf{Apache Flink}, che elabora i dati in tempo reale.
+\end{itemize}
+
+\subsubsection{ClickHouse}
+ClickHouse è un sistema di gestione di database colonnare \textit{open-source} progettato per l'analisi dei dati in tempo reale e l'elaborazione di grandi volumi di dati.
+\begin{itemize}
+	\item \textbf{Versione}: v24-alpine;
+	\item \textbf{documentazione}: \url{https://clickhouse.com/docs/en/intro} [Ultima consultazione: 2024-06-02].
+\end{itemize}
+
+\subsubsubsection{Vantaggi}
+I vantaggi nell'utilizzo di questo strumento consistono in:
+\begin{itemize}
+	\item \textbf{alte prestazioni}, è progettato per eseguire query analitiche complesse in modo estremamente rapido;
+	\item \textbf{scalabilità orizzontale}, può essere scalato orizzontalmente su più nodi, permettendo di gestire grandi volumi di dati;
+	\item \textbf{elaborazione in tempo reale}, è in grado di gestire l'ingestione e l'elaborazione dei dati in tempo reale, rendendolo ideale per applicazioni che richiedono l'analisi immediata dei dati appena arrivano;
+	\item \textbf{compressione efficiente}, utilizza algoritmi di compressione avanzati per ridurre lo spazio di archiviazione e migliorare l'efficienza I/O;
+	\item \textbf{facilità di integrazione}, si integra facilmente con molti strumenti di visualizzazione dei dati e piattaforme di business intelligence come Grafana;
+	\item \textbf{partizionamento e indici}, supporta il partizionamento dei dati e l'uso di indici per ottimizzare le query;
+\end{itemize}
+\subsubsubsection{Casi d'uso}
+ClickHouse è utilizzato in una varietà di casi d'uso, tra cui:
+\begin{itemize}
+	\item \textbf{analisi dei \textit{log} e monitoraggio}, utilizzato per l'analisi e il monitoraggio dei log in tempo reale;
+	\item \textbf{\textit{business intelligence}}, impiegato in applicazioni di BI per eseguire analisi approfondite dei dati aziendali, supportando la presa di decisioni basata sui dati;
+	\item \textbf{\textit{data warehousing}}, funziona come data warehouse per memorizzare e analizzare grandi volumi di dati.
+\end{itemize}
+\subsubsubsection{Impiego nel progetto}
+ClickHouse viene utilizzato per memorizzare i dati grezzi provenienti dai simulatori; attraverso il \textit{connector sink} di Redpanda, i \textit{record} pubblicati nei \textit{topic} vengono
+salvati in tabelle di ClickHouse.
+Inoltre, tramite l'utilizzo di Materialized Views, vengono effettuate delle semplici aggregazioni sui dati, come ad esempio la media oraria o giornaliera, le quali sono poi memorizzate in apposite tabelle,
+in modo da poterne monitorare l'andamento nel tempo.\\
+Le aggregazioni più complesse che coinvolgono dati provenienti da sensori differenti sono invece effettuate utilizzando Apache Flink, come meglio descritto nella sezione \ref{sec:flink}.\\
+ClickHouse si integra semplicemente con Grafana, attraverso l'utilizzo del plugin \\
+\texttt{datasource-clickhouse}, fornito da Grafana Labs.
+
+\subsubsection{Apache Flink} \label{sec:flink}
+Apache Flink è un framework open-source per l'elaborazione dei dati in tempo reale e in \textit{batch}.
+Sviluppato in Java e Scala, è progettato per gestire \textit{data stream} in modo efficiente, consentendo l'elaborazione di grandi volumi di dati in tempo reale.
+Flink si distingue per la sua capacità di fornire elaborazione a bassa latenza, esecuzione \textit{fault-tolerant} e scalabilità orizzontale.
+Come sistema di \textit{build} e gestione delle dipendenze, è stato utilizzato Maven.
+
+\begin{itemize}
+	\item \textbf{Versione}: v1.18.1;
+	\item \textbf{documentazione}: \url{https://flink.apache.org} [Ultima consultazione: 2024-06-25].
+\end{itemize}
+
+\subsubsubsection{Vantaggi}
+\begin{itemize}
+	\item \textbf{elaborazione a bassa latenza}: Flink è progettato per elaborare i dati in tempo reale con latenza estremamente bassa, rendendolo ideale per applicazioni che richiedono risposte rapide ai cambiamenti dei dati.
+	\item \textbf{\textit{fault tolerance}}: Flink utilizza una tecnologia chiamata \textit{Stateful Stream Processing} che garantisce che lo stato dell'applicazione venga memorizzato in modo sicuro e possa essere recuperato in caso di guasti. Questo consente un'elaborazione affidabile e continua anche in presenza di errori hardware o software.
+	\item \textbf{scalabilità}: Flink può scalare orizzontalmente su cluster di grandi dimensioni, distribuendo il carico di lavoro tra molteplici nodi per gestire volumi di dati crescenti senza compromettere le prestazioni.
+	\item \textbf{modello di programmazione flessibile}: Flink offre due tipologie di API per l'elaborazione dei dati: DataStream API, utilizzato per l'elaborazione di flussi di dati non strutturati in tempo reale, e Table API, un'astrazione di livello superiore per manipolare dati strutturati come tabelle, facilitando l'uso di operazioni simili a SQL;
+	\item \textbf{supporto per analisi complesse}: Flink fornisce potenti funzionalità di analisi come aggregazioni, join e \textit{windowing}, che consentono di realizzare analisi complesse sui flussi di dati.
+\end{itemize}
+
+\subsubsubsection{Casi d'uso}
+Tra i principali casi d'uso di Apache Flink si trovano:
+\begin{itemize}
+	\item \textbf{applicazioni \textit{event-driven}}: applicazioni \textit{stateful} che elaborano eventi provenienti da uno o più flussi di eventi e reagiscono agli eventi in ingresso attivando calcoli, aggiornamenti di stato o azioni esterne;
+	\item \textbf{\textit{data analytics}}: estrazione di informazioni e \textit{insight} a partire dall'elaborazione dei dati grezzi, sia in \textit{real time} che in modalità \textit{batch};
+	\item \textbf{\textit{data pipeline}}: ad esempio per la costruzione di \textit{Extract-transform-load} (ETL) o integrazione di dati provenienti da sorgenti differenti.
+\end{itemize}
+
+\subsubsubsection{Impiego nel progetto}
+Per ciascuno degli indici in seguito elencati è stato sviluppato un \textit{job} in Apache Flink; i dettagli implementativi di ciascuno di essi sono meglio discussi nella sezione 3.5. %TODO: numero corretto
+\begin{itemize}
+	\item \textbf{\textit{Heat Index}}: una misura che combina la temperatura dell'aria e l'umidità relativa per determinare la temperatura percepita dall'uomo. Questa misura riflette meglio il livello di disagio che una persona potrebbe sperimentare rispetto alla sola temperatura dell'aria;
+	\item \textbf{\textit{Charging Efficiency}}: combinando i dati provenienti dai sensori di occupazione dei parcheggi e all'utilizzo delle colonnine di ricarica (relative
+	      allo stesso parcheggio), si calcola l'efficienza di utilizzo di queste ultime; viene calcolato sia un indice di utilizzo (\texttt{utilization\_rate}) nel periodo
+	      di tempo considerato, sia un indice di efficienza (\texttt{efficiency\_rate}) che rappresenta quanto tempo la colonnina è stata effettivamente utilizzata rispetto
+	      al tempo in cui il parcheggio è stato occupato.
+\end{itemize}
+
+\subsubsection{Grafana}
+È una potente piattaforma di visualizzazione dei dati progettata per creare, esplorare e condividere \textit{dashboard}  interattive che visualizzano metriche, \textit{log} e altri dati di monitoraggio in tempo reale.
+
+\begin{itemize}
+	\item \textbf{Versione}: v10.3.0;
+	\item \textbf{documentazione}: \url{https://grafana.com/docs/grafana/v10.4/} [Ultima consultazione: 2024-06-02].
+\end{itemize}
+
+\subsubsubsection{Vantaggi}
+\begin{itemize}
+	\item \textbf{Facilità d'uso}: possiede un'interfaccia intuitiva che rende facile la creazione e la gestione delle dashboard;
+	\item \textbf{flessibilità}: La capacità di integrarsi con molteplici sorgenti dati e l'ampia gamma di plugin disponibili la rendono estremamente flessibile;
+	\item \textbf{personalizzazione}: permette una personalizzazione completa delle dashboard, soddisfando ogni possibile necessità di visualizzazione dei dati;
+	\item \textbf{gestione degli accessi}: offre funzionalità avanzate di gestione degli accessi e delle autorizzazioni, consentendo di controllare chi può accedere alle \textit{dashboard} e quali azioni possono eseguire.
+\end{itemize}
+\subsubsubsection{Casi d'uso}
+\begin{itemize}
+	\item \textbf{Monitoraggio delle infrastrutture}: utilizzato per monitorare le prestazioni e la disponibilità delle infrastrutture IT, inclusi server, database, servizi cloud e altro;
+	\item \textbf{analisi delle performance delle applicazioni}: utilizzato per monitorare le prestazioni delle applicazioni e identificare eventuali problemi di prestazioni;
+	\item \textbf{analisi delle serie temporali}: utilizzato per visualizzare e analizzare dati di serie temporali, come metriche di monitoraggio, log e dati di sensori;
+	\item \textbf{business intelligence}: utilizzato per creare \textit{dashboard} personalizzate per l'analisi dei dati aziendali e la visualizzazione delle metriche chiave.
+\end{itemize}
+\subsubsubsection{Impiego nel progetto}
+\begin{itemize}
+	\item \textbf{Visualizzazione dei dati}: creazione \textit{dashboard} interattive che visualizzano i dati salvati su ClickHouse;
+	\item \textbf{notifiche superamento soglie}: invio di notifiche nel caso in cui vengano superate delle soglie prestabilite, che rappresentano situazioni di eventuale pericolo, forte disagio o disservizio per i cittadini.
+\end{itemize}
