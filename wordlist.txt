@@ -2,6 +2,7 @@ adaptee
 Airbnb
 amm
 Analizzabilità
+analytics
 Apprendibilità
 Autoformazione
 BAC
