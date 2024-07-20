@@ -3,14 +3,14 @@
 \subsection{\textit{Data processing architectures}}
 Le architetture di tipo \textit{data processing} sono progettate per gestire l'\textit{ingestion}, \textit{processing} e memorizzazione di grandi quantità di dati.
 Esse permettono di analizzare e ottenere informazioni utili (\textit{insight}) da questi dati, consentendo di ottimizzare i processi decisionali e migliorare le prestazioni aziendali.
-Esistono diverse architettura, ciascuna con le proprie caratteristiche e vantaggi. Tra le più comuni troviamo l'architettura \textit{lambda} e l'architettura \textit{kappa}.
+Esistono diverse architetture, ciascuna con le proprie caratteristiche e vantaggi. Tra le più comuni troviamo l'architettura \textit{lambda} e l'architettura \textit{kappa}.
 
 \subsubsection{Architettura \textit{lambda}}
 L'architettura \textit{lambda} è costituita dalle seguenti quattro componenti:
 \begin{itemize}
 	\item \textbf{sorgente di dati}: responsabile dell'acquisizione dei dati grezzi da diverse sorgenti;
 	\item \textbf{\textit{batch layer}}: responsabile dell'elaborazione e persistenza di dati storici in \textit{batch} di grandi dimensioni; il suo scopo è fornire risposte complete e accurate, anche se con una latenza più elevata rispetto allo \textit{speed layer}. Tale componente è tipicamente rappresentata da \textit{framework} come Apache Hadoop o Apache Spark;
-	\item \textbf{\textit{speed (real-time) layer}}: responsabile dell'elaborazione e persistenza di dati in tempo reale. I dati vengono elaborati in modo rapido e con una latenza molto bassa, fornendo tuttavia risposte elaborate rispetto al \textit{batch layer}. Questa componente è tipicamente rappresentata da \textit{framework} come Apache Storm o Apache Flink;
+	\item \textbf{\textit{speed (real-time) layer}}: responsabile dell'elaborazione e persistenza di dati in tempo reale. I dati vengono elaborati in modo rapido e con una latenza molto bassa, fornendo tuttavia risposte meno elaborate rispetto al \textit{batch layer}. Questa componente è tipicamente rappresentata da \textit{framework} come Apache Storm o Apache Flink;
 	\item \textbf{\textit{serving layer}}: responsabile della fornitura dei dati elaborati in modo veloce ed affidabile, indipendentemente dal \textit{layer} di elaborazione utilizzato.
 \end{itemize}
 
