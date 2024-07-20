@@ -1150,7 +1150,7 @@ attraverso il metodo \texttt{execute}.\\
 
 \subsubsubsubsubsection{\textit{Object adapter}}
 La classe \texttt{ChargingEfficiencyResult} è stata adattata in un oggetto di tipo \texttt{GenericRecord} attraverso la classe \texttt{ChargingEfficiencyRecordSerializableAdapter},
-analogamente a quanto descritto nella sezione \ref{object_adapter}.
+analogamente a quanto descritto nella sezione \hyperref[object_adapter]{\underline{\textit{Object adapter}}}.
 
 \subsubsubsubsubsection{\textit{Template method}}
 Per poter ottenere il tempo totale in cui le colonnine e i parcheggi sono in uso in un certo periodo di tempo è necessario utilizzare una \texttt{WindowFunction},
@@ -1171,7 +1171,7 @@ Riassumendo:
 
 \subsubsubsubsubsection{Classi, interfacce metodi e attributi}
 \begin{itemize}
-	\item \textbf{Classe astratta RawData}: precedentemente descritta nella sezione relativa al \hyperref[abstract_class_raw_data]{\textit{\underline{job Heat Index}}};
+	\item \textbf{Classe astratta RawData}: precedentemente descritta nella sezione relativa al \\\hyperref[abstract_class_raw_data]{\textit{\underline{job Heat Index}}};
 	\item \textbf{Classe ParkingRawData}
 	      \begin{itemize}
 		      \item \textbf{Attributi}
@@ -1270,8 +1270,9 @@ Riassumendo:
 		            \end{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{zero(String sensorUuid, LocalDateTime timestamp, String groupName, Set<String> sensorNames)} ChargingEfficiencyResult [public,static]: metodo che costruisce e ritorna un'istanza di ChargingEfficiencyResult
-			                  con\texttt{utilizationRate} e \texttt{efficiencyRate} posti a 0.
+			            \item \texttt{zero(String sensorUuid, LocalDateTime timestamp, String groupName,}\\
+			                  \texttt{Set<String> sensorNames)} ChargingEfficiencyResult [public,static]: metodo che costruisce e ritorna un'istanza di ChargingEfficiencyResult
+			                  con \texttt{utilizationRate} e \texttt{efficiencyRate} posti a 0.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ParkingRawDataMapFunction}
