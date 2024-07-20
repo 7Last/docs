@@ -740,7 +740,7 @@ Al fine di effettuare il \textit{parsing} delle date è stato necessario definir
 e convertirlo in \texttt{DateTime}, tipo riconosciuto da ClickHouse.\\
 La versione utilizzata è la 1.1.1, scaricabile dal seguente \href{https://github.com/ClickHouse/clickhouse-kafka-connect/releases}{\underline{url}} [Ultima consultazione 2024-07-10].\\
 La configurazione del \textit{transformer} è la seguente:
-\begin{lstlisting}[language=json, caption=Configurazione del \textit{transformer} all'interno del file \texttt{clickhouse.json},captionpos=b]
+\mySkip{\begin{lstlisting}[language=json, caption=Configurazione del \textit{transformer} all'interno del file \texttt{clickhouse.json},captionpos=b]
 {
     //...
     "transforms": "TimestampConverter",
@@ -750,7 +750,7 @@ La configurazione del \textit{transformer} è la seguente:
     "transforms.TimestampConverter.target.type": "Timestamp"
     //...
 }
-\end{lstlisting}
+\end{lstlisting}}
 La creazione del connettore viene effettuata eseguendo il seguente comando nella radice del progetto:
 \begin{verbatim}
 curl "localhost:8083/connectors" -H 'Content-Type: application/json' \
@@ -845,28 +845,28 @@ e i coefficienti $c_i$ sono:
 Il calcolo del centro di massa tiene in considerazione la sfericità della Terra. Sia dato un insieme di punti $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$, dove $a_i$ rappresenta
 la latitudine del punto $i$-esimo e $b_i$ la longitudine. Per calcolare il centro di massa si procede, per ciascun punto, a convertire in radianti le coordinate:
 \begin{align*}
-	lat_i = \frac{\pi}{180} \cdot a_i, & \quad lon_i = \frac{\pi}{180} \cdot b_i
+	\mySkip{lat}_i = \frac{\pi}{180} \cdot a_i, & \quad \mySkip{lon}_i = \frac{\pi}{180} \cdot b_i
 \end{align*}
 Successivamente si calcolano i coefficienti $x_i$, $y_i$ e $z_i$:
 \begin{align*}
-	x_i = \cos(lat_i) \cdot \cos(lon_i),       &
-	\quad y_i = \cos(lat_i) \cdot \sin(lon_i), &
-	\quad z_i = \sin(lat_i)
+	x_i = \cos(\mySkip{lat}_i) \cdot \cos(\mySkip{lon}_i),       &
+	\quad y_i = \cos(\mySkip{lat}_i) \cdot \sin(\mySkip{lon}_i), &
+	\quad z_i = \sin(\mySkip{lat}_i)
 \end{align*}
 Una volta ottenuti i coefficienti per tutti i punti, si calcola la media di tutti i coefficienti:
 \begin{align*}
 	x & = \frac{1}{n} \sum_{i=1}^{n} x_i, & \quad y = \frac{1}{n} \sum_{i=1}^{n} y_i, & \quad z = \frac{1}{n} \sum_{i=1}^{n} z_i
 \end{align*}
 
-Infine si calcolano $\mySkip{lat}$ (latitudine in radianti), $\mySkip{lon}$ (longitudine in radianti) e $\mySkip{hyp}$ (ipotenusa ne piano cartesiano, che rappresenta la distanza dall'origine alla proiezione del punto sul piano $lat_i, lon_i$):
+Infine si calcolano $\mySkip{lat}$ (latitudine in radianti), $\mySkip{lon}$ (longitudine in radianti) e $\mySkip{hyp}$ (ipotenusa ne piano cartesiano, che rappresenta la distanza dall'origine alla proiezione del punto sul piano $\mySkip{lat}_i, \mySkip{lon}_i$):
 \begin{align*}
-	lon = atan2(y, x)      \\
-	hyp = \sqrt{x^2 + y^2} \\
-	lat = atan2(z, hyp)
+	\mySkip{lon} = \mySkip{atan2}(y, x) \\
+	\mySkip{hyp} = \sqrt{x^2 + y^2}     \\
+	\mySkip{lat} = \mySkip{atan2}(z, \mySkip{hyp})
 \end{align*}
 Una volta ottenuti $\mySkip{lat}$ e $\mySkip{lon}$, si convertono in gradi e si ottiene il centro di massa $CM = (c_a, c_b)$.
 \begin{align*}
-	c_a = \frac{180}{\pi} \cdot lat, & \quad c_b = \frac{180}{\pi} \cdot lon
+	c_a = \frac{180}{\pi} \cdot \mySkip{lat}, & \quad c_b = \frac{180}{\pi} \cdot \mySkip{lon}
 \end{align*}
 \subsubsubsubsubsection{Raggio del cerchio}
 Il raggio del cerchio viene calcolato come la distanza dal centro di massa al punto più lontano. Sia $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$ l'insieme di punti, $CM = (c_a, c_b)$, il
@@ -1059,7 +1059,7 @@ Tale operazione è stata effettuata utilizzando il \textit{plugin Maven} \texttt
 \end{lstlisting}
 Al fine di poter caricare ed eseguire i \textit{job} all'interno di un \textit{cluster} Flink, è necessario effettuare una chiamata \texttt{POST} all'\textit{endpoint} \texttt{/jars/upload}
 esposto dal \textit{job manager} di Flink. A tale scopo, è stata realizzata un'immagine Docker chiamata \texttt{\mySkip{deployer}} con all'interno uno \textit{script}
-Python che si occupa di effettuare tale operazione. Essendo lo \textit{script} parametrico, è sufficiente ridefinire \texttt{command} all'interno del \texttt{docker-compose.yml},
+Python che si occupa di effettuare tale operazione. Essendo lo \textit{script} parametrico, è sufficiente ridefinire \texttt{command} all'interno del \texttt{docker-compose.yaml},
 montando la cartella contenente il \textit{fat jar} all'interno del \textit{container} e passando come argomento il percorso del file e le \textit{entry class} dei due \textit{job}.
 
 \subsubsubsection{\textit{Charging Efficiency} (efficienza delle colonnine elettriche)}
@@ -1072,26 +1072,26 @@ A partire dai dati rilevati dai sensori di occupazione dei parcheggi e delle col
 \subsubsubsubsection{Modello di calcolo}
 Siano dati $P$ e $C$, due insiemi di misurazioni rispettivamente di parcheggi e colonnine elettriche, tali che:
 \begin{itemize}
-	\item $P = \{(tp_1, o_1), (tp_2, o_2)\ldots (tp_n, o_n)\}$, dove:
+	\item $P = \{(\mySkip{tp}_1, o_1), (\mySkip{tp}_2, o_2)\ldots (\mySkip{tp}_n, o_n)\}$, dove:
 	      \begin{itemize}
-		      \item $tp_i$ è il \textit{timestamp} della misurazione;
-		      \item $tp_i < tp_{i+1}\forall i\in\{1\ldots n\}$, ovvero le misurazioni sono ordinate cronologicamente;
+		      \item $\mySkip{tp}_i$ è il \textit{timestamp} della misurazione;
+		      \item $\mySkip{tp}_i < \mySkip{tp}_{i+1}\forall i\in\{1\ldots n\}$, ovvero le misurazioni sono ordinate cronologicamente;
 		      \item $o_i$ è un intero pari a 1 se il parcheggio è occupato, 0 altrimenti.
 	      \end{itemize}
-	\item $C = \{(tc_1, k_1), (tc_2, k_2)\ldots (tc_m, k_m)\}$, dove:
+	\item $C = \{(\mySkip{tc}_1, k_1), (\mySkip{tc}_2, k_2)\ldots (\mySkip{tc}_m, k_m)\}$, dove:
 	      \begin{itemize}
-		      \item $tc_i$ è il \textit{timestamp} della misurazione;
-		      \item $tc_i < tc_{i+1}\forall i\in\{1\ldots m\}$, ovvero le misurazioni sono ordinate cronologicamente;
+		      \item $\mySkip{tc}_i$ è il \textit{timestamp} della misurazione;
+		      \item $\mySkip{tc}_i < \mySkip{tc}_{i+1}\forall i\in\{1\ldots m\}$, ovvero le misurazioni sono ordinate cronologicamente;
 		      \item $k_i$ è il numero di $\mySkip{kwh}$ erogati dalla colonnina elettrica al momento della misurazione.
 	      \end{itemize}
 \end{itemize}
 
 \subsubsubsubsubsection{\textit{Utilization rate}}
 L' \textit{utilization rate} è calcolato come la percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale considerato.
-Sia $T = tp_m - tp_1$ il tempo totale considerato. Il tempo in cui le colonnine sono utilizzate è dato dalla somma delle differenze tra due misurazioni consecutive
+Sia $T = \mySkip{tp}_m - \mySkip{tp}_1$ il tempo totale considerato. Il tempo in cui le colonnine sono utilizzate è dato dalla somma delle differenze tra due misurazioni consecutive
 in cui $k_i > 0$, ovvero
 \[
-	S = \sum_{i=1}^{m-1} (tc_{i+1} - tc_i) \cdot 1_{k_i > 0}
+	S = \sum_{i=1}^{m-1} (\mySkip{tc}_{i+1} - \mySkip{tc}_i) \cdot 1_{k_i > 0}
 \]
 Il \textit{utilization rate} è dunque ottenuto nel seguente modo:
 \[
@@ -1102,7 +1102,7 @@ Il \textit{utilization rate} è dunque ottenuto nel seguente modo:
 L' \textit{efficiency rate} è calcolato come la percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale in cui il parcheggio è occupato.
 Il tempo totale in cui il parcheggio è occupato è dato dalla somma delle differenze tra due misurazioni consecutive in cui $o_i > 0$, ovvero:
 \[
-	O = \sum_{i=1}^{n-1} (tp_{i+1} - tp_i) \cdot 1_{o_i > 0}
+	O = \sum_{i=1}^{n-1} (\mySkip{tp}_{i+1} - \mySkip{tp}_i) \cdot 1_{o_i > 0}
 \]
 Si utilizza quindi $S$ calcolato nel paragrafo precedente per ottenere l' \textit{efficiency rate}:
 \[
@@ -1168,7 +1168,7 @@ Riassumendo:
 		      \item \textbf{Attributi}
 		            \begin{itemize}
 			            \item \texttt{is\_occupied} boolean [private]: valore che indica se il parcheggio è occupato o meno.
-			                  [wid\end{itemize}
+		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ChargingStationRawData}
 	      \begin{itemize}
@@ -1395,7 +1395,7 @@ La tabella \texttt{charging\_station} utilizza il motore di \textit{storage} Mer
 in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
 Tramite l'utilizzo delle \textit{Materialized View} \texttt{charging\_station\_5m\_mv}, \texttt{charging\_station\_weekly\_mv} e \\\texttt{charging\_station\_daily\_mv}
 è possibile aggregare e trasferire i dati sulle tabelle \texttt{charging\_station\_5m}, \texttt{charging\_station\_weekly} e \texttt{charging\_station\_daily},
-che contengono rispettivamente la media dei kwh erogati per 5 minuti, giornalmente e settimanalmente.
+che contengono rispettivamente la media dei kilowattora erogati per 5 minuti, giornalmente e settimanalmente.
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/charging_mv.png}
 	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{charging\_station}}
