@@ -1,7 +1,7 @@
 title,actor,uc_code,uc_desc
 SyncCity,Autorità locale,UC-1,Visualizzazione dashboard
 SyncCity,Autorità locale,UC-5,Visualizzazione messaggio assenza di dati
-SyncCity,Sensore,UC-13,Trasmissione dati
+SyncCity,Sensore,UC-6,Trasmissione dati
 UC-3: Visualizzazione dashboard dati ambientali,Autorità locale,UC-3.1,Visualizzazione sezione temperatura
 UC-3: Visualizzazione dashboard dati ambientali,Autorità locale,UC-3.2,Visualizzazione sezione umidità
 UC-3: Visualizzazione dashboard dati ambientali,Autorità locale,UC-3.3,Visualizzazione sezione qualità dell'aria
