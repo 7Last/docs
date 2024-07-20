@@ -1,20 +1,32 @@
 title,actor,uc_code,uc_desc
 SyncCity,Autorità locale,UC-1,Visualizzazione dashboard
-SyncCity,Autorità locale,UC-12,Visualizzazione messaggio assenza di dati
+SyncCity,Autorità locale,UC-5,Visualizzazione messaggio assenza di dati
 SyncCity,Sensore,UC-13,Trasmissione dati
-UC-13: Trasmissione dati,Sensore,UC-13.1,Trasmissione dati temperatura
-UC-13: Trasmissione dati,Sensore,UC-13.2,Trasmissione dati umidità
-UC-13: Trasmissione dati,Sensore,UC-13.3,Trasmissione dati qualità dell'aria
-UC-13: Trasmissione dati,Sensore,UC-13.4,Trasmissione dati precipitazioni
-UC-13: Trasmissione dati,Sensore,UC-13.5,Trasmissione dati traffico
-UC-13: Trasmissione dati,Sensore,UC-13.6,Trasmissione dati colonnine di ricarica
-UC-13: Trasmissione dati,Sensore,UC-13.7,Trasmissione dati parcheggi
-UC-13: Trasmissione dati,Sensore,UC-13.8,Trasmissione dati isole ecologiche
-UC-13: Trasmissione dati,Sensore,UC-13.9,Trasmissione dati livello di acqua
-SyncCity,Autorità locale,UC-14,Applicazione filtro
-UC-14: Applicazione filtro,Autorità locale,UC-14.1,Applicazione filtro per tipo di sensore
-UC-14: Applicazione filtro,Autorità locale,UC-14.2,Applicazione filtro per nome sensore
-UC-14: Applicazione filtro,Autorità locale,UC-14.3,Applicazione filtro temporale
-SyncCity,Autorità locale,UC-15,Ricezione notifiche superamento soglie
+UC-3: Visualizzazione dashboard dati ambientali,Autorità locale,UC-3.1,Visualizzazione sezione temperatura
+UC-3: Visualizzazione dashboard dati ambientali,Autorità locale,UC-3.2,Visualizzazione sezione umidità
+UC-3: Visualizzazione dashboard dati ambientali,Autorità locale,UC-3.3,Visualizzazione sezione qualità dell'aria
+UC-3: Visualizzazione dashboard dati ambientali,Autorità locale,UC-3.4,Visualizzazione sezione precipitazioni
+UC-3: Visualizzazione dashboard dati ambientali,Autorità locale,UC-3.5,Visualizzazione sezione livello di acqua
+
+UC-4: Visualizzazione dashboard dati urbani,Autorità locale,UC-4.1,Visualizzazione sezione traffico
+UC-4: Visualizzazione dashboard dati urbani,Autorità locale,UC-4.2,Visualizzazione sezione colonnine di ricarica
+UC-4: Visualizzazione dashboard dati urbani,Autorità locale,UC-4.3,Visualizzazione sezione parcheggi
+UC-4: Visualizzazione dashboard dati urbani,Autorità locale,UC-4.4,Visualizzazione sezione isole ecologiche
+
+UC-6: Trasmissione dati,Sensore,UC-7,Trasmissione dati temperatura
+UC-6: Trasmissione dati,Sensore,UC-8,Trasmissione dati umidità
+UC-6: Trasmissione dati,Sensore,UC-9,Trasmissione dati qualità dell'aria
+UC-6: Trasmissione dati,Sensore,UC-10,Trasmissione dati precipitazioni
+UC-6: Trasmissione dati,Sensore,UC-11,Trasmissione dati traffico
+UC-6: Trasmissione dati,Sensore,UC-12,Trasmissione dati colonnine di ricarica
+UC-6: Trasmissione dati,Sensore,UC-13,Trasmissione dati parcheggi
+UC-6: Trasmissione dati,Sensore,UC-14,Trasmissione dati isole ecologiche
+UC-6: Trasmissione dati,Sensore,UC-15,Trasmissione dati livello di acqua
+
+SyncCity,Autorità locale,UC-16,Applicazione filtro
+UC-16: Applicazione filtro,Autorità locale,UC-16.1,Applicazione filtro per tipo di sensore
+UC-16: Applicazione filtro,Autorità locale,UC-16.2,Applicazione filtro per nome sensore
+UC-16: Applicazione filtro,Autorità locale,UC-16.3,Applicazione filtro temporale
+SyncCity,Autorità locale,UC-17,Ricezione notifiche superamento soglie
 
 
