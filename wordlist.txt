@@ -55,7 +55,11 @@ JMX
 kafka
 LaTeX
 LCPM
+<<<<<<< HEAD
+Liskov
+=======
 lll
+>>>>>>> develop
 LLM
 MacOS
 Malgarise
