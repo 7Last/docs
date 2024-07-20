@@ -1,100 +1,303 @@
-\section{Metodologie di Testing}
+\section{Metodologie di testing}
 In questa sezione verranno illustrate le metodologie di \textit{testing} adottate per garantire il rispetto dei vincoli individuati
 nella sezione \textit{Requisiti} del documento \href{https://7last.github.io/docs/rtb/documentazione-esterna/analisi-dei-requisiti}{\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti}\textsubscript{G}}}.
 I test verranno suddivisi in cinque categorie:
 \begin{itemize}
-    \item test di unità;
-    \item test di integrazione;
-    \item test di sistema;
-    \item test di regressione;
-    \item test di accettazione.
+	\item test di unità;
+	\item test di integrazione;
+	\item test di sistema;
+	\item test di regressione;
+	\item test di accettazione.
 \end{itemize}
 
 Verranno elencate le varie tipologie di test eseguite, indicando il codice del test, una breve descrizione di ciò che viene verificato e lo stato di avanzamento del test, espresso come segue:
 \begin{itemize}
 	\item \textbf{S}: test superato;
 	\item \textbf{NS}: test non superato;
-	\item \textbf{NI}: test non implementato.
+	\item \textbf{S}: test non implementato.
 \end{itemize}
+
+\subsection{Test di unità}
+I test di unità verificano il corretto funzionamento delle singole unità di codice, ovvero le più piccole parti di un programma,
+per assicurarsi che ognuna funzioni correttamente e che sia in grado di eseguire le operazioni richieste. \\
+\begin{longtable}{|>{\raggedright\arraybackslash}m{0.1\textwidth}|>{\raggedright\arraybackslash}m{0.6\textwidth}|>{\raggedright\arraybackslash}m{0.1\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                                                                             & \textbf{Stato} \\
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                                                                             & \textbf{Stato} \\
+	\endhead
+	\multicolumn{3}{|c|}{\textbf{Python}}
+	\hline
+	\textbf{1T-U}   & Verificare che la classe \texttt{TemperatureRawData} venga creata correttamente.                                                                                                                                                                 & S              \\
+	\hline
+	\textbf{2T-U}   & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{TemperatureRawData} restituisca \texttt{"temperature"}.                                   & S              \\
+	\hline
+	\textbf{3T-U}   & Verificare che il metodo \texttt{subject()} di \texttt{TemperatureRawData} restituisca \texttt{"temperature-value"}.                                                                                                                             & S              \\
+	\hline
+	\textbf{4T-U}   & Verificare che la classe \texttt{TrafficRawData} venga creata correttamente.                                                                                                                                                                     & S              \\
+	\hline
+	\textbf{5T-U}   & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{TrafficRawData} restituisca \texttt{"traffic"}.                                           & S              \\
+	\hline
+	\textbf{6T-U}   & Verificare che il metodo \texttt{subject()} di \texttt{TrafficRawData} restituisca \texttt{"traffic-value"}.                                                                                                                                     & S              \\
+	\hline
+	\textbf{7T-U}   & Verificare che la classe \texttt{RecyclingPointRawData} venga creata correttamente.                                                                                                                                                              & S              \\
+	\hline
+	\textbf{8T-U}   & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{RecyclingPointRawData} restituisca \texttt{"recycling\_point"}.                           & S              \\
+	\hline
+	\textbf{9T-U}   & Verificare che il metodo \texttt{subject()} di \texttt{RecyclingPointRawData} restituisca \texttt{"recycling\_point-value"}.                                                                                                                     & S              \\
+	\hline
+	\textbf{10T-U}  & Verificare che la classe \texttt{HumidityRawData} venga creata correttamente.                                                                                                                                                                    & S              \\
+	\hline
+	\textbf{11T-U}  & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{HumidityRawData} restituisca \texttt{"humidity"}.                                         & S              \\
+	\hline
+	\textbf{12T-U}  & Verificare che il metodo \texttt{subject()} di \texttt{HumidityRawData} restituisca \texttt{"humidity-value"}.                                                                                                                                   & S              \\
+	\hline
+	\textbf{13T-U}  & Verificare che la classe \texttt{AirQualityRawData} venga creata correttamente.                                                                                                                                                                  & S              \\
+	\hline
+	\textbf{14T-U}  & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{AirQualityRawData} restituisca \texttt{"air\_quality"}.                                   & S              \\
+	\hline
+	\textbf{15T-U}  & Verificare che il metodo \texttt{subject()} di \texttt{AirQualityRawData} restituisca \texttt{"air\_quality-value"}.                                                                                                                             & S              \\
+	\hline
+	\textbf{16T-U}  & Verificare che la classe \texttt{RainRawData} venga creata correttamente.                                                                                                                                                                        & S              \\
+	\hline
+	\textbf{17T-U}  & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{RainRawData} restituisca \texttt{"rain"}.                                                 & S              \\
+	\hline
+	\textbf{18T-U}  & Verificare che il metodo \texttt{subject()} di \texttt{RainRawData} restituisca \texttt{"rain-value"}.                                                                                                                                           & S              \\
+	\hline
+	\textbf{19T-U}  & Verificare che la classe \texttt{ChargingStationRawData} venga creata correttamente.                                                                                                                                                             & S              \\
+	\hline
+	\textbf{20T-U}  & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{ChargingStationRawData} restituisca \texttt{"charging\_station"}.                         & S              \\
+	\hline
+	\textbf{21T-U}  & Verificare che il metodo \texttt{subject()} di \texttt{ChargingStationRawData} restituisca \texttt{"charging\_station-value"}.                                                                                                                   & S              \\
+	\hline
+	\textbf{22T-U}  & Verificare che la classe \texttt{ParkingLotRawData} venga creata correttamente.                                                                                                                                                                  & S              \\
+	\hline
+	\textbf{23T-U}  & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{ParkingLotRawData} restituisca \texttt{"parking\_lot"}.                                   & S              \\
+	\hline
+	\textbf{24T-U}  & Verificare che il metodo \texttt{subject()} di \texttt{ParkingLotRawData} restituisca \texttt{"parking\_lot-value"}.                                                                                                                             & S              \\
+	\hline
+	\textbf{25T-U}  & Verificare che la classe \texttt{WaterLevelRawData} venga creata correttamente.                                                                                                                                                                  & S              \\
+	\hline
+	\textbf{26T-U}  & Verificare che il metodo \texttt{\href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}()} di \texttt{WaterLevelRawData} restituisca \texttt{"water\_level"}.                                   & S              \\
+	\hline
+	\textbf{27T-U}  & Verificare che il metodo \texttt{subject()} di \texttt{WaterLevelRawData} restituisca \texttt{"water\_level-value"}.                                                                                                                             & S              \\
+	\hline
+	\textbf{28-U}   & Verificare che il metodo \texttt{from\_str()} di \texttt{SensorType} effettui il parsing correttamente.                                                                                                                                          & S              \\
+	\hline
+	\textbf{29-U}   & Verificare che la classe \texttt{EnvConfig} venga creata correttamente se tutte le variabili d'ambiente sono impostate.                                                                                                                          & S              \\
+	\hline
+	\textbf{30-U}   & Verificare che la classe \texttt{EnvConfig} venga creata correttamente se la variabile d'ambiente \texttt{MAX\_BLOCK\_MS} non è impostata.                                                                                                       & S              \\
+	\hline
+	\textbf{31-U}   & Verificare che la creazione della classe \texttt{EnvConfig} fallisca con un'eccezione se le variabili d'ambiente non sono impostate.                                                                                                             & S              \\
+	\hline
+	\textbf{32-U}   & Verificare che il metodo \texttt{bootstrap\_server} della classe \texttt{EnvConfig} ritorni correttamente il valore dell'host concatenato alla porta con ':'..                                                                                   & S              \\
+	\hline
+	\textbf{33-U}   & Verificare che la classe \texttt{SensorConfig} sia creata correttamente.                                                                                                                                                                         & S              \\
+	\hline
+	\textbf{34-U}   & Verificare che la creazione della classe \texttt{SensorConfig} fallisca con un'eccezione se il tipo di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} fornito non esiste.           & S              \\
+	\hline
+	\textbf{35-U}   & Verificare che la creazione della classe \texttt{SensorConfig} fallisca con un'eccezione se il tipo di \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} non è fornito.                & S              \\
+	\hline
+	\textbf{36-U}   & Verificare che la creazione della classe \texttt{SensorConfig} fallisca con un'eccezione se il campo \texttt{generation\_delay} non rispetta lo standard ISO8601.                                                                                & S              \\
+	\hline
+	\textbf{37-U}   & Verificare che la creazione della classe \texttt{SensorConfig} fallisca con un'eccezione se il campo \texttt{points\_spacing} non rispetta lo standard ISO8601.                                                                                  & S              \\
+	\hline
+	\textbf{38-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{TemperatureSimulator} generi correttamente i dati casuali.                                                                                                                         & S              \\
+	\hline
+	\textbf{39-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{TrafficSimulator} generi correttamente i dati casuali.                                                                                                                             & S              \\
+	\hline
+	\textbf{40-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{RecyclingPointSimulator} generi correttamente i dati casuali.                                                                                                                      & S              \\
+	\hline
+	\textbf{41-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{HumiditySimulator} generi correttamente i dati casuali.                                                                                                                            & S              \\
+	\hline
+	\textbf{42-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{AirQualitySimulator} generi correttamente i dati casuali.                                                                                                                          & S              \\
+	\hline
+	\textbf{43-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{RainSimulator} generi correttamente i dati casuali.                                                                                                                                & S              \\
+	\hline
+	\textbf{44-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{ChargingStationSimulator} generi correttamente i dati casuali.                                                                                                                     & S              \\
+	\hline
+	\textbf{45-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{ParkingLotSimulator} generi correttamente i dati casuali.                                                                                                                          & S              \\
+	\hline
+	\textbf{46-U}   & Verificare che il metodo \texttt{data()} della classe \texttt{WaterLevelSimulator} generi correttamente i dati casuali.                                                                                                                          & S              \\
+	\hline
+	\textbf{47-U}   & Verificare che il metodo \texttt{serialize(data)} della classe \texttt{AvroSerializationStrategy} serializzi correttamente i dati in formato Confluent Avro.                                                                                     & S              \\
+	\hline
+	\textbf{48-U}   & Verificare che il metodo \texttt{serialize(data)} della classe \texttt{JsonSerializationStrategy} serializzi correttamente i dati in formato JSON.                                                                                               & S              \\
+	\hline
+	\textbf{49-U}   & Verificare che il metodo \texttt{build(name, config)} della classe \texttt{SimulatorFactory} restituisca un'istanza del simulatore corretto.                                                                                                     & S              \\
+	\hline
+	\textbf{50-U}   & Verificare che il metodo \texttt{produce(raw\_data)} della classe \texttt{Producer} invii correttamente i dati alla destinazione.                                                                                                                & S              \\
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Apache Flink}}
+	\hline
+	\textbf{51-U}   & Verificare che la classe \texttt{AverageWindowFunction} calcoli correttamente la media dei dati in input.                                                                                                                                        & S              \\
+	\hline
+	\textbf{52-U}   & Verificare che la classe \texttt{ChargingEfficiencyJoinFunction} calcoli correttamente l'efficienza di ricarica nel caso in cui il parcheggio non sia mai stato occupato.                                                                        & S              \\
+	\hline
+	\textbf{53-U}   & Verificare che la classe \texttt{ChargingEfficiencyJoinFunction} calcoli correttamente l'efficienza di ricarica nel caso in cui si ricevano dei dati non validi per cui la colonnina è stata utilizza ma il parcheggio non è mai stato occupato. & S              \\
+	\hline
+	\textbf{54-U}   & Verificare che la classe \texttt{ChargingEfficiencyJoinFunction} calcoli correttamente l'efficienza di ricarica nel caso in cui l'\textit{efficiency rate} sia maggiore dell'\textit{utilization rate}.                                          & S              \\
+	\hline
+	\textbf{55-U}   & Verificare che la classe \texttt{ChargingEfficiencyJoinFunction} calcoli correttamente l'efficienza di ricarica nel caso in cui l'\textit{utilization rate} sia maggiore dell'\textit{efficiency rate}.                                          & S              \\
+	\hline
+	\textbf{56-U}   & Verificare che la classe \texttt{ChargingEfficiencyJoinFunction} calcoli correttamente l'efficienza di ricarica nel caso in cui la colonnina non sia mai stata utilizzata.                                                                       & S              \\
+	\hline
+	\textbf{57-U}   & Verificare che la classe \texttt{HeatIndexJoinFunction} calcoli correttamente l'indice di calore.                                                                                                                                                & S              \\
+	\hline
+	\textbf{58-U}   & Verificare che la classe \texttt{TimeDifferenceAggregateFunction} calcoli il tempo totale in cui una colonnina di ricarica è stata utilizzata.                                                                                                   & S              \\
+	\hline
+	\textbf{59-U}   & Verificare che la classe \texttt{TimeDifferenceAggregateFunction} calcoli il tempo totale in cui un parcheggio è stata utilizzato.                                                                                                               & S              \\
+	\caption{Test di unità}
+\end{longtable}
+
+\subsection{Test di integrazione}
+I test di integrazione verificano il corretto funzionamento delle interfacce tra le varie unità di codice,
+assicurandosi che esse interagiscano correttamente tra di loro e che siano in grado di comunicare e scambiarsi i dati necessari. \\
+\begin{longtable}{|>{\raggedright\arraybackslash}m{0.1\textwidth}|>{\raggedright\arraybackslash}m{0.6\textwidth}|>{\raggedright\arraybackslash}m{0.1\textwidth}|}
+	\hline
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                                                & \textbf{Stato} \\
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                                                & \textbf{Stato} \\
+	\endhead
+	\multicolumn{3}{|c|}{\textbf{Python}}
+	\hline
+	\textbf{1T-I}   & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di temperatura siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda.       & S              \\
+	\hline
+	\textbf{2T-I}   & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di traffico siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda.          & S              \\
+	\hline
+	\textbf{3T-I}   & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di isola ecologica siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda.   & S              \\
+	\hline
+	\textbf{4T-I}   & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di umidità siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda.           & S              \\
+	\hline
+	\textbf{5T-I}   & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di qualità dell'aria siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda. & S              \\
+	\hline
+	\textbf{6T-I}   & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di precipitazioni siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda.    & S              \\
+	\hline
+	\textbf{7T-I}   & Verificare che i dati generati dalle colonnine di ricarica siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda.                                                                                                          & S              \\
+	\hline
+	\textbf{8T-I}   & Verificare che i dati generati dai sensori di occupazione di parcheggi siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda.                                                                                              & S              \\
+	\hline
+	\textbf{9T-I}   & Verificare che i dati generati dai sensori di livello dell'acqua siano pubblicati correttamente nel rispettivo \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} Redpanda.                                                                                                    & S              \\
+	\hline
+	\textbf{10T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di temperatura siano memorizzati correttamente nel database.                                                                                                                         & S              \\
+	\hline
+	\textbf{11T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di temperatura aggregati per 5 minuti siano memorizzati correttamente nel database.                                                                                                  & S              \\
+	\hline
+	\textbf{12T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di temperatura aggregati per settimana siano memorizzati correttamente nel database.                                                                                                 & S              \\
+	\hline
+	\textbf{13T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di temperatura aggregati per giorno siano memorizzati correttamente nel database.                                                                                                    & S              \\
+	\hline
+	\textbf{14T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di traffico siano memorizzati correttamente nel database.                                                                                                                            & S              \\
+	\hline
+	\textbf{15T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di traffico aggregati per 5 minuti siano memorizzati correttamente nel database.                                                                                                     & S              \\
+	\hline
+	\textbf{16T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di traffico aggregati per ora siano memorizzati correttamente nel database.                                                                                                          & S              \\
+	\hline
+	\textbf{17T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di isola ecologica siano memorizzati correttamente nel database.                                                                                                                     & S              \\
+	\hline
+	\textbf{18T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di isola ecologica aggregati per 5 minuti siano memorizzati correttamente nel database.                                                                                              & S              \\
+	\hline
+	\textbf{19T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di umidità siano memorizzati correttamente nel database.                                                                                                                             & S              \\
+	\hline
+	\textbf{20T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di qualità dell'aria siano memorizzati correttamente nel database.                                                                                                                   & S              \\
+	\hline
+	\textbf{21T-I}  & Verificare che i dati generati dal \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di precipitazioni siano memorizzati correttamente nel database.                                                                                                                      & S              \\
+	\hline
+	\textbf{22T-I}  & Verificare che i dati generati dalle colonnine di ricarica siano memorizzati correttamente nel database.                                                                                                                                                                                                                            & S              \\
+	\hline
+	\textbf{23T-I}  & Verificare che i dati generati dai sensori di occupazione di parcheggi siano memorizzati correttamente nel database.                                                                                                                                                                                                                & S              \\
+	\hline
+	\textbf{24T-I}  & Verificare che i dati generati dai sensori di livello dell'acqua siano memorizzati correttamente nel database.                                                                                                                                                                                                                      & S              \\
+	\hline
+	\textbf{25T-I}  & Verificare che i dati salvati su \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#clickhouse}{Clickhouse\textsubscript{G}} siano correttamente accessibili da \href{https://7last.github.io/docs/rtb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}}.                                  & S              \\
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Apache Flink}}
+	\hline
+	\caption{Test di integrazione}
+\end{longtable}
 
 \newpage
 \subsection{Test di sistema}
 I test di sistema sono finalizzati alla verifica del soddisfacimento dei requisiti richiesti ed evidenziati nel documento \href{https://7last.github.io/docs/rtb/documentazione-esterna/analisi-dei-requisiti}{\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#analisi-dei-requisiti}{\textit{Analisi dei Requisiti}\textsubscript{G}}}. Questi test vengono effettuati sul sistema nel suo complesso, per verificare che il software funzioni correttamente e che sia in grado di eseguire le operazioni richieste. \\
 \begin{longtable}{|>{\raggedright\arraybackslash}m{0.1\textwidth}|>{\raggedright\arraybackslash}m{0.6\textwidth}|>{\raggedright\arraybackslash}m{0.1\textwidth}|}
 	\hline
-	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                             & \textbf{Stato} \\
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                                                                                                                     & \textbf{Stato} \\
 	\hline
 	\endfirsthead
 	\hline
-	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                             & \textbf{Stato} \\
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                                                                                                                     & \textbf{Stato} \\
 	\endhead
-	\textbf{1T-S}   & Verificare che l'accesso al sistema non richieda alcuna procedura di login e che sia direttamente accessibile dall'utente.                                                                       & NI             \\
+	\textbf{1T-S}   & Verificare che l'accesso al sistema non richieda alcuna procedura di login e che sia direttamente accessibile dall'utente.                                                                                                                                                                                                                                                                               & S              \\
 	\hline
-	\textbf{2T-S}   & Verificare che il prodotto non abbia alcuna sezione o funzionalità di amministrazione o gestione riservata.                                                                                      & NI             \\
+	\textbf{2T-S}   & Verificare che il prodotto non abbia alcuna sezione o funzionalità di amministrazione o gestione riservata.                                                                                                                                                                                                                                                                                              & S              \\
 	\hline
-	\textbf{3T-S}   & Verificare che i sensori integrati producano una misurazione coerente con il tipo di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} simulato.                                                                                           & NI             \\
+	\textbf{3T-S}   & Verificare che i sensori integrati producano una misurazione coerente con il tipo di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} simulato.                                                                                                                                                                                                & S              \\
 	\hline
-	\textbf{4T-S}   & Verificare che ogni misurazione inviata dal simulatore contenga l’identificativo del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, le misurazioni d'interesse e il timestamp.                                                         & NI             \\
+	\textbf{4T-S}   & Verificare che ogni misurazione inviata dal simulatore contenga l’identificativo del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, le misurazioni d'interesse e il timestamp.                                                                                                                                                              & S              \\
 	\hline
-	\textbf{5T-S}   & Verificare che il sistema sia in grado di ricevere e memorizzare correttamente le misurazioni inviate dai sensori.                                                                               & NI             \\
+	\textbf{5T-S}   & Verificare che il sistema sia in grado di ricevere e memorizzare correttamente le misurazioni inviate dai sensori.                                                                                                                                                                                                                                                                                       & S              \\
 	\hline
-	\textbf{6T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare la temperatura.                                                                                                & NI             \\
+	\textbf{6T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare la temperatura.                                                                                                                                                                                                     & S              \\
 	\hline
-	\textbf{7T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il traffico.                                                                                                   & NI             \\
+	\textbf{7T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il traffico.                                                                                                                                                                                                        & S              \\
 	\hline
-	\textbf{8T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il riempimento delle isole ecologiche.                                                                         & NI             \\
+	\textbf{8T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il riempimento delle isole ecologiche.                                                                                                                                                                              & S              \\
 	\hline
-	\textbf{9T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare l'umidità.                                                                                                     & NI             \\
+	\textbf{9T-S}   & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare l'umidità.                                                                                                                                                                                                          & S              \\
 	\hline
-	\textbf{10T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare la qualità dell'aria.                                                                                          & NI             \\
+	\textbf{10T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare la qualità dell'aria.                                                                                                                                                                                               & S              \\
 	\hline
-	\textbf{11T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare le precipitazioni.                                                                                             & NI             \\
+	\textbf{11T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare le precipitazioni.                                                                                                                                                                                                  & S              \\
 	\hline
-	\textbf{12T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare le colonnine di ricarica.                                                                                      & NI             \\
+	\textbf{12T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare le colonnine di ricarica.                                                                                                                                                                                           & S              \\
 	\hline
-	\textbf{13T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare l'occupazione dei parcheggi.                                                                                   & NI             \\
+	\textbf{13T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare l'occupazione dei parcheggi.                                                                                                                                                                                        & S              \\
 	\hline
-	\textbf{14T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il livello dell'acqua.                                                                                         & NI             \\
+	\textbf{14T-S}  & Verificare che il sistema sia in grado di simulare almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per rilevare il livello dell'acqua.                                                                                                                                                                                              & S              \\
 	\hline
-	\textbf{14T-S}  & Verificare che ogni dato generato dai simulatori dei sensori sia strettamente correlato al dato successivo, garantendo una transizione realistica tra le misurazioni.                            & NI             \\
+	\textbf{14T-S}  & Verificare che ogni dato generato dai simulatori dei sensori sia strettamente correlato al dato successivo, garantendo una transizione realistica tra le misurazioni.                                                                                                                                                                                                                                    & S              \\
 	\hline
-	\textbf{15T-S}  & Verificare la facilità di comprensione e l'intuitività dell'interfaccia grafica, garantendo un'esperienza utente piacevole e soddisfacente.                                                      & NI             \\
+	\textbf{15T-S}  & Verificare la facilità di comprensione e l'intuitività dell'interfaccia grafica, garantendo un'esperienza utente piacevole e soddisfacente.                                                                                                                                                                                                                                                              & S              \\
 	\hline
-	\textbf{16T-S}  & Verificare che le \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} si aggiornino quasi istantaneamente per riflettere i dati provenienti dai sensori entro un massimo di 15 secondi.                                                    & NI             \\
+	\textbf{16T-S}  & Verificare che le \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} si aggiornino quasi istantaneamente per riflettere i dati provenienti dai sensori entro un massimo di 15 secondi.                                                                                                                                                       & S              \\
 	\hline
-	\textbf{17T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} del traffico contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                           & NI             \\
+	\textbf{17T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} del traffico contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                             & S              \\
 	\hline
-	\textbf{18T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} della temperatura contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                      & NI             \\
+	\textbf{18T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} della temperatura contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                        & S              \\
 	\hline
-	\textbf{19T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle isole ecologiche contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                 & NI             \\
+	\textbf{19T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle isole ecologiche contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                   & S              \\
 	\hline
-	\textbf{20T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dell'umidità contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                           & NI             \\
+	\textbf{20T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dell'umidità contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                             & S              \\
 	\hline
-	\textbf{21T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} della qualità dell'aria contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                & NI             \\
+	\textbf{21T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} della qualità dell'aria contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                  & S              \\
 	\hline
-	\textbf{22T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle precipitazioni contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                   & NI             \\
+	\textbf{22T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle precipitazioni contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                     & S              \\
 	\hline
-	\textbf{23T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei parcheggi contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                          & NI             \\
+	\textbf{23T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei parcheggi contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                            & S              \\
 	\hline
-	\textbf{24T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle colonnine di ricarica contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                            & NI             \\
+	\textbf{24T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle colonnine di ricarica contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                              & S              \\
 	\hline
-	\textbf{25T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} del livello di acqua contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                   & NI             \\
+	\textbf{25T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} del livello di acqua contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                     & S              \\
 	\hline
-	\textbf{26T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle isole ecologiche contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                 & NI             \\
+	\textbf{26T-S}  & Verificare che la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} delle isole ecologiche contenga almeno un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#panel}{\textit{panel}\textsubscript{G}} con un grafico time-series.                                                                                   & S              \\
 	\hline
-	\textbf{27T-S}  & Verificare che i sensori presenti sulla mappa siano distinguibili in modo chiaro ed inequivocabile, permettendo il riconoscimento della loro tipologia.                                          & NI             \\
+	\textbf{27T-S}  & Verificare che i sensori presenti sulla mappa siano distinguibili in modo chiaro ed inequivocabile, permettendo il riconoscimento della loro tipologia.                                                                                                                                                                                                                                                  & S              \\
 	\hline
-	\textbf{28T-S}  & Verificare che in ciascuna \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} l’utente possa filtrare la visualizzazione delle misurazioni di uno specifico \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                                                      & NI             \\
+	\textbf{28T-S}  & Verificare che in ciascuna \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} l’utente possa filtrare la visualizzazione delle misurazioni di uno specifico \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                                                      & S              \\
 	\hline
-	\textbf{29T-S}  & Verificare che nella \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi l’utente possa visualizzare la lista delle misurazioni in un formato tabellare, divise per tipo di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                       & NI             \\ %da controllare
+	\textbf{29T-S}  & Verificare che nella \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi l’utente possa visualizzare la lista delle misurazioni in un formato tabellare, divise per tipo di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                       & S              \\ %da controllare
 	\hline
-	\textbf{30T-S}  & Verificare che l’utente riceva notifiche quando i sensori superano determinate soglie di sicurezza.                                                                                          & NI             \\
+	\textbf{30T-S}  & Verificare che l’utente riceva notifiche quando i sensori superano determinate soglie di sicurezza.                                                                                                                                                                                                                                                                                                      & S              \\
 	\hline
-	\textbf{31T-S}  & Verificare che l’utente possa visualizzare correttamente le coordinate dei sensori, con un numero congruo di cifre decimali.                                                                     & NI             \\
+	\textbf{31T-S}  & Verificare che l’utente possa visualizzare correttamente le coordinate dei sensori, con un numero congruo di cifre decimali.                                                                                                                                                                                                                                                                             & S              \\
 	\hline
-	\textbf{32T-S}  & Verificare che l’utente possa visualizzare correttamente l’unità di misura associata a ciascuna misurazione.                                                                                     & NI             \\
+	\textbf{32T-S}  & Verificare che l’utente possa visualizzare correttamente l’unità di misura associata a ciascuna misurazione.                                                                                                                                                                                                                                                                                             & S              \\
 	\hline
-	\textbf{33T-S}  & Verificare che nella \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi l'utente possa visualizzare una tabella contente l'indentificativo del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, la sua tipologia e la data dell'ultimo messaggio da esso inviato. & NI             \\
+	\textbf{33T-S}  & Verificare che nella \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi l'utente possa visualizzare una tabella contente l'indentificativo del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, la sua tipologia e la data dell'ultimo messaggio da esso inviato. & S              \\
 	\hline
 	\caption{Test di sistema}
 \end{longtable}
@@ -104,45 +307,45 @@ I test di accettazione vengono effettuati per verificare che il software soddisf
 Essi verranno eseguiti sia dal gruppo di sviluppo \textit{7Last} che dall'azienda \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#proponente}{proponente\textsubscript{G}} \textit{SyncLab S.r.l.}. \\
 \begin{longtable}{|>{\raggedright\arraybackslash}m{0.1\textwidth}|>{\raggedright\arraybackslash}m{0.6\textwidth}|>{\raggedright\arraybackslash}m{0.1\textwidth}|}
 	\hline
-	\textbf{Codice} & \textbf{Descrizione}                                                                                                   & \textbf{Stato} \\
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                            & \textbf{Stato} \\
 	\hline
 	\endfirsthead
 	\hline
-	\textbf{Codice} & \textbf{Descrizione}                                                                                                   & \textbf{Stato} \\
+	\textbf{Codice} & \textbf{Descrizione}                                                                                                                                                                                                                                                                                            & \textbf{Stato} \\
 	\endhead
-	\textbf{1T-A}   & Verificare che tutti i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#widget}{widget\textsubscript{G}} relativi alle diverse tipologie di sensori siano visibili sulla \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}}.               & NI             \\
+	\textbf{1T-A}   & Verificare che tutti i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#widget}{widget\textsubscript{G}} relativi alle diverse tipologie di sensori siano visibili sulla \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}}. & S              \\
 	\hline
-	\textbf{2T-A}   & Verificare che la mappa dei sensori si carichi correttamente e permetta interazioni fluide.                            & NI             \\
+	\textbf{2T-A}   & Verificare che la mappa dei sensori si carichi correttamente e permetta interazioni fluide.                                                                                                                                                                                                                     & S              \\
 	\hline
-	\textbf{3T-A}   & Verifica della gestione corretta degli errori nel caso in cui i dati dei sensori non siano disponibili.                & NI             \\
+	\textbf{3T-A}   & Verifica della gestione corretta degli errori nel caso in cui i dati dei sensori non siano disponibili.                                                                                                                                                                                                         & S              \\
 	\hline
-	\textbf{4T-A}   & Verifica della corretta visualizzazione delle misurazioni effettuate nel tempo dai sensori.                            & NI             \\
+	\textbf{4T-A}   & Verifica della corretta visualizzazione delle misurazioni effettuate nel tempo dai sensori.                                                                                                                                                                                                                     & S              \\
 	\hline
-	\textbf{6T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di temperatura.                       & NI             \\
+	\textbf{6T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di temperatura.                                                                                                           & S              \\
 	\hline
-	\textbf{7T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di traffico.                          & NI             \\
+	\textbf{7T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di traffico.                                                                                                              & S              \\
 	\hline
-	\textbf{8T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di isola ecologica.                   & NI             \\
+	\textbf{8T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di isola ecologica.                                                                                                       & S              \\
 	\hline
-	\textbf{9T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di umidità.                           & NI             \\
+	\textbf{9T-A}   & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di umidità.                                                                                                               & S              \\
 	\hline
-	\textbf{10T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di qualità dell'aria.                 & NI             \\
+	\textbf{10T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di qualità dell'aria.                                                                                                     & S              \\
 	\hline
-	\textbf{11T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di precipitazioni.                    & NI             \\
+	\textbf{11T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di precipitazioni.                                                                                                        & S              \\
 	\hline
-	\textbf{12T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di colonnine di ricarica.             & NI             \\
+	\textbf{12T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di colonnine di ricarica.                                                                                                 & S              \\
 	\hline
-	\textbf{13T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di occupazione di parcheggi.          & NI             \\
+	\textbf{13T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di occupazione di parcheggi.                                                                                              & S              \\
 	\hline
-	\textbf{14T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di livello dell'acqua.                & NI             \\
+	\textbf{14T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei sensori di livello dell'acqua.                                                                                                    & S              \\
 	\hline
-	\textbf{15T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi                                   & NI             \\
+	\textbf{15T-A}  & Verificare che sia possibile visualizzare correttamente la \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} dei dati grezzi                                                                                                                       & S              \\
 	\hline
-	\textbf{16T-A}  & Verificare si possa filtrare correttamente la visualizzazione delle misurazioni in base al \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} che le ha prodotte. & NI             \\
+	\textbf{16T-A}  & Verificare si possa filtrare correttamente la visualizzazione delle misurazioni in base al \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} che le ha prodotte.                                                                                       & S              \\
 	\hline
-	\textbf{17T-A}  & Verificare che si possa rimuovere correttamente i filtri attivi per visualizzazione delle misurazioni dei sensori.     & NI             \\
+	\textbf{17T-A}  & Verificare che si possa rimuovere correttamente i filtri attivi per visualizzazione delle misurazioni dei sensori.                                                                                                                                                                                              & S              \\
 	\hline
-	\textbf{18T-A}  & Verificare che si riceva correttamente una notifica in caso di superamento delle soglie impostate per le misurazioni.  & NI             \\
+	\textbf{18T-A}  & Verificare che si riceva correttamente una notifica in caso di superamento delle soglie impostate per le misurazioni.                                                                                                                                                                                           & S              \\
 	\hline
 	\caption{Test di accettazione}
 \end{longtable}
