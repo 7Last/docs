@@ -97,7 +97,7 @@
 	\\\hline
 	RF-44           & Obbligatorio        & soddisfatto & Per ciascuna tipologia di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} dev'essere sviluppata almeno una sezione.
 	\\\hline
-	RF-45           & Opzionale           & soddisfatto & Deve essere implementata una funzionalità di previsione di dati futuri della temperature, basandosi sui dati dell'anno e della settimana precedente.
+	RF-45           & Opzionale           & non soddisfatto & Deve essere implementata una funzionalità di previsione di dati futuri della temperature, basandosi sui dati dell'anno e della settimana precedente.
 	\\\hline
 	RF-46           & Desiderabile        & soddisfatto & Deve esistere una \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}} per la visualizzazione della posizione geografica dei sensori su una mappa.
 	\\\hline
@@ -126,8 +126,9 @@
 	\begin{tikzpicture}
 		\def\printonlypositive#1{\ifdim#1pt>0pt#1\%\else\fi}
 		\pie[pos={8,0},radius=3.5,text=legend,
-			before number=\printonlypositive, after number=, color={orange}] {
-            100.0/Completati
+			before number=\printonlypositive, after number=, color={orange, cyan}] {
+            100.0/Completati,
+			0.54/Non completati
 		}
 	\end{tikzpicture}
 	\caption{Percentuale di soddisfacimento dei requisiti funzionali}
@@ -255,9 +256,8 @@
 		\def\printonlypositive#1{\ifdim#1pt>0pt#1\%\else\fi}
 		\pie[pos={8,0},radius=3.5,text=legend,
 			before number=\printonlypositive, after number=, color={orange, cyan}] {
-            100.0/Completati
-			%90.0/Completati,
-            %10.0/Non Completati
+            99.29/Completati,
+            0.71/Non Completati
 		}
 	\end{tikzpicture}
 	\caption{Percentuale di soddisfacimento dei requisiti totale}
