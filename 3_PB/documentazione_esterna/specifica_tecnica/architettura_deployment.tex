@@ -1,0 +1,34 @@
+\section{Architettura di deployment}
+Per implementare ed eseguire l'intero stack tecnologico e i livelli del modello architetturale, viene creato un ambiente \textit{Docker} che riproduce la suddivisione e la distribuzione dei servizi. In particolare, per l'ambiente di produzione, sono stati creati i seguenti container:
+\begin{itemize}
+    \item \textbf{Data feed}
+        \begin{itemize}
+            \item Container: \textbf{Simulator};
+            \item Descrizione: simula la generazione di dati;
+        \end{itemize}
+    \item \textbf{Streaming layer}
+        \begin{itemize}
+            \item Container: \textbf{Redpanda};
+            \item Descrizione: definisce il flusso di dati in tempo reale;
+            \item Componenti di supporto: schema registry;
+            \item Porta: 18082.
+        \end{itemize}
+    \item \textbf{Processing Layer}
+        \begin{itemize}
+            \item Container: \textbf{Flink};
+            \item Descrizione: pianifica, assegna e coordina l'esecuzione dei task di elaborazione dei dati su un cluster di nodi, garantendo prestazioni elevate, scalabilità e affidabilità nell'elaborazione dei dati.
+        \end{itemize}
+    \item \textbf{Storage Layer}
+        \begin{itemize}
+            \item Container: \textbf{Clickhouse};
+            \item Descrizione: memorizza i dati;
+            \item Porta: 8123.
+        \end{itemize}
+    \item \textbf{Data Visualization Layer}
+        \begin{itemize}
+            \item Container: \textbf{Grafana};
+            \item Descrizione: visualizza i dati;
+            \item Porta: 3000.
+        \end{itemize}
+\end{itemize}
+
