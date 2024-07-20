@@ -347,8 +347,6 @@ a partire da un valore dell'enum \texttt{SensorType}.
 	      \end{itemize}
 	\item \textbf{Classe ChargingStationSimulatorStrategy}
 	      \begin{itemize}
-	      \end{itemize}
-	      \begin{itemize}
 		      \item \textbf{Attributi}:
 		            \begin{itemize}
 			            \item \texttt{VEHICLE\_TYPES}: Dict[str, Dict[str, float]] [private]: dizionario contenente i tipi di veicoli supportati e la capacità minima e massima della batteria;
@@ -410,8 +408,6 @@ a partire da un valore dell'enum \texttt{SensorType}.
 	      \end{itemize}
 	\item \textbf{Classe RiverLevelSimulatorStrategy}
 	      \begin{itemize}
-	      \end{itemize}
-	      \begin{itemize}
 		      \item \textbf{Attributi}:
 		            \begin{itemize}
 			            \item \texttt{DAILY\_VARIATION} float [private]: variazione giornaliera massima del livello del fiume;
@@ -434,8 +430,6 @@ a partire da un valore dell'enum \texttt{SensorType}.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe TrafficSimulatorStrategy}
-	      \begin{itemize}
-	      \end{itemize}
 	      \begin{itemize}
 		      \item \textbf{Attributi}:
 		            \begin{itemize}
@@ -841,35 +835,28 @@ Lo \textit{Heat Index} viene calcolato con la seguente formula, dove $T$ è la t
 	HI = c_1 + c_2 T + c_3 R + c_4 TR + c_5 T^2 + c_6 R^2 + c_7 T^2 R + c_8 TR^2 + c_9 T^2 R^2
 \]
 e i coefficienti $c_i$ sono:
-\[
-	\begin{aligned}
-		c_1 & = -8.78469475556          & \quad c_2 & = 1.61139411            & \quad c_3 & = 2.33854883889         \\
-		c_4 & = -0.14611605             & \quad c_5 & = -0.012308094          & \quad c_6 & = -0.0164248277778      \\
-		c_7 & = 2.211732 \times 10^{-3} & \quad c_8 & = 7.2546 \times 10^{-4} & \quad c_9 & = -3.582 \times 10^{-6}
-	\end{aligned}
-\]
+\begin{align*}
+	c_1 & = -8.78469475556          & \quad c_2 & = 1.61139411            & \quad c_3 & = 2.33854883889         \\
+	c_4 & = -0.14611605             & \quad c_5 & = -0.012308094          & \quad c_6 & = -0.0164248277778      \\
+	c_7 & = 2.211732 \times 10^{-3} & \quad c_8 & = 7.2546 \times 10^{-4} & \quad c_9 & = -3.582 \times 10^{-6}
+\end{align*}
 \subsubsubsubsubsection{Centro di massa o centroide}
 Il calcolo del centro di massa tiene in considerazione la sfericità della Terra. Sia dato un insieme di punti $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$, dove $a_i$ rappresenta
 la latitudine del punto $i$-esimo e $b_i$ la longitudine. Per calcolare il centro di massa si procede, per ciascun punto, a convertire in radianti le coordinate:
-\[
-	\begin{align*}
-		lat_i = \frac{\pi}{180} \cdot a_i, & \quad lon_i = \frac{\pi}{180} \cdot b_i
-	\end{align*}
-\]
+\begin{align*}
+	lat_i = \frac{\pi}{180} \cdot a_i, & \quad lon_i = \frac{\pi}{180} \cdot b_i
+\end{align*}
 Successivamente si calcolano i coefficienti $x_i$, $y_i$ e $z_i$:
-\[
-	\begin{align*}
-		x_i = \cos(lat_i) \cdot \cos(lon_i),       &
-		\quad y_i = \cos(lat_i) \cdot \sin(lon_i), &
-		\quad z_i = \sin(lat_i)
-	\end{align*}
-\]
+\begin{align*}
+	x_i = \cos(lat_i) \cdot \cos(lon_i),       &
+	\quad y_i = \cos(lat_i) \cdot \sin(lon_i), &
+	\quad z_i = \sin(lat_i)
+\end{align*}
 Una volta ottenuti i coefficienti per tutti i punti, si calcola la media di tutti i coefficienti:
-\[
-	\begin{aligned}
-		x & = \frac{1}{n} \sum_{i=1}^{n} x_i, & \quad y = \frac{1}{n} \sum_{i=1}^{n} y_i, & \quad z = \frac{1}{n} \sum_{i=1}^{n} z_i
-	\end{aligned}
-\]
+\begin{align*}
+	x & = \frac{1}{n} \sum_{i=1}^{n} x_i, & \quad y = \frac{1}{n} \sum_{i=1}^{n} y_i, & \quad z = \frac{1}{n} \sum_{i=1}^{n} z_i
+\end{align*}
+
 Infine si calcolano $\mySkip{lat}$ (latitudine in radianti), $\mySkip{lon}$ (longitudine in radianti) e $\mySkip{hyp}$ (ipotenusa ne piano cartesiano, che rappresenta la distanza dall'origine alla proiezione del punto sul piano $lat_i, lon_i$):
 \begin{align*}
 	lon = atan2(y, x)      \\
@@ -877,11 +864,9 @@ Infine si calcolano $\mySkip{lat}$ (latitudine in radianti), $\mySkip{lon}$ (lon
 	lat = atan2(z, hyp)
 \end{align*}
 Una volta ottenuti $\mySkip{lat}$ e $\mySkip{lon}$, si convertono in gradi e si ottiene il centro di massa $CM = (c_a, c_b)$.
-\[
-	\begin{align*}
-		c_a = \frac{180}{\pi} \cdot lat, & \quad c_b = \frac{180}{\pi} \cdot lon
-	\end{align*}
-\]
+\begin{align*}
+	c_a = \frac{180}{\pi} \cdot lat, & \quad c_b = \frac{180}{\pi} \cdot lon
+\end{align*}
 \subsubsubsubsubsection{Raggio del cerchio}
 Il raggio del cerchio viene calcolato come la distanza dal centro di massa al punto più lontano. Sia $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$ l'insieme di punti, $CM = (c_a, c_b)$, il
 raggio $r$ è dato da:
@@ -898,7 +883,7 @@ raggio $r$ è dato da:
 I seguenti passaggi vengono eseguiti indipentendemente ed in parallelo per i dati provenienti dai \textit{topic} di temperatura ed umidità:
 \begin{enumerate}
 	\item lettura dei dati grezzi dai \textit{topic} relativi alla temperatura e all'umidità, attraverso la classe \texttt{KafkaSource};
-	\item assegnazione di un \textit{\textit{watermark}} ai dati, come precedentemente descritto nel paragrafo \hyperref[\textit{watermark}]{\underline{\textit{\textit{watermark}}}};
+	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{watermark}}};
 	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{\mySkip{keyBy}} fornita da Flink;
 	\item creazione di una finestra temporale di un'ora, utilizzando la funzione \texttt{window} di Flink;
 	\item calcolo della media della temperatura e dell'umidità, utilizzando la classe \\\texttt{AverageWindowFunction};
@@ -1105,7 +1090,7 @@ L' \textit{utilization rate} è calcolato come la percentuale di tempo in cui le
 Sia $T = tp_m - tp_1$ il tempo totale considerato. Il tempo in cui le colonnine sono utilizzate è dato dalla somma delle differenze tra due misurazioni consecutive
 in cui $k_i > 0$, ovvero
 \[
-	S = \sum_{i=1}^{m-1} (tc_{i+1} - tc_i) \cdot \mathbbm{1}_{k_i > 0}
+	S = \sum_{i=1}^{m-1} (tc_{i+1} - tc_i) \cdot 1_{k_i > 0}
 \]
 Il \textit{utilization rate} è dunque ottenuto nel seguente modo:
 \[
@@ -1116,7 +1101,7 @@ Il \textit{utilization rate} è dunque ottenuto nel seguente modo:
 L' \textit{efficiency rate} è calcolato come la percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale in cui il parcheggio è occupato.
 Il tempo totale in cui il parcheggio è occupato è dato dalla somma delle differenze tra due misurazioni consecutive in cui $o_i > 0$, ovvero:
 \[
-	O = \sum_{i=1}^{n-1} (tp_{i+1} - tp_i) \cdot \mathbbm{1}_{o_i > 0}
+	O = \sum_{i=1}^{n-1} (tp_{i+1} - tp_i) \cdot 1_{o_i > 0}
 \]
 Si utilizza quindi $S$ calcolato nel paragrafo precedente per ottenere l' \textit{efficiency rate}:
 \[
@@ -1132,7 +1117,7 @@ Si utilizza quindi $S$ calcolato nel paragrafo precedente per ottenere l' \texti
 Le seguenti operazioni vengono eseguite indipendentemente per i dati provenienti dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche:
 \begin{enumerate}
 	\item lettura dei dati grezzi dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche, attraverso la classe \texttt{KafkaSource};
-	\item assegnazione di un \textit{\textit{watermark}} ai dati, come precedentemente descritto nel paragrafo \hyperref[\textit{watermark}]{\underline{\textit{\textit{watermark}}}};
+	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{watermark}}};
 	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{\mySkip{keyBy}} fornita da Flink;
 	\item creazione di una finestra temporale di un giorno, utilizzando la funzione \texttt{window} di Flink;
 	\item calcolo del tempo totale in cui le colonnine sono in uso e del tempo totale in cui i parcheggi sono occupati, utilizzando rispettivamente le classi
@@ -1271,7 +1256,7 @@ Riassumendo:
 			            \item \texttt{sensorUuid} String [private]: identificativo univoco del sensore;
 			            \item \texttt{timestamp} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui sono state calcolate le durate di occupazione e non occupazione;
 			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il sensore;
-			            \item \textt{\mySkip{sensorNames}} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
+			            \item \texttt{\mySkip{sensorNames}} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
 		            \end{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
@@ -1510,8 +1495,9 @@ La documentazione è disponibile al seguente link:
 \begin{center}
 	\url{https://grafana.com/grafana/plugins/grafana-clickhouse-datasource/} [Ultima consultazione 2024-06-05]
 \end{center}
-\\\\
-La configurazione di tale \textit{datasource} è contenuta nella cartella \\\texttt{grafana/provisioning/datasources/default.yaml} della repository del progetto.
+
+La configurazione di tale \textit{datasource} è contenuta nella cartella \\
+\texttt{grafana/provisioning/datasources/default.yaml} della repository del progetto.
 
 \subsubsection{Variabili Grafana}
 Al fine di rendere le \textit{dashboard} più flessibili e personalizzabili, sono state utilizzate le variabili di Grafana. Esse consentono di definire parametri dinamici che possono essere utilizzati per filtrare, raggruppare o personalizzare i dati visualizzati nei pannelli delle dashboard.
