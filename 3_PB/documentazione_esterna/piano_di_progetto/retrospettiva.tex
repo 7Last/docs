@@ -25,6 +25,220 @@ La ripartizione delle ore e la turnazione dei ruoli è stata abbastanza equa e b
     \caption{Consuntivo generale delle ore e dei costi}
 \end{table}
 
+\newpage
+
+%---------1_ISTOGRAMMA-----------%
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width  = 0.85*\textwidth,
+            height = 8cm,
+            ybar stacked,
+            bar width=14pt,
+            ymajorgrids = true,
+            symbolic x coords={Baldo, Benetazzo, Ferro, Malgarise, Occhinegro, Seganfreddo, Tiozzo},
+            xtick = data,
+            scaled y ticks = false,
+            enlarge x limits=0.2,
+            ymin=0,
+            legend cell align=left,
+            legend style={
+                at={(0.5,1.15)},
+                anchor=south,
+                column sep=1ex,
+                legend columns=-1
+            },
+            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
+            ]
+            \addplot+[ybar, resp, fill=resp, mark=none] plot coordinates {
+                (Baldo,        7.0)
+                (Benetazzo,    8.5)
+                (Ferro,        8.0)
+                (Malgarise,    9.0)
+                (Occhinegro,   7.0)
+                (Seganfreddo,  8.0)
+                (Tiozzo,       6.5)
+            };
+            \addplot+[ybar, amm, fill=amm, mark=none] plot coordinates {
+                (Baldo,       10.0)
+                (Benetazzo,   10.0)
+                (Ferro,        7.0)
+                (Malgarise,    9.0)
+                (Occhinegro,   8.0)
+                (Seganfreddo,  6.5)
+                (Tiozzo,       8.5)
+            };
+            \addplot+[ybar, an, fill=an, mark=none] plot coordinates {
+                (Baldo,       10.0)
+                (Benetazzo,   15.0)
+                (Ferro,       10.0)
+                (Malgarise,   15.5)
+                (Occhinegro,  15.5)
+                (Seganfreddo, 13.0)
+                (Tiozzo,       7.0)
+            };
+            \addplot+[ybar, pj, fill=pj, mark=none] plot coordinates {
+                (Baldo,       19.5)
+                (Benetazzo,    6.0)
+                (Ferro,       16.0)
+                (Malgarise,   12.5)
+                (Occhinegro,  16.0)
+                (Seganfreddo, 20.0)
+                (Tiozzo,      14.0)
+            };
+            \addplot+[ybar, pg, fill=pg, mark=none] plot coordinates {
+                (Baldo,       20.0)
+                (Benetazzo,   24.0)
+                (Ferro,       25.0)
+                (Malgarise,   15.0)
+                (Occhinegro,  23.0)
+                (Seganfreddo, 14.0)
+                (Tiozzo,      30.0)
+            };
+            \addplot+[ybar, ver, fill=ver, mark=none] plot coordinates {
+                (Baldo,       13.5)
+                (Benetazzo,   30.5)
+                (Ferro,       29.0)
+                (Malgarise,   21.0)
+                (Occhinegro,  25.0)
+                (Seganfreddo, 24.0)
+                (Tiozzo,      28.0)
+            };
+            \legend{Re, Am, An, Pj, Pg, Ve}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Ripartizione delle ore totali per componente}
+    
+\end{figure}
+
+%---------1_GRAFICO A TORTA-----------%
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}
+        \def\printonlypositive#1{\ifdim#1pt>0pt
+        #1
+        \fi}
+        \pie[pos={8,0},radius=3.5,text=legend,
+        before number=\printonlypositive,color={resp,amm, an, pj,pg,ver}] {
+             8.6/Responsabile,
+             9.4/Amministratore,
+            13.8/Analista,
+            16.6/Progettista,
+            24.2/Programmatore,
+            27.4/Verificatore
+        }
+        \end{tikzpicture}
+    \caption{Ripartizione delle ore totali per ruolo}
+\end{figure}
+
+\newpage
+
+%---------1_ISTOGRAMMA-----------%
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width  = 0.85*\textwidth,
+            height = 8cm,
+            ybar stacked,
+            bar width=14pt,
+            ymajorgrids = true,
+            symbolic x coords={Baldo, Benetazzo, Ferro, Malgarise, Occhinegro, Seganfreddo, Tiozzo},
+            xtick = data,
+            scaled y ticks = false,
+            enlarge x limits=0.2,
+            ymin=0,
+            legend cell align=left,
+            legend style={
+                at={(0.5,1.15)},
+                anchor=south,
+                column sep=1ex,
+                legend columns=-1
+            },
+            xticklabel style={rotate=45, anchor=north east, yshift=0ex, xshift=0ex},
+            ]
+            \addplot+[ybar, resp, fill=resp, mark=none] plot coordinates {
+                (Baldo,       210.0)
+                (Benetazzo,   255.0)
+                (Ferro,       240.0)
+                (Malgarise,   270.0)
+                (Occhinegro,  210.0)
+                (Seganfreddo, 240.0)
+                (Tiozzo,      195.0)
+            };
+            \addplot+[ybar, amm, fill=amm, mark=none] plot coordinates {
+                (Baldo,       200.0)
+                (Benetazzo,   200.0)
+                (Ferro,       140.0)
+                (Malgarise,   180.0)
+                (Occhinegro,  160.0)
+                (Seganfreddo, 130.0)
+                (Tiozzo,      170.0)
+            };
+            \addplot+[ybar, an, fill=an, mark=none] plot coordinates {
+                (Baldo,       250.0)
+                (Benetazzo,   375.0)
+                (Ferro,       250.0)
+                (Malgarise,   387.5)
+                (Occhinegro,  387.5)
+                (Seganfreddo, 325.0)
+                (Tiozzo,      175.0)
+            };
+            \addplot+[ybar, pj, fill=pj, mark=none] plot coordinates {
+                (Baldo,       487.5)
+                (Benetazzo,   150.0)
+                (Ferro,       400.0)
+                (Malgarise,   312.5)
+                (Occhinegro,  400.0)
+                (Seganfreddo, 500.0)
+                (Tiozzo,      350.0)
+            };
+            \addplot+[ybar, pg, fill=pg, mark=none] plot coordinates {
+                (Baldo,       300.0)
+                (Benetazzo,   360.0)
+                (Ferro,       375.0)
+                (Malgarise,   225.0)
+                (Occhinegro,  345.0)
+                (Seganfreddo, 210.0)
+                (Tiozzo,      450.0)
+            };
+            \addplot+[ybar, ver, fill=ver, mark=none] plot coordinates {
+                (Baldo,       202.5)
+                (Benetazzo,   457.5)
+                (Ferro,       435.0)
+                (Malgarise,   315.0)
+                (Occhinegro,  375.0)
+                (Seganfreddo, 360.0)
+                (Tiozzo,      420.0)
+            };
+            \legend{Re, Am, An, Pj, Pg, Ve}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Ripartizione dei costi totali per componente}
+    
+\end{figure}
+
+%---------1_GRAFICO A TORTA-----------%
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}
+        \def\printonlypositive#1{\ifdim#1pt>0pt
+        #1
+        \fi}
+        \pie[pos={8,0},radius=3.5,text=legend,
+        before number=\printonlypositive,color={resp,amm, an, pj,pg,ver}] {
+            13.1/Responsabile,
+             9.5/Amministratore,
+            17.4/Analista,
+            21.0/Progettista,
+            18.3/Programmatore,
+            20.7/Verificatore
+        }
+        \end{tikzpicture}
+    \caption{Ripartizione dei costi totali per ruolo}
+\end{figure}
+
 \subsection{Aspetti positivi}
 \begin{itemize}
     \item \textbf{Automazione}: il grado di automazione dei processi raggiunto dal gruppo ha permesso di ridurre le attività ripetitive da dover effettuare manualmente e di conseguenza ha ridotto il rischio di errori. Tra queste attività rientrano la verifica del codice, l'inserimento della "G" al pedice e del link per i termini presenti nel \textit{Glossario}, il controllo ortografico e grammaticale nei documenti, le notifiche per gli eventi che accadono nel repository, il calcolo dell'indice di Gulpease e il merge automatico nel branch principale dei file pdf rimuovendo il codice sorgente;
