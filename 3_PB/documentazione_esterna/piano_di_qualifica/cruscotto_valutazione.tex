@@ -12,7 +12,8 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -40,7 +41,8 @@
                 (Sprint 10, 12605)
                 (Sprint 11, 12642.5)
                 (Sprint 12, 12627.5)
-                (Sprint 13, 12677.5)};
+                % (Sprint 13, 12677.5)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % PV
                 (Sprint 1, 1090)
                 (Sprint 2, 2107.5)
@@ -54,7 +56,8 @@
                 (Sprint 10, 10144)
                 (Sprint 11, 11665.6)
                 (Sprint 12, 12426.4)
-                (Sprint 13, 12680)};
+                % (Sprint 13, 12680)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % EV
                 (Sprint 1, 977.5)
                 (Sprint 2, 2032.5)
@@ -68,7 +71,8 @@
                 (Sprint 10, 10270.8)
                 (Sprint 11, 11412)
                 (Sprint 12, 12299.6)
-                (Sprint 13, 12680)};
+                %(Sprint 13, 12680)
+            };
             \legend{EAC, PV, EV}
         \end{axis}
     \end{tikzpicture}
@@ -77,11 +81,10 @@
 %--------- FINE GRAFICO -----------%
 
 \begin{flushleft}
-    \textbf{RTB} \\
-    Visionando il grafico si può notare che i valori di EV e PV quasi si sovrappongono, questo indica la buona riuscita della pianificazione delle attività da parte del gruppo \textit{7Last}. \\
-
-    \textbf{PB} \\
-    Dal grafico completo si evince che il gruppo ha svolto le attività in modo efficiente, con un'evoluzione costante e in linea con la pianificazione. Questo è supportato dal fatto che i valori di EV e PV sono molto vicini tra loro, indicando che il gruppo ha pianificato correttamente le attività, confermando l'andamento positivo del progetto.
+\textbf{RTB} \\
+Visionando il grafico si può notare che i valori di EV e PV quasi si sovrappongono, questo indica la buona riuscita della pianificazione delle attività da parte del gruppo \textit{7Last}. \\
+% \textbf{PB} \\
+% Dal grafico completo si evince che il gruppo ha svolto le attività in modo efficiente, con un'evoluzione costante e in linea con la pianificazione. Questo è supportato dal fatto che i valori di EV e PV sono molto vicini tra loro, indicando che il gruppo ha pianificato correttamente le attività, confermando l'andamento positivo del progetto.
 \end{flushleft}
     
 \newpage
@@ -94,7 +97,8 @@
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ymin=0,
             axis lines*=left,
@@ -122,7 +126,8 @@
                 (Sprint 10, 12605)
                 (Sprint 11, 12642.5)
                 (Sprint 12, 12627.5)
-                (Sprint 13, 12677.5)};
+                % (Sprint 13, 12677.5)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ETC
                 (Sprint 1, 11590)
                 (Sprint 2, 10572.5)
@@ -136,7 +141,8 @@
                 (Sprint 10, 3012.5)
                 (Sprint 11, 2067.5)
                 (Sprint 12, 1105)
-                (Sprint 13, 297.5)};
+                % (Sprint 13, 297.5)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % AC
                 (Sprint 1, 977.5)
                 (Sprint 2, 2032.5)
@@ -150,7 +156,8 @@
                 (Sprint 10, 9592.5)
                 (Sprint 11, 10575)
                 (Sprint 12, 11522.5)
-                (Sprint 13, 12380)};
+                % (Sprint 13, 12380)
+            };
             \legend{EAC, ETC, AC}
         \end{axis}
     \end{tikzpicture}
@@ -161,9 +168,8 @@
 \begin{flushleft}
 \textbf{RTB} \\
 Il grafico evidenzia chiaramente un aumento progressivo dei costi (AC). Parallelamente, si osserva una diminuzione della stima dei costi a finire (ETC), che sta calando in modo proporzionale all'incremento dei costi. \\
-
-\textbf{PB} \\
-In questo secondo periodo viene confermato l'andamento evidenziato in quello precedente, con i costi reali (AC) che aumentano in modo proporzionale alla diminuzione della stima dei costi a finire (ETC). Questo indica che il gruppo ha svolto le attività in modo efficiente, con un allineamento tra i costi reali e quelli preventivati.
+% \textbf{PB} \\
+% In questo secondo periodo viene confermato l'andamento evidenziato in quello precedente, con i costi reali (AC) che aumentano in modo proporzionale alla diminuzione della stima dei costi a finire (ETC). Questo indica che il gruppo ha svolto le attività in modo efficiente, con un allineamento tra i costi reali e quelli preventivati.
 \end{flushleft}
 
 \newpage
@@ -176,7 +182,8 @@ In questo secondo periodo viene confermato l'andamento evidenziato in quello pre
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             axis lines*=left,
             legend cell align=left,
@@ -201,7 +208,8 @@ In questo secondo periodo viene confermato l'andamento evidenziato in quello pre
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ammissibile = -10
                 (Sprint 1, -10)
                 (Sprint 2, -10)
@@ -215,7 +223,8 @@ In questo secondo periodo viene confermato l'andamento evidenziato in quello pre
                 (Sprint 10, -10)
                 (Sprint 11, -10)
                 (Sprint 12, -10)
-                (Sprint 13, -10)};
+                % (Sprint 13, -10)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % SV
                 (Sprint 1, 25)
                 (Sprint 2, -9.09)
@@ -229,7 +238,8 @@ In questo secondo periodo viene confermato l'andamento evidenziato in quello pre
                 (Sprint 10, 1.23)
                 (Sprint 11, -2.22)
                 (Sprint 12, -1.03)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates { % CV
                 (Sprint 1, 51.82)
                 (Sprint 2, 27.14)
@@ -243,7 +253,8 @@ In questo secondo periodo viene confermato l'andamento evidenziato in quello pre
                 (Sprint 10, 6.6)
                 (Sprint 11, 7.33)
                 (Sprint 12, 6.32)
-                (Sprint 13, 2.37)};
+                % (Sprint 13, 2.37)
+            };
             \legend{Valore ottimo, Valore ammissibile, SV, CV}
         \end{axis}
     \end{tikzpicture}
@@ -253,10 +264,8 @@ In questo secondo periodo viene confermato l'andamento evidenziato in quello pre
 \begin{flushleft}
 \textbf{RTB} \\
 Dal grafico si nota come sia SV che CV siano inizialmente elevati, per poi decrescere durante la prosecuzione del progetto, in particolare si nota un andamento altalenante del SV. L'andamento inizialmente alto del Schedule Variance (SV) e del Cost Variance (CV) indica una possibile sovrastima iniziale dei tempi e dei costi, dovuta all'inesperienza del team. La variabilità del SV suggerisce che le stime di tempistiche iniziali erano eccessivamente conservative, con aggiustamenti successivi man mano che il team acquisiva esperienza. La decrescita nel tempo di entrambe le metriche mostra che il gruppo sta diventando più preciso nelle sue previsioni, con un allineamento progressivo dei costi e delle tempistiche reali rispetto a quelle pianificate. \\
-
-\textbf{PB} \\
-L'andamento del grafico nella seconda parte del progetto conferma il trend positivo iniziato nel periodo precedente, con SV e CV che si avvicinano ai valori ottimali.
-
+% \textbf{PB} \\
+% L'andamento del grafico nella seconda parte del progetto conferma il trend positivo iniziato nel periodo precedente, con SV e CV che si avvicinano ai valori ottimali.
 \end{flushleft}
 
 \newpage
@@ -269,7 +278,8 @@ L'andamento del grafico nella seconda parte del progetto conferma il trend posit
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ytick = {10000, 11000, 12000, 13000, 14000, 15000},
             ymin=10000, ymax=15000,
@@ -298,7 +308,8 @@ L'andamento del grafico nella seconda parte del progetto conferma il trend posit
                 (Sprint 10, 12680)
                 (Sprint 11, 12680)
                 (Sprint 12, 12680)
-                (Sprint 13, 12680)};
+                % (Sprint 13, 12680)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ammissibile = BAC + 5%
                 (Sprint 1, 13314)
                 (Sprint 2, 13314)
@@ -312,7 +323,8 @@ L'andamento del grafico nella seconda parte del progetto conferma il trend posit
                 (Sprint 10, 13314)
                 (Sprint 11, 13314)
                 (Sprint 12, 13314)
-                (Sprint 13, 13314)};
+                % (Sprint 13, 13314)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % EAC
                 (Sprint 1, 12567.5)
                 (Sprint 2, 12605)
@@ -326,7 +338,8 @@ L'andamento del grafico nella seconda parte del progetto conferma il trend posit
                 (Sprint 10, 12605)
                 (Sprint 11, 12642.5)
                 (Sprint 12, 12627.5)
-                (Sprint 13, 12677.5)};
+                % (Sprint 13, 12677.5)
+            };
             \legend{Valore ottimo (BAC), Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -336,10 +349,10 @@ L'andamento del grafico nella seconda parte del progetto conferma il trend posit
 \begin{flushleft}
 \textbf{RTB} \\
 Osservando il grafico si può notare come l'EAC sia quasi sovrapposto al BAC durante i periodi di progetto analizzati fino ad ora. Questa situazione riflette come \textit{7Last} abbia attuato una gestione efficace sia dei costi che delle tempistiche durante i periodi analizzati fino ad ora. \\
-
-\textbf{PB} \\
-Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima parte del progetto, con l'EAC che si mantiene costantemente vicino al BAC. Questo indica che il gruppo ha svolto le attività in modo efficiente, con un allineamento tra i costi reali e quelli preventivati, senza variazioni significative.
+% \textbf{PB} \\
+% Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima parte del progetto, con l'EAC che si mantiene costantemente vicino al BAC. Questo indica che il gruppo ha svolto le attività in modo efficiente, con un allineamento tra i costi reali e quelli preventivati, senza variazioni significative.
 \end{flushleft}
+
 \newpage
 \subsection{Qualità del processo di analisi dei requisiti}
 \subsubsection{11M-PRO - Percentuale requisiti obbligatori}
@@ -351,7 +364,8 @@ Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -378,7 +392,8 @@ Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % effettivo
                 (Sprint 1, 25)
                 (Sprint 2, 48)
@@ -392,7 +407,8 @@ Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \legend{Valore ottimo ed ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -400,8 +416,8 @@ Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima
 \end{figure*}
 %--------- FINE GRAFICO -----------% \\
 \begin{flushleft}
-    \textbf{PB} \\
-    Dal grafico si evince come a partire dai primi sprint il gruppo \textit{7Last} abbia lavorato in modo costante per soddisfare i requisiti obbligatori. Questo è confermato dal fatto che la percentuale di requisiti obbligatori soddisfatti è sempre cresciuta, fino al raggiungimento del 100\% già a partire dal sesto sprint, confermando che il gruppo ha lavorato in modo efficace e con un'attenzione costante ai requisiti obbligatori.
+% \textbf{PB} \\
+% Dal grafico si evince come a partire dai primi sprint il gruppo \textit{7Last} abbia lavorato in modo costante per soddisfare i requisiti obbligatori. Questo è confermato dal fatto che la percentuale di requisiti obbligatori soddisfatti è sempre cresciuta, fino al raggiungimento del 100\% già a partire dal sesto sprint, confermando che il gruppo ha lavorato in modo efficace e con un'attenzione costante ai requisiti obbligatori.
 \end{flushleft}
 
 \newpage
@@ -414,7 +430,8 @@ Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -441,7 +458,8 @@ Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ammissibile = 35
                 (Sprint 1, 35)
                 (Sprint 2, 35)
@@ -455,7 +473,8 @@ Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima
                 (Sprint 10, 35)
                 (Sprint 11, 35)
                 (Sprint 12, 35)
-                (Sprint 13, 35)};
+                % (Sprint 13, 35)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % effettivo
                 (Sprint 1, 0)
                 (Sprint 2, 17)
@@ -469,18 +488,19 @@ Anche in questo grafico abbiamo una conferma dell'andamento rilevato nella prima
                 (Sprint 10, 94)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
     \caption{Percentuale di copertura dei requisiti desiderabili}
 \end{figure*}
 %--------- FINE GRAFICO -----------% \\
-
 \begin{flushleft}
-\textbf{PB} \\
-Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i requisiti desiderabili, raggiungendo l'ottimo risultato del 100\% di copertura. Questo conferma che il gruppo ha lavorato in modo efficace e con un'attenzione costante ai requisiti desiderabili.
+% \textbf{PB} \\
+% Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i requisiti desiderabili, raggiungendo l'ottimo risultato del 100\% di copertura. Questo conferma che il gruppo ha lavorato in modo efficace e con un'attenzione costante ai requisiti desiderabili.
 \end{flushleft}
+
 \newpage
 \subsubsection{13M-PRO - Percentuale requisiti opzionali}
 %--------- GRAFICO -----------%
@@ -491,7 +511,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -518,7 +539,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ammissibile = 0
                 (Sprint 1, 0)
                 (Sprint 2, 0)
@@ -532,7 +554,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % effettivo
                 (Sprint 1, 0)
                 (Sprint 2, 0)
@@ -546,17 +569,17 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 67)
                 (Sprint 11, 78)
                 (Sprint 12, 89)
-                (Sprint 13, 89)};
+                % (Sprint 13, 89)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
     \caption{Percentuale di copertura dei requisiti opzionali}
 \end{figure*}
 %--------- FINE GRAFICO -----------% \\
-
 \begin{flushleft}
-    \textbf{PB} \\
-    Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i requisiti opzionali, con una crescita quasi costante della percentuale di requisiti soddisfatti. Questo conferma che il gruppo ha lavorato in modo efficace. 
+% \textbf{PB} \\
+% Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i requisiti opzionali, con una crescita quasi costante della percentuale di requisiti soddisfatti. Questo conferma che il gruppo ha lavorato in modo efficace. 
 \end{flushleft}
 
 \newpage
@@ -570,7 +593,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -597,7 +621,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 75)
                 (Sprint 11, 75)
                 (Sprint 12, 75)
-                (Sprint 13, 75)};
+                % (Sprint 13, 75)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ammissibile = 50
                 (Sprint 1, 50)
                 (Sprint 2, 50)
@@ -611,7 +636,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 50)
                 (Sprint 11, 50)
                 (Sprint 12, 50)
-                (Sprint 13, 50)};
+                % (Sprint 13, 50)
+            };
             \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates { % norme di progetto
                 (Sprint 1, 60)
                 (Sprint 2, 55)
@@ -625,7 +651,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 79)
                 (Sprint 11, 82)
                 (Sprint 12, 82)
-                (Sprint 13, 82)};
+                % (Sprint 13, 82)
+            };
             \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates { % piano di progetto
                 (Sprint 1, 70)
                 (Sprint 2, 75)
@@ -639,7 +666,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 84)
                 (Sprint 11, 84)
                 (Sprint 12, 84)
-                (Sprint 13, 85)};
+                % (Sprint 13, 85)
+            };
             \addplot[color=lime, style={line width=1pt}, mark=none] coordinates { % piano di qualifica
                 (Sprint 1, 75)
                 (Sprint 2, 70)
@@ -653,7 +681,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 90)
                 (Sprint 11, 88)
                 (Sprint 12, 88)
-                (Sprint 13, 90)};
+                % (Sprint 13, 90)
+            };
             \addplot[color=brown, style={line width=1pt}, mark=none] coordinates { % glossario
                 (Sprint 1, 65)
                 (Sprint 2, 60)
@@ -667,7 +696,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 76)
                 (Sprint 11, 77)
                 (Sprint 12, 77)
-                (Sprint 13, 77)};
+                % (Sprint 13, 77)
+            };
             \addplot[color=pink, style={line width=1pt}, mark=none] coordinates { % analisi dei requisiti
                 (Sprint 1, 70)
                 (Sprint 2, 75)
@@ -681,7 +711,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 80)
                 (Sprint 11, 82)
                 (Sprint 12, 82)
-                (Sprint 13, 83)};
+                % (Sprint 13, 83)
+            };
             \addplot[color=violet, style={line width=1pt}, mark=none] coordinates { % manuale utente
                 (Sprint 7, 60)
                 (Sprint 8, 69)
@@ -689,7 +720,8 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 82)
                 (Sprint 11, 86)
                 (Sprint 12, 88)
-                (Sprint 13, 88)};
+                % (Sprint 13, 88)
+            };
             \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates { % specifica tecnica
                 (Sprint 7, 54)
                 (Sprint 8, 60)
@@ -697,21 +729,21 @@ Il grafico mostra come il gruppo \textit{7Last} abbia lavorato per soddisfare i 
                 (Sprint 10, 74)
                 (Sprint 11, 78)
                 (Sprint 12, 82)
-                (Sprint 13, 84)};
+                % (Sprint 13, 84)
+            };
             \legend{Valore ottimo, Valore ammissibile, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#norme-di-progetto}{NdP\textsubscript{G}}, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#piano-di-progetto}{PdP\textsubscript{G}}, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#piano-di-qualifica}{PdQ\textsubscript{G}}, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#glossario}{Glossario\textsubscript{G}}, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#analisi-dei-requisiti}{AdR\textsubscript{G}}, MU, ST}
         \end{axis}
     \end{tikzpicture}
     \caption{Andamento indice di Gulpease per ciascun documento}
 \end{figure*}
 %--------- FINE GRAFICO -----------%
-
 \begin{flushleft}
 \textbf{RTB} \\
 Visionando il grafico si può notare una tendenza generale di crescita, eccetto per alcuni documenti. L'indice relativamente basso rispetto agli altri documenti rappresenta il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#glossario}{glossario\textsubscript{G}}, il quale contiene descrizioni di natura tecnica che possono influire negativamente sull'indice di Gulpease. \\
-
-\textbf{PB} \\
-Il grafico mostra come la qualità della documentazione prodotta verso la fine del progetto sia sempre sopra il valore ottimo prestabilito, con un andamento generale di crescita. 
+% \textbf{PB} \\
+% Il grafico mostra come la qualità della documentazione prodotta verso la fine del progetto sia sempre sopra il valore ottimo prestabilito, con un andamento generale di crescita. 
 \end{flushleft}
+
 \newpage
 \subsubsection{20M-CO - Correttezza ortografica}
 %--------- GRAFICO -----------%
@@ -722,7 +754,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ymin=0, ymax=10,
             axis lines*=left,
@@ -748,7 +781,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=cyan, style={line width=1pt}, mark=none] coordinates { % norme di progetto
                 (Sprint 1, 9)
                 (Sprint 2, 5)
@@ -762,7 +796,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=magenta, style={line width=1pt}, mark=none] coordinates { % piano di progetto
                 (Sprint 1, 8)
                 (Sprint 2, 7)
@@ -776,7 +811,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=lime, style={line width=1pt}, mark=none] coordinates { % piano di qualifica
                 (Sprint 1, 9)
                 (Sprint 2, 3)
@@ -790,7 +826,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=brown, style={line width=1pt}, mark=none] coordinates { % glossario
                 (Sprint 1, 0)
                 (Sprint 2, 0)
@@ -804,7 +841,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=pink, style={line width=1pt}, mark=none] coordinates { % analisi dei requisiti
                 (Sprint 1, 0)
                 (Sprint 2, 6)
@@ -818,7 +856,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=violet, style={line width=1pt}, mark=none] coordinates { % manuale utente
                 (Sprint 7, 0)
                 (Sprint 8, 0)
@@ -826,7 +865,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=yellow, style={line width=1pt}, mark=none] coordinates { % specifica tecnica
                 (Sprint 7, 0)
                 (Sprint 8, 0)
@@ -834,7 +874,8 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \legend{Valore ottimo ed ammissibile, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#norme-di-progetto}{NdP\textsubscript{G}}, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#piano-di-progetto}{PdP\textsubscript{G}}, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#piano-di-qualifica}{PdQ\textsubscript{G}}, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#glossario}{Glossario\textsubscript{G}}, \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#analisi-dei-requisiti}{AdR\textsubscript{G}}, MU, ST}
         \end{axis}
     \end{tikzpicture}
@@ -844,10 +885,10 @@ Il grafico mostra come la qualità della documentazione prodotta verso la fine d
 \begin{flushleft}
 \textbf{RTB} \\
 Si noti come inizialmente il numero di errori di ortografia rilevati nei documenti sia elevato, per poi diminuire progressivamente. Questo indica che il gruppo \textit{7Last} ha migliorato la qualità della documentazione prodotta, riducendo gli errori di ortografia. \\
-
-\textbf{PB} \\
-Come si può notare dal grafico a partire dal quarto sprint la documentazione prodotta non presenta più errori di ortografia. Questo è dovuto all'utilizzo di strumenti di controllo ortografico automatici in fase di \textit{merge} dei branch nel repository, gestiti mediante l'utilizzo delle \textit{GitHub Actions}. Questo ha permesso di impedire in modo sistematico l'inserimento di errori di ortografia nei documenti prodotti.
+% \textbf{PB} \\
+% Come si può notare dal grafico a partire dal quarto sprint la documentazione prodotta non presenta più errori di ortografia. Questo è dovuto all'utilizzo di strumenti di controllo ortografico automatici in fase di \textit{merge} dei branch nel repository, gestiti mediante l'utilizzo delle \textit{GitHub Actions}. Questo ha permesso di impedire in modo sistematico l'inserimento di errori di ortografia nei documenti prodotti.
 \end{flushleft}
+
 \newpage
 \subsection{Qualità del processo di gestione della qualità}
 \subsubsection{25M-QMS - Metriche di qualità soddisfatte}
@@ -859,7 +900,8 @@ Come si può notare dal grafico a partire dal quarto sprint la documentazione pr
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -886,7 +928,8 @@ Come si può notare dal grafico a partire dal quarto sprint la documentazione pr
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ammissibile = 90
                 (Sprint 1, 90)
                 (Sprint 2, 90)
@@ -900,7 +943,8 @@ Come si può notare dal grafico a partire dal quarto sprint la documentazione pr
                 (Sprint 10, 90)
                 (Sprint 11, 90)
                 (Sprint 12, 90)
-                (Sprint 13, 90)};
+                % (Sprint 13, 90)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {
                 (Sprint 1, 75)
                 (Sprint 2, 82)
@@ -914,7 +958,8 @@ Come si può notare dal grafico a partire dal quarto sprint la documentazione pr
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -924,9 +969,8 @@ Come si può notare dal grafico a partire dal quarto sprint la documentazione pr
 \begin{flushleft}
 \textbf{RTB} \\
 Osservando il grafico si può notare come inizialmente il valore delle metriche soddisfatte sia inferiore al valore ammissibile, questo è dovuto principalmente all'inesperienza del team. Successivamente l'andamento cresce progressivamente fino ad arrivare al 100\% nell'ultimo sprint. Questo indica un miglioramento progressivo del \textit{Way of Working} del gruppo. \\
-
-\textbf{PB} \\
-Come si evince dal grafico, il cruscotto di valutazione della qualità ha permesso al gruppo di monitorare costantemente il soddisfacimento delle metriche di qualità, ottenendo così un miglioramento progressivo fino al raggiungimento del 100\% delle metriche soddisfatte.
+% \textbf{PB} \\
+% Come si evince dal grafico, il cruscotto di valutazione della qualità ha permesso al gruppo di monitorare costantemente il soddisfacimento delle metriche di qualità, ottenendo così un miglioramento progressivo fino al raggiungimento del 100\% delle metriche soddisfatte.
 \end{flushleft}
 
 \newpage
@@ -961,7 +1005,8 @@ Come si evince dal grafico, il cruscotto di valutazione della qualità ha permes
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {
                 (Sprint 7, 80)
                 (Sprint 8, 80)
@@ -969,7 +1014,8 @@ Come si evince dal grafico, il cruscotto di valutazione della qualità ha permes
                 (Sprint 10, 80)
                 (Sprint 11, 80)
                 (Sprint 12, 80)
-                (Sprint 13, 80)};
+                % (Sprint 13, 80)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {
                 (Sprint 7, 83)
                 (Sprint 8, 83)
@@ -977,7 +1023,8 @@ Come si evince dal grafico, il cruscotto di valutazione della qualità ha permes
                 (Sprint 10, 88)
                 (Sprint 11, 86)
                 (Sprint 12, 88)
-                (Sprint 13, 88)};
+                % (Sprint 13, 88)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -985,9 +1032,10 @@ Come si evince dal grafico, il cruscotto di valutazione della qualità ha permes
 \end{figure*}
 %--------- FINE GRAFICO -----------% \\
 \begin{flushleft}
-\textbf{PB} \\
-Al settimo sprint sono stati introdotti i primi test e fin da subito abbiamo voluto garantire la qualità del codice utilizzando le \textit{Github Actions} per impedire che venisse effettuato il \textit{merge} di codice non testato o che non superasse la percentuale minima prevista per ciascun test. Questo ha permesso di garantire un'alta percentuale di code coverage fin da subito, con un andamento costante e in crescita.
+% \textbf{PB} \\
+% Al settimo sprint sono stati introdotti i primi test e fin da subito abbiamo voluto garantire la qualità del codice utilizzando le \textit{Github Actions} per impedire che venisse effettuato il \textit{merge} di codice non testato o che non superasse la percentuale minima prevista per ciascun test. Questo ha permesso di garantire un'alta percentuale di code coverage fin da subito, con un andamento costante e in crescita.
 \end{flushleft}
+
 \newpage
 \subsubsection{27M-BC - Branch coverage}
 %--------- GRAFICO -----------%
@@ -1019,7 +1067,8 @@ Al settimo sprint sono stati introdotti i primi test e fin da subito abbiamo vol
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {
                 (Sprint 7, 80)
                 (Sprint 8, 80)
@@ -1027,7 +1076,8 @@ Al settimo sprint sono stati introdotti i primi test e fin da subito abbiamo vol
                 (Sprint 10, 80)
                 (Sprint 11, 80)
                 (Sprint 12, 80)
-                (Sprint 13, 80)};
+                % (Sprint 13, 80)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {
                 (Sprint 7, 82)
                 (Sprint 8, 82)
@@ -1035,7 +1085,8 @@ Al settimo sprint sono stati introdotti i primi test e fin da subito abbiamo vol
                 (Sprint 10, 85)
                 (Sprint 11, 82)
                 (Sprint 12, 85)
-                (Sprint 13, 85)};
+                % (Sprint 13, 85)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -1043,9 +1094,10 @@ Al settimo sprint sono stati introdotti i primi test e fin da subito abbiamo vol
 \end{figure*}
 %--------- FINE GRAFICO -----------% \\
 \begin{flushleft}
-\textbf{PB} \\
-Anche in questo grafico si può notare come il gruppo \textit{7Last} abbia lavorato in modo costante per garantire la qualità del codice, con un'andamento costante e in crescita della percentuale di branch coverage. Come detto prima, questo è stato possibile grazie all'utilizzo delle \textit{GitHub Actions} per impedire il \textit{merge} di codice non testato o che non superasse la percentuale minima prevista per ciascun test.
+% \textbf{PB} \\
+% Anche in questo grafico si può notare come il gruppo \textit{7Last} abbia lavorato in modo costante per garantire la qualità del codice, con un'andamento costante e in crescita della percentuale di branch coverage. Come detto prima, questo è stato possibile grazie all'utilizzo delle \textit{GitHub Actions} per impedire il \textit{merge} di codice non testato o che non superasse la percentuale minima prevista per ciascun test.
 \end{flushleft}
+
 \newpage
 \subsubsection{28M-SC - Statement coverage}
 %--------- GRAFICO -----------%
@@ -1077,7 +1129,8 @@ Anche in questo grafico si può notare come il gruppo \textit{7Last} abbia lavor
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {
                 (Sprint 7, 80)
                 (Sprint 8, 80)
@@ -1085,7 +1138,8 @@ Anche in questo grafico si può notare come il gruppo \textit{7Last} abbia lavor
                 (Sprint 10, 80)
                 (Sprint 11, 80)
                 (Sprint 12, 80)
-                (Sprint 13, 80)};
+                % (Sprint 13, 80)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {
                 (Sprint 7, 81)
                 (Sprint 8, 82)
@@ -1093,7 +1147,8 @@ Anche in questo grafico si può notare come il gruppo \textit{7Last} abbia lavor
                 (Sprint 10, 84)
                 (Sprint 11, 83)
                 (Sprint 12, 85)
-                (Sprint 13, 85)};
+                % (Sprint 13, 85)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -1101,9 +1156,10 @@ Anche in questo grafico si può notare come il gruppo \textit{7Last} abbia lavor
 \end{figure*}
 %--------- FINE GRAFICO -----------% \\
 \begin{flushleft}
-\textbf{PB} \\
-Come già evidenziato in precedenza, anche qui abbiamo la conferma che il gruppo \textit{7Last} ha lavorato per garantire la qualità del codice, con un'andamento costante e in crescita della percentuale di statement coverage. Anche in questo caso, questo è stato possibile grazie all'utilizzo delle \textit{GitHub Actions} per impedire il \textit{merge} di codice non testato o che non superasse la percentuale minima prevista per ciascun test.
+% \textbf{PB} \\
+% Come già evidenziato in precedenza, anche qui abbiamo la conferma che il gruppo \textit{7Last} ha lavorato per garantire la qualità del codice, con un'andamento costante e in crescita della percentuale di statement coverage. Anche in questo caso, questo è stato possibile grazie all'utilizzo delle \textit{GitHub Actions} per impedire il \textit{merge} di codice non testato o che non superasse la percentuale minima prevista per ciascun test.
 \end{flushleft}
+
 \newpage
 \subsubsection{29M-FD - Failure density}
 %--------- GRAFICO -----------%
@@ -1135,7 +1191,8 @@ Come già evidenziato in precedenza, anche qui abbiamo la conferma che il gruppo
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {
                 (Sprint 7, 15)
                 (Sprint 8, 15)
@@ -1143,7 +1200,8 @@ Come già evidenziato in precedenza, anche qui abbiamo la conferma che il gruppo
                 (Sprint 10, 15)
                 (Sprint 11, 15)
                 (Sprint 12, 15)
-                (Sprint 13, 15)};
+                % (Sprint 13, 15)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {
                 (Sprint 7, 0)
                 (Sprint 8, 0)
@@ -1151,17 +1209,17 @@ Come già evidenziato in precedenza, anche qui abbiamo la conferma che il gruppo
                 (Sprint 10, 4)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
     \caption{Percentuale di failure density}
 \end{figure*}
 %--------- FINE GRAFICO -----------% \\
-
 \begin{flushleft}
-\textbf{PB} \\
-Dal grafico risultano evidenti i primi fallimenti rilevati in corrispondenza del nono sprint, naturale conseguenza dell'aggiunta di nuovi test che hanno permesso di rilevare errori non precedentemente individuati e correggerli. Successivamente si nota un calo dei fallimenti fino al raggiungimento del valore ottimo.
+% \textbf{PB} \\
+% Dal grafico risultano evidenti i primi fallimenti rilevati in corrispondenza del nono sprint, naturale conseguenza dell'aggiunta di nuovi test che hanno permesso di rilevare errori non precedentemente individuati e correggerli. Successivamente si nota un calo dei fallimenti fino al raggiungimento del valore ottimo.
 \end{flushleft}
 
 \newpage
@@ -1195,7 +1253,8 @@ Dal grafico risultano evidenti i primi fallimenti rilevati in corrispondenza del
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates {
                 (Sprint 7, 90)
                 (Sprint 8, 90)
@@ -1203,7 +1262,8 @@ Dal grafico risultano evidenti i primi fallimenti rilevati in corrispondenza del
                 (Sprint 10, 90)
                 (Sprint 11, 90)
                 (Sprint 12, 90)
-                (Sprint 13, 90)};
+                % (Sprint 13, 90)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates {
                 (Sprint 7, 100)
                 (Sprint 8, 100)
@@ -1211,7 +1271,8 @@ Dal grafico risultano evidenti i primi fallimenti rilevati in corrispondenza del
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -1219,9 +1280,10 @@ Dal grafico risultano evidenti i primi fallimenti rilevati in corrispondenza del
 \end{figure*}
 %--------- FINE GRAFICO -----------% \\
 \begin{flushleft}
-\textbf{PB} \\
-Grazie all'utilizzo delle \textit{GitHub Actions}, il gruppo \textit{7Last} è riuscito a garantire che tutti i test implementati venissero superati, con un'andamento costante fisso al 100\% già dall'implementazione dei primi test in corrispondenza del settimo sprint fino alla fine del progetto.
+% \textbf{PB} \\
+% Grazie all'utilizzo delle \textit{GitHub Actions}, il gruppo \textit{7Last} è riuscito a garantire che tutti i test implementati venissero superati, con un'andamento costante fisso al 100\% già dall'implementazione dei primi test in corrispondenza del settimo sprint fino alla fine del progetto.
 \end{flushleft}
+
 \newpage
 \subsection{Qualità del processo di gestione dei rischi}
 \subsubsection{32M-NCR - Rischi non calcolati}
@@ -1233,7 +1295,8 @@ Grazie all'utilizzo delle \textit{GitHub Actions}, il gruppo \textit{7Last} è r
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ymin=0, ymax=5,
             axis lines*=left,
@@ -1259,7 +1322,8 @@ Grazie all'utilizzo delle \textit{GitHub Actions}, il gruppo \textit{7Last} è r
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ammissibile = 3
                 (Sprint 1, 3)
                 (Sprint 2, 3)
@@ -1273,7 +1337,8 @@ Grazie all'utilizzo delle \textit{GitHub Actions}, il gruppo \textit{7Last} è r
                 (Sprint 10, 3)
                 (Sprint 11, 3)
                 (Sprint 12, 3)
-                (Sprint 13, 3)};
+                % (Sprint 13, 3)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % rischi non calcolati
                 (Sprint 1, 1)
                 (Sprint 2, 1)
@@ -1287,7 +1352,8 @@ Grazie all'utilizzo delle \textit{GitHub Actions}, il gruppo \textit{7Last} è r
                 (Sprint 10, 0)
                 (Sprint 11, 0)
                 (Sprint 12, 0)
-                (Sprint 13, 0)};
+                % (Sprint 13, 0)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -1297,10 +1363,10 @@ Grazie all'utilizzo delle \textit{GitHub Actions}, il gruppo \textit{7Last} è r
 \begin{flushleft}
 \textbf{RTB} \\
 Dal grafico si evince che durante i primi sprint sono emersi rischi non calcolati, sintomo di una pianificazione non ottimale dovuta all'inesperienza. Successivamente il team ha accumulato esperienza, mediante automiglioramento, imparando a gestire e prevenire i rischi in modo migliore. \\
-
-\textbf{PB} \\
-Nella seconda parte del progetto non sono stati riscontrati rischi non calcolati, questo è dovuto all'esperienza acquisita dal gruppo \textit{7Last} che ha permesso di prevedere e gestire in modo efficace i rischi, evitando che si verificassero.
+% \textbf{PB} \\
+% Nella seconda parte del progetto non sono stati riscontrati rischi non calcolati, questo è dovuto all'esperienza acquisita dal gruppo \textit{7Last} che ha permesso di prevedere e gestire in modo efficace i rischi, evitando che si verificassero.
 \end{flushleft}
+
 \newpage
 \subsection{Qualità del processo di pianificazione}
 \subsubsection{33M-RSI - Requirements stability index}
@@ -1312,7 +1378,8 @@ Nella seconda parte del progetto non sono stati riscontrati rischi non calcolati
             width  = 0.85*\textwidth,
             height = 8cm,
             ymajorgrids = true,
-            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            % symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12, Sprint 13},
+            symbolic x coords={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6, Sprint 7, Sprint 8, Sprint 9, Sprint 10, Sprint 11, Sprint 12},
             xtick = data,
             ytick = {0, 25, 50, 75, 100},
             ymin=0, ymax=100,
@@ -1339,7 +1406,8 @@ Nella seconda parte del progetto non sono stati riscontrati rischi non calcolati
                 (Sprint 10, 100)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \addplot[color=amm, style={dashed, line width=3pt}, mark=none] coordinates { % ammissibile = 75
                 (Sprint 1, 75)
                 (Sprint 2, 75)
@@ -1353,7 +1421,8 @@ Nella seconda parte del progetto non sono stati riscontrati rischi non calcolati
                 (Sprint 10, 75)
                 (Sprint 11, 75)
                 (Sprint 12, 75)
-                (Sprint 13, 75)};
+                % (Sprint 13, 75)
+            };
             \addplot[color=blue, style={line width=1pt}, mark=none] coordinates { % RSI
                 (Sprint 1, 0)
                 (Sprint 2, 0)
@@ -1367,7 +1436,8 @@ Nella seconda parte del progetto non sono stati riscontrati rischi non calcolati
                 (Sprint 10, 97)
                 (Sprint 11, 100)
                 (Sprint 12, 100)
-                (Sprint 13, 100)};
+                % (Sprint 13, 100)
+            };
             \legend{Valore ottimo, Valore ammissibile, Valore effettivo}
         \end{axis}
     \end{tikzpicture}
@@ -1377,7 +1447,6 @@ Nella seconda parte del progetto non sono stati riscontrati rischi non calcolati
 \begin{flushleft}
 \textbf{RTB} \\
 L'analisi del RSI mostra un forte incremento tra il secondo e il terzo sprint, segnalando un'intensa attività di revisione e aggiustamento dei requisiti. Nei due sprint successivi, il RSI si stabilizza, indicando una riduzione delle modifiche e una maggiore stabilità dei requisiti. Questo andamento riflette un'efficace fase iniziale di consolidamento dei requisiti seguita da una stabilizzazione che facilita l'implementazione del progetto. \\
-
-\textbf{PB} \\
-Dal grafico si può notare come i requisiti abbiano subito alcune modifiche in corrispondenza dell'ottavo sprint (e successivi). Questo è dovuto alla necessità di apportare alcune modifiche ai requisiti in seguito ai consigli ricevuti dal professor Cardin durante la revisione RTB, oltre ad alcune variazioni concordate con il proponente su alcune funzionalità del prodotto. Questo ha permesso di migliorare la qualità del prodotto e di garantire una maggiore soddisfazione del proponente.
+% \textbf{PB} \\
+% Dal grafico si può notare come i requisiti abbiano subito alcune modifiche in corrispondenza dell'ottavo sprint (e successivi). Questo è dovuto alla necessità di apportare alcune modifiche ai requisiti in seguito ai consigli ricevuti dal professor Cardin durante la revisione RTB, oltre ad alcune variazioni concordate con il proponente su alcune funzionalità del prodotto. Questo ha permesso di migliorare la qualità del prodotto e di garantire una maggiore soddisfazione del proponente.
 \end{flushleft}
