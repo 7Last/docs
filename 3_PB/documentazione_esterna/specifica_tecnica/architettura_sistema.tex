@@ -112,7 +112,7 @@ dal file di configurazione \texttt{sensors.toml} e dalle variabili d'ambiente.\\
 Ciascun tipo di dato grezzo è rappresentato da una classe che estende \texttt{RawData} (astratta).\\
 La classe \texttt{SensorConfig} riceve nel costruttore la configurazione sotto forma di dizionario, effettua \textit{parsing}, validazione,
 popola con valori di \textit{default} i campi mancanti (nel caso lo prevedano) ed inizializza i propri attributi, corrispondenti ai campi del file di configurazione.\\
-Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il metodo \texttt{bootstrap\_server()} che combina \textit{host} e \textit{port} per formare l'indirizzo del \textit{broker} Kafka.\\
+Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il metodo \\\texttt{bootstrap\_server()} che combina \textit{host} e \textit{port} per formare l'indirizzo del \textit{broker} Kafka.\\
 \begin{center}
 	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/models.png}
 	\captionof{figure}{Diagramma delle classi del modulo \texttt{models}. Per ragioni di spazio, le implementazioni di \texttt{RawData} sono illustrate nel diagramma successivo}
@@ -507,11 +507,11 @@ per l'effettiva produzione dei dati su Kafka.
 
 \subsubsubsection{\textit{Design Pattern}}
 \subsubsubsubsection{\textit{Strategy}}
-Abbiamo deciso di utilizzare il \textit{design pattern} \textit{Strategy} per convertire le istanze di \texttt{RawData} in \textit{byte}, senza dover modificare il codice che le utilizza;
+Abbiamo deciso di utilizzare il \textit{design pattern} \textit{Strategy} per serializzare le istanze di \texttt{RawData} in \textit{byte} utilizzando diverse codifiche, senza dover modificare il codice che le utilizza;
 per tale motivo sono state implementate le classi \\\texttt{JsonSerializationStrategy} e \texttt{AvroSerializationStrategy}.
 \texttt{DictSerializable} è un'interfaccia che definisce il metodo \texttt{to\_dict()}, il quale restituisce un dizionario Python.
 L'interfaccia \texttt{SerializationStrategy} definisce il metodo \texttt{serialize(data: DictSerializable)}, che prende in input un \texttt{DictSerializable} restituisce i \textit{byte} corrispondenti.
-\texttt{AvroSerializationStrategy} si appoggia sulla libreria \texttt{confluent\_avro} per interagire con lo \textit{schema registry} e costruire un oggetto di tipo
+\\\texttt{AvroSerializationStrategy} si appoggia sulla libreria \texttt{confluent\_avro} per interagire con lo \textit{schema registry} e costruire un oggetto di tipo
 \texttt{AvroValueSerde}, necessario per la serializzazione a partire da uno schema Avro e un dizionario.
 
 \subsubsubsubsection{\textit{Object Adapter}}
@@ -714,7 +714,7 @@ Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
 \end{itemize}
 
 \subsubsection{Inizializzazione e configurazione}
-Apache Flink necessita che i \textit{topic} da cui consuma, ovvero temperatura, umidità, colonnine di ricarica e parcheggi, e quelli in cui pubblica, ovvero \texttt{heat\_index} e \texttt{charging\_efficiency},
+Apache Flink necessita che i \textit{topic} da cui consuma, ovvero temperatura, umidità, colonnine di ricarica e parcheggi, e quelli in cui pubblica, ovvero \texttt{heat\_index} e \\\texttt{charging\_efficiency},
 siano creati precedentemente all'esecuzione del \textit{job}, con i rispettivi schemi. A tale scopo, è stata realizzata un'immagine Docker basata su \href{https://hub.docker.com/_/alpine}{\underline{Alpine Linux}} [Ultima consultazione 2024-07-18],
 al cui interno viene scaricato il binario \href{https://docs.redpanda.com/current/get-started/intro-to-rpk/}{\underline{rpk}} [Ultima consultazione 2024-07-18], strumento
 messo a disposizione da Redpanda per interagire e configurare un \textit{cluster} Redpanda, anche remoto. Al suo interno inoltre è presente uno \textit{script} Bash che
@@ -916,7 +916,7 @@ utilizzata sia per calcolare la media della temperatura che dell'umidità.
 Data la necessità di convertire la classe \texttt{HeatIndexResult}, prodotto delle aggregazioni, in un oggetto di tipo \texttt{GenericRecord} (contenuto nella libreria \texttt{avro}),
 abbiamo implementato il \textit{pattern} \textit{object adapter}, che si occupa di effettuare tale conversione.\\
 A tale scopo, è stata definita un'interfaccia \texttt{RecordSerializable} che espone il metodo \texttt{toGenericRecord}, il quale restituisce un oggetto di tipo \texttt{GenericRecord}.\\
-\texttt{HeatIndexRecordSerializableAdapter} implementa tale interfaccia e ha un campo \texttt{adaptee} di tipo \texttt{HeatIndexResult}. Prima di effettuare dunque il \textit{sink}
+\texttt{HeatIndexRecordSerializableAdapter} implementa tale interfaccia e ha un campo \\\texttt{adaptee} di tipo \texttt{HeatIndexResult}. Prima di effettuare dunque il \textit{sink}
 dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \textit{record} da pubblicare nel \textit{topic} dedicato allo \textit{Heat Index}.
 
 \subsubsubsubsubsection{Classi, interfacce metodi e attributi}
@@ -1176,9 +1176,9 @@ Riassumendo:
 		            \begin{itemize}
 			            \item \texttt{vehicleType} String [private]: tipo di veicolo che la colonnina ricarica;
 			            \item \texttt{batteryLevel} double [private]: livello di batteria del veicolo collegato alla colonnina;
-			            \item \texttt{kwhSupplied} double [private]: kilowatt ora che la colonnina sta erogando al momento della misurazione;
+			            \item \texttt{kwhSupplied} double [private]: kilowattora che la colonnina sta erogando al momento della misurazione;
 			            \item \texttt{remainingChargeTime} Duration [private]: tempo di ricarica rimanente;
-			            \item \texttt{elapsedTime} Duration [private]: tempo di ricarica rimanente;
+			            \item \texttt{elapsedTime} Duration [private]: tempo di ricarica trascorso;
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ChargingEfficiencyJob}
@@ -1244,7 +1244,7 @@ Riassumendo:
 	      \end{itemize}
 	\item \textbf{Classe ChargingEfficiencyJoinFunction}
 	      \begin{itemize}
-		      \item \texttt{join(TimestampDifferenceResult parkingDiff, TimestampDifferenceResult chargingDiff)}: calcola \textit{efficiency} e \textit{utilization rate} a partire da \texttt{TimestampDifferenceResult}
+		      \item \texttt{join(TimestampDifferenceResult parkingDiff, \\TimestampDifferenceResult chargingDiff)}: calcola \textit{efficiency} e \textit{utilization rate} a partire da \texttt{TimestampDifferenceResult}
 		            di parcheggi e colonnine.
 	      \end{itemize}
 	\item \textbf{Classe ChargingEfficiencyResult}
@@ -1263,7 +1263,7 @@ Riassumendo:
 		            \begin{itemize}
 			            \item \texttt{zero(String sensorUuid, LocalDateTime timestamp, String groupName,}\\
 			                  \texttt{Set<String> sensorNames)} ChargingEfficiencyResult [public,static]: metodo che costruisce e ritorna un'istanza di ChargingEfficiencyResult
-			                  con \texttt{utilizationRate} e \texttt{efficiencyRate} posti a 0.
+			                  con \\\texttt{utilizationRate} e \texttt{efficiencyRate} posti a 0.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ParkingRawDataMapFunction}
@@ -1394,7 +1394,7 @@ Di seguito viene rappresentata la configurazione per l'archiviazione delle misur
 La tabella \texttt{charging\_station} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
 in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
 Tramite l'utilizzo delle \textit{Materialized View} \texttt{charging\_station\_5m\_mv}, \texttt{charging\_station\_weekly\_mv} e \\\texttt{charging\_station\_daily\_mv}
-è possibile aggregare e trasferire i dati sulle tabelle \texttt{charging\_station\_5m}, \texttt{charging\_station\_weekly} e \texttt{charging\_station\_daily},
+è possibile aggregare e trasferire i dati sulle tabelle \\ \texttt{charging\_station\_5m}, \texttt{charging\_station\_weekly} e \texttt{charging\_station\_daily},
 che contengono rispettivamente la media dei kilowattora erogati per 5 minuti, giornalmente e settimanalmente.
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/charging_mv.png}
@@ -1405,8 +1405,7 @@ che contengono rispettivamente la media dei kilowattora erogati per 5 minuti, gi
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni riguardanti le precipitazioni.
 La tabella \texttt{precipitation} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
 in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo delle \textit{Materialized View} \texttt{precipitation\_1h\_mv},\\\texttt{precipitation\_daily\_mv}, \texttt{precipitation\_weekly\_mv} e \texttt{precipitation\_yearly\_mv}
-è possibile aggregare e trasferire i dati sulle tabelle \texttt{precipitation\_1h},\texttt{precipitation\_daily},\\ \texttt{precipitation\_weekly} e \texttt{precipitation\_yearly}
+Tramite l'utilizzo delle \textit{Materialized View} \texttt{precipitation\_1h\_mv}, \texttt{precipitation\_daily\_mv}, \texttt{precipitation\_weekly\_mv} e \\\texttt{precipitation\_yearly\_mv} è possibile aggregare e trasferire i dati sulle tabelle \\\texttt{precipitation\_1h}, \texttt{precipitation\_daily}, \texttt{precipitation\_weekly} e \texttt{precipitation\_yearly}
 che contengono la media dei millimetri di acqua caduti rispettivamente per ogni ora, giorno, settimana e anno.
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{./specifica_tecnica/precipitation_mv.png}
@@ -1417,7 +1416,7 @@ che contengono la media dei millimetri di acqua caduti rispettivamente per ogni 
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni riguardanti il livello dei fiumi.
 La tabella \texttt{river\_level} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
 in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo delle \textit{Materialized View} \texttt{river\_level\_1h\_mv},\\\texttt{river\_level\_daily\_mv}, \texttt{river\_level\_weekly\_mv} e \texttt{river\_level\_yearly\_mv}
+Tramite l'utilizzo delle \textit{Materialized View} \texttt{river\_level\_1h\_mv}, \texttt{river\_level\_daily\_mv}, \texttt{river\_level\_weekly\_mv} e \texttt{river\_level\_yearly\_mv}
 è possibile aggregare e trasferire i dati sulle tabelle \texttt{river\_level\_1h},\texttt{river\_level\_daily},\\ \texttt{river\_level\_weekly} e \texttt{river\_level\_yearly}
 che contengono rispettivamente la media oraria, giornaliera, mensile e annuale del livello dei fiumi (misurato in metri).
 
@@ -1461,10 +1460,10 @@ utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate c
 \end{center}
 \subsubsubsection{Tabella sensors}
 In diversi scenari all'interno di Grafana è necessario poter ottenere i dati di tutti i sensori, indipendentemente dalla loro tipologia, per mostrarli ad esempio in una mappa
-complessiva o in una tabella contenente la data di ricezione dell'ultimo messaggio da parte di un determinato dispositivo o ancora per la costruzione dei filtri sul tipo e nome di sensore.
+complessiva o in una tabella contenente la data di ricezione dell'ultimo messaggio da parte di un determinato dispositivo o ancora per la costruzione dei filtri su tipo e nome di ciascun sensore.
 Al fine di rendere maggiormente efficiente queste operazioni abbiamo realizzato una tabella \texttt{sensors} popolata attraverso delle \textit{Materialized View},
 che si occupano di trasferire i dati a partire dalle tabelle dei dati grezzi (come \texttt{temperature}, \texttt{humidity}...).
-All'interno commento contenuto nel diagramma seguente è presente un esempio generico di \textit{query} utilizzata per la definizione delle \textit{Materialized View}; al posto del \textit{placeholder}
+All'interno del commento contenuto nel diagramma seguente è presente un esempio generico di \textit{query} utilizzata per la definizione delle \textit{Materialized View}; al posto del \textit{placeholder}
 \texttt{{type}} è sufficiente sostituire il nome di ciascuna tabella di dati grezzi (\texttt{temperature}, \texttt{humidity}...).
 I campi di quest'ultime sono omessi per semplicità del diagramma e sono stati precedentemente illustrati nella sezione dedicata alle misurazioni di ciascuna tipologia.
 
@@ -1475,20 +1474,20 @@ I campi di quest'ultime sono omessi per semplicità del diagramma e sono stati p
 
 \pagebreak
 \subsection{Grafana}
-Grafana è uno strumento di analisi e monitoraggio che permette di visualizzare dati provenienti da una varietà di fonti. È sviluppato principalmente in Go e Typescript ed si è diffuso notevolmente
+Grafana è uno strumento di analisi e monitoraggio che permette di visualizzare dati provenienti da una varietà di fonti. È sviluppato principalmente in Go e Typescript e si è diffuso notevolmente
 in quanto offre funzionalità per la creazione di \textit{dashboard} personalizzabili e intuitive.
 \subsubsection{Dashboard}
 Sono state realizzate tre \textit{dashboard} distinte, ciascuna per adempiere a uno specifico compito:
 \begin{itemize}
-	\item \textbf{\textit{raw data}}: mostra i dati grezzi provenienti dai sensori in delle tabelle filtrabili. Inoltre contiene dei pannelli che consentono
-	      di visualizzare informazioni generali sui sensori, come una mappa con la loro posizione e una tabella con l'ultimo messaggio ricevuto da ciascuno di essi;
-	\item \textbf{\textit{urban data}}: mostra i dati aggregati relativi al traffico, isole ecologiche, parcheggi e colonnine di ricarica. In particolare, sono presenti
-	      grafici che mostrano l'andamento temporale delle misurazioni e delle aggregazioni calcolate;
-	\item \textbf{\textit{environmental data}}: mostra i dati aggregati relativi alla qualità dell'aria, temperatura, umidità, precipitazioni, e livello dei fiumi.
+	\item \textbf{\textit{Raw data}}: mostra i dati grezzi provenienti dai sensori in delle tabelle filtrabili. Inoltre contiene dei pannelli che consentono
+	      di visualizzare informazioni generali sui sensori, come una mappa con la loro posizione e una tabella con l'ultimo messaggio ricevuto da ciascuno di essi.
+	\item \textbf{\textit{Urban data}}: mostra i dati aggregati relativi a traffico, isole ecologiche, parcheggi e colonnine di ricarica. In particolare, sono presenti
+	      grafici che mostrano l'andamento temporale delle misurazioni e delle aggregazioni calcolate.
+	\item \textbf{\textit{Environmental data}}: mostra i dati aggregati relativi a qualità dell'aria, temperatura, umidità, precipitazioni, e livello dei fiumi.
 	      Anche in questo caso sono presenti grafici che mostrano l'andamento temporale delle misurazioni e delle aggregazioni calcolate.
 \end{itemize}
-La suddivisione è stata realizzata in quanto, oltre alla differenza riguardante la natura dei dati, le varie \textit{dashboard} vengono utilizzate da utenti con esigenze diverse:
-i dati ambientali possono essere adoperati al fine di prevenire situazioni di emergenza, mentre quelli urbanistici possono essere utilizzati con fini economici
+La suddivisione è stata progettata in questo modo in quanto, oltre al fatto che la natura dei dati sia molto differente, le varie \textit{dashboard} potrebbero venire utilizzate dagli utenti con esigenze diverse:
+i dati ambientali possono essere adoperati al fine di prevenire situazioni di emergenza correlate a condizioni climatiche avverse, mentre quelli urbanistici possono essere utilizzati con fini economici
 o per migliorare i servizi offerti ai cittadini.
 
 \subsubsection{ClickHouse datasource plugin}
@@ -1497,7 +1496,6 @@ La documentazione è disponibile al seguente link:
 \begin{center}
 	\url{https://grafana.com/grafana/plugins/grafana-clickhouse-datasource/} [Ultima consultazione 2024-06-05]
 \end{center}
-
 La configurazione di tale \textit{datasource} è contenuta nella cartella \\
 \texttt{grafana/provisioning/datasources/default.yaml} della repository del progetto.
 
@@ -1507,20 +1505,20 @@ La documentazione è disponibile al seguente link:
 \begin{center}
 	\url{https://grafana.com/docs/grafana/latest/dashboards/variables/} [Ultima consultazione 2024-06-05]
 \end{center}
-\subsubsubsection{Variabili nella \textit{dashboard} \textit{raw data}}
+\subsubsubsection{Variabili nella \textit{dashboard} \textit{Raw data}}
 \begin{itemize}
 	\item \texttt{sensor\_type}: permette di filtrare i dati visualizzati in base al tipo di sensore;
 	\item \texttt{sensor\_name}: dipendente dalla variabile \texttt{sensor\_type} e permette di filtrare i dati visualizzati in base al nome del sensore;
 \end{itemize}
 
-\subsubsubsection{Variabili nella \textit{dashboard} \textit{urban data}}
+\subsubsubsection{Variabili nella \textit{dashboard} \textit{Urban data}}
 \begin{itemize}
 	\item \texttt{group\_name\_charging}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di colonnine di ricarica;
 	\item \texttt{group\_name\_parking}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di parcheggi;
 	\item \texttt{sensor\_name\_recycling\_point}: permette di filtrare i dati visualizzati in base al nome del sensore di isole ecologiche;
 	\item \texttt{sensor\_name\_traffic}: permette di filtrare i dati visualizzati in base al nome del sensore di traffico;
 \end{itemize}
-\subsubsubsection{Variabili nella \textit{dashboard} \textit{environmental data}}
+\subsubsubsection{Variabili nella \textit{dashboard} \textit{Environmental data}}
 \begin{itemize}
 	\item \texttt{group\_name\_temperature}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di sensori di temperatura;
 	\item \texttt{sensor\_name\_humidity}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di sensori di umidità;
