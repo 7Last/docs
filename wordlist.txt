@@ -2,7 +2,11 @@ adaptee
 Airbnb
 amm
 Analizzabilità
+<<<<<<< HEAD
+andamento
+=======
 analytics
+>>>>>>> develop
 Apprendibilità
 Autoformazione
 BAC
@@ -55,6 +59,7 @@ JMX
 kafka
 LaTeX
 LCPM
+Liskov
 lll
 LLM
 MacOS
@@ -73,6 +78,7 @@ OLAP
 OTDR
 Pallaro
 pdf
+perc
 pgf
 Pj
 Pmode
@@ -113,6 +119,7 @@ SpA
 ss
 stickman
 str
+superclasse
 SV
 Testabilità
 tex
