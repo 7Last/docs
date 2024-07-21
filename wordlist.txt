@@ -2,7 +2,11 @@ adaptee
 Airbnb
 amm
 Analizzabilità
+<<<<<<< HEAD
+andamento
+=======
 analytics
+>>>>>>> develop
 Apprendibilità
 Autoformazione
 BAC
@@ -55,11 +59,8 @@ JMX
 kafka
 LaTeX
 LCPM
-<<<<<<< HEAD
 Liskov
-=======
 lll
->>>>>>> develop
 LLM
 MacOS
 Malgarise
