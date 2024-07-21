@@ -8,10 +8,10 @@ Esistono diverse architetture, ciascuna con le proprie caratteristiche e vantagg
 \subsubsection{Architettura \textit{lambda}}
 L'architettura \textit{lambda} è costituita dalle seguenti quattro componenti:
 \begin{itemize}
-	\item \textbf{sorgente di dati}: responsabile dell'acquisizione dei dati grezzi da diverse sorgenti;
-	\item \textbf{\textit{batch layer}}: responsabile dell'elaborazione e persistenza di dati storici in \textit{batch} di grandi dimensioni; il suo scopo è fornire risposte complete e accurate, anche se con una latenza più elevata rispetto allo \textit{speed layer}. Tale componente è tipicamente rappresentata da \textit{framework} come Apache Hadoop o Apache Spark;
-	\item \textbf{\textit{speed (real-time) layer}}: responsabile dell'elaborazione e persistenza di dati in tempo reale. I dati vengono elaborati in modo rapido e con una latenza molto bassa, fornendo tuttavia risposte meno elaborate rispetto al \textit{batch layer}. Questa componente è tipicamente rappresentata da \textit{framework} come Apache Storm o Apache Flink;
-	\item \textbf{\textit{serving layer}}: responsabile della fornitura dei dati elaborati in modo veloce ed affidabile, indipendentemente dal \textit{layer} di elaborazione utilizzato.
+	\item \textbf{sorgente di dati}: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} dell'acquisizione dei dati grezzi da diverse sorgenti;
+	\item \textbf{\textit{batch layer}}: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} dell'elaborazione e persistenza di dati storici in \textit{batch} di grandi dimensioni; il suo scopo è fornire risposte complete e accurate, anche se con una latenza più elevata rispetto allo \textit{speed layer}. Tale componente è tipicamente rappresentata da \textit{framework} come Apache Hadoop o Apache Spark;
+	\item \textbf{\textit{speed (real-time) layer}}: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} dell'elaborazione e persistenza di dati in tempo reale. I dati vengono elaborati in modo rapido e con una latenza molto bassa, fornendo tuttavia risposte meno elaborate rispetto al \textit{batch layer}. Questa componente è tipicamente rappresentata da \textit{framework} come Apache Storm o Apache Flink;
+	\item \textbf{\textit{serving layer}}: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} della fornitura dei dati elaborati in modo veloce ed affidabile, indipendentemente dal \textit{layer} di elaborazione utilizzato.
 \end{itemize}
 
 \begin{center}
@@ -31,9 +31,9 @@ L'architettura \textit{lambda} è particolarmente adatta per applicazioni che ri
 L'architettura \textit{kappa} è stata introdotta per semplificare l'architettura \textit{lambda}, eliminando la necessità di gestire due \textit{layer} di elaborazione separati per il \textit{batch processing} e il \textit{real-time processing}.
 Essa si divide in tre componenti principali:
 \begin{itemize}
-	\item \textbf{sorgente di dati}: responsabile dell'acquisizione dei dati grezzi da diverse sorgenti;
-	\item \textbf{\textit{processing layer}}: responsabile dell'elaborazione dei dati in tempo reale, senza la necessità di separare i dati in \textit{batch} e \textit{real-time};
-	\item \textbf{\textit{serving layer}}: responsabile della fornitura dei dati elaborati in modo veloce ed affidabile.
+	\item \textbf{sorgente di dati}: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} dell'acquisizione dei dati grezzi da diverse sorgenti;
+	\item \textbf{\textit{processing layer}}: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} dell'elaborazione dei dati in tempo reale, senza la necessità di separare i dati in \textit{batch} e \textit{real-time};
+	\item \textbf{\textit{serving layer}}: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#responsabile}{responsabile\textsubscript{G}} della fornitura dei dati elaborati in modo veloce ed affidabile.
 \end{itemize}
 
 \begin{center}
@@ -49,7 +49,7 @@ Tuttavia, può non essere adatta per applicazioni che richiedono un'analisi stor
 L'architettura \textit{kappa} è particolarmente adatta per gli scenari in cui sono critici i dati in tempo reale e l'analisi dei dati storici è meno importante. Inoltre, semplifica notevolmente il processo di sviluppo e manutenzione dei sistemi di elaborazione dei dati.
 
 \subsection{Architettura scelta}
-Nello scenario del capitolato proposto da \textit{SyncLab S.r.L.}, è importante l'analisi in tempo reale, in quanto i dati provenienti dai sensori IoT devono fornire informazioni sempre aggiornate ed eventualmente
+Nello scenario del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{capitolato\textsubscript{G}} proposto da \textit{SyncLab S.r.L.}, è importante l'analisi in tempo reale, in quanto i dati provenienti dai sensori IoT devono fornire informazioni sempre aggiornate ed eventualmente
 sollevare allarmi in caso di situazioni critiche. Inoltre, non è richiesta l'aggregazione storica di dati, dunque i vantaggi dell'architettura \textit{lambda} non risultano utili per i nostri fini.
 Per soddisfare tali requisiti, è stata dunque scelta l'architettura \textit{kappa}.
 
@@ -57,10 +57,10 @@ Per soddisfare tali requisiti, è stata dunque scelta l'architettura \textit{kap
 All'interno del sistema progettato sono dunque presenti le seguenti componenti:
 \begin{itemize}
 	\item \textbf{sorgenti di dati}: costituite dal simulatore di sensori, il quale genera i dati grezzi che in un contesto reale sarebbero provenienti dai sensori IoT;
-	\item \textbf{\textit{streaming layer}}: gestisce il flusso di dati in tempo reale provenienti dai sensori. È composto da \textit{Redpanda} e lo \textit{Schema Registry};
+	\item \textbf{\textit{streaming layer}}: gestisce il flusso di dati in tempo reale provenienti dai sensori. È composto da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{\textit{Redpanda}\textsubscript{G}} e lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textit{Schema Registry}\textsubscript{G}};
 	\item \textbf{\textit{processing layer}}: elabora i dati in tempo reale per calcolare metriche e indici. È composto da \textit{Apache Flink};
-	\item \textbf{\textit{storage layer}}: memorizza i dati elaborati per l'analisi e la visualizzazione. È composto da \textit{ClickHouse};
-	\item \textbf{\textit{data visualization layer}}: fornisce un'interfaccia utente per visualizzare i dati elaborati. È composto da \textit{Grafana}.
+	\item \textbf{\textit{storage layer}}: memorizza i dati elaborati per l'analisi e la visualizzazione. È composto da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{\textit{ClickHouse}\textsubscript{G}};
+	\item \textbf{\textit{data visualization layer}}: fornisce un'interfaccia utente per visualizzare i dati elaborati. È composto da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{\textit{Grafana}\textsubscript{G}}.
 \end{itemize}
 
 \begin{center}
@@ -69,30 +69,30 @@ All'interno del sistema progettato sono dunque presenti le seguenti componenti:
 \end{center}
 
 \subsubsection{Flusso di dati}
-Per illustrare il flusso di dati all'interno del sistema, è stato realizzato il seguente diagramma, il quale mostra il percorso che i dati grezzi seguono dal simulatore fino alla visualizzazione tramite Grafana.
+Per illustrare il flusso di dati all'interno del sistema, è stato realizzato il seguente diagramma, il quale mostra il percorso che i dati grezzi seguono dal simulatore fino alla visualizzazione tramite \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}}.
 \begin{center}
 	\includegraphics[width=1\textwidth]{./specifica_tecnica/data_flow.png}
 	\captionof{figure}{Flusso di dati all'interno del sistema. I sensori di precipitazioni, isole ecologiche, livello dei fiumi e traffico sono stati omessi per chiarezza, ma il percorso di tali dati è analogo a quello dei sensori di qualità dell'aria.}
 \end{center}
 Il flusso seguito dai dati si può riassumere nei seguenti passaggi:
 \begin{enumerate}
-	\item \textbf{generazione dei dati}: ciascun simulatore emula il comportamento di un singolo sensore IoT, generando ad intervalli periodici o ad eventi (\textit{event-driven}) i dati grezzi relativi alla propria tipologia di dato.
-	\item \textbf{serializzazione e produzione dei dati}: i dati grezzi generati nel punto precedente vengono serializzati utilizzando il formato Confluent Avro e inviati nel \textit{topic} corrispondente al tipo di dato generato;
-	\item \textbf{elaborazione dei dati}: i \textit{topic} contenenti i dati grezzi di temperatura, umidità, occupazione dei parcheggi e colonnine di ricarica vengono consumati da Apache Flink.
-	      Due \textit{job} distinti si occupano di calcolare la temperatura percepita e il grado di efficienza delle colonnine di ricarica. Una volta elaborati, i dati vengono inviati rispettivamente
-	      nei \textit{topic} \texttt{heat\_index} e \texttt{charging\_station\_efficiency};
-	\item \textbf{memorizzazione dei dati}: attraverso il connettore \textit{sink} per ClickHouse, i dati pubblicati in tutti i \textit{topic} vengono memorizzati nel database;
-	\item \textbf{aggregazioni con \textit{materialized view}}: attraverso l'utilizzo di \textit{materialized view} in ClickHouse, vengono calcolate le statistiche relative ai dati memorizzati, come ad esempio la media oraria o giornaliera.
+	\item \textbf{generazione dei dati}: ciascun simulatore emula il comportamento di un singolo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} IoT, generando ad intervalli periodici o ad eventi (\textit{event-driven}) i dati grezzi relativi alla propria tipologia di dato.
+	\item \textbf{serializzazione e produzione dei dati}: i dati grezzi generati nel punto precedente vengono serializzati utilizzando il formato Confluent Avro e inviati nel \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} corrispondente al tipo di dato generato;
+	\item \textbf{elaborazione dei dati}: i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} contenenti i dati grezzi di temperatura, umidità, occupazione dei parcheggi e colonnine di ricarica vengono consumati da Apache Flink.
+	      Due \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} distinti si occupano di calcolare la temperatura percepita e il grado di efficienza delle colonnine di ricarica. Una volta elaborati, i dati vengono inviati rispettivamente
+	      nei \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} \texttt{heat\_index} e \texttt{charging\_station\_efficiency};
+	\item \textbf{memorizzazione dei dati}: attraverso il connettore \textit{sink} per \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}}, i dati pubblicati in tutti i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} vengono memorizzati nel database;
+	\item \textbf{aggregazioni con \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}}}: attraverso l'utilizzo di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} in \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}}, vengono calcolate le statistiche relative ai dati memorizzati, come ad esempio la media oraria o giornaliera.
 	      Tali aggregazioni sono più semplici rispetto a quelle effettuate da Flink, in quanto non richiedono elaborazioni complesse sui dati;
-	\item \textbf{visualizzazione dei dati}: i dati memorizzati in ClickHouse vengono visualizzati tramite Grafana, che permette di creare \textit{dashboard} personalizzate per monitorare i dati in tempo reale;
-	\item \textbf{notifiche}: Grafana esegue periodicamente delle \textit{query} per verificare se sono state superate delle soglie predeterminate. In caso affermativo, vengono inviate notifiche tramite il canale Discord dedicato, in modo tale da poter avvisare l'autorità locale.
+	\item \textbf{visualizzazione dei dati}: i dati memorizzati in \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} vengono visualizzati tramite \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}}, che permette di creare \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{\textit{dashboard}\textsubscript{G}} personalizzate per monitorare i dati in tempo reale;
+	\item \textbf{notifiche}: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}} esegue periodicamente delle \textit{query} per verificare se sono state superate delle soglie predeterminate. In caso affermativo, vengono inviate notifiche tramite il canale Discord dedicato, in modo tale da poter avvisare l'autorità locale.
 \end{enumerate}
 
 \subsection{Architettura dei simulatori}
 I simulatori vengono utilizzati per produrre dati grezzi che sostituiscono le rilevazioni effettuate dai sensori IoT in un contesto reale.
 Per tale motivo, questa parte del sistema non è ufficialmente parte del prodotto finale, ma è stata sviluppata per scopi di \textit{test}
 e dimostrativi nell'ambito del progetto didattico; ai fini di quest'ultimo, il gruppo ha deciso di dedicare alcune risorse per la progettazione.\\
-Nei paragrafi successivi verranno descritti i moduli che compongono i simulatori, le classi e metodi principali e i \textit{design pattern} utilizzati.\\
+Nei paragrafi successivi verranno descritti i moduli che compongono i simulatori, le classi e metodi principali e i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#design-pattern}{\textit{design pattern}\textsubscript{G}} utilizzati.\\
 Sono stati implementati simulatori per i seguenti tipi dato:
 \begin{itemize}
 	\item qualità dell'aria;
@@ -108,11 +108,11 @@ Sono stati implementati simulatori per i seguenti tipi dato:
 
 \subsubsection{Modulo \texttt{models}}
 Questo modulo contiene le classi che rappresentano i dati grezzi generati dai sensori (sottomodulo \texttt{raw\_data}) e la configurazione dei sensori stessi (sottomodulo \texttt{config}) letta
-dal file di configurazione \texttt{sensors.toml} e dalle variabili d'ambiente.\\
+dal file di configurazione \texttt{sensors.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#tom's-obvious-minimal-language}{toml\textsubscript{G}}} e dalle variabili d'ambiente.\\
 Ciascun tipo di dato grezzo è rappresentato da una classe che estende \texttt{RawData} (astratta).\\
 La classe \texttt{SensorConfig} riceve nel costruttore la configurazione sotto forma di dizionario, effettua \textit{parsing}, validazione,
 popola con valori di \textit{default} i campi mancanti (nel caso lo prevedano) ed inizializza i propri attributi, corrispondenti ai campi del file di configurazione.\\
-Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il metodo \\\texttt{bootstrap\_server()} che combina \textit{host} e \textit{port} per formare l'indirizzo del \textit{broker} Kafka.\\
+Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il metodo \\\texttt{bootstrap\_server()} che combina \textit{host} e \textit{port} per formare l'indirizzo del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#broker}{\textit{broker}\textsubscript{G}} Kafka.\\
 \begin{center}
 	\includegraphics[width=0.87\textwidth]{./specifica_tecnica/models.png}
 	\captionof{figure}{Diagramma delle classi del modulo \texttt{models}. Per ragioni di spazio, le implementazioni di \texttt{RawData} sono illustrate nel diagramma successivo}
@@ -124,15 +124,15 @@ Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il 
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
-			            \item \texttt{sensor\_uuid} string [protected]: identificativo univoco del sensore;
-			            \item \texttt{latitude} float [protected]: latitudine del sensore;
-			            \item \texttt{longitude} float [protected]: longitudine del sensore;
-			            \item \texttt{sensor\_name} string [protected]: nome del sensore;
+			            \item \texttt{sensor\_uuid} string [protected]: identificativo univoco del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{latitude} float [protected]: latitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{longitude} float [protected]: longitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{sensor\_name} string [protected]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{group\_name} string [protected]: nome del gruppo di sensori a cui appartiene.
 		            \end{itemize}
 		      \item \textbf{Metodi}
 		            \begin{itemize}
-			            \item \texttt{topic()} string [public,abstract]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati;
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} string [public,abstract]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati;
 			            \item \texttt{value\_subject()} string [public]: restituisce il nome del campo value del record.
 		            \end{itemize}
 	      \end{itemize}
@@ -140,8 +140,8 @@ Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il 
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
-			            \item \texttt{kafka\_host} string [private]: \textit{host} del \textit{broker} Kafka;
-			            \item \texttt{kafka\_port} string [private]: porta del \textit{broker} Kafka;
+			            \item \texttt{kafka\_host} string [private]: \textit{host} del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#broker}{\textit{broker}\textsubscript{G}} Kafka;
+			            \item \texttt{kafka\_port} string [private]: porta del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#broker}{\textit{broker}\textsubscript{G}} Kafka;
 			            \item \texttt{log\_level} string [private]: livello di \textit{logging} da utilizzare;
 			            \item \texttt{max\_block\_ms} int [private]: tempo massimo di blocco per la produzione di messaggi.
 		            \end{itemize}
@@ -149,25 +149,25 @@ Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il 
 		            \begin{itemize}
 			            \item \texttt{get\_or\_throw(key: string)} string [private,static]: restituisce il valore della variable d'ambiente associato alla chiave \texttt{key} se presente, altrimenti lancia un'eccezione;
 			            \item \texttt{get\_or\_none(key: string)} string [private,static]: restituisce il valore della variable d'ambiente associato alla chiave \texttt{key} se presente, altrimenti \texttt{None};
-			            \item \texttt{bootstrap\_server()} string [public]: restituisce l'indirizzo del \textit{broker} Kafka.
+			            \item \texttt{bootstrap\_server()} string [public]: restituisce l'indirizzo del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#broker}{\textit{broker}\textsubscript{G}} Kafka.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe SensorConfig}:
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
-			            \item \texttt{sensor\_uuid} string [private]: identificativo univoco del sensore;
+			            \item \texttt{sensor\_uuid} string [private]: identificativo univoco del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{limit} int [private]: limite massimo di misurazioni da effettuare;
 			            \item \texttt{begin\_date} datetime [private]: data e ora di inizio delle misurazioni;
-			            \item \texttt{latitude} float [private]: latitudine del sensore;
-			            \item \texttt{longitude} float [private]: longitudine del sensore;
+			            \item \texttt{latitude} float [private]: latitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{longitude} float [private]: longitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{group\_name} string [private]: nome del gruppo di sensori a cui appartiene;
-			            \item \texttt{type} SensorType [private]: tipo di sensore;
+			            \item \texttt{type} SensorType [private]: tipo di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{points\_spacing} timedelta [private]: intervallo temporale tra due misurazioni;
 			            \item \texttt{generation\_delay} timedelta [private]: ritardo tra la generazione di due misurazioni adiacenti.
 		            \end{itemize}
 	      \end{itemize}
-	\item \textbf{Enum SensorType}:
+	\item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#enumerazione}{\textbf{Enum}\textsubscript{G}}\textbf{ SensorType}:
 	      \begin{itemize}
 		      \item \textbf{Valori}
 		            \begin{itemize}
@@ -183,70 +183,70 @@ Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il 
 		            \end{itemize}
 		      \item \textbf{Metodi}
 		            \begin{itemize}
-			            \item \texttt{from\_str(value: string)} SensorType [public,static]: restituisce il valore dell'enum corrispondente alla stringa \texttt{value}.
+			            \item \texttt{from\_str(value: string)} SensorType [public,static]: restituisce il valore dell'\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#enumerazione}{enum\textsubscript{G}} corrispondente alla stringa \texttt{value}.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe AirQualityRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ChargingStationRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe HumidityRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ParkingRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe PrecipitationRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe RecyclingPointRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe RiverLevelRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe TemperatureRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe TrafficRawData}
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{topic()} str [public]: restituisce il nome del \textit{topic} in cui i dati grezzi vanno pubblicati.
+			            \item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\texttt{topic}\textsubscript{G}}\texttt{()} str [public]: restituisce il nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} in cui i dati grezzi vanno pubblicati.
 		            \end{itemize}
 	      \end{itemize}
 \end{itemize}
@@ -254,7 +254,7 @@ Allo stesso modo, \texttt{EnvConfig} legge le variabili d'ambiente ed espone il 
 \subsubsection{Modulo \texttt{simulators}}
 Il modulo \texttt{simulators} contiene la logica per la generazione dei dati grezzi e l'orchestrazione dei simulatori.\\
 L'\textit{entrypoint} di tutto il sistema è la classe \texttt{SimulatorExecutor}, che riceve la configurazione dei sensori
-ed utilizzando il \texttt{SimulatorFactory} crea un \texttt{SimulatorThread} per ogni sensore.
+ed utilizzando il \texttt{SimulatorFactory} crea un \texttt{SimulatorThread} per ogni \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.
 Quest'ultimo, a partire da una \texttt{SimulatorStrategy} ed una \texttt{ProducerStrategy}, genera i dati grezzi e li invia al \texttt{Producer}.\\
 La classe \texttt{SimulatorThread} utilizza un \texttt{threading.Event}, che contiene un \textit{flag} booleano.
 Quest'ultimo può essere impostato a \texttt{True} per far partire il \textit{thread}; il metodo \texttt{wait()} permette di mettere in attesa il \textit{thread} fino a quando il \textit{flag} è
@@ -267,13 +267,13 @@ impostato a \texttt{True}, per un periodo di tempo massimo espresso dal parametr
 
 \subsubsubsection{\textit{Design Pattern}}
 \subsubsubsubsection{\textit{Strategy}}
-All'interno del modulo \texttt{simulators} è stato utilizzato il \textit{design pattern} \textit{Strategy} per permettere la generazione di dati grezzi di diversi tipi.
+All'interno del modulo \texttt{simulators} è stato utilizzato il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#design-pattern}{\textit{design pattern}\textsubscript{G}} \textit{Strategy} per permettere la generazione di dati grezzi di diversi tipi.
 Ciascuna tipologia simulatore implementa l'interfaccia \texttt{SimulatorStrategy} che definisce il metodo \texttt{simulate()}. In questo modo, la classe \texttt{SimulatorThread}
 può eseguire il simulatore senza conoscere il tipo di dato generato, rendendo inoltre semplice l'aggiunta di nuovi tipi di dati grezzi senza dover modificare il codice esistente.
 
 \subsubsubsubsection{\textit{Factory}}
-La classe \texttt{SimulatorFactory} implementa il \textit{design pattern} \textit{Factory}, fornendo un metodo che si occupa della creazione dei simulatori
-a partire da un valore dell'enum \texttt{SensorType}.
+La classe \texttt{SimulatorFactory} implementa il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#design-pattern}{\textit{design pattern}\textsubscript{G}} \textit{Factory}, fornendo un metodo che si occupa della creazione dei simulatori
+a partire da un valore dell'\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#enumerazione}{enum\textsubscript{G}} \texttt{SensorType}.
 
 
 \subsubsubsection{Classi, interfacce metodi e attributi}
@@ -303,13 +303,13 @@ a partire da un valore dell'enum \texttt{SensorType}.
 		      \item \textbf{Attributi}:
 		            \begin{itemize}
 			            \item \texttt{generation\_delay} timedelta [protected]: ritardo tra la generazione di due misurazioni adiacenti.
-			            \item \texttt{group\_name} str [protected]: nome del gruppo di sensori a cui appartiene il sensore;
-			            \item \texttt{latitude} float [protected]: latitudine del sensore;
+			            \item \texttt{group\_name} str [protected]: nome del gruppo di sensori a cui appartiene il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{latitude} float [protected]: latitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{limit} int [protected]: limite massimo di misurazioni da produrre;
-			            \item \texttt{longitude} float [protected]: longitudine del sensore;
+			            \item \texttt{longitude} float [protected]: longitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{points\_spacing} timedelta [protected]: intervallo temporale tra due misurazioni;
-			            \item \texttt{sensor\_name} str [protected]: nome del sensore per cui il simulatore genera dati;
-			            \item \texttt{sensor\_uuid} str [protected]: identificativo univoco del sensore per cui il simulatore genera dati;
+			            \item \texttt{sensor\_name} str [protected]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per cui il simulatore genera dati;
+			            \item \texttt{sensor\_uuid} str [protected]: identificativo univoco del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} per cui il simulatore genera dati;
 			            \item \texttt{timestamp} datetime [protected]: data e ora dell'ultima misurazione;
 		            \end{itemize}
 		      \item \textbf{Metodi}:
@@ -449,11 +449,11 @@ a partire da un valore dell'enum \texttt{SensorType}.
 Il modulo \texttt{producers} contiene le classi che si occupano della produzione dei dati grezzi.
 \subsubsubsection{Design Pattern}
 \subsubsubsubsection{\textit{Strategy}}
-Analogamente a quanto effettuato nel modulo \texttt{simulators}, anche in questo caso è stato utilizzato il \textit{design pattern} \textit{Strategy} per permettere la produzione di dati grezzi di diversi tipi.
+Analogamente a quanto effettuato nel modulo \texttt{simulators}, anche in questo caso è stato utilizzato il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#design-pattern}{\textit{design pattern}\textsubscript{G}} \textit{Strategy} per permettere la produzione di dati grezzi di diversi tipi.
 Sono stati implementati due produttori: \texttt{KafkaProducerAdapter} e \texttt{StdOutProducer}, rispettivamente per la produzione di dati su Kafka e su \textit{standard output}.
 
 \subsubsubsubsection{\textit{Object Adapter}}
-Al fine di adattare la classe \texttt{KafkaProducer}, contenuta nella libreria \texttt{kafka}, abbiamo utilizzato il \textit{design pattern} \textit{Adapter}, nella sua variante
+Al fine di adattare la classe \texttt{KafkaProducer}, contenuta nella libreria \texttt{kafka}, abbiamo utilizzato il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#design-pattern}{\textit{design pattern}\textsubscript{G}} \textit{Adapter}, nella sua variante
 \textit{Object Adapter}. Esso consente di rendere compatibile con l'interfaccia \texttt{ProducerStrategy} la classe \texttt{KafkaProducer}, la quale potrebbe subire
 cambiamenti da noi non controllabili. In tale eventualità, il \textit{pattern} \textit{Adapter} consente di poter continuare ad utilizzare tale classe senza dover modificare altre parti del sistema.
 
@@ -483,7 +483,7 @@ cambiamenti da noi non controllabili. In tale eventualità, il \textit{pattern} 
 		            \end{itemize}
 		      \item \textbf{Note}:
 		            \begin{itemize}
-			            \item la classe \texttt{KafkaProducerAdapter} si appoggia alla libreria \texttt{kafka} per interagire con il \textit{broker}, realizzando
+			            \item la classe \texttt{KafkaProducerAdapter} si appoggia alla libreria \texttt{kafka} per interagire con il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#broker}{\textit{broker}\textsubscript{G}}, realizzando
 			                  il \textit{pattern} \textit{Adapter} per adattare la classe \texttt{KafkaProducer} all'interfaccia \texttt{ProducerStrategy}.
 		            \end{itemize}
 	      \end{itemize}
@@ -501,24 +501,24 @@ cambiamenti da noi non controllabili. In tale eventualità, il \textit{pattern} 
 \end{itemize}
 
 \subsubsection{Modulo \texttt{serializers}}
-Il modulo \texttt{serializers} contiene le classi che si occupano della serializzazione dei dati grezzi. Questi vengono serializzati in due formati: JSON e Confluent Avro.
-La serializzazione in JSON viene principalmente utilizzata per il \textit{debugging} e la visualizzazione dei dati grezzi su \textit{standard output}, mentre la serializzazione in Avro
+Il modulo \texttt{serializers} contiene le classi che si occupano della serializzazione dei dati grezzi. Questi vengono serializzati in due formati: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{JSON\textsubscript{G}} e Confluent Avro.
+La serializzazione in \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{JSON\textsubscript{G}} viene principalmente utilizzata per il \textit{debugging} e la visualizzazione dei dati grezzi su \textit{standard output}, mentre la serializzazione in Avro
 per l'effettiva produzione dei dati su Kafka.
 
 \subsubsubsection{\textit{Design Pattern}}
 \subsubsubsubsection{\textit{Strategy}}
-Abbiamo deciso di utilizzare il \textit{design pattern} \textit{Strategy} per serializzare le istanze di \texttt{RawData} in \textit{byte} utilizzando diverse codifiche, senza dover modificare il codice che le utilizza;
+Abbiamo deciso di utilizzare il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#design-pattern}{\textit{design pattern}\textsubscript{G}} \textit{Strategy} per serializzare le istanze di \texttt{RawData} in \textit{byte} utilizzando diverse codifiche, senza dover modificare il codice che le utilizza;
 per tale motivo sono state implementate le classi \\\texttt{JsonSerializationStrategy} e \texttt{AvroSerializationStrategy}.
-\texttt{DictSerializable} è un'interfaccia che definisce il metodo \texttt{to\_dict()}, il quale restituisce un dizionario Python.
+\texttt{DictSerializable} è un'interfaccia che definisce il metodo \texttt{to\_dict()}, il quale restituisce un dizionario \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#python}{Python\textsubscript{G}}.
 L'interfaccia \texttt{SerializationStrategy} definisce il metodo \texttt{serialize(data: DictSerializable)}, che prende in input un \texttt{DictSerializable} restituisce i \textit{byte} corrispondenti.
-\\\texttt{AvroSerializationStrategy} si appoggia sulla libreria \texttt{confluent\_avro} per interagire con lo \textit{schema registry} e costruire un oggetto di tipo
+\\\texttt{AvroSerializationStrategy} si appoggia sulla libreria \texttt{confluent\_avro} per interagire con lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textit{schema registry}\textsubscript{G}} e costruire un oggetto di tipo
 \texttt{AvroValueSerde}, necessario per la serializzazione a partire da uno schema Avro e un dizionario.
 
 \subsubsubsubsection{\textit{Object Adapter}}
-Entrambe le classi \texttt{JsonSerializationStrategy} e \texttt{AvroSerializationStrategy} necessitano di convertire un oggetto di tipo \texttt{RawData} in un dizionario Python
-prima della serializzazione vera e propria. Nel primo caso poi la conversione in \textit{byte} è direttamente effettuata dal metodo \texttt{dumps()} della libreria \texttt{json}. Nel
+Entrambe le classi \texttt{JsonSerializationStrategy} e \texttt{AvroSerializationStrategy} necessitano di convertire un oggetto di tipo \texttt{RawData} in un dizionario \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#python}{Python\textsubscript{G}}
+prima della serializzazione vera e propria. Nel primo caso poi la conversione in \textit{byte} è direttamente effettuata dal metodo \texttt{dumps()} della libreria \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{\texttt{json}\textsubscript{G}}. Nel
 secondo caso invece, il dizionario costituisce l'input per il metodo \texttt{serialize()} di \texttt{AvroValueSerde}.\\
-Per tale motivo, abbiamo deciso di utilizzare il \textit{design pattern} \textit{Adapter} nella sua variante \textit{Object Adapter}, al fine di rendere compatibile la classe \texttt{RawData}
+Per tale motivo, abbiamo deciso di utilizzare il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#design-pattern}{\textit{design pattern}\textsubscript{G}} \textit{Adapter} nella sua variante \textit{Object Adapter}, al fine di rendere compatibile la classe \texttt{RawData}
 con l'interfaccia \\\texttt{DictSerializable}.
 
 \begin{center}
@@ -539,7 +539,7 @@ con l'interfaccia \\\texttt{DictSerializable}.
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{to\_dict()} dict [public]: metodo che restituisce un dizionario Python.
+			            \item \texttt{to\_dict()} dict [public]: metodo che restituisce un dizionario \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#python}{Python\textsubscript{G}}.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe AvroSerializationStrategy}
@@ -547,7 +547,7 @@ con l'interfaccia \\\texttt{DictSerializable}.
 		      \item \textbf{Attributi}:
 		            \begin{itemize}
 			            \item \texttt{schemas\_path} str [private]: percorso della cartella contenente gli schemi Avro;
-			            \item \texttt{registry\_client} SchemaRegistry [private]: client per interagire con lo schema registry, contenuto nella libreria \texttt{confluent\_avro};
+			            \item \texttt{registry\_client} SchemaRegistry [private]: client per interagire con lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{schema registry\textsubscript{G}}, contenuto nella libreria \texttt{confluent\_avro};
 			            \item \texttt{serde\_by\_subject} Dict[str, (AvroValueSerde, str)] [private]: \textit{cache} per memorizzare gli oggetti \texttt{AvroValueSerde} e gli schemi Avro associati.
 		            \end{itemize}
 		      \item \textbf{Metodi}:
@@ -559,7 +559,7 @@ con l'interfaccia \\\texttt{DictSerializable}.
 	      \begin{itemize}
 		      \item \textbf{Metodi}:
 		            \begin{itemize}
-			            \item \texttt{to\_dict()} dict [public]: restituisce un dizionario Python a partire da un'istanza di \texttt{RawData};
+			            \item \texttt{to\_dict()} dict [public]: restituisce un dizionario \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#python}{Python\textsubscript{G}} a partire da un'istanza di \texttt{RawData};
 			            \item \texttt{beautify\_key(key: str)} str [private]: formatta una chiave del dizionario;
 			            \item \texttt{beautify\_value(value: object)} str [private]: formatta un valore del dizionario.
 		            \end{itemize}
@@ -576,29 +576,29 @@ con l'interfaccia \\\texttt{DictSerializable}.
 
 \subsection{Redpanda}
 \subsubsection{\textit{Topic}}
-Nel contesto di Redpanda, un \textit{topic} è una categoria o canale a cui vengono inviati i dati. Essi sono utili per
-organizzare logicamente i diversi tipi di messaggi o eventi. Nel nostro sistema, i dati grezzi provenienti dai simulatori vengono pubblicati in un \textit{topic}
+Nel contesto di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}}, un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} è una categoria o canale a cui vengono inviati i dati. Essi sono utili per
+organizzare logicamente i diversi tipi di messaggi o eventi. Nel nostro sistema, i dati grezzi provenienti dai simulatori vengono pubblicati in un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}}
 differente per ciascun tipo di dato; ciò consente di elaborare in modo indipendente le varie tipologie di messaggi.
 
 \subsubsection{Partizioni e chiavi}
-I \textit{topic} possono essere suddivisi in più partizioni, le quali consentono la distribuzione del carico di lavoro tra più \textit{broker} Redpanda,
-allo scopo di migliorare le prestazioni e la scalabilità. Ciascuna partizione di un \textit{topic} viene memorizzata in diversi nodi del \textit{cluster}; la numerosità
+I \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} possono essere suddivisi in più partizioni, le quali consentono la distribuzione del carico di lavoro tra più \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#broker}{\textit{broker}\textsubscript{G}} \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}},
+allo scopo di migliorare le prestazioni e la scalabilità. Ciascuna partizione di un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} viene memorizzata in diversi nodi del \textit{cluster}; la numerosità
 delle partizioni può essere configurata a seconda delle necessità.\\
-Redpanda garantisce l'ordine degli eventi all'interno della stessa partizione, tuttavia di \textit{default} non è garantito l'ordine tra partizioni diverse.
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} garantisce l'ordine degli eventi all'interno della stessa partizione, tuttavia di \textit{default} non è garantito l'ordine tra partizioni diverse.
 Il partizionamento consente di elaborare i dati in parallelo, infatti i consumatori possono leggere da più partizioni contemporaneamente, distribuendo il carico computazionale e migliorando il \textit{throughput}.
 Ogni messaggio pubblicato è detto \textit{record} e ha una chiave, che può essere utilizzata per determinare la partizione a cui il messaggio verrà assegnato, ed un valore,
 che costituisce il vero e proprio \textit{payload}; eventi con la stessa chiave vengono inviati alla stessa partizione.\\
-Nel caso del nostro progetto, abbiamo deciso di utilizzare come chiave il \texttt{sensor\_uuid}, un identificativo univoco globale per ciascun sensore, affinché i dati
+Nel caso del nostro progetto, abbiamo deciso di utilizzare come chiave il \texttt{sensor\_uuid}, un identificativo univoco globale per ciascun \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, affinché i dati
 siano inviati alla stessa partizione e conseguentemente elaborati nell'ordine in cui sono stati prodotti.
 
 \subsubsection{Redpanda \textit{schema registry}}
-Lo \textit{schema registry} offre un archivio centralizzato per gestire e convalidare gli schemi associati ai messaggi Kafka, facilitandone la serializzazione e deserializzazione.
-I produttori e consumatori dei \textit{topic} Kafka possono utilizzare questi schemi per garantire coerenza e compatibilità dei dati durante la loro evoluzione nel tempo.
+Lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textit{schema registry}\textsubscript{G}} offre un archivio centralizzato per gestire e convalidare gli schemi associati ai messaggi Kafka, facilitandone la serializzazione e deserializzazione.
+I produttori e consumatori dei \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} Kafka possono utilizzare questi schemi per garantire coerenza e compatibilità dei dati durante la loro evoluzione nel tempo.
 
 \subsubsubsection{\textit{Compatibility mode}}
 Le modalità di compatibilità di uno schema sono delle regole che determinano come i cambiamenti ad uno schema influiscono sulla capacità dei dati serializzati con
 versioni precedenti di essere letti da versioni successive e viceversa; sono essenziali per garantire che i dati rimangano compatibili durante l'evoluzione degli schemi.
-Di seguito sono descritte le principali modalità di compatibilità supportate dallo \textit{schema registry} di Redpanda:
+Di seguito sono descritte le principali modalità di compatibilità supportate dallo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textit{schema registry}\textsubscript{G}} di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}}:
 
 \begin{itemize}
 	\item \texttt{BACKWARD}: i consumatori che utilizzano lo schema più recente possono leggere i dati prodotti con lo schema precedente;
@@ -616,25 +616,25 @@ della modalità \texttt{FORWARD}, ovvero quella che abbiamo scelto di utilizzare
 \subsubsubsection{Serializzazione dei dati}
 \subsubsubsubsection{Chiavi}
 Come menzionato in precedenza, si utilizza il \texttt{sensor\_uuid} per popolare il campo chiave dei \textit{record}; tale identificativo viene, prima di essere pubblicato
-nel \textit{topic}, convertito a stringa e codificato in UTF-8.
+nel \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}}, convertito a stringa e codificato in UTF-8.
 
 \subsubsubsubsection{Valori}
-% TODO: parlare di Confluent Avro, del formato di serializzazione delle chiavi e partitioning strategy e di topic name strategy <topic>-value
-Il formato Avro consente di definire attraverso JSON uno schema che descriva la struttura dei dati, permettendo di serializzare e deserializzarli in modo affidabile; la serializzazione tramite
+% TODO: parlare di Confluent Avro, del formato di serializzazione delle chiavi e partitioning strategy e di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}} name strategy <\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{topic\textsubscript{G}}>-value
+Il formato Avro consente di definire attraverso \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{JSON\textsubscript{G}} uno schema che descriva la struttura dei dati, permettendo di serializzare e deserializzarli in modo affidabile; la serializzazione tramite
 Avro produce dati binari compatti, che consentono di ridurre l'\textit{overhead} di rete e migliore le prestazioni di trasmissione dei dati.
-Solamente i dati che rispettano lo schema definito possono essere inviati nel \textit{topic}, garantendo la coerenza dei dati e facilitando la gestione delle evoluzioni dello schema.\\
+Solamente i dati che rispettano lo schema definito possono essere inviati nel \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}}, garantendo la coerenza dei dati e facilitando la gestione delle evoluzioni dello schema.\\
 Per la serializzazione dei valori abbiamo stabilito di utilizzare il formato Confluent Avro; la principale differenza rispetto al formato Avro standard è l'inclusione di un \textit{magic byte}
 e dell'ID dello schema all'inizio del messaggio, seguiti dal \textit{payload} vero e proprio. Ciò consente di evitare di includere lo schema all'interno di ogni messaggio, riducendo la dimensione dei dati trasmessi.\\
-Il produttore consulta lo \textit{schema registry} per ottenere l'ID corretto da utilizzare quando invia un messaggio, mentre il consumatore lo utilizza per ottenere lo schema con
+Il produttore consulta lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textit{schema registry}\textsubscript{G}} per ottenere l'ID corretto da utilizzare quando invia un messaggio, mentre il consumatore lo utilizza per ottenere lo schema con
 cui deserializzare il messaggio.
 
 \subsubsubsection{Formato dei messaggi}
 \subsubsubsubsection{Dati grezzi prodotti dai simulatori}
-Per ciascun \textit{topic} è stato definito uno schema Avro che descrive la struttura dei dati grezzi generati dai simulatori. Rispetto all'utilizzo di uno schema comune per tutti i \textit{topic},
+Per ciascun \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} è stato definito uno schema Avro che descrive la struttura dei dati grezzi generati dai simulatori. Rispetto all'utilizzo di uno schema comune per tutti i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}},
 questa scelta consente di:
 \begin{itemize}
-	\item rendere \textbf{indipendenti} i vari tipi di messaggi. Se una tipologia sensore dovesse cambiare il formato dei dati, sarebbe sufficiente modificare lo schema relativo al \textit{topic} corrispondente;
-	\item non dover stabilire a priori il \textbf{numero di misurazioni} che un sensore può effettuare. Se si utilizzasse uno schema comune, sarebbe necessario prevedere un numero massimo di campi, anche se non tutti i sensori potrebbero utilizzarli;
+	\item rendere \textbf{indipendenti} i vari tipi di messaggi. Se una tipologia \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} dovesse cambiare il formato dei dati, sarebbe sufficiente modificare lo schema relativo al \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} corrispondente;
+	\item non dover stabilire a priori il \textbf{numero di misurazioni} che un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} può effettuare. Se si utilizzasse uno schema comune, sarebbe necessario prevedere un numero massimo di campi, anche se non tutti i sensori potrebbero utilizzarli;
 	\item far conoscere al consumatore il \textbf{tipo esatto} del dato che riceverà, senza dover utilizzare un campo di tipo \textit{union}. Le misurazioni effettuate dai sensori possono essere numeri interi, decimali, stringhe o booleani;
 \end{itemize}
 \pagebreak
@@ -642,10 +642,10 @@ I sensori inviano, oltre alle misurazioni relative alla propria tipologia, i cam
 \begin{table}[ht]
 	\begin{tabular}{lll}
 		\textbf{Campo}        & \textbf{Tipo} & \textbf{Descrizione}                                     \\
-		\texttt{sensor\_uuid} & string        & Identificativo univoco del sensore.                      \\
-		\texttt{sensor\_name} & string        & Nome del sensore.                                        \\
-		\texttt{latitude}     & double        & Latitudine del sensore.                                  \\
-		\texttt{longitude}    & double        & Longitudine del sensore.                                 \\
+		\texttt{sensor\_uuid} & string        & Identificativo univoco del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                      \\
+		\texttt{sensor\_name} & string        & Nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                        \\
+		\texttt{latitude}     & double        & Latitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                  \\
+		\texttt{longitude}    & double        & Longitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.                                 \\
 		\texttt{timestamp}    & string        & Data e ora della misurazione in formato ISO 8601.        \\
 		\texttt{group\_name}  & string        & Nome (opzionale) del gruppo di sensori a cui appartiene. \\
 	\end{tabular}
@@ -669,9 +669,9 @@ Un esempio di schema Avro per il tipo di dato \texttt{Temperature} è il seguent
 \end{lstlisting}
 
 \subsubsubsubsection{Dati elaborati da Apache Flink}
-Per quanto riguarda invece i dati aggregati da Apache Flink, è stato definito uno schema Avro per ciascuno di essi, il quale viene pubblicato in un \textit{topic} dedicato.
+Per quanto riguarda invece i dati aggregati da Apache Flink, è stato definito uno schema Avro per ciascuno di essi, il quale viene pubblicato in un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} dedicato.
 Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
-\begin{lstlisting}[language=json, caption=Schema Avro per il tipo di dato \texttt{HeatIndex},captionpos=b]
+\begin{lstlisting}[language=\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}, caption=Schema Avro per il tipo di dato \texttt{HeatIndex},captionpos=b]
 {
   "type": "record",
   "name": "Heat_Index",
@@ -690,7 +690,7 @@ Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
 
 \end{lstlisting}
 
-\begin{lstlisting}[language=json, caption=Schema Avro per il tipo di dato \texttt{ChargingEfficiency},captionpos=b]
+\begin{lstlisting}[language=\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}, caption=Schema Avro per il tipo di dato \texttt{ChargingEfficiency},captionpos=b]
 {
   "type": "record",
   "name": "Charging_Efficiency",
@@ -708,39 +708,39 @@ Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
 
 \subsubsubsection{Altre configurazioni}
 \begin{itemize}
-	\item \textbf{Numero di partizioni}: il numero di partizioni di un \textit{topic} è stato configurato con \textit{default} a 3;
-	\item \textit{Subject name strategy}, ovvero la strategia per la generazione del nome dello schema all'interno dello \textit{schema registry}, è stata impostata a \texttt{TopicNameStrategy},
-	      che prevede che il nome dello schema sia composto dal nome del \textit{topic} seguito da \texttt{-value} per i valori e \texttt{-key} per le chiavi.
+	\item \textbf{Numero di partizioni}: il numero di partizioni di un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} è stato configurato con \textit{default} a 3;
+	\item \textit{Subject name strategy}, ovvero la strategia per la generazione del nome dello schema all'interno dello \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textit{schema registry}\textsubscript{G}}, è stata impostata a \texttt{TopicNameStrategy},
+	      che prevede che il nome dello schema sia composto dal nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} seguito da \texttt{-value} per i valori e \texttt{-key} per le chiavi.
 \end{itemize}
 
 \subsubsection{Inizializzazione e configurazione}
-Apache Flink necessita che i \textit{topic} da cui consuma, ovvero temperatura, umidità, colonnine di ricarica e parcheggi, e quelli in cui pubblica, ovvero \texttt{heat\_index} e \\\texttt{charging\_efficiency},
-siano creati precedentemente all'esecuzione del \textit{job}, con i rispettivi schemi. A tale scopo, è stata realizzata un'immagine Docker basata su \href{https://hub.docker.com/_/alpine}{\underline{Alpine Linux}} [Ultima consultazione 2024-07-18],
+Apache Flink necessita che i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} da cui consuma, ovvero temperatura, umidità, colonnine di ricarica e parcheggi, e quelli in cui pubblica, ovvero \texttt{heat\_index} e \\\texttt{charging\_efficiency},
+siano creati precedentemente all'esecuzione del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}}, con i rispettivi schemi. A tale scopo, è stata realizzata un'immagine \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#docker}{Docker\textsubscript{G}} basata su \href{https://hub.docker.com/_/alpine}{\underline{Alpine Linux}} [Ultima consultazione 2024-07-18],
 al cui interno viene scaricato il binario \href{https://docs.redpanda.com/current/get-started/intro-to-rpk/}{\underline{rpk}} [Ultima consultazione 2024-07-18], strumento
-messo a disposizione da Redpanda per interagire e configurare un \textit{cluster} Redpanda, anche remoto. Al suo interno inoltre è presente uno \textit{script} Bash che
-dato il nome di un \textit{topic} lo crea se non esiste e ne registra lo schema all'interno dello \textit{schema registry}.
+messo a disposizione da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} per interagire e configurare un \textit{cluster} \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}}, anche remoto. Al suo interno inoltre è presente uno \textit{script} Bash che
+dato il nome di un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} lo crea se non esiste e ne registra lo schema all'interno dello \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textit{schema registry}\textsubscript{G}}.
 
 \subsubsection{Redpanda Connect}\label{redpanda_connect}
-Redpanda Connect è una piattaforma integrata nel sistema Redpanda, progettata per facilitare l'integrazione e il trasferimento dei dati tra Redpanda e altre fonti o destinazioni.
-Esso consente di gestire dei connettori, componenti \textit{software} che si occupano automatizzare lo spostamento dei dati da e verso Redpanda. Tali connettori si dividono in due categorie:
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} Connect è una piattaforma integrata nel sistema \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}}, progettata per facilitare l'integrazione e il trasferimento dei dati tra \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} e altre fonti o destinazioni.
+Esso consente di gestire dei connettori, componenti \textit{software} che si occupano automatizzare lo spostamento dei dati da e verso \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}}. Tali connettori si dividono in due categorie:
 \begin{itemize}
-	\item \textbf{\textit{source connector}}: si occupano di trasferire i dati da una sorgente esterna a Redpanda;
-	\item \textbf{\textit{sink connector}}: si occupano di trasferire i dati da Redpanda a una destinazione esterna.
+	\item \textbf{\textit{source connector}}: si occupano di trasferire i dati da una sorgente esterna a \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}};
+	\item \textbf{\textit{sink connector}}: si occupano di trasferire i dati da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} a una destinazione esterna.
 \end{itemize}
 
-\subsubsubsection{\textit{Sink connector} per ClickHouse}
-All'interno del progetto abbiamo utilizzato Redpanda Connect per persistere su ClickHouse i dati provenienti dai sensori pubblicati nei differenti \textit{topic}. Per
+\subsubsubsection{\textit{Sink connector} per \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}}}
+All'interno del progetto abbiamo utilizzato \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} Connect per persistere su \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} i dati provenienti dai sensori pubblicati nei differenti \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}}. Per
 poter effettuare questa operazione è stato necessario utilizzare un \textit{sink connector}, che si occupasse di deserializzare i messaggi in formato Confluent Avro, effettuare
 il \textit{parsing} dei campi di tipo \texttt{DateTime} (pubblicati come stringhe in formato \href{https://www.iso.org/iso-8601-date-and-time-format.html}{\underline{ISO 8601}})
-ed infine salvare i dati in ClickHouse.\\
+ed infine salvare i dati in \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}}.\\
 La documentazione relativa è consultabile al seguente \href{https://clickhouse.com/docs/en/integrations/kafka/clickhouse-kafka-connect-sink}{\underline{url}}
 [Ultima consultazione 2024-07-10].\\
-La configurazione di tale connettore è disponibile all'interno del \textit{repository} del progetto al percorso \texttt{redpanda/connectors/configs/clickhouse.json}.
+La configurazione di tale connettore è disponibile all'interno del \textit{repository} del progetto al percorso \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{\texttt{redpanda}\textsubscript{G}}\texttt{/connectors/configs/\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{clickhouse\textsubscript{G}}.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}}.
 Al fine di effettuare il \textit{parsing} delle date è stato necessario definire all'interno di tale file un \textit{transformer}, il quale si occupa di leggere il campo \texttt{timestamp}
-e convertirlo in \texttt{DateTime}, tipo riconosciuto da ClickHouse.\\
+e convertirlo in \texttt{DateTime}, tipo riconosciuto da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}}.\\
 La versione utilizzata è la 1.1.1, scaricabile dal seguente \href{https://github.com/ClickHouse/clickhouse-kafka-connect/releases}{\underline{url}} [Ultima consultazione 2024-07-10].\\
 La configurazione del \textit{transformer} è la seguente:
-\mySkip{\begin{lstlisting}[language=json, caption=Configurazione del \textit{transformer} all'interno del file \texttt{clickhouse.json},captionpos=b]
+\mySkip{\begin{lstlisting}[language=\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}, caption=Configurazione del \textit{transformer} all'interno del file \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{\texttt{clickhouse}\textsubscript{G}}\texttt{.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}},captionpos=b]
 {
     //...
     "transforms": "TimestampConverter",
@@ -753,8 +753,8 @@ La configurazione del \textit{transformer} è la seguente:
 \end{lstlisting}}
 La creazione del connettore viene effettuata eseguendo il seguente comando nella radice del progetto:
 \begin{verbatim}
-curl "localhost:8083/connectors" -H 'Content-Type: application/json' \
-    -d @./redpanda/connectors/configs/clickhouse.json
+curl "localhost:8083/connectors" -H 'Content-Type: application/\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}' \
+    -d @./\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{redpanda\textsubscript{G}}/connectors/configs/\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{clickhouse\textsubscript{G}}.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}
 \end{verbatim}
 
 \subsubsubsection{Avro converter}
@@ -762,40 +762,40 @@ curl "localhost:8083/connectors" -H 'Content-Type: application/json' \
 \href{https://www.confluent.io/hub/confluentinc/kafka-connect-avro-converter}{\underline{url}} [Ultima consultazione 2024-07-10],
 il quale consente di effettuare la deserializzazione dei messaggi in formato Confluent Avro.\\
 Il \textit{connector sink} è stato configurato per utilizzarlo come segue:
-\begin{lstlisting}[language=json, caption=Utilizzo del \textit{plugin} \texttt{avro-converter} all'interno del file \texttt{clickhouse.json},captionpos=b]
+\begin{lstlisting}[language=\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}, caption=Utilizzo del \textit{plugin} \texttt{avro-converter} all'interno del file \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{\texttt{clickhouse}\textsubscript{G}}\texttt{.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}},captionpos=b]
 {
     //...
     "value.converter": "io.confluent.connect.avro.AvroConverter",
     "value.converter.schemas.enable": "true",
-    "value.converter.schema.registry.url": "http://redpanda:8081",
+    "value.converter.schema.registry.url": "http://\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{redpanda\textsubscript{G}}:8081",
     //...
 }
 \end{lstlisting}
 
 \subsubsection{Redpanda Console}
-Redpanda Console è un'applicazione web che consente di gestire e effettuare \textit{debug} di un'istanza Redpanda. Essa ha diverse funzionalità, tra cui:
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} Console è un'applicazione web che consente di gestire e effettuare \textit{debug} di un'istanza \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}}. Essa ha diverse funzionalità, tra cui:
 %
 \begin{itemize}
-	\item \textbf{visualizzazione dei messaggi}: consente di esplorare i messaggi dei \textit{topic} attraverso \textit{query} ad-hoc e filtri dinamici, scritti con semplici funzioni JavaScript;
+	\item \textbf{visualizzazione dei messaggi}: consente di esplorare i messaggi dei \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} attraverso \textit{query} ad-hoc e filtri dinamici, scritti con semplici funzioni JavaScript;
 	\item \textbf{gruppi di consumatori}: permette di visualizzare tutti i gruppi di consumatori attivi, insieme ai relativi offset, modificarli o eliminarli;
-	\item \textbf{panoramica dei \textit{topic}}: permette di visualizzare la lista dei \textit{topic}, controllarne la configurazione, lo spazio utilizzato, la lista dei consumatori e i dettagli delle partizioni;
-	\item \textbf{panoramica del \textit{cluster}}: permette di visualizzare le ACL, i \textit{broker} disponibili, il loro spazio utilizzato, l'ID del rack e altre informazioni per ottenere una panoramica del \textit{cluster};
-	\item \textbf{\textit{schema registry}}: permette di visualizzare tutti gli schemi Avro, Protobuf o JSON all'interno del registro degli schemi;
+	\item \textbf{panoramica dei \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}}}: permette di visualizzare la lista dei \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}}, controllarne la configurazione, lo spazio utilizzato, la lista dei consumatori e i dettagli delle partizioni;
+	\item \textbf{panoramica del \textit{cluster}}: permette di visualizzare le ACL, i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#broker}{\textit{broker}\textsubscript{G}} disponibili, il loro spazio utilizzato, l'ID del rack e altre informazioni per ottenere una panoramica del \textit{cluster};
+	\item \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textbf{\textit{schema registry}}\textsubscript{G}}: permette di visualizzare tutti gli schemi Avro, Protobuf o \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{JSON\textsubscript{G}} all'interno del registro degli schemi;
 	\item \textbf{Kafka Connect}: permette di gestire i connettori da più \textit{cluster} di connessione, modificare le configurazioni, visualizzare lo stato corrente o riavviare i task.
 \end{itemize}
 
 \subsection{Apache Flink - \textit{Processing layer}}
-Nel contesto di Apache Flink, un \textit{job} è un'applicazione che definisce una serie di operazioni di trasformazione su un flusso di dati.
+Nel contesto di Apache Flink, un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} è un'applicazione che definisce una serie di operazioni di trasformazione su un flusso di dati.
 Essi possono essere eseguiti su \textit{cluster} distribuiti per sfruttare la scalabilità e la potenza di calcolo necessaria per elaborare grandi quantità di dati in tempo reale.
-Tipicamente, un \textit{job} consiste di tre componenti principali:
+Tipicamente, un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} consiste di tre componenti principali:
 \begin{itemize}
-	\item \textbf{sorgente di dati (\textit{source})}: il punto di ingresso del flusso di dati, ad esempio un \textit{topic} Kafka o un file di log;
+	\item \textbf{sorgente di dati (\textit{source})}: il punto di ingresso del flusso di dati, ad esempio un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} Kafka o un file di log;
 	\item \textbf{transformations}: operazioni come map, filter, aggregate, join, che trasformano i dati in ingresso;
-	\item \textbf{\textit{sink}}: il punto di uscita dove i dati elaborati vengono scritti, ad esempio un database o un altro \textit{topic} Kafka.
+	\item \textbf{\textit{sink}}: il punto di uscita dove i dati elaborati vengono scritti, ad esempio un database o un altro \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} Kafka.
 \end{itemize}
-Flink offre due API per la definizione dei \textit{job}: \textit{DataStream API} e \textit{Table API}
+Flink offre due API per la definizione dei \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}}: \textit{DataStream API} e \textit{Table API}
 Il primo consente di lavorare con \textit{stream} di dati, avendo un controllo più fine sul flusso di dati, mentre il secondo permette di lavorare con tabelle, offrendo una sintassi più simile a SQL.\\
-Per questo progetto abbiamo utilizzato le \textit{DataStream API} per la realizzazione di due \textit{job} indipendenti tra loro, che tuttavia condividono alcune classi di utilità.
+Per questo progetto abbiamo utilizzato le \textit{DataStream API} per la realizzazione di due \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} indipendenti tra loro, che tuttavia condividono alcune classi di utilità.
 
 \subsubsection{\textit{Watermark}}\label{watermark}
 I \textit{watermark} sono un meccanismo che Flink utilizza per tracciare l'avanzamento del tempo degli eventi
@@ -815,23 +815,23 @@ I \textit{watermark} hanno diversi scopi fondamentali in Apache Flink:
 	\item aiutano Flink a rilevare gli eventi in ritardo, cioè quelli che arrivano dopo un \textit{watermark}, in termini di tempo.
 	      Tracciando i \textit{watermark}, Flink può permettere all'applicazione di decidere se ignorare o elaborare tali eventi e per quanto tempo continuare ad accettare dati in ritardo.
 \end{itemize}
-All'interno dei due \textit{job} implementati abbiamo assegnato i \textit{watermark} ammettendo un ritardo massimo di 10 secondi. Il \textit{timestamp} considerato per
+All'interno dei due \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} implementati abbiamo assegnato i \textit{watermark} ammettendo un ritardo massimo di 10 secondi. Il \textit{timestamp} considerato per
 ciascun evento è quello relativo al campo \texttt{timestamp} presente nei dati grezzi prodotti dai simulatori e dunque non considera il tempo di elaborazione ma quello di produzione del dato.
 
 \subsubsubsection{\textit{Heat Index}}
-A partire dai dati rilevati dai sensori di temperatura e umidità relativa lo \textit{Heat Index} consente di stimare la percezione della temperatura da parte dell'essere umano.
+A partire dai dati rilevati dai sensori di temperatura e umidità relativa lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}} consente di stimare la percezione della temperatura da parte dell'essere umano.
 Nella configurazione di ciascun simulatore, oltre a posizione e identificativo dello stesso, è possibile specificare un \texttt{group\_name}, ovvero una stringa che identifica
-il gruppo o zona di appartenenza; si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \textit{job} calcola prima separatamente
-la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo \textit{Heat Index},
+il gruppo o zona di appartenenza; si suppone che sensori situati in posizioni geografiche vicine abbiano lo stesso \texttt{group\_name}. Il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} calcola prima separatamente
+la temperatura e l'umidità media per finestre di un'ora, aggregando i dati provenienti da sensori dello stesso gruppo. Successivamente con i valori ottenuti computa lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}},
 utilizzando la \\\underline{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3801457/}{formula empirica ideata da Blazejczyk}} [Ultima consultazione 2024-06-25].
-Nel risultato finale, oltre al valore dello \textit{Heat Index}, vengono restituiti anche i valori di temperatura e umidità medi, il centro di massa del gruppo di sensori
+Nel risultato finale, oltre al valore dello \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}, vengono restituiti anche i valori di temperatura e umidità medi, il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}} del gruppo di sensori
 (utilizzando la formula \underline{\href{https://en.wikipedia.org/wiki/Haversine_formula}{Haversine}} [Ultima consultazione 2024-06-25] per il calcolo della distanza) e la
-distanza dal centro di massa al sensore più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su Grafana per poter disegnare un cerchio,
+distanza dal \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}} al \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} più lontano. Questi ultimi due dati sono impiegati in una mappa interattiva su \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}} per poter disegnare un cerchio,
 rappresentante la zona di influenza del gruppo di sensori.
 
 \subsubsubsubsection{Modello di calcolo}
 \subsubsubsubsubsection{Heat Index}
-Lo \textit{Heat Index} viene calcolato con la seguente formula, dove $T$ è la temperatura in gradi Celsius, $R$ l'umidità relativa in percentuale:
+Lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}} viene calcolato con la seguente formula, dove $T$ è la temperatura in gradi Celsius, $R$ l'umidità relativa in percentuale:
 \[
 	HI = c_1 + c_2 T + c_3 R + c_4 TR + c_5 T^2 + c_6 R^2 + c_7 T^2 R + c_8 TR^2 + c_9 T^2 R^2
 \]
@@ -842,8 +842,8 @@ e i coefficienti $c_i$ sono:
 	c_7 & = 2.211732 \times 10^{-3} & \quad c_8 & = 7.2546 \times 10^{-4} & \quad c_9 & = -3.582 \times 10^{-6}
 \end{align*}
 \subsubsubsubsubsection{Centro di massa o centroide}
-Il calcolo del centro di massa tiene in considerazione la sfericità della Terra. Sia dato un insieme di punti $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$, dove $a_i$ rappresenta
-la latitudine del punto $i$-esimo e $b_i$ la longitudine. Per calcolare il centro di massa si procede, per ciascun punto, a convertire in radianti le coordinate:
+Il calcolo del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}} tiene in considerazione la sfericità della Terra. Sia dato un insieme di punti $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$, dove $a_i$ rappresenta
+la latitudine del punto $i$-esimo e $b_i$ la longitudine. Per calcolare il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}} si procede, per ciascun punto, a convertire in radianti le coordinate:
 \begin{align*}
 	\mySkip{lat}_i = \frac{\pi}{180} \cdot a_i, & \quad \mySkip{lon}_i = \frac{\pi}{180} \cdot b_i
 \end{align*}
@@ -864,12 +864,12 @@ Infine si calcolano $\mySkip{lat}$ (latitudine in radianti), $\mySkip{lon}$ (lon
 	\mySkip{hyp} = \sqrt{x^2 + y^2}     \\
 	\mySkip{lat} = \mySkip{atan2}(z, \mySkip{hyp})
 \end{align*}
-Una volta ottenuti $\mySkip{lat}$ e $\mySkip{lon}$, si convertono in gradi e si ottiene il centro di massa $CM = (c_a, c_b)$.
+Una volta ottenuti $\mySkip{lat}$ e $\mySkip{lon}$, si convertono in gradi e si ottiene il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}} $CM = (c_a, c_b)$.
 \begin{align*}
 	c_a = \frac{180}{\pi} \cdot \mySkip{lat}, & \quad c_b = \frac{180}{\pi} \cdot \mySkip{lon}
 \end{align*}
 \subsubsubsubsubsection{Raggio del cerchio}
-Il raggio del cerchio viene calcolato come la distanza dal centro di massa al punto più lontano. Sia $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$ l'insieme di punti, $CM = (c_a, c_b)$, il
+Il raggio del cerchio viene calcolato come la distanza dal \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}} al punto più lontano. Sia $P = \{(a_1, b_1), (a_2, b_2), \ldots, (a_n, b_n)\}$ l'insieme di punti, $CM = (c_a, c_b)$, il
 raggio $r$ è dato da:
 \[
 	r = \max_{i=1}^{n} haversine(c_a, c_b, a_i, b_i)
@@ -879,29 +879,29 @@ raggio $r$ è dato da:
 \subsubsubsubsection{Flusso di dati}
 \begin{center}
 	\includegraphics[width=1\textwidth]{./specifica_tecnica/heat_index_flow.png}
-	\captionof{figure}{Flusso di dati del \textit{job} \textit{Heat Index}}
+	\captionof{figure}{Flusso di dati del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}}
 \end{center}
-I seguenti passaggi vengono eseguiti indipentendemente ed in parallelo per i dati provenienti dai \textit{topic} di temperatura ed umidità:
+I seguenti passaggi vengono eseguiti indipentendemente ed in parallelo per i dati provenienti dai \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} di temperatura ed umidità:
 \begin{enumerate}
-	\item lettura dei dati grezzi dai \textit{topic} relativi alla temperatura e all'umidità, attraverso la classe \texttt{KafkaSource};
+	\item lettura dei dati grezzi dai \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativi alla temperatura e all'umidità, attraverso la classe \texttt{KafkaSource};
 	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{watermark}}};
 	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{\mySkip{keyBy}} fornita da Flink;
 	\item creazione di una finestra temporale di un'ora, utilizzando la funzione \texttt{window} di Flink;
 	\item calcolo della media della temperatura e dell'umidità, utilizzando la classe \\\texttt{AverageWindowFunction};
 \end{enumerate}
 Successivamente, attraverso l'utilizzo dell'operatore \texttt{join} si uniscono i due \textit{stream} di dati, calcolando
-attraverso la classe \texttt{HeatIndexJoinFunction} il valore dello \textit{Heat Index}, la latitudine e longitudine del centro di massa e il raggio del cerchio.
-Infine, i dati vengono pubblicati nel \textit{topic} dedicato allo \textit{Heat Index}.
+attraverso la classe \texttt{HeatIndexJoinFunction} il valore dello \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}, la latitudine e longitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}} e il raggio del cerchio.
+Infine, i dati vengono pubblicati nel \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} dedicato allo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}.
 
 \subsubsubsubsection{Architettura}
-Al fine di realizzare un \textit{job}, è necessario implementare una classe dotata di un metodo \texttt{main} che si occupi di inizializzare l'ambiente di esecuzione, definire
-sorgente e \textit{sink} dei dati e infine di far partire il \textit{job} vero e proprio.
-La classe che svolge tale ruolo per il \textit{job} \textit{Heat Index} è \texttt{HeatIndexJob}, che definisce come sorgente di dati
-i \textit{topic} relativi alla temperatura e all'umidità, leggendo le variabili d'ambiente relative all'indirizzo del \textit{bootstrap server} e \textit{schema registry},
-applica le trasformazioni illustrate nel paragrafo precedente ed infine pubblica i risultati nel \textit{topic} dedicato allo \textit{Heat Index}.
+Al fine di realizzare un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}}, è necessario implementare una classe dotata di un metodo \texttt{main} che si occupi di inizializzare l'ambiente di esecuzione, definire
+sorgente e \textit{sink} dei dati e infine di far partire il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} vero e proprio.
+La classe che svolge tale ruolo per il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}} è \texttt{HeatIndexJob}, che definisce come sorgente di dati
+i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativi alla temperatura e all'umidità, leggendo le variabili d'ambiente relative all'indirizzo del \textit{bootstrap server} e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{\textit{schema registry}\textsubscript{G}},
+applica le trasformazioni illustrate nel paragrafo precedente ed infine pubblica i risultati nel \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} dedicato allo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}.
 In tale classe viene definito un metodo \texttt{execute}, il quale applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}. Separare
-la logica di esecuzione del \textit{job} dalla sua definizione consente di rendere il codice più modulare e rende possibile la realizzazione di test di integrazione sull'esecuzione
-dell'intero \textit{job}, fornendo una versione \textit{mock} di \textit{source} e \textit{sink} di dati.\\
+la logica di esecuzione del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} dalla sua definizione consente di rendere il codice più modulare e rende possibile la realizzazione di test di integrazione sull'esecuzione
+dell'intero \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}}, fornendo una versione \textit{mock} di \textit{source} e \textit{sink} di dati.\\
 Come illustrato nel diagramma seguente, per ciascuna fase di elaborazione dei dati viene definita una classe che estende la funzione appropriata per il tipo di operazione che si
 vuole effettuare. Per i casi più semplici sarebbe possibile utilizzare direttamente delle classi anonime o funzioni \textit{lambda}, tuttavia definendo classi separate
 per ciascuna trasformazione consente di sottoporre ciascuna di esse a test di unità e riutilizzarle se necessario; la funzione \texttt{AverageWindowFunction} viene ad esempio
@@ -909,7 +909,7 @@ utilizzata sia per calcolare la media della temperatura che dell'umidità.
 
 \begin{center}
 	\includegraphics[width=1\textwidth]{./specifica_tecnica/heat_index_job.png}
-	\captionof{figure}{Architettura del \textit{job} \textit{Heat Index}}
+	\captionof{figure}{Architettura del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}}
 \end{center}
 
 \subsubsubsubsubsection{\textit{Object adapter}}\label{object_adapter}
@@ -917,7 +917,7 @@ Data la necessità di convertire la classe \texttt{HeatIndexResult}, prodotto de
 abbiamo implementato il \textit{pattern} \textit{object adapter}, che si occupa di effettuare tale conversione.\\
 A tale scopo, è stata definita un'interfaccia \texttt{RecordSerializable} che espone il metodo \texttt{toGenericRecord}, il quale restituisce un oggetto di tipo \texttt{GenericRecord}.\\
 \texttt{HeatIndexRecordSerializableAdapter} implementa tale interfaccia e ha un campo \\\texttt{adaptee} di tipo \texttt{HeatIndexResult}. Prima di effettuare dunque il \textit{sink}
-dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \textit{record} da pubblicare nel \textit{topic} dedicato allo \textit{Heat Index}.
+dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \textit{record} da pubblicare nel \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} dedicato allo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}.
 
 \subsubsubsubsubsection{Classi, interfacce metodi e attributi}
 \begin{itemize}
@@ -925,15 +925,15 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
-			            \item \texttt{TEMPERATURE\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo alla temperatura;
-			            \item \texttt{HUMIDITY\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo all'umidità;
-			            \item \texttt{HEAT\_INDEX\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo allo \textit{Heat Index};
+			            \item \texttt{TEMPERATURE\_TOPIC} str [private,final,static]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativo alla temperatura;
+			            \item \texttt{HUMIDITY\_TOPIC} str [private,final,static]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativo all'umidità;
+			            \item \texttt{HEAT\_INDEX\_TOPIC} str [private,final,static]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativo allo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}};
 			            \item \texttt{GROUP\_ID} str [private,final,static]: identificativo del gruppo di consumatori;
 			            \item \texttt{WINDOW\_SIZE} int [private,final,static]: dimensione della finestra temporale per cui calcolare le aggregazioni.
 		            \end{itemize}
 		      \item \textbf{Metodi}
 		            \begin{itemize}
-			            \item \texttt{main(String[] \mySkip{args})} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \textit{job} vero e proprio;
+			            \item \texttt{main(String[] \mySkip{args})} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} vero e proprio;
 
 			            \item \texttt{execute(StreamExecutionEnvironment \mySkip{env})} [public]: metodo che applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}.
 		            \end{itemize}
@@ -949,7 +949,7 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 	      \begin{itemize}
 		      \item \textbf{Metodi}
 		            \begin{itemize}
-			            \item \texttt{join(AverageResult averageTemperature, AverageResult averageHumidity)} HeatIndexResult [public]: metodo che calcola lo \textit{Heat Index}, il centro di massa e il raggio del cerchio a partire dai valori di temperatura e umidità medi e i sensori che li hanno prodotti.
+			            \item \texttt{join(AverageResult averageTemperature, AverageResult averageHumidity)} HeatIndexResult [public]: metodo che calcola lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}, il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}} e il raggio del cerchio a partire dai valori di temperatura e umidità medi e i sensori che li hanno prodotti.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe HumTempRawDataMapFunction}
@@ -991,9 +991,9 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
-			            \item \texttt{\mySkip{sensorName}} String [private]: nome del sensore;
-			            \item \texttt{latitude} double [private]: latitudine del sensore;
-			            \item \texttt{longitude} double [private]: longitudine del sensore.
+			            \item \texttt{\mySkip{sensorName}} String [private]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{latitude} double [private]: latitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{longitude} double [private]: longitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe HeatIndexResult}
@@ -1002,24 +1002,24 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 		            \begin{itemize}
 			            \item \texttt{sensors} Set \texttt{<}String\texttt{>} [private]: insieme degli identificativi dei sensori che hanno prodotto le misurazioni;
 			            \item \texttt{groupName} String [private]: nome del gruppo di sensori che ha prodotto la misurazione;
-			            \item \texttt{heatIndex} double [private]: valore dello \textit{Heat Index};
+			            \item \texttt{heatIndex} double [private]: valore dello \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}};
 			            \item \texttt{averageTemperature} double [private]: valore medio della temperatura;
 			            \item \texttt{averageHumidity} double [private]: valore medio dell'umidità;
-			            \item \texttt{centerOfMassLatitude} double [private]: latitudine del centro di massa;
-			            \item  \texttt{centerOfMassLongitude} double [private]: longitudine del centro di massa;
+			            \item \texttt{centerOfMassLatitude} double [private]: latitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}};
+			            \item  \texttt{centerOfMassLongitude} double [private]: longitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#centro-di-massa}{centro di massa\textsubscript{G}};
 			            \item  \texttt{radius} double [private]: raggio del cerchio;
-			            \item  \texttt{windowStart} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui è stato calcolato lo \textit{Heat Index}.
+			            \item  \texttt{windowStart} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui è stato calcolato lo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe astratta RawData}\label{abstract_class_raw_data}
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
-			            \item \texttt{sensorUuid} String [protected]: identificativo univoco del sensore;
-			            \item \texttt{\mySkip{sensorName}} String [protected]: nome del sensore;
+			            \item \texttt{sensorUuid} String [protected]: identificativo univoco del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{\mySkip{sensorName}} String [protected]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{groupName} String [protected]: nome del gruppo di sensori a cui appartiene;
-			            \item \texttt{latitude} double [protected]: latitudine del sensore;
-			            \item \texttt{longitude} double [protected]: longitudine del sensore;
+			            \item \texttt{latitude} double [protected]: latitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+			            \item \texttt{longitude} double [protected]: longitudine del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{timestamp} LocalDateTime [protected]: data e ora della misurazione.
 		            \end{itemize}
 	      \end{itemize}
@@ -1033,7 +1033,7 @@ dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \tex
 \end{itemize}
 
 \subsubsubsubsection{\textit{Deployment}}
-Per poter effettuare il \textit{deployment} dei due \textit{job} sviluppati è stato necessario creare un \textit{fat jar} contenente tutte le dipendenze necessarie per l'esecuzione.
+Per poter effettuare il \textit{deployment} dei due \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} sviluppati è stato necessario creare un \textit{fat jar} contenente tutte le dipendenze necessarie per l'esecuzione.
 Tale operazione è stata effettuata utilizzando il \textit{plugin Maven} \texttt{maven-assembly-plugin}, con la seguente configurazione:
 
 \begin{lstlisting}[language=XML, caption=Configurazione del \textit{plugin} \texttt{maven-assembly-plugin} per la creazione del \textit{fat jar},captionpos=b]
@@ -1057,13 +1057,13 @@ Tale operazione è stata effettuata utilizzando il \textit{plugin Maven} \texttt
     </executions>
 </plugin>
 \end{lstlisting}
-Al fine di poter caricare ed eseguire i \textit{job} all'interno di un \textit{cluster} Flink, è necessario effettuare una chiamata \texttt{POST} all'\textit{endpoint} \texttt{/jars/upload}
-esposto dal \textit{job manager} di Flink. A tale scopo, è stata realizzata un'immagine Docker chiamata \texttt{\mySkip{deployer}} con all'interno uno \textit{script}
-Python che si occupa di effettuare tale operazione. Essendo lo \textit{script} parametrico, è sufficiente ridefinire \texttt{command} all'interno del \texttt{docker-compose.yaml},
-montando la cartella contenente il \textit{fat jar} all'interno del \textit{container} e passando come argomento il percorso del file e le \textit{entry class} dei due \textit{job}.
+Al fine di poter caricare ed eseguire i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} all'interno di un \textit{cluster} Flink, è necessario effettuare una chiamata \texttt{POST} all'\textit{endpoint} \texttt{/jars/upload}
+esposto dal \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}}\textit{ manager} di Flink. A tale scopo, è stata realizzata un'immagine \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#docker}{Docker\textsubscript{G}} chiamata \texttt{\mySkip{deployer}} con all'interno uno \textit{script}
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#python}{Python\textsubscript{G}} che si occupa di effettuare tale operazione. Essendo lo \textit{script} parametrico, è sufficiente ridefinire \texttt{command} all'interno del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#docker}{\texttt{docker}\textsubscript{G}}\texttt{-compose.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#yet-another-markup-language}{yaml\textsubscript{G}}},
+montando la cartella contenente il \textit{fat jar} all'interno del \textit{container} e passando come argomento il percorso del file e le \textit{entry class} dei due \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}}.
 
 \subsubsubsection{\textit{Charging Efficiency} (efficienza delle colonnine elettriche)}
-A partire dai dati rilevati dai sensori di occupazione dei parcheggi e delle colonnine elettriche, questo \textit{job} calcola giornalmente per ciascun sensore i seguenti valori:
+A partire dai dati rilevati dai sensori di occupazione dei parcheggi e delle colonnine elettriche, questo \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} calcola giornalmente per ciascun \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} i seguenti valori:
 \begin{itemize}
 	\item \texttt{utilization\_rate}: percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale considerato;
 	\item \texttt{efficiency\_rate}: percentuale di tempo in cui le colonnine sono utilizzate rispetto al tempo totale in cui il parcheggio è occupato.
@@ -1113,11 +1113,11 @@ Si utilizza quindi $S$ calcolato nel paragrafo precedente per ottenere l' \texti
 \subsubsubsubsection{Flusso di dati}
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/charging_efficiency_flow.png}
-	\captionof{figure}{Flusso di dati del \textit{job} \textit{Charging Efficiency}}
+	\captionof{figure}{Flusso di dati del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} \textit{Charging Efficiency}}
 \end{center}
-Le seguenti operazioni vengono eseguite indipendentemente per i dati provenienti dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche:
+Le seguenti operazioni vengono eseguite indipendentemente per i dati provenienti dai \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativi ai parcheggi e alle colonnine elettriche:
 \begin{enumerate}
-	\item lettura dei dati grezzi dai \textit{topic} relativi ai parcheggi e alle colonnine elettriche, attraverso la classe \texttt{KafkaSource};
+	\item lettura dei dati grezzi dai \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativi ai parcheggi e alle colonnine elettriche, attraverso la classe \texttt{KafkaSource};
 	\item assegnazione di un \textit{watermark} ai dati, come precedentemente descritto nel paragrafo \hyperref[watermark]{\underline{\textit{watermark}}};
 	\item raggruppamento di dati utilizzando come chiave il \texttt{group\_name}, tramite la funzione \texttt{\mySkip{keyBy}} fornita da Flink;
 	\item creazione di una finestra temporale di un giorno, utilizzando la funzione \texttt{window} di Flink;
@@ -1126,17 +1126,17 @@ Le seguenti operazioni vengono eseguite indipendentemente per i dati provenienti
 \end{enumerate}
 Successivamente, attraverso l'utilizzo dell'operatore \texttt{join} si uniscono i due \textit{stream} di dati, calcolando
 attraverso la classe \texttt{ChargingEfficiencyJoinFunction} il valore dell'\textit{utilization rate} e dell'\textit{efficiency rate}.
-Infine, i risultati vengono pubblicati nel \textit{topic} dedicato all'efficienza delle colonnine elettriche.
+Infine, i risultati vengono pubblicati nel \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} dedicato all'efficienza delle colonnine elettriche.
 
 \subsubsubsubsection{Architettura}
-Analogamente a quanto svolto per il \textit{job} \textit{Heat Index}, anche per il \textit{job} \textit{Charging Efficiency} è stata definita la
-classe \texttt{ChargingEfficiencyJob}, la quale funge da punto di ingresso per l'esecuzione del \textit{job}. Essa definisce come sorgente di dati
-i \textit{topic} relativi all'occupazione dei parcheggi e delle colonnine elettriche, prepara l'esecuzione del \textit{job} e infine lo avvia
+Analogamente a quanto svolto per il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{\textit{Heat Index}\textsubscript{G}}, anche per il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} \textit{Charging Efficiency} è stata definita la
+classe \texttt{ChargingEfficiencyJob}, la quale funge da punto di ingresso per l'esecuzione del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}}. Essa definisce come sorgente di dati
+i \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativi all'occupazione dei parcheggi e delle colonnine elettriche, prepara l'esecuzione del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} e infine lo avvia
 attraverso il metodo \texttt{execute}.\\
 
 \begin{center}
 	\includegraphics[width=1\textwidth]{./specifica_tecnica/charging_efficiency_job.png}
-	\captionof{figure}{Architettura del \textit{job} \textit{Charging Efficiency}}
+	\captionof{figure}{Architettura del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} \textit{Charging Efficiency}}
 \end{center}
 
 \subsubsubsubsubsection{\textit{Object adapter}}
@@ -1157,12 +1157,12 @@ Riassumendo:
 \begin{itemize}
 	\item \texttt{isOccupied} è un metodo astratto e nel contesto del \textit{pattern} \textit{template method} è un metodo primitivo;
 	\item \texttt{apply} è un metodo concreto e \texttt{final} e costituisce il \textit{template method};
-	\item non sono presenti \textit{hook}, ovvero metodi che possono opzionalmente essere sovrascritti dalle sottoclassi, definiti con implementazione di \textit{default} nella superclasse.
+	\item non sono presenti \textit{hook}, ovvero metodi che possono opzionalmente essere sovrascritti dalle sottoclassi, definiti con implementazione di \textit{default} nella \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#superclasse}{superclasse\textsubscript{G}}.
 \end{itemize}
 
 \subsubsubsubsubsection{Classi, interfacce metodi e attributi}
 \begin{itemize}
-	\item \textbf{Classe astratta RawData}: precedentemente descritta nella sezione relativa al \\\hyperref[abstract_class_raw_data]{\textit{\underline{job Heat Index}}};
+	\item \textbf{Classe astratta RawData}: precedentemente descritta nella sezione relativa al \\\hyperref[abstract_class_raw_data]{\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{\underline{job}}\textsubscript{G}}\underline{\textit{ \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{Heat Index\textsubscript{G}}}}};
 	\item \textbf{Classe ParkingRawData}
 	      \begin{itemize}
 		      \item \textbf{Attributi}
@@ -1185,15 +1185,15 @@ Riassumendo:
 	      \begin{itemize}
 		      \item \textbf{Attributi}
 		            \begin{itemize}
-			            \item \texttt{PARKING\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo all'occupazione dei parcheggi;
-			            \item \texttt{CHARGING\_STATION\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo all'utilizzo delle colonnine di ricarica;
-			            \item \texttt{CHARGING\_EFFICIENCY\_TOPIC} str [private,final,static]: nome del \textit{topic} relativo all'efficienza delle colonnine;
+			            \item \texttt{PARKING\_TOPIC} str [private,final,static]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativo all'occupazione dei parcheggi;
+			            \item \texttt{CHARGING\_STATION\_TOPIC} str [private,final,static]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativo all'utilizzo delle colonnine di ricarica;
+			            \item \texttt{CHARGING\_EFFICIENCY\_TOPIC} str [private,final,static]: nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} relativo all'efficienza delle colonnine;
 			            \item \texttt{GROUP\_ID} str [private,final,static]: identificativo del gruppo di consumatori;
 			            \item \texttt{WINDOW\_SIZE} int [private,final,static]: dimensione della finestra temporale per cui calcolare le aggregazioni.
 		            \end{itemize}
 		      \item \textbf{Metodi}
 		            \begin{itemize}
-			            \item \texttt{main(String[] \mySkip{args})} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \textit{job} vero e proprio;
+			            \item \texttt{main(String[] \mySkip{args})} [public,static]: metodo principale che si occupa di inizializzare l'ambiente di esecuzione, definire sorgente e \textit{sink} dei dati ed eseguire il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{job}\textsubscript{G}} vero e proprio;
 
 			            \item \texttt{execute(StreamExecutionEnvironment \mySkip{env})} [public]: metodo che applica le trasformazioni a partire dai \textit{source} definiti nel metodo \textit{main}.
 		            \end{itemize}
@@ -1236,9 +1236,9 @@ Riassumendo:
 		            \begin{itemize}
 			            \item \texttt{occupiedDuration} Duration [private]: durata in cui l'entità è in uso;
 			            \item \texttt{notOccupiedDuration} Duration [private]: durata in cui l'entità non è in uso;
-			            \item \texttt{sensorUuid} String [private]: identificativo univoco del sensore;
+			            \item \texttt{sensorUuid} String [private]: identificativo univoco del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{timestamp} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui sono state calcolate le durate di occupazione e non occupazione;
-			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il sensore;
+			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{\mySkip{sensorNames}} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
 		            \end{itemize}
 	      \end{itemize}
@@ -1254,9 +1254,9 @@ Riassumendo:
 		            \begin{itemize}
 			            \item \texttt{utilizationRate} double [private]: tasso di utilizzo della colonnina di ricarica;
 			            \item \texttt{efficiencyRate} double [private]: tasso di efficienza della colonnina di ricarica;
-			            \item \texttt{sensorUuid} String [private]: identificativo univoco del sensore;
+			            \item \texttt{sensorUuid} String [private]: identificativo univoco del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{timestamp} LocalDateTime [private]: data e ora di inizio della finestra temporale in cui sono state calcolate le durate di occupazione e non occupazione;
-			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il sensore;
+			            \item \texttt{groupName} String [private]: nome del gruppo di sensori a cui appartiene il \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 			            \item \texttt{\mySkip{sensorNames}} Set<String> [private]: insieme dei nomi dei sensori che hanno prodotto le misurazioni.
 		            \end{itemize}
 		      \item \textbf{Metodi}:
@@ -1280,7 +1280,7 @@ Riassumendo:
 			            \item \texttt{map(GenericRecord record)} ChargingStationRawData [public]: metodo che converte un \texttt{GenericRecord} in un oggetto di tipo \texttt{ChargingStationRawData}.
 		            \end{itemize}
 	      \end{itemize}
-	\item \textbf{Interfaccia RecordSerializable}: precedentemente descritta nella sezione relativa al \hyperref[record_serializable]{\textit{\underline{job Heat Index}}};
+	\item \textbf{Interfaccia RecordSerializable}: precedentemente descritta nella sezione relativa al \hyperref[record_serializable]{\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#job}{\textit{\underline{job}}\textsubscript{G}}\underline{\textit{ \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#heat-index}{Heat Index\textsubscript{G}}}}};
 	\item \textbf{Classe ChargingEfficiencyRecordSerializableAdapter}
 	      \begin{itemize}
 		      \item \textbf{Attributi}
@@ -1295,19 +1295,19 @@ Riassumendo:
 \end{itemize}
 
 \subsection{ClickHouse}
-ClickHouse viene utilizzato per memorizzare i dati grezzi provenienti dai sensori, i risultati delle elaborazioni effettuate da Apache Flink e i dati aggregati tramite
-\textit{Materialized View}.\\
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} viene utilizzato per memorizzare i dati grezzi provenienti dai sensori, i risultati delle elaborazioni effettuate da Apache Flink e i dati aggregati tramite
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}}.\\
 
 \subsubsection{Funzionalità utilizzate}
 \subsubsubsection{\textit{Materialized View}}
-Le \textit{Materialized View} in ClickHouse sono un meccanismo per memorizzare fisicamente i risultati di una \textit{query} specifica di selezione,
+Le \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} in \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} sono un meccanismo per memorizzare fisicamente i risultati di una \textit{query} specifica di selezione,
 che viene periodicamente aggiornata in base ai dati sottostanti. Questo meccanismo consente di migliorare le prestazioni delle \textit{query} complesse
 e di semplificare l'architettura del sistema, riducendo la necessità di eseguire \textit{query} costose e complesse ogni volta che si accede ai dati.
 
 All'interno del progetto sono state utilizzate ai seguenti scopi:
 \begin{itemize}
 	\item \textbf{calcolo aggregazioni}: per calcolare la media aritmetica delle misurazioni per un certo periodo di tempo;
-	\item \textbf{miglioramento prestazioni}: per rendere più efficienti le \textit{query} utilizzate più frequentemente per il popolamento di grafici e dashboard;
+	\item \textbf{miglioramento prestazioni}: per rendere più efficienti le \textit{query} utilizzate più frequentemente per il popolamento di grafici e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}};
 \end{itemize}
 
 La documentazione è disponibile al seguente link:
@@ -1316,7 +1316,7 @@ La documentazione è disponibile al seguente link:
 \end{center}
 
 \subsubsubsection{MergeTree}
-MergeTree è uno dei principali motori di archiviazione di ClickHouse, progettato per gestire grandi volumi di dati e fornire elevate prestazioni di lettura e scrittura. È particolarmente adatto per applicazioni in cui i dati vengono aggiunti in modo incrementale e le \textit{query} vengono eseguite su intervalli di tempo specifici.
+MergeTree è uno dei principali motori di archiviazione di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}}, progettato per gestire grandi volumi di dati e fornire elevate prestazioni di lettura e scrittura. È particolarmente adatto per applicazioni in cui i dati vengono aggiunti in modo incrementale e le \textit{query} vengono eseguite su intervalli di tempo specifici.
 Le caratteristiche principali sono:
 \begin{itemize}
 	\item \textbf{partizionamento}, in cui i dati vengono partizionati in base a una colonna di data o di tempo, in modo che i dati più recenti siano memorizzati in partizioni separate e possano essere facilmente eliminati o archiviati;
@@ -1333,16 +1333,16 @@ La documentazione è disponibile al seguente link:
 \end{center}
 
 \subsubsection{Struttura}
-Per ciascuna tipologia di dati o aggregazioni è stata definita una tabella all'interno del database \texttt{sensors}, mantenendo il nome esatto del \textit{topic}
+Per ciascuna tipologia di dati o aggregazioni è stata definita una tabella all'interno del database \texttt{sensors}, mantenendo il nome esatto del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}}
 da cui provengono i dati.\\
-Le tabelle di questo tipo vengono popolate da Redpanda Connect, come precedentemente descritto nella \hyperref[redpanda_connect]{\underline{sezione apposita}}.
-Per alcune tipologie di dati viene inoltre definita una \textit{Materialized View} che calcola aggregazioni sui dati grezzi,
+Le tabelle di questo tipo vengono popolate da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} Connect, come precedentemente descritto nella \hyperref[redpanda_connect]{\underline{sezione apposita}}.
+Per alcune tipologie di dati viene inoltre definita una \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} che calcola aggregazioni sui dati grezzi,
 in modo da rendere più efficienti le \textit{query} che necessitano di tali elaborazioni.
-In particolare, viene calcolata la media aritmetica delle misurazioni per un certo periodo di tempo (differente a seconda del tipo di sensore e meglio descritto nelle sezioni seguenti),
-dato frequentemente utilizzato per il popolamento di grafici e \textit{dashboard} in Grafana e che dunque necessita di essere calcolato in modo efficiente.
+In particolare, viene calcolata la media aritmetica delle misurazioni per un certo periodo di tempo (differente a seconda del tipo di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} e meglio descritto nelle sezioni seguenti),
+dato frequentemente utilizzato per il popolamento di grafici e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{\textit{dashboard}\textsubscript{G}} in \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}} e che dunque necessita di essere calcolato in modo efficiente.
 
 \subsubsubsection{Misurazioni \textit{air quality}}
-Di seguito viene rappresentata la tabella che contiene le misurazioni relative alla qualità dell'aria. Essa viene popolata da Redpanda Connect ed utilizza il motore di \textit{storage}
+Di seguito viene rappresentata la tabella che contiene le misurazioni relative alla qualità dell'aria. Essa viene popolata da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} Connect ed utilizza il motore di \textit{storage}
 MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
 utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
 
@@ -1351,7 +1351,7 @@ utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate c
 	\captionof{figure}{Tabella \texttt{air\_quality}}
 \end{center}
 \subsubsubsection{Misurazioni \textit{parking}}
-Di seguito viene rappresentata la tabella che contiene le misurazioni relative all'occupazione dei parcheggi. Essa viene popolata da Redpanda Connect ed utilizza il motore di \textit{storage}
+Di seguito viene rappresentata la tabella che contiene le misurazioni relative all'occupazione dei parcheggi. Essa viene popolata da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} Connect ed utilizza il motore di \textit{storage}
 MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
 utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
 \begin{center}
@@ -1359,7 +1359,7 @@ utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate c
 	\captionof{figure}{Tabella \texttt{parking}}
 \end{center}
 \subsubsubsection{Misurazioni \textit{recycling point}}
-Di seguito viene rappresentata la tabella che contiene le misurazioni relative al riempimento delle isole ecologiche. Essa viene popolata da Redpanda Connect ed utilizza il motore di \textit{storage}
+Di seguito viene rappresentata la tabella che contiene le misurazioni relative al riempimento delle isole ecologiche. Essa viene popolata da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} Connect ed utilizza il motore di \textit{storage}
 MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
 utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
 \begin{center}
@@ -1370,87 +1370,87 @@ utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate c
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni di temperatura. La tabella \texttt{temperature} utilizza il motore di \textit{storage}
 MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
 utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo delle \textit{Materialized View} \texttt{temperature\_5m\_mv}, \texttt{temperature\_weekly\_mv} e \texttt{temperature\_daily\_mv}
+Tramite l'utilizzo delle \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} \texttt{temperature\_5m\_mv}, \texttt{temperature\_weekly\_mv} e \texttt{temperature\_daily\_mv}
 è possibile aggregare e trasferire i dati sulle tabelle \texttt{temperature\_5m}, \texttt{temperature\_weekly} e \texttt{temperature\_daily},
 che contengono rispettivamente la media delle misurazioni per 5 minuti, giornaliere e settimanali.
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/temperature_mv.png}
-	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{temperature}}
+	\captionof{figure}{Tabelle e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} \texttt{temperature}}
 \end{center}
 
 \subsubsubsection{Misurazioni \textit{traffic}}
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni di temperatura. La tabella \texttt{traffic} utilizza il motore di \textit{storage}
 MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
 utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo della \textit{Materialized View} \texttt{traffic\_1h\_mv}
+Tramite l'utilizzo della \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} \texttt{traffic\_1h\_mv}
 è possibile aggregare e trasferire i dati sulla tabella \texttt{traffic\_1h}, che contiene la media del numero di veicoli e velocità per ogni ora.
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/traffic_mv.png}
-	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{traffic}}
+	\captionof{figure}{Tabelle e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} \texttt{traffic}}
 \end{center}
 
 \subsubsubsection{Misurazioni \textit{charging station}}
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni riguardanti l'occupazione delle colonnine di ricarica.
 La tabella \texttt{charging\_station} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
 in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo delle \textit{Materialized View} \texttt{charging\_station\_5m\_mv}, \texttt{charging\_station\_weekly\_mv} e \\\texttt{charging\_station\_daily\_mv}
+Tramite l'utilizzo delle \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} \texttt{charging\_station\_5m\_mv}, \texttt{charging\_station\_weekly\_mv} e \\\texttt{charging\_station\_daily\_mv}
 è possibile aggregare e trasferire i dati sulle tabelle \\ \texttt{charging\_station\_5m}, \texttt{charging\_station\_weekly} e \texttt{charging\_station\_daily},
 che contengono rispettivamente la media dei kilowattora erogati per 5 minuti, giornalmente e settimanalmente.
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/charging_mv.png}
-	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{charging\_station}}
+	\captionof{figure}{Tabelle e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} \texttt{charging\_station}}
 \end{center}
 
 \subsubsubsection{Misurazioni \textit{precipitation}}
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni riguardanti le precipitazioni.
 La tabella \texttt{precipitation} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
 in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo delle \textit{Materialized View} \texttt{precipitation\_1h\_mv}, \texttt{precipitation\_daily\_mv}, \texttt{precipitation\_weekly\_mv} e \\\texttt{precipitation\_yearly\_mv} è possibile aggregare e trasferire i dati sulle tabelle \\\texttt{precipitation\_1h}, \texttt{precipitation\_daily}, \texttt{precipitation\_weekly} e \texttt{precipitation\_yearly}
+Tramite l'utilizzo delle \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} \texttt{precipitation\_1h\_mv}, \texttt{precipitation\_daily\_mv}, \texttt{precipitation\_weekly\_mv} e \\\texttt{precipitation\_yearly\_mv} è possibile aggregare e trasferire i dati sulle tabelle \\\texttt{precipitation\_1h}, \texttt{precipitation\_daily}, \texttt{precipitation\_weekly} e \texttt{precipitation\_yearly}
 che contengono la media dei millimetri di acqua caduti rispettivamente per ogni ora, giorno, settimana e anno.
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{./specifica_tecnica/precipitation_mv.png}
-	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{precipitation}}
+	\captionof{figure}{Tabelle e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} \texttt{precipitation}}
 \end{center}
 
 \subsubsubsection{Misurazioni \textit{river level}}
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni riguardanti il livello dei fiumi.
 La tabella \texttt{river\_level} utilizza il motore di \textit{storage} MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente,
 in modalità \textit{append-only}; il suo utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo delle \textit{Materialized View} \texttt{river\_level\_1h\_mv}, \texttt{river\_level\_daily\_mv}, \texttt{river\_level\_weekly\_mv} e \texttt{river\_level\_yearly\_mv}
+Tramite l'utilizzo delle \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} \texttt{river\_level\_1h\_mv}, \texttt{river\_level\_daily\_mv}, \texttt{river\_level\_weekly\_mv} e \texttt{river\_level\_yearly\_mv}
 è possibile aggregare e trasferire i dati sulle tabelle \texttt{river\_level\_1h},\texttt{river\_level\_daily},\\ \texttt{river\_level\_weekly} e \texttt{river\_level\_yearly}
 che contengono rispettivamente la media oraria, giornaliera, mensile e annuale del livello dei fiumi (misurato in metri).
 
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{./specifica_tecnica/river_mv.png}
-	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{river\_level}}
+	\captionof{figure}{Tabelle e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} \texttt{river\_level}}
 \end{center}
 
 \subsubsubsection{Misurazioni \textit{humidity}}
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni di umidità. La tabella \texttt{humidity} utilizza il motore di \textit{storage}
 MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
 utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo delle \textit{Materialized View} \texttt{humidity\_5m\_mv}, \texttt{humidity\_weekly\_mv} e \texttt{humidity\_daily\_mv}
+Tramite l'utilizzo delle \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} \texttt{humidity\_5m\_mv}, \texttt{humidity\_weekly\_mv} e \texttt{humidity\_daily\_mv}
 è possibile aggregare e trasferire i dati sulle tabelle \texttt{humidity\_5m}, \texttt{humidity\_weekly} e \texttt{humidity\_daily},
 che contengono rispettivamente la media delle misurazioni di umidità relativa per 5 minuti, giornaliere e settimanali.
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{./specifica_tecnica/humidity_mv.png}
-	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{humidity}}
+	\captionof{figure}{Tabelle e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} \texttt{humidity}}
 \end{center}
 
 \subsubsubsection{Misurazioni \textit{heat index}}
 Di seguito viene rappresentata la configurazione per l'archiviazione delle misurazioni dello \textit{heat\_index}. La tabella \texttt{humidity} utilizza il motore di \textit{storage}
 MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
 utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
-Tramite l'utilizzo della \textit{Materialized View} \texttt{heat\_index\_daily\_mv} è possibile aggregare e trasferire i dati sulla tabella \texttt{heat\_index\_daily}
+Tramite l'utilizzo della \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}} \texttt{heat\_index\_daily\_mv} è possibile aggregare e trasferire i dati sulla tabella \texttt{heat\_index\_daily}
 che contiene la media giornaliera delle misurazioni.
 
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/heat_index_mv.png}
-	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{heat\_index}}
+	\captionof{figure}{Tabelle e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} \texttt{heat\_index}}
 \end{center}
 
 \subsubsubsection{Misurazioni \textit{charging efficiency}}
-Di seguito viene rappresentata la tabella che contiene le misurazioni relative all'efficienza delle colonnine elettriche. Essa viene popolata da Redpanda Connect ed utilizza il motore di \textit{storage}
+Di seguito viene rappresentata la tabella che contiene le misurazioni relative all'efficienza delle colonnine elettriche. Essa viene popolata da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{Redpanda\textsubscript{G}} Connect ed utilizza il motore di \textit{storage}
 MergeTree, il quale è ottimizzato per archiviare ed analizzare dati ordinati cronologicamente, in modalità \textit{append-only}; il suo
 utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate cronologicamente.
 
@@ -1459,25 +1459,25 @@ utilizzo è motivato dal fatto che tali misurazioni sono generalmente ordinate c
 	\captionof{figure}{Tabella \texttt{charging\_efficiency}}
 \end{center}
 \subsubsubsection{Tabella sensors}
-In diversi scenari all'interno di Grafana è necessario poter ottenere i dati di tutti i sensori, indipendentemente dalla loro tipologia, per mostrarli ad esempio in una mappa
-complessiva o in una tabella contenente la data di ricezione dell'ultimo messaggio da parte di un determinato dispositivo o ancora per la costruzione dei filtri su tipo e nome di ciascun sensore.
-Al fine di rendere maggiormente efficiente queste operazioni abbiamo realizzato una tabella \texttt{sensors} popolata attraverso delle \textit{Materialized View},
+In diversi scenari all'interno di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}} è necessario poter ottenere i dati di tutti i sensori, indipendentemente dalla loro tipologia, per mostrarli ad esempio in una mappa
+complessiva o in una tabella contenente la data di ricezione dell'ultimo messaggio da parte di un determinato dispositivo o ancora per la costruzione dei filtri su tipo e nome di ciascun \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}.
+Al fine di rendere maggiormente efficiente queste operazioni abbiamo realizzato una tabella \texttt{sensors} popolata attraverso delle \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}},
 che si occupano di trasferire i dati a partire dalle tabelle dei dati grezzi (come \texttt{temperature}, \texttt{humidity}...).
-All'interno del commento contenuto nel diagramma seguente è presente un esempio generico di \textit{query} utilizzata per la definizione delle \textit{Materialized View}; al posto del \textit{placeholder}
+All'interno del commento contenuto nel diagramma seguente è presente un esempio generico di \textit{query} utilizzata per la definizione delle \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{Materialized View}\textsubscript{G}}; al posto del \textit{placeholder}
 \texttt{{type}} è sufficiente sostituire il nome di ciascuna tabella di dati grezzi (\texttt{temperature}, \texttt{humidity}...).
 I campi di quest'ultime sono omessi per semplicità del diagramma e sono stati precedentemente illustrati nella sezione dedicata alle misurazioni di ciascuna tipologia.
 
 \begin{center}
 	\includegraphics[width=0.9\textwidth]{./specifica_tecnica/sensors_mv.png}
-	\captionof{figure}{Tabelle e \textit{materialized view} \texttt{sensors}}
+	\captionof{figure}{Tabelle e \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{\textit{materialized view}\textsubscript{G}} \texttt{sensors}}
 \end{center}
 
 \pagebreak
 \subsection{Grafana}
-Grafana è uno strumento di analisi e monitoraggio che permette di visualizzare dati provenienti da una varietà di fonti. È sviluppato principalmente in Go e Typescript e si è diffuso notevolmente
-in quanto offre funzionalità per la creazione di \textit{dashboard} personalizzabili e intuitive.
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}} è uno strumento di analisi e monitoraggio che permette di visualizzare dati provenienti da una varietà di fonti. È sviluppato principalmente in Go e Typescript e si è diffuso notevolmente
+in quanto offre funzionalità per la creazione di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{\textit{dashboard}\textsubscript{G}} personalizzabili e intuitive.
 \subsubsection{Dashboard}
-Sono state realizzate tre \textit{dashboard} distinte, ciascuna per adempiere a uno specifico compito:
+Sono state realizzate tre \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{\textit{dashboard}\textsubscript{G}} distinte, ciascuna per adempiere a uno specifico compito:
 \begin{itemize}
 	\item \textbf{\textit{Raw data}}: mostra i dati grezzi provenienti dai sensori in delle tabelle filtrabili. Inoltre contiene dei pannelli che consentono
 	      di visualizzare informazioni generali sui sensori, come una mappa con la loro posizione e una tabella con l'ultimo messaggio ricevuto da ciascuno di essi.
@@ -1486,37 +1486,37 @@ Sono state realizzate tre \textit{dashboard} distinte, ciascuna per adempiere a 
 	\item \textbf{\textit{Environmental data}}: mostra i dati aggregati relativi a qualità dell'aria, temperatura, umidità, precipitazioni, e livello dei fiumi.
 	      Anche in questo caso sono presenti grafici che mostrano l'andamento temporale delle misurazioni e delle aggregazioni calcolate.
 \end{itemize}
-La suddivisione è stata progettata in questo modo in quanto, oltre al fatto che la natura dei dati sia molto differente, le varie \textit{dashboard} potrebbero venire utilizzate dagli utenti con esigenze diverse:
+La suddivisione è stata progettata in questo modo in quanto, oltre al fatto che la natura dei dati sia molto differente, le varie \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{\textit{dashboard}\textsubscript{G}} potrebbero venire utilizzate dagli utenti con esigenze diverse:
 i dati ambientali possono essere adoperati al fine di prevenire situazioni di emergenza correlate a condizioni climatiche avverse, mentre quelli urbanistici possono essere utilizzati con fini economici
 o per migliorare i servizi offerti ai cittadini.
 
 \subsubsection{ClickHouse datasource plugin}
-Il plugin ClickHouse per Grafana è un'implementazione che consente di utilizzare ClickHouse come fonte di dati per Grafana. Questo plugin facilita la connessione e l'interrogazione dei dati archiviati in ClickHouse direttamente da Grafana.
+Il plugin \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} per \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}} è un'implementazione che consente di utilizzare \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} come fonte di dati per \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}}. Questo plugin facilita la connessione e l'interrogazione dei dati archiviati in \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} direttamente da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}}.
 La documentazione è disponibile al seguente link:
 \begin{center}
 	\url{https://grafana.com/grafana/plugins/grafana-clickhouse-datasource/} [Ultima consultazione 2024-06-05]
 \end{center}
 La configurazione di tale \textit{datasource} è contenuta nella cartella \\
-\texttt{grafana/provisioning/datasources/default.yaml} della repository del progetto.
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{\texttt{grafana}\textsubscript{G}}\texttt{/provisioning/datasources/default.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#yet-another-markup-language}{yaml\textsubscript{G}}} della repository del progetto.
 
 \subsubsection{Variabili Grafana}
-Al fine di rendere le \textit{dashboard} più flessibili e personalizzabili, sono state utilizzate le variabili di Grafana. Esse consentono di definire parametri dinamici che possono essere utilizzati per filtrare, raggruppare o personalizzare i dati visualizzati nei pannelli delle dashboard.
+Al fine di rendere le \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{\textit{dashboard}\textsubscript{G}} più flessibili e personalizzabili, sono state utilizzate le variabili di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}}. Esse consentono di definire parametri dinamici che possono essere utilizzati per filtrare, raggruppare o personalizzare i dati visualizzati nei pannelli delle \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#dashboard}{dashboard\textsubscript{G}}.
 La documentazione è disponibile al seguente link:
 \begin{center}
 	\url{https://grafana.com/docs/grafana/latest/dashboards/variables/} [Ultima consultazione 2024-06-05]
 \end{center}
 \subsubsubsection{Variabili nella \textit{dashboard} \textit{Raw data}}
 \begin{itemize}
-	\item \texttt{sensor\_type}: permette di filtrare i dati visualizzati in base al tipo di sensore;
-	\item \texttt{sensor\_name}: dipendente dalla variabile \texttt{sensor\_type} e permette di filtrare i dati visualizzati in base al nome del sensore;
+	\item \texttt{sensor\_type}: permette di filtrare i dati visualizzati in base al tipo di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
+	\item \texttt{sensor\_name}: dipendente dalla variabile \texttt{sensor\_type} e permette di filtrare i dati visualizzati in base al nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}};
 \end{itemize}
 
 \subsubsubsection{Variabili nella \textit{dashboard} \textit{Urban data}}
 \begin{itemize}
 	\item \texttt{group\_name\_charging}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di colonnine di ricarica;
 	\item \texttt{group\_name\_parking}: permette di filtrare i dati visualizzati in base al \texttt{group\_name} di parcheggi;
-	\item \texttt{sensor\_name\_recycling\_point}: permette di filtrare i dati visualizzati in base al nome del sensore di isole ecologiche;
-	\item \texttt{sensor\_name\_traffic}: permette di filtrare i dati visualizzati in base al nome del sensore di traffico;
+	\item \texttt{sensor\_name\_recycling\_point}: permette di filtrare i dati visualizzati in base al nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di isole ecologiche;
+	\item \texttt{sensor\_name\_traffic}: permette di filtrare i dati visualizzati in base al nome del \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}} di traffico;
 \end{itemize}
 \subsubsubsection{Variabili nella \textit{dashboard} \textit{Environmental data}}
 \begin{itemize}
@@ -1528,7 +1528,7 @@ La documentazione è disponibile al seguente link:
 \end{itemize}
 
 \subsubsection{Grafana Alerts}
-Gli \textit{alert} di Grafana sono una funzionalità che permettono di definire, configurare e gestire avvisi basati su condizioni specifiche rilevate nei dati monitorati. Questi avvisi consentono agli utenti di essere informati tempestivamente su eventuali problemi o cambiamenti critici nei loro sistemi, applicazioni o infrastrutture.\\
+Gli \textit{alert} di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{Grafana\textsubscript{G}} sono una funzionalità che permettono di definire, configurare e gestire avvisi basati su condizioni specifiche rilevate nei dati monitorati. Questi avvisi consentono agli utenti di essere informati tempestivamente su eventuali problemi o cambiamenti critici nei loro sistemi, applicazioni o infrastrutture.\\
 La documentazione è disponibile al seguente link:
 \begin{center}
 	\url{https://grafana.com/docs/grafana/latest/alerting/} [Ultima consultazione 2024-06-05]
@@ -1539,7 +1539,7 @@ Definiscono le condizioni che devono essere soddisfatte per attivare un alert. G
 \begin{itemize}
 	\item temperatura maggiore di 40°C per più di 30 minuti;
 	\item isola ecologica piena al 100\% per più di 24 ore;
-	\item superamento dell'indice 3 dell'EAQI (indice di qualità dell'aria);
+	\item superamento dell'indice 3 dell'\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#european-air-quality-index}{EAQI\textsubscript{G}} (indice di qualità dell'aria);
 	\item livello di precipitazioni superiore a 10 mm in 1 ora.
 \end{itemize}
 Gli alert possono possedere tre diversi tipi di stati:

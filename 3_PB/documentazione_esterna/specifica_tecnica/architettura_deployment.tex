@@ -1,5 +1,5 @@
 \section{Architettura di deployment}
-Per implementare ed eseguire l'intero stack tecnologico e i livelli del modello architetturale, viene creato un ambiente \textit{Docker} che riproduce la suddivisione e la distribuzione dei servizi. In particolare, per l'ambiente di produzione, sono stati creati i seguenti container:
+Per implementare ed eseguire l'intero stack tecnologico e i livelli del modello architetturale, viene creato un ambiente \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#docker}{\textit{Docker}\textsubscript{G}} che riproduce la suddivisione e la distribuzione dei servizi. In particolare, per l'ambiente di produzione, sono stati creati i seguenti container:
 \begin{itemize}
     \item \textbf{Data feed}
         \begin{itemize}
@@ -8,9 +8,9 @@ Per implementare ed eseguire l'intero stack tecnologico e i livelli del modello 
         \end{itemize}
     \item \textbf{Streaming layer}
         \begin{itemize}
-            \item Container: \textbf{Redpanda};
+            \item Container: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{\textbf{Redpanda}\textsubscript{G}};
             \item Descrizione: definisce il flusso di dati in tempo reale;
-            \item Componenti di supporto: schema registry;
+            \item Componenti di supporto: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#schema-registry}{schema registry\textsubscript{G}};
             \item Porta: 18082.
         \end{itemize}
     \item \textbf{Processing Layer}
@@ -20,13 +20,13 @@ Per implementare ed eseguire l'intero stack tecnologico e i livelli del modello 
         \end{itemize}
     \item \textbf{Storage Layer}
         \begin{itemize}
-            \item Container: \textbf{Clickhouse};
+            \item Container: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{\textbf{Clickhouse}\textsubscript{G}};
             \item Descrizione: memorizza i dati;
             \item Porta: 8123.
         \end{itemize}
     \item \textbf{Data Visualization Layer}
         \begin{itemize}
-            \item Container: \textbf{Grafana};
+            \item Container: \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#grafana}{\textbf{Grafana}\textsubscript{G}};
             \item Descrizione: visualizza i dati;
             \item Porta: 3000.
         \end{itemize}

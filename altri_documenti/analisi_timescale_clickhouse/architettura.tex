@@ -1,7 +1,7 @@
 \section{Architettura di ClickHouse}
-Gli elementi architettonici elencati nelle sottosezioni sono stati implementati dal team di ClickHouse per rispettare i requisiti OLAP. 
+Gli elementi architettonici elencati nelle sottosezioni sono stati implementati dal team di \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} per rispettare i requisiti OLAP. 
 \subsection{Archiviazione compressa e orientata alle colonne}
-ClickHouse sfrutta un sistema che consente di archiviare le colonne contenenti la stessa tipologia di dato nello stesso luogo. Questa soluzione rende possibile una migliore compressione e velocizza notevolmente le query.
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} sfrutta un sistema che consente di archiviare le colonne contenenti la stessa tipologia di dato nello stesso luogo. Questa soluzione rende possibile una migliore compressione e velocizza notevolmente le query.
 
 
 \subsection{Table engines}
@@ -12,12 +12,12 @@ Tutte le colonne contenute in una tabella sono salvate in parts differenti, e og
 
 
 \subsection{Indici}
-Clickhouse utilizza solo due tipi di indici: primari e secondari.
+\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{Clickhouse\textsubscript{G}} utilizza solo due tipi di indici: primari e secondari.
 Visto che tutti i dati sono salvati in ordine di chiave primaria, l’indice primario archivia il valore della chiave primaria in ogni N-riga. Questo ha lo scopo di salvare l’indice nella memoria per ottenere un’alta velocità di processazione. 
 
 
 \subsection{Vector computation engine}
-Grazie ai vector algorithms ClickHouse può elaborare dati contenuti in decine di migliaia di righe per colonna. Inoltre, gli algoritmi consentono di scrivere codice più efficiente che sfrutta i processori SIMD (Single Instruction stream, Multiple Data stream:struttura che consiste in un elevato numero di processori identici che eseguono la stessa sequenza di istruzioni su insiemi di diversi di dati) e tiene codice e dati vicini per avere dei pattern di accesso alla memoria migliori.
+Grazie ai vector algorithms \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} può elaborare dati contenuti in decine di migliaia di righe per colonna. Inoltre, gli algoritmi consentono di scrivere codice più efficiente che sfrutta i processori SIMD (Single Instruction stream, Multiple Data stream:struttura che consiste in un elevato numero di processori identici che eseguono la stessa sequenza di istruzioni su insiemi di diversi di dati) e tiene codice e dati vicini per avere dei pattern di accesso alla memoria migliori.
 
 
 

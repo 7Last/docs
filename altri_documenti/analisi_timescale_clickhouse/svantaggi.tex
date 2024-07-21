@@ -1,5 +1,5 @@
 \section{Limitazioni di ClickHouse}
-In questa sezione vengono elencate le limitazioni che ClickHouse ha rispetto a TimescaleDB: 
+In questa sezione vengono elencate le limitazioni che \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}} ha rispetto a TimescaleDB: 
 \begin{itemize}
 	\item performance peggiori rispetto a TimescaleDB in quasi tutte le query testate ad eccezione delle query eseguite su aggregazioni complesse;
 	\item insert poco efficienti e utilizzo molto più alto del disco (2.7 volte maggiore rispetto a TImescale) in caso di  piccoli batch (100-300 righe/batch);
@@ -7,7 +7,7 @@ In questa sezione vengono elencate le limitazioni che ClickHouse ha rispetto a T
 	\item mancanza di alcune funzionalità presenti in altri database SQL: no transactions, no correlated sub-queries, no stored procedures, no user-defined functions, no index management beyond primary and secondary indexes, no triggers; 
 	\item impossibilità di modifica o cancellazione di dati ad alto tasso e bassa latenza, è necessario creare dei batch di eliminazioni e aggiornamenti;
 	\item gli update e le cancellazioni in batch avvengono in maniera asincrona, a causa di ciò è difficile assicurare backup consistenti (l’unica maniera per avere un backup consistente è arrestare la scrittura sul database);
-	\item la mancanza di transazioni e consistenza dei dati affligge anche le materialized views poiché il server non può aggiornare atomicamente più tabelle alla volta;
+	\item la mancanza di transazioni e consistenza dei dati affligge anche le \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#materialized-view}{materialized views\textsubscript{G}} poiché il server non può aggiornare atomicamente più tabelle alla volta;
 \end{itemize}
 
 
