@@ -1,0 +1,124 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
+\begin{document}
+
+\newcommand{\mySkip}[1][]{#1}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                                       \\[-2ex]
+			Ver. & Data       & Redattore         & Verificatore       & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-07-18 & Raul Seganfreddo  & Elena Ferro        & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 16:00\\
+\textbf{Orario di fine}: 16:30\\
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     & Amministratore & Presente          \\
+			Davide Malgarise      &                & Presente          \\
+			Elena Ferro           & Verificatore   & Presente          \\
+			Leonardo Baldo        &                & Presente          \\
+			Matteo Tiozzo         &                & Presente          \\
+			Raul Seganfreddo      & Redattore      & Presente          \\
+			Valerio Occhinegro    &                & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\subsection*{Ordine del giorno:}
+\begin{itemize}
+	\item retrospettiva sullo sprint appena concluso;
+	\item suddivisione dei ruoli per il tredicesimo sprint;
+	\item attività da svolgere per il tredicesimo sprint;
+	\item decisioni prese e conclusioni.
+\end{itemize}
+
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Retrospettiva sullo sprint appena concluso}
+La riunione inizia con un confronto sull'andamento del periodo appena terminato e sullo stato di completamento delle attività previste. Abbiamo terminato l'implementazione degli ultimi test di integrazione, risolvendo alcuni problemi riscontrati durante la loro esecuzione. Abbiamo apportato gli ultimi aggiustamenti alle \textit{dashboard} in vista del collaudo finale con il proponente. Abbiamo provveduto all'aggiornamento della documentazione, oltre a preparare la presentazione per l'incontro con l'azienda previsto per venerdì presso la loro sede. Non sono stati riscontrati problemi particolari durante lo sprint, e il gruppo si ritiene soddisfatto del lavoro svolto.
+
+\subsection{Suddivisione dei ruoli per il tredicesimo sprint}
+Il gruppo stabilisce la suddivisione dei ruoli per il prossimo periodo di lavoro:
+\begin{itemize}
+	\item \textbf{Responsabile}: Leonardo Baldo;
+	\item \textbf{Amministratore}: Davide Malgarise;
+	\item \textbf{Programmatore}: Valerio Occhinegro;
+	\item \textbf{Verificatore}: Antonio Benetazzo, Elena Ferro, Raul Seganfreddo, Matteo Tiozzo.
+\end{itemize}
+
+\newpage
+
+\subsection{Attività da svolgere per il tredicesimo sprint}
+Vengono definite le seguenti attività da svolgere per il prossimo periodo:
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ |l||p{7cm}|l|l| }
+		\hline
+		\textbf{Codice}    & \textbf{Nome attività}                           & \textbf{Assegnatario} & \textbf{Scadenza} \\
+		\hline
+		\mySkip[86bz8e6dg] & PdP - Saldo 13 sprint                            & Antonio Benetazzo     & 2024-07-24        \\
+		\mySkip[86bzjkpg8] & PdQ - Aggiornare grafici 13 sprint               & Matteo Tiozzo         & 2024-07-24        \\
+		\mySkip[86bz0pdgd] & NdP - Verifica finale                            & Elena Ferro           & 2024-07-24        \\
+		\mySkip[86bz0pdm7] & PdP - Verifica finale                            & Raul Seganfreddo      & 2024-07-24        \\
+		\mySkip[86bz0pdr2] & PdQ - Verifica finale                            & Leonardo Baldo        & 2024-07-24        \\
+		\mySkip[86by7xhag] & Glo - Verifica finale                            & Raul Seganfreddo      & 2024-07-24        \\
+		\mySkip[86by7xgpm] & AdR - Verifica finale                            & Matteo Tiozzo         & 2024-07-24        \\
+		\mySkip[86bz0pdby] & MU - Verifica finale                             & Antonio Benetazzo     & 2024-07-24        \\
+		\mySkip[86bz0pfh2] & ST - Verifica finale                             & Elena Ferro           & 2024-07-24        \\
+		\mySkip[86by7xgyw] & MVP - Ultimi aggiustamenti per PB                & Valerio Occhinegro    & 2024-07-24        \\
+		\mySkip[86bz0pmpe] & Preparazione presentazioni per PB                & Leonardo Baldo        & 2024-07-24        \\
+		\hline
+	\end{tabular}
+	\caption{Attività da svolgere per il tredicesimo sprint}
+\end{table}
+
+\subsection{Decisioni prese e conclusioni}
+Il prossimo appuntamento previsto è per venerdì 19 luglio presso la sede dell'azienda proponente per il collaudo finale del prodotto. Successivamente ci troveremo per la riunione settimanale in data 2024-07-24. Entro tale data prevediamo di aver concluso tutte le attività pianificate per poter successivamente far richiesta di revisione per la PB.
+
+\end{document}

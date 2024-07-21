@@ -1,0 +1,122 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+\let\oldthepage\thepage
+\renewcommand{\thepage}{\sffamily \oldthepage}
+
+\begin{document}
+
+\newcommand{\mySkip}[1][]{#1}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                                       \\[-2ex]
+			Ver. & Data       & Redattore         & Verificatore       & Descrizione     \\
+			\\[-2ex] \hline \\[-1.5ex]
+			1.0  & 2024-07-12 & Elena Ferro       & Valerio Occhinegro & Stesura verbale \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Dettagli della riunione}
+
+\textbf{Sede della riunione}: Piattaforma Discord\\
+\textbf{Orario di inizio}: 17:00\\
+\textbf{Orario di fine}: 17:30\\
+
+\begin{flushleft}
+	\begin{table}[!h]
+		\begin{tabular}{ |l|l|l| }
+			\hline
+			\textbf{Partecipante} & \textbf{Ruolo} & \textbf{Presenza} \\
+			\hline
+			Antonio Benetazzo     & Amministratore & Presente          \\
+			Davide Malgarise      &                & Presente          \\
+			Elena Ferro           & Redattore      & Presente          \\
+			Leonardo Baldo        &                & Presente          \\
+			Matteo Tiozzo         &                & Presente          \\
+			Raul Seganfreddo      &                & Presente          \\
+			Valerio Occhinegro    & Verificatore   & Presente          \\
+			\hline
+		\end{tabular}
+	\end{table}
+\end{flushleft}
+
+\subsection*{Ordine del giorno:}
+\begin{itemize}
+	\item retrospettiva sullo sprint appena concluso;
+	\item suddivisione dei ruoli per il dodicesimo sprint;
+	\item attività da svolgere per il dodicesimo sprint;
+	\item decisioni prese e conclusioni.
+\end{itemize}
+
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Retrospettiva sullo sprint appena concluso}
+La riunione inizia con un confronto sull'andamento del periodo appena terminato e sullo stato di completamento delle attività previste. Gli obiettivi che ci eravamo posti ad inizio sprint sono stati raggiunti, in particolare siamo riusciti ad ottenere alcuni grafici che mostrano l'efficienza delle colonnine di ricarica, dato che viene reso disponibile mediante l'uso di \textit{Apache Flink} che ci ha permesso di combinare i dati provenienti da sensori diversi, quelli delle colonnine di ricarica e quelli dei parcheggi. \\
+Successivamente abbiamo discusso sulla possibile data per il collaudo finale. Nonostante l'andamento positivo dell'ultimo sprint, ci sono ancora diversi aspetti da migliorare nel prodotto, oltre alla documentazione che risulta ancora molto carente, in particolare nei documenti \textit{Specifica Tecnica} e \textit{Manuale Utente}. Riteniamo quindi opportuno rimandare il collaudo finale di un'ulteriore settimana, in modo da avere il tempo di completare la documentazione e di migliorare il prodotto e poter così presentare al proponente un prodotto più maturo e completo. \\
+Abbiamo anche discusso sulla possibilità di rivedere il calendario di progetto e le scadenze previste per le prossime revisioni. In seguito al ritardo avuto durante il nono sprint non siamo più in grado di rispettare la scadenza per la revisione \textit{PB} prevista per il 2024-07-17. Viene anche discussa la possibilità di non proseguire con il progetto oltre la revisione \textit{PB} e quindi di non procedere con la revisione \textit{CA}. Il ritardo avuto ha comportato costi maggiori rispetto a quanto preventivato, riteniamo quindi che le attività necessarie per la revisione \textit{CA} ci porterebbero a sforare il budget preventivato.
+
+\subsection{Suddivisione dei ruoli per il dodicesimo sprint}
+Il gruppo stabilisce la suddivisione dei ruoli per il prossimo periodo di lavoro:
+\begin{itemize}
+	\item \textbf{Responsabile}: Elena Ferro;
+	\item \textbf{Amministratore}: Raul Seganfreddo;
+	\item \textbf{Progettista}: Valerio Occhinegro;
+	\item \textbf{Programmatore}: Davide Malgarise, Matteo Tiozzo;
+	\item \textbf{Verificatore}: Leonardo Baldo, Antonio Benetazzo.
+\end{itemize}
+
+\newpage
+
+\subsection{Attività da svolgere per il dodicesimo sprint}
+Vengono definite le seguenti attività da svolgere per il prossimo periodo:
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ |l||p{7cm}|l|l| }
+		\hline
+		\textbf{Codice}    & \textbf{Nome attività}                           & \textbf{Assegnatario} & \textbf{Scadenza} \\
+		\hline
+		\mySkip[86bz8e29k] & NdP - Aggiunta dei test previsti ed implementati & Elena Ferro           & 2024-07-17        \\
+		\mySkip[86bz8e6dg] & PdP - Saldo 12 sprint + preventivo 13 sprint     & Raul Seganfreddo      & 2024-07-17        \\
+		\mySkip[86bz0pf93] & PdQ - Aggiornare grafici 12 sprint               & Antonio Benetazzo     & 2024-07-17        \\
+		\mySkip[86byzyxt4] & Completamento implementazione test integrazione  & Matteo Tiozzo         & 2024-07-17        \\
+		\mySkip[86bzjkpg8] & Ultime finiture dashboard per collaudo           & Matteo Tiozzo         & 2024-07-17        \\
+		\mySkip[86bzjkpy4] & Verbale interno 2024-07-10                       & Elena Ferro           & 2024-07-17        \\
+		\hline
+	\end{tabular}
+	\caption{Attività da svolgere per il dodicesimo sprint}
+\end{table}
+
+\subsection{Decisioni prese e conclusioni}
+Sulla base di quanto emerso viene definita la nuova scadenza per la revisione \textit{PB} fissata per il giorno 2024-07-24. Decidiamo, inoltre, di non proseguire con il progetto oltre la revisione \textit{PB} e quindi di non procedere con la revisione \textit{CA}. Il gruppo pianifica la prossima riunione per il giorno 17 luglio alle ore 16:00, in modo da poter verificare che siano state svolte tutte le attività previste per il collaudo finale con l'azienda, che viene fissato per il giorno 19 luglio.
+
+\end{document}

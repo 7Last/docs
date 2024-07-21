@@ -1,0 +1,536 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+
+\linespread{1.2}
+\captionsetup[table]{labelformat=empty}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+
+% \let\oldthepage\thepage
+% \renewcommand{\thepage}{\sffamily \oldthepage}
+
+\glstoctrue
+
+\glsaddkey
+{acronym}
+{}
+{\glsentryacronym}
+{\Glsentryacronym}
+{\glsac}
+{\Glsac}
+{\GLSac}
+
+\glsaddkey
+{feminine}
+{}
+{\glsentryfem}
+{\Glsentryfem}
+{\glsf}
+{\Glsf}
+{\GLSf}
+
+
+\glsaddkey
+{feminine_plural}
+{}
+{\glsentryfemplur}
+{\Glsentryfemplur}
+{\glsfp}
+{\Glsfp}
+{\GLSfp}
+
+\setglossarysection{subsubsection}
+\renewcommand{\glossarysection}[2][]{}
+
+\makeglossaries
+
+%----- ESEMPIO ENTRY -----
+%\newglossaryentry{nome}{
+%    name={nome},
+%    description={descrizione},
+%    acronym={acronimo},
+%	 plural={plurale},
+%    feminine={femminile},
+%    feminine_plural={femminile plurale}
+%}
+
+%----- A -----
+
+\newglossaryentry{Agile}{
+    name={Agile},
+    description={La programmazione Agile è caratterizzata da uno sviluppo iterativo e incrementale. Si concentra sulla realizzazione di un MVP il più rapidamente possibile, ottenendo un feedback continuo dai clienti e rispondendo ai cambiamenti dei requisiti o della tecnologia}
+}
+
+\newglossaryentry{Analisi dei Requisiti}{
+    name={Analisi dei Requisiti},
+    description={L'analisi dei requisiti è una fase fondamentale nello sviluppo del software, che coinvolge la raccolta, l'analisi, la documentazione e la comprensione approfondita delle esigenze e delle specifiche di un sistema o di un'applicazione software che si intende sviluppare (oltre ad essere un documento all'interno del nostro progetto)},
+    acronym={AdR}
+}
+
+\newglossaryentry{Apache Kafka}{
+name={Apache Kafka},
+description={Piattaforma di streaming distribuita, progettata per la gestione di flussi di dati in tempo reale. Offre una soluzione scalabile e affidabile per la pubblicazione, la sottoscrizione e l'elaborazione di eventi in tempo reale all'interno di un sistema distribuito}
+}
+
+\newglossaryentry{Analista}{
+name={Analista},
+description={Figura professionale con competenze avanzate riguardo l’attività di analisi dei requisiti ed il dominio applicativo del problema. Il suo ruolo è quello di identificare, documentare e comprendere a fondo le esigenze e le specifiche del progetto, traducendole in requisiti chiari e dettagliati. Si occupa di: analizzare il contesto di riferimento, definire il problema in esame e stabilire gli obiettivi da raggiungere; comprendere il problema e definire la complessità e i requisiti; redigere il documento Analisi dei requisiti; studiare i bisogni espliciti ed impliciti},
+plural={Analisti}
+}
+
+\newglossaryentry{Amministratore}{
+name={Amministratore},
+description={Un amministratore è una persona responsabile del controllo e dell'amministrazione dell'ambniente di lavoro utilizzato dal gruppo ed è anche il punto di riferimento per quanto concerne le norme di progetto. Le sue principali mansioni sono: affrontare e risolvere le problematiche associate alla gestione dei processi; gestire l'archiviazione e le versioni della documentazione; gestire la configurazione del prodotto; redigere ed attuare le norme e le procedure per la gestione della qualità; amministrare le infrastrutture e i servizi per i processi di supporto},
+plural={Amministratori},
+feminine={Amministratrice},
+feminine_plural={Amministratrici}
+}
+
+%----- B -----
+
+\newglossaryentry{Broker}{
+name={Broker},
+description={Un broker è un intermediario che facilita la comunicazione tra due parti. Nel contesto di Apache Kafka, un broker è un server che gestisce la memorizzazione e la distribuzione dei messaggi all'interno di un cluster Kafka}
+}
+
+%----- C -----
+
+\newglossaryentry{Customer Acceptance}{
+name={Customer Acceptance},
+description={La Customer Acceptance è l'ultima fase del ciclo di vita del software, consiste nella presentazione del prodotto finito al cliente per valutazione e approvazione. Durante questa fase, il cliente esamina attentamente il software rispetto ai requisiti concordati e alle aspettative iniziali. Una volta accettato dal cliente, il software è pronto per l'utilizzo e la distribuzione},
+acronym={CA}
+}
+
+\newglossaryentry{Capitolato}{
+name={Capitolato},
+description={Documento che contiene le specifiche e le condizioni per lo sviluppo di un progetto software. II capitolato viene redatto dal proponente e viene presentato ai fornitori o agli sviluppatori interessati a partecipare all'appalto per la realizzazione del prodotto software}
+}
+
+\newglossaryentry{Centro di massa}{
+name={Centro di massa},
+description={Il centro di massa è il punto in un sistema fisico o astratto in cui si può considerare concentrata la massa totale del sistema. Il centro di massa è un concetto fondamentale in fisica e ingegneria, utilizzato per descrivere il movimento e il comportamento di un sistema in base alla sua massa e alla sua distribuzione spaziale. Nel caso di un insieme di punti in un piano, il centro di massa è il punto medio tra i punti, calcolato come la media ponderata delle coordinate dei punti rispetto alla loro massa}
+}
+
+\newglossaryentry{Committente}{
+name={Committente},
+description={Il committente è la persona o l'organizzazione che richiede la realizzazione di un progetto software e finanzia il suo sviluppo. Il committente definisce i requisiti e le specifiche del progetto e valuta il prodotto finale rispetto ai propri obiettivi e aspettative},
+plural={Committenti}
+}
+
+\newglossaryentry{ClickUp}{
+name=ClickUp,
+description={Software di gestione dei progetti che offre varie funzionalità, tra cui la gestione di task, una lavagna virtuale, fogli di calcolo e strumenti collaborativi per la creazione e modifica di documenti, il tutto accessibile da una piattaforma unificata}
+}
+
+\newglossaryentry{ClickHouse} {
+name={ClickHouse},
+description={Sistema di gestione di database distribuito e open-source, progettato per l'analisi di dati in tempo reale. ClickHouse è ottimizzato per eseguire query analitiche su grandi volumi di dati, offrendo prestazioni elevate e scalabilità orizzontale}
+}
+
+\newglossaryentry{Cruscotto}{
+name={Cruscotto},
+description={Un cruscotto è un'interfaccia utente che fornisce una panoramica visiva delle informazioni più importanti, utilizzando grafici, tabelle e altri elementi visivi per rappresentare i dati in modo chiaro e conciso. I cruscotti sono ampiamente utilizzati in diversi contesti, come il monitoraggio delle prestazioni aziendali, la visualizzazione dei dati di analisi e la gestione dei progetti. Nel contesto dello sviluppo software, si riferisce a un'interfaccia grafica o a un'applicazione web che fornisce una panoramica visiva delle metriche e delle statistiche rilevanti per il controllo della qualità del software. Questo cruscotto di solito raccoglie dati da varie fonti, come sistemi di gestione del versionamento del codice, strumenti di test automatizzati, sistemi di monitoraggio delle prestazioni e altri strumenti di analisi. Il suo obiettivo principale è quello di fornire agli sviluppatori, ai tester e ai responsabili un modo rapido ed efficace per valutare lo stato del progetto, identificare eventuali problemi o anomalie e prendere decisioni informate sulle azioni da intraprendere per migliorare la qualità del software}
+}
+
+%----- D -----
+
+\newglossaryentry{Dashboard}{
+name={Dashboard},
+description={Una dashboard è un'interfaccia utente che fornisce una panoramica visiva delle informazioni più importanti, utilizzando grafici, tabelle e altri elementi visivi per rappresentare i dati in modo chiaro e conciso. Le dashboard sono ampiamente utilizzate in diversi contesti, come il monitoraggio delle prestazioni aziendali, la visualizzazione dei dati di analisi e la gestione dei progetti}
+}
+
+\newglossaryentry{Design Pattern}{
+name={Design Pattern},
+description={Un design pattern è una soluzione generale e riutilizzabile a un problema comune di progettazione del software. I design pattern forniscono un approccio strutturato e convenzionale per risolvere problemi ricorrenti nel design del software, consentendo ai progettisti di adottare soluzioni collaudate e ottimizzate per problemi specifici}
+}
+
+\newglossaryentry{Development Team}{
+name={Development Team},
+description={In Scrum, il Development Team si riferisce all'insieme dei membri che svolge un ruolo nello sviluppo e nel supporto del prodotto e può includere ricercatori, architetti, designer, programmatori, e molti altri}
+}
+
+\newglossaryentry{Docker}{
+name={Docker},
+description={Popolare software libero progettato per eseguire processi informatici in ambienti isolabili, minimali e facilmente distribuibili chiamati container, con l'obiettivo di semplificare i processi di deployment di applicazioni software}
+}
+
+\newglossaryentry{Docker Compose}{
+name={Docker Compose},
+description={Strumento che semplifica la specifica dei servizi, reti e volumi necessari per eseguire un'applicazione composta da più contenitori Docker, consentendo una gestione semplificata dell'ambiente di sviluppo e di distribuzione}
+}
+
+%----- E -----
+\newglossaryentry{Enumerazione}{
+name={Enumerazione},
+description={In informatica, un'enumerazione è un tipo di dato che consiste in un insieme di costanti denominate, ciascuna delle quali rappresenta un valore specifico. Le enumerazioni sono utilizzate per definire insiemi di costanti correlate e per rendere il codice più leggibile e manutenibile},
+acronym={Enum}
+}
+
+\newglossaryentry{Extract Transform Load}{
+name={Extract Transform Load},
+description={Il processo di Extract, Transform, Load (ETL) è un approccio comune per l'importazione, la trasformazione e il caricamento dei dati da diverse fonti in un database o un data warehouse. L'ETL coinvolge tre fasi principali: l'estrazione dei dati da una o più fonti, la trasformazione dei dati in un formato comune e la struttura e il caricamento dei dati in un database o un data warehouse},
+acronym={ETL}
+}
+
+%----- F -----
+
+%----- E -----
+
+\newglossaryentry{European Air Quality Index}{
+name={European Air Quality Index},
+description={L'indice europeo della qualità dell'aria è uno standard di qualità dell'aria che fornisce informazioni sulla qualità dell'aria in Europa. L'indice è basato su dati di monitoraggio dell'inquinamento atmosferico e fornisce informazioni sulle concentrazioni di inquinanti atmosferici come PM2.5, PM10, NO2, SO2, CO e O3},
+acronym={EAQI},
+}
+
+%----- G -----
+
+\newglossaryentry{Glossario}{
+name=Glossario,
+description={Elenco strutturato di termini tecnici o specializzati, ognuno corredato dalla propria definizione o spiegazione. Questo strumento aiuta a migliorare la comunicazione tra le varie parti coinvolte in un progetto, riducendo le ambiguità e garantendo una comprensione condivisa dei termini utilizzati in un determinato contesto},
+acronym={Glo}
+}
+
+\newglossaryentry{Grafana}{
+name={Grafana},
+description={Piattaforma open-source per la visualizzazione e l'analisi dei dati, progettata per supportare la creazione di dashboard interattive e personalizzabili. Grafana offre una vasta gamma di funzionalità per la visualizzazione dei dati, tra cui grafici, tabelle, mappe e pannelli di controllo}
+}
+
+\newglossaryentry{GitHub}{
+name={GitHub},
+description={GitHub è una piattaforma di sviluppo collaborativo basata su Git, un sistema di controllo delle versioni distribuito. È ampiamente utilizzato da sviluppatori di software e team di sviluppo per gestire progetti, tenere traccia delle modifiche al codice sorgente, coordinare il lavoro tra i membri del team e facilitare la collaborazione su larga scala}
+}
+
+%----- H -----
+\newglossaryentry{Heat Index}{
+name={Heat Index},
+description={L'heat index è una misura della temperatura percepita dal corpo umano quando si considera l'effetto combinato della temperatura dell'aria e dell'umidità relativa. È un indicatore di come il calore viene effettivamente percepito dal corpo umano rispetto alla sola temperatura dell'aria, poiché l'umidità relativa influisce sulla capacità del corpo di raffreddarsi attraverso l'evaporazione del sudore},
+}
+
+%----- I -----
+
+%----- J -----
+\newglossaryentry{Job}{
+name={Job},
+description={Nel contesto di Apache Flink, è un'unità fondamentale di lavoro che rappresenta un'insieme di operazioni di elaborazione dati definite da un programma Flink. Un job in Flink è una pipeline di trasformazioni che prendono dati in ingresso, li elaborano attraverso una serie di operatori, e producono un output}
+}
+\newglossaryentry{JavaScript Object Notation}{
+name={JavaScript Object Notation},
+description={JavaScript Object Notation (JSON) è un formato di dati leggero e indipendente dal linguaggio di programmazione, basato su un sottoinsieme di JavaScript. È ampiamente utilizzato per lo scambio di dati tra applicazioni web e server, poiché è facile da leggere e scrivere per gli esseri umani e facile da analizzare e generare per le macchine},
+acronym={JSON}
+}
+
+%----- K -----
+\newglossaryentry{Key Performance Indicator}{
+name={Key Performance Indicator},
+description={I Key Performance Indicator (KPI) sono misure quantitative utilizzate per valutare le prestazioni di un'organizzazione, di un progetto o di un processo rispetto agli obiettivi prefissati. I KPI forniscono un modo oggettivo per monitorare e valutare il successo di un'attività, identificare le aree di miglioramento e prendere decisioni informate per ottimizzare le prestazioni},
+acronym={KPI}
+}
+
+%----- L -----
+\newglossaryentry{Lombok}{
+name={Lombok},
+description={Libreria Java che consente di ridurre la quantità di codice boilerplate necessario per la scrittura di classi Java, fornendo annotazioni per generare automaticamente metodi getter, setter, costruttori e altri metodi comuni. Lombok semplifica lo sviluppo di applicazioni Java riducendo la quantità di codice ripetitivo e migliorando la leggibilità e la manutenibilità del codice},
+}
+
+%----- M -----
+
+\newglossaryentry{Materialized View}{
+name={Materialized View},
+description={Una Materialized View in ClickHouse è una vista computata in precedenza e memorizzata fisicamente, che viene aggiornata automaticamente quando i dati sottostanti cambiano. A differenza di una vista standard che calcola i dati al momento della query, una materialized view mantiene i dati aggiornati e pronti per essere letti rapidamente, migliorando le prestazioni delle query di lettura. Viene tipicamente utilizzata per accelerare le operazioni di lettura su set di dati complessi e di grandi dimensioni, aggregando e trasformando i dati in anticipo},
+plural={Materialized Views}
+}
+
+\newglossaryentry{Milestone}{
+name={Milestone},
+description={Le Milestone sono strumenti utilizzati nella gestione dei progetti per segnare punti specifici lungo la timeline di un progetto. Questi punti possono segnalare ancore come una data di inizio e di fine del progetto, o la necessità di una revisione. In molti casi, le milestone, non incidono sulla durata del progetto. Si concentrano invece sui principali punti di avanzamento che devono essere raggiunti per ottenere il successo}
+}
+
+\newglossaryentry{Minimum Viable Product}{
+name={Minimum Viable Product},
+description={È una versione semplificata di un prodotto software che include solo le funzionalità essenziali per soddisfare i bisogni dei primi utenti. L'obiettivo principale di un MVP è testare e validare l'idea di base del prodotto, raccogliere feedback dagli utenti e ridurre al minimo il tempo e le risorse necessarie per il suo sviluppo},
+acronym={MVP}
+}
+
+%----- N -----
+
+\newglossaryentry{Norme di Progetto}{
+name={Norme di Progetto},
+description={Regole e linee guida stabilite all'interno di un progetto per garantire coerenza e qualità nelle attività svolte. Definiscono standard e procedure, come documentazione, gestione delle versioni e criteri di codifica, per assicurare uniformità nell'approccio e nel risultato finale},
+acronym={NdP}
+}
+
+\newglossaryentry{Notion}{
+name={Notion},
+description={Applicazione di produttività che combina funzionalità di gestione delle attività, note, documenti e database in un'unica piattaforma. Notion offre un'interfaccia flessibile e personalizzabile per organizzare e collaborare su progetti, idee e informazioni in modo strutturato e intuitivo}
+}
+
+%----- O -----
+
+\newglossaryentry{Online Transaction Processing}{
+name={Online Transaction Processing},
+description={L'online transaction processing (OLTP) è un insieme di tecniche software utilizzate per la gestione di applicazioni orientate alle transazioni. In particolare, OLTP si riferisce a sistemi di database progettati per supportare transazioni in tempo reale, come l'inserimento, la modifica e l'eliminazione di record in un database},
+acronym={OLTP}
+}
+
+%----- P -----
+
+\newglossaryentry{Product Baseline}{
+name={Product Baseline},
+description={Fase di progetto durante la quale il focus si sposta dall'analisi dei requisiti e dalla progettazione concettuale all'implementazione e alla costruzione effettiva del prodotto software. Le attività principali comprendono la scrittura del codice, i test unitari e l'integrazione di componenti software. L'obiettivo è raggiungere una versione stabile e funzionante del prodotto che rappresenti la base per ulteriori sviluppi e miglioramenti},
+acronym={PB}
+}
+
+\newglossaryentry{Piano di Progetto}{
+name={Piano di Progetto},
+description={Documento formale che delinea in dettaglio la pianificazione, l'esecuzione, il monitoraggio e il controllo di tutte le attività coinvolte nella realizzazione di un progetto. Questo documento fornisce una roadmap chiara e organizzata, comprensiva di obiettivi, risorse, scadenze e strategie di gestione dei rischi. Essenziale per la gestione efficace di un progetto, il piano di progetto serve come guida per il team di lavoro e gli stakeholder, fornendo una struttura che facilita il coordinamento delle attività e l'assegnazione delle risorse},
+acronym={PdP}
+}
+
+\newglossaryentry{Piano di Qualifica}{
+name={Piano di Qualifica},
+description={Documento che stabilisce gli standard di qualità, i processi e le attività di testing che saranno implementati durante lo sviluppo di un progetto. Contiene una descrizione dettagliata delle strategie di testing, delle metriche di valutazione e dei criteri di accettazione del prodotto finale. L'obiettivo principale del Piano di Qualifica è garantire che il prodotto soddisfi gli standard di qualità prefissati e che il processo di sviluppo segua procedure coerenti ed efficaci},
+acronym={PdQ}
+}
+
+\newglossaryentry{Proof of Concept}{
+name={Proof of Concept},
+description={Dimostrazione pratica per verificare la fattibilità o la validità di un'idea, di un concetto o di un progetto specifico. Nel contesto dello sviluppo software, un PoC consiste nella creazione di una versione semplificata di un'applicazione per testare un nuovo approccio tecnologico o per dimostrare la fattibilità di una funzionalità specifica},
+acronym={PoC}
+}
+
+\newglossaryentry{Product Backlog}{
+name={Product Backlog},
+description={Consiste in un elenco prioritizzato di tutte le funzionalità, i requisiti, le correzioni di bug e le modifiche che devono essere fatte a un prodotto software. Il Product Backlog è dinamico e può essere aggiornato in qualsiasi momento per riflettere le esigenze e le priorità del progetto. È gestito dal Product Owner e utilizzato dal team di sviluppo per pianificare e organizzare il lavoro da svolgere}
+}
+
+\newglossaryentry{Product Owner}{
+name={Product Owner},
+description={Un product owner supervisiona lo sviluppo di un prodotto software. È il membro di un team di sviluppo Scrum che mantiene la visione di un progetto di sviluppo secondo la metodologia Agile. Le loro responsabilità comprendono il mantenimento di un backlog del prodotto, ovvero un elenco prioritario di opzioni di funzionalità}
+}
+
+\newglossaryentry{Proponente}{
+name={Proponente},
+description={il proponente è la persona o l'organizzazione che presenta un capitolato d'appalto per la realizzazione di un progetto software. il proponente definisce i requisiti e le specifiche del progetto e valuta le proposte dei fornitori o degli sviluppatori interessati a partecipare all'appalto},
+plural={Proponenti}
+}
+
+\newglossaryentry{Python}{
+name={Python},
+description={Python è un linguaggio di programmazione di alto livello e di uso generale. La sua filosofia di progettazione enfatizza la leggibilità del codice con l'uso di un 'indentazione significativa}
+}
+
+\newglossaryentry{Progettista}{
+name={Progettista},
+description={Il progettista è la figura di riferimento per quanto riguarda le scelte progettuali partendo dal lavoro dell’analista. Spetta al progettista assumere decisioni di natura tecnica e tecnologica, oltre a supervisionare il processo di sviluppo. Tuttavia, non è responsabile della manutenzione del prodotto. In particolare si occupa di: progettare l’architettura del prodotto secondo specifiche tecniche dettagliate; prendere decisioni per sviluppare soluzioni che soddisfino i criteri di affidabilità, efficienza, sostenibilità e conformità ai requisiti; redige la Specifica Architetturale e la parte pragmatica del Piano di Qualifica},
+plural={Progettisti}
+}
+
+\newglossaryentry{Programmatore}{
+name={Programmatore},
+description={Il programmatore è la figura professionale incaricata della scrittura del codice software. Il suo compito primario è implementare il codice conformemente alle specifiche fornite dall’analista e all’architettura definita dal progettista. In particolare, il programmatore: scrive codice manutenibile in conformità con le Specifiche Tecniche; codifica le varie componenti dell’architettura seguendo quanto ideato dai progettisti; realizza gli strumenti per verificare e validare il codice; redige il Manuale Utente},
+plural={Programmatori},
+feminine={Programmatrice},
+feminine_plural={Programmatrici}
+}
+
+\newglossaryentry{Panel}{
+name={Panel},
+description={Un panel è un componente grafico che visualizza i dati in un formato specifico, come un grafico, una tabella o un pannello di controllo. Nel particolare contesto di utilizzo in Grafana, il panel è il principale elemento di visualizzazione dei dati; ogni pannello può essere configurato per mostrare i dati in modo diverso, utilizzando vari tipi di grafici e layout},
+}
+
+%----- Q -----
+
+%----- R -----
+
+\newglossaryentry{Requirements and Technology Baseline}{
+name={Requirements and Technology Baseline},
+description={Fase iniziale e fondamentale del processo di sviluppo di un software. In questa fase, l'obiettivo principale è stabilire e comprendere i requisiti del sistema e definire la base tecnologica sulla quale il progetto si svilupperà. Le tre principali attività di questa fase sono: l'analisi dei requisiti, la definizione della baseline tecnologica e la definizione della baseline di progetto},
+acronym={RTB}
+}
+
+\newglossaryentry{Responsabile}{
+name={Responsabile},
+description={Figura fondamentale che coordinare il gruppo, funge da punto di riferimento per il committente e per il team, svolgendo il ruolo di mediatore tra le due parti. In particolare si occupa di: gestire le relazioni con l’esterno; pianificare le attività (quali svolgere, data di inizio e fine, assegnazione delle priorità); valutare i rischi delle scelte da effettuare; controllare i progressi del progetto; gestire le risorse umane; approvare la documentazione},
+plural={Responsabili}
+}
+
+\newglossaryentry{Redpanda}{
+name={Redpanda},
+description={Piattaforma di dati in streaming distribuita progettata per la gestione di flussi di dati in tempo reale, compatibile con le API di Kafka. Redpanda offre una soluzione scalabile e affidabile per la pubblicazione, la sottoscrizione e l'elaborazione di eventi in tempo reale all'interno di un sistema distribuito}
+}
+
+%----- S -----
+
+\newglossaryentry{Stato Avanzamento Lavori}{
+name={Stato Avanzamento Lavori},
+description={Nell'ambito del project management, è una riunione periodica (o attività di confronto analoga) che viene stabilita per garantire e verificare l'avanzamento di un progetto rispetto ai propri obiettivi},
+acronym={SAL}
+}
+
+\newglossaryentry{Scrum}{
+name={Scrum},
+description={Scrum è una struttura Agile di collaborazione tra team, comunemente utilizzata nello sviluppo di software e in altri settori. Scrum prescrive ai team di suddividere il lavoro in obiettivi da completare entro iterazioni a tempo, chiamate sprint}
+}
+
+\newglossaryentry{Schema Registry}{
+name={Schema Registry},
+description={Componente di in un sistema di streaming di dati che consente di definire, registrare e convalidare gli schemi dei dati in modo centralizzato, garantendo la coerenza e la compatibilità dei dati tra i diversi componenti del sistema}
+}
+
+\newglossaryentry{Scrum Master}{
+name={Scrum Master},
+description={Il ruolo di uno Scrum Master è quello di utilizzare la gestione agile dei progetti per sostenere un progetto, i team e i membri del team. Poiché gli Scrum Master possono lavorare in diversi contesti, i compiti e le responsabilità possono variare}
+}
+
+\newglossaryentry{Sensore}{
+name={Sensore},
+description={Un sensore è un dispositivo elettronico che produce un segnale di uscita allo scopo di rilevare un fenomeno fisico. Questo segnale viene utilizzato per interpretare le informazioni relative al fenomeno rilevato dal sensore. I sensori sono ampiamente utilizzati in diverse applicazioni, come la misurazione della temperatura, del livello dell'acqua, della pressione atmosferica}
+}
+
+\newglossaryentry{Sprint}{
+name={Sprint},
+description={Gli sprint sono periodi di tempo che vanno da una settimana a un mese, durante i quali il Product Owner, lo Scrum Master e il Development Team lavorano per completare una specifica aggiunta al prodotto. Durante uno sprint, si lavora per creare nuove funzionalità basate sulle user stories e sul backlog}
+}
+
+\newglossaryentry{Smart City}{
+name={Smart City},
+description={Una Smart City è una città che utilizza tecnologie digitali e informatiche per migliorare la qualità della vita dei suoi cittadini e ridurre l'impatto ambientale. Le Smart City integrano l'Internet of Things (IoT), i big data, l'intelligenza artificiale e altre tecnologie per ottimizzare i servizi pubblici, i trasporti, l'energia, l'ambiente e altri aspetti della vita urbana}
+}
+
+\newglossaryentry{Stakeholder}{
+name={Stakeholder},
+description={Gli stakeholder sono le persone o le organizzazioni coinvolte o interessate a un progetto o a un'organizzazione. Gli stakeholder possono includere clienti, utenti finali, fornitori, dipendenti, investitori, partner commerciali, organizzazioni non governative e altri soggetti che possono influenzare o essere influenzati dalle decisioni e dalle azioni di un'organizzazione}
+}
+
+\newglossaryentry{SyncCity}{
+name={SyncCity},
+description={Progetto di ricerca e sviluppo che mira a creare una piattaforma per la gestione e l'analisi di dati provenienti da sensori e dispositivi IoT in una Smart City. SyncCity si concentra sulla creazione di un sistema scalabile e flessibile per la raccolta, l'elaborazione e la visualizzazione dei dati, al fine di supportare la presa di decisioni basata sui dati e migliorare la qualità della vita urbana}
+}
+
+\newglossaryentry{SOLID}{
+name={SOLID},
+description={In ingegneria del software, SOLID è un acrostico riferito a cinque principi dello sviluppo del software orientato agli oggetti descritti da Robert C. Martin in diverse pubblicazioni dei primi anni 2000. Tali principi vengono detti SOLID principles (letteralmente "principi solidi"). La parola è un acronimo che serve a ricordare tali principi (Single responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion), e fu coniata da Michael Feathers. I principi SOLID sono intesi come linee guida per lo sviluppo di software leggibile, estendibile e manutenibile, in particolare nel contesto di pratiche di sviluppo agili e fondate sull'identificazione di code smell e sul refactoring.},
+}
+
+\newglossaryentry{Superclasse}{
+name={Superclasse},
+description={In programmazione orientata agli oggetti, una superclasse è una classe che viene estesa da una o più sottoclassi. La superclasse definisce i comportamenti e le proprietà comuni a tutte le sottoclassi, che ereditano questi attributi e metodi. Le sottoclassi possono estendere o sovrascrivere i metodi della superclasse per adattarli alle proprie esigenze},
+}
+
+%----- T -----
+\newglossaryentry{TaskManager}{
+name={TaskManager},
+description={Nel contesto di Apache Flink, un TaskManager è un processo che esegue i task di elaborazione dei dati all'interno di un cluster Flink. Ogni TaskManager è responsabile dell'esecuzione di uno o più task di elaborazione, che possono includere operazioni di lettura, trasformazione e scrittura dei dati}
+}
+
+\newglossaryentry{Time series} {
+name={Time series},
+description={Una time series è una sequenza di dati raccolti in successione temporale. Le time series sono ampiamente utilizzate nell'analisi statistica, nell'elaborazione dei segnali, nella previsione e in altri campi per studiare e analizzare i dati in funzione del tempo}
+}
+
+\newglossaryentry{Test end-to-end}{
+name={Test end-to-end},
+description={I test end-to-end sono test che simulano il flusso di dati attraverso un'applicazione software, dall'inizio alla fine. Questi test verificano che tutti i componenti dell'applicazione funzionino correttamente insieme e che l'applicazione risponda correttamente alle richieste degli utenti}
+}
+
+\newglossaryentry{Topic}{
+name={Topic},
+description={Nel contesto di Apache Kafka, un topic è una categoria o un canale logico in cui vengono pubblicati i messaggi. I topic sono utilizzati per organizzare e classificare i messaggi in base al loro contenuto e alla loro destinazione}
+}
+
+\newglossaryentry{Tom's Obvious Minimal Language}{
+name={Tom's Obvious Minimal Language},
+description={TOML (Tom's Obvious, Minimal Language) è un formato di file di configurazione leggibile dall'uomo, progettato per essere semplice e intuitivo. Utilizza una sintassi basata su chiavi e valori, organizzati in sezioni, che lo rende facile da leggere e modificare. TOML è utilizzato principalmente per configurazioni di software e progetti, e il suo obiettivo principale è mantenere la chiarezza e la semplicità, evitando la complessità di formati come XML o JSON},
+acronym={TOML}
+}
+
+
+%----- U -----
+
+\newglossaryentry{User Story}{
+name={User Story},
+description={Una user story è una descrizione informale, in linguaggio naturale, delle caratteristiche di un sistema software}
+}
+
+%----- V -----
+
+\newglossaryentry{Verificatore}{
+name={Verificatore},
+description={La principale responsabilità del verificatore consiste nell’ispezionare il lavoro svolto da altri membri del team per assicurare la qualità del prodotto e la conformità alle attese prefissate. Stabilisce se il lavoro è stato svolto correttamente sulla base delle proprie competenze tecniche, esperienza e conoscenza delle norme. In particolare il verificatore si occupa
+di: verificare che il lavoro svolto sia conforme alle Norme di Progetto; verificare che il lavoro svolto sia conforme alle Specifiche Tecniche; ricercare ed in caso segnalare eventuali errori; redigere la sezione retrospettiva del Piano di Qualifica, descrivendo le verifiche e
+le prove effettuate durante il processo di sviluppo del prodotto},
+plural={Verificatori},
+feminine={Verificatrice},
+feminine_plural={Verificatrici}
+}
+
+%----- W -----
+
+\newglossaryentry{Widget}{
+name={Widget},
+description={Un widget è un componente grafico o un'interfaccia utente che fornisce informazioni o funzionalità specifiche all'interno di un'applicazione o di un sito web. I widget possono includere elementi come pulsanti, caselle di testo, grafici, mappe, e molti altri}
+}
+
+%----- X -----
+
+%----- Y -----
+\newglossaryentry{Yet Another Markup Language}{
+name={Yet Another Markup Language},
+description={YAML (YAML Ain't Markup Language) è un formato di serializzazione di dati leggibile dall'uomo, progettato per essere facile da scrivere e da leggere. YAML è spesso utilizzato per la configurazione di software, la definizione di dati strutturati e altri scopi in cui è necessario rappresentare i dati in un formato leggibile e flessibile},
+acronym={YAML}
+}
+
+%----- Z -----
+
+\newglossarystyle{myaltlistgroup}{
+    \setglossarystyle{altlistgroup}
+    \renewcommand*{\glsgroupheading}[1]{
+        \pagebreak
+        \item\makebox[\linewidth]{\Large\textbf{\glsgetgrouptitle{##1}}}
+        \vspace*{-\baselineskip}
+        \item\makebox[\linewidth]{\hspace*{3cm}\hrulefill\hspace*{3cm}}
+        \addcontentsline{toc}{section}{\glsgetgrouptitle{##1}}
+    }
+}
+
+\glsaddallunused
+
+\begin{document}
+
+\include{title}
+
+\newpage
+
+\include{header}
+
+\begin{table}[!h]
+	\caption{Versioni}
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{ l l l l p{6cm} }
+			\hline                                                                                                                      \\[-2ex]
+			Ver. & Data       & Redattore          & Verificatore       & Descrizione                                                    \\
+			\\[-2ex] \hline \\[-1.5ex]
+			2.0  & 2024-07-19 & Matteo Tiozzo      & Matteo Tiozzo      & Approvazione documento                                         \\
+			1.2  & 2024-07-07 & Valerio Occhinegro & Elena Ferro        & Aggiunta definizioni                                         \\
+			1.1  & 2024-06-26 & Matteo Tiozzo      & Valerio Occhinegro & Aggiunta definizioni                                         \\
+			1.0  & 2024-05-26 & Elena Ferro        & Raul Seganfreddo   & Approvazione documento                                         \\
+			0.6  & 2024-05-04 & Antonio Benetazzo  & Valerio Occhinegro & Aggiunta definizioni                                           \\
+			0.5  & 2024-04-16 & Elena Ferro        & Antonio Benetazzo  & Aggiunta definizioni e acronimi                                \\
+			0.4  & 2024-04-20 & Leonardo Baldo     & Antonio Benetazzo  & Aggiunta definizioni                                           \\
+			0.3  & 2024-04-07 & Leonardo Baldo     & Valerio Occhinegro & Aggiunta definizioni                                           \\
+			0.2  & 2024-04-02 & Elena Ferro        & Valerio Occhinegro & Modifica stile documento, automatizzazione creazione glossario \\
+			0.1  & 2024-03-28 & Leonardo Baldo     & Valerio Occhinegro & Creazione documento                                            \\
+			\\[-1.5ex] \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+\tableofcontents
+\printglossary[style=myaltlistgroup,title=]
+\end{document}
