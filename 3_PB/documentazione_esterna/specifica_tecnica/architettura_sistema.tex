@@ -916,7 +916,7 @@ utilizzata sia per calcolare la media della temperatura che dell'umidità.
 Data la necessità di convertire la classe \texttt{HeatIndexResult}, prodotto delle aggregazioni, in un oggetto di tipo \texttt{GenericRecord} (contenuto nella libreria \texttt{avro}),
 abbiamo implementato il \textit{pattern} \textit{object adapter}, che si occupa di effettuare tale conversione.\\
 A tale scopo, è stata definita un'interfaccia \texttt{RecordSerializable} che espone il metodo \texttt{toGenericRecord}, il quale restituisce un oggetto di tipo \texttt{GenericRecord}.\\
-\texttt{HeatIndexRecordSerializableAdapter} implementa tale interfaccia e ha un campo \texttt{adaptee} di tipo \texttt{HeatIndexResult}. Prima di effettuare dunque il \textit{sink}
+\texttt{HeatIndexRecordSerializableAdapter} implementa tale interfaccia e ha un campo \\\texttt{adaptee} di tipo \texttt{HeatIndexResult}. Prima di effettuare dunque il \textit{sink}
 dei dati, viene invocato il metodo \texttt{toGenericRecord} per ottenere il \textit{record} da pubblicare nel \textit{topic} dedicato allo \textit{Heat Index}.
 
 \subsubsubsubsubsection{Classi, interfacce metodi e attributi}
@@ -1176,9 +1176,9 @@ Riassumendo:
 		            \begin{itemize}
 			            \item \texttt{vehicleType} String [private]: tipo di veicolo che la colonnina ricarica;
 			            \item \texttt{batteryLevel} double [private]: livello di batteria del veicolo collegato alla colonnina;
-			            \item \texttt{kwhSupplied} double [private]: kilowatt ora che la colonnina sta erogando al momento della misurazione;
+			            \item \texttt{kwhSupplied} double [private]: kilowattora che la colonnina sta erogando al momento della misurazione;
 			            \item \texttt{remainingChargeTime} Duration [private]: tempo di ricarica rimanente;
-			            \item \texttt{elapsedTime} Duration [private]: tempo di ricarica rimanente;
+			            \item \texttt{elapsedTime} Duration [private]: tempo di ricarica trascorso;
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ChargingEfficiencyJob}
@@ -1244,7 +1244,7 @@ Riassumendo:
 	      \end{itemize}
 	\item \textbf{Classe ChargingEfficiencyJoinFunction}
 	      \begin{itemize}
-		      \item \texttt{join(TimestampDifferenceResult parkingDiff, TimestampDifferenceResult chargingDiff)}: calcola \textit{efficiency} e \textit{utilization rate} a partire da \texttt{TimestampDifferenceResult}
+		      \item \texttt{join(TimestampDifferenceResult parkingDiff, \\TimestampDifferenceResult chargingDiff)}: calcola \textit{efficiency} e \textit{utilization rate} a partire da \texttt{TimestampDifferenceResult}
 		            di parcheggi e colonnine.
 	      \end{itemize}
 	\item \textbf{Classe ChargingEfficiencyResult}
@@ -1263,7 +1263,7 @@ Riassumendo:
 		            \begin{itemize}
 			            \item \texttt{zero(String sensorUuid, LocalDateTime timestamp, String groupName,}\\
 			                  \texttt{Set<String> sensorNames)} ChargingEfficiencyResult [public,static]: metodo che costruisce e ritorna un'istanza di ChargingEfficiencyResult
-			                  con \texttt{utilizationRate} e \texttt{efficiencyRate} posti a 0.
+			                  con \\\texttt{utilizationRate} e \texttt{efficiencyRate} posti a 0.
 		            \end{itemize}
 	      \end{itemize}
 	\item \textbf{Classe ParkingRawDataMapFunction}
