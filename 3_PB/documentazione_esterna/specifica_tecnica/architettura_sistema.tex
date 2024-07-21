@@ -507,11 +507,11 @@ per l'effettiva produzione dei dati su Kafka.
 
 \subsubsubsection{\textit{Design Pattern}}
 \subsubsubsubsection{\textit{Strategy}}
-Abbiamo deciso di utilizzare il \textit{design pattern} \textit{Strategy} per convertire le istanze di \texttt{RawData} in \textit{byte}, senza dover modificare il codice che le utilizza;
+Abbiamo deciso di utilizzare il \textit{design pattern} \textit{Strategy} per serializzare le istanze di \texttt{RawData} in \textit{byte} utilizzando diverse codifiche, senza dover modificare il codice che le utilizza;
 per tale motivo sono state implementate le classi \\\texttt{JsonSerializationStrategy} e \texttt{AvroSerializationStrategy}.
 \texttt{DictSerializable} è un'interfaccia che definisce il metodo \texttt{to\_dict()}, il quale restituisce un dizionario Python.
 L'interfaccia \texttt{SerializationStrategy} definisce il metodo \texttt{serialize(data: DictSerializable)}, che prende in input un \texttt{DictSerializable} restituisce i \textit{byte} corrispondenti.
-\texttt{AvroSerializationStrategy} si appoggia sulla libreria \texttt{confluent\_avro} per interagire con lo \textit{schema registry} e costruire un oggetto di tipo
+\\\texttt{AvroSerializationStrategy} si appoggia sulla libreria \texttt{confluent\_avro} per interagire con lo \textit{schema registry} e costruire un oggetto di tipo
 \texttt{AvroValueSerde}, necessario per la serializzazione a partire da uno schema Avro e un dizionario.
 
 \subsubsubsubsection{\textit{Object Adapter}}
@@ -714,7 +714,7 @@ Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
 \end{itemize}
 
 \subsubsection{Inizializzazione e configurazione}
-Apache Flink necessita che i \textit{topic} da cui consuma, ovvero temperatura, umidità, colonnine di ricarica e parcheggi, e quelli in cui pubblica, ovvero \texttt{heat\_index} e \texttt{charging\_efficiency},
+Apache Flink necessita che i \textit{topic} da cui consuma, ovvero temperatura, umidità, colonnine di ricarica e parcheggi, e quelli in cui pubblica, ovvero \texttt{heat\_index} e \\\texttt{charging\_efficiency},
 siano creati precedentemente all'esecuzione del \textit{job}, con i rispettivi schemi. A tale scopo, è stata realizzata un'immagine Docker basata su \href{https://hub.docker.com/_/alpine}{\underline{Alpine Linux}} [Ultima consultazione 2024-07-18],
 al cui interno viene scaricato il binario \href{https://docs.redpanda.com/current/get-started/intro-to-rpk/}{\underline{rpk}} [Ultima consultazione 2024-07-18], strumento
 messo a disposizione da Redpanda per interagire e configurare un \textit{cluster} Redpanda, anche remoto. Al suo interno inoltre è presente uno \textit{script} Bash che
