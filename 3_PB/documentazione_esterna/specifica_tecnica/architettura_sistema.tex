@@ -671,7 +671,7 @@ Un esempio di schema Avro per il tipo di dato \texttt{Temperature} è il seguent
 \subsubsubsubsection{Dati elaborati da Apache Flink}
 Per quanto riguarda invece i dati aggregati da Apache Flink, è stato definito uno schema Avro per ciascuno di essi, il quale viene pubblicato in un \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#topic}{\textit{topic}\textsubscript{G}} dedicato.
 Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
-\begin{lstlisting}[language=\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}, caption=Schema Avro per il tipo di dato \texttt{HeatIndex},captionpos=b]
+\begin{lstlisting}[language=json, caption=Schema Avro per il tipo di dato \texttt{HeatIndex},captionpos=b]
 {
   "type": "record",
   "name": "Heat_Index",
@@ -690,7 +690,7 @@ Lo schema Avro per il tipo di dato \texttt{HeatIndex} è il seguente:
 
 \end{lstlisting}
 
-\begin{lstlisting}[language=\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}, caption=Schema Avro per il tipo di dato \texttt{ChargingEfficiency},captionpos=b]
+\begin{lstlisting}[language=json, caption=Schema Avro per il tipo di dato \texttt{ChargingEfficiency},captionpos=b]
 {
   "type": "record",
   "name": "Charging_Efficiency",
@@ -740,7 +740,7 @@ Al fine di effettuare il \textit{parsing} delle date è stato necessario definir
 e convertirlo in \texttt{DateTime}, tipo riconosciuto da \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{ClickHouse\textsubscript{G}}.\\
 La versione utilizzata è la 1.1.1, scaricabile dal seguente \href{https://github.com/ClickHouse/clickhouse-kafka-connect/releases}{\underline{url}} [Ultima consultazione 2024-07-10].\\
 La configurazione del \textit{transformer} è la seguente:
-\mySkip{\begin{lstlisting}[language=\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}, caption=Configurazione del \textit{transformer} all'interno del file \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{\texttt{clickhouse}\textsubscript{G}}\texttt{.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}},captionpos=b]
+\mySkip{\begin{lstlisting}[language=json, caption=Configurazione del \textit{transformer} all'interno del file \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{\texttt{clickhouse}\textsubscript{G}}\texttt{.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}},captionpos=b]
 {
     //...
     "transforms": "TimestampConverter",
@@ -762,12 +762,12 @@ curl "localhost:8083/connectors" -H 'Content-Type: application/\href{https://7la
 \href{https://www.confluent.io/hub/confluentinc/kafka-connect-avro-converter}{\underline{url}} [Ultima consultazione 2024-07-10],
 il quale consente di effettuare la deserializzazione dei messaggi in formato Confluent Avro.\\
 Il \textit{connector sink} è stato configurato per utilizzarlo come segue:
-\begin{lstlisting}[language=\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}, caption=Utilizzo del \textit{plugin} \texttt{avro-converter} all'interno del file \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{\texttt{clickhouse}\textsubscript{G}}\texttt{.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}},captionpos=b]
+\begin{lstlisting}[language=json, caption=Utilizzo del \textit{plugin} \texttt{avro-converter} all'interno del file \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#clickhouse}{\texttt{clickhouse}\textsubscript{G}}\texttt{.\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#javascript-object-notation}{json\textsubscript{G}}},captionpos=b]
 {
     //...
     "value.converter": "io.confluent.connect.avro.AvroConverter",
     "value.converter.schemas.enable": "true",
-    "value.converter.schema.registry.url": "http://\href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#redpanda}{redpanda\textsubscript{G}}:8081",
+    "value.converter.schema.registry.url": "http://redpanda:8081"
     //...
 }
 \end{lstlisting}
