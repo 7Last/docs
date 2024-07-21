@@ -1,0 +1,59 @@
+\documentclass[italian,12pt]{article}
+
+\input{variables}
+\input{packages}
+\input{subX6_section}
+
+\linespread{1.2}
+\captionsetup[table]{name=Tabella}
+\geometry{headsep=1.5cm}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\listtablename}{Indice delle tabelle}
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\listfigurename}{Indice delle immagini}
+\renewcommand\familydefault{\sfdefault}
+%-------------------INIZIO DOCUMENTO--------------
+
+\begin{document}
+\include{title}
+\newpage
+\include{header}
+
+%-----------tabella revisioni-----------%
+\begin{table}[!h]
+    \footnotesize
+    \begin{center}
+        \caption*{Versioni}
+        \vspace{0.5cm}
+        \begin{tabular}{l l l l p{6cm}}
+            \hline\\[-2ex]
+            Ver. & Data       & Autore             & Verificatore       & Descrizione\\\\[-2ex] \hline \\[-1.5ex]\\
+            1.0  & 2024-07-19 & Valerio Occhinegro & Antonio Benetazzo  & Approvazione finale \\
+            0.9  & 2024-07-18 & Valerio Occhinegro & Elena Ferro        & Aggiunta sezione \textit{Supporto} \\
+            0.8  & 2024-07-11 & Matteo Tiozzo      & Antonio Benetazzo  & Aggiunta sezione \textit{Accesso al server}\\
+            0.7  & 2024-07-08 & Antonio Benetazzo  & Elena Ferro        & Completata sezione \textit{Istruzioni all'uso} \\
+            0.6  & 2024-07-04 & Antonio Benetazzo  & Elena Ferro        & Continuazione sezione \textit{Gruppi di pannelli} \\
+            0.5  & 2024-07-02 & Elena Ferro        & Raul Seganfreddo   & Continuazione sezione \textit{Dashboard} \\
+            0.4  & 2024-06-28 & Elena Ferro        & Raul Seganfreddo   & Continuazione sezione \textit{Home} \\
+            0.3  & 2024-06-25 & Matteo Tiozzo      & Valerio Occhinegro & Inizio stesura sezione \textit{Istruzioni all'uso} \\
+            0.2  & 2024-06-20 & Matteo Tiozzo      & Valerio Occhinegro & Aggiunta sezione \textit{Requisiti} \\
+            0.1  & 2024-06-14 & Leonardo Baldo     & Elena Ferro        & Inizio documento \\
+            \\[-1.5ex] \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+%---------------------------------------%
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+
+\input{introduzione.tex}
+\input{requisiti.tex}
+\input{istruzioni_uso.tex}
+
+\end{document}
