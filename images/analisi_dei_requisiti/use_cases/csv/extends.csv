@@ -25,7 +25,7 @@ UC-2: Visualizzazione dashboard dati grezzi,Autorità locale,UC-2.20,Visualizzaz
 UC-3.1: Visualizzazione sezione temperatura,Autorità locale,UC-3.1.1,Visualizzazione grafico time series temperatura,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-3.1: Visualizzazione sezione temperatura,Autorità locale,UC-3.1.2,Visualizzazione mappa sensori temperatura,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-3.1: Visualizzazione sezione temperatura,Autorità locale,UC-3.1.3,Visualizzazione panel temperatura media nel periodo di tempo selezionato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-3.1: Visualizzazione sezione temperatura,Autorità locale,UC-3.1.4,Visualizzazione panel temperatura in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-3.1: Visualizzazione sezione temperatura,Autorità locale,UC-3.1.4,Visualizzazione gauge CYLTI,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-3.1: Visualizzazione sezione temperatura,Autorità locale,UC-3.1.5,Visualizzazione panel temperatura massima nel periodo di tempo selezionato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-3.1: Visualizzazione sezione temperatura,Autorità locale,UC-3.1.6,Visualizzazione panel temperatura minima nel periodo di tempo selezionato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 
@@ -60,11 +60,16 @@ UC-4.1: Visualizzazione sezione traffico,Autorità locale,UC-4.1.2,Visualizzazio
 UC-4.1: Visualizzazione sezione traffico,Autorità locale,UC-4.1.3,Visualizzazione panel numero veicoli in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-4.1: Visualizzazione sezione traffico,Autorità locale,UC-4.1.4,Visualizzazione panel velocità media in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 
-UC-4.2: Visualizzazione sezione colonnine di ricarica,Autorità locale,UC-4.2.2,Visualizzazione panel numero colonnine di ricarica per stato in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-4.2: Visualizzazione sezione colonnine di ricarica,Autorità locale,UC-4.2.1,Visualizzazione mappa colonnine di ricarica con stato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4.2: Visualizzazione sezione colonnine di ricarica,Autorità locale,UC-4.2.2,Visualizzazione grafico a barre tempo di utilizzo,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4.2: Visualizzazione sezione colonnine di ricarica,Autorità locale,UC-4.2.3,Visualizzazione grafico a torta occupazione in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4.2: Visualizzazione sezione colonnine di ricarica,Autorità locale,UC-4.2.4,Visualizzazione grafico time series charging efficiency,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4.2: Visualizzazione sezione colonnine di ricarica,Autorità locale,UC-4.2.5,Visualizzazione gauge efficiency rate e utilization rate,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4.2: Visualizzazione sezione colonnine di ricarica,Autorità locale,UC-4.2.6,Visualizzazione panel colonnine più/meno utilizzate/efficienti,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 
-UC-4.3: Visualizzazione sezione parcheggi,Autorità locale,UC-4.3.1,Visualizzazione mappa interattiva parcheggi con rispettivo stato di occupazione,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
-UC-4.3: Visualizzazione sezione parcheggi,Autorità locale,UC-4.3.2,Visualizzazione panel con conteggio parcheggi per stato in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4.3: Visualizzazione sezione parcheggi,Autorità locale,UC-4.3.1,Visualizzazione mappa parcheggi con stato,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4.3: Visualizzazione sezione parcheggi,Autorità locale,UC-4.3.2,Visualizzazione grafico a barre tempo di occupazione parcheggi,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
+UC-4.3: Visualizzazione sezione parcheggi,Autorità locale,UC-4.3.3,Visualizzazione grafico a torta occupazione in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 
 UC-4.4: Visualizzazione sezione isole ecologiche,Autorità locale,UC-4.4.1,Visualizzazione panel con riempimento isole ecologiche in tempo reale,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel
 UC-4.4: Visualizzazione sezione isole ecologiche,Autorità locale,UC-4.4.2,Visualizzazione mappa sensori isole ecologiche,UC-5,Visualizzazione messaggio assenza di dati,Non sono presenti dati per questo panel

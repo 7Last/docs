@@ -2,11 +2,8 @@ adaptee
 Airbnb
 amm
 Analizzabilità
-<<<<<<< HEAD
 andamento
-=======
 analytics
->>>>>>> develop
 Apprendibilità
 Autoformazione
 BAC
@@ -23,6 +20,7 @@ ciclomatica
 Ciclomatico
 CLIs
 COC
+CYLTI
 codiceFiglio
 codicePadre
 CRD
