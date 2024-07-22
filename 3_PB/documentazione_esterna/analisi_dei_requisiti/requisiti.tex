@@ -79,7 +79,7 @@ I requisiti possono avere tre livelli di importanza:
 	\\\hline
 	RF-5            & Obbligatorio        & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & L'utente dovrà poter visualizzare su una mappa la posizione geografica dei sensori.
 	\\\hline
-	RF-6            & Obbligatorio        & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I tipi di dati che il sistema dovrà visualizzare sono: temperatura, umidità, qualità dell'aria, precipitazioni, traffico, stato delle colonnine di ricarica, stato di occupazione dei parcheggi, stato di riempimento delle isole ecologiche e livello di acqua.
+	RF-6            & Obbligatorio        & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I tipi di dati che il sistema dovrà visualizzare sono: temperatura, umidità, qualità dell'aria, precipitazioni, traffico, stato delle colonnine di ricarica, stato di occupazione dei parcheggi, stato di riempimento delle isole ecologiche e livello dei fiumi.
 	\\\hline
 	RF-7            & Obbligatorio        & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I dati dovranno essere salvati su un database OLAP.
 	\\\hline
@@ -87,7 +87,7 @@ I requisiti possono avere tre livelli di importanza:
 	\\\hline
 	RF-9            & Obbligatorio        & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I sensori di umidità rilevano la percentuale di umidità nell’aria.
 	\\\hline
-	RF-10           & Obbligatorio        & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I sensori livello acqua rilevano il livello di acqua nella zona di installazione
+	RF-10           & Obbligatorio        & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I sensori livello dei fiumi rilevano il livello dei fiumi nella zona di installazione
 	\\\hline
 	RF-11           & Obbligatorio        & \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#capitolato}{Capitolato\textsubscript{G}} & I dati provenienti dai sensori dovranno contenere i seguenti dati: id \href{https://7last.github.io/docs/pb/documentazione-interna/glossario\#sensore}{sensore\textsubscript{G}}, data, ora e valore.
 	\\\hline
@@ -139,7 +139,7 @@ I requisiti possono avere tre livelli di importanza:
 	\\\hline
 	RF-35           & Obbligatorio        & Interno                                                                                                           & Le isole ecologiche inviano lo stato di riempimento come percentuale.
 	\\\hline
-	RF-36           & Obbligatorio        & Interno                                                                                                           & I sensori di livello di acqua inviano il livello di acqua in cm.
+	RF-36           & Obbligatorio        & Interno                                                                                                           & I sensori di livello dei fiumi inviano il livello dei fiumi in cm.
 	\\\hline
 	RF-37           & Obbligatorio        & Esterno                                                                                                           & Il sistema deve permettere di filtrare i dati visualizzati in base a un intervallo di tempo.
 	\\\hline
@@ -344,101 +344,108 @@ I requisiti possono avere tre livelli di importanza:
 	\textbf{Caso d'uso} & \textbf{Requisito}      \\\hline
 	\endhead
 	UC-1                & RF-13                   \\\hline
-	UC-2                & RF-15                   \\\hline
-	UC-2.1              & RF-15                   \\\hline
-	UC-2.2              & RF-15                   \\\hline
-	UC-2.3              & RF-15                   \\\hline
-	UC-2.4              & RF-15                   \\\hline
-	UC-2.5              & RF-15                   \\\hline
-	UC-2.6              & RF-15                   \\\hline
-	UC-2.7              & RF-15                   \\\hline
-	UC-2.8              & RF-15                   \\\hline
-	UC-2.9              & RF-15                   \\\hline
-	UC-2.10             & RF-15                   \\\hline
-	UC-2.11             & RF-15                   \\\hline
-	UC-2.12             & RF-15                   \\\hline
-	UC-2.13             & RF-15                   \\\hline
-	UC-2.14             & RF-15                   \\\hline
-	UC-2.15             & RF-15                   \\\hline
-	UC-2.16             & RF-15                   \\\hline
-	UC-2.17             & RF-15                   \\\hline
-	UC-2.18             & RF-15                   \\\hline
-	UC-2.19             & RF-15                   \\\hline
-	UC-2.20             & RF-15                   \\\hline
-	UC-3                & RF-16                   \\\hline
-	UC-3.1              & RF-16                   \\\hline
-	UC-3.2              & RF-16                   \\\hline
-	UC-3.3              & RF-16                   \\\hline
-	UC-3.4              & RF-16                   \\\hline
-	UC-3.5              & RF-16                   \\\hline
-	UC-3.6              & RF-16                   \\\hline
-	UC-4                & RF-17                   \\\hline
-	UC-4.1              & RF-17                   \\\hline
-	UC-4.2              & RF-17                   \\\hline
-	UC-4.3              & RF-17                   \\\hline
-	UC-4.4              & RF-17                   \\\hline
-	UC-4.5              & RF-17                   \\\hline
-	UC-4.6              & RF-17                   \\\hline
-	UC-5                & RF-18                   \\\hline
-	UC-5.1              & RF-18                   \\\hline
-	UC-5.2              & RF-18                   \\\hline
-	UC-5.3              & RF-18                   \\\hline
-	UC-5.4              & RF-18                   \\\hline
-	UC-5.5              & RF-18                   \\\hline
-	UC-5.6              & RF-18                   \\\hline
-	UC-6                & RF-19                   \\\hline
-	UC-6.1              & RF-19                   \\\hline
-	UC-6.2              & RF-19                   \\\hline
-	UC-6.3              & RF-19                   \\\hline
-	UC-6.4              & RF-19                   \\\hline
-	UC-6.5              & RF-19                   \\\hline
-	UC-6.6              & RF-19                   \\\hline
-	UC-7                & RF-20                   \\\hline
-	UC-7.1              & RF-20                   \\\hline
-	UC-7.2              & RF-20                   \\\hline
-	UC-7.3              & RF-20                   \\\hline
-	UC-7.4              & RF-20                   \\\hline
-	UC-7.5              & RF-20                   \\\hline
-	UC-8                & RF-21                   \\\hline
-	UC-8.1              & RF-21                   \\\hline
-	UC-8.2              & RF-21                   \\\hline
-	UC-9                & RF-22                   \\\hline
-	UC-9.1              & RF-22                   \\\hline
-	UC-9.2              & RF-22                   \\\hline
-	UC-10               & RF-23                   \\\hline
-	UC-10.1             & RF-23                   \\\hline
-	UC-10.2             & RF-23                   \\\hline
-	UC-10.3             & RF-23                   \\\hline
-	UC-10.4             & RF-23                   \\\hline
-	UC-10.5             & RF-23                   \\\hline
-	UC-10.6             & RF-23                   \\\hline
-	UC-11               & RF-24                   \\\hline
-	UC-11.1             & RF-24                   \\\hline
-	UC-11.2             & RF-24                   \\\hline
-	UC-11.3             & RF-24                   \\\hline
-	UC-11.4             & RF-24                   \\\hline
-	UC-12               & RF-25                   \\\hline
-	UC-13               & RF-11                   \\\hline
-	UC-13.1             & RF-8                    \\\hline
-	UC-13.2             & RF-9                    \\\hline
-	UC-13.3             & RF-26                   \\\hline
-	UC-13.4             & RF-27                   \\\hline
-	UC-13.5             & RF-28                   \\\hline
-	UC-13.6             & RF-29                   \\\hline
-	UC-13.7             & RF-30                   \\\hline
-	UC-13.8             & RF-31                   \\\hline
-	UC-13.9             & RF-32                   \\\hline
-	UC-14               & RF-33,RF-34,RF-50       \\\hline
-	UC-14.1             & RF-50                   \\\hline
-	UC-14.2             & RF-33                   \\\hline
-	UC-14.3             & RF-34                   \\\hline
-	UC-15               & RF-43,RF-44,RF-45,RF-46 \\\hline
-	UC-15.1             & RF-43                   \\\hline
-	UC-15.2             & RF-44                   \\\hline
+	UC-2                & RF-13                   \\\hline
+	UC-2.1              & RF-17                   \\\hline
+	UC-2.2              & RF-17                   \\\hline
+	UC-2.3              & RF-17                   \\\hline
+	UC-2.4              & RF-17                   \\\hline
+	UC-2.5              & RF-17                   \\\hline
+	UC-2.6              & RF-17                   \\\hline
+	UC-2.7              & RF-17                   \\\hline
+	UC-2.8              & RF-17                   \\\hline
+	UC-2.9              & RF-17                   \\\hline
+	UC-2.10             & RF-17                   \\\hline
+	UC-2.11             & RF-17                   \\\hline
+	UC-2.12             & RF-17                   \\\hline
+	UC-2.13             & RF-17                   \\\hline
+	UC-2.14             & RF-17                   \\\hline
+	UC-2.15             & RF-17                   \\\hline
+	UC-2.16             & RF-17                   \\\hline
+	UC-2.17             & RF-17                   \\\hline
+	UC-2.18             & RF-17                   \\\hline
+	UC-2.19             & RF-17                   \\\hline
+	UC-2.20             & RF-17                   \\\hline
+	UC-3                & RF-14                   \\\hline
+	UC-3.1              & RF-18                   \\\hline
+	UC-3.1.1            & RF-20                   \\\hline
+	UC-3.1.2            & RF-20                   \\\hline
+	UC-3.1.3            & RF-20                   \\\hline
+	UC-3.1.4            & RF-20                   \\\hline
+	UC-3.1.5            & RF-20                   \\\hline
+	UC-3.1.6            & RF-20                   \\\hline
+	UC-3.2              & RF-18                   \\\hline
+	UC-3.2.1            & RF-21                   \\\hline
+	UC-3.2.2            & RF-21                   \\\hline
+	UC-3.2.3            & RF-21                   \\\hline
+	UC-3.2.4            & RF-21                   \\\hline
+	UC-3.2.5            & RF-21                   \\\hline
+	UC-3.2.6            & RF-21                   \\\hline
+	UC-3.3              & RF-18                   \\\hline
+	UC-3.3.1            & RF-22                   \\\hline
+	UC-3.3.2            & RF-22                   \\\hline
+	UC-3.3.3            & RF-22                   \\\hline
+	UC-3.3.4            & RF-22                   \\\hline
+	UC-3.3.5            & RF-22                   \\\hline
+	UC-3.3.6            & RF-22                   \\\hline
+	UC-3.4              & RF-18                   \\\hline
+	UC-3.4.1            & RF-23                   \\\hline
+	UC-3.4.2            & RF-23                   \\\hline
+	UC-3.4.3            & RF-23                   \\\hline
+	UC-3.4.4            & RF-23                   \\\hline
+	UC-3.4.5            & RF-23                   \\\hline
+	UC-3.4.6            & RF-23                   \\\hline
+	UC-3.5              & RF-18                   \\\hline
+	UC-3.5.1            & RF-24                   \\\hline
+	UC-3.5.2            & RF-24                   \\\hline
+	UC-3.5.3            & RF-24                   \\\hline
+	UC-3.5.4            & RF-24                   \\\hline
+	UC-4                & RF-15                   \\\hline
+	UC-4.1              & RF-19                   \\\hline
+	UC-4.1.1            & RF-28                   \\\hline
+	UC-4.1.2            & RF-28                   \\\hline
+	UC-4.1.3            & RF-28                   \\\hline
+	UC-4.1.4            & RF-28                   \\\hline
+	UC-4.2              & RF-19                   \\\hline
+	UC-4.2.1            & RF-27                   \\\hline
+	UC-4.2.2            & RF-27                   \\\hline
+	UC-4.2.3            & RF-27                   \\\hline
+	UC-4.2.4            & RF-27                   \\\hline
+	UC-4.2.5            & RF-27                   \\\hline
+	UC-4.2.6            & RF-27                   \\\hline
+	UC-4.3              & RF-19                   \\\hline
+	UC-4.3.1            & RF-26                   \\\hline
+	UC-4.3.2            & RF-26                   \\\hline
+	UC-4.3.3            & RF-26                   \\\hline
+	UC-4.4              & RF-19                   \\\hline
+	UC-4.4.1            & RF-25                   \\\hline
+	UC-4.4.2            & RF-25                   \\\hline
+	UC-4.4.3            & RF-25                   \\\hline
+	UC-4.4.4            & RF-25                   \\\hline
+	UC-4.4.5            & RF-25                   \\\hline
+	UC-4.4.6            & RF-25                   \\\hline
+	UC-5                & RF-29                   \\\hline
+	UC-6                & RF-8, RF-9, RF-10, RF-30, RF-31, RF-32, RF-33, RF-34, RF-35 \\\hline
+	UC-7                & RF-8                    \\\hline
+	UC-8                & RF-9                    \\\hline
+	UC-9                & RF-30                   \\\hline
+	UC-10               & RF-31                   \\\hline
+	UC-11               & RF-32                   \\\hline
+	UC-12               & RF-33                   \\\hline
+	UC-13               & RF-34                   \\\hline
+	UC-14               & RF-35                   \\\hline
+	UC-15               & RF-10                   \\\hline
+	UC-16               & RF-37, RF-38            \\\hline
+	UC-16.1             & RF-38                   \\\hline
+	UC-16.2             & RF-38                   \\\hline
+	UC-16.3             & RF-37                   \\\hline
+	UC-17               & RF-47, RF-48, RF-49, RF-50 \\\hline
+	UC-17.1             & RF-47                   \\\hline
+	UC-17.2             & RF-48                   \\\hline
+	UC-17.3             & RF-49                   \\\hline
+	UC-17.4             & RF-50                   \\\hline
 	\caption{Tracciamento caso d'uso - requisito}
 \end{longtable}
 
-\pagebreak
 \subsection{Riepilogo}
 \begin{longtable}{|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.15\textwidth}|>{\centering\arraybackslash}m{0.2\textwidth}|}
 	\hline
